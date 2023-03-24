@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
-Partner, Comment
+Partner, Comment, Announcement
 
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_en', 'name_ro', 'name_de']
@@ -25,6 +25,8 @@ class ContactAdmin(admin.ModelAdmin):
 
 class PublicCategoryAdmin(admin.ModelAdmin):
     fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_en', 'text_ro', 'text_de', 'link_en', 'link_ro']
+class AnnouncementAdmin(admin.ModelAdmin):
+    fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_en', 'text_ro', 'text_de', 'link_en', 'link_ro']
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):
@@ -42,6 +44,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"title": ("title_en",), "text": ("text_en",)}
 
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Partner, PartnerAdmin)
 admin.site.register(BlogPost, BlogPostAdmin)
 admin.site.register(Event, EventAdmin)

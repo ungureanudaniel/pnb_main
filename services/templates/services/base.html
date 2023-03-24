@@ -91,7 +91,8 @@
 								</svg>
 							</span>
 						</div>
-						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">Contact</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">{% trans 'Contact' %}</a></div>
 						<div class="screen__item screen--trigger" data-category="language">
 							<span>{% trans 'Language' %}</span>
 							<span>
@@ -278,6 +279,7 @@
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Education' %}</a></li>
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'map_coming_soon' %}">{% trans 'Map' %}</a></li>
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
 								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">FAQ</a></li>
 								{% if user.is_authenticated %}
@@ -329,6 +331,8 @@
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'theme-trails' %}">{% trans 'Attractions' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}">{% trans 'Events' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}">{% trans 'Info points' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
+
 
 							</ul>
 						</div>

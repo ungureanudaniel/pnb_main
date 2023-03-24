@@ -85,6 +85,10 @@ msgstr "<span>Tichete &</span> <span>Prețuri</span>"
 msgid "<span>Three Months</span> <span>Ticket</span>"
 msgstr "<span>Tichet</span> <span>pentru 3 Luni</span>"
 
+#: services/templates/services/includes/announcement.html: 166
+msgid "Download the announcement"
+msgstr "Descarcati anuntul"
+
 #: .\services\templates\services\ticket-info.html:52
 msgid "Details"
 msgstr "Detalii"
@@ -1631,10 +1635,15 @@ msgstr "Cum a</span><br/> Început"
 #: services/templates/services/history.html: 38
 msgid "Since the 19th century, Bucegi Mountain has attracted numerous researchers and nature lovers from the country and abroad, holding a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity"
 msgstr "Încă din secolul al XIX-lea, Munții Bucegi au atras numeroși cercetători și iubitori ai naturii din țară și din străinătate, ocupând un loc de frunte în lanțul carpatic românesc pentru flora sa de o rară bogăție și diversitate"
-
+#: services/templates/services/home.html: 239
+msgid "Announcements"
+msgstr "Anunțuri"
 #: services/templates/services/history.html: 39
 msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943."
 msgstr "Lucrările științifice elaborate de prestigioși botaniști, la începutul secolului trecut, au stat la baza primului act de constituire a unor rezervații, monumente ale naturii: HCM. 965/ 17.11.1943."
+#: services/templates/services/home.html: 239
+msgid "Our</span> <span>Announcements"
+msgstr "Anunțurile</span> <span>Noastre"
 
 #: services/templates/services/history.html: 41
 msgid "With the promotion and development of tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, a management framework was created, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necesary for specific conservation and protection measures"
@@ -1956,6 +1965,19 @@ msgstr "Înscrieți-vă"
 #: services/templates/services/includes/blog.html: 166
 msgid "Subscribe Now"
 msgstr "Înscrieți-vă acum"
+#: services/templates/services/includes/blog.html: 166
+msgid "Latest Posts"
+msgstr "Ultimele postari"
+
+#: services/templates/services/includes/blog.html: 166
+msgid "Archive"
+msgstr "Arhiva"
+
+#: services/templates/services/includes/blog.html: 166
+msgid "Add an announcement"
+msgstr "Adaugă un anunț"
+
+
 #: services/templates/services/includes/blog.html: 167
 msgid "And get our latest updates"
 msgstr "Și veți primi cele mai noi informații de la noi"

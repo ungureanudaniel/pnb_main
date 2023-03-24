@@ -10,6 +10,22 @@ from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
 
 #================Partners models=====================================
+class Announcement(models.Model):
+    """
+    This class creates database tables for each announcement of bucegi natural park
+    """
+    title = models.CharField(max_length=100)
+    text = RichTextField(max_length=3000)
+    link_ro = models.FileField(upload_to='announcements/%d %b %Y/', max_length=254, blank =True, null=True)
+    link_en = models.FileField(upload_to='announcements/%d %b %Y/', max_length=254, blank =True, null=True)
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+    timestamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.title
+#================Partners models=====================================
 class Partner(models.Model):
     """
     This class creates database tables for each partner of bucegi natural park

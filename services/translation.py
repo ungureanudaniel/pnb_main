@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import Team, AttractionCategory, PublicCategory, Attraction,\
-BlogPostCategory, BlogPost, Event
+BlogPostCategory, BlogPost, Event, Announcement
 
 
 class AttractionCatTranslationOptions(TranslationOptions):
@@ -10,16 +10,19 @@ class TeamTranslationOptions(TranslationOptions):
     fields = ('text', 'job')
 class PublicCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
+class AnnouncementTranslationOptions(TranslationOptions):
+    fields = ('title', 'text',)
 class AttractionTranslationOptions(TranslationOptions):
-    fields = ('name', 'text')
+    fields = ('name', 'text',)
 class EventTranslationOptions(TranslationOptions):
-    fields = ('title', 'text')
+    fields = ('title', 'text',)
 class BlogPostCategoryTranslationOptions(TranslationOptions):
     fields = ('title',)
 class BlogPostTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 
 translator.register(BlogPost, BlogPostTranslationOptions)
+translator.register(Announcement, AnnouncementTranslationOptions)
 translator.register(BlogPostCategory, BlogPostCategoryTranslationOptions)
 translator.register(AttractionCategory, AttractionCatTranslationOptions)
 translator.register(Attraction, AttractionTranslationOptions)

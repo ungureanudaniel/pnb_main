@@ -14,6 +14,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
 from django.db.models import Count
 from django.views.generic.edit import FormMixin
+from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
 
 #----------generate unique code for email subscription conf--------------------
@@ -330,6 +331,57 @@ def infopoints_view(request):
     template = 'services/info-points.html'
     context = {}
     return render(request, template, context)
+#======================== announcement main page================================
+def announcement_view(request):
+    template = 'services/announcements.html'
+    posts_categs = {}
+    #------- post per categories count using annotate---------
+    group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
+    if request.method=="POST":
+        newsletter_email = request.POST.get('subscriber')
+        #--------------check if newsletter email exists already---------
+        if "subscriber" in request.POST:
+            if newsletter_email:
+                try:
+                    duplicate = Subscriber.objects.get(email=newsletter_email)
+                    if duplicate:
+                        messages.warning(request, _("This email already exists in our database!"))
+                        return redirect('blog')
+                except:
+                    #-----------------------SAVE IN DATABASE----------------
+                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
+                    sub.save()
+
+                    #---------------------send confirmation email settings------
+                    sub_subject = _("Newsletter Bucegi Natural Park")
+                    from_email='contact@bucegipark.ro'
+                    sub_message = ''
+                    html_content=_('Thank you for subscribing to our newsletter!\
+                                You can finalize the process by clicking on this \
+                                    <a href="{}subscription_confirmation/?email={}&conf_num={}"> button \
+                                        </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
+                    try:
+                        send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
+                        messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+
+                    except BadHeaderError:
+                        return HttpResponse('Invalid header found.')
+
+                    return render(request, template, {})
+
+    context = {
+    "announc": Announcement.objects.all(),
+    "group_archive": group_archive,
+    }
+
+    return render(request, template, context)
+#======================== announcement detail page================================
+# class AnnounDetailView(DetailView):
+#     model = Announcement
+#     template_name = 'services/announc-details.html'
+#     context_object_name = 'announcement'
+#     slug_field = 'slug'
+
 #======================== blog main page================================
 def bloglist_view(request):
     template = 'blog/blog.html'
@@ -377,6 +429,7 @@ def bloglist_view(request):
     }
 
     return render(request, template, context)
+
 #======================== blog detail page================================
 class PostDetailView(HitCountDetailView, FormMixin):
     model = BlogPost
