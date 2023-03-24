@@ -1,7 +1,7 @@
-Django==4.1.7
+Django==3.2
 whitenoise
-python-dotenv>=0.19.1
-django-ckeditor>=6.1.0
+python-dotenv==0.19.1
+django-ckeditor==6.1.0
 django-resized
 django-simple-captcha>=0.5.14
 requests
@@ -9,7 +9,4 @@ beautifulsoup4
 python-memcached
 pymemcache
 django-modeltranslation
-asyncio
-aiohttp
 django-hitcount
-MarkupSafe
