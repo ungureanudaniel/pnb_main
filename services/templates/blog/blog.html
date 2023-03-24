@@ -169,7 +169,7 @@
 									<form class="form subscribe-form" action="{% url 'blog' %}" method="POST">
 										{% csrf_token %}
 										<input class="form__field" type="email" name="subscriber" placeholder="Enter your mail here..."/>
-										<input class="form__submit" type="submit" value="Subscribe"/>
+										<input class="form__submit" type="submit" value="{% trans 'Subscribe' %}"/>
 									</form>
 								</div>
 							</div>

@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% block content %}
+
 			<!-- header end-->
 			<main class="main">
 				<!-- promo start-->
@@ -12,6 +13,7 @@
 							<picture>
 								<source srcset="{% static 'img/backgrounds/promo8.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo8.webp' %}" alt="img"/>
 							</picture>
+
 							<div class="container">
 								<div class="row">
 									<div class="col-xl-10 offset-xl-1">
@@ -141,7 +143,7 @@
 											<div class="counter-item__lower"><span class="js-counter color--green">1,000,000</span></div>
 										</div>
 									</div>
-								</div><a class="button button--green top-40" href="#">{% trans 'More about' %}</a>
+								</div><a class="button button--green top-40" href="{% url 'history' %}">{% trans 'More about' %}</a>
 							</div>
 						</div>
 					</div>
@@ -157,10 +159,12 @@
 								</div>
 								<!-- filter panel start-->
 								<ul class="filter-panel">
-									<li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug|lower }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
-									<li class="filter-panel__item " data-filter=".{{ attr_categ.1.slug|lower }}"><span>{{ attr_categ.1.name|capfirst }}</span></li>
-									<li class="filter-panel__item " data-filter=".{{ attr_categ.2.slug|lower }}"><span>{{ attr_categ.2.name|capfirst }}</span></li>
-									<li class="filter-panel__item " data-filter=".{{ attr_categ.3.slug|lower }}"><span>{{ attr_categ.3.name|capfirst }}</span></li>
+									<li class="filter-panel__item filter-panel__item--active" data-filter=".natural-monuments"><span>{% trans 'Natural Monuments' %}</span></li>
+									<li class="filter-panel__item " data-filter=".nature-reserves"><span>{% trans 'Nature Reserves' %}</span></li>
+									<li class="filter-panel__item " data-filter=".wildlife"><span>{% trans 'Wildlife' %}</span></li>
+									<li class="filter-panel__item " data-filter=".flora"><span>{% trans 'Flora' %}</span></li>
+									<li class="filter-panel__item " data-filter=".scenery"><span>{% trans 'Scenery' %}</span></li>
+
 									{% if user.is_authenticated %}
 									<li class="filter-panel__item">
 			              <a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'home' %}admin">
@@ -174,15 +178,108 @@
 						</div>
 					</div>
 					<div class="row gallery-masonry no-gutters">
-						{% for a in attr %}
-						<div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
-							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
-								<img class="img--bg" src="{{ a.image.url }}" alt="img"/>
-								<div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
+						<div class="natural-monuments col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img/attractions/babele.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img/attractions/babele.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Natural Monuments' %}</span><span>Babele</span></div>
 							</a>
 						</div>
-						{% endfor %}
-
+						<div class="natural-monuments col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\sfinx3.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\sfinx3.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Natural Monuments' %}</span><span>{% trans 'The Sphinx' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\insta\insta1.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\insta\insta1.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Ural owl' %}</span></div>
+							</a>
+						</div>
+						<div class="nature-reserve col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img/attractions/cheile_horoabei.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img/attractions/cheile_horoabei.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Nature Reserves' %}</span><span>{% trans 'Horoabei Gorges' %}</span></div>
+							</a>
+						</div>
+						<div class="nature-reserve col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\Rezervatia-Turbaria-Laptici.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\Rezervatia-Turbaria-Laptici.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Nature Reserves' %}</span><span>{% trans 'Lăptici Peat Bog' %}</span></div>
+							</a>
+						</div>
+						<div class="nature-reserve col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\urlatoarea.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\urlatoarea.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Nature Reserves' %}</span><span>{% trans 'The screaming waterfall' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\bear1.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\bear1.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Brown bear' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\cocos.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\cocos.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Capercaillie' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\capra-neagra1.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\capra-neagra1.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Chamois' %}</span></div>
+							</a>
+						</div>
+						<div class="flora col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\edelweiss.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\edelweiss.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">Flora</span><span>{% trans 'Leontopodium alpinum' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\reddeer2.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\reddeer2.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Red Deer' %}</span></div>
+							</a>
+						</div>
+						<div class="flora col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\insta\insta6.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\insta\insta6.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">Flora</span><span>{% trans 'Rhododendron myrtifolium' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\wild-cat.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\wild-cat.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'Wild Cat' %}</span></div>
+							</a>
+						</div>
+						<div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\insta\insta7.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\insta\insta7.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{% trans 'Wildlife' %}</span><span>{% trans 'European Lynx' %}</span></div>
+							</a>
+						</div>
+						<div class="flora col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\nigritella.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\nigritella.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">Flora</span><span>{% trans 'Nigritella rubra' %}</span></div>
+							</a>
+						</div>
+						<div class="scenery col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\attractions4.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\attractions4.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">Scenery</span><span>{% trans 'Caraiman Valley' %}</span></div>
+							</a>
+						</div>
+						<div class="scenery col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% static 'img\attractions\manastirea-s2.webp' %}" data-fancybox="gallery">
+								<img class="img--bg" src="{% static 'img\attractions\manastirea-s2.webp' %}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">Scenery</span><span>{% trans 'Ialomița Monastery' %}</span></div>
+							</a>
+						</div>
 					</div>
 					<div class="container top-70">
 						<div class="row">

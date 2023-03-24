@@ -84,33 +84,34 @@ def home(request):
         "captcha_form": CaptchaForm()
     }
     if request.method=='POST':
-        captcha_form = CaptchaForm(request.POST or None)
-        #---------user login functions-----------
-        user = None
-        try:
-            username = request.POST.get('signin-name')
-            password = request.POST.get('signin-password')
-            # user_check = User.object.get(username = username)
-            user = authenticate(username=username, password=password)
-            if captcha_form.is_valid():
-                if user is not None:
+        if request.POST.get('form-type') == "signin-form":
+            captcha_form = CaptchaForm(request.POST or None)
+            #---------user login functions-----------
+            user = None
+            try:
+                username = request.POST.get('signin-name')
+                password = request.POST.get('signin-password')
+                # user_check = User.object.get(username = username)
+                user = authenticate(username=username, password=password)
+                if captcha_form.is_valid():
+                    if user is not None:
 
-                    try:
-                        login(request, user)
-                        context['user'] = username
+                        try:
+                            login(request, user)
+                            context['user'] = username
+                            return redirect('.')
+                        except Exception as e:
+                            messages.warning(request, _("Warning! {e}"))
+                            return redirect('.')
+                    else:
+                        messages.warning(request, _("User does not exist!"))
                         return redirect('.')
-                    except Exception as e:
-                        messages.warning(request, _("Warning! {e}"))
-                        return redirect('.')
+
                 else:
-                    messages.warning(request, _("User does not exist!"))
+                    messages.warning(request, _("Captcha incorrect!"))
                     return redirect('.')
-
-            else:
-                messages.warning(request, _("Captcha incorrect!"))
-                return redirect('.')
-        except (Exception, User.DoesNotExist) as e:
-            messages.warning(request, _("Warning! {e}"))
+            except (Exception, User.DoesNotExist) as e:
+                messages.warning(request, _("Warning! {e}"))
 
         #--------------check if newsletter email exists already---------
         if request.POST.get('submit') == "subscribe":
@@ -125,7 +126,7 @@ def home(request):
                     #-----------------------SAVE IN DATABASE----------------
                     sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
                     sub.save()
-                    messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+
                     #---------------------send confirmation email settings------
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
@@ -136,10 +137,11 @@ def home(request):
                                         </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-                        return redirect('.')
+                        messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+                        return redirect('/')
                     except BadHeaderError as e:
-                        messages.success(request, e)
-                        return redirect('.')
+                        messages.warning(request, e)
+                        return redirect('/')
 
 
     attr_c = AttractionCategory.objects.all()
@@ -352,7 +354,7 @@ def bloglist_view(request):
                     #-----------------------SAVE IN DATABASE----------------
                     sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
                     sub.save()
-                    messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+
                     #---------------------send confirmation email settings------
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
@@ -363,7 +365,7 @@ def bloglist_view(request):
                                         </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-
+                        messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
 
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')

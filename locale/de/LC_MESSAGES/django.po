@@ -1474,6 +1474,54 @@ msgstr "<span>Karte von Bucegi</span> <span>NaturPark</span>"
 #: services/templates/services/home.html: 187
 msgid "See map"
 msgstr "Karte sehen"
+#: services/templates/services/home.html: 313
+msgid "Ialomița Monastery"
+msgstr "Kloster Ialomița"
+#: services/templates/services/home.html: 313
+msgid "Caraiman Valley"
+msgstr "Caraiman Tal"
+#: services/templates/services/home.html: 313
+msgid "Brown bear"
+msgstr "Braunbär"
+#: services/templates/services/home.html: 313
+msgid "Capercaillie"
+msgstr "Auerhuhn"
+#: services/templates/services/home.html: 313
+msgid "Chamois"
+msgstr "Chamois"
+#: services/templates/services/home.html: 313
+msgid "Red Deer"
+msgstr "Rothirsch"
+#: services/templates/services/home.html: 313
+msgid "Wild Cat"
+msgstr "Wildkatze"
+#: services/templates/services/home.html: 313
+msgid "European Lynx"
+msgstr "Europäischer Luchs"
+#: services/templates/services/home.html: 313
+msgid "The screaming waterfall"
+msgstr "Der schreiende Wasserfall"
+#: services/templates/services/home.html: 313
+msgid "Lăptici Peat Bog"
+msgstr "Torfmoor Lăptici"
+#: services/templates/services/home.html: 313
+msgid "Ural owl"
+msgstr "Habichtskauz"
+#: services/templates/services/home.html: 313
+msgid "The Sphinx"
+msgstr "Der Sphinx"
+#: services/templates/services/home.html: 313
+msgid "Natural Monuments"
+msgstr "Naturdenkmäler"
+#: services/templates/services/home.html: 313
+msgid "Wildlife"
+msgstr "Widltiere"
+#: services/templates/services/home.html: 313
+msgid "Nature Reserves"
+msgstr "Naturschutzgebieten"
+#: services/templates/services/home.html: 313
+msgid "Flora"
+msgstr "Flora"
 #: services/templates/services/home.html: 202
 msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
 msgstr "Beobachten Sie </h6><a class='destination-item__link' href='#'>Wildtiere"
@@ -1512,8 +1560,6 @@ msgid "Donate"
 msgstr "Doneaza"
 msgid "Our team"
 msgstr "Unser Team"
-msgid "Wildlife"
-msgstr "Wildtiere"
 msgid "Gallery"
 msgstr "Gallerie"
 msgid "Projects"
@@ -1844,8 +1890,8 @@ msgid "Your email"
 msgstr "Ihre E-Mail"
 
 #: services/templates/services/includes/newsletter.html: 9
-msgid "subscribe"
-msgstr "abonnieren"
+msgid "Subscribe"
+msgstr "Abonnieren"
 
 #: services/templates/services/includes/newsletter.html: 9
 msgid "<p class='cta-block__text'>Subscribe and get our latest updates</p>"

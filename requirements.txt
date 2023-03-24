@@ -12,5 +12,4 @@ django-modeltranslation
 asyncio
 aiohttp
 django-hitcount
-folium
-ee
+MarkupSafe

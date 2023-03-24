@@ -1465,8 +1465,7 @@ msgstr "<span>Descoperă </span><span>Parcul Natural Bucegi</span>"
 msgid "<span>Natural Monuments</span>"
 msgstr "Monumente ale Naturii"
 #: services/templates/services/home.html: 158
-msgid "Nature Reserves"
-msgstr "Rezervații Naturale"
+
 #: services/templates/services/home.html: 187
 msgid "Find out More"
 msgstr "Aflați mai multe"
@@ -1485,9 +1484,6 @@ msgstr "Munții Bucegi"
 #: services/templates/services/home.html: 159
 msgid "Fauna"
 msgstr "Faună"
-#: services/templates/services/home.html: 160
-msgid "Flora"
-msgstr "Floră"
 #: services/templates/services/home.html: 51
 msgid "Home"
 msgstr "Acasa"
@@ -1535,8 +1531,6 @@ msgid "Donate"
 msgstr "Doneaza"
 msgid "Our team"
 msgstr "Echipa"
-msgid "Wildlife"
-msgstr "Fauna"
 msgid "Gallery"
 msgstr "Galerie"
 msgid "Projects"
@@ -1581,7 +1575,53 @@ msgstr "Canioane, lacuri cu apă albastră, poduri din lemn, trasee montane alpi
 msgid "The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here."
 msgstr "Munții Bucegi adăpostesc o mare biodiversitate, cele mai emblematice specii fiind ursul brun, lupul, capra neagră, cerbul comun, râsul, jderul, chiar și acvile de munte au fost văzute aici."
 #: services/templates/services/home.html: 313
-
+msgid "Ialomița Monastery"
+msgstr "Mănăstirea Ialomiței"
+#: services/templates/services/home.html: 313
+msgid "Caraiman Valley"
+msgstr "Valea Caraimanului"
+#: services/templates/services/home.html: 313
+msgid "Brown bear"
+msgstr "Urs brun"
+#: services/templates/services/home.html: 313
+msgid "Capercaillie"
+msgstr "Cocoș de munte"
+#: services/templates/services/home.html: 313
+msgid "Chamois"
+msgstr "Capra neagră"
+#: services/templates/services/home.html: 313
+msgid "Red Deer"
+msgstr "Cerb comun"
+#: services/templates/services/home.html: 313
+msgid "Wild Cat"
+msgstr "Pisică sălbatică"
+#: services/templates/services/home.html: 313
+msgid "European Lynx"
+msgstr "Râs"
+#: services/templates/services/home.html: 313
+msgid "The screaming waterfall"
+msgstr "Cascada Urlătoarea"
+#: services/templates/services/home.html: 313
+msgid "Lăptici Peat Bog"
+msgstr "Turbăria Lăptici"
+#: services/templates/services/home.html: 313
+msgid "Ural owl"
+msgstr "Huhurez mare"
+#: services/templates/services/home.html: 313
+msgid "The Sphinx"
+msgstr "Sfinxul"
+#: services/templates/services/home.html: 313
+msgid "Natural Monuments"
+msgstr "Monumente ale naturii"
+#: services/templates/services/home.html: 313
+msgid "Wildlife"
+msgstr "Faună"
+#: services/templates/services/home.html: 313
+msgid "Nature Reserves"
+msgstr "Rezervații Naturale"
+#: services/templates/services/home.html: 313
+msgid "Flora"
+msgstr "Floră"
 #: services/templates/services/history.html: 36
 msgid "How it</span><br/> <span> Started"
 msgstr "Cum a</span><br/> Început"
@@ -1894,8 +1934,8 @@ msgid "Your email"
 msgstr "Emailul dvs"
 
 #: services/templates/services/includes/newsletter.html: 9
-msgid "subscribe"
-msgstr "înscrieți-vă"
+msgid "Subscribe"
+msgstr "Înscrieți-vă"
 
 #: services/templates/services/includes/blog.html: 166
 msgid "Subscribe Now"
