@@ -349,7 +349,7 @@
 						</div>
 					</div>
 					<div class="row align-items-end">
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-12 text-center text-md-left">
 							<ul class="socials">
 								<li class="socials__item"><a class="socials__link" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li class="socials__item"><a class="socials__link" href="https://twitter.com/BucegiPark" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -361,17 +361,13 @@
 								<li><a class="public_docs" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a>{% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'home' %}admin"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}</li>
 								<!-- <li><a href="#">Site Map</a></li> -->
 								<li><a href="{% url 'privacy_info' %}">{% trans 'Privacy Policy' %}</a></li>
+								<li style="color:#83888b;">© {% now "Y" %} RNP ROMSILVA - Administrația Parcului {% if user.is_authenticated %} Parcului {% else %}<a class="text-decoration-none" data-toggle="modal" name="signinmodal" href="#signinModal">Parcului</a>{% endif %} Natural Bucegi R.A.</li>
+
 
 							</ul>
 						</div>
 						<div class="col-md-6 text-center text-md-right">
-							<div class="footer-privacy"><span>© {% now "Y" %} RNP ROMSILVA - Administrația
-								{% if user.is_authenticated %}
-								Parcului
-								{% else %}
-								<a class="text-decoration-none" data-toggle="modal" name="signinmodal" href="#signinModal">Parcului</a>
-								{% endif %}
-								 Natural Bucegi R.A.</span>
+
 								 <!-- <span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="{% url 'coming-soon' %}">{% trans 'Terms and Conditions' %}</a></div> -->
 							</div>
 						</div>
