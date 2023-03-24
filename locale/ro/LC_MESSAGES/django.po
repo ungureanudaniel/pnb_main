@@ -1576,7 +1576,7 @@ msgid "Discover"
 msgstr "Descopera"
 #: services/templates/services/home.html: 268
 msgid "Canions, blue water lakes with small wooded bridges, alpine hiking trails, will send you thinking at fairytales"
-msgstr "Canioane, lacuri cu apa albastra, poduri de lemn, trasee montane alpine, the vor trimite cu gandul la povesti"
+msgstr "Canioane, lacuri cu apă albastră, poduri din lemn, trasee montane alpine, the vor trimite cu gândul la povești"
 #: services/templates/services/home.html: 291
 msgid "The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here."
 msgstr "Munții Bucegi adăpostesc o mare biodiversitate, cele mai emblematice specii fiind ursul brun, lupul, capra neagră, cerbul comun, râsul, jderul, chiar și acvile de munte au fost văzute aici."
