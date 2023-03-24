@@ -1,0 +1,92 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary green_background">
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Contact</span> <span> Us</span>{% endblocktranslate %}</h1>
+										<span class="welcome_icon">
+											<img src="{% static 'img\svg\mail.svg' %}">
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col-auto">
+								<span class="welcome_icon">
+									<img src="{% static 'img\svg\mail.svg' %}">
+								</span>
+							</div> -->
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center">
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write us</span> <span> a message</span>{% endblocktranslate %}</h2>
+								</div>
+							</div>
+							{% if messages %}
+							<div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+								{% include 'includes/messages.html' %}
+							</div>
+							{% else %}
+							<div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+							</div>
+							{% endif %}
+						<div class="row">
+							<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+								<form class="form" id="" action="{% url 'home' %}#testimonials" method="post">
+									{% csrf_token %}
+									<div class="row">
+										<div class="col-md-6">
+											{{ review_form.fname }}
+										</div>
+										<div class="col-md-6">
+											{{ review_form.lname }}
+										</div>
+										<div class="col-md-6">
+											{{ review_form.email }}
+										</div>
+										<div class="col-md-6">
+											{{ review_form.thumbnail }}
+										</div>
+										<div class="col-12">
+											{{ review_form.text }}
+										</div>
+										<div class="col-12 mb-5">
+											<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
+											<br>
+											{{ form.captcha }}
+											<br>
+										</div>
+										<div class="col-12 text-center">
+											<input class="form__submit" type="submit" value="{% trans 'Send' %}"/>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- section end-->
+
+				<!-- section start-->
+				{% include 'includes/newsletter.html' %}
+				<!-- section end-->
+
+
+			</main>
+{% endblock %}

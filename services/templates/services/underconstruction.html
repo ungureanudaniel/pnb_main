@@ -1,0 +1,323 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<title>{% trans 'Bucegi Natural Park' %}</title>
+		<link rel="shortcut icon" type="image/png" href="{% static 'img/logo/bucegi2.png' %}">
+
+	  <meta name="description" property="og:description" content="The best Freelancing Professionals in eastern Europe">
+	  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	  <meta name="keywords" content="job portal, jobs, freelancers, remote work, jobs website">
+	  <meta name="author" content="Dincolo">
+	  <meta property="og:type" content="website">
+	  <meta property="og:url" content="https://bucegipark.ro/">
+	  <meta property="og:site_name" content="Bucegi Natural Park">
+	  <meta property="og:title" content="Bucegi Natural Park | A Natural Sanctuary" />
+	  <meta property="og:description" content="Iconic protected area, in the heart of Romania.">
+	  <meta property="og:image" content="https://bucegipark.ro/static/img/logo/bucegi2.png">
+	  <meta property="og:image:alt" content="The Sphinx">
+
+	  <link rel="canonical" href="https://bucegipark.ro/">
+		<!-- styles-->
+		<link rel="stylesheet" href="{% static 'css/styles.min.css' %}"/>
+		<!-- bootstrap link -->
+		<link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
+		<!-- web-font loader-->
+		<!-- <script>
+			WebFontConfig = {
+
+				google: {
+
+					families: ['Nunito+Sans:300,400,500,700,900', 'Quicksand:300,400,500,700'],
+
+				}
+
+			}
+
+			function font() {
+
+				var wf = document.createElement('script')
+
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+				wf.type = 'text/javascript'
+				wf.async = 'true'
+
+				var s = document.getElementsByTagName('script')[0]
+
+				s.parentNode.insertBefore(wf, s)
+
+			}
+
+			font()
+		</script> -->
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<!-- menu dropdown start-->
+			<div class="menu-dropdown ">
+				{% get_available_languages as LANGUAGES %}
+
+				{% get_language_info_list for LANGUAGES as languages %}
+				{% get_language_info for LANGUAGE_CODE as lang %}
+				<ul class="lang-select">
+
+					<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>
+							<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
+								<!-- <p class="text-white">{{ languages }}</p> -->
+						<ul class="lang-select__sub-list">
+							{% for language in languages %}
+							<li value="{{ language.name_local }}"><a href="/{{language.code}}/">{{ language.name_local }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- menu dropdown end-->
+			<!-- header start-->
+			<header class="header header-common">
+				{% get_available_languages as LANGUAGES %}
+
+				{% get_language_info_list for LANGUAGES as languages %}
+				{% get_language_info for LANGUAGE_CODE as lang %}
+				<ul class="lang-select">
+
+					<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>
+							<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
+								<!-- <p class="text-white">{{ languages }}</p> -->
+						<ul class="lang-select__sub-list">
+							{% for language in languages %}
+							<li value="{{ language.name_local }}"><a href="/{{language.code}}/">{{ language.name_local }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+				</ul>
+			</header>
+      <main class="main">
+				<!-- promo start-->
+				<section class="promo promo--front-5">
+					<div class="promo-slider">
+						<div class="promo-slider__item promo-slider__item--style-2">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo8.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo8.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-10 offset-xl-1">
+										<div class="align-container">
+											<div class="align-container__item text-center">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span>{% trans 'New Website' %}</span><br/> <span>{% trans 'Under Construction' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'Bucegi Natural Park will have a new website in a few days. Stay tuned!' %}.</p>
+                          <p class="promo-slider__subtitle">{% trans 'In the meanwhile, check other info below!' %}</p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="promo-slider__item promo-slider__item--style-3">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo4.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo4.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-8 offset-xl-2">
+										<div class="align-container">
+											<div class="align-container__item">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span>{% trans 'Some of the most iconic' %}</span><br/> <span>{% trans 'Wildlife species in Europe' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here.' %}</p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="promo-slider__item promo-slider__item--style-2">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo2.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-10 offset-xl-1">
+										<div class="align-container">
+											<div class="align-container__item text-center">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span></span><br/><span>{% trans 'Unique Rock Formations' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks' %}. </p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<!-- slider nav start-->
+								<div class="promo-slider__nav"></div>
+								<!-- slider nav end-->
+							</div>
+						</div>
+					</div>
+					<!-- promo pannel start-->
+					<div class="promo-pannel"><a class="video-trigger" href="https://www.youtube.com/watch?v=mQeXbWl5uDo"><img class="img--bg" src="{% static 'img/reddeer2.webp' %}" alt="welcome_video"/><span class="video-trigger__icon"><span>YouTube</span><i class="fa fa-play" aria-hidden="true"></i></span></a>
+						<div class="promo-pannel__weather"><span>Bucegi - {% trans 'Today' %}, {% now "jS F Y" %}</span>
+							<div class="weather-lower">
+								<svg class="icon">
+									<!-- <use xlink:href="#wind"></use> -->
+								</svg>
+								<hr>
+								<!-- <span>{{ weather.2 }}</span> -->
+								<span><img src="{{ weather.1 }}" height="100" width="100"> {{ weather.0 }} </span>
+							</div>
+							<span class="" style="align-items:right">{% trans 'Wind' %} {{ weather.2 }}</span>
+						</div>
+					</div>
+					<!-- promo pannel end-->
+				</section>
+				<!-- promo end-->
+				<!-- section start-->
+				<section id="about-bucegi" class="section about-bucegi mb-5"><img class="img--aside t50 l0 w-33 ml-4" src="{% static 'img/logo/sfinx1.png' %}" alt="img"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-8 offset-xl-4">
+								<div class="heading heading--style-2 heading--green"><span class="heading__pre-title">{% trans 'About' %}</span>
+									<h2 class="heading__title">{% blocktranslate %}<span>Bucegi</span> <span>Natural Park</span>{% endblocktranslate %}</h2>
+								</div>
+								<p><strong>{% trans 'Located in the heart of Romania, between urban areas of major importance and close to the famous mountain resort - Sinaia, Bucegi Natural Park is an extremely popular protected area in our country and part of the international Natura 2000 network. Some of the most famous attractions associated with Bucegi Natural Park, besides the large bear population and breath-taking scenery, are the Sphinx and Babele, conglomerate rocks carved by wind erosion. Bucegi Natural Park was established in 2003 by the Romanian government, becoming a sanctuary for the preservation of traditional cultural landscapes, where sustainable human activities are part of nature. With an impressive biodiversity of fauna and flora, including endemic and rare species, this protected area has been a subject of study for local and international biologists since the 19th century. Moreover, many legends and supernatural stories from the Bucegi Mountains have made this area famous as one of the most mysterious in the country' %}.</strong></p>
+								<hr>
+								<div class="row offset-30">
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Area' %}, ha</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">32,513</span></div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Highest peak' %}, m</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">2,505</span></div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Tourists per year' %}</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">1,000,000</span></div>
+										</div>
+									</div>
+								</div>
+                <!-- <a class="button button--green top-40" href="{% url 'history' %}">{% trans 'More about' %}</a> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+      <!-- footer start-->
+			<footer class="footer footer--front_5"><img class="footer__bg img--bg" src="{% static 'img/footer-bg.png' %}" alt="bg"/>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 d-lg-block">
+							<h6 class="footer__title">{% trans 'Menu & Links' %}</h6>
+							<ul class="footer-menu">
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'coming-soon' %}">{% trans 'About' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'coming-soon' %}">{% trans 'Blog' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'coming-soon' %}">{% trans 'Attractions' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'coming-soon' %}">{% trans 'Events' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'coming-soon' %}">{% trans 'Support' %}</a></li>
+
+
+							</ul>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<h6 class="footer__title">{% trans 'Main Office' %}</h6>
+							<div class="footer__details bottom-30">
+								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Principala 71, Moroeni, Dambovita, Romania</span></p>
+								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40 245 772 640">+40 245 772 640</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:info@animalsworld.com">contact@bucegipark.ro</a></p>
+								<p><strong>{% trans 'Openning hours' %}:</strong> <span>8:00 AM - 16:30 PM</span></p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4 bottom-30">
+							<h6 class="footer__title">{% trans 'Visitor Center' %}</h6>
+							<div class="footer__details">
+								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Telecabinei 105500, Busteni, Prahova, Romania</span></p>
+								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40244322005">+40 244 322 005</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:visitorcenter@bucegipark.ro">visitorcenter@bucegipark.ro</a></p>
+								<p><strong>{% trans 'Openning hours' %}:</strong> <span>9:00 AM - 16:00 PM</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="row align-items-end">
+						<div class="col-md-6 text-center text-md-left">
+							<ul class="socials">
+								<li class="socials__item"><a class="socials__link" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://twitter.com/BucegiPark" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.instagram.com/parculnaturalbucegi/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+							<ul class="footer__additional">
+								<li><a href="{% url 'coming-soon' %}">{% trans 'Contact Information' %}</a></li>
+								<li><a class="public_docs" href="{% url 'coming-soon' %}">{% trans 'Public Documents' %}</a></li>
+								<!-- <li><a href="#">Site Map</a></li> -->
+								<li><a href="{% url 'coming-soon' %}">{% trans 'Privacy Policy' %}</a></li>
+							</ul>
+						</div>
+						<div class="col-md-6 text-center text-md-right"><a class="logo logo--footer" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img/logo/bucegi.png' %}" alt="logo"/></a>
+							<div class="footer-privacy"><span>© 2022 RNP ROMSILVA - Administratia
+								{% if user.is_authenticated %}
+								Parcului
+								{% else %}
+								<a class="text-decoration-none" data-toggle="modal" href="#signinModal">Parcului</a>
+								{% endif %}
+								 Natural Bucegi R.A.</span><span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="{% url 'coming-soon' %}">{% trans 'Terms and Conditions' %}</a></div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- footer end-->
+		</div>
+		{% include 'services/add_attraction.html' %}
+		{% include 'services/add_testimonial.html' %}
+		{% include 'users/login.html' %}
+		<script>
+			document.addEventListener('touchstart', onTouchStart, {passive: true});
+		</script>
+		<!-- libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="{% static 'js/libs.min.js' %}"></script>
+		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
+
+
+		<!-- scripts-->
+		<script src="{% static 'js/common.js' %}"></script>
+
+	</body>
+</html>

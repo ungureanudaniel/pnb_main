@@ -1,0 +1,114 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/omu-1920.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/omu-1920.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% trans 'History' %}</span> <span> </span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section"><img class="section__bg t50 r0" src="#" alt="img"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6 col-xl-5">
+								<div class="img-box p-2">
+									<div class="img-box__img p-3"><img class="img--bg" src="{% static 'img\history\cab-omu3.webp' %}" alt="img"/></div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xl-6 offset-xl-1">
+								<div class="heading heading--primary heading--style-2"><span class="heading__pre-title">{% trans 'History' %}</span>
+									<h2 class="heading__title"><span>{% blocktranslate %}How it</span><br/> <span> Started{% endblocktranslate %}</span></h2>
+								</div>
+								<p><strong>{% trans 'Since the 19th century, Bucegi Mountain has attracted numerous researchers and nature lovers from the country and abroad, holding a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity' %}.</strong></p>
+								<p>{% trans 'The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943' %}.</p>
+								<p>{% trans 'Around year 1990, unorganized tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, urged the authorities at that time, to create a management framework in the area, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necessary for specific conservation and protection measures' %}.</p>
+								<p>{% trans 'The need to establish protected natural areas and to harmonize the local environment protection legislation with the European legislation - Paris Convention, Rio Convention, Washington Convention, Bonn Convention, Bern Convention - a basic condition for Romania to be accepted in the EU, led to the emergence of more modern laws on which the Administration of Bucegi Natural Park is based today' %}.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section no-padding-top">
+					<div class="container">
+						<div class="row flex-column-reverse flex-lg-row">
+							<div class="col-lg-6 col-xl-6">
+								<div class="heading heading--primary heading--style-2"><span class="heading__pre-title">Despre</span>
+									<h2 class="heading__title">{% blocktranslate %}<span>Administration of</span><br/> <span>Bucegi Natural Park</span>{% endblocktranslate %}</h2>
+								</div>
+								<p>{% blocktranslate %}<strong>Bucegi Natural Park Administration</strong>{% endblocktranslate %} {% trans 'is an autonomous structure, constituted as a subunit of the National Forest Administration - RNP ROMSILVA and has the role to preserve nature, wildlife, cultural heritage and sustainable land management, while allowing people to enjoy the local natural beauty, on an area of 32,500 ha, overlapping most of the Natura 2000 Site ROSCI0013 Bucegi' %}.</p>
+
+								<p class="">{% blocktranslate %}In addition to the Bucegi Massif, the <strong>park area</strong> includes small parts of neighbouring mountains such as Leaota. The natural park has more than 15 peaks exceeding 2,000 m in altitude, the highest in the massif being Omu Peak, at 2,505 m{% endblocktranslate %}.</p>
+								<p><strong>{% trans 'The main activities of Bucegi Natural Park are' %}:</strong></p>
+
+								<p>&#x2022; {% trans 'permanent supervision of the park and Natura 2000 site ROSCI0013 BUCEGI, through the work of 11 field staff, coordinated and supervised by the management staff (head of the park, head of security department, biologist)' %}</p>
+								<p>&#x2022; {% trans 'public awareness and environmental education for visitors, both on tourist trails and in an organized ways, in accommodation units - this activity is especially addressed to groups of pupils and students coming to the Park' %}</p>
+								<p>&#x2022; {% trans 'greening activities (rubbish collection) in the area bordering tourist routes and access roads' %}</p>
+								<p>&#x2022; {% trans 'public order specific activities, in collaboration with other institutions, like the' %} <a href='http://www.jandarmeriaromana.ro/jandarmeria-montan%C4%83'>{% trans 'Romanian Mountain Gendarmerie' %}</a> {% trans 'and' %} <a href='https://salvamontdb.ro/'>{% trans 'Romanian Mountain Rescue Service' %}</a></p>
+								<p>&#x2022; {% trans 'constant monitoring of state owned or private forests for Forest Code and protected area laws compliance' %}</p>
+
+							</div>
+							<div class="col-lg-6 col-xl-5">
+								<div class="img-box">
+									<div class="img-box__img"><img class="img--contain" src="{% static 'img/history/centru-vizitare.webp' %}" alt="img"/></div>
+									<div class="img-box__img"><img class="img--contain" src="{% static 'img\team\echipa1.webp' %}" alt="img"/></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section no-padding-top bottom-70">
+					<h2 class="heading__title text-center"><span>{% blocktranslate %}A short trip</span><br/> <span> Back in Time {% endblocktranslate %}</span></h2>
+					<div class="row no-gutters">
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/cab-omu2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cabin' %}</span><br/> <span>{% trans 'Omu' %}</span></h3>
+							</div></a></div>
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/cab-pestera2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cabin' %}</span><br/> <span>{% trans 'Peștera' %}</span></h3>
+							</div></a></div>
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/vf-cu-dor2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cabin' %}</span><br/> <span>{% trans 'Vârful cu Dor' %}</span></h3>
+							</div></a>
+						</div>
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/crucea-caraiman2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cross' %}</span><br/> <span>{% trans 'Caraiman' %}</span></h3>
+							</div></a>
+						</div>
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/pestera-ialomicioarei2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cave' %}</span><br/> <span>{% trans 'Ialomicioarei' %}</span></h3>
+							</div></a>
+						</div>
+						<div class="col-xl-4"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="{% static 'img/history/cab-babele2.webp' %}" alt="img"/>
+								<h3 class="action-block__title"><span>{% trans 'Cabin' %}</span><br/> <span>{% trans 'Babele' %}</span></h3>
+							</div></a>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+
+			</main>
+{% endblock %}

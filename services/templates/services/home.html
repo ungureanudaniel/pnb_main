@@ -1,0 +1,340 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- promo start-->
+				<section class="promo promo--front-5">
+					<div class="promo-slider">
+						<div class="promo-slider__item promo-slider__item--style-2">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo8.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo8.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-10 offset-xl-1">
+										<div class="align-container">
+											<div class="align-container__item text-center">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span>{% trans 'Beautiful' %}</span><br/> <span>{% trans 'Landscapes and Trails' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'Canions, blue water lakes with small wooded bridges, alpine hiking trails, will send you thinking at fairytales' %}.</p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button main-menu__link--scroll button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="promo-slider__item promo-slider__item--style-3">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo4.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo4.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-8 offset-xl-2">
+										<div class="align-container">
+											<div class="align-container__item">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span>{% trans 'Some of the most iconic' %}</span><br/> <span>{% trans 'Wildlife species in Europe' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here.' %}</p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="promo-slider__item promo-slider__item--style-2">
+							<picture>
+								<source srcset="{% static 'img/backgrounds/promo2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo2.webp' %}" alt="img"/>
+							</picture>
+							<div class="container">
+								<div class="row">
+									<div class="col-xl-10 offset-xl-1">
+										<div class="align-container">
+											<div class="align-container__item text-center">
+												<div class="promo-slider__wrapper-1">
+													<h2 class="promo-slider__title"><span></span><br/><span>{% trans 'Unique Rock Formations' %}</span></h2>
+												</div>
+												<div class="promo-slider__wrapper-2">
+													<p class="promo-slider__subtitle">{% trans 'Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks' %}. </p>
+												</div>
+												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<!-- slider nav start-->
+								<div class="promo-slider__nav"></div>
+								<!-- slider nav end-->
+							</div>
+						</div>
+					</div>
+					<!-- promo pannel start-->
+					<div class="promo-pannel">
+						<a class="video-trigger" href="https://www.youtube.com/watch?v=cpp4yjHVGWo&t=25s">
+							<img class="img--bg" src="{% static 'img/reddeer2.webp' %}" alt="welcome_video"/>
+							<span class="video-trigger__icon"><span>YouTube</span><i class="fa fa-play" aria-hidden="true"></i></span>
+						</a>
+						<div id="scraped-data" class="promo-pannel__weather"><span>{% trans 'Today' %}, {% now "jS F Y" %} </span><br>
+							<div class="weather-lower">
+								<svg class="icon">
+									<!-- <use xlink:href="#wind"></use> -->
+								</svg>
+								<hr>
+								<span><img src="{{ weather.picture }}" height="70" width="70"> {{ weather.temperature }} </span>
+							</div>
+							<span class="" style="align-items:right;">{% trans 'Wind' %} {{ weather.description }}</span><br><br>
+							<span class="font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
+					</div>
+					<!-- promo pannel end-->
+				</section>
+
+				<!-- promo end-->
+				<!-- section start-->
+				<section id="about-bucegi" class="section about-bucegi"><img class="img--aside t50 l0 w-33 ml-4" src="{% static 'img/logo/sfinx1.png' %}" alt="img"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-8 offset-xl-4">
+								<div class="heading heading--style-2 heading--green"><span class="heading__pre-title">{% trans 'About' %}</span>
+									<h2 class="heading__title">{% blocktranslate %}<span>Bucegi</span> <span>Natural Park</span>{% endblocktranslate %}</h2>
+								</div>
+								<p><strong>{% trans 'Located in the heart of Romania, between urban areas of major importance and close to the famous mountain resort - Sinaia, Bucegi Natural Park is an extremely popular protected area in our country and part of the international Natura 2000 network. Some of the most famous attractions associated with Bucegi Natural Park, besides the large bear population and breath-taking scenery, are the Sphinx and Babele, conglomerate rocks carved by wind erosion. Bucegi Natural Park was established in 2003 by the Romanian government, becoming a sanctuary for the preservation of traditional cultural landscapes, where sustainable human activities are part of nature. With an impressive biodiversity of fauna and flora, including endemic and rare species, this protected area has been a subject of study for local and international biologists since the 19th century. Moreover, many legends and supernatural stories from the Bucegi Mountains have made this area famous as one of the most mysterious in the country' %}.</strong></p>
+								<hr>
+								<div class="row offset-30">
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Area' %}, ha</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">32,500</span></div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Highest peak' %}, m</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">2,505</span></div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="counter-item counter-item--front">
+											<div class="counter-item__top">
+												<h6 class="counter-item__title">{% trans 'Tourists per year' %}</h6>
+											</div>
+											<div class="counter-item__lower"><span class="js-counter color--green">1,000,000</span></div>
+										</div>
+									</div>
+								</div><a class="button button--green top-40" href="#">{% trans 'More about' %}</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section discover us start -->
+				<section class="section gallery" id="attractions">
+					<div class="container">
+						<div class="row bottom-50 align-items-end">
+							<div class="col-12">
+								<div class="heading heading--center"><span class="heading__pre-title">{% trans 'Bucegi Natural Park attractions'  %}</span>
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Discover </span><span>Bucegi Natural Park</span>{% endblocktranslate %}</h2>
+								</div>
+								<!-- filter panel start-->
+								<ul class="filter-panel">
+									<li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug|lower }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
+									<li class="filter-panel__item " data-filter=".{{ attr_categ.1.slug|lower }}"><span>{{ attr_categ.1.name|capfirst }}</span></li>
+									<li class="filter-panel__item " data-filter=".{{ attr_categ.2.slug|lower }}"><span>{{ attr_categ.2.name|capfirst }}</span></li>
+									<li class="filter-panel__item " data-filter=".{{ attr_categ.3.slug|lower }}"><span>{{ attr_categ.3.name|capfirst }}</span></li>
+									{% if user.is_authenticated %}
+									<li class="filter-panel__item">
+			              <a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'home' %}admin">
+			                <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus">
+			              </a>
+			            </li>
+									{% endif %}
+								</ul>
+								<!-- filter panel end-->
+							</div>
+						</div>
+					</div>
+					<div class="row gallery-masonry no-gutters">
+						{% for a in attr %}
+						<div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
+								<img class="img--bg" src="{{ a.image.url }}" alt="img"/>
+								<div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
+							</a>
+						</div>
+						{% endfor %}
+
+					</div>
+					<div class="container top-70">
+						<div class="row">
+							<div class="col-12 text-center"><a class="button button--primary" href="{% url 'coming-soon' %}">{% trans 'Find out More' %}</a></div>
+						</div>
+					</div>
+				</section>
+				<!-- end discover us section -->
+				<!-- section start-->
+				<section class="section ">
+					<div class="container">
+						<div class="row bottom-50 align-items-end">
+							<div class="col-md-8">
+								<div class="heading heading--style-2"><span class="heading__pre-title">{% trans 'Activities' %}</span>
+									<h2 class="heading__title no-margin-bottom"><span>{% blocktranslate %}things</span> <span>you can do{% endblocktranslate %}</span></h2>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="destination-slider__dots text-left text-md-right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-holder">
+						<div class="slider-holder__wrapper">
+							<div class="destination-slider">
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/capra-neagra1.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>01</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Observe </h6><a class="destination-item__link" href='#'>Wildlife{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/manastirea-s1.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>02</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Visit</h6><a class="destination-item__link" href='#'>Historical Points of Interest{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/trails.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>03</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Explore </h6><a class="destination-item__link" href='#'>Beautiful trails{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/attractions10.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>04</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Connect</h6><a class="destination-item__link" href='#'>With Nature{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/cuisine.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>05</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Taste</h6><a class="destination-item__link" href='#'>Local Cuisine{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+								<div class="destination-slider__item">
+									<div class="destination-item"><img class="img--bg" src="{% static 'img/attractions/winter-sports.webp' %}" alt="img"/>
+										<div class="destination-item__count"><span>06</span></div>
+										<div class="destination-item__details">
+											<h6 class="destination-item__title">{% blocktranslate %}Winter</h6><a class="destination-item__link" href='#'> Sports{% endblocktranslate %}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section no-padding-bottom">
+					<div class="map-banner"><img class="img--bg" src="{% static 'img/backgrounds/map.png' %}" alt="Parc map"/>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="align-container">
+										<div class="align-container__item">
+											<div class="heading heading--primary">
+												<h2 class="heading__title no-margin-bottom" style="color:white !important;">{% blocktranslate %}<span>Map of Bucegi</span> <span>Natural Park</span>{% endblocktranslate %}</h2>
+											</div><a class="button button--primary" style="color:white !important;" href="{% url 'map_coming_soon' %}">{% trans 'See map' %}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				{% include 'includes/testimonials.html' %}
+				<!-- instagram start-->
+				<section class="section instagram instagram--front-5"><img class="instagram__img" src="{% static 'img/instagram_img.png' %}" alt="img"/>
+					<div class="container">
+						<div class="row align-items-end bottom-30">
+							<div class="col-7 col-lg-8">
+								<div class="heading heading--primary">
+									<h2 class="heading__title no-margin-bottom"><span>#{% trans 'parculnaturalbucegi' %}</span></h2>
+								</div>
+							</div>
+							<div class="col-5 col-lg-4 text-right"><span class="instagram__icon"><a style="color:#C13584;" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></span></div>
+						</div>
+					</div>
+					<div class="instagram-slider">
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+							<img class="img--bg" src="{% static 'img/insta/insta10.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/Cmeem11IJMf/">
+							<img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/CnCVW_5oK91/">
+							<img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/CoNCfK5IJHO/">
+							<img class="img--bg" src="{% static 'img/insta/insta16.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+							<img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+							<img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+						<a class="instagram-slider__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+							<img class="img--bg" src="{% static 'img/insta/insta10.webp' %}" alt="img"/>
+							<span class="instagram-slider__icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span class="instagram-slider__icon-hover"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+						</a>
+					</div>
+				</section>
+				<!-- instagram end-->
+				<!-- newsletter start -->
+				<!-- {% include 'includes/newsletter.html' %} -->
+				<!-- newsletter end-->
+
+			</main>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/themetrails.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/themetrails.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">Wild World</span>
+										<h1 class="welcome-primary__title"><span>Join</span> <span>Us</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- section start-->
+				<section class="section">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center"><span class="heading__pre-title">Join Us</span>
+									<h2 class="heading__title"><span>become part of</span> <span>our big team</span></h2>
+									<p class="no-margin-bottom">Darter kokopu tadpole fish Ganges shark beaked salmon frilled shark grayling smooth dogfish sea bass. Megamouth shark gopher rockfish, zebra oto Old World knifefish wasp fish rockweed gunnel clown triggerfish. Sand lance, tailor snook beardfish eel cod, sea devil: Devario: morid cod clown triggerfish</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section background--gray">
+					<div class="container">
+						<div class="row offset-70">
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center">
+										<div class="col-lg-6">
+											<div class="advantages-item__img"><img class="img--bg" src="img/advantages_1.jpg" alt="img"/></div>
+										</div>
+										<div class="col-lg-6 col-xl-5 offset-xl-1">
+											<h3 class="advantages-item__title">Who among us is ready <br/> <strong>to save the</strong> planet ?</h3>
+											<p><strong>Green. That’s how we’d like the world to be</strong></p>
+											<p>There are many ways to take small steps in changing your living habits while making big strides in helping the environment.</p><a class="button button--primary" href="#">Join us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center flex-column-reverse flex-lg-row">
+										<div class="col-lg-6 col-xl-5">
+											<h3 class="advantages-item__title">Who among us is ready <br/> <strong>to save the</strong> planet ?</h3>
+											<p><strong>Green. That’s how we’d like the world to be</strong></p>
+											<p>There are many ways to take small steps in changing your living habits while making big strides in helping the environment.</p><a class="button button--primary" href="#">Join us</a>
+										</div>
+										<div class="col-lg-6 offset-xl-1 col-xl-6">
+											<div class="advantages-item__img"><img class="img--bg" src="img/advantages_2.jpg" alt="img"/></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center">
+										<div class="col-lg-6">
+											<div class="advantages-item__img"><img class="img--bg" src="img/advantages_3.jpg" alt="img"/></div>
+										</div>
+										<div class="col-lg-6 col-xl-5 offset-xl-1">
+											<h3 class="advantages-item__title">Who among us is ready <br/> <strong>to save the</strong> planet ?</h3>
+											<p><strong>Green. That’s how we’d like the world to be</strong></p>
+											<p>There are many ways to take small steps in changing your living habits while making big strides in helping the environment.</p><a class="button button--primary" href="#">Join us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

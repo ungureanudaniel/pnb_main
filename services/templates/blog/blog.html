@@ -1,0 +1,181 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/blog_bg1.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/blog_bg1.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our</span> <span>Blog Posts{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- blog start-->
+				{% include 'includes/messages.html' %}
+				<section class="section blog">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-xl-9">
+								<div class="row">
+									{% if user.is_authenticated %}
+									<div class="col-12 filter-panel__item  mb-5">
+			              <a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'home' %}admin">
+			                <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">Add a blog post</span>
+			              </a>
+			            </div>
+									{% endif %}
+									{% for post in blogposts %}
+									<div class="col-12">
+										<div class="blog-item">
+											<div class="blog-item__img"><img class="img--bg" src="{{ post.image.url }}" alt="blog"/>
+												<div class="blog-item__date"><span>{{ post.created_date|date:"d" }}</span><span>{{ post.created_date|date:"M Y" }}</span></div>
+											</div>
+											<h4 class="blog-item__title"><a href="{% url 'blog-details' post.slug %}">{{ post.title|capfirst|safe }}</a></h4>
+											<p>{{ post.text|truncatechars:500|safe }} </p>
+											<div class="blog-item__details">
+												<div class="row align-items-center">
+													<div class="col-8">
+														<div class="blog-item__author">
+															<!-- <div class="blog-item__author-img"><img class="img--bg" src="#" alt="author"/></div> -->
+															<div class="blog-item__author-name">{{ post.author.first_name }} {{ post.author.last_name }}</div>
+														</div>
+													</div>
+													<div class="col-4 text-right">
+														<div class="blog-item__comments">
+															<svg class="icon">
+																<use xlink:href="#comment"></use>
+															</svg><span>{{ post.comments }}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+
+									<!-- <div class="col-12 text-center mb-5">
+										<ul class="pagination blog__pagination">
+											<li class="pagination__item pagination__item--prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
+											</li>
+											<li class="pagination__item"><span>1</span></li>
+											<li class="pagination__item pagination__item--active"><span>2</span></li>
+											<li class="pagination__item"><span>3</span></li>
+											<li class="pagination__item"><span>4</span></li>
+											<li class="pagination__item"><span>5</span></li>
+											<li class="pagination__item pagination__item--next"><span>Next</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+											</li>
+										</ul>
+									</div> -->
+								</div>
+							</div>
+							<div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0 col-xl-3">
+								<div class="blog__inner-block bottom-50">
+									<form class="search-form" action="{% url 'blogsearch' %}" method="GET" role="form">
+										<input class="search-form__input" type="search" name="search" placeholder="Search Here"/>
+										<button class="search-form__submit" type="submit">
+											<svg class="icon">
+												<use xlink:href="#search"></use>
+											</svg>
+										</button>
+									</form>
+								</div>
+								<div class="blog__inner-block bottom-50">
+									<h5 class="blog__title">{% trans 'Categories' %}</h5>
+									<ul class="categories-list">
+										{% for c in group_categ %}
+										<li class="categories-list__item categories-list__item--active"><span class="categories-list__name">{{ c.title|capfirst|safe }}</span><span class="categories-list__count">{{ c.count }}</span></li>
+										{% endfor %}
+									</ul>
+								</div>
+								<div class="blog__inner-block bottom-50">
+									<h5 class="blog__title">Latest Posts</h5>
+									{% for p in blogposts %}
+									<div class="latest-item">
+										<div class="row align-items-center">
+											<div class="col-4">
+												<div class="latest-item__img"><img class="img--bg" src="{{ p.image.url }}" alt="img"/></div>
+											</div>
+											<div class="col-8">
+												<h6 class="latest-item__title"><a href="{% url 'blog-details' p.slug %}">{{ p.title|capfirst|safe }}</a></h6>
+												<div class="latest-item__details">
+													<div class="row">
+														<div class="col-7">
+															<div class="latest-item__date">{{ p.created_date|date:"d m Y" }}</div>
+														</div>
+														<div class="col-5">
+															<div class="latest-item__comments">
+																<svg class="icon">
+																	<use xlink:href="#comment"></use>
+																</svg><span>Comm: 250</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+								<div class="blog__inner-block bottom-50">
+									<h5 class="blog__title">Archive</h5>
+									<ul class="categories-list">
+										{% for i in group_archive %}
+										<li class="categories-list__item categories-list__item--active"><span class="categories-list__name">{{ i.created_date|date:"M Y" }}</span><span class="categories-list__count">{{ i.count }}</span></li>
+										{% endfor %}
+									</ul>
+								</div>
+								<div class="blog__inner-block bottom-50">
+									<h5 class="blog__title">Instagram <i class="fa fa-instagram" aria-hidden="true"></i>
+									</h5>
+									<div class="footer-instagram">
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta10.webp' %}" alt="ig"/></div>
+										</a>
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/Cmeem11IJMf/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="ig"/></div>
+										</a>
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/CnCVW_5oK91/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="ig"/></div>
+										</a><a class="footer-instagram__item" href="https://www.instagram.com/p/CoNCfK5IJHO/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta16.webp' %}" alt="ig"/></div>
+										</a>
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="ig"/></div>
+										</a>
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="ig"/></div>
+										</a>
+									</div>
+								</div>
+								<!-- <div class="blog__inner-block bottom-50">
+									<h5 class="blog__title">Tags</h5>
+									<div class="tags tags--style-2"><a class="tags__item" href="#">Animal</a><a class="tags__item" href="#">Monkey</a><a class="tags__item" href="#">Zoo</a><a class="tags__item" href="#">Kids</a><a class="tags__item" href="#">Lion</a><a class="tags__item" href="#">Giraffe</a></div>
+								</div> -->
+								<div class="subscribe-block">
+									<h5 class="subscribe-block__title">{% trans 'Subscribe Now' %}</h5>
+									<p>{% trans 'And get our latest updates' %}</p>
+									<form class="form subscribe-form" action="{% url 'blog' %}" method="POST">
+										{% csrf_token %}
+										<input class="form__field" type="email" name="subscriber" placeholder="Enter your mail here..."/>
+										<input class="form__submit" type="submit" value="Subscribe"/>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- blog end-->
+			</main>
+{% endblock %}

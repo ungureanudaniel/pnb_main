@@ -1,0 +1,109 @@
+{% load static %}
+{% load i18n %}
+<!-- Add  new attraction form: Vertical  -->
+<div class="modal fade" id="blogpostsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="card">
+
+        <!-- Close -->
+        <button type="button" class="btn-close close text-left" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- Image -->
+        <img src="{% static 'img\add_blogpost.webp' %}" alt="..." class="card-img-top">
+
+        <!-- Shape -->
+        <!-- <div class="inter-shapes">
+          <div class="shape shape-bottom shape-fluid-x text-white">
+            <svg viewBox="0 0 2880 480" fill="" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill=""></path></svg>          </div>
+        </div> -->
+
+        <!-- Body -->
+        <div class="card-body">
+
+          <!-- Heading -->
+          <h2 class="mb-0 fw-bold text-center" id="modalSignin">
+            {% trans 'Add a Blog Post' %}
+          </h2>
+
+          <!-- Text -->
+          <p class="mb-6 text-center text-muted">
+            ......................
+          </p>
+          <div class="container error-container mt-n5">
+            <div class="alert" id="form_message" role="alert"></div>
+                  {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                      {{ message.message }}
+                    </div>
+                    {% endfor %}
+                  {% endif %}
+          </div>
+          <!-- Form -->
+          <form class="mb-6" method="POST" action=".">
+            {% csrf_token %}
+            <!-- Email -->
+            <div class="form-group">
+              <label class="visually-hidden" for="modalSigninName">
+                Add attraction name
+              </label>
+              {{ attr_form.name }}
+              {{ attr_form.media }}
+              <!-- <input type="text" name="attr-name" class="form-control" id="modalSigninName" placeholder="Type in..." autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"> -->
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="modalSigninName">
+                Add an image
+              </label>
+              {{ attr_form.image }}
+              <!-- <input type="text" name="attr-image" class="form-control" id="modalSigninName" placeholder="Type in..." autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"> -->
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="modalSigninName">
+                Add a short description
+              </label>
+              {{ attr_form.text }}
+              <!-- <input type="text" name="attr-text" class="form-control" id="modalSigninName" placeholder="Type in..." autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"> -->
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="modalSigninName">
+                Select the attraction category
+              </label>
+              {{ attr_form.categ }}
+              <!-- <input type="text" name="attr-categ" class="form-control" id="modalSigninName" placeholder="Select" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"> -->
+              <!-- <select id="modalSigninName" name="attr-categ" class="form-control" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                {% for cat in categories %}
+                <option value="volvo">Volvo</option>
+                {% endfor %}
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select> -->
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="modalSigninName">
+                Slug field
+              </label>
+              {{ attr_form.slug }}
+              <!-- <input type="text" name="attr-text" class="form-control" id="modalSigninName" placeholder="Type in..." autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"> -->
+            </div>
+            <div>
+            {% for field, errors in form.errors.items %}
+              {% for error in errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            {% endfor %}
+            </div>
+            <!-- Submit -->
+            <button class="btn w-100" name="form-type" value="add_blogpost-form" type="submit">
+              Save
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

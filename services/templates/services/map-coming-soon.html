@@ -1,0 +1,28 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- section start-->
+				<section class="error section no-padding-top no-padding-bottom"><img class="img--bg" src="{% static 'img/backgrounds/map4.png' %}" alt="img"/>
+					<div class="align-container">
+						<div class="align-container__item">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-6 offset-lg-6 col-xl-5 offset-xl-7 text-center">
+										<div class="error__title"></div>
+										<div class="error__subtitle">{% trans 'Page under construction' %}</div>
+										<div class="error__text">{% trans 'An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready.' %}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				{% include 'includes/newsletter.html' %}
+				<!-- section end-->
+			</main>
+{% endblock %}

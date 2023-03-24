@@ -1,0 +1,1943 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-22 16:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+#: .\pnb_main\settings.py:157
+msgid "Română"
+msgstr "Romanian"
+#: .\services\base.html.py:189
+msgid "Language"
+msgstr "Limbă"
+
+#: .\pnb_main\settings.py:158
+msgid "English"
+msgstr "Engleză"
+
+#: .\pnb_main\settings.py:159
+msgid "Deutsch"
+msgstr ""
+#: .\services\templates\services\privacy.html:18
+msgid "<span>Privacy</span> <span> Policy</span>"
+msgstr "<span>Declarație</span> <span>de Confidențialitate</span>"
+
+#: .\services\templates\services\privacy.html:33
+msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
+msgstr "<span>Protecția Datelor pe pagina Parcului Natural Bucegi </span><br> <span> Declarație de Confidențialitate</span>"
+#: .\services\templates\services\privacy.html:33
+msgid "Right to Access, Correct and Delete Data and to Object to Data Processing"
+msgstr "Dreptul la Accesare, Corectare și Ștergere a Datelor Colectate"
+
+#: .\services\templates\services\privacy.html:33
+msgid "Our online visitors have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Administration of Bucegi Natural Park R.A. makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, we do not control each and every risk related to the use of the Internet, and therefore we warn the website users of the potential risks involved in the functioning and use of the Internet. The website may include links to other web sites or other internet sources. As we cannot control these websites and external sources, the Administration of Bucegi Natural Park R.A. cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these websites or external sources"
+msgstr "Vizitatorii nostri au dreptul la a accesa, corecta și sterge datele lor personale, si să isi exprime dezacordul la procesarea acestor date, prin trimiterea unui email sau a unei scrisori la adresele noastre, oricand. Asociatia noastra face toate eforturile sa protejeze securitatea datelor dvs. Totusi, nu putem controla absolut toate riscurile legate de datele furnizate pe internet, si astfel prevenim utilizatorii cu privire la posibile riscuri implicate in furnizarea de date personale. Pagina noastra include link-uri si redirectionari la alte website-uri sau resurse pe internet. Avand in vedere ca noi nu putem controla aceste website-uri si resurse externe, nu putem fi trasi la raspundere pentru eventuale probleme venite din partea lor, continut necorespunzator, servicii externe rau intentionate sau orice alte materiale provenite de la aceste website-uri si resurse externe"
+#: .\services\templates\services\privacy.html:33
+msgid "Management of Personal Data"
+msgstr "Managementul Datelor Personale"
+#: .\services\templates\services\privacy.html:33
+msgid "You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive communications from our website by email. If you receive newsletter emails from us and would like to opt out, you can do so by following the directions at the bottom of the page"
+msgstr "Puteți vedea sau modifica datele dvs personale online pentru majoritatea serviciilor noastre. Puteti face alegeri privind colectarea datelor. Cum accesati si controlati datele dvs personale depinde de ce servicii folositi. Puteti accepta sau nu sa primiti stiri despre noi sau despre evenimente pe email. Daca doriti sa nu mai primiti stiri pe email de la noi, puteti opta sa va dezabonati simplu prin pasii din partea de jos a paginii"
+#: .\services\templates\services\privacy.html:33
+msgid "Information We Collect"
+msgstr "Ce informații colectăm"
+#: .\services\templates\services\privacy.html:33
+msgid "Our services may collect email addresses, storing them in a list to be able later to send you newsletters and other info that we consider important, in an automatic way. Also, the contact form, in the Contact section, collects Surnames, First Names, Emails and Phone numbers, useful to enhance the speed at which we can answer your questions or sugestions. All of these are stored in a MySQL database, which sits, encrypted, on a remote hosting server secured at the highest standards. The probability of a database breach is very low"
+msgstr "Serviciile noastre colecteaza adresele de email, stocandu-le intr-o lista pentru a va putea contacta, in mod automat, cu stiri sau alte informatii pe care le consideram importante. De asemenea formularul de contact din sectiunea Contact, colecteaza Nume, Prenume, Email, Telefon pentru a va putea raspunde cat mai facil la intrebari sau sugestii. Toate sunt stocate in baza de date de tip MySQL, criptata, pe un serverul de hosting, securizat la standarde înalte. Probabilitatea unei spargeri a bazei de date este foarte mica"
+
+#: .\services\templates\services\privacy.html:33
+msgid "How We Use Your Information"
+msgstr "Cum folosim datele Dvs"
+#: .\services\templates\services\privacy.html:33
+msgid "We only use your data to send you emails with newsletters or events, or to answer quickly to your questions/suggestion. We do not use it for anything else"
+msgstr "Nu folosim datele dvs pentru nimic altceva decat sa va trimitem emailuri cu stiri sau evenimente, sau sa va raspundem la intrebari/sugestii"
+#: .\services\templates\services\privacy.html:33
+msgid "Sharing Your Information"
+msgstr "Distribuirea datelor dvs"
+#: .\services\templates\services\privacy.html:33
+msgid "We do not share your personal info with no external entity, they are visible only to the webpage admin, which is the Administration of Bucegi Natural Park R.A., autonomous subunit of RNP Romsilva"
+msgstr "Nu impartasim informatiile dvs personale cu nici o entitate externa, sunt vizibile doar administratorului paginii de internet"
+
+#: .\services\templates\services\privacy.html:46
+msgid ""
+"Welcome to our website. Data protection is a high priority for the Administration of Bucegi Natural Park R.A. The use of the Internet pages of the Administration of Bucegi Natural Park R.A. is possible without any indication of personal data. However, if a data subject wants to use special services provided by our enterprise via our website, processing of personal data could become necessary. If processing of personal data is necessary and there is no legal basis for such processing, we will generally obtain the consent of the data subject. The processing of personal data, such as the name, address, e-mail address, or telephone number of a data subject shall always be in line with the country-specific data protection regulations applicable to the Administration of Bucegi Natural Park R.A. By means of this data protection declaration, our company would like to inform the public about the type, scope and purpose of the personal data we collect, use and process. Furthermore, data subjects are informed of their rights by means of this data protection declaration. As the controller, the Administration of Bucegi Natural Park R.A. has implemented numerous technical and organizational measures to ensure the most complete protection of personal data processed through this website. Nevertheless, Internet-based data transmissions can always be subject to security vulnerabilities, so that absolute protection cannot be guaranteed. For this reason, every data subject is free to transmit personal data to us by alternative means, for example by telephone"
+msgstr "Bine ați venit pe website-ul nostru. Protecția datelor este o prioritate pentru Parcul Natural Bucegi. Utilizarea paginilor de internet ale Administrației Parcului Natural Bucegi este posibilă fără furnizarea de date cu caracter personal. Cu toate acestea, dacă o persoană vizată dorește să utilizeze serviciile speciale oferite de noi prin intermediul site-ului nostru, ar putea deveni necesară prelucrarea datelor cu caracter personal. În cazul în care prelucrarea datelor cu caracter personal este necesară și nu există un temei legal pentru  o astfel de prelucrare, vom obține, în general, consimțământul persoanei vizate. Prelucrarea datelor cu caracter personal, cum ar fi numele, adresa, adresa de e-mail, sau numărul de telefon al unei persoane vizate va fi întotdeauna în conformitate cu reglementărilor privind protecția datelor specifice fiecărei țări aplicabile Administrației Parcului Natural Bucegi R.A. Prin intermediul acestei declarații de protecție a datelor, instituția noastră societate dorește să informeze publicul cu privire la tipul, domeniul de aplicare și scopul datelor cu caracter personal pe care le colectăm, utilizăm și prelucrăm. În plus, persoanele vizate sunt informate cu privire la drepturile lor prin intermediul acestei declarații privind protecția datelor. În calitate de operator al datelor cu caracter personal, Administrația Parcului Natural Bucegi R.A. a pus în aplicare numeroase măsuri tehnice și organizatorice pentru a asigura cea mai completă protecție a datelor cu caracter personal prelucrate prin intermediul acestui website. Cu toate acestea, transmiterea de date prin internet poate fi întotdeauna supusă unor vulnerabilități de securitate, astfel încât nu poate fi garantată o protecție absolută. Din acest motiv, fiecare persoană vizată este liberă să ne transmită datele cu caracter personal prin mijloace alternative, de exemplu, prin telefon"
+
+#: .\services\templates\services\ticket-info.html:17
+msgid "<span>Tickets &</span> <span>Prices</span>"
+msgstr "<span>Tichete &</span> <span>Prețuri</span>"
+
+#: .\services\templates\services\ticket-info.html:43
+msgid "<span>Three Months</span> <span>Ticket</span>"
+msgstr "<span>Tichet</span> <span>pentru 3 Luni</span>"
+
+#: .\services\templates\services\ticket-info.html:52
+msgid "Details"
+msgstr "Detalii"
+
+#: .\services\templates\services\ticket-info.html:53
+msgid "Price"
+msgstr "Preț"
+
+#: .\services\templates\services\ticket-info.html:57
+msgid "Teens and Adults"
+msgstr "Adolescenți și Adulți"
+
+#: .\services\templates\services\ticket-info.html:58
+msgid "years old"
+msgstr "ani"
+
+#: .\services\templates\services\ticket-info.html:62
+msgid "Children"
+msgstr "Copii"
+
+#: .\services\templates\services\ticket-info.html:63
+msgid "0 up to 14 years old"
+msgstr "0 până la 14 ani"
+
+#: .\services\templates\services\ticket-info.html:64
+msgid "Free"
+msgstr "Gratis"
+
+#: .\services\templates\services\ticket-info.html:69
+msgid "Buy Tickets"
+msgstr "Cumpără Tichete"
+
+#: .\services\templates\services\ticket-info.html:30
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. </strong><br><br> Tickets can be purchased can, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a> Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
+msgstr "<strong>Tariful de vizitare ne susține cheltuielile pentru a putea face ceea ce facem, anume să luptăm pentru conservarea acestui munte pentru generațiile viitoare. </strong><br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>  În curând veți putea cumpăra folosind butonul TICKETS de mai sus, orice monedă, inclusiv Revolut sau Bitcoin"
+
+#: .\services\templates\services\ticket-info.html:32
+msgid "The tickets are valid for 3 months"
+msgstr "Biletele sunt valabile timp de 3 luni"
+
+#: .\services\templates\services\partners.html:9
+msgid "Our Partners"
+msgstr "Partenerii noștri"
+#: .\services\templates\services\partners.html:9
+msgid "Companies that</span> <span>help us"
+msgstr "Companii care</span> <span>ne susțin"
+
+#: .\services\templates\services\events.html:17
+msgid "Our </span> <span>Events"
+msgstr "Evenimentele </span> <span>Noastre"
+#: .\services\templates\services\events.html:54
+msgid "Unfortunatelly there are no upcoming events yet"
+msgstr "Din păcate nu sunt evenimente în viitorul apropiat"
+
+#: .\services\templates\services\events.html:55
+msgid "But stay tuned for news, by subscribing to our newsletter, below"
+msgstr "Dar asigurați-vă că aflați stirile, înscriindu-vă la newsletter, mai jos"
+
+#: .\services\templates\services\info-points.html:34
+msgid " <br/> 'Alexandru Beldie'<br><strong>Visitor Center</strong>"
+msgstr " <br/> Centrul de Vizitare<br><strong>'Alexandru Beldie'</strong>"
+
+#: .\services\templates\services\info-points.html:35
+msgid "A modern small sized museum, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
+msgstr "Un muzeu de mici dimensiuni, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
+#: .\services\templates\services\info-points.html:36
+msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
+msgstr "Localizat în orașul Bușteni, Jud. Prahova, pe strada Telecabinei 54"
+
+#: .\services\templates\services\info-points.html:34
+msgid " Peștera <br/> <strong>Information point</strong>"
+msgstr " Punctul de Informare <br/> <strong>Peștera</strong>"
+
+#: .\services\templates\services\info-points.html:35
+msgid "A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike"
+msgstr "O clădire de mici dimensiuni, sub forma unei cabane, în zona alpină și în inima parcului, cu multe informații pentru drumeți, turiști și nu numai"
+#: .\services\templates\services\info-points.html:36
+msgid "Located at the end of the access road, next to the Mountain Rescue Service building, which is underconstruction"
+msgstr "Localizat la sfârșitul drumului de access in parc, în apropierea clădirii Serviciului Salvamont, aflată încă în construcție"
+
+#: .\services\templates\services\info-points.html:34
+msgid "Main  <br/> <strong>office building</strong> & Information point"
+msgstr "Clădirea  <br/> <strong>administrativă principală</strong> & Punct de Informare"
+
+#: .\services\templates\services\info-points.html:35
+msgid "The main office of the administrative personnel"
+msgstr "Sediul personalului administrativ al parcului"
+#: .\services\templates\services\info-points.html:36
+msgid "Located in Moroieni, Str. Principala 71, Dâmbovița county"
+msgstr "Localizată în Moroieni, Str. Principală 71, Jud. Dâmbovița"
+
+#: .\services\forms.py:36
+msgid "Your name"
+msgstr "Numele dvs."
+
+#: .\services\forms.py:36
+msgid "Write your opinion here"
+msgstr "Scrie-ți opinia dvs. aici."
+#: .\services\forms.py:36
+msgid "Add a photo of yourself"
+msgstr "Adăugați o fotografie portret"
+#: services/views.py:
+msgid "f'Thank you for writting us {message_author}! We will answer as soon as possible.'"
+msgstr "f'Mulțumim pentru mesaj {message_author}! Vom răspunde cât de curând posibil.'"
+#: services/urls.py:
+msgid "frequently-asked-questions"
+msgstr "intrebari-frecvente"
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/forms.py:6
+msgid "Search files"
+msgstr "Cauta fisiere"
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr "Cauta o image pentru incarcare"
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/messages/apps.py:7
+msgid "Messages"
+msgstr "Mesaje"
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr "Fisiere Statice"
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:51
+msgid "That page number is not an integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:53
+msgid "That page number is less than 1"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:58
+msgid "That page contains no results"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr "Introdu o valoare valida."
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:93
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:675
+msgid "Enter a valid URL."
+msgstr "Introdu un URL valid."
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:150
+msgid "Enter a valid integer."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:161
+msgid "Enter a valid email address."
+msgstr "Introdu o adresa de email valida."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:262
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:269
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:278
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:288
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:311
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:296
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:306
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:310
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:340
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:346
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:379
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:388
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:398
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:413
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:432
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:292
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:327
+msgid "Enter a number."
+msgstr "Introdu un numar."
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:439
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:444
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:506
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:559
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1210
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "and"
+msgstr "și"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1212
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:100
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:101
+msgid "This field cannot be null."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:102
+msgid "This field cannot be blank."
+msgstr "Acest camp nu poate fi gol."
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:103
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:126
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:958
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:959
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:961
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1002
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1096
+msgid "Comma-separated integers"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1145
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1147
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1290
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1150
+msgid "Date (without time)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1288
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1292
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1296
+msgid "Date (with time)"
+msgstr "Data"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1444
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1446
+msgid "Decimal number"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1585
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1588
+msgid "Duration"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1638
+msgid "Email address"
+msgstr "Adresa de email"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1661
+msgid "File path"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1727
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1729
+msgid "Floating point number"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1767
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1769
+msgid "Integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1852
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1867
+msgid "Small integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1875
+msgid "IPv4 address"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1906
+msgid "IP address"
+msgstr "Adresa IP"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1986
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1987
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1989
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2043
+msgid "Positive big integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2056
+msgid "Positive integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2069
+msgid "Positive small integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2083
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2115
+msgid "Text"
+msgstr "Text"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2181
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2183
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2186
+msgid "Time"
+msgstr "Ora"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2312
+msgid "URL"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2334
+msgid "Raw binary data"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2399
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2401
+msgid "Universally unique identifier"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/files.py:226
+msgid "File"
+msgstr "Fisier"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/files.py:375
+msgid "Image"
+msgstr "Imagine"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr "Un obiect JSON"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:790
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:792
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1045
+msgid "One-to-one relationship"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1099
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1100
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1142
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: myvenv/lib/python3.6/site-packages/django/forms/boundfield.py:150
+msgid ":?.!"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:54
+msgid "This field is required."
+msgstr "Acest camp este necesar."
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:247
+msgid "Enter a whole number."
+msgstr "Introdu un numar intreg."
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:402
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1143
+msgid "Enter a valid date."
+msgstr "Introdu o data valida."
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:426
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1144
+msgid "Enter a valid time."
+msgstr "Introdu o ora valida."
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:454
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:488
+msgid "Enter a valid duration."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:489
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:549
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:550
+msgid "No file was submitted."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:551
+msgid "The submitted file is empty."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:553
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:556
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:617
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:779
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:869
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1309
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:870
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:985
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1308
+msgid "Enter a list of values."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:986
+msgid "Enter a complete value."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1202
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1232
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: myvenv/lib/python3.6/site-packages/django/forms/forms.py:76
+msgid ":"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/forms.py:203
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:370
+#, python-format
+msgid "Please submit at most %d form."
+msgid_plural "Please submit at most %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:377
+#, python-format
+msgid "Please submit at least %d form."
+msgid_plural "Please submit at least %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:405
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:412
+msgid "Order"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:417
+msgid "Delete"
+msgstr "Sterge"
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:763
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:767
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:773
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:782
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1109
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1193
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1311
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/utils.py:172
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:403
+msgid "Clear"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:404
+msgid "Currently"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:405
+msgid "Change"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:714
+msgid "Unknown"
+msgstr "Necunoscut"
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:715
+msgid "Yes"
+msgstr "Da"
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:716
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:817
+msgid "yes,no,maybe"
+msgstr "da,nu,poate"
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:846
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:863
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:865
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:867
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:869
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:871
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:873
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:66
+msgid "p.m."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:67
+msgid "a.m."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:72
+msgid "PM"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:73
+msgid "AM"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:146
+msgid "midnight"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:148
+msgid "noon"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Monday"
+msgstr "Luni"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Tuesday"
+msgstr "Marti"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Wednesday"
+msgstr "Miercuri"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Thursday"
+msgstr "Joi"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Friday"
+msgstr "Vineri"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:7
+msgid "Saturday"
+msgstr "Sambata"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:7
+msgid "Sunday"
+msgstr "Duminica"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr "Lun"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Tue"
+msgstr "Mar"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr "Mie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr "Joi"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr "Vin"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:11
+msgid "Sat"
+msgstr "Sam"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr "Dum"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "January"
+msgstr "Ianuarie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "February"
+msgstr "Februarie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "March"
+msgstr "Martie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "April"
+msgstr "Aprilie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "May"
+msgstr "Mai"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "June"
+msgstr "Iunie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "July"
+msgstr "Iulie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "August"
+msgstr "August"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "September"
+msgstr "Septembrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "October"
+msgstr "Octombrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "November"
+msgstr "Noiembrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:16
+msgid "December"
+msgstr "Decembrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "jan"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "feb"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "mar"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "apr"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "may"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "jun"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "jul"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "aug"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "sep"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "oct"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "nov"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "dec"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Ian."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Martie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Aprilie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Iunie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Iulie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Aug."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sept."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Oct."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Noi."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Dec."
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr "Ianuarie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr "Februarie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr "Martie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr "Aprilie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mai"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr "Iunie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr "Iulie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr "August"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr "Septembrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr "Octombrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr "Noiembrie"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr "December"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:71
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:240
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:259
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:110
+msgid "Forbidden"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:111
+msgid "CSRF verification failed. Request aborted."
+msgstr "Verificare CSRF nereusita. Cerere anulata."
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:115
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:120
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:124
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:132
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:137
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:142
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:41
+msgid "No year specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:61
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:111
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:208
+msgid "Date out of range"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:90
+msgid "No month specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:142
+msgid "No day specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:188
+msgid "No week specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:338
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:367
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:594
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:628
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:67
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:72
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Pagina invalida (%(page_number)s): %(message)s"
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:154
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:40
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:42
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:80
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:7
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: pnb_main/settings.py:150
+msgid "French"
+msgstr "Franceza"
+
+#: pnb_main/settings.py:151
+msgid "Polish"
+msgstr "Poloneza"
+
+msgid "German"
+msgstr "Germană"
+
+msgid "Romanian"
+msgstr "Romana"
+
+#: services/templates/services/home.html: 12
+msgid "<span>Bucegi</span> <span>Natural Park</span>"
+msgstr "<span>Parcul Natural</span> <span>Bucegi</span>"
+
+#: services/templates/services/home.html: 151
+msgid "Bucegi Natural Park attractions"
+msgstr "Atracții în Parcul Natural Bucegi"
+
+#: services/templates/services/home.html: 152
+msgid "<span>Discover </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Descoperă </span><span>Parcul Natural Bucegi</span>"
+
+#: services/templates/services/home.html: 157
+msgid "<span>Natural Monuments</span>"
+msgstr "Monumente ale Naturii"
+#: services/templates/services/home.html: 158
+msgid "Nature Reserves"
+msgstr "Rezervații Naturale"
+#: services/templates/services/home.html: 187
+msgid "Find out More"
+msgstr "Aflați mai multe"
+#: services/templates/services/home.html: 187
+msgid "<span>Map of Bucegi</span> <span>Natural Park</span>"
+msgstr "<span>Hartă a</span> <span>Parcului Natural Park</span>"
+#: services/templates/services/home.html: 187
+msgid "See map"
+msgstr "Vezi harta"
+#: services/templates/services/home.html: 187
+msgid "Omu Peak"
+msgstr "Vârful Omu"
+#: services/templates/services/home.html: 187
+msgid "Bucegi Mountains"
+msgstr "Munții Bucegi"
+#: services/templates/services/home.html: 159
+msgid "Fauna"
+msgstr "Faună"
+#: services/templates/services/home.html: 160
+msgid "Flora"
+msgstr "Floră"
+#: services/templates/services/home.html: 51
+msgid "Home"
+msgstr "Acasa"
+#: services/templates/services/home.html: 201
+msgid "Activities"
+msgstr "Activități"
+#: services/templates/services/home.html: 202
+msgid "things</span> <span>you can do"
+msgstr "Ce poți</span> <span>face aici"
+#: services/templates/services/home.html: 202
+msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
+msgstr "Observă </h6><a class='destination-item__link' href='#'>Fauna Sălbatică"
+#: services/templates/services/home.html: 202
+msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
+msgstr "Vizitează</h6><a class='destination-item__link' href='#'>Puncte de Interes Istoric"
+#: services/templates/services/home.html: 202
+msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
+msgstr "Explorează </h6><a class='destination-item__link' href='#'>Trasee Uimitoare"
+#: services/templates/services/home.html: 202
+msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
+msgstr "Conectează-te</h6><a class='destination-item__link' href='#'>cu Natura"
+#: services/templates/services/home.html: 202
+msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
+msgstr "Gustă</h6><a class='destination-item__link' href='#'>Bucătăria Locală"
+
+#: services/templates/services/home.html: 202
+msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
+msgstr "Sporturi</h6><a class='destination-item__link' href='#'> de Iarnă"
+
+msgid "About"
+msgstr "Despre noi"
+msgid "Explore"
+msgstr "Explorează"
+msgid "Attractions"
+msgstr "Atracții"
+msgid "Tickets"
+msgstr "Tarif Vizitare"
+msgid "Education"
+msgstr "Educatie"
+msgid "Map"
+msgstr "Harta"
+msgid "Events"
+msgstr "Evenimente"
+msgid "Donate"
+msgstr "Doneaza"
+msgid "Our team"
+msgstr "Echipa"
+msgid "Wildlife"
+msgstr "Fauna"
+msgid "Gallery"
+msgstr "Galerie"
+msgid "Projects"
+msgstr "Proiecte"
+msgid "Ticket Prices"
+msgstr "Despre Tarife"
+msgid "Theme Trails"
+msgstr "Trasee Tematice"
+msgid "Hiking Trails"
+msgstr "Trasee Montane"
+msgid "Climbing Trails"
+msgstr "Trasee de Cățărare"
+msgid "Info Points"
+msgstr "Puncte de Informare"
+msgid "Caves"
+msgstr "Peșteri"
+msgid "Visitor Center"
+msgstr "Centrul de Vizitare"
+msgid "View Points"
+msgstr "Puncte de Belvedere"
+msgid "Today"
+msgstr "Azi"
+msgid "Cold Wind"
+msgstr "Vant Rece"
+#: services/templates/services/home.html: 265
+msgid "Beautiful"
+msgstr "Poteci si peisaje"
+msgid "Landscapes and Trails"
+msgstr "Uimitoare"
+msgid "Some of the most iconic"
+msgstr "Cele mai emblematice"
+msgid "Wildlife species in Europe"
+msgstr "specii de faună din Europa"
+msgid "Unique Rock Formations"
+msgstr "Formatiuni Stancoase Unice"
+msgid "Discover"
+msgstr "Descopera"
+#: services/templates/services/home.html: 268
+msgid "Canions, blue water lakes with small wooded bridges, alpine hiking trails, will send you thinking at fairytales"
+msgstr "Canioane, lacuri cu apa albastra, poduri de lemn, trasee montane alpine, the vor trimite cu gandul la povesti"
+#: services/templates/services/home.html: 291
+msgid "The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here."
+msgstr "Munții Bucegi adăpostesc o mare biodiversitate, cele mai emblematice specii fiind ursul brun, lupul, capra neagră, cerbul comun, râsul, jderul, chiar și acvile de munte au fost văzute aici."
+#: services/templates/services/home.html: 313
+
+#: services/templates/services/history.html: 36
+msgid "How it</span><br/> <span> Started"
+msgstr "Cum a</span><br/> Început"
+#: services/templates/services/history.html: 38
+msgid "Since the 19th century, Bucegi Mountain has attracted numerous researchers and nature lovers from the country and abroad, holding a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity"
+msgstr "Încă din secolul al XIX-lea, Munții Bucegi au atras numeroși cercetători și iubitori ai naturii din țară și din străinătate, ocupând un loc de frunte în lanțul carpatic românesc pentru flora sa de o rară bogăție și diversitate"
+
+#: services/templates/services/history.html: 39
+msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943."
+msgstr "Lucrările științifice elaborate de prestigioși botaniști, la începutul secolului trecut, au stat la baza primului act de constituire a unor rezervații, monumente ale naturii: HCM. 965/ 17.11.1943."
+
+#: services/templates/services/history.html: 41
+msgid "With the promotion and development of tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, a management framework was created, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necesary for specific conservation and protection measures"
+msgstr "Odată cu promovarea și dezvoltarea turismului, exploatarea intensiva a resurselor naturale si procesele pe scara larga de distrugere a diversității biologice cat și a influentei acesteia asupra factorilor de mediu, a fost creat un cadru organizatoric adecvat masurilor specifice de conservare și protecție prin înființarea Parcului Natural Bucegi, prin O.M. 7/27.01.1990"
+
+#: services/templates/services/history.html: 41
+msgid "Around year 1990, unorganized tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, urged the authorities at that time, to create a management framework in the area, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necessary for specific conservation and protection measures"
+msgstr "În jurul anului 1990, turismul dezorganizat, extracția intensivă a resurselor naturale și, în consecință, procesul de distrugere pe scară largă a diversității biologice, plus influența acestuia asupra factorilor de mediu, au convins autoritățile de la acea vreme, să creeze un cadru de management în zonă, prin înființarea Parcului Natural Bucegi, prin O.M. 7/27.01.1990, necesar pentru măsuri specifice de conservare și protecție"
+
+#: services/templates/services/history.html: 40
+msgid "The need to establish protected natural areas and to harmonize the local environment protection legislation with the European legislation - Paris Convention, Rio Convention, Washington Convention, Bonn Convention, Bern Convention - a basic condition for Romania to be accepted in the EU, led to the emergence of more modern laws on which the Administration of Bucegi Natural Park is based today"
+msgstr "Necesitatea înființării ariilor naturale protejate și a armonizării legislației locale de protecție a mediului cu legislația Europeană - Convenția de la Paris, Convenția de la Rio, Convenția de la Washington, Convenția de la Bonn, Convenția de la Berna - condiție de bază pentru ca România să fie acceptată în UE, a dus la apariția unei legislații moderne, pe care se bazează astăzi Administrația Parcului Natural Bucegi"
+
+#: services/templates/services/history.html: 39
+msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943"
+msgstr "Activitatea științifică desfășurată de botaniști de prestigiu la începutul secolului trecut a stat la baza primului act de înființare a rezervațiilor naturale, a monumentelor: HCM. 965/17.11.1943"
+
+#: services/templates/services/history.html: 38
+msgid "The Bucegi Massif holds a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity, which has attracted numerous researchers and nature lovers from the country and abroad since the 19th century"
+msgstr "Masivul Bucegi ocupă un loc de frunte în lanțul carpatic românesc pentru flora sa de o rară bogăție și diversitate, care a atras încă din secolul al XIX-lea numeroși cercetători și iubitori ai naturii din țară și din străinătate"
+
+#: services/templates/services/history.html: 53
+msgid "<span>Administration of</span><br/> <span>Bucegi Natural Park</span>"
+msgstr "<span>Administrația Parcului Natural</span><br/> <span>Bucegi</span>"
+
+#: services/templates/services/history.html: 55
+msgid "<strong>Bucegi Natural Park Administration</strong>"
+msgstr "<strong>Administrația Parcului Natural Bucegi</strong>"
+
+#: services/templates/services/history.html: 55
+msgid "is an autonomous structure, constituted as a subunit of the National Forest Administration - RNP ROMSILVA and has the role to preserve nature, wildlife, cultural heritage and sustainable land management, while allowing people to enjoy the local natural beauty, on an area of 32,500 ha, overlapping most of the Natura 2000 Site ROSCI0013 Bucegi"
+msgstr "este o structură autonomă, constituită ca subunitate a Regiei Naționale a Pădurilor - RNP ROMSILVA și are rolul de a conserva natura, fauna sălbatică, patrimoniul cultural și managementul sustenabil a terenurilor, permițând în același timp oamenilor să se bucure de natură, pe o suprafață de 32,500 ha, suprapusă majoritar peste situl Natura 2000 ROSCI0013 Bucegi"
+
+#: services/templates/services/history.html: 56
+msgid "In addition to the Bucegi Massif, the <strong>park area</strong> includes small parts of neighbouring mountains such as Leaota. The natural park has more than 15 peaks exceeding 2,000 m in altitude, the highest in the massif being Omu Peak, at 2,505 m"
+msgstr "<strong>Suprafaţa parcului</strong> include, pe lângă Masivul Bucegi și alte mici părţi din unităţile montane vecine, cum ar fi Leaota. Parcul natural are mai bine de 15 vârfuri care depășesc 2,000 de metri, cel mai înalt din masiv fiind Vârful Omu, 2,505m"
+
+#: services/templates/services/history.html: 57
+msgid "The main activities of Bucegi Natural Park are"
+msgstr "Activitățile principale ale Administrației Parcului sunt"
+
+#: services/templates/services/history.html: 59
+msgid "permanent supervision of the park and Natura 2000 site ROSCI0013 BUCEGI, through the work of 11 field staff, coordinated and supervised by the management staff (head of the park, head of security department, biologist)"
+msgstr "monitorizarea permanentă a Parcului și sitului Natura 2000 ROSCI0013 BUCEGI, prin activitatea unui număr de 11 agenți de teren sub îndrumarea și supravegherea echipei manageriale (Sef Parc, Şef Pază, Biolog)"
+
+#: services/templates/services/history.html: 60
+msgid "public awareness and environmental education for visitors, both on tourist trails and in an organized ways, in accommodation units - this activity is especially addressed to groups of pupils and students coming to the Park"
+msgstr "conștientizare publică și educație ecologică a vizitatorilor, atât pe traseele turistice cât și în mod organizat în unitățile de cazare, această activitate adresându-se în special grupurilor de elevi și studenți care vizitează Parcul"
+
+#: services/templates/services/history.html: 61
+msgid "greening activities (rubbish collection) in the area bordering tourist routes and access roads"
+msgstr "acțiuni de ecologizare (colectare gunoaie) din zona limitrofă traseelor turistice și a drumurilor auto de acces"
+
+#: services/templates/services/history.html: 62
+msgid "public order specific activities, in collaboration with other institutions, like the"
+msgstr "activități specifice de ordine publică, în colaborare cu alte instituții, precum"
+#: services/templates/services/history.html: 62
+msgid "Romanian Mountain Gendarmerie"
+msgstr "Jandarmeria Montană Română"
+
+#: services/templates/services/history.html: 62
+msgid "Romanian Mountain Rescue Service"
+msgstr "Serviciul Român de Salvamont"
+
+#: services/templates/services/history.html: 63
+msgid "constant monitoring of state owned or private forests for Forest Code and protected area laws compliance"
+msgstr "monitorizarea constantă a pădurilor deținute de stat sau private pentru respectarea Codului Silvic si al legislației ariilor protejate"
+
+#: services/templates/services/history.html: 78
+msgid "A short trip</span><br/> <span> Back in Time "
+msgstr "o scurtă Întoarcere</span><br/> <span>înapoi în Timp "
+
+#: services/templates/services/history.html: 82
+msgid "Cabin"
+msgstr "Cabana"
+
+#: services/templates/services/history.html: 95
+msgid "Cross"
+msgstr "Crucea"
+
+#: services/templates/services/history.html: 100
+msgid "Cave"
+msgstr "Peștera"
+
+#: services/templates/services/theme-trails.html: 198
+msgid "GPX File (not yet ready)"
+msgstr "Fișier GPX (va fi disponibil curând)"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "<span>Theme</span> <span>Trails</span>"
+msgstr "<span>Trasee</span> <span>Tematice</span>"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "<strong>There are a total of 10 theme trails throughout Bucegi Natural Park. </strong><br><br> Most of them are easy - average dificulty, with only a few of average dificulty, meaning some steep slopes and rocky terrain"
+msgstr "<strong>Există un total de 10 trasee tematice în cuprinsul Parcului Natural Bucegi. </strong><br><br> Majoritatea au dificultatea ușoară-medie, doar câteva fiind cu dificultate ridicată, însemnând pante cu înclinație mare și teren stâncos"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Read more below"
+msgstr "Citiți alte informații mai jos"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "hours"
+msgstr "ore"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Easy"
+msgstr "Ușor"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Average"
+msgstr "Mediu"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Dificult"
+msgstr "Dificil"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Average to Dificult"
+msgstr "Mediu spre Dificil"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Easy to Average"
+msgstr "Ușor spre Mediu"
+
+#: services/templates/services/team.html: 17
+msgid "Our</span> <span> Team"
+msgstr "Echipa</span> <span> Noastră"
+
+#: services/templates/services/team.html: 32
+msgid "Administrative</span> <span>Staff"
+msgstr "Personal</span> <span>Administrativ"
+
+#: services/templates/services/team.html: 62
+msgid "Field </span> <span>Staff"
+msgstr "Personal de </span> <span>Teren"
+
+#: services/templates/services/team.html: 64
+msgid "Touch to see phone number"
+msgstr "Atingeți pentru a vedea nr. de telefon"
+
+#: services/templates/services/underconstruction.html: 136
+msgid "New Website"
+msgstr "Website Nou"
+
+#: services/templates/services/underconstruction.html: 136
+msgid "Under Construction"
+msgstr "În Construcție"
+
+#: services/templates/services/underconstruction.html: 137
+msgid "Bucegi Natural Park will have a new website in a few days. Stay tuned!"
+msgstr "Parcul Natural Bucegi va avea un nou website în câteva zile. Rămâneți aproape!"
+
+#: services/templates/services/underconstruction.html: 138
+msgid "In the meanwhile, check other info below!"
+msgstr "Între timp, puteți afla mai multe, mai jos!"
+
+#: services/templates/services/underconstruction.html: 161
+msgid "Online Park Visitor Tarrif"
+msgstr "Tarif de Vizitare Online"
+
+#: services/templates/services/underconstruction.html: 164
+msgid "Will be payable from this website by card."
+msgstr "Se va putea plăti cu cardul, de pe acest website."
+
+#: services/templates/services/underconstruction.html: 164
+msgid "Unique Experience"
+msgstr "Experiență Unică"
+
+#: services/templates/services/underconstruction.html: 164
+msgid "This new website will be a modern experience, with lots of educational information and news."
+msgstr "Acest website nou va fi o experiență modernă, cu multe informații educaționale și știri."
+
+#: services/templates/services/underconstruction.html: 207
+msgid "Wind"
+msgstr "Vânt"
+
+#: services/templates/services/underconstruction.html: 231
+msgid "Bucegi"
+msgstr "Parcul Natural"
+
+#: services/templates/services/underconstruction.html: 231
+msgid "Natural Park"
+msgstr "Bucegi"
+
+#: services/templates/services/underconstruction.html: 233
+msgid "Located in the heart of Romania, between urban areas of major importance and close to the famous mountain resort - Sinaia, Bucegi Natural Park is an extremely popular protected area in our country and part of the international Natura 2000 network. Some of the most famous attractions associated with Bucegi Natural Park, besides the large bear population and breath-taking scenery, are the Sphinx and Babele, conglomerate rocks carved by wind erosion. Bucegi Natural Park was established in 2003 by the Romanian government, becoming a sanctuary for the preservation of traditional cultural landscapes, where sustainable human activities are part of nature. With an impressive biodiversity of fauna and flora, including endemic and rare species, this protected area has been a subject of study for local and international biologists since the 19th century. Moreover, many legends and supernatural stories from the Bucegi Mountains have made this area famous as one of the most mysterious in the country"
+msgstr "Localizat în inima României, între zone urbane de importanță majoră și aproape de renumita stațiune turistică montană - Sinaia, Parcul Natural Bucegi este o arie protejată extrem de populară la nivel național și parte din rețeaua de arii protejate de interes internațional, Natura 2000. Unele dintre cele mai cunoscute atracții asociate cu Parcul Natural Bucegi, pe lângă populația mare de urși și peisajele uimitoare, sunt Sfinxul și Babele, roci conglomerate sculptate prin eroziune eoliană. Parcul Natural Bucegi a fost înființat în anul 2003, de către guvernul României, devenind un sanctuar pentru conservarea peisajelor culturale tradiționale, în care activitățile umane sustenabile sunt parte din natură. Cu o biodiversitate impresionantă privind fauna și flora, inclusiv specii endemice sau rare, această arie protejată a fost subiect de studiu pentru biologi locali sau internaționali, încă din secolul 19. De altfel, multe legende și povești supranaturale din Munții Bucegi, au adus notorietate acestei zone, ca una dintre cele mai misterioase din țară"
+
+#: services/templates/services/underconstruction.html: 239
+msgid "Area"
+msgstr "Suprafață"
+
+#: services/templates/services/underconstruction.html: 247
+msgid "Highest peak"
+msgstr "Altitudine maximă"
+
+#: services/templates/services/underconstruction.html: 255
+msgid "Tourists per year"
+msgstr "Turiști pe an"
+
+#: services/templates/services/underconstruction.html: 260
+msgid "More about"
+msgstr "Mai mult"
+
+#: services/templates/services/underconstruction.html: 323
+msgid "Menu & Links"
+msgstr "Meniu & Link-uri"
+
+#: services/templates/services/underconstruction.html: 330
+msgid "Support"
+msgstr "Suport"
+
+#: services/templates/services/underconstruction.html: 335
+msgid "Main Office"
+msgstr "Sediu Principal"
+
+#: services/templates/services/underconstruction.html: 337
+msgid "Location"
+msgstr "Locație"
+
+#: services/templates/services/underconstruction.html: 338
+msgid "Phone"
+msgstr "Telefon"
+
+#: services/templates/services/underconstruction.html: 340
+msgid "Openning hours"
+msgstr "Program de lucru"
+
+#: services/templates/services/underconstruction.html: 362
+msgid "Contact Information"
+msgstr "Informații de Contact"
+
+#: services/templates/services/underconstruction.html: 363
+msgid "Public Documents"
+msgstr "Documente Publice"
+
+#: services/templates/services/public-docs.html: 18
+msgid "<span>Public</span><span> Documents</span>"
+msgstr "<span>Documente</span><span> Publice</span>"
+
+#: services/templates/services/underconstruction.html: 363
+msgid "Privacy Policy"
+msgstr "Politica de Confidențialitate"
+
+#: services/templates/services/underconstruction.html: 375
+msgid "Terms and Conditions"
+msgstr "Termeni și Condiții"
+
+#: services/templates/services/underconstruction.html: 375
+msgid "Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks"
+msgstr "Parcul Natural Bucegi găzduiește unele dintre cele mai impresionante sculpturi naturale în piatră din Europa, rezultate în urma eroziunii eoliene asupra rocilor conglomerate, de-a lungul a mii de ani. Cele mai populare sunt Sfinxul și Babele, un cap uman și, respectiv, mai multe stânci în formă de ciuperci"
+
+#: services/templates/services/testimonials.html: 16
+msgid "Testimonials"
+msgstr "Păreri"
+
+#: services/templates/services/testimonials.html: 18
+msgid "<span>Stories written by our<br/></span> <span> visitors</span>"
+msgstr "<span>Povestioare de la<br/></span> <span> vizitatori</span>"
+
+#: services/templates/services/testimonials.html: 18
+msgid "What do you think of our Natural Park? Leave your own review here"
+msgstr "Ce părere aveți despre Parcul nostru Natural? Scrieți câteva cuvinte aici"
+
+#: services/templates/services/coming-soon.html: 15
+msgid "Page under construction"
+msgstr "Pagină în construcție"
+
+#: services/templates/services/coming-soon.html: 15
+msgid "We are very sorry, but this page is taking a little longer to design. Stay tuned!"
+msgstr "Ne cerem scuze, dar această pagină încă nu este gata. Stați aproape!"
+#: services/templates/services/contact.html: 17
+msgid "Bucegi Natural Park"
+msgstr "Parcul Natural Bucegi"
+#: services/templates/services/contact.html: 18
+msgid "<span>Contact</span> <span> Us</span>"
+msgstr "<span>Contactați-ne</span> <span> </span>"
+#: services/templates/services/contact.html: 32
+msgid "<span>Write us</span> <span>a message</span>"
+msgstr "<span>Scrieți-ne un</span> <span>mesaj</span>"
+#: services/templates/services/contact.html: 66
+msgid "<strong>Well done!</strong> Your message has been sent"
+msgstr "<strong>Felicitări!</strong> Mesajul tău a fost trimis"
+#: services/templates/services/contact.html: 57
+msgid "Send"
+msgstr "Trimite-ți"
+#: services/templates/services/contact.html: 57
+msgid "Please type in the following letters to show you are human"
+msgstr "Vă rugăm să scrieți literele următoare mai jos pentru a arăta ca sunteți uman"
+#: services/templates/services/includes/newsletter.html: 9
+msgid "<h4 class='cta-block__title'>Join Our <span>Newsletter</span></h4>"
+msgstr "<h4 class='cta-block__title'>Abonați-vă la <span>Newsletter-ul nostru</span></h4>"
+
+#: services/templates/services/includes/newsletter.html: 9
+msgid "<p class='cta-block__text'>Subscribe and get our latest updates</p>"
+msgstr "<p class='cta-block__text'>Și veți primi cele mai noi știri</p>"
+
+#: services/templates/services/includes/newsletter.html: 9
+msgid "Your email"
+msgstr "Emailul dvs"
+
+#: services/templates/services/includes/newsletter.html: 9
+msgid "subscribe"
+msgstr "înscrieți-vă"
+
+#: services/templates/services/includes/blog.html: 166
+msgid "Subscribe Now"
+msgstr "Înscrieți-vă acum"
+#: services/templates/services/includes/blog.html: 167
+msgid "And get our latest updates"
+msgstr "Și veți primi cele mai noi informații de la noi"
+
+#: services/templates/services/includes/blog.html: 167
+msgid "Submit Comment"
+msgstr "Trimite-ți comentariul"
+
+#: services/templates/services/includes/blog.html: 167
+msgid "Leave a comment"
+msgstr "Lăsați un comentariu"
+
+#: services/templates/services/includes/blog.html: 167
+msgid "Comments"
+msgstr "Comentarii"
+#: services/templates/services/includes/blog.html: 167
+msgid "Our</span> <span>Blog Posts"
+msgstr "Postările</span> <span>Noastre"
+
+#: services/templates/services/includes/gallery.html: 31
+msgid "<span>Check out photos from </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Aici puteți vedea fotografii din </span><span>Parcul Natural Bucegi</span>"
+#: services/templates/services/includes/add_gallery.html: 27
+msgid "Add a photography"
+msgstr "Adaugă o fotografie"
+#: services/templates/services/includes/add_gallery.html: 27
+msgid "Our</span> <span>Pictures Gallery"
+msgstr "Fotografiile</span> <span>Noastre"
+
+#: services/templates/services/includes/videos.html: 31
+msgid "<span>Check out videos from </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Urmăriți înregistrări video din </span><span>Parcul Natural Bucegi</span>"
+#: services/templates/services/includes/flora.html: 17
+msgid "Our </span> <span>Flora"
+msgstr "Flora </span> <span>Noastră"
+#: services/templates/services/views.py: 195
+msgid "Your message has been send. We will answer as soon as possible!"
+msgstr "Mesajul tau a plecat catre noi. Vom raspunde cat de curand!"
+#: services/templates/services/views.py: 198
+msgid "Incorrect captcha! Please try again!"
+msgstr "Captcha incorect! Vă rugăm încercați din nou!"

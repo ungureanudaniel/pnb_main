@@ -1,0 +1,125 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img\backgrounds\contact.png' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img\backgrounds\contact.png' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Contact</span> <span> Us</span>{% endblocktranslate %}</h1>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center">
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write us</span> <span>a message</span>{% endblocktranslate %}</h2>
+								</div>
+							</div>
+							{% if messages %}
+							<div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+								{% include 'includes/messages.html' %}
+							</div>
+							{% else %}
+							<div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+							</div>
+							{% endif %}
+						<div class="row">
+							<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+								<form class="form" id="" action="{% url 'contact' %}" method="post">
+									{% csrf_token %}
+									<div class="row">
+										<div class="col-md-6">
+											{{ message_form.author }}
+										</div>
+										<div class="col-md-6">
+											{{ message_form.email }}
+										</div>
+										<div class="col-md-6">
+											{{ message_form.phone }}
+										</div>
+										<div class="col-md-6">
+											{{ message_form.subject }}
+										</div>
+										<div class="col-12">
+											{{ message_form.text }}
+										</div>
+										<div class="col-12 mb-5">
+											<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
+											<br>
+											{{ form.captcha }}
+											<br>
+										</div>
+										<div class="col-12 text-center">
+											<input class="form__submit" type="submit" value="{% trans 'Send' %}"/>
+										</div>
+										<!-- <div class="col-12">
+											<div class="alert alert--success alert--filled">
+												<div class="alert__icon">
+													<svg class="icon">
+														<use xlink:href="#check"></use>
+													</svg>
+												</div>
+												<p class="alert__text"><strong>Well done!</strong> Your form has been sent</p><span class="alert__close">
+													<svg class="icon">
+														<use xlink:href="#close"></use>
+													</svg></span>
+											</div>
+											<div class="alert alert--error alert--filled">
+												<div class="alert__icon">
+													<svg class="icon">
+														<use xlink:href="#close"></use>
+													</svg>
+												</div>
+												<p class="alert__text"><strong>Oh snap!</strong> Your form has not been sent</p><span class="alert__close">
+													<svg class="icon">
+														<use xlink:href="#close"></use>
+													</svg></span>
+											</div>
+
+										</div> -->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- section end-->
+
+				<!-- section start-->
+				{% include 'includes/newsletter.html' %}
+				<!-- section end-->
+
+				<!-- section start-->
+				<section class="map-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-lg-5 col-xl-4">
+							</div>
+						</div>
+					</div>
+					<div id="map">
+						<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=administratia parcului natural bucegi&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><style>.mapouter{border:10px solid #282f34;position:relative;text-align:right;height:100%;width:100%;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}</style></div></div>
+				</section>
+				<!-- section end-->
+
+			</main>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img\backgrounds\_MG_1945.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img\backgrounds\_MG_1945.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our</span> <span>Information Points{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section background--gray mb-5">
+					<div class="container">
+						<div class="row offset-70">
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center">
+										<div class="col-lg-6">
+											<div class="advantages-item__img"><img class="img--bg" src="{% static 'img\history\centru-vizitare.webp' %}" alt="visitor-center-img"/></div>
+										</div>
+										<div class="col-lg-6 col-xl-5 offset-xl-1">
+											<h3 class="advantages-item__title">{% blocktranslate %} <br/> 'Alexandru Beldie'<br><strong>Visitor Center</strong>{% endblocktranslate %}</h3>
+											<p><strong>{% trans 'A modern small sized museum, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more' %}.</strong></p>
+											<p>{% trans 'Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54' %}.</p><a class="button button--primary" href="https://goo.gl/maps/oJXED5WNJ9dZEBqX7">Google Maps</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center">
+										<div class="col-lg-6">
+											<div class="advantages-item__img"><img class="img--bg" src="{% static 'img\infrastructure\pct-info-pestera.webp' %}" alt="pct-info-pestera"/></div>
+										</div>
+										<div class="col-lg-6 col-xl-5 offset-xl-1">
+											<h3 class="advantages-item__title">{% blocktranslate %} Peștera <br/> <strong>Information point</strong>{% endblocktranslate %}</h3>
+											<p><strong>{% trans 'A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike' %}.</strong></p>
+											<p>{% trans 'Located at the end of the access road, next to the Mountain Rescue Service building, which is underconstruction' %}.</p><a class="button button--primary" href="https://goo.gl/maps/cESzf1S4To6yJfd7A">Google Maps</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="advantages-item">
+									<div class="row align-items-center">
+										<div class="col-lg-6">
+											<div class="advantages-item__img"><img class="img--bg" src="{% static 'img\infrastructure\sediu-moroieni.webp' %}" alt="pct-info-pestera"/></div>
+										</div>
+										<div class="col-lg-6 col-xl-5 offset-xl-1">
+											<h3 class="advantages-item__title">{% blocktranslate %}Main  <br/> <strong>office building</strong> & Information point{% endblocktranslate %}</h3>
+											<p><strong>{% trans 'The main office of the administrative personnel' %}</strong></p>
+											<p>{% trans 'Located in Moroieni, Str. Principala 71, Dâmbovița county' %}.</p><a class="button button--primary" href="https://goo.gl/maps/ixyQ4x9Efqx2bpUN7">Google Maps</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

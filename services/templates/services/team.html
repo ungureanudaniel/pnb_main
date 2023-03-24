@@ -1,0 +1,109 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main" >
+				<!-- welcome start-->
+				<section class="welcome-primary">
+					<picture >
+						<source srcset="{% static 'img/team/team3.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/team/team3.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our</span> <span> Team{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section elements no-padding-top pb-5">
+					<div class="container">
+						<!-- ---- administrative members title ---- -->
+						<div class="row bottom-50 align-items-end">
+							<div class="col-12">
+								<div class="heading heading--center"><span class="heading__pre-title"> </span>
+									<h2 class="heading__title no-margin-bottom mt-5"><span>{% blocktranslate %}Director</span> <span>{% endblocktranslate %}</span></h2>
+								</div>
+							</div>
+						</div>
+						<!--- ----- administrative members ---- -->
+						<div class="row links3 links4 links5" style="justify-content: center;">
+							{% for member in dir_members %}
+							<div class="col-sm-6 col-lg-3 ">
+								<div class="team-item team-item--style-1">
+									<div class="team-item__img"><img class="img--bg" src="{{ member.image.url }}" alt="img"/></div>
+									<div class="team-item__name">{{ member.firstname }} {{ member.surname }}</div>
+									<div class="team-item__position">{{ member.job }}</div>
+									<div class="team-item__position">{{ member.phone }}</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="container links1 links2">
+						<div class="row align-items-end ">
+							<div class="col-12 mt-5"></div>
+						</div>
+					</div>
+					<div class="container links4 links5">
+						<div class="row align-items-end ">
+							<div class="col-12">
+								<div class="heading heading--center"><span class="heading__pre-title"> </span>
+									<h2 class="heading__title no-margin-bottom"><span>{% blocktranslate %}Administrative</span> <span>Staff{% endblocktranslate %}</span></h2>
+								</div>
+							</div>
+						</div>
+						<div class="row pt-5 " style="justify-content: center;">
+							{% for member in adm_members %}
+							<div class="col-sm-6 col-lg-3 ">
+								<div class="team-item team-item--style-1">
+									<div class="team-item__img"><img class="img--bg" src="{{ member.image.url }}" alt="img"/></div>
+									<div class="team-item__name">{{ member.firstname }} {{ member.surname }}</div>
+									<div class="team-item__position">{{ member.job }}</div>
+									<div class="team-item__position">{{ member.phone }}</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="container links1 links2">
+						<div class="row align-items-end ">
+							<div class="col-12 mt-5"></div>
+						</div>
+					</div>
+					<div class="container links4 links5">
+						<div class="row align-items-end ">
+							<div class="col-12">
+								<div class="heading heading--center"><span class="heading__pre-title"> </span>
+									<h2 class="heading__title no-margin-bottom"><span>{% blocktranslate %}Field</span> <span>Staff{% endblocktranslate %}</span></h2>
+								</div>
+							</div>
+						</div>
+						<!--- ----- field members ---- -->
+						<div class="row pt-5" style="justify-content: center;">
+							{% for member in field_members %}
+							<div class="col-sm-6 col-lg-3">
+								<div class="team-item team-item--style-1">
+									<div class="team-item__img"><img class="img--bg" src="{{ member.image.url }}" alt="img"/></div>
+									<div class="team-item__name">{{ member.firstname }} {{ member.surname }}</div>
+									<div class="team-item__position">{{ member.job }}</div>
+									<div class="team-item__position">{{ member.phone }}</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+
+
+				</section>
+				<!-- section end-->
+
+			</main>
+	{% endblock %}

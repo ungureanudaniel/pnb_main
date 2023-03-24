@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+
+<!-- section start-->
+<section class="section bottom-70 ">
+  <div id="testimonials" class="testimonials testimonials--style-1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="testimonials__img"><img class="img--bg" src="{% static 'img/backgrounds/review.webp' %}" alt="Author thumbnail"/></div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="heading heading--primary"><span class="heading__pre-title">{% trans 'Testimonials' %}</span>
+                <!-- <h2 class="heading__title"><span>{% trans 'Did you' %} {% trans 'enjoy' %} {% trans 'visiting' %}<br/></span> <span>  {% trans 'Bucegi Natural Park' %}</span> ? ... <h5>Tell the world !</h5></h2> -->
+                <h2 class="heading__title">{% blocktranslate %}<span>Stories written by our<br/></span> <span> visitors</span>{% endblocktranslate %}</h2>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="testimonials--style-1__dots text-md-right"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="testimonials-slider testimonials-slider--style-1">
+                {% for review in reviews %}
+                <div class="testimonials-slider__item">
+                  <div class="testimonials-slider__text">
+                    <p>{{ review.text|safe }}</p>
+                  </div>
+                  <div class="testimonials-slider__details"><span class="testimonials-slider__name">{{ review.fname }} {{ review.lname }}</span></div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section add_review container mt-5">
+    <div class="row">
+      <div class="col-lg-12 d-lg-block text-center">
+        <a class="button button--primary button--filled text-decoration-none"  href="{% url 'add_testimonial' %}">{% trans 'What do you think of our Natural Park? Leave your own review here' %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section end-->

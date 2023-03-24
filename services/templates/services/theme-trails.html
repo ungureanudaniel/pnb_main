@@ -1,0 +1,226 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/themetrails2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/themetrails2.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Theme</span> <span>Trails</span>{% endblocktranslate %}</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- cta start-->
+				<div class="cta-block">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-12">
+								<p class="cta-block__text">{% blocktranslate %}<strong>There are a total of 10 theme trails throughout Bucegi Natural Park. </strong><br><br> Most of them are easy - average dificulty, with only a few of average dificulty, meaning some steep slopes and rocky terrain{% endblocktranslate %}.</p>
+								<p class="cta-block__text">{% trans 'Read more below' %}.<img width="50" height="50" style="float:right;" src="{% static 'img/chevron-down-w.png' %}"/></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- cta end-->
+				<!-- section start-->
+				<section class="section background--gray">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Bușteni - Cascada Urlătoarea' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>2.07 km | 1 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 452523 E 253109 , N 452346 E 253056' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Bușteni-Jepii Mici - Babele' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>5.17 km | 4.5 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Average to Dificult' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 452523 E 253109, N 452423 E 252818 ' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Lacul Scropoasa – Zănoaga' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>2.51  km | 1.5 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 451852 E 252510 , N 451951 E 252538' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Padina - Valea Doamnele - Drumul Grănicerilor - Șaua Strungă - Padina' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>16 km | 6 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Average to Dificult' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 452259 E 252558' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'La Uzina - Șapte Izvoare' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>'3.33 km | 1 hour' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy to Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 45.502753  E 25.467668' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Valea Bângăleasa - Poiana Guțanu - Grohotiș - Valea Bângăleasa' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>8.77  km | 2.5 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy to Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 45.419058 E 25.370578' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Turbăria Lăptici' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>0.24 km | 15 {% trans 'minutes' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 452218 E 252610' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Vulpărie-Poiana Stânii Regale-Drumul Cotei-Cota 1400' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>7.44  km | 2.5 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy to Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 45.363296 E 25.535711' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'Piatra Arsă-Babele-Complex Piatra Arsă' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>7.57  km | 2 {% trans 'hours' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy to Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 452234 E 252911' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="pricing-item pricing-item--style-2">
+									<div class="row align-items-center">
+										<div class="col-lg-3">
+											<h6 class="pricing-item__plan">{% trans 'The Flying Dragon' %}</h6>
+										</div>
+										<div class="col-lg-2 col-xl-2"><span>1.25  km | 30 {% trans 'minutes' %} </span></div>
+										<div class="col-lg-1 text-center">
+											<div class="pricing-item__price">{% trans 'Easy to Average' %}</div>
+										</div>
+										<div class="col-lg-3 text-center">
+											<div class=""><i class="fas fa-map_marker">{% trans 'N 45.385173 E 25.440721' %}</i></div>
+
+										</div>
+										<div class="col-lg-3 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{% trans 'GPX File (not yet ready)' %}</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/tickets2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/tickets2.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Tickets &</span> <span>Prices</span>{% endblocktranslate %}</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- cta start-->
+				<div class="cta-block mb-5">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-12">
+								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. </strong><br><br> Tickets can be purchased can, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a> Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin{% endblocktranslate %}.</p>
+								<p class="cta-block__text">{% trans 'The tickets are valid for 3 months' %}.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- cta end-->
+				<!-- section start-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center"><span class="heading__pre-title">{% trans 'Tickets' %}</span>
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Three Months</span> <span>Ticket</span>{% endblocktranslate %}</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 bottom-50">
+								<div class="table ticket-table">
+									<div class="table__header">
+										<div class="table__cell"><strong>{% trans 'Tickets' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Details' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Price' %}</strong></div>
+									</div>
+									<div class="table__body">
+										<div class="table__row">
+											<div class="table__cell" data-label="Ticket"><span><strong>{% trans 'Teens and Adults' %}</strong></span></div>
+											<div class="table__cell" data-label="Details"><span>14 + {% trans 'years old' %}</span></div>
+											<div class="table__cell" data-label="Zoo"><span><strong>10 RON</strong></span></div>
+										</div>
+										<div class="table__row">
+											<div class="table__cell" data-label="Ticket"><span><strong>{% trans 'Children' %}</strong></span></div>
+											<div class="table__cell" data-label="Details"><span>{% trans '0 up to 14 years old' %}</span></div>
+											<div class="table__cell" data-label="Zoo"><span><strong>{% trans 'Free' %}</strong></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col-12 text-center"><a class="button button--primary" href="#">{% trans 'Buy Tickets' %}</a></div> -->
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+
+
+			</main>
+{% endblock %}

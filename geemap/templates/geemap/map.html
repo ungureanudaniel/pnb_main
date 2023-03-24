@@ -1,0 +1,53 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- welcome start-->
+				<!--<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img\backgrounds\contact2.png' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img\backgrounds\contact2.png' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Contact</span> <span> Us</span>{% endblocktranslate %}</h1>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section> -->
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center">
+									{{ map.header.render|safe }}
+								</div>
+							</div>
+
+						<div class="row">
+							<div class="col-12">
+								{{map.html.render|safe}}
+							</div>
+						</div>
+					</div>
+				</section>
+				<script>
+
+        {{ map.script.render|safe }}
+
+      </script>
+
+				<!-- section end-->
+
+			</main>
+{% endblock %}

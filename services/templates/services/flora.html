@@ -1,0 +1,71 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main" >
+        <!-- welcome start-->
+				<section class="welcome-primary">
+					<picture >
+						<source srcset="{% static 'img/attractions/attractions9.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/attractions/attractions9.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our </span> <span>Flora{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+        <!-- section discover us start -->
+        <section class="section gallery">
+          <div class="container">
+            <div class="row bottom-50 align-items-end">
+              <div class="col-12">
+                <div class="heading heading--center"><span class="heading__pre-title">{% trans 'Bucegi Natural Park'  %}</span>
+                  <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Discover the Flora in </span><br><span>Bucegi Natural Park</span>{% endblocktranslate %}</h2>
+                </div>
+                <!-- filter panel start-->
+                <ul class="filter-panel">
+
+                  <li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
+                  <li class="filter-panel__item " data-filter=".{{ attr_categ.1.slug }}"><span>{{ attr_categ.1.name|capfirst }}</span></li>
+                  <li class="filter-panel__item " data-filter=".{{ attr_categ.2.slug }}"><span>{{ attr_categ.2.name|capfirst }}</span></li>
+                  <li class="filter-panel__item " data-filter=".{{ attr_categ.3.slug }}"><span>{{ attr_categ.3.name|capfirst }}</span></li>
+
+                  {% if user.is_authenticated %}
+                  <li class="filter-panel__item">
+                    <a class="nav-link text-decoration-none" id="navbarDocumentation" data-toggle="modal" href="#attractionsModal">
+                      <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus">
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+                <!-- filter panel end-->
+              </div>
+            </div>
+          </div>
+          <div class="row gallery-masonry no-gutters">
+            {% for a in attr %}
+            <div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
+                <img class="img--bg" src="{{ a.image.url }}" alt="img"/>
+                <div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
+              </a>
+            </div>
+            {% endfor %}
+
+          </div>
+          <div class="container top-70 bottom-70">
+            <div class="row">
+              <div class="col-12 text-center"><a class="button button--primary" href="{% url 'coming-soon' %}">{% trans 'Find out More' %}</a></div>
+            </div>
+          </div>
+        </section>
+        <!-- end discover us section -->
+{% endblock %}

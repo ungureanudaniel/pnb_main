@@ -1,0 +1,414 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<title>{% trans 'Bucegi Natural Park' %}</title>
+		<link rel="shortcut icon" type="image/png" href="{% static 'img/logo/bucegi2.png' %}">
+
+		<meta name="description" property="og:description" content="Bucegi Natural Park, an iconic protected area in the Carpathian Mountains">
+ 	 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+ 	 	<meta name="keywords" content="bucegi, natural park, protected area, wildlife, wilderness, carpathians, mountain, fauna, flora, nature conservation">
+	  <meta name="author" content="Bucegi Natural Park">
+	  <meta property="og:type" content="website">
+	  <meta property="og:url" content="https://bucegipark.ro/">
+	  <meta property="og:site_name" content="Bucegi Natural Park">
+	  <meta property="og:title" content="Bucegi Natural Park | A Natural Sanctuary" />
+	  <meta property="og:description" content="Iconic protected area, in the heart of Romania.">
+	  <meta property="og:image" content="https://bucegipark.ro/static/img/logo/bucegi2.png">
+	  <meta property="og:image:alt" content="The Sphinx">
+
+	  <link rel="canonical" href="https://bucegipark.ro/">
+		<!-- styles-->
+		<link rel="stylesheet" href="{% static 'css/styles.min.css' %}"/>
+		<!-- bootstrap link -->
+		<link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
+		<!-- web-font loader-->
+		<script>
+			WebFontConfig = {
+
+				google: {
+
+					families: ['Nunito+Sans:300,400,500,700,900', 'Quicksand:300,400,500,700'],
+
+				}
+
+			}
+
+			function font() {
+
+				var wf = document.createElement('script')
+
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+				wf.type = 'text/javascript'
+				wf.async = 'true'
+
+				var s = document.getElementsByTagName('script')[0]
+
+				s.parentNode.insertBefore(wf, s)
+
+			}
+
+			font()
+		</script>
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<!-- menu dropdown start-->
+			<div class="menu-dropdown ">
+				<div class="menu-dropdown__inner" data-value="start">
+					<div class="screen screen--start">
+						<div class="screen__item screen--trigger item--active" data-category="home"><span>{% trans 'Home' %}</span>
+							<span>
+								<svg class="icon"></svg>
+							</span>
+						</div>
+						<div class="screen__item screen--trigger" data-category="about"><span>{% trans 'About' %}</span>
+							<span>
+								<svg class="icon">
+									<use xlink:href="#chevron"></use>
+								</svg>
+							</span>
+						</div>
+						<div class="screen__item screen--trigger" data-category="explore">
+							<span>{% trans 'Explore' %}</span>
+							<span>
+								<svg class="icon">
+									<use xlink:href="#chevron"></use>
+								</svg>
+							</span>
+						</div>
+						<div class="screen__item screen--trigger" data-category="attractions">
+							<span>{% trans 'Attractions' %}</span>
+							<span>
+								<svg class="icon">
+									<use xlink:href="#chevron"></use>
+								</svg>
+							</span>
+						</div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">Contact</a></div>
+						<div class="screen__item screen--trigger" data-category="language">
+							<span>{% trans 'Language' %}</span>
+							<span>
+								<svg class="icon">
+									<use xlink:href="#chevron"></use>
+								</svg>
+							</span>
+						</div>
+						{% if user.is_authenticated %}
+						<div class="screen__item"><a class="screen__link" href="{% url 'signout' %}">Logout</a></div>
+						{% endif %}
+						<ul class="screen__socials">
+							<li><a class="item--facebook" target="_blank" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a class="item--twitter" target="_blank" href="https://twitter.com/BucegiPark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a class="item--youtube" target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+							<li><a class="item--instagram" target="_blank" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						</ul><a class="screen__button" target="_blank" href="{% url 'coming-soon' %}">{% trans 'Tickets' %}</a>
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="home">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+								</svg> <span>{% trans 'Home' %}</span>
+							</h6>
+						</div>
+
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="explore">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+									<use xlink:href="#chevron-left"></use>
+								</svg> <span>{% trans 'Explore' %}</span>
+							</h6>
+						</div>
+
+						<div class="screen__item"><a class="screen__link" href="{% url 'gallery' %}">{% trans 'Gallery' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'videos' %}">{% trans 'Videos' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'flora' %}">Flora</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'wildlife' %}">{% trans 'Wildlife' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'events' %}">{% trans 'Events' %}</a></div>
+						<!-- <div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'Projects' %}</a></div> -->
+						<!-- <div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">Calendar</a></div> -->
+
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="about">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+									<use xlink:href="#chevron-left"></use>
+								</svg> <span>{% trans 'About' %}</span>
+							</h6>
+						</div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'history' %}">{% trans 'History' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'team' %}">{% trans 'Our team' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">Mass-Media</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'blog' %}">Blog</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'home' %}#testimonials">{% trans 'Testimonials' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'ticket-info' %}">{% trans 'Ticket prices' %}</a></div>
+
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="attractions">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+									<use xlink:href="#chevron-left"></use>
+								</svg> <span>{% trans 'Attractions' %}</span>
+							</h6>
+						</div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'theme-trails' %}">{% trans 'Theme Trails' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'Hiking Trails' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">Climbing Trails</a></div>
+						<!-- <div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">Visitor Center</a></div> -->
+						<div class="screen__item"><a class="screen__link" href="{% url 'infopoints' %}">{% trans 'Info Points' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'View Points' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'Caves' %}</a></div>
+
+
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="language">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+									<use xlink:href="#chevron-left"></use>
+								</svg> <span>{% trans 'Language' %}</span>
+							</h6>
+						</div>
+						<!-- lang select start-->
+
+							{% get_available_languages as LANGUAGES %}
+
+							{% get_language_info_list for LANGUAGES as languages %}
+							{% get_language_info for LANGUAGE_CODE as lang %}
+							{% for language in languages %}
+							<div class="screen__item"><a class="screen__link" value="{{ language.name_local }}" href="/{{ language.code }}/ {{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></div>
+							{% endfor %}
+
+					</div>
+				</div>
+			</div>
+
+			<!-- menu dropdown end-->
+			<!-- header start-->
+			<header class="header header-common">
+				<div class="header__top">
+					<div class="row align-items-center">
+						<div class="col-6 col-lg-4">
+							<a class="logo mr-3"  href="{% url 'home' %}"><img class="logo__img" style="width:55px;height:auto;" src="{% static 'img\logo\bucegi2.png' %}" alt="logo"/></a>
+							<a class="logo mr-3" href="http://www.rosilva.ro/"><img class="logo__img" style="width:50px;height:auto;" src="{% static 'img\logo\RNP ROMSILVA3.png' %}" alt="logo"/></a>
+						</div>
+						<div class="col-6 col-lg-8 d-flex justify-content-end">
+							<!-- main menu start-->
+							<ul class="main-menu">
+								<li class="main-menu__item"><a class="main-menu__link" href="{% url 'home' %}"><span>{% trans 'Home' %}</span></a></li>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'About' %}</span></a>
+									<!-- sub menu start-->
+									<ul class="main-menu__sub-list">
+										<li><a href="{% url 'history' %}"><span>{% trans 'History' %}</span></a></li>
+										<li><a href="{% url 'team' %}"><span>{% trans 'Our team' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Mass-Media' %}</span></a></li>
+										<li><a href="{% url 'blog' %}"><span>Blog</span></a></li>
+										<li><a href="{% url 'home' %}#testimonials"><span>{% trans 'Testimonials' %}</span></a></li>
+										<li><a href="{% url 'ticket-info' %}"><span>{% trans 'Ticket Prices' %}</span></a></li>
+									</ul>
+									<!-- sub menu end-->
+								</li>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'Explore' %}</span></a>
+									<!-- sub menu start-->
+									<ul class="main-menu__sub-list">
+										<li><a href="{% url 'gallery' %}"><span>{% trans 'Gallery' %}</span></a></li>
+										<li><a href="{% url 'videos' %}"><span>{% trans 'Videos' %}</span></a></li>
+										<li><a href="{% url 'flora' %}"><span>Flora</span></a></li>
+										<li><a href="{% url 'wildlife' %}"><span>{% trans 'Fauna' %}</span></a></li>
+										<li><a href="{% url 'events' %}"><span>{% trans 'Events' %}</span></a></li>
+										<!-- <li><a href="{% url 'coming-soon' %}"><span>{% trans 'Projects' %}</span></a></li> -->
+										<!-- <li><a href="{% url 'coming-soon' %}"><span>Calendar</span></a></li> -->
+
+									</ul>
+								</li>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'Attractions' %}</span></a>
+									<!-- sub menu start-->
+									<ul class="main-menu__sub-list sub-list--style-2">
+										<li><a href="{% url 'theme-trails' %}"><span>{% trans 'Theme Trails' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Hiking Trails' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Climbing Trails' %}</span></a></li>
+										<!-- <li><a href="{% url 'coming-soon' %}"><span>{% trans 'Visitor Center' %}</span></a></li> -->
+										<li><a href="{% url 'infopoints' %}"><span>{% trans 'Info Points' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'View Points' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Caves' %}</span></a></li>
+									</ul>
+									<!-- sub menu end-->
+								</li>
+								<li class="main-menu__item"><a class="main-menu__link" href="{% url 'contact' %}"><span>Contact</span></a></li>
+
+							</ul>
+							<!-- main menu end--><a class="header__button" href="{% url 'coming-soon' %}" target="_blank">{% trans 'Tickets' %}</a>
+							<!-- menu-trigger start-->
+							<div class="hamburger">
+								<div class="hamburger-box">
+									<div class="hamburger-inner"></div>
+								</div>
+							</div>
+							<!-- menu-trigger end-->
+						</div>
+					</div>
+				</div>
+				<div class="header__lower">
+					<div class="row">
+						<div class="col-auto d-flex align-items-center">
+							<ul class="lower-menu">
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Education' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'map_coming_soon' %}">{% trans 'Map' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></li>
+								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">FAQ</a></li>
+								{% if user.is_authenticated %}
+								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}">Logout</a></li>
+								{% endif %}
+							</ul>
+							<!-- lang select start-->
+
+								{% get_available_languages as LANGUAGES %}
+
+								{% get_language_info_list for LANGUAGES as languages %}
+								{% get_language_info for LANGUAGE_CODE as lang %}
+							<ul class="lang-select">
+
+								<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>
+										<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
+											<!-- <p class="text-white">{{ languages }}</p> -->
+									<ul class="lang-select__sub-list">
+										{% for language in languages %}
+										<li value="{{ language.name_local }}"><a href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
+										{% endfor %}
+									</ul>
+								</li>
+							</ul>
+							<!-- lang select end-->
+							<ul class="header__socials">
+								<li><a class="item--facebook" target="_blank" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a class="item--twitter" target="_blank" href="https://twitter.com/BucegiPark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="item--youtube" target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<li><a class="item--instagram" target="_blank" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+      {% block content %}
+
+      {% endblock %}
+      <!-- footer start-->
+			<footer class="footer footer--front_5"><img class="footer__bg img--bg" src="{% static 'img/footer-bg.png' %}" alt="bg"/>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 d-lg-block">
+							<h6 class="footer__title">{% trans 'Menu & Links' %}</h6>
+							<ul class="footer-menu">
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'history' %}">{% trans 'About' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'blog' %}">{% trans 'Blog' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'theme-trails' %}">{% trans 'Attractions' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}">{% trans 'Events' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}">{% trans 'Info points' %}</a></li>
+
+							</ul>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<h6 class="footer__title">{% trans 'Main Office' %}</h6>
+							<div class="footer__details bottom-30">
+								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Principala 71, Moroeni, Dambovita, Romania</span></p>
+								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40 245 772 640">+40 245 772 640</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:contact@bucegipark.ro">contact@bucegipark.ro</a></p>
+								<p><strong>{% trans 'Openning hours' %}:</strong> <span>8:00 AM - 16:30 PM</span></p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4 bottom-30">
+							<h6 class="footer__title">{% trans 'Visitor Center' %}</h6>
+							<div class="footer__details">
+								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Telecabinei 54, 105500, Busteni, Prahova, Romania</span></p>
+								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40244322005">+40 244 322 005</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:visitorcenter@bucegipark.ro">visitorcenter@bucegipark.ro</a></p>
+								<p><strong>{% trans 'Openning hours' %}:</strong> <span>9:00 AM - 16:00 PM</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="row align-items-end">
+						<div class="col-md-6 text-center text-md-left">
+							<ul class="socials">
+								<li class="socials__item"><a class="socials__link" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://twitter.com/BucegiPark" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.instagram.com/parculnaturalbucegi/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+							<ul class="footer__additional">
+								<li><a href="{% url 'contact' %}">{% trans 'Contact Information' %}</a></li>
+								<li><a class="public_docs" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a>{% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'home' %}admin"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}</li>
+								<!-- <li><a href="#">Site Map</a></li> -->
+								<li><a href="{% url 'privacy_info' %}">{% trans 'Privacy Policy' %}</a></li>
+
+							</ul>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<div class="footer-privacy"><span>© {% now "Y" %} RNP ROMSILVA - Administrația
+								{% if user.is_authenticated %}
+								Parcului
+								{% else %}
+								<a class="text-decoration-none" data-toggle="modal" name="signinmodal" href="#signinModal">Parcului</a>
+								{% endif %}
+								 Natural Bucegi R.A.</span>
+								 <!-- <span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="{% url 'coming-soon' %}">{% trans 'Terms and Conditions' %}</a></div> -->
+							</div>
+						</div>
+						<div class="col-md-12 text-center text-md-right mt-5" style="display:flex;flex-direction:row;justify-content:center;align-items:center;">
+							<a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img\logo\bucegi2.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="http://www.rosilva.ro/"><img class="logo__img" src="{% static 'img\logo\RNP ROMSILVA3.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="https://romaqua-group.ro/"><img class="logo__img" src="{% static 'img\logo\aquatique.png' %}" alt="logo"/></a>
+							<!-- <a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img\logo\sigla-aaanp-transp.png' %}" alt="logo"/> </a> -->
+							<a class="logo logo--footer pr-4" href="http://ananp.gov.ro/"><img class="logo__img" src="{% static 'img\logo\logo-ananp.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="https://www.salvamontprahova.ro/"><img class="logo__img" src="{% static 'img\logo\salvamont-ph.jpeg' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="https://salvamontdb.ro/"><img class="logo__img" src="{% static 'img\logo\salvamont-db.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="https://www.jandarmeriaprahova.ro/j_montana.html"><img class="logo__img" src="{% static 'img\logo\blazon-Jr-ph.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="http://www.jandarmeriadambovita.ro/"><img class="logo__img" src="{% static 'img\logo\blazon-JR.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer " href="https://www.sts.ro/ro/despre-112"><img class="logo__img" src="{% static 'img\logo\112-logo.png' %}" alt="logo"/> </a>
+						</div>
+
+					</div>
+					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#83888b" href="#"><p>&#x2022; {% trans 'Unsubscribe' %} &#x2022;</p></div>
+
+				</div>
+			</footer>
+			<!-- footer end-->
+		</div>
+
+		{% include 'users/login.html' %}
+		<script>
+			document.addEventListener('touchstart', onTouchStart, {passive: true});
+		</script>
+		<!-- libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="{% static 'js/libs.min.js' %}"></script>
+		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
+
+
+		<!-- scripts-->
+		<script src="{% static 'js/common.js' %}"></script>
+
+
+	</body>
+</html>
