@@ -6,18 +6,18 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy as _
-# from django.contrib.sitemaps.views import sitemap
-# from services.sitemaps import StaticViewSitemap
+from django.contrib.sitemaps.views import sitemap
+from services.sitemaps import StaticViewSitemap
 
 
 sitemaps = {
-    # 'static': StaticViewSitemap,
+    'static': StaticViewSitemap,
     # 'snippet': SnippetSitemap
 }
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('__debug__/', include('debug_toolbar.urls')),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
