@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-import debug_toolbar
 from django.conf import settings
+import debug_toolbar
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
@@ -16,11 +16,9 @@ sitemaps = {
 }
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path('__debug__/', include('debug_toolbar.urls')),
-
-    ]
-#
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+]
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
