@@ -54,7 +54,7 @@ def add_testimonial(request):
         except Exception as e:
             messages.error(request, "Please check for empty fields.")
 
-    return render(request, template, {"review_form":review_form})
+    return render(request, template, {"review_form":TestimonialForm()})
 
 #========================add attraction view=================================
 # def add_attraction(request):
