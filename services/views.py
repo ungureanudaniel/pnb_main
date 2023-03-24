@@ -20,16 +20,16 @@ from hitcount.views import HitCountDetailView
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
 #========================underconstruction home page=================================
-def underconstruction(request):
-    """
-    This view replaces the home page when website is under construction
-    """
-    template = 'services/underconstruction.html'
-    weather = scraped_data()
-    context = {
-        "weather": weather,
-    }
-    return render(request, template, context)
+# def underconstruction(request):
+#     """
+#     This view replaces the home page when website is under construction
+#     """
+#     template = 'services/underconstruction.html'
+#     weather = scraped_data()
+#     context = {
+#         "weather": weather,
+#     }
+#     return render(request, template, context)
 #========================map coming soon VIEW=================================
 
 def map_coming_soon(request):
