@@ -24,7 +24,7 @@ class ContactAdmin(admin.ModelAdmin):
     fields = ['subject', 'author', 'email']
 
 class PublicCategoryAdmin(admin.ModelAdmin):
-    fields = ['title', 'text', 'link_en', 'link_ro']
+    fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_en', 'text_ro', 'text_de', 'link_en', 'link_ro']
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):

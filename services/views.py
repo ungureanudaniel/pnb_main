@@ -143,7 +143,6 @@ def home(request):
 
 
     attr_c = AttractionCategory.objects.all()
-    print(attr_c)
     #fetching data from the database and adding to context dict
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
