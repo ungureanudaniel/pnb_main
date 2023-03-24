@@ -9,9 +9,10 @@ underconstruction
 from django.conf.urls.static import static
 from users.views import user_logout
 
-if settings.DEVELOPMENT == False:
+if settings.DEVELOPMENT == True:
     urlpatterns = [
-        path('', underconstruction, name="underconstruction"),
+        path('logout/', user_logout, name='signout'),
+        path('', home, name="home"),
         path('contact', contacts_view, name="contact"),
         path('coming-soon', coming_soon, name="coming-soon"),
         path('gallery', gallery, name="gallery"),
