@@ -142,6 +142,10 @@ msgstr "Ein modernes, kleines Museum mit Präsentationsräumen, Insektensammlung
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
 msgstr "In Bușteni Stadt, Kreis Prahova, auf die Str. Telecabinei 54"
 
+#: services/templates/services/underconstruction.html: 239
+msgid "Scenery"
+msgstr "Landschaften"
+
 #: .\services\templates\services\info-points.html:34
 msgid " Peștera <br/> <strong>Information point</strong>"
 msgstr " Peștera <br/> <strong>Informationspunkt</strong>"
