@@ -15,12 +15,13 @@ sitemaps = {
     # 'snippet': SnippetSitemap
 }
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('__debug__/', include('debug_toolbar.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ]
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
+
     path('users/', include('users.urls')),
     path('', include('services.urls')),
     # path('blog/', include('blog.urls')),
