@@ -14,7 +14,7 @@
 							<div class="col-auto">
 								<div class="align-container">
 									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our </span> <span>Flora{% endblocktranslate %}</span></h1>
+										<h1 class="welcome-primary__title"><span></span> <span>{% trans 'Flora' %}</span></h1>
 									</div>
 								</div>
 							</div>
@@ -32,13 +32,15 @@
                 </div>
                 <!-- filter panel start-->
                 <ul class="filter-panel">
-
+									{% if attr_categ %}
                   <li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
                   <li class="filter-panel__item " data-filter=".{{ attr_categ.1.slug }}"><span>{{ attr_categ.1.name|capfirst }}</span></li>
                   <li class="filter-panel__item " data-filter=".{{ attr_categ.2.slug }}"><span>{{ attr_categ.2.name|capfirst }}</span></li>
                   <li class="filter-panel__item " data-filter=".{{ attr_categ.3.slug }}"><span>{{ attr_categ.3.name|capfirst }}</span></li>
-
-                  {% if user.is_authenticated %}
+									{% else %}
+									<li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug }}"><span>Under Construction</span></li>
+									{% endif %}
+									{% if user.is_authenticated %}
                   <li class="filter-panel__item">
                     <a class="nav-link text-decoration-none" id="navbarDocumentation" data-toggle="modal" href="#attractionsModal">
                       <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus">

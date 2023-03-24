@@ -12,7 +12,7 @@
 							<div class="col-auto">
 								<div class="align-container">
 									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Contact</span> <span> Us</span>{% endblocktranslate %}</h1>
+										<h1 class="welcome-primary__title"><span>{% trans 'Testimonials' %}</span> <span></span></h1>
 										<span class="welcome_icon">
 											<img src="{% static 'img\svg\mail.svg' %}">
 										</span>
@@ -34,7 +34,7 @@
 						<div class="row bottom-50">
 							<div class="col-12">
 								<div class="heading heading--primary heading--center">
-									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write us</span> <span> a message</span>{% endblocktranslate %}</h2>
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write us</span> <span> about your experience</span>{% endblocktranslate %}</h2>
 								</div>
 							</div>
 							{% if messages %}
@@ -68,7 +68,7 @@
 										<div class="col-12 mb-5">
 											<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
 											<br>
-											{{ form.captcha }}
+											{{ captcha_form.captcha }}
 											<br>
 										</div>
 										<div class="col-12 text-center">

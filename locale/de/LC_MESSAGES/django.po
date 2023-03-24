@@ -145,7 +145,9 @@ msgstr "In Bușteni Stadt, Kreis Prahova, auf die Str. Telecabinei 54"
 #: .\services\templates\services\info-points.html:34
 msgid " Peștera <br/> <strong>Information point</strong>"
 msgstr " Peștera <br/> <strong>Informationspunkt</strong>"
-
+#: .\services\templates\services\info-points.html:34
+msgid "</span> <span>Information Points"
+msgstr "</span> <span>Informationspunkte"
 #: .\services\templates\services\info-points.html:35
 msgid "A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike"
 msgstr "Eine kleine, aber moderne Hütte auf dem Gipfel des Berges, im Herzen unseres Parks, mit vielen Informationen für Wanderer, Touristen und dergleichen"
@@ -1848,7 +1850,7 @@ msgstr "Empfehlungsschreiben"
 
 #: services/templates/services/testimonials.html: 18
 msgid "<span>Stories written by our<br/></span> <span> visitors</span>"
-msgstr "<span>Von unseren Besuchern<br/></span> <span> geschriebene Geschichten</span>"
+msgstr "<span>Besuchern<br/></span> <span> Geschichten</span>"
 
 #: services/templates/services/testimonials.html: 18
 msgid "What do you think of our Natural Park? Leave your own review here"
@@ -1881,7 +1883,9 @@ msgstr "Bitte geben Sie die folgenden Buchstaben ein, um zu zeigen, dass Sie ein
 #: services/templates/services/contact.html: 57
 msgid "<span>Write us</span> <span>a message</span>"
 msgstr "<span>Schreiben Sie uns</span> <span>ein Nachricht</span>"
-
+#: services/templates/services/testimonial.html: 37
+msgid "<span>Write us</span> <span> about your experience</span>"
+msgstr "<span>Schreiben Sie uns</span> <span> uber Ihre Erlebnisse</span>"
 #: services/templates/services/includes/newsletter.html: 9
 msgid "<h4 class='cta-block__title'>Join Our <span>Newsletter</span></h4>"
 msgstr "<h4 class='cta-block__title'>Unsere Newsletter <span>abonnieren</span></h4>"

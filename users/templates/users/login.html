@@ -61,12 +61,7 @@
               <input type="password" name="signin-password" class="form-control" id="modalSigninPassword" placeholder="Enter your password" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
             </div>
             <!-- Password -->
-            <div class="form-group mb-5">
-              <label class="visually-hidden" for="modalSigninPassword">
-                {% trans 'Please type in the following letters to show you are human' %}
-              </label>
-              {{ captcha_form.captcha }}
-            </div>
+            
             <!-- Submit -->
             <button class="btn w-100 btn-primary" name="form-type" value="signin-form" type="submit">
               Sign in

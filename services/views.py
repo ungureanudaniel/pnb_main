@@ -40,21 +40,22 @@ def map_coming_soon(request):
 #========================add testimonial VIEW=================================
 def add_testimonial(request):
     template = 'services/add_testimonial.html'
-
+    captcha_form = CaptchaForm()
     if request.method=='POST':
         review_form = TestimonialForm(request.POST or None, request.FILES or None)
         try:
-            if review_form.is_valid():
-                new_review = review_form.save(commit=False)
-                new_review.status = False
-                new_review.save()
-            else:
-                messages.error(request, "Please check for empty fields.")
-                return redirect('.')
+            if captcha_form.is_valid():
+                if review_form.is_valid():
+                    new_review = review_form.save(commit=False)
+                    new_review.status = False
+                    new_review.save()
+                else:
+                    messages.error(request, "Please check for empty fields.")
+                    return redirect('.')
         except Exception as e:
             messages.error(request, "Please check for empty fields.")
 
-    return render(request, template, {"review_form":TestimonialForm()})
+    return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
 
 #========================add attraction view=================================
 # def add_attraction(request):
@@ -79,13 +80,14 @@ def add_testimonial(request):
 def home(request):
     template = 'services/home.html'
     weather = scraped_data()
+    captcha_form = CaptchaForm()
     context = {
         "weather": weather,
-        "captcha_form": CaptchaForm()
+        "captcha_form": captcha_form
     }
     if request.method=='POST':
         if request.POST.get('form-type') == "signin-form":
-            captcha_form = CaptchaForm(request.POST or None)
+
             #---------user login functions-----------
             user = None
             try:
@@ -93,23 +95,18 @@ def home(request):
                 password = request.POST.get('signin-password')
                 # user_check = User.object.get(username = username)
                 user = authenticate(username=username, password=password)
-                if captcha_form.is_valid():
-                    if user is not None:
-
-                        try:
-                            login(request, user)
-                            context['user'] = username
-                            return redirect('.')
-                        except Exception as e:
-                            messages.warning(request, _("Warning! {e}"))
-                            return redirect('.')
-                    else:
-                        messages.warning(request, _("User does not exist!"))
+                if user is not None:
+                    try:
+                        login(request, user)
+                        context['user'] = username
                         return redirect('.')
-
+                    except Exception as e:
+                        messages.warning(request, _("Warning! {e}"))
+                        return redirect('.')
                 else:
-                    messages.warning(request, _("Captcha incorrect!"))
+                    messages.warning(request, _("User does not exist!"))
                     return redirect('.')
+
             except (Exception, User.DoesNotExist) as e:
                 messages.warning(request, _("Warning! {e}"))
 

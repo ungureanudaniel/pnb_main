@@ -157,6 +157,9 @@ msgstr "Localizat în orașul Bușteni, Jud. Prahova, pe strada Telecabinei 54"
 #: .\services\templates\services\info-points.html:34
 msgid " Peștera <br/> <strong>Information point</strong>"
 msgstr " Punctul de Informare <br/> <strong>Peștera</strong>"
+#: .\services\templates\services\info-points.html:34
+msgid "</span> <span>Information Points"
+msgstr "</span> <span>Puncte de Informare"
 
 #: .\services\templates\services\info-points.html:35
 msgid "A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike"
@@ -1912,6 +1915,16 @@ msgstr "<span>Contactați-ne</span> <span> </span>"
 #: services/templates/services/contact.html: 32
 msgid "<span>Write us</span> <span>a message</span>"
 msgstr "<span>Scrieți-ne un</span> <span>mesaj</span>"
+#: services/templates/services/testimonial.html: 37
+msgid "<span>Write us</span> <span> about your experience</span>"
+msgstr "<span>Scrieți-ne</span> <span> despre experiențe</span>"
+#: services/templates/services/testimonial.html: 37
+msgid "<span>Discover the Flora in </span><br><span>Bucegi Natural Park</span>"
+msgstr "<span>Descoperă flora din </span><br><span>Parcul Natural Bucegi</span>"
+#: services/templates/services/testimonial.html: 37
+msgid "<span>Discover the Wildlife in </span><br><span>Bucegi Natural Park</span>"
+msgstr "<span>Descoperă fauna din </span><br><span>Parcul Natural Bucegi</span>"
+
 #: services/templates/services/contact.html: 66
 msgid "<strong>Well done!</strong> Your message has been sent"
 msgstr "<strong>Felicitări!</strong> Mesajul tău a fost trimis"
