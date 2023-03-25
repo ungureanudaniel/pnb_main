@@ -122,12 +122,12 @@ msgid "Buy Tickets"
 msgstr "Cumpără Tichete"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. </strong><br><br> Tickets can be purchased can, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a> Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
-msgstr "<strong>Tariful de vizitare ne susține cheltuielile pentru a putea face ceea ce facem, anume să luptăm pentru conservarea acestui munte pentru generațiile viitoare. </strong><br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>  În curând veți putea cumpăra folosind butonul TICKETS de mai sus, orice monedă, inclusiv Revolut sau Bitcoin"
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
+msgstr "<strong>Tariful de vizitare ne susține cheltuielile pentru a putea face ceea ce facem, anume să luptăm pentru conservarea acestui munte pentru generațiile viitoare. Intretinem traseele, va ajutam cand sunteti in dificultate pe munte, colectam gunoiul, protejam flora & fauna, educam copiii si adultii, punem fotografii in retele de socializare sa va aratam frumusetea naturii, instalam multe panouri de informare, si asta nu e tot. </strong><br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>  În curând veți putea cumpăra folosind butonul TICKETS de mai sus, orice monedă, inclusiv Revolut sau Bitcoin"
 
 #: .\services\templates\services\ticket-info.html:32
-msgid "The tickets are valid for 3 months"
-msgstr "Biletele sunt valabile timp de 3 luni"
+msgid "The tickets are valid for 3 months. More about tickets below"
+msgstr "Biletele sunt valabile timp de 3 luni. Mai multe despre bilete, mai jos"
 
 #: .\services\templates\services\partners.html:9
 msgid "Our Partners"
@@ -152,7 +152,7 @@ msgid " <br/> 'Alexandru Beldie'<br><strong>Visitor Center</strong>"
 msgstr " <br/> Centrul de Vizitare<br><strong>'Alexandru Beldie'</strong>"
 
 #: .\services\templates\services\info-points.html:35
-msgid "A modern small sized museum, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
+msgid "A modern small sized museum about Bucegi Mountains and local traditions, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
 msgstr "Un muzeu de mici dimensiuni, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
