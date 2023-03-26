@@ -153,7 +153,7 @@ msgstr " <br/> Centrul de Vizitare<br><strong>'Alexandru Beldie'</strong>"
 
 #: .\services\templates\services\info-points.html:35
 msgid "A modern small sized museum about Bucegi Mountains and local traditions, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
-msgstr "Un muzeu de mici dimensiuni al Munților BUcegi și al tradițiilor locale, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
+msgstr "Un muzeu de mici dimensiuni al Munților Bucegi și al tradițiilor locale, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
 msgstr "Localizat în orașul Bușteni, Jud. Prahova, pe strada Telecabinei 54"
