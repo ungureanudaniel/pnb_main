@@ -17,7 +17,7 @@
         {% blocktranslate %}<p class='cta-block__text'>Subscribe and get our latest updates</p>{% endblocktranslate %}
 			</div>
   		<div class="col-lg-6 offset-30">
-        <form class="form cta-form bottom-30" action="{% url 'home' %}" method="POST">
+        <form class="form cta-form bottom-30" action="{% url 'home' %}#newsletter" method="POST">
           {% csrf_token %}
           <input class="form__field" style="background-color: grey !important;" type="email" name="subscriber" placeholder="{% trans 'Your email' %}">
           <input class="form__submit" type="submit" value="{% trans 'Subscribe' %}">

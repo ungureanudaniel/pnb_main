@@ -153,7 +153,7 @@ msgstr " <br/> Centrul de Vizitare<br><strong>'Alexandru Beldie'</strong>"
 
 #: .\services\templates\services\info-points.html:35
 msgid "A modern small sized museum about Bucegi Mountains and local traditions, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
-msgstr "Un muzeu de mici dimensiuni, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
+msgstr "Un muzeu de mici dimensiuni al Munților BUcegi și al tradițiilor locale, cu săli de prezentare, colecții de insecte, colecții de roci, fosile, fotografii vintage cu natura din zonă și nu numai"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
 msgstr "Localizat în orașul Bușteni, Jud. Prahova, pe strada Telecabinei 54"
@@ -177,8 +177,8 @@ msgid "Main  <br/> <strong>office building</strong> & Information point"
 msgstr "Clădirea  <br/> <strong>administrativă principală</strong> & Punct de Informare"
 
 #: .\services\templates\services\info-points.html:35
-msgid "The main office of the administrative personnel"
-msgstr "Sediul personalului administrativ al parcului"
+msgid "The main office of the administrative personnel, where we also have a 3d park map and other info to help you on your trip"
+msgstr "Sediul personalului administrativ al parcului, unde puteți gasi o hartă 3d si alte informații ce va vor ajuta in drumeție"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in Moroieni, Str. Principala 71, Dâmbovița county"
 msgstr "Localizată în Moroieni, Str. Principală 71, Jud. Dâmbovița"

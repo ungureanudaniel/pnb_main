@@ -137,7 +137,7 @@ msgstr " <br/> 'Alexandru Beldie'<br><strong>Besucherzentrum</strong>"
 
 #: .\services\templates\services\info-points.html:35
 msgid "A modern small sized museum about Bucegi Mountains and local traditions, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
-msgstr "Ein modernes, kleines Museum mit Präsentationsräumen, Insektensammlungen, Gesteinssammlungen, Fossilien, alten Naturfotos und mehr"
+msgstr "Ein modernes kleines Museum über das Bucegi-Gebirge und lokale Traditionen, mit Präsentationsräumen, Insektensammlungen, Gesteinssammlungen, Fossilien, alten Naturfotos und mehr"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
 msgstr "In Bușteni Stadt, Kreis Prahova, auf die Str. Telecabinei 54"
@@ -168,8 +168,8 @@ msgid "Main  <br/> <strong>office building</strong> & Information point"
 msgstr "<br/> <strong>Hauptverwaltungsgebäude</strong> & Informationspunkt"
 
 #: .\services\templates\services\info-points.html:35
-msgid "The main office of the administrative personnel"
-msgstr "Das Hauptbüro des Verwaltungspersonals"
+msgid "The main office of the administrative personnel, where we also have a 3d park map and other info to help you on your trip"
+msgstr "Das Hauptbüro des Verwaltungspersonals, wo wir auch eine 3D-Parkkarte und andere Informationen für Ihre Reise bereithalten"
 #: .\services\templates\services\info-points.html:36
 msgid "Located in Moroieni, Str. Principala 71, Dâmbovița county"
 msgstr "In Moroieni, Str. Principală 71, Kreis Dâmbovița gelegen"
