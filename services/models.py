@@ -64,9 +64,9 @@ class PublicCategory(models.Model):
     category for natural park bucegi administration
     """
     title = models.CharField(max_length=30)
-    text = RichTextField(max_length=3000)
-    link_ro = models.FileField(upload_to='public_docs/%d %b %Y/', max_length=254, blank =True, null=True)
-    link_en = models.FileField(upload_to='public_docs/%d %b %Y/', max_length=254, blank =True, null=True)
+    text = RichTextField()
+    link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+    link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
