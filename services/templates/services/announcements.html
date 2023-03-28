@@ -1,6 +1,7 @@
 {% extends "services/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load hitcount_tags %}
 
 {% block content %}
 			<main class="main">
@@ -50,6 +51,14 @@
 															<!-- <div class="blog-item__author-img"><a class="img--bg" src="{{ a.link_ro.url }}" alt="author"</a></div> -->
 															<div class="blog-item__author-name"><span>{{ a.timestamp|date:"d" }}</span> <span>{{ a.timestamp|date:"M Y" }}</span></div>
 														</div>
+													</div>
+													<div class="col-4 text-right">
+														<div class="blog-item__comments">
+															<svg class="icon">
+																<use xlink:href="#comment"></use>
+															</svg><span>{% trans 'Views' %}: {% get_hit_count for a %}</span>
+														</div>
+
 													</div>
 												</div>
 											</div>
