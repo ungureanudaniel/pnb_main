@@ -26,7 +26,7 @@ class PublicCatLinkAdmin(admin.ModelAdmin):
     list_display = ('year', 'category', 'link_ro', 'link_en')
     fields = ['year', 'category', 'link_ro', 'link_en']
 class PublicCategoryAdmin(admin.ModelAdmin):
-    list_display = ('title_en', 'text_en')
+    list_display = ('title_en')
     fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_en', 'text_ro', 'text_de']
 class AnnouncementAdmin(admin.ModelAdmin):
     fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_en', 'text_ro', 'text_de', 'link_en', 'link_ro']
