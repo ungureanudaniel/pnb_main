@@ -63,7 +63,7 @@ class PublicCategory(models.Model):
     This class creates database tables for categories for each public documents
     category for natural park bucegi administration
     """
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=70)
     text = RichTextField()
     # link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
     # link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
@@ -76,7 +76,7 @@ class PublicCategory(models.Model):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
     def __str__(self):
-        return self.title
+        return self.slug
 #================Public docs models=====================================
 class PublicCatLink(models.Model):
     """
@@ -85,12 +85,14 @@ class PublicCatLink(models.Model):
     """
     year = models.CharField(max_length=4)
     category = models.ForeignKey(PublicCategory, on_delete=models.CASCADE)
-    link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
-    link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+    link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=300, blank =True, null=True)
+    link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=300, blank =True, null=True)
 
     class Meta:
-        verbose_name = 'Public link'
-        verbose_name_plural = "Public links"
+        verbose_name = 'Public Documents Link'
+        verbose_name_plural = "Public Documents Links"
+        ordering = ["-year"]
+
     def __str__(self):
         return self.year
 #================testimonial model=====================================

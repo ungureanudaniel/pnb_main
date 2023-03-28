@@ -295,6 +295,7 @@ def theme_trails(request):
 def massmedia(request):
     template = 'services/mass-media.html'
     return render(request, template, {})
+
 #======================== public documents page================================
 def public_docs(request):
     template = 'services/public_docs.html'

@@ -1,6 +1,7 @@
 {% extends "services/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load filter_links %}
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 			<!-- header end-->
@@ -38,29 +39,30 @@
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
 										<p>{% trans 'The official document can be downloaded below' %}</p>
-										{% if item.link_ro and item.link_en %}
-											{% for link in links %}
-												{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
-												<a href="{{ link.link_en.url }}" download target="_blank" class="button button--primary button--rounded">
-													<table style="text-decoration:none">
-													  <tr>
-															<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
-															<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-													  </tr>
-													</table>
-												</a>
-												{% else %}
-												<a href="{{ link.link_ro.url }}" download target="_blank" class="button button--primary button--rounded">
-													<table style="text-decoration:none">
-													  <tr>
-															<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
-															<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-													  </tr>
-													</table>
-												</a>
-												{% endif %}
-											{% endfor %}
-										{% endif %}
+											{% for link in links|in_category:item %}
+												<!-- {{ link.category }} = {{ item.title }} -->
+													{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
+
+													<a href="{{ link.link_en.url }}" download target="_blank" class="button button--primary button--rounded">
+														<table style="text-decoration:none">
+														  <tr>
+																<!-- {{ link.category }} {{ item.slug }} -->
+																<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
+																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
+														  </tr>
+														</table>
+													</a>
+													{% else %}
+													<a href="{% if link.category == item.slug %}{{ link.link_ro.url }}{% endif %}" download target="_blank" class="button button--primary button--rounded">
+														<table style="text-decoration:none">
+														  <tr>
+																<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
+																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
+														  </tr>
+														</table>
+													</a>
+													{% endif %}
+										{% endfor %}
 									</div>
 								</div>
 								{% endfor %}
