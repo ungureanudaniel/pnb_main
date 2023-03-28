@@ -41,7 +41,7 @@
 										<div class="blog-item">
 
 											<!-- <div class="blog-item__date " style=""><span>{{ a.timestamp|date:"d" }}</span><span>{{ a.timestamp|date:"M Y" }}</span></div> -->
-											<h4 class="blog-item__title"><a href="#">{{ a.title|capfirst|safe }}</a></h4>
+											<h4 class="blog-item__title"><a href="{% url 'announ-details' a.slug %}">{{ a.title|capfirst|safe }}</a></h4>
 											<p class="text-justify">{{ a.text|truncatechars:700|safe }} </p><a target="_blank" href="{{ a.link_ro.url }}">{% trans 'Download the announcement' %}</a>
 											<div class="blog-item__details">
 												<div class="row align-items-center">

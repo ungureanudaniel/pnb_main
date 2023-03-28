@@ -377,12 +377,12 @@ def announcement_view(request):
 
     return render(request, template, context)
 #======================== announcement detail page================================
-# class AnnounDetailView(DetailView):
-#     model = Announcement
-#     template_name = 'services/announc-details.html'
-#     context_object_name = 'announcement'
-#     slug_field = 'slug'
-
+class AnnounDetailView(DetailView):
+    model = Announcement
+    template_name = 'services/announc-details.html'
+    context_object_name = 'announcement'
+    slug_field = 'slug'
+    count_hit = True
 #======================== blog main page================================
 def bloglist_view(request):
     template = 'blog/blog.html'

@@ -1,6 +1,7 @@
 {% extends "services/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load hitcount_tags %}
 
 {% block content %}
 			<main class="main">
@@ -28,16 +29,16 @@
 						<div class="row">
 							<div class="col-xl-8 offset-xl-2">
 								<div class="blog-post__top">
-									<div class="blog-post__img"><img class="img--bg" src="{{ blogpost.image.url }}" alt="img"/></div>
 									<div class="blog-post__description">
 										<div class="row align-items-center">
 											<div class="col-6">
-												<div class="blog-post__author"><span class="blog-post__author-img">
-													<!-- <img class="img--bg" src="img/author_3.png" alt="author"/> -->
-												</span>
-												<span class="blog-post__author-name" style="font-size:30px !important;">{{ blogpost.title|capfirst|safe }}</span></div>
+												<div class="blog-post__author">
+													<span class="blog-post__author-img">
+													</span>
+													<span class="blog-post__author-name" style="font-size:30px !important;">{{ announcement.title|capfirst|safe }}</span>
+												</div>
 											</div>
-											<div class="col-6 text-right"><span class="blog-post__date">{{ blogpost.created_date|date:'d M Y' }}</span></div>
+											<div class="col-6 text-right"><span class="blog-post__date">{{ announcement.timestamp|date:'d M Y' }}</span></div>
 										</div>
 									</div>
 								</div>
@@ -47,13 +48,13 @@
 									<div class="row align-items-center">
 										<div class="col-md-4 text-center text-md-left">
 											<div class="blog-post__author">
-												<span class="blog-post__author-name">{{ blogpost.author.first_name }} {{ blogpost.author.last_name }}</span></div>
+												<span class="blog-post__author-name">{{ announcement.author.first_name }} {{ announcement.author.last_name }}</span></div>
 										</div>
 										<div class="col-md-4 text-center d-flex align-items-center justify-content-center">
 											<div class="blog-post__comments-count">
 												<svg class="icon">
 													<use xlink:href="#comment"></use>
-												</svg><span>{% if blogpost.comm_count > 0 %}{{ blogpost.comm_count }}{% else %} 0 {% endif %}</span>
+												</svg><span>{% trans 'Views' %}: {% get_hit_count for announcement %}</span>
 											</div>
 										</div>
 										<div class="col-md-4">
@@ -66,7 +67,7 @@
 										</div>
 									</div>
 								</div>
-								<h6 class="comments__trigger">{% if blogpost.comm_count > 0 %}{{ blogpost.comm_count }}{% else %} 0 {% endif %} {% trans 'Comments' %}</h6>
+								<h6 class="comments__trigger">{% if announcement.comm_count > 0 %}{{ announcement.comm_count }}{% else %} 0 {% endif %} {% trans 'Comments' %}</h6>
 								<!-- <div class="comments">
 									{% for comm in comms %}
 									<div class="comments__item">
