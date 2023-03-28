@@ -37,6 +37,7 @@
 									</div>
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
+										<p>{% trans 'The official document can be downloaded below' %}</p>
 										{% if item.link_ro and item.link_en %}
 											{% for link in links %}
 												{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}

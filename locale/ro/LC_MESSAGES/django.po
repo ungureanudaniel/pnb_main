@@ -1891,6 +1891,10 @@ msgstr "<span>Documente</span><span> Publice</span>"
 msgid "Year"
 msgstr "Anul"
 
+#: services/templates/services/public-docs.html: 40
+msgid "The official document can be downloaded below"
+msgstr "Documentul oficial poate fi descărcat apăsând butonul de mai jos"
+
 #: services/templates/services/underconstruction.html: 363
 msgid "Privacy Policy"
 msgstr "Politica de Confidențialitate"

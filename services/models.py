@@ -15,7 +15,7 @@ class Announcement(models.Model):
     This class creates database tables for each announcement of bucegi natural park
     """
     title = models.CharField(max_length=100)
-    text = RichTextField(max_length=3000)
+    text = RichTextField()
     link_ro = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     link_en = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)

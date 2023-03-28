@@ -1748,6 +1748,10 @@ msgstr "<span>Öffentliche</span><span> Dokumente</span>"
 msgid "Year"
 msgstr "Jahr"
 
+#: services/templates/services/public-docs.html: 40
+msgid "The official document can be downloaded below"
+msgstr "Das offizielle Dokument kann unten heruntergeladen werden"
+
 #: services/templates/services/underconstruction.html: 136
 msgid "New Website"
 msgstr "Neue Website"
