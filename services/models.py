@@ -65,8 +65,8 @@ class PublicCategory(models.Model):
     """
     title = models.CharField(max_length=30)
     text = RichTextField()
-    link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
-    link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+    # link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+    # link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
@@ -77,6 +77,22 @@ class PublicCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+#================Public docs models=====================================
+class PublicCatLink(models.Model):
+    """
+    This class creates database tables for download links per years for each publi
+    documents category
+    """
+    year = models.CharField(max_length=4)
+    category = models.ForeignKey(PublicCategory, on_delete=models.CASCADE)
+    link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+    link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
+
+    class Meta:
+        verbose_name = 'Public link'
+        verbose_name_plural = "Public links"
+    def __str__(self):
+        return self.year
 #================testimonial model=====================================
 class Testimonial(models.Model):
     """

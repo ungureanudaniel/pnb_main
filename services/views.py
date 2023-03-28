@@ -301,6 +301,7 @@ def public_docs(request):
 
     context = {
     'public_docs': PublicCategory.objects.all(),
+    'links':PublicCatLink.objects.all()
     }
     return render(request, template, context)
 #======================== faq page================================

@@ -1887,6 +1887,10 @@ msgstr "Documente Publice"
 msgid "<span>Public</span><span> Documents</span>"
 msgstr "<span>Documente</span><span> Publice</span>"
 
+#: services/templates/services/public-docs.html: 42
+msgid "Year"
+msgstr "Anul"
+
 #: services/templates/services/underconstruction.html: 363
 msgid "Privacy Policy"
 msgstr "Politica de Confidențialitate"
@@ -1996,6 +2000,10 @@ msgstr "Comentarii"
 #: services/templates/services/includes/blog.html: 167
 msgid "Our</span> <span>Blog Posts"
 msgstr "Postările</span> <span>Noastre"
+
+#: services/templates/services/includes/blog.html: 167
+msgid "Views"
+msgstr "Vizualizări"
 
 #: services/templates/services/includes/gallery.html: 31
 msgid "<span>Check out photos from </span><span>Bucegi Natural Park</span>"

@@ -1,7 +1,7 @@
 {% extends "services/base.html" %}
 {% load static %}
 {% load i18n %}
-
+{% load hitcount_tags %}
 {% block content %}
 			<main class="main">
 				<!-- promo start-->
@@ -58,6 +58,12 @@
 																<use xlink:href="#comment"></use>
 															</svg><span>{{ post.comments }}</span>
 														</div>
+														<div class="blog-item__comments">
+															<svg class="icon">
+																<use xlink:href="#comment"></use>
+															</svg><span>{% trans 'Views' %}: {% get_hit_count for post %}</span>
+														</div>
+
 													</div>
 												</div>
 											</div>

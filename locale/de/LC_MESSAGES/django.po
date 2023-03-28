@@ -1744,6 +1744,10 @@ msgstr "Berühren, um die Telefonnummer zu sehen"
 msgid "<span>Public</span><span> Documents</span>"
 msgstr "<span>Öffentliche</span><span> Dokumente</span>"
 
+#: services/templates/services/public-docs.html: 42
+msgid "Year"
+msgstr "Jahr"
+
 #: services/templates/services/underconstruction.html: 136
 msgid "New Website"
 msgstr "Neue Website"
@@ -1924,6 +1928,10 @@ msgstr "Download der Ankündigung"
 #: services/templates/services/includes/blog.html: 167
 msgid "And get our latest updates"
 msgstr "Und erhalten Sie unsere neuesten Informationen"
+#: services/templates/services/includes/blog.html: 167
+msgid "Views"
+msgstr "Ansichten"
+
 #: services/templates/services/includes/gallery.html: 31
 msgid "<span>Check out photos from </span><span>Bucegi Natural Park</span>"
 msgstr "<span>Sehen Sie sich Fotos aus </span><span>Parcul Natural Bucegi</span>"
