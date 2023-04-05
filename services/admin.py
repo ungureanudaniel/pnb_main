@@ -8,8 +8,7 @@ class AttractionCategoryAdmin(admin.ModelAdmin):
 
 
 class AttractionAdmin(admin.ModelAdmin):
-    fields = ['name', 'name_en', 'name_ro', 'name_de', 'image', 'text', 'text_en', 'text_ro', 'text_de', 'categ']
-    
+    fields = ['name', 'name_en', 'name_ro', 'name_de', 'image', 'text', 'text_en', 'text_ro', 'text_de', 'categ', 'featured']
 
 class TestimonialAdmin(admin.ModelAdmin):
     fields = ['status', 'fname', 'lname', 'email', 'thumbnail', 'text']
