@@ -9,6 +9,7 @@ announcement_view, AnnounDetailView
 from django.conf.urls.static import static
 from users.views import user_logout
 
+
 urlpatterns = [
         #-------Authentication----------------
         path('logout/', user_logout, name='signout'),

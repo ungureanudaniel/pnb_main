@@ -77,7 +77,6 @@ def add_testimonial(request):
 #
 #     return render(request, template, {"attr_form":AttractionForm()})
 #========================home page=================================
-@gzip_page
 def home(request):
     template = 'services/home.html'
     weather = scraped_data()
@@ -146,7 +145,7 @@ def home(request):
     #fetching data from the database and adding to context dict
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
-        'attr': Attraction.objects.all(),
+        'attractions': Attraction.objects.all(),
         'current_date': datetime.date.today(),
         'reviews': Testimonial.objects.filter(status=True),
         })
