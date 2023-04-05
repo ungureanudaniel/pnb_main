@@ -144,8 +144,8 @@ def home(request):
     attr_c = AttractionCategory.objects.all()
     #fetching data from the database and adding to context dict
     context.update({
-        'attr_categ': AttractionCategory.objects.all(),
-        'attractions': Attraction.objects.all(),
+        'attr_categ': AttractionCategory.objects.filter(),
+        'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
         'reviews': Testimonial.objects.filter(status=True),
         })
