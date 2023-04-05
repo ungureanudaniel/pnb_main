@@ -185,10 +185,10 @@
 					<div class="row gallery-masonry no-gutters">
 						{% for attr in attractions %}
 
-						<div class="natural-monuments col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+						<div class="{{ attr.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
 							<a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ attr.image.url }}" data-fancybox="gallery">
 								<img class="img--bg" src="{{ attr.image.url }}" alt="img"/>
-								<div class="gallery-masonry__description"><span class="">{{ attr.category }}</span><span>{{ attr.name|capfirst }}</span></div>
+								<div class="gallery-masonry__description"><span class="">{{ attr.categ }}</span><span>{{ attr.name|capfirst }}</span></div>
 							</a>
 						</div>
 						{% endfor %}
