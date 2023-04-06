@@ -5,7 +5,7 @@ from .views import home, contacts_view, coming_soon, gallery, team, history,\
 wildlife, flora, invalid_header, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
-announcement_view, AnnounDetailView
+announcement_view, AnnounDetailView, WildlifeDetailView, FloraDetailView
 from django.conf.urls.static import static
 from users.views import user_logout
 
@@ -32,8 +32,8 @@ urlpatterns = [
         path('info-points', infopoints_view, name="infopoints"),
         path('announcements', announcement_view, name="announcement"),
         path('announcements/<slug:slug>/', AnnounDetailView.as_view(), name='announ-details'),
-
-
+        path('wildlife-info/<slug:slug>/', WildlifeDetailView.as_view(), name='wildlife-details'),
+        path('flora-info/<slug:slug>/', FloraDetailView.as_view(), name='flora-details'),
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),
         #------------blog urls------------------------------

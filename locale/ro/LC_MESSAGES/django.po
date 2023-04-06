@@ -129,6 +129,21 @@ msgstr "<strong>Tariful de vizitare ne susține cheltuielile pentru a putea face
 msgid "The tickets are valid for 3 months. More about tickets below"
 msgstr "Biletele sunt valabile timp de 3 luni. Mai multe despre bilete, mai jos"
 
+#: .\services\templates\services\wildlife-details.html:9
+msgid "years"
+msgstr "ani"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Conservation status"
+msgstr "Starea de conservare"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Body size"
+msgstr "Mărimea corpului"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Native habitat"
+msgstr "Habitat nativ"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Diet"
+msgstr "Dietă"
 #: .\services\templates\services\partners.html:9
 msgid "Our Partners"
 msgstr "Partenerii noștri"
@@ -411,10 +426,70 @@ msgid "Null characters are not allowed."
 msgstr ""
 
 #: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1210
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Annual"
+msgstr "Anuală"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Perennial"
+msgstr "Perenă"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Biennial"
+msgstr "Bienală"
 #: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
 msgid "and"
 msgstr "și"
-
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Fish"
+msgstr "Pește"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Deer"
+msgstr "cervide"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "wild board"
+msgstr "mistreț"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "grass"
+msgstr "iarbă"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "leaves"
+msgstr "frunze"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "buds"
+msgstr "muguri"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "larvae"
+msgstr "larve"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "nuts"
+msgstr "nuci"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "seeds"
+msgstr "semințe"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "snakes"
+msgstr "șerpi"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "frogs"
+msgstr "broaște"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small birds"
+msgstr "păsări mici"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "fruits"
+msgstr "fructe"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "roots"
+msgstr "rădăcini"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "bark"
+msgstr "scoarță"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "insects"
+msgstr "insecte"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small rodents"
+msgstr "rozătoare mici"
 #: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1212
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
@@ -1212,7 +1287,6 @@ msgstr "Noiembrie"
 msgctxt "alt. month"
 msgid "December"
 msgstr "December"
-
 #: myvenv/lib/python3.6/site-packages/django/utils/ipv6.py:8
 msgid "This is not a valid IPv6 address."
 msgstr ""

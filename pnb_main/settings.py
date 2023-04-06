@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'hitcount',
     'captcha',
     'django.contrib.sites',
+    'multiselectfield',
     #user apps
     'users',
     'services',
@@ -84,7 +85,7 @@ TEMPLATES = [
         },
     },
 ]
-# 
+#
 # CACHES = {
 #     'default': {
 #         'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',

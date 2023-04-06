@@ -141,10 +141,9 @@ def home(request):
                         return redirect('/')
 
 
-    attr_c = AttractionCategory.objects.all()
     #fetching data from the database and adding to context dict
     context.update({
-        'attr_categ': AttractionCategory.objects.filter(),
+        'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
         'reviews': Testimonial.objects.filter(status=True),
@@ -209,7 +208,8 @@ def gallery(request):
     #     gallery_form =  GalleryForm()
     context = {
         "attr_categ": AttractionCategory.objects.all(),
-        "photos":Gallery.objects.all().order_by("name"),
+        "pics": Attraction.objects.all(),
+
     }
     return render(request, template, context)
 #====================== video view ==========================================
@@ -270,17 +270,34 @@ def wildlife(request):
     template = 'services/wildlife.html'
 
     context = {
-        'attr': Attraction.objects.filter(categ='3'),
+        'wildlife_categ': WildlifeCategory.objects.all(),
+        'wildlife': Wildlife.objects.all(),
     }
     return render(request, template, context)
+
+#======================== wildlife detail page================================
+class WildlifeDetailView(DetailView):
+    model = Wildlife
+    template_name = 'services/wildlife-details.html'
+    context_object_name = 'willdife'
+    slug_field = 'slug'
+    count_hit = True
 #========================flora page================================
 def flora(request):
     template = 'services/flora.html'
 
     context = {
-        'attr': Attraction.objects.filter(categ='4'),
+        'flora_categ': FloraCategory.objects.all(),
+        'flora': Flora.objects.all(),
     }
     return render(request, template, context)
+#======================== flora detail page================================
+class FloraDetailView(DetailView):
+    model = Flora
+    template_name = 'services/flora-details.html'
+    context_object_name = 'flora'
+    slug_field = 'slug'
+    count_hit = True
 #========================TICKETS INFO VIEW================================
 def ticket_info(request):
     template = 'services/ticket-info.html'

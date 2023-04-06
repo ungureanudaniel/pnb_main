@@ -1,0 +1,94 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- promo start-->
+				<section class="promo-primary">
+					<picture>
+						<source srcset="img/animal-details.jpg" media="(min-width: 992px)"/><img class="img--bg" src="img/animal-details.jpg" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span></span> <span>{% trans 'Flora' %} Info</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- section start-->
+				<section class="section animal-details">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+								<div class="row offset-30">
+
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<div class="animal-details__icon">
+											<svg class="icon">
+												<use xlink:href="#cat"></use>
+											</svg>
+										</div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<h6 class="animal-details__title">{% trans 'Conservation status' %}</h6>
+										<p>{{ willdife.cons_status }}</p>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<h6 class="animal-details__title">Life span</h6>
+										<p>16-25 years</p>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<h6 class="animal-details__title">Body size</h6>
+										<p>370-600 lbs. <br/> 6.5-11 ft.</p>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<h6 class="animal-details__title">Native habitat</h6>
+										<p>Forests and bush-covered mountains of Eastern Russia, northeastern China, North Korea</p>
+									</div>
+									<div class="col-12 col-sm-6 col-md-4 bottom-30">
+										<h6 class="animal-details__title">Diet</h6>
+										<p>Deer, wild pig, fish, grass, nuts, berries</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section"><img class="d-block section__bg height100 width100 t0" src="img/section-bg.png" alt="img"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+								<h6 class="bottom-15">The Amur tiger is the largest of the tiger subspecies.</h6>
+								<p>The coat of the Amur tiger is the palest orange of all the tigers and has the fewest stripes. Each tiger’s stripes are unique and act as identifiers for other tigers. It has a scruff of fur around its neck that is more developed than other tigers, which helps protect it from the cold environment in which it lives. They generally live alone, but they do keep in contact with other tigers through scent marking. Another way they communicate is through scrapes on the ground, claw marks, and vocalizations.</p>
+								<div class="text-center top-30"><a class="button button--primary" href="#">Find on the map</a></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section no-padding-top no-padding-bottom">
+					<div class="row no-gutters">
+						<div class="col-lg-6"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="img/action-block_8.jpg" alt="img"/>
+								<h3 class="action-block__title"><span>Arabic</span><br/> <span>Horse</span></h3>
+							</div></a></div>
+						<div class="col-lg-6"><a class="action-block" href="#">
+							<div class="action-block__inner"><img class="img--bg" src="img/action-block_9.jpg" alt="img"/>
+								<h3 class="action-block__title"><span>African</span><br/> <span>Eliphant</span></h3>
+							</div></a></div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

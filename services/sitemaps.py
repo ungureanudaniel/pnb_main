@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
-from .models import BlogPost, AttractionCategory, Gallery, Event, Team
+from .models import BlogPost, AttractionCategory, Event, Team
 
 class BlogPostSitemap(Sitemap):
     changefreq = "weekly"
@@ -32,15 +32,6 @@ class EventSitemap(Sitemap):
     def location(self,obj):
         return '/%s' % (obj.title)
 
-class GallerySitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.8
-    protocol = 'https'
-
-    def items(self):
-        return Gallery.objects.all()
-    def location(self,obj):
-        return '/%s' % (obj.name)
 class TeamSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8

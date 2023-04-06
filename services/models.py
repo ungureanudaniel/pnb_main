@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 #blog imports
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
-
+from multiselectfield import MultiSelectField
 #================Partners models=====================================
 class Announcement(models.Model):
     """
@@ -139,7 +139,7 @@ class Attraction(models.Model):
     """
     name = models.CharField(max_length=30)
     image = ResizedImageField(size=[640,None], upload_to='attraction_images',)
-    text = models.TextField(max_length=300)
+    text = models.TextField(max_length=2000)
     categ = models.ForeignKey(AttractionCategory, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     featured = models.BooleanField(default=False)
@@ -150,27 +150,166 @@ class Attraction(models.Model):
 
     def __str__(self):
         return self.slug
-#================Gallery model=====================================
-class Gallery(models.Model):
+#================Flora category models=====================================
+class FloraCategory(models.Model):
     """
-    This class creates database tables for each photo in natural park bucegipark
-    linked to attraction category table above, by ForeignKey. The images for attraction
+    This class creates database tables for categories for each flora species in
+    natural park bucegi
+    """
+    name = models.CharField(max_length=30)
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Flora Category'
+        verbose_name_plural = "Flora Categories"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+
+#================Wildlife category models=====================================
+class WildlifeCategory(models.Model):
+    """
+    This class creates database tables for categories for each wildlife species in
+    natural park bucegi
+    """
+    name = models.CharField(max_length=30)
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Wildlife Category'
+        verbose_name_plural = "Wildlife Categories"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+#================Flora models=====================================
+class Flora(models.Model):
+    """
+    This class creates database tables for each flora species in natural park bucegipark
+    linked to flora categories table above, by ForeignKey. The images for flora
     will be automatically resized using a package : django-resized. Default settings in
     settings.py file.
     """
+    CONS_STATUS = (
+            (_('Endagered'), _('Endagered')),
+            (_('Data Deficient'), _('Data Deficient')),
+            (_('Least Concern'), _('Least Concern')),
+            (_('Near Threatened'), _('Near Threatened')),
+            (_('Vulnerable'), _('Vulnerable')),
+            (_('Critically Endangered'), _('Critically Endangered')),
+            (_('Extinct In The Wild'), _('Extinct In The Wild')),
+            (_('Extinct'), _('Extinct')),
+        )
+    MONTHS = (
+            (_('January'), _('January')),
+            (_('February'), _('February')),
+            (_('March'), _('March')),
+            (_('April'), _('April')),
+            (_('May'), _('May')),
+            (_('June'), _('June')),
+            (_('July'), _('July')),
+            (_('August'), _('August')),
+            (_('September'), _('September')),
+            (_('October'), _('October')),
+            (_('November'), _('November')),
+            (_('December'), _('December')),
+
+        )
+    FLOWER_LIFE = (
+            (_('Annual'), _('Annual')),
+            (_('Perennial'), _('Perennial')),
+            (_('Biennial'), _('Biennial')),
+        )
     name = models.CharField(max_length=30)
-    image = ResizedImageField(size=[640,None], upload_to='gallery_images',)
-    text = models.TextField(max_length=300)
-    categ = models.ForeignKey(AttractionCategory, on_delete=models.CASCADE)
-    slug = models.SlugField(max_length=100, blank=True, null=True)
+    image = image = models.ImageField(upload_to='flora_image', blank=True)
+    text = models.TextField(max_length=2000)
+    height_max = models.IntegerField()
+    flowering_start = models.CharField(max_length=30, default='April', choices=MONTHS)
+    flowering_end = models.CharField(max_length=30, default='September', choices=MONTHS)
+    cons_status = models.CharField(max_length=30, default='Least Concern', choices=CONS_STATUS)
+    life_span = models.CharField(max_length=30, default='Annual', choices=FLOWER_LIFE)
+    habitat = models.TextField(max_length=1000)
+    categ = models.ForeignKey(FloraCategory, on_delete=models.CASCADE)
+    family = models.CharField(max_length=100, default="flora", editable=False)
+    slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     featured = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = 'Flora species'
+        verbose_name_plural = "Flora species"
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.slug
+
+#================Wildlife model=====================================
+class Wildlife(models.Model):
+    """
+    This class creates database tables for each wildlife species in natural park bucegipark
+    linked to wildlife category table above, by ForeignKey. The images for wildlife
+    will be automatically resized using a package : django-resized. Default settings in
+    settings.py file.
+    """
+    CONS_STATUS = (
+        (_('Endagered'), _('Endagered')),
+        (_('Data Deficient'), _('Data Deficient')),
+        (_('Least Concern'), _('Least Concern')),
+        (_('Near Threatened'), _('Near Threatened')),
+        (_('Vulnerable'), _('Vulnerable')),
+        (_('Critically Endangered'), _('Critically Endangered')),
+        (_('Extinct In The Wild'), _('Extinct In The Wild')),
+        (_('Extinct'), _('Extinct')),
+    )
+    name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='wildlife_image', blank=True)
+    text = models.TextField(max_length=2000)
+    weight_min = models.IntegerField()
+    weight_max = models.IntegerField()
+    cons_status = models.CharField(max_length=30, default='Least Concern', choices=CONS_STATUS)
+    life_span_min = models.IntegerField()
+    life_span_max = models.IntegerField()
+    habitat = models.TextField(max_length=1000)
+    diet = models.CharField(max_length=300)
+    categ = models.ForeignKey(WildlifeCategory, on_delete=models.CASCADE)
+    family = models.CharField(max_length=100, default="wildlife", editable=False)
+    slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
+    featured = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Wildlife species'
+        verbose_name_plural = "Wildlife species"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.slug
+#================Gallery model=====================================
+# class Gallery(models.Model):
+#     """
+#     This class creates database tables for each photo in natural park bucegipark
+#     linked to attraction category table above, by ForeignKey. The images for attraction
+#     will be automatically resized using a package : django-resized. Default settings in
+#     settings.py file.
+#     """
+#     name = models.CharField(max_length=30)
+#     image = ResizedImageField(size=[640,None], upload_to='gallery_images',)
+#     text = models.TextField(max_length=300)
+#     categ = models.ForeignKey(AttractionCategory, on_delete=models.CASCADE)
+#     slug = models.SlugField(max_length=100, blank=True, null=True)
+#     featured = models.BooleanField(default=False)
+#
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.name)
+#         super().save(*args, **kwargs)
+#
+#     def __str__(self):
+#         return self.slug
 #================Team model=====================================
 class Team(models.Model):
     """

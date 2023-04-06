@@ -41,7 +41,7 @@
 
                   {% if user.is_authenticated %}
                   <li class="filter-panel__item">
-                    <a class="nav-link text-decoration-none" id="navbarDocumentation" data-toggle="modal" href="#galleryModal">
+                    <a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}">
                       <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus">
                     </a>
                   </li>
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="row gallery-masonry no-gutters">
-            {% for p in photos %}
+            {% for p in pics %}
             <div class="{{ p.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
               <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ p.image.url }}" data-fancybox="gallery">
                 <img class="img--bg" src="{{ p.image.url }}" alt="img"/>

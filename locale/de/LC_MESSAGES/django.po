@@ -115,6 +115,23 @@ msgstr "Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nä
 #: .\services\templates\services\ticket-info.html:32
 msgid "The tickets are valid for 3 months. More about tickets below"
 msgstr "Die Tickets sind 3 Monate gültig. Mehr über Tickets unten"
+
+#: .\services\templates\services\wildlife-details.html:9
+msgid "years"
+msgstr "Jahre"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Conservation status"
+msgstr "Status der Bestandserhaltung"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Body size"
+msgstr "Körpergröße"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Native habitat"
+msgstr "Einheimischer Lebensraum"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Diet"
+msgstr "Diät"
+
 #: .\services\templates\services\partners.html:9
 msgid "Our Partners"
 msgstr "Unsere Partner"
@@ -404,8 +421,65 @@ msgstr ""
 
 #: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1210
 #: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
-msgid "and"
-msgstr ""
+msgid "Annual"
+msgstr "Einjährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Perennial"
+msgstr "Mehrjährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Biennial"
+msgstr "Zweijährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Fish"
+msgstr "Fisch"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Deer"
+msgstr "Hirsch"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "wild board"
+msgstr "Wildschwein"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "grass"
+msgstr "Gras"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "leaves"
+msgstr "Blätter"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "buds"
+msgstr "Knospen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "larvae"
+msgstr "Larven"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "nuts"
+msgstr "Nüsse"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "seeds"
+msgstr "Samen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "snakes"
+msgstr "Schlangen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "frogs"
+msgstr "Frösche"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small birds"
+msgstr "kleine Vögel"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "fruits"
+msgstr "Früchte"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "roots"
+msgstr "Wurzeln"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "bark"
+msgstr "Rinde"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "insects"
+msgstr "Insekten"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small rodents"
+msgstr "kleine Nagetiere"
 
 #: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1212
 #, python-format
@@ -988,54 +1062,53 @@ msgstr ""
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:11
 msgid "Sun"
 msgstr ""
-
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "March"
-msgstr ""
+msgstr "März"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
 msgid "August"
-msgstr ""
+msgstr "August"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
 msgid "September"
-msgstr ""
+msgstr "September"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
 msgid "November"
-msgstr ""
+msgstr "November"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:16
 msgid "December"
-msgstr ""
+msgstr "Dezember"
 
 #: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "jan"

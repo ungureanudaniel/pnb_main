@@ -10,3 +10,4 @@ python-memcached
 pymemcache
 django-modeltranslation
 django-hitcount
+django-multiselectfield
