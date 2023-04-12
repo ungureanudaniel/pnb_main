@@ -3,76 +3,104 @@
 {% load i18n %}
 
 {% block content %}
-			<!-- header end-->
-			<main class="main">
-				<!-- promo start-->
-				<section class="welcome-primary">
-					<picture>
-						<source srcset="{% static 'img/section-bg-dark.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/section-bg-dark.webp' %}" alt="img"/>
-					</picture>
-					<div class="container">
-						<div class="row">
-							<div class="col-auto">
-								<div class="align-container">
-									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title"><span></span> <span>{% trans 'Wildlife' %} Info</span></h1>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- promo end-->
-				<!-- section start-->
-				<section class="section animal-details">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-								<div class="row offset-30">
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<div class="animal-details__icon">
-											<img class="img--bg" style="height:100px;width:200px" src="{{ wildlife.image.url }}" alt="img"/>
+				<!-- header end-->
+				<main class="main">
+					<!-- promo start-->
+					<section class="welcome-primary">
+						<picture>
+							<source srcset="{% static 'img/section-bg-dark.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/section-bg-dark.webp' %}" alt="img"/>
+						</picture>
+						<div class="container">
+							<div class="row">
+								<div class="col-auto">
+									<div class="align-container">
+										<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+											<h1 class="welcome-primary__title"><span></span> <span>{% trans 'Flora' %} Info</span></h1>
 										</div>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Conservation status' %}</h6>
-										<p>{{ willdife.cons_status }}</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- welcome end-->
+
+					<section class="section front-services no-padding-bottom">
+						<div class="container">
+							<div class="row">
+										<div class="col-12">
+											<div class="video-frame"><img class="img--bg" src="{{ wildlife.image.url }}" alt="frame"></div>
+										</div>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">Life span</h6>
+							<div class="row offset-margin">
+								<div class="col-sm-6 col-lg-4 col-xl-3">
+									<div class="icon-item">
+										<div class="icon-item__icon">
+											<svg class="icon">
+												<i class="fas fa-tree text-dark"></i>
+											</svg>
+										</div>
+										<h6 class="icon-item__title">{% trans 'Conservation status' %}</h6>
+										<p>{{ wildlife.cons_status }}</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-4 col-xl-3">
+									<div class="icon-item">
+										<div class="icon-item__icon">
+											<svg class="icon">
+												<use xlink:href="#cutlery"></use>
+											</svg>
+										</div>
+										<h6 class="icon-item__title">{% trans 'Native habitat' %}</h6>
+										<p>{{ wildlife.habitat|capfirst|safe }}</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-4 col-xl-3">
+									<div class="icon-item">
+										<div class="icon-item__icon">
+											<svg class="icon">
+												<use xlink:href="#wifi"></use>
+											</svg>
+										</div>
+										<h6 class="icon-item__title">{% trans 'Life span' %}</h6>
 										<p>{{ willdife.life_span_min }} - {{ willdife.life_span_max }} {% trans 'years' %}</p>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Body size' %}</h6>
-										<p>{{ willdife.weight_min }} - {{ willdife.weight_max }} kg <br/> </p>
+								</div>
+								<div class="col-sm-6 col-lg-4 col-xl-3">
+									<div class="icon-item">
+										<div class="icon-item__icon">
+											<svg class="icon">
+												<use xlink:href="#trophy"></use>
+											</svg>
+										</div>
+										<h6 class="icon-item__title">{% trans 'Body size' %}</h6>
+										<p>{{ willdife.weight_min }} - {{ willdife.weight_max }} kg </p>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Native habitat' %}</h6>
-										<p>{{ willdife.habitat|capfirst }}</p>
-									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Diet' %}</h6>
-										<p>{{ willdife.diet }}</p>
+								</div>
+								<div class="col-sm-6 col-lg-4 col-xl-3">
+									<div class="icon-item">
+										<div class="icon-item__icon">
+											<svg class="icon">
+												<use xlink:href="#trophy"></use>
+											</svg>
+										</div>
+										<h6 class="icon-item__title">{% trans 'Diet' %}</h6>
+										<p>{{ willdife.diet }} </p>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-				<!-- section end-->
-				<!-- section start-->
-				<section class="section"><img class="d-block section__bg height100 width100 t0" src="{% static 'img/section-bg.png' %}" alt="img"/>
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-								<p>{{ willdife.text|safe }}</p>
-								<!-- <div class="text-center top-30"><a class="button button--primary" href="#">Find on the map</a></div> -->
+					</section>
+					<!-- section start-->
+					<section class="section"><img class="d-block section__bg height100 width100 t0" src="{% static 'img/section-bg.png' %}" alt="img"/>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+									<h6 class="bottom-15"></h6>
+									<p>{{ wildlife.text|safe }}</p>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-				<!-- section end-->
-				<!-- section start-->
-				<!-- section end-->
-			</main>
+					</section>
+					<!-- section end-->
+				</main>
 {% endblock %}
