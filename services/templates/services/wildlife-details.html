@@ -8,7 +8,7 @@
 				<!-- promo start-->
 				<section class="welcome-primary">
 					<picture>
-						<source srcset="{% static 'img/wildlife/roedeer.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/wildlife/roedeer.webp' %}" alt="img"/>
+						<source srcset="{% static 'img/section-bg-dark.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/section-bg-dark.webp' %}" alt="img"/>
 					</picture>
 					<div class="container">
 						<div class="row">
@@ -31,10 +31,7 @@
 								<div class="row offset-30">
 									<div class="col-12 col-sm-6 col-md-4 bottom-30">
 										<div class="animal-details__icon">
-											<img class="img--bg" src="{{ wildlife.image.url }}" alt="img"/>
-											<!-- <svg class="icon">
-												<use xlink:href="#cat"></use>
-											</svg> -->
+											<img class="img--bg" style="height:100px;width:200px" src="{{ wildlife.image.url }}" alt="img"/>
 										</div>
 									</div>
 									<div class="col-12 col-sm-6 col-md-4 bottom-30">
@@ -47,7 +44,7 @@
 									</div>
 									<div class="col-12 col-sm-6 col-md-4 bottom-30">
 										<h6 class="animal-details__title">{% trans 'Body size' %}</h6>
-										<p>{{ willdife.weight_min }} - {{ willdife.weight_max }} kg. <br/> </p>
+										<p>{{ willdife.weight_min }} - {{ willdife.weight_max }} kg <br/> </p>
 									</div>
 									<div class="col-12 col-sm-6 col-md-4 bottom-30">
 										<h6 class="animal-details__title">{% trans 'Native habitat' %}</h6>

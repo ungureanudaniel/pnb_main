@@ -22,45 +22,74 @@
 						</div>
 					</div>
 				</section>
-				<!-- promo end-->
-				<!-- section start-->
-				<section class="section animal-details">
+				<!-- welcome end-->
+
+				<section class="section front-services no-padding-bottom">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-								<div class="row offset-30">
-
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<div class="animal-details__icon">
-											<img class="img--bg" style="height:100px;width:200px" src="{{ flora.image.url }}" alt="img"/>
-										</div>
+									<div class="col-12">
+										<div class="video-frame"><img class="img--bg" src="{{ flora.image.url }}" alt="frame"></div>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Conservation status' %}</h6>
-										<p>{{ flora.cons_status }}</p>
+								</div>
+						<div class="row offset-margin">
+							<div class="col-sm-6 col-lg-4 col-xl-3">
+								<div class="icon-item">
+									<div class="icon-item__icon">
+										<svg class="icon">
+											<i class="fas fa-tree text-dark"></i>
+										</svg>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Flowering' %}</h6>
-										<p>{{ flora.life_span }}</p>
+									<h6 class="icon-item__title">{% trans 'Conservation status' %}</h6>
+									<p>{{ flora.cons_status }}</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4 col-xl-3">
+								<div class="icon-item">
+									<div class="icon-item__icon">
+										<svg class="icon">
+											<use xlink:href="#cutlery"></use>
+										</svg>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Height' %}</h6>
-										<p>{{ flora.height_max }} kg <br/></p>
+									<h6 class="icon-item__title">{% trans 'Native habitat' %}</h6>
+									<p>{{ flora.habitat|capfirst|safe }}</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4 col-xl-3">
+								<div class="icon-item">
+									<div class="icon-item__icon">
+										<svg class="icon">
+											<use xlink:href="#wifi"></use>
+										</svg>
 									</div>
-									<div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans 'Native habitat' %}</h6>
-										<p>{{ flora.habitat }}</p>
+									<h6 class="icon-item__title">{% trans 'Height' %}</h6>
+									<p>{{ flora.height_max }} cm </p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4 col-xl-3">
+								<div class="icon-item">
+									<div class="icon-item__icon">
+										<svg class="icon">
+											<use xlink:href="#trophy"></use>
+										</svg>
 									</div>
-									<!-- <div class="col-12 col-sm-6 col-md-4 bottom-30">
-										<h6 class="animal-details__title">{% trans '' %}</h6>
-										<p>{{ flora. }}</p>
-									</div> -->
+									<h6 class="icon-item__title">{% trans 'Flowering' %}</h6>
+									<p>{{ flora.flowering_start }} - {{ flora.flowering_end }}</p>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-4 col-xl-3">
+								<div class="icon-item">
+									<div class="icon-item__icon">
+										<svg class="icon">
+											<use xlink:href="#trophy"></use>
+										</svg>
+									</div>
+									<h6 class="icon-item__title">{% trans 'Life span' %}</h6>
+									<p>{{ flora.life_span }} </p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				<!-- section end-->
 				<!-- section start-->
 				<section class="section"><img class="d-block section__bg height100 width100 t0" src="{% static 'img/section-bg.png' %}" alt="img"/>
 					<div class="container">

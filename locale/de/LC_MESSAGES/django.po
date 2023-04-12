@@ -24,6 +24,9 @@ msgstr ""
 msgid "Flowering"
 msgstr "Blüte"
 #: .\services\flora.html.py:189
+msgid "Life span"
+msgstr "Lebensdauer"
+#: .\services\flora.html.py:189
 msgid "Height"
 msgstr "Höhe"
 #: .\services\base.html.py:189

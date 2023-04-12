@@ -30,6 +30,9 @@ msgstr "Înflorire"
 #: .\services\flora.html.py:189
 msgid "Height"
 msgstr "Înălţime"
+#: .\services\flora.html.py:189
+msgid "Life span"
+msgstr "Durată de viaţă"
 
 #: .\pnb_main\settings.py:158
 msgid "English"
