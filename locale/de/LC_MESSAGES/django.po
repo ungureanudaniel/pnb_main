@@ -20,6 +20,12 @@ msgstr ""
 #: .\pnb_main\settings.py:157
 msgid "Română"
 msgstr ""
+#: .\services\flora.html.py:189
+msgid "Flowering"
+msgstr "Blüte"
+#: .\services\flora.html.py:189
+msgid "Height"
+msgstr "Höhe"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Sprache"
