@@ -129,12 +129,12 @@ def home(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('http://127.0.0.1:8000/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
                         return redirect('/')
-                    except BadHeaderError as e:
+                    except Exception as e:
                         messages.warning(request, e)
                         return redirect('/')
 
@@ -420,12 +420,12 @@ def announcement_view(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('http://127.0.0.1:8000/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
                         return redirect('announcement')
-                    except BadHeaderError as e:
+                    except Exception as e:
                         messages.warning(request, e)
                         return redirect('announcement')
 
@@ -497,18 +497,15 @@ def bloglist_view(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_('Thank you for subscribing to our newsletter!\
-                                You can finalize the process by clicking on this \
-                                    <a href="{}subscription_confirmation/?email={}&conf_num={}"> button \
-                                        </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-                        return redirect('/')
-                    except BadHeaderError:
-                        return HttpResponse('Invalid header found.')
+                        return redirect('blog')
+                    except Exception as e:
+                        messages.warning(request, e)
+                        return redirect('blog')
 
-                    return render(request, template, {})
 
     context = {
     "blogposts": BlogPost.objects.all(),
