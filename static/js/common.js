@@ -418,6 +418,15 @@
 				$input.val(count)
 				$input.change()
 				return false
+				$.ajax({
+	        type: 'post',
+	        url: 'http://127.0.0.1:8000/en/tickets/ticket-details',
+	        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
+	        dataType: 'json',
+	        success: function () {
+	          $('#cart > ul').load('http://127.0.0.1:8000/en/tickets/ticket-details');
+	        }
+	      });
 
 			})
 
@@ -969,5 +978,21 @@
 		form()
 
 	})
+	$('.minus').click(function () {
+     var $input = $(this).parent().find('#score');
+     var count = parseInt($input.val()) - 1;
+     count = count < 1 ? 1 : count;
+     $input.val(count);
+     $input.change();
+      $.ajax({
+        type: 'post',
+        url: 'index.php?route=checkout/cart/edit',
+        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
+        dataType: 'json',
+        success: function () {
+          $('#cart > ul').load('index.php?route=common/cart/info ul li');
+        }
+      });
+    });
 
 }(jQuery))
