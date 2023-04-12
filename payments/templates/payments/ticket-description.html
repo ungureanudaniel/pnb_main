@@ -1,0 +1,618 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load hitcount_tags %}
+
+{% block content %}
+<main class="main">
+				<!-- promo start-->
+				<section class="promo-primary">
+					<picture>
+						<source srcset="img/elements.jpg" media="(min-width: 992px)"><img class="img--bg" src="img/elements.jpg" alt="img">
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+                  <div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Visitor</span> <span>Ticket{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- shop product start-->
+				<section class="section shop-product background--brown">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+								<!-- dual slider start-->
+								<div class="dual-slider">
+									<div class="main-slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1710px;"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 570px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"><div><div class="main-slider__item" style="width: 100%; display: inline-block;">
+											<div class="main-slider__img"><img class="img--contain" src="img/single_1.png" alt="single"></div>
+										</div></div></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 570px; position: relative; left: -570px; top: 0px; z-index: 998; opacity: 0;"><div><div class="main-slider__item" style="width: 100%; display: inline-block;">
+											<div class="main-slider__img"><img class="img--contain" src="img/single_2.png" alt="single"></div>
+										</div></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 570px; position: relative; left: -1140px; top: 0px; z-index: 998; opacity: 0;"><div><div class="main-slider__item" style="width: 100%; display: inline-block;">
+											<div class="main-slider__img"><img class="img--contain" src="img/single_3.png" alt="single"></div>
+										</div></div></div></div></div></div>
+									<div class="nav-slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 429px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
+											<div class="nav-slider__img"><img class="img--contain" src="img/single_s1.png" alt="single"></div>
+										</div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
+											<div class="nav-slider__img"><img class="img--contain" src="img/single_s2.png" alt="single"></div>
+										</div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
+											<div class="nav-slider__img"><img class="img--contain" src="img/single_s3.png" alt="single"></div>
+										</div></div></div></div></div></div>
+								</div>
+								<!-- dual slider end-->
+							</div>
+							<div class="col-lg-6 col-xl-5 offset-xl-1">
+								<div class="shop-product__top">
+									<h4 class="shop-product__name">Zoo Cap</h4>
+									<s class="shop-product__old-price">35.99 USD</s>
+									<h4 class="shop-product__price">15.00$</h4>
+								</div>
+								<div class="shop-product__description">
+									<ul class="shop-product__list">
+										<li>Material: Laser</li>
+										<li>Color: Black</li>
+										<li>Coutry: Ukraine</li>
+									</ul>
+									<p>Rudderfish long-finned pike--razorfish menhaden paradise fish, barramundi oceanic flyingfish. Fangtooth yellowtail banded killifish seamoth triplefin blenny desert  dogfish whalefish.</p>
+									<div class="shop-product__rating">
+										<h6 class="shop-product__title">Rating</h6>
+										<ul class="rating-list">
+											<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+											</li>
+											<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+											</li>
+											<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+											</li>
+											<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+											</li>
+											<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+											</li>
+										</ul><span class="shop-product__reviews-count">(4 Reviews)</span>
+									</div>
+								</div>
+								<form class="form product-form" action="javascript:void(0);" autocomplete="off">
+									<div class="form__wrapper">
+										<div class="form__count"><span class="form__minus"></span>
+											<input class="form__field" type="number" value="1"><span class="form__plus"></span><a class="shop-item__add" href="#">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- shop product end-->
+				<!-- section start-->
+				<section class="section no-padding-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8">
+								<!-- shop product tabs start-->
+								<div class="tabs horizontal-tabs shop-product-tabs r-tabs">
+									<ul class="horizontal-tabs__header r-tabs-nav">
+										<li class="r-tabs-tab r-tabs-state-active"><a href="#horizontal-tabs__item-1" class="r-tabs-anchor"><span>Description </span></a></li>
+										<li class="r-tabs-state-default r-tabs-tab"><a href="#horizontal-tabs__item-2" class="r-tabs-anchor"><span>Reviews</span></a></li>
+									</ul>
+									<div class="horizontal-tabs__content">
+										<div class="r-tabs-accordion-title r-tabs-state-active"><a href="#horizontal-tabs__item-1" class="r-tabs-anchor"><span>Description </span></a></div><div class="horizontal-tabs__item r-tabs-panel r-tabs-state-active" id="horizontal-tabs__item-1" style="display: block;">
+											<p>Rudderfish long-finned pike--razorfish menhaden paradise fish, barramundi oceanic flyingfish. Fangtooth yellowtail banded killifish seamoth triplefin blenny desert  dogfish whalefish.Rudderfish long-finned pike--razorfish menhaden paradise fish, barramundi oceanic flyingfish. Fangtooth yellowtail banded killifish seamoth triplefin blenny desert  dogfish whalefish.Rudderfish long-finned pike--razorfish menhaden paradise fish, barramundi oceanic flyingfish. Fangtooth yellowtail banded killifish seamoth triplefin blenny desert  dogfish whalefish.Rudderfish long-finned pike--razorfish menhaden paradise fish, barramundi oceanic flyingfish. Fangtooth yellowtail banded killifish seamoth triplefin blenny desert  dogfish whalefish.</p>
+											<div class="table">
+												<div class="table__body">
+													<div class="table__row">
+														<div class="table__cell"><strong>Material</strong></div>
+														<div class="table__cell"><strong>Laser</strong></div>
+													</div>
+													<div class="table__row">
+														<div class="table__cell"><strong>Color</strong></div>
+														<div class="table__cell"><strong>Black</strong></div>
+													</div>
+													<div class="table__row">
+														<div class="table__cell"><strong>Coutry</strong></div>
+														<div class="table__cell"><strong>Ukraine</strong></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="r-tabs-accordion-title"><a href="#horizontal-tabs__item-2" class="r-tabs-anchor"><span>Reviews</span></a></div><div class="horizontal-tabs__item r-tabs-state-default r-tabs-panel" id="horizontal-tabs__item-2">
+											<div class="comments">
+												<div class="comments__item">
+													<div class="comments__item-img"><img class="img--bg" src="img/author_5.png" alt="img"></div>
+													<div class="comments__item-description">
+														<div class="row align-items-center">
+															<div class="col-12 col-md-3"><span class="comments__item-name">Ellen Gringe</span></div>
+															<div class="col-9 col-md-7">
+																<ul class="rating-list">
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																</ul><span class="rate-count">4.0</span>
+															</div>
+															<div class="col-3 col-md-2 text-right"><span class="comments__item-action">
+																<svg class="icon">
+																	<use xlink:href="#previous"></use>
+																</svg></span></div>
+															<div class="col-12">
+																<div class="comments__item-text">
+																	<p>Asian carps sailback scorpionfish; dragon goby lemon sole triplefin blenny hog sucker. Smelt sleeper shovelnose sturgeon merluccid hake cow shark herring smelt trout-perch</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="comments__item">
+													<div class="comments__item-img"><img class="img--bg" src="img/author_6.png" alt="img"></div>
+													<div class="comments__item-description">
+														<div class="row align-items-center">
+															<div class="col-12 col-md-3"><span class="comments__item-name">John Tringe</span></div>
+															<div class="col-9 col-md-7">
+																<ul class="rating-list">
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																	<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+																	</li>
+																</ul><span class="rate-count">2.0</span>
+															</div>
+															<div class="col-3 col-md-2 text-right"><span class="comments__item-action">
+																<svg class="icon">
+																	<use xlink:href="#previous"></use>
+																</svg></span></div>
+															<div class="col-12">
+																<div class="comments__item-text">
+																	<p>Dragon goby lemon sole triplefin blenny hog sucker. Smelt sleeper shovelnose sturgeon merluccid hake cow shark herring smelt trout-perch</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="comments__item comments__item--sub">
+														<div class="comments__item-img"><img class="img--bg" src="img/author_7.png" alt="img"></div>
+														<div class="comments__item-description">
+															<div class="row align-items-center">
+																<div class="col-12 col-md-3"><span class="comments__item-name">Naomi Fringe</span></div>
+																<div class="col-9 col-md-7">
+																	<ul class="rating-list">
+																		<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																		</li>
+																		<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																		</li>
+																		<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																		</li>
+																		<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																		</li>
+																		<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+																		</li>
+																	</ul><span class="rate-count">5.0</span>
+																</div>
+																<div class="col-3 col-md-2 text-right"><span class="comments__item-action">
+																	<svg class="icon">
+																		<use xlink:href="#previous"></use>
+																	</svg></span></div>
+																<div class="col-12">
+																	<div class="comments__item-text">
+																		<p>Cow shark herring smelt trout-perch Asian carps sailback scorpionfish; dragon goby lemon sole triplefin blenny hog sucker. Smelt sleeper shovelnose sturgeon merluccid hake </p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- comments form start-->
+											<form class="form comments-form" action="javascript:void(0);" autocomplete="off">
+												<h6 class="form__title">Send Review</h6>
+												<div class="row">
+													<div class="col-xl-6">
+														<input class="form__field" type="text" name="first-name" placeholder="Firs Name">
+													</div>
+													<div class="col-xl-6">
+														<input class="form__field" type="email" name="email" placeholder="Email">
+													</div>
+													<div class="col-12">
+														<textarea class="form__field form__message" name="message" placeholder="Message"></textarea>
+													</div>
+													<div class="col-12">
+														<div class="form__rating"><strong>Please Rate:</strong>
+															<input class="form__rating-input" id="rate_0" type="radio" name="rating" value="0" disabled="disabled">
+															<label class="form__rating-label" for="rate_1"><i class="fa fa-star" aria-hidden="true"></i>
+															</label>
+															<input class="form__rating-input" id="rate_1" type="radio" name="rating" value="1">
+															<label class="form__rating-label" for="rate_2"><i class="fa fa-star" aria-hidden="true"></i>
+															</label>
+															<input class="form__rating-input" id="rate_2" type="radio" name="rating" value="2">
+															<label class="form__rating-label" for="rate_3"><i class="fa fa-star" aria-hidden="true"></i>
+															</label>
+															<input class="form__rating-input" id="rate_3" type="radio" name="rating" value="3" checked="checked">
+															<label class="form__rating-label" for="rate_4"><i class="fa fa-star" aria-hidden="true"></i>
+															</label>
+															<input class="form__rating-input" id="rate_4" type="radio" name="rating" value="4">
+															<label class="form__rating-label" for="rate_5"><i class="fa fa-star" aria-hidden="true"></i>
+															</label>
+															<input class="form__rating-input" id="rate_5" type="radio" name="rating" value="5">
+														</div>
+													</div>
+													<div class="col-12">
+														<button class="form__submit" type="submit">Send</button>
+													</div>
+												</div>
+											</form>
+											<!-- comments form end-->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- section start-->
+				<section class="section background--brown no-padding-top">
+					<div class="container">
+						<div class="row align-items-end bottom-50">
+							<div class="col-md-7 col-lg-8">
+								<div class="heading heading--primary">
+									<h2 class="heading__title no-margin-bottom"><span>Related</span> <span>Products</span></h2>
+								</div>
+							</div>
+							<div class="col-md-5 col-lg-4 text-md-right">
+								<div class="related-slider__dots"><ul class="slick-dots" role="tablist" style="display: inline-flex;"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control20" aria-controls="slick-slide20" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control21" aria-controls="slick-slide22" aria-label="2 of 2" tabindex="-1">2</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control22" aria-controls="slick-slide24" aria-label="3 of 2" tabindex="-1">3</button></li></ul></div>
+							</div>
+						</div>
+						<div class="row offset-margin">
+							<div class="col-12">
+								<div class="related-slider slick-initialized slick-slider slick-dotted"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 4102px; transform: translate3d(-1172px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_5.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Giraffe Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--new">New</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_6.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Monkey Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide20" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--new">New</span><a class="shop-item__add" href="#" tabindex="0">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_3.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="0">Monkey Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" role="tabpanel" id="slick-slide21" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="0">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="0">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" role="tabpanel" id="slick-slide22" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><a class="shop-item__add" href="#" tabindex="0">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_5.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="0">Giraffe Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" role="tabpanel" id="slick-slide23" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--new">New</span><a class="shop-item__add" href="#" tabindex="0">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_6.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="0">Monkey Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide24" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--new">New</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_3.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Monkey Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_5.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Giraffe Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--new">New</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_6.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Monkey Toy</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__price">65.99 USD</span></div>
+											</div>
+										</div>
+									</div></div></div><div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" tabindex="-1" style="width: 287px;"><div><div class="related-slider__item" style="width: 100%; display: inline-block;">
+										<div class="shop-item">
+											<div class="shop-item__img"><span class="shop-item__badge shop-item__badge--sale">Sale</span><a class="shop-item__add" href="#" tabindex="-1">
+												<svg class="icon">
+													<use xlink:href="#bag"></use>
+												</svg><span>Add to cart</span></a><img class="img--contain" src="img/shop_4.png" alt="img"></div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="shop-product.html" tabindex="-1">Zoo L T-Shirt</a></h6>
+												<ul class="rating-list">
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+													<li class="rating-list__item rating-list__item--disabled"><i class="fa fa-star" aria-hidden="true"></i>
+													</li>
+												</ul>
+												<div class="shop-item__details-lower"><span class="shop-item__sale">
+													<s class="shop-item__price-old">15.99</s><span class="shop-item__price">10.99 USD</span></span></div>
+											</div>
+										</div>
+									</div></div></div></div></div></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #user apps
     'users',
     'services',
+    'payments',
     'geemap',
     ]
 SITE_ID = 1
