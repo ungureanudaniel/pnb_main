@@ -26,7 +26,12 @@ msgstr "Sprache"
 #: .\services\templates\services\privacy.html:18
 msgid "<span>Privacy</span> <span> Policy</span>"
 msgstr "<span>Declarație</span> <span>de Confidențialitate</span>"
-
+#: services/templates/services/announcements.html: 198
+msgid "No announcements for now, but stay tuned for news by subscribing our newsletter"
+msgstr "Im Moment gibt es keine Ankündigungen, aber bleiben Sie auf dem Laufenden, indem Sie unseren Newsletter abonnieren"
+#: services/templates/services/announcements.html: 198
+msgid "Click here to subscribe"
+msgstr "Klicken Sie hier um zu abonnieren"
 #: .\services\templates\services\privacy.html:33
 msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
 msgstr "<span>Protecția Datelor pe pagina Parcului Natural Bucegi </span><br> <span> Declarație de Confidențialitate</span>"
@@ -2024,3 +2029,51 @@ msgstr "Unsere </span> <span>Flora"
 #: services/templates/services/includes/videos.html: 31
 msgid "<span>Check out videos from </span><span>Bucegi Natural Park</span>"
 msgstr "<span>Sehen Sie sich Videos von </span><span>Bucegi NaturPark</span>"
+#: services/templates/services/views.py: 120
+msgid "This email already exists in our database!"
+msgstr "Diese E-Mail existiert bereits in unserer Datenbank!"
+#: services/templates/services/views.py: 128
+msgid "Newsletter Bucegi Natural Park"
+msgstr "Newsletter Naturpark Bucegi"
+#: services/templates/services/views.py: 128
+msgid "Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> button</a>."
+msgstr "Danke, dass Sie sich für unseren Newsletter angemeldet haben! Sie können den Vorgang abschließen, indem Sie auf diese <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> Schaltfläche</a> klicken."
+#: services/templates/services/views.py: 134
+msgid "A confirmation link was sent to your email inbox. Please check!"
+msgstr "Ein Bestätigungslink wurde an Ihren E-Mail-Posteingang gesendet. Bitte überprüfen!"
+#: services/templates/services/views.py: 134
+msgid "User does not exist!"
+msgstr "Benutzer existiert nicht!"
+#: services/templates/services/subscription_conf: 134
+msgid "Subscription confirmation"
+msgstr "Bestätigung des Abonnements"
+#: services/templates/services/subscription_conf: 134
+msgid "Congratulations! You have been subscribed to our newsletter"
+msgstr "Herzlichen Glückwunsch! Sie haben sich für unseren Newsletter angemeldet"
+#: services/templates/services/subscription_conf: 134
+msgid "If you decide though, to unsubscribe, you can always click on the unsubscribe button, at the bottom of the page"
+msgstr "Wenn Sie sich dennoch entscheiden, das Abonnement zu kündigen, können Sie jederzeit auf die Schaltfläche 'Abmelden' unten auf der Seite klicken"
+#: services/templates/services/unsubscribe: 134
+msgid "<span>Unsubscribe</span> <span></span>"
+msgstr "<span>Abmelden</span> <span></span>"
+#: services/templates/services/subscription_conf: 134
+msgid "<span>Subscription</span> <span> Confirmation</span>"
+msgstr "<span>Konfirmation</span> <span> Anmelden Newsletter</span>"
+#: services/templates/services/unsubscribe: 134
+msgid "<h4 class='cta-block__title'>Unsubscribe <span>from Newsletter</span></h4>"
+msgstr "<h4 class='cta-block__title'>Newsletter <span>abbestellen</span></h4>"
+#: services/templates/services/subscription_conf: 134
+msgid "Error! Your email cannot be registered. Please contact our IT department at +40 758 039 784"
+msgstr "Fehler! Ihre E-Mail kann nicht registriert werden. Bitte kontaktieren Sie unsere IT-Abteilung unter +40758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Are you sure you wish to cancel your subscription? If yes please type your email address in the box bellow"
+msgstr "Sind Sie sicher, dass Sie Ihr Abonnement kündigen möchten? Wenn ja, geben Sie bitte Ihre E-Mail-Adresse in das unten stehende Feld ein"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. Please contact our IT department at +40 758 039 784"
+msgstr "Fehler! Abmeldung fehlgeschlagen. Bitte kontaktieren Sie unsere IT-Abteilung unter +40 758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Success! Unsubscribing was finalized. If you change your mind you can subscribe again anytime"
+msgstr "Erfolgreich! Die Abbestellung wurde abgeschlossen. Wenn Sie Ihre Meinung ändern, können Sie sich jederzeit wieder anmelden"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. This email does not exist in our database"
+msgstr "Fehler! Abmeldung fehlgeschlagen. Diese E-Mail existiert nicht in unserer Datenbank"

@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 #blog imports
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
-from multiselectfield import MultiSelectField
 #================Partners models=====================================
 class Announcement(models.Model):
     """
@@ -20,6 +19,7 @@ class Announcement(models.Model):
     link_en = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
     timestamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
+    expiry = models.DateTimeField(blank=True)
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)

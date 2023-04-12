@@ -23,7 +23,7 @@
 					</div>
 				</section>
 				<!-- promo end-->
-				<!-- blog start-->
+				<!-- announcements start-->
 				{% include 'includes/messages.html' %}
 				<section class="section blog">
 					<div class="container">
@@ -37,7 +37,8 @@
 			              </a>
 			            </div>
 									{% endif %}
-									{% for a in announc %}
+									{% if fut_announc %}
+										{% for a in fut_announc %}
 									<div class="col-12 mb-5">
 										<div class="blog-item">
 
@@ -64,8 +65,20 @@
 											</div>
 										</div>
 									</div>
-									{% endfor %}
-
+										{% endfor %}
+									{% else %}
+									<div class="cta-block mb-5">
+										<div class="container">
+											<div class="row align-items-center w-100">
+												<div class="col-12">
+													<p class="cta-block__text"><strong></strong><br><br></p>
+													<p class="cta-block__text">{% trans 'No announcements for now, but stay tuned for news by subscribing our newsletter' %}</p><img width="50" height="50" style="text-align:center;margin:auto;" src="{% static 'img/chevron-down-w.png' %}"/><br>
+													<div class="col-xl-8"><a class="button button--primary button--filled" href="#newsletter">{% trans 'Click here to subscribe' %}</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endif %}
 									<!-- <div class="col-12 text-center mb-5">
 										<ul class="pagination blog__pagination">
 											<li class="pagination__item pagination__item--prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
@@ -135,19 +148,19 @@
 									<h5 class="blog__title">Tags</h5>
 									<div class="tags tags--style-2"><a class="tags__item" href="#">Animal</a><a class="tags__item" href="#">Monkey</a><a class="tags__item" href="#">Zoo</a><a class="tags__item" href="#">Kids</a><a class="tags__item" href="#">Lion</a><a class="tags__item" href="#">Giraffe</a></div>
 								</div> -->
-								<div class="subscribe-block">
+								<div class="subscribe-block" id="newsletter">
 									<h5 class="subscribe-block__title">{% trans 'Subscribe Now' %}</h5>
 									<p>{% trans 'And get our latest updates' %}</p>
-									<form class="form subscribe-form" action="{% url 'blog' %}" method="POST">
+									<form class="form subscribe-form" action="{% url 'announcement' %}" method="POST">
 										{% csrf_token %}
-										<input class="form__field" type="email" name="subscriber" placeholder="Enter your mail here..."/>
-										<input class="form__submit" type="submit" value="{% trans 'Subscribe' %}"/>
+										<input class="form__field" type="email" name="subscriber" placeholder="{% trans 'Your email' %}"/>
+										<button class="form__submit" type="submit" name="form-type" value="subscribe">{% trans 'Subscribe' %}</button>
 									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				<!-- blog end-->
+				<!-- announcements end-->
 			</main>
 {% endblock %}

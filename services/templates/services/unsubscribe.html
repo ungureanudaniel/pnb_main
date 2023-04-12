@@ -1,0 +1,49 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary green_background">
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Unsubscribe</span> <span></span>{% endblocktranslate %}</h1>
+										<span class="welcome_icon">
+											<img src="{% static 'img\svg\mail.svg' %}">
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col-auto">
+								<span class="welcome_icon">
+									<img src="{% static 'img\svg\mail.svg' %}">
+								</span>
+							</div> -->
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<div class="cta-block top-70 bottom-70"><img class="img--bg" src="{% static 'img/backgrounds/newsletter6.webp' %}" alt="bg">
+				  <div class="container">
+				    <div class="row align-items-center">
+				      <div class="col-lg-6">
+								{% blocktranslate %}<h4 class='cta-block__title'>Unsubscribe <span>from Newsletter</span></h4>{% endblocktranslate %}
+								{% blocktranslate %}<p class='cta-block__text'>Are you sure you wish to cancel your subscription? If yes please type your email address in the box bellow</p>{% endblocktranslate %}
+							</div>
+				  		<div class="col-lg-6 offset-30">
+				        <form class="form cta-form bottom-30" action="." method="POST">
+				          {% csrf_token %}
+									<input class="form__field" style="background-color: grey !important;" type="email" name="unsub_email" placeholder="{% trans 'Your email' %}">
+				          <button class="form__submit" type="submit" name="form-type" value="unsubscribe">{% trans 'Unsubscribe' %}</button>
+				        </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- section end-->
+			</main>
+{% endblock %}

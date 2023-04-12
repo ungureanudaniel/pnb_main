@@ -9,6 +9,7 @@
 				<!-- promo start-->
 				<section class="promo promo--front-5">
 					<div class="promo-slider">
+
 						<div class="promo-slider__item promo-slider__item--style-2">
 							<picture>
 								<source srcset="{% static 'img/backgrounds/promo8.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo8.webp' %}" alt="img"/>
@@ -19,6 +20,14 @@
 									<div class="col-xl-10 offset-xl-1">
 										<div class="align-container">
 											<div class="align-container__item text-center">
+												{% if messages %}
+										    <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+										      {% include 'includes/messages.html' %}
+										    </div>
+										    {% else %}
+										    <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+										    </div>
+										    {% endif %}
 												<div class="promo-slider__wrapper-1">
 													<h2 class="promo-slider__title"><span>{% trans 'Beautiful' %}</span><br/> <span>{% trans 'Landscapes and Trails' %}</span></h2>
 												</div>
@@ -393,6 +402,9 @@
 				<!-- section end-->
 				{% include 'includes/testimonials.html' %}
 				<!-- instagram start-->
+				<section class="section no-padding-bottom">
+					{% include 'includes/newsletter.html' %}
+				</section>
 				<section class="section instagram instagram--front-5"><img class="instagram__img" src="{% static 'img/instagram_img.png' %}" alt="img"/>
 					<div class="container">
 						<div class="row align-items-end bottom-30">

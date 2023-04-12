@@ -2105,3 +2105,57 @@ msgstr "Mesajul tau a plecat catre noi. Vom raspunde cat de curand!"
 #: services/templates/services/views.py: 198
 msgid "Incorrect captcha! Please try again!"
 msgstr "Captcha incorect! Vă rugăm încercați din nou!"
+#: services/templates/services/announcements.html: 198
+msgid "No announcements for now, but stay tuned for news by subscribing our newsletter"
+msgstr "Nu sunt anunțuri deocamdată, dar rămâneți la curent cu noutățile abonându-vă la newsletter-ul nostru"
+#: services/templates/services/announcements.html: 198
+msgid "Click here to subscribe"
+msgstr "Click aici pentru abonare"
+#: services/templates/services/views.py: 120
+msgid "This email already exists in our database!"
+msgstr "Acest e-mail există deja în baza noastră de date!"
+#: services/templates/services/views.py: 128
+msgid "Newsletter Bucegi Natural Park"
+msgstr "Stiri Parcul Natural Bucegi"
+#: services/templates/services/views.py: 128
+msgid "Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> button</a>."
+msgstr "Vă mulțumim că v-ați abonat la newsletter-ul nostru! Puteți finaliza procesul dând click pe acest <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> buton</a>."
+#: services/templates/services/views.py: 134
+msgid "A confirmation link was sent to your email inbox. Please check!"
+msgstr "Un link de confirmare a fost trimis în căsuța dvs. de e-mail. Vă rugăm să verificați!"
+#: services/templates/services/views.py: 134
+msgid "User does not exist!"
+msgstr "Utilizatorul nu există!"
+#: services/templates/services/subscription_conf: 134
+msgid "Subscription confirmation"
+msgstr "Confirmarea abonării"
+#: services/templates/services/subscription_conf: 134
+msgid "Congratulations! You have been subscribed to our newsletter"
+msgstr "Felicitări! Ați fost abonat la newsletter-ul nostru"
+#: services/templates/services/subscription_conf: 134
+msgid "If you decide though, to unsubscribe, you can always click on the unsubscribe button, at the bottom of the page"
+msgstr "Dacă totuși decideți să vă dezabonați, puteți oricând să dați click pe butonul de dezabonare, în partea de jos a paginii"
+#: services/templates/services/unsubscribe: 134
+msgid "<span>Unsubscribe</span> <span></span>"
+msgstr "<span>Dezabonare</span> <span></span>"
+#: services/templates/services/subscription_conf: 134
+msgid "<span>Subscription</span> <span> Confirmation</span>"
+msgstr "<span>Confirmare</span> <span> Abonare Newsletter</span>"
+#: services/templates/services/unsubscribe: 134
+msgid "<h4 class='cta-block__title'>Unsubscribe <span>from Newsletter</span></h4>"
+msgstr "<h4 class='cta-block__title'>Dezabonare <span>de la Newsletter</span></h4>"
+#: services/templates/services/subscription_conf: 134
+msgid "Error! Your email cannot be registered. Please contact our IT department at +40 758 039 784"
+msgstr "Eroare! E-mailul dvs. nu poate fi înregistrat. Vă rugăm să contactați departamentul nostru IT la numărul +40 758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Are you sure you wish to cancel your subscription? If yes please type your email address in the box bellow"
+msgstr "Sunteți sigur că doriți să vă anulați abonarea? Dacă da, vă rugăm să introduceți adresa dvs. de e-mail în caseta de mai jos"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. Please contact our IT department at +40 758 039 784"
+msgstr "Eroare! Dezabonarea a eșuat. Vă rugăm să contactați departamentul nostru IT la +40 758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Success! Unsubscribing was finalized. If you change your mind you can subscribe again anytime"
+msgstr "Succes! Dezabonarea a fost finalizată. Dacă vă răzgândiți, vă puteți abona din nou în orice moment"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. This email does not exist in our database"
+msgstr "Eroare! Dezabonarea a eșuat. Acest e-mail nu există în baza noastră de date"

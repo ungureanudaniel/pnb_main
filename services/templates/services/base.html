@@ -92,6 +92,7 @@
 							</span>
 						</div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">{% trans 'Contact' %}</a></div>
 						<div class="screen__item screen--trigger" data-category="language">
 							<span>{% trans 'Language' %}</span>
@@ -388,7 +389,7 @@
 						</div>
 
 					</div>
-					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#83888b" href="#"><p>&#x2022; {% trans 'Unsubscribe' %} &#x2022;</p></div>
+					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#83888b" href="{% url 'unsubscribe' %}"><p>&#x2022; {% trans 'Unsubscribe' %} &#x2022;</p></div>
 
 			</footer>
 			<!-- footer end-->

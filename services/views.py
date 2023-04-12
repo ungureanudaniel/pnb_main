@@ -10,6 +10,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 import requests
 from django.utils.translation import gettext_lazy as _
+from django.views.decorators.csrf import csrf_protect
 #----blog imports
 from django.db.models import Q
 from django.db.models import Count
@@ -111,7 +112,7 @@ def home(request):
                 messages.warning(request, _("Warning! {e}"))
 
         #--------------check if newsletter email exists already---------
-        if request.POST.get('submit') == "subscribe":
+        if request.POST.get('form-type') == "subscribe":
             newsletter_email = request.POST.get('subscriber')
             if newsletter_email:
                 try:
@@ -128,10 +129,7 @@ def home(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_('Thank you for subscribing to our newsletter!\
-                                You can finalize the process by clicking on this \
-                                    <a href="{}subscription_confirmation/?email={}&conf_num={}"> button \
-                                        </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('http://127.0.0.1:8000/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
@@ -176,10 +174,10 @@ def contacts_view(request):
                     #     return render(request, 'services/invalid_header.html',{})
                     # return HttpResponseRedirect('/contact')
                 else:
-                    messages.warning(request, "Failed! Please make sure your info is correct!")
+                    messages.warning(request, _("Failed! Please make sure your info is correct!"))
                     return redirect('/contact')
             else:
-                messages.warning(request, "Failed! Please fill in the captcha field again!")
+                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
                 return redirect('/contact')
         except Exception as e:
             messages.warning(request, f"{e}")
@@ -251,6 +249,53 @@ def video_view(request):
     # except Exception as e:
     #     messages.error(request, _('Nereusit!'))
     return render(request, template, {})
+#--------------------------------------------------------------subscription_conf
+@csrf_protect
+def subscription_conf_view(request):
+    template = 'services/subscription_conf.html'
+
+    try:
+        sub = Subscriber.objects.get(email=request.GET['email'])
+        if sub.conf_num == request.GET['conf_num']:
+            try:
+                sub.confirmed = True
+                sub.save()
+            except:
+                messages.warning(request, _("Error! Your email cannot be registered. Please contact our IT department at +40 758 039 784"))
+            return render(request, template, {'email': sub.email, 'action': 'confirmed'})
+        else:
+            return render(request, template, {'email': sub.email, 'action': 'denied'})
+    except Exception as e:
+        messages.warning(request, e)
+        return render(request, template, {})
+
+#---------------------------SUBS DELETION VIEW------------------------------
+def unsubscribe(request):
+    template = 'services/unsubscribe.html'
+    if request.method == "POST":
+        unsub_email = request.POST.get('unsub_email')
+        if unsub_email:
+            try:
+                print(unsub_email)
+                sub = Subscriber.objects.get(email=unsub_email)
+                print(sub)
+                if sub:
+                    sub.delete()
+                    messages.success(request, _("Success! Unsubscribing was finalized. If you change your mind you can subscribe again anytime"))
+                    return render(request, template, {'email': sub.email, 'action': 'unsubscribed'})
+                else:
+                    messages.warning(request, _("Error! Unsubscribing failed. This email does not exist in our database"))
+                    return redirect('/')
+            except:
+                messages.warning(request, _("Error! Unsubscribing failed. Please contact our IT department at +40 758 039 784"))
+                return render(request, template, {'action': 'denied'})
+        else:
+            messages.warning(request, _("Error! Email incorrec."))
+            return render(request, template, {})
+    else:
+        return render(request, template, {})
+
+
 #========================history page================================
 def history(request):
     template = 'services/history.html'
@@ -356,9 +401,10 @@ def announcement_view(request):
     #------- post per categories count using annotate---------
     group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
     if request.method=="POST":
-        newsletter_email = request.POST.get('subscriber')
+
         #--------------check if newsletter email exists already---------
-        if "subscriber" in request.POST:
+        if request.POST.get('form-type') == "subscribe":
+            newsletter_email = request.POST.get('subscriber')
             if newsletter_email:
                 try:
                     duplicate = Subscriber.objects.get(email=newsletter_email)
@@ -374,18 +420,15 @@ def announcement_view(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_('Thank you for subscribing to our newsletter!\
-                                You can finalize the process by clicking on this \
-                                    <a href="{}subscription_confirmation/?email={}&conf_num={}"> button \
-                                        </a>.'.format('127.0.0.1:8000/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('http://127.0.0.1:8000/', sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+                        return redirect('announcement')
+                    except BadHeaderError as e:
+                        messages.warning(request, e)
+                        return redirect('announcement')
 
-                    except BadHeaderError:
-                        return HttpResponse('Invalid header found.')
-
-                    return render(request, template, {})
 
     context = {
     "announc": Announcement.objects.all(),
@@ -394,12 +437,40 @@ def announcement_view(request):
 
     return render(request, template, context)
 #======================== announcement detail page================================
-class AnnounDetailView(DetailView):
+# class AnnounDetailView(HitCountDetailView, FormMixin):
+#     model = Announcement
+#     template_name = 'services/announc-details.html'
+#     context_object_name = 'announcement'
+#     slug_field = 'slug'
+#     count_hit = True
+#======================== announcement detail page================================
+class AnnounDetailView(HitCountDetailView):
     model = Announcement
     template_name = 'services/announc-details.html'
     context_object_name = 'announcement'
     slug_field = 'slug'
+    # set to True to count the hit
     count_hit = True
+
+    def get_context_data(self, **kwargs):
+        context = super(AnnounDetailView, self).get_context_data(**kwargs)
+        announ_posts = Announcement.objects.all()
+        fut_announc = []
+        for i in announ_posts:
+            if i.expiry >= timezone.now():
+                fut_announc.append(i)
+        context.update({
+        # ----------- most viewed posts---------------------------------------
+        # 'popular_posts': posts.order_by('-hit_count_generic__hits')[:3],
+        # ----------- most posts  ---------------------------------------
+        'posts': posts,
+        'fut_announc': fut_announc,
+        })
+        return context
+
+        return super().form_valid(form)
+    def announcement(self, request, *args, **kwargs):
+        return self.get(request, *args, **kwargs)
 #======================== blog main page================================
 def bloglist_view(request):
     template = 'blog/blog.html'
@@ -433,7 +504,7 @@ def bloglist_view(request):
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-
+                        return redirect('/')
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
 

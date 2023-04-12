@@ -11,18 +11,17 @@ class AttractionTranslationOptions(TranslationOptions):
 class FloraCatTranslationOptions(TranslationOptions):
     fields = ('name',)
 class FloraTranslationOptions(TranslationOptions):
-    fields = ('name', 'text')
+    fields = ('name', 'habitat', 'text')
 class WildlifeCatTranslationOptions(TranslationOptions):
     fields = ('name',)
 class WildlifeTranslationOptions(TranslationOptions):
-    fields = ('name', 'text', 'diet')
+    fields = ('name', 'habitat', 'text', 'diet')
 class TeamTranslationOptions(TranslationOptions):
     fields = ('text', 'job')
 class PublicCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class AnnouncementTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
-
 class EventTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class BlogPostCategoryTranslationOptions(TranslationOptions):

@@ -17,7 +17,7 @@ class FloraCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
 class FloraAdmin(admin.ModelAdmin):
-    fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'height_max', 'flowering_start', 'flowering_end', 'habitat', 'cons_status', 'life_span', 'text', 'text_ro', 'text_de', 'featured']
+    fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'height_max', 'flowering_start', 'flowering_end', 'habitat', 'habitat_ro', 'habitat_de', 'cons_status', 'life_span', 'text', 'text_ro', 'text_de', 'featured']
 class WildlifeAdmin(admin.ModelAdmin):
     fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'weight_min', 'weight_max', 'life_span_min', 'life_span_max', 'habitat', 'diet', 'diet_ro', 'diet_de', 'cons_status', 'text', 'text_ro', 'text_de', 'featured']
 
@@ -37,15 +37,16 @@ class PublicCatLinkAdmin(admin.ModelAdmin):
     fields = ['year', 'category', 'link_ro', 'link_en']
 class PublicCategoryAdmin(admin.ModelAdmin):
     list_display = ('title_en',)
-    fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
+    fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
 class AnnouncementAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_en', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro']
+    fields = ['title', 'title_ro', 'title_de', 'expiry', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro',]
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):
     fields = ['title', 'title_ro', 'title_de',  'text', 'text_ro', 'text_de', 'image', 'date']
 
 class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('email', 'conf_num', 'confirmed')
     fields = ['email', 'conf_num', 'confirmed']
 
 class BlogPostCategoryAdmin(admin.ModelAdmin):
