@@ -26,49 +26,21 @@
         <!-- section start-->
 				<section class="section">
 					<div class="container">
-						<div class="row bottom-50">
-              <div class="cta-block mb-5">
+						<div class="row">
+              <div class="cta-block">
       					<div class="container">
       						<div class="row align-items-center">
       							<div class="col-12">
-      								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. With that in mind, we maintain public order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more.</strong><br><br>Each of visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles. Thank you!{% endblocktranslate %}</p>
-      							</div>
+      								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each of visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>{% endblocktranslate %}</p>
+                      <div class="row">
+          							<div class="col-12 text-center"><a class="button button--white main-menu__link--scroll" style="text-decoration: none;" href="#choose-tickets">{% trans 'Buy your tickets below' %}</a></div>
+          						</div>
+                    </div>
       						</div>
       					</div>
       				</div>
-							<div class="col-12">
-								<div class="heading heading--primary heading--center"><span class="heading__pre-title">{% trans 'Tickets' %}</span>
-									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Three Months</span> <span>Ticket</span>{% endblocktranslate %}</h2>
-                </div>
-							</div>
 						</div>
-						<div class="row">
-							<div class="col-12 bottom-50">
-								<div class="table ticket-table">
-									<div class="table__header">
-										<div class="table__cell"><strong>{% trans 'Tickets' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Details' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Price' %}</strong></div>
-									</div>
-									<div class="table__body">
-										<div class="table__row">
-											<div class="table__cell" data-label="Ticket"><span><strong>{% trans 'Teens and Adults' %}</strong></span></div>
-											<div class="table__cell" data-label="Details"><span>14 + {% trans 'years old' %}</span></div>
-											<div class="table__cell" data-label="Zoo"><span><strong>10 RON</strong></span></div>
-										</div>
-										<div class="table__row">
-											<div class="table__cell" data-label="Ticket"><span><strong>{% trans 'Children' %}</strong></span></div>
-											<div class="table__cell" data-label="Details"><span>{% trans '0 up to 14 years old' %}</span></div>
-											<div class="table__cell" data-label="Zoo"><span><strong>{% trans 'Free' %}</strong></span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col-12 text-center"><a class="button button--primary" href="#">{% trans 'Buy Tickets' %}</a></div> -->
-						</div>
-            <div class="row">
-							<div class="col-12 text-center"><a class="button button--primary main-menu__link--scroll" href="#choose-tickets">{% trans 'Buy' %}</a></div>
-						</div>
+
 					</div>
 				</section>
 				<!-- section end-->
@@ -124,10 +96,13 @@
 								<div class="shop-product__description">
 									<ul class="shop-product__list">
 										<li>{% trans 'Valid: 3 months' %}</li>
-										<li>{% trans 'Cost:' %} 10 RON</li>
+										<li>{% trans 'Cost for people over 14 years old:' %} 10 RON</li>
+                    <li>{% trans 'Cost for children:' %} Free</li>
 									</ul>
 									<p></p>
-                  <p>{% trans 'As mentioned before the ticket is valid for 3 months, during which you can visit the entire Bucegi Natural Park. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}</p>
+                  <p>{% trans 'During the 3 months of validity, during which you can visit the entire Bucegi Natural Park. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
+                  <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
+
                 </div>
 								<form class="form product-form" method="POST" action="javascript:void(0);" autocomplete="off">
                   {% csrf_token %}
@@ -139,7 +114,7 @@
                       <a class="shop-item__add" href="{% url 'checkout' %}">
 												<svg class="icon">
 													<use xlink:href="#bag"></use>
-												</svg><span>{% trans 'Add to cart' %}</span></a>
+												</svg><span>{% trans 'Purchase' %}</span></a>
 										</div>
 									</div>
 								</form>
@@ -154,16 +129,6 @@
 						<div class="row">
 							<div class="col-lg-8">
 								<!-- shop product tabs start-->
-								<div class="tabs horizontal-tabs shop-product-tabs r-tabs">
-                  <ul class="horizontal-tabs__header r-tabs-nav">
-										<li class="r-tabs-tab r-tabs-state-active"><a href="#horizontal-tabs__item-1" class="r-tabs-anchor"><span>{% trans 'Description' %} </span></a></li>
-									</ul>
-									<div class="horizontal-tabs__content">
-										<div class="r-tabs-accordion-title r-tabs-state-active"><a href="#horizontal-tabs__item-1" class="r-tabs-anchor"><span>{% trans 'Why this visitor ticket' %}? </span></a></div><div class="horizontal-tabs__item r-tabs-panel r-tabs-state-active" id="horizontal-tabs__item-1" style="display: block;">
-											<p>{% trans 'The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more' %}.</p>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>

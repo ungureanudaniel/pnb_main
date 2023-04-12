@@ -128,6 +128,12 @@ msgstr "<strong>Tariful de vizitare ne ajută să continuăm in ceea ce facem, a
 #: .\services\templates\services\ticket-info.html:32
 msgid "The tickets are valid for 3 months. More about tickets below"
 msgstr "Biletele sunt valabile timp de 3 luni. Mai multe despre bilete, mai jos"
+#: .\services\templates\services\ticket-descr.html:32
+msgid "Purchase"
+msgstr "Cumpărați"
+#: .\services\templates\services\ticket-descr.html:32
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
+msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., adăugați mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați. În pagina următoare va trebui să le introduceți numele, telefonul și e-mailul"
 
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"
