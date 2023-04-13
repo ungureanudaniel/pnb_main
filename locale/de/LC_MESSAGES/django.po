@@ -44,7 +44,9 @@ msgstr "Klicken Sie hier um zu abonnieren"
 #: .\services\templates\services\privacy.html:33
 msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
 msgstr "<span>Protecția Datelor pe pagina Parcului Natural Bucegi </span><br> <span> Declarație de Confidențialitate</span>"
-
+#: services/templates/services/includes/announcement.html: 166
+msgid "Click the title to open the announcement"
+msgstr "Klicken Sie auf den Titel, um die Ankündigung zu öffnen"
 #: .\services\templates\services\privacy.html:46
 msgid "Welcome to our website. Data protection is a high priority for the Administration of Bucegi Natural Park R.A. The use of the Internet pages of the Administration of Bucegi Natural Park R.A. is possible without any indication of personal data. However, if a data subject wants to use special services provided by our enterprise via our website, processing of personal data could become necessary. If processing of personal data is necessary and there is no legal basis for such processing, we will generally obtain the consent of the data subject. The processing of personal data, such as the name, address, e-mail address, or telephone number of a data subject shall always be in line with the country-specific data protection regulations applicable to the Administration of Bucegi Natural Park R.A. By means of this data protection declaration, our company would like to inform the public about the type, scope and purpose of the personal data we collect, use and process. Furthermore, data subjects are informed of their rights by means of this data protection declaration. As the controller, the Administration of Bucegi Natural Park R.A. has implemented numerous technical and organizational measures to ensure the most complete protection of personal data processed through this website. Nevertheless, Internet-based data transmissions can always be subject to security vulnerabilities, so that absolute protection cannot be guaranteed. For this reason, every data subject is free to transmit personal data to us by alternative means, for example by telephone"
 msgstr "Willkommen auf unserer Website. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der Bucegi Natural Park R.A. Die Nutzung der Internetseiten der Bucegi Natural Park ist ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein. Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die Verwaltung des Naturparks Bucegi R.A. geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt. Die Verwaltung des Naturparks Bucegi R.A. hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, so dass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln"
@@ -1938,6 +1940,10 @@ msgstr "Öffnungszeit"
 msgid "Contact Information"
 msgstr "Kontaktinformationen"
 
+#: services/templates/services/announcement.html: 340
+msgid "Open"
+msgstr "Öffnen"
+
 #: services/templates/services/underconstruction.html: 363
 msgid "Public Documents"
 msgstr "Öffentliche Dokumente"
@@ -2020,8 +2026,8 @@ msgstr "Neueste Beiträge"
 msgid "Archive"
 msgstr "Archiv"
 #: services/templates/services/includes/announcement.html: 166
-msgid "Download the announcement"
-msgstr "Download der Ankündigung"
+msgid "Download"
+msgstr "Download"
 
 #: services/templates/services/includes/blog.html: 167
 msgid "And get our latest updates"

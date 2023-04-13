@@ -1,0 +1,121 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load hitcount_tags %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/blog_bg1.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/blog_bg1.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Our</span> <span>Blog Posts{% endblocktranslate %}</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+				<!-- blog post start-->
+				<section class="section blog-post bottom-70">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-8 offset-xl-2">
+								<div class="blog-post__top">
+									<div class="blog-post__img"><img class="img--bg" src="{{ announcement.image.url }}" alt="announcement-ad"></div>
+									<div class="blog-post__description">
+										<div class="row align-items-center">
+											<div class="col-12">
+												<div class="blog-post__author">
+													<span class="blog-post__author-name" style="font-size:30px !important;">{{ announcement.title|capfirst|safe }}</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 text-left"><span class="blog-post__date" style="border:5px solid black;padding:5px 15px;">{{ announcement.timestamp|date:'d M Y' }}</span></div>
+								<p>{{ announcement.text|safe }}</p>
+
+								<div class="blog-post__details">
+									<div class="row align-items-center">
+										<div class="col-md-4 text-center text-md-left">
+											<div class="blog-post__author">
+												<span class="blog-post__author-name">{{ announcement.author.first_name }} {{ announcement.author.last_name }}</span></div>
+										</div>
+										<div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+											<div class="blog-post__comments-count">
+												<svg class="icon">
+													<use xlink:href="#comment"></use>
+												</svg><span>{% trans 'Views' %}: {% get_hit_count for announcement %}</span>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<ul class="blog-post__socials">
+												<li><a target="_blank" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a target="_blank" href="https://twitter.com/BucegiPark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+												<li><a target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+												<li><a target="_blank" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<h6 class="comments__trigger">{% if announcement.comm_count > 0 %}{{ announcement.comm_count }}{% else %} 0 {% endif %} {% trans 'Comments' %}</h6>
+								<!-- <div class="comments">
+									{% for comm in comms %}
+									<div class="comments__item">
+										<div class="comments__item-img"><img class="img--bg" src="{{ comm.thumbnail.url }}" alt="img"/></div>
+										<div class="comments__item-description">
+											<div class="row align-items-center">
+												<div class="col-12 col-sm-4 col-md-3"><span class="comments__item-name">{{ comm.name }}</span></div>
+												<div class="col-10 col-md-7"><span class="comments__item-date">{{ comm.timestamp|date:'Y-m-d H:i' }}</span></div>
+												<div class="col-2 text-right"><span class="comments__item-action">
+													<svg class="icon">
+														<use xlink:href="#previous"></use>
+													</svg></span></div>
+												<div class="col-12">
+													<div class="comments__item-text">
+														<p>{{ comm.text|safe }}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div> -->
+								<!-- <h6 class="blog-post__title bottom-30">{% trans 'Leave a comment' %}</h6> -->
+								<!-- <form class="form comments-form" action="." method="POST">
+									{% csrf_token %}
+
+									<div class="row">
+										{% for field in form %}
+										<div class="col-12">
+											{{ field.label }}
+										</div>
+										<div class="col-12">
+											{{ field }}
+										</div>
+										{% endfor %}
+										<label class="text-warning pt-2">{% trans 'Please type in the following letters to show you are human' %}.</label>
+										<br>
+										<div class="col-12">
+											{{ form_captcha.captcha }}
+										</div>
+										<div class="col-12">
+											<button class="form__submit" type="submit">{% trans 'Submit Comment' %}</button>
+										</div>
+									</div>
+								</form> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- blog post end-->
+			</main>
+{% endblock %}

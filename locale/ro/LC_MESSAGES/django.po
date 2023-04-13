@@ -95,8 +95,11 @@ msgid "<span>Three Months</span> <span>Ticket</span>"
 msgstr "<span>Tichet</span> <span>pentru 3 Luni</span>"
 
 #: services/templates/services/includes/announcement.html: 166
-msgid "Download the announcement"
-msgstr "Descarcati anuntul"
+msgid "Download"
+msgstr "Descărcați"
+#: services/templates/services/includes/announcement.html: 166
+msgid "Click the title to open the announcement"
+msgstr "Click pe titlu pentru a deschide anunțul"
 
 #: .\services\templates\services\ticket-info.html:52
 msgid "Details"
@@ -1963,6 +1966,10 @@ msgstr "Telefon"
 #: services/templates/services/underconstruction.html: 340
 msgid "Openning hours"
 msgstr "Program de lucru"
+
+#: services/templates/services/announcement.html: 340
+msgid "Open"
+msgstr "Deschide"
 
 #: services/templates/services/underconstruction.html: 362
 msgid "Contact Information"

@@ -39,7 +39,7 @@ class PublicCategoryAdmin(admin.ModelAdmin):
     list_display = ('title_en',)
     fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
 class AnnouncementAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_ro', 'title_de', 'expiry', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro',]
+    fields = ['title', 'title_ro', 'title_de', 'expiry', 'image', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro',]
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):

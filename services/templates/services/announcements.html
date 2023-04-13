@@ -41,25 +41,38 @@
 										{% for a in fut_announc %}
 									<div class="col-12 mb-5">
 										<div class="blog-item">
+											<div class="blog-item__img"><img class="img--bg" src="{{ a.image.url }}" alt="announcement_ad">
+												<div class="blog-item__date " style=""><span>{{ a.timestamp|date:"d" }}</span><span>{{ a.timestamp|date:"M Y" }}</span></div>
+											</div>
 
-											<!-- <div class="blog-item__date " style=""><span>{{ a.timestamp|date:"d" }}</span><span>{{ a.timestamp|date:"M Y" }}</span></div> -->
 											<h4 class="blog-item__title"><a href="{% url 'announ-details' a.slug %}">{{ a.title|capfirst|safe }}</a></h4>
-											<p class="text-justify">{{ a.text|truncatechars:700|safe }} </p><a target="_blank" href="{{ a.link_ro.url }}">{% trans 'Download the announcement' %}</a>
-											<div class="blog-item__details">
+											<p class="text-justify">{{ a.text|truncatechars:700|safe }} </p><br>
+											<div class="blog-post__details">
 												<div class="row align-items-center">
-													<div class="col-8">
-														<div class="blog-item__author">
-															<!-- <div class="blog-item__author-img"><a class="img--bg" src="{{ a.link_ro.url }}" alt="author"</a></div> -->
-															<div class="blog-item__author-name"><span>{{ a.timestamp|date:"d" }}</span> <span>{{ a.timestamp|date:"M Y" }}</span></div>
+													<div class="col-md-3 text-center text-md-left">
+														<div class="blog-post__author">
+															<a class="button button--white" href="{% url 'announ-details' a.slug %}">{% trans 'Open' %}</a>
 														</div>
 													</div>
-													<div class="col-4 text-right">
-														<div class="blog-item__comments">
+													<div class="col-md-3 text-center text-md-left">
+														<div class="blog-post__author">
+															<a target="_blank" class="button button--white" href="{{ a.link.url }}">{% trans 'Download' %}</a>
+														</div>
+													</div>
+													<div class="col-md-2 text-center d-flex align-items-center justify-content-center">
+														<div class="blog-post__comments-count">
 															<svg class="icon">
 																<use xlink:href="#comment"></use>
 															</svg><span>{% trans 'Views' %}: {% get_hit_count for a %}</span>
 														</div>
-
+													</div>
+													<div class="col-md-3">
+														<ul class="blog-post__socials ">
+															<li><a target="_blank" href="https://www.facebook.com/people/Romsilva-Administra%C8%9Bia-Parcului-Natural-Bucegi/100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+															<li><a target="_blank" href="https://twitter.com/BucegiPark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+															<li><a target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+															<li><a target="_blank" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+														</ul>
 													</div>
 												</div>
 											</div>
@@ -139,7 +152,7 @@
 										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
 											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="ig"/></div>
 										</a>
-										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClZDbxOr-Nm/">
 											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="ig"/></div>
 										</a>
 									</div>
