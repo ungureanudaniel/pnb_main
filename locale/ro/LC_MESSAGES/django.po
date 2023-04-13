@@ -1969,7 +1969,7 @@ msgstr "Program de lucru"
 
 #: services/templates/services/announcement.html: 340
 msgid "Open"
-msgstr "Deschide"
+msgstr "Deschideți"
 
 #: services/templates/services/underconstruction.html: 362
 msgid "Contact Information"
