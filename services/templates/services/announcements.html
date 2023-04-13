@@ -49,13 +49,13 @@
 											<p class="text-justify">{{ a.text|truncatechars:700|safe }} </p><br>
 											<div class="blog-post__details">
 												<div class="row align-items-center">
-													<div class="col-md-3 text-center text-md-left">
+													<div class="col-md-3 text-center text-md-left ">
 														<div class="blog-post__author">
 															<a class="button button--white" href="{% url 'announ-details' a.slug %}">{% trans 'Open' %}</a>
 														</div>
 													</div>
-													<div class="col-md-3 text-center text-md-left">
-														<div class="blog-post__author">
+													<div class="col-md-3 text-center align-items-center text-md-left">
+														<div class="blog-post__author m-sm-2">
 															<a target="_blank" class="button button--white" {% if LANGUAGE_CODE == "ro" %} href="{{ a.link_ro.url }}"{% else %}href="{{ a.link_en.url }}"{% endif %}>{% trans 'Download' %}</a>
 														</div>
 													</div>
