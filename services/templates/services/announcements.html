@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load hitcount_tags %}
-
+{% get_current_language as LANGUAGE_CODE %}
 {% block content %}
 			<main class="main">
 				<!-- promo start-->
@@ -56,7 +56,7 @@
 													</div>
 													<div class="col-md-3 text-center text-md-left">
 														<div class="blog-post__author">
-															<a target="_blank" class="button button--white" href="{{ a.link.url }}">{% trans 'Download' %}</a>
+															<a target="_blank" class="button button--white" {% if LANGUAGE_CODE == "ro" %} href="{{ a.link_ro.url }}"{% else %}href="{{ a.link_en.url }}"{% endif %}>{% trans 'Download' %}</a>
 														</div>
 													</div>
 													<div class="col-md-2 text-center d-flex align-items-center justify-content-center">
@@ -141,8 +141,8 @@
 										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClEfz7sjdRQ/">
 											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta10.webp' %}" alt="ig"/></div>
 										</a>
-										<a class="footer-instagram__item" href="https://www.instagram.com/p/Cmeem11IJMf/">
-											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="ig"/></div>
+										<a class="footer-instagram__item" href="https://www.instagram.com/p/CnfDzynqnv5/">
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/deer1.webp' %}" alt="ig"/></div>
 										</a>
 										<a class="footer-instagram__item" href="https://www.instagram.com/p/CnCVW_5oK91/">
 											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="ig"/></div>
@@ -153,7 +153,7 @@
 											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta14.webp' %}" alt="ig"/></div>
 										</a>
 										<a class="footer-instagram__item" href="https://www.instagram.com/p/ClZDbxOr-Nm/">
-											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/insta15.webp' %}" alt="ig"/></div>
+											<div class="footer-instagram__img"><img class="img--bg" src="{% static 'img/insta/bear_pond.webp' %}" alt="ig"/></div>
 										</a>
 									</div>
 								</div>

@@ -49,7 +49,7 @@
 												<div class="row align-items-center">
 													<div class="col-md-4 text-center text-md-left">
 														<div class="blog-post__author">
-															<a target="_blank" class="button button--white" href="{{ announcement.link.url }}">{% trans 'Download' %}</a>
+															<a target="_blank" class="button button--white" {% if LANGUAGE_CODE == "ro" %} href="{{ announcement.link_ro.url }}"{% else %}href="{{ announcement.link_en.url }}"{% endif %}>{% trans 'Download' %}</a>
 														</div>
 													</div>
 													<div class="col-md-4 text-center d-flex align-items-center justify-content-center">

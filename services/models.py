@@ -4,6 +4,7 @@ from django_resized import ResizedImageField
 from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 import datetime
+import os
 from django.contrib.auth.models import User
 #blog imports
 from hitcount.models import HitCountMixin, HitCount
@@ -24,6 +25,9 @@ class Announcement(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+    # @property
+    # def relative_path(self):
+    #     return os.path.relpath(self.path, settings.MEDIA_ROOT)
     def __str__(self):
         return self.title
 #================Partners models=====================================

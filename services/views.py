@@ -459,14 +459,6 @@ class AnnounDetailView(HitCountDetailView):
 
     def get_context_data(self, **kwargs):
         context = super(AnnounDetailView, self).get_context_data(**kwargs)
-        group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
-
-        context.update({
-        # ----------- most viewed posts---------------------------------------
-        # 'popular_posts': posts.order_by('-hit_count_generic__hits')[:3],
-        # ----------- most posts  ---------------------------------------
-        'archive': group_archive,
-        })
         return context
 
         return super().form_valid(form)
