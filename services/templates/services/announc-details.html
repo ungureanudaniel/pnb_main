@@ -47,13 +47,13 @@
 											<p class="text-justify">{{ announcement.text|safe }} </p><br>
 											<div class="blog-post__details">
 												<div class="row align-items-center">
-													<div class="col-md-4 text-center text-md-left">
+													<div class="col-md-3 text-center text-md-left">
 														<div class="blog-post__author">
 															<a target="_blank" class="button button--white" {% if LANGUAGE_CODE == "ro" %} href="{{ announcement.link_ro.url }}"{% else %}href="{{ announcement.link_en.url }}"{% endif %}>{% trans 'Download' %}</a>
 														</div>
 													</div>
-													<div class="col-md-4 text-center d-flex align-items-center justify-content-center">
-														<div class="blog-post__comments-count">
+													<div class="col-md-3 text-center d-flex align-items-center justify-content-center">
+														<div class="blog-post__comments-count ">
 															<svg class="icon">
 																<use xlink:href="#comment"></use>
 															</svg><span>{% trans 'Views' %}: {% get_hit_count for announcement %}</span>
