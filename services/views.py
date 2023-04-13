@@ -17,7 +17,7 @@ from django.db.models import Count
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
-
+from django.utils import timezone
 #----------generate unique code for email subscription conf--------------------
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
@@ -428,10 +428,15 @@ def announcement_view(request):
                     except Exception as e:
                         messages.warning(request, e)
                         return redirect('announcement')
-
+    announ_posts = Announcement.objects.all()
+    fut_announc = []
+    for i in announ_posts:
+        if i.expiry >= timezone.now():
+            fut_announc.append(i)
 
     context = {
-    "announc": Announcement.objects.all(),
+    "fut_announc": fut_announc,
+    "announc": announ_posts,
     "group_archive": group_archive,
     }
 
@@ -454,17 +459,13 @@ class AnnounDetailView(HitCountDetailView):
 
     def get_context_data(self, **kwargs):
         context = super(AnnounDetailView, self).get_context_data(**kwargs)
-        announ_posts = Announcement.objects.all()
-        fut_announc = []
-        for i in announ_posts:
-            if i.expiry >= timezone.now():
-                fut_announc.append(i)
+        group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
+
         context.update({
         # ----------- most viewed posts---------------------------------------
         # 'popular_posts': posts.order_by('-hit_count_generic__hits')[:3],
         # ----------- most posts  ---------------------------------------
-        'posts': posts,
-        'fut_announc': fut_announc,
+        'archive': group_archive,
         })
         return context
 
