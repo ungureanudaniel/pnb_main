@@ -276,9 +276,7 @@ def unsubscribe(request):
         unsub_email = request.POST.get('unsub_email')
         if unsub_email:
             try:
-                print(unsub_email)
                 sub = Subscriber.objects.get(email=unsub_email)
-                print(sub)
                 if sub:
                     sub.delete()
                     messages.success(request, _("Success! Unsubscribing was finalized. If you change your mind you can subscribe again anytime"))
@@ -290,7 +288,7 @@ def unsubscribe(request):
                 messages.warning(request, _("Error! Unsubscribing failed. Please contact our IT department at +40 758 039 784"))
                 return render(request, template, {'action': 'denied'})
         else:
-            messages.warning(request, _("Error! Email incorrec."))
+            messages.warning(request, _("Error! Email incorrect."))
             return render(request, template, {})
     else:
         return render(request, template, {})

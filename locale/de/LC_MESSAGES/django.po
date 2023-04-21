@@ -111,33 +111,94 @@ msgstr "Jahre alt"
 #: .\services\templates\services\ticket-info.html:62
 msgid "Children"
 msgstr "Kinder"
-
-#: .\services\templates\services\ticket-info.html:63
-msgid "0 up to 14 years old"
-msgstr "0 bis 14 Jahre alt"
+#: .\services\templates\services\ticket-info.html:64
+msgid "Note"
+msgstr "Anmerkungen"
 
 #: .\services\templates\services\ticket-info.html:64
 msgid "Free"
 msgstr "Kostenlos"
+#: .\services\templates\services\ticket-description.html:98
+msgid "Valid"
+msgstr "Gültig"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "90 days"
+msgstr "90 Tagen"
+
+#: .\services\templates\services\ticket-description.html:99
+msgid "Transaction"
+msgstr "Transaktion"
 
 #: .\services\templates\services\ticket-info.html:69
 msgid "Buy Tickets"
-msgstr "Cumpără Tichete"
-
+msgstr "Karten kaufen"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each of visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles. Thank you!<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
-msgstr "<strong>Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nämlich diesen Berg für zukünftige Generationen zu erhalten. Wir sorgen für Ordnung und Einhaltung der Besucherordnung, pflegen Wanderwege, helfen bei Problemen am Berg, sammeln Müll, schützen Flora und Fauna, bilden Kinder und Erwachsene aus, wir laden Fotos in sozialen Medien hoch, um Ihnen die lokale Naturschönheit zu zeigen, viele Informationstafeln aufstellen und vieles mehr. </strong><br>Jeder Besucher, der den Besuchertarif zahlt, unterstützt den Naturschutz auf diesem Berg, so können wir vielleicht dieses Jahr gemeinsam mehr Störungen der Tierwelt oder seltener Blumen verhindern und eine seltene Blume davor bewahren, auf sie getreten zu werden, oder vielleicht Wildtiere werden durch illegale motorisierte Fahrzeuge verscheucht. Vielen Dank!<br><br> Tickets können vorerst entweder bei unseren Rangern an den Parkeingängen oder über <a href='https://easy2visit.com/en/bucegi-natural-park/' erworben werden. >Easy2visit</a>. Bald können Sie die Tickets kaufen, indem Sie oben auf die Schaltfläche TICKETS klicken, in jeder Währung, sogar mit Revolut oder Bitcoin"
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
+msgstr "<strong>Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nämlich diesen Berg für zukünftige Generationen zu erhalten. Wir sorgen für Ordnung und Einhaltung der Besucherordnung, pflegen Wanderwege, helfen bei Problemen am Berg, sammeln Müll, schützen Flora und Fauna, bilden Kinder und Erwachsene aus, wir laden Fotos in sozialen Medien hoch, um Ihnen die lokale Naturschönheit zu zeigen, viele Informationstafeln aufstellen und vieles mehr. </strong><br><br>Jeder Besucher, der den Besuchertarif bezahlt, unterstützt den Naturschutz auf diesem Berg, so können wir vielleicht gemeinsam dieses Jahr weitere Störungen der Tierwelt oder seltener Blumen verhindern. Vielen Dank!"
+
+#: .\services\templates\services\ticket-info.html:30
+msgid "<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
+msgstr "<br><br> Tickets können vorerst entweder bei unseren Rangern an den Parkeingängen oder über <a href='https://easy2visit.com/en/bucegi-natural-park/' erworben werden. >Easy2visit</a>. Bald können Sie die Tickets kaufen, indem Sie oben auf die Schaltfläche TICKETS klicken, in jeder Währung, sogar mit Revolut oder Bitcoin"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "Buy your tickets below"
+msgstr "Kaufen Sie Ihre Tickets unten"
 
 #: .\services\templates\services\ticket-info.html:32
-msgid "The tickets are valid for 3 months. More about tickets below"
-msgstr "Die Tickets sind 3 Monate gültig. Mehr über Tickets unten"
+msgid "The tickets are valid for 90 days. More about tickets below"
+msgstr "Die Tickets sind 90 Tagen gültig. Mehr über Tickets unten"
 #: .\services\templates\services\ticket-descr.html:32
 msgid "Purchase"
 msgstr "Kaufen"
 #: .\services\templates\services\ticket-descr.html:32
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
 msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, geben Sie unten die Anzahl der Tickets ein, die Sie kaufen möchten, und klicken Sie dann auf Kaufen. Auf der folgenden Seite müssen Sie ihre Namen, Telefonnummer und E-Mail-Adresse eingeben"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete"
+msgstr "Die Besuchertickets sind 90 Tage lang gültig, in denen Sie jederzeit den gesamten Bucegi-Naturpark besuchen können. Wenn unsere Ranger Sie nach dem Ticket fragen, zeigen Sie nach Abschluss der Zahlung einfach das per E-Mail erhaltene digitale Ticket vor"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
+msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, können Sie unten die Anzahl der Tickets hinzufügen, die Sie kaufen möchten, und dann auf Kaufen klicken"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is"
+msgstr "Der Endpreis des Besuchertickets beinhaltet auch eine kleine Transaktionssteuer (hier 'Kommission' genannt), die von unserem Zahlungsabwickler verlangt wird"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Proceed to Payment Method"
+msgstr "Zum der Zahlungsmethode"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payer Personal Information"
+msgstr "Persönliche Daten des Zahlers"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payments are secure and encrypted"
+msgstr "Zahlungen sind sicher und verschlüsselt"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "You will be redirected to Netopia Payments to complete the payment"
+msgstr "Sie werden zu Netopia Payments weitergeleitet, um die Zahlung abzuschließen"
+
+#: .\services\templates\services\terms.html:9
+msgid "<span>Terms</span> and<span> Conditions</span>"
+msgstr "<span>Geschäftsbedingungen</span><span></span>"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Commission"
+msgstr "Kommission"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Ticket summary"
+msgstr "Sammeltickets"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Net total"
+msgstr "Netto insgesamt"
 
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"

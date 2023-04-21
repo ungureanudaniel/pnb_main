@@ -31,7 +31,6 @@
 		textBox()
 
 	})
-
 	$(window).on('scroll', function () {
 
 		// header front-1
@@ -401,52 +400,51 @@
 
 		// quantity
 
-		function quantity() {
-
-			const count = $('.cart-item__count')
-
-			if (!count.length) return
-
-			const minus = $('.cart-item__minus')
-			const plus = $('.cart-item__plus')
-
-			minus.on('click', function () {
-
-				const $input = $(this).parent().find('input')
-				let count = parseInt($input.val()) - 1
-				count = count < 1 ? 1 : count
-				$input.val(count)
-				$input.change()
-				return false
-				$.ajax({
-	        type: 'post',
-	        url: 'http://127.0.0.1:8000/en/tickets/ticket-details',
-	        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
-	        dataType: 'json',
-	        success: function () {
-	          $('#cart > ul').load('http://127.0.0.1:8000/en/tickets/ticket-details');
-	        }
-	      });
-
-			})
-
-			plus.on('click', function () {
-
-				const $input = $(this).parent().find('input')
-				$input.val(parseInt($input.val()) + 1)
-				$input.change()
-				return false
-
-			})
-
-		}
-
-		quantity()
+		// function quantity() {
+		//
+		// 	const count = $('.cart-item__count')
+		//
+		// 	if (!count.length) return
+		//
+		// 	const minus = $('.cart-item__minus')
+		// 	const plus = $('.cart-item__plus')
+		//
+		// 	minus.on('click', function () {
+		//
+		// 		const $input = $(this).parent().find('input')
+		// 		let count = parseInt($input.val()) - 1
+		// 		count = count < 1 ? 1 : count
+		// 		$input.val(count)
+		// 		$input.change()
+		// 		return false
+		// 		$.ajax({
+	  //       type: 'post',
+	  //       url: 'http://127.0.0.1:8000/en/tickets/ticket-details',
+	  //       data: 'key=' + $input.name() + '&quantity=' + $input.val(),
+	  //       dataType: 'json',
+	  //       success: function () {
+	  //         $('#cart > ul').load('http://127.0.0.1:8000/en/tickets/ticket-details');
+	  //       }
+	  //     });
+		//
+		// 	})
+		//
+		// 	plus.on('click', function () {
+		//
+		// 		const $input = $(this).parent().find('input')
+		// 		$input.val(parseInt($input.val()) + 1)
+		// 		$input.change()
+		// 		return false
+		//
+		// 	})
+		//
+		// }
+		//
+		// quantity()
 
 		// form quantity
 
 		function formQuantity() {
-
 			const count = $('.form__count')
 
 			if (!count.length) return
@@ -455,7 +453,6 @@
 			const plus = $('.form__plus')
 
 			minus.on('click', function () {
-
 				const $input = $(this).parent().find('input')
 				let count = parseInt($input.val()) - 1
 				count = count < 1 ? 1 : count
@@ -466,7 +463,6 @@
 			})
 
 			plus.on('click', function () {
-
 				const $input = $(this).parent().find('input')
 				$input.val(parseInt($input.val()) + 1)
 				$input.change()
@@ -474,10 +470,10 @@
 
 			})
 
+
 		}
 
 		formQuantity()
-
 		// range slider
 
 		function rangeSlider() {

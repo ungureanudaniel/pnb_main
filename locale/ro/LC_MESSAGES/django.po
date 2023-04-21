@@ -121,35 +121,115 @@ msgstr "ani"
 msgid "Children"
 msgstr "Copii"
 
-#: .\services\templates\services\ticket-info.html:63
-msgid "0 up to 14 years old"
-msgstr "0 până la 14 ani"
-
 #: .\services\templates\services\ticket-info.html:64
 msgid "Free"
 msgstr "Gratis"
 
+#: .\services\templates\services\ticket-info.html:64
+msgid "Note"
+msgstr "Notă"
+
 #: .\services\templates\services\ticket-info.html:69
 msgid "Buy Tickets"
-msgstr "Cumpără Tichete"
+msgstr "Cumpără Bilete"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each of visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles. Thank you!<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
-msgstr "<strong>Tariful de vizitare ne ajută să continuăm in ceea ce facem, adică să conservăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții cu privire la mediu, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, instălam o mulțime de panouri informative și multe altele. </strong><br>Fiecare vizitator care plătește tariful vizitatorului, sprijină conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau a florei rare, în acest an, si poate salvăm o floare rară de la distrugere, sau poate prevenim sperierea mai multor animale sălbatice de catre vehicule motorizate ilegale. Mulțumim! </strong><br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. În curând veți putea cumpăra folosind butonul Tarif Vizitare de mai sus, cu orice monedă, inclusiv Revolut sau Bitcoin"
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
+msgstr "<strong>Tariful de vizitare ne ajută să continuăm in ceea ce facem, adică să conservăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții cu privire la mediu, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, instălam o mulțime de panouri informative și multe altele. </strong><br><br>Fiecare vizitator care plătește tariful, sprijină conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau a florei rare, în acest an. Mulțumim! </strong>"
+
+#: .\services\templates\services\ticket-info.html:30
+msgid "<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
+msgstr "<br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. În curând veți putea cumpăra folosind butonul Tarif Vizitare de mai sus, cu orice monedă, inclusiv Revolut sau Bitcoin"
 
 #: .\services\templates\services\ticket-info.html:32
-msgid "The tickets are valid for 3 months. More about tickets below"
-msgstr "Biletele sunt valabile timp de 3 luni. Mai multe despre bilete, mai jos"
-#: .\services\templates\services\ticket-descr.html:32
+msgid "The tickets are valid for 90 days. More about tickets below"
+msgstr "Biletele sunt valabile timp de 90 de zile. Mai multe despre bilete, mai jos"
+#: .\services\templates\services\ticket-description.html:32
 msgid "Purchase"
 msgstr "Cumpărați"
-#: .\services\templates\services\ticket-descr.html:32
+#: .\services\templates\services\ticket-description.html:32
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., adăugați mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați. În pagina următoare va trebui să le introduceți numele, telefonul și e-mailul"
 
+#: .\services\templates\services\ticket-description.html:98
+msgid "Valid"
+msgstr "Valabilitate"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "90 days"
+msgstr "90 zile"
+
+#: .\services\templates\services\ticket-description.html:99
+msgid "Transaction"
+msgstr "Tranzacție"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "Add"
+msgstr "Adaugă"
+
+#: .\services\templates\services\ticket-description.html:99
+msgid "The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each visitor, who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>"
+msgstr "Tariful de vizitare ne ajută să continuăm să facem ceea ce facem, adică să păstrăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, înființăm o mulțime de panouri informative și multe altele. </strong><br>Fiecare vizitator, care plătește tariful, susține conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau plantelor rare în acest an și să salvăm o floare rară să nu fie călcată sau poate evităm derajarea animalelor sălbatice de către vehicule motorizate.<br><br>Mulțumim!<br><br>"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "Buy your tickets below"
+msgstr "Cumpărați bilete de mai jos"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "Commission"
+msgstr "Comision"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete"
+msgstr "Biletele de vizitator sunt valabile 90 de zile, timp in care puteti vizita intregul Parc Natural Bucegi, oricand. Dacă rangerii noștri vă vor întreba despre bilet, trebuie doar să arătați biletul digital primit prin e-mail, după finalizarea plății"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
+msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., puteți adăuga mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is"
+msgstr "Prețul final al biletului de vizitator va include, de asemenea, o mică taxă de tranzacție (numită aici 'Comision'), solicitată de procesatorul nostru de plăți, care este"
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"
 msgstr "ani"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Proceed to Payment Method"
+msgstr "Către metoda de plată"
+#: .\services\templates\services\ticket-description.html:9
+msgid "Ticket summary"
+msgstr "Rezumat bilete"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payer Personal Information"
+msgstr "Informații personale ale plătitorului"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payments are secure and encrypted"
+msgstr "Plățile sunt sigure și criptate"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "You will be redirected to Netopia Payments to complete the payment"
+msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
+
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
+msgstr "Confirmarea rezervării și biletul dvs. digital vor ajunge în căsuța dvs. de e-mail, după plata efectuată cu succes"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
+msgstr "Confirmarea rezervării și biletul dvs. digital vor ajunge în căsuța dvs. de e-mail, după plata efectuată cu succes"
+
+#: .\services\templates\services\terms.html:9
+msgid "<span>Terms</span> and<span> Conditions</span>"
+msgstr "<span>Termeni</span> și<span> Condiții</span>"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Net total"
+msgstr "Total net"
+
 #: .\services\templates\services\wildlife-details.html:9
 msgid "Conservation status"
 msgstr "Starea de conservare"

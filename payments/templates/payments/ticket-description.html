@@ -4,6 +4,7 @@
 {% load hitcount_tags %}
 
 {% block content %}
+
 <main class="main">
 				<!-- welcome start-->
 				<section class="welcome-primary">
@@ -22,6 +23,7 @@
 						</div>
 					</div>
 				</section>
+
 				<!-- welcome end-->
         <!-- section start-->
 				<section class="section">
@@ -31,7 +33,7 @@
       					<div class="container">
       						<div class="row align-items-center">
       							<div class="col-12">
-      								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each of visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>{% endblocktranslate %}</p>
+      								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!{% endblocktranslate %}</p>
                       <div class="row">
           							<div class="col-12 text-center"><a class="button button--white main-menu__link--scroll" style="text-decoration: none;" href="#choose-tickets">{% trans 'Buy your tickets below' %}</a></div>
           						</div>
@@ -44,95 +46,120 @@
 					</div>
 				</section>
 				<!-- section end-->
-				<!-- shop product start-->
-				<section class="section shop-product background--brown" id="choose-tickets">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-0">
-								<!-- dual slider start-->
-								<div class="dual-slider">
-									<div class="main-slider slick-initialized slick-slider">
-                    <div class="slick-list draggable">
-                      <div class="slick-track" style="opacity: 1; width: 1710px;">
-                        <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 570px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
-                          <div>
-                            <div class="main-slider__item" style="width: 100%; display: inline-block">
-                              <div class="main-slider__img"><img class="img--contain" src="{% static 'img/infrastructure/garbage.webp' %}" alt="single"></div>
-										        </div>
-                          </div>
-                        </div>
-                        <div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 570px; position: relative; left: -570px; top: 0px; z-index: 998; opacity: 0;">
-                          <div>
-                            <div class="main-slider__item" style="width: 100%; display: inline-block">
-                              <div class="main-slider__img"><img class="img--contain" src="{% static 'img/infrastructure/resting-places.webp' %}" alt="single"></div>
-										        </div>
-                          </div>
-                        </div>
-                        <div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 570px; position: relative; left: -1140px; top: 0px; z-index: 998; opacity: 0;">
-                          <div>
-                            <div class="main-slider__item" style="width: 100%; display: inline-block">
-                              <div class="main-slider__img"><img class="img--contain" src="{% static 'img/infrastructure/wooden-trail.webp' %}" alt="single"></div>
-										        </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-									<div class="nav-slider slick-initialized slick-slider"><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 429px; transform: translate3d(0px, 0px, 0px);"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
-											<div class="nav-slider__img"><img class="img--contain" src="img/single_s1.png" alt="single"></div>
-										</div></div></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
-											<div class="nav-slider__img"><img class="img--contain" src="img/single_s2.png" alt="single"></div>
-										</div></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 143px;"><div><div class="nav-slider__item" style="width: 100%; display: inline-block;">
-											<div class="nav-slider__img"><img class="img--contain" src="img/single_s3.png" alt="single"></div>
-										</div></div></div></div></div></div>
-								</div>
-								<!-- dual slider end-->
-							</div>
-							<div class="col-lg-6 col-xl-5 offset-xl-1">
-								<div class="shop-product__top">
-									<h4 class="shop-product__name">{% trans 'Visitor Ticket' %}</h4>
-									<h4 class="shop-product__price"></h4>
-								</div>
-								<div class="shop-product__description">
-									<ul class="shop-product__list">
-										<li>{% trans 'Valid: 3 months' %}</li>
-										<li>{% trans 'Cost for people over 14 years old:' %} 10 RON</li>
-                    <li>{% trans 'Cost for children:' %} Free</li>
-									</ul>
-									<p></p>
-                  <p>{% trans 'During the 3 months of validity, during which you can visit the entire Bucegi Natural Park. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
-                  <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
-
-                </div>
-								<form class="form product-form" method="POST" action="javascript:void(0);" autocomplete="off">
-                  {% csrf_token %}
-									<div class="form__wrapper">
-										<div class="form__count">
-                      <span class="form__minus"></span>
-											<input class="form__field" type="number" name="nr_pers" value="1">
-                      <span class="form__plus"></span>
-                      <a class="shop-item__add" href="{% url 'checkout' %}">
-												<svg class="icon">
-													<use xlink:href="#bag"></use>
-												</svg><span>{% trans 'Purchase' %}</span></a>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- shop product end-->
-				<!-- section start-->
-				<section class="section no-padding-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8">
-								<!-- shop product tabs start-->
-							</div>
-						</div>
-					</div>
-				</section>
 				<!-- section end-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<h3>{% trans 'Note' %}</h3>
+								<p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
+								<p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
+								<p>{% trans "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is" %}.</p>
+								<p>{% trans 'Your booking confirmation and ticket will arrive in your email inbox, after successful payment' %}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 bottom-50">
+								<div class="table ticket-table">
+									<div class="table__header">
+										<div class="table__cell"><strong>{% trans 'Tickets' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Details' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Price' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Commission' %}</strong></div>
+										<div class="table__cell"><strong>{% trans 'Add' %}</strong></div>
+									</div>
+									<div class="table__body">
+										<div class="table__row">
+											<div class="table__cell" data-label="{% trans 'Tickets' %}"><span><strong>{% trans 'Teens and Adults' %}</strong></span></div>
+											<div class="table__cell" data-label="{% trans 'Details' %}"><span>14 + {% trans 'years old' %}</span></div>
+											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>10 RON</strong></span></div>
+											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>0.0952 RON</strong></span></div>
+											<div class="table__cell" data-label="{% trans 'Price' %}">
+												<form class="form product-form" action="javascript:void(0);" method="POST" autocomplete="off">
+													{% csrf_token %}
+													<div class="form__wrapper">
+														<div class="form__count w-100 pr-4 pl-4">
+															<span class="form__minus"></span>
+															<input class="form__field fee" onchange="findTotal()" type="number" value="1">
+															<span class="form__plus"></span>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="table__row">
+											<div class="table__cell" data-label="{% trans 'Tickets' %}"><span><strong>{% trans 'Children' %}</strong></span></div>
+											<div class="table__cell" data-label="{% trans 'Details' %}"><span>0 - 14 {% trans 'years old' %}</span></div>
+											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>{% trans 'Free' %}</strong></span></div>
+											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>{% trans 'Free' %}</strong></span></div>
+											<div class="table__cell product-form" data-label="{% trans 'Price' %}">
+												<!-- <input class="form_field fee" type="number" value="0" min='0' max='100'> -->
+
+												<form class="form product-form" action="javascript:void(0);" autocomplete="off">
+													<div class="form__wrapper">
+														<div class="form__count w-100 pr-4 pl-4">
+															<span class="form__minus"></span>
+															<input class="form__field" type="number" value="0">
+															<span class="form__plus"></span>
+														</div>
+													</div>
+												</form>
+											</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cart__lower">
+							<div class="row">
+								<div class="col-lg-8">
+									<!-- <div class="coupon-block">
+										<h6 class="cart__title">Coupon Code</h6>
+										<form class="form coupon-form" action="javascript: void(0);">
+											<input class="form__field" type="text" placeholder="xxx xxx xxx xxx">
+											<button class="form__submit" type="submit">Apply Coupon</button>
+										</form>
+									</div> -->
+									<div class="">
+										<p class="" type="submit"><i class="fa fa-lock"></i>  {% trans 'Payments are secure and encrypted' %}.</p>
+										<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to Netopia Payments to complete the payment' %}.</p>
+										<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'By proceeding you confirm that you accept our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a>.</p>
+									</div>
+								</div>
+								<div class="col-lg-4 text-lg-right">
+									<div class="cart-totals">
+										<h6 class="cart__title">{% trans 'Ticket summary' %}</h6>
+										<ul class="cart-totals__list">
+											<li class=""><span>{% trans 'Net total:' %}</span><span><input class="input_box" value="10" name="net_total" type="number" id="net_total" disabled></span></li>
+											<li><span>{% trans 'Commission' %}:</span><span><input class="input_box" value="0.952" name="comm_total" type="number" id="comm_total" disabled></span></li>
+											<li><span>Total:</span><span><input class="input_box" name="total" type="text" id="all" disabled></span></li>
+										</ul>
+										<a class="cart-totals__link button button--primary" href="{% url 'checkout' %}">{% trans 'Proceed to Payment Method' %}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+				<script>
+		      // Use an event delegate on amt
+		      $('.ticket-table').on('change', '.fee', function() {
+		          calculateSum();
+		      });
+
+		      function calculateSum() {
+
+		        var sum = 0;
+		        $(".fee").each(function() {
+
+		          if (!isNaN(this.value) && this.value.length != 0) {
+		            sum += parseFloat(this.value);
+		          }
+
+		        });
+		        $("#net_total").html(sum.toFixed(2));
+		      }
+				</script>
 			</main>
 {% endblock %}
