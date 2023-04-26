@@ -1656,8 +1656,13 @@ msgstr "Aflați mai multe"
 msgid "<span>Map of Bucegi</span> <span>Natural Park</span>"
 msgstr "<span>Hartă a</span> <span>Parcului Natural Bucegi</span>"
 #: services/templates/services/home.html: 187
-msgid "between November until April"
+msgid "from November to April"
 msgstr "din noiembrie până în aprilie"
+
+#: services/templates/services/home.html: 187
+msgid "from May to October"
+msgstr "din Mai până în Octombrie"
+
 #: services/templates/services/home.html: 187
 msgid "See map"
 msgstr "Vezi harta"

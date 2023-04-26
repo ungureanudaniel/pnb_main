@@ -1647,9 +1647,12 @@ msgstr "<span>Karte von Bucegi</span> <span>NaturPark</span>"
 #: services/templates/services/home.html: 187
 msgid "See map"
 msgstr "Karte sehen"
-#: services/templates/services/home.html: 187
-msgid "between November until April"
-msgstr "zwischen November und April"
+#: services/templates/services/base.html: 187
+msgid "from November to April"
+msgstr "von November bis April"
+#: services/templates/services/base.html: 187
+msgid "from May to October"
+msgstr "von Mai bis Oktober"
 #: services/templates/services/home.html: 313
 msgid "Ialomița Monastery"
 msgstr "Kloster Ialomița"
