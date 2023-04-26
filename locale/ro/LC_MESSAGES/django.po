@@ -24,6 +24,11 @@ msgstr "Romanian"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Limbă"
+
+#: .\services\base.html.py:189
+msgid "Closed"
+msgstr "Închis"
+
 #: .\services\flora.html.py:189
 msgid "Flowering"
 msgstr "Înflorire"
@@ -217,10 +222,9 @@ msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
 #: .\services\templates\services\ticket-description.html:9
 msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
 msgstr "Confirmarea rezervării și biletul dvs. digital vor ajunge în căsuța dvs. de e-mail, după plata efectuată cu succes"
-
-#: .\services\templates\services\ticket-description.html:9
-msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
-msgstr "Confirmarea rezervării și biletul dvs. digital vor ajunge în căsuța dvs. de e-mail, după plata efectuată cu succes"
+#: .\services\templates\services\map-coming-soon.html:9
+msgid "An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready"
+msgstr "O hartă interactivă online a parcului nostru este în construcție. Rămâneți pe fază, pentru că vom suna din goarnă când va fi gata"
 
 #: .\services\templates\services\terms.html:9
 msgid "<span>Terms</span> and<span> Conditions</span>"
@@ -1650,7 +1654,10 @@ msgid "Find out More"
 msgstr "Aflați mai multe"
 #: services/templates/services/home.html: 187
 msgid "<span>Map of Bucegi</span> <span>Natural Park</span>"
-msgstr "<span>Hartă a</span> <span>Parcului Natural Park</span>"
+msgstr "<span>Hartă a</span> <span>Parcului Natural Bucegi</span>"
+#: services/templates/services/home.html: 187
+msgid "between November until April"
+msgstr "din noiembrie până în aprilie"
 #: services/templates/services/home.html: 187
 msgid "See map"
 msgstr "Vezi harta"

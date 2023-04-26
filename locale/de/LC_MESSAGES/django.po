@@ -32,6 +32,9 @@ msgstr "Höhe"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Sprache"
+#: .\services\base.html.py:189
+msgid "Closed"
+msgstr "Geschlossen"
 #: .\services\templates\services\privacy.html:18
 msgid "<span>Privacy</span> <span> Policy</span>"
 msgstr "<span>Declarație</span> <span>de Confidențialitate</span>"
@@ -215,7 +218,6 @@ msgstr "Einheimischer Lebensraum"
 #: .\services\templates\services\wildlife-details.html:9
 msgid "Diet"
 msgstr "Diät"
-
 #: .\services\templates\services\partners.html:9
 msgid "Our Partners"
 msgstr "Unsere Partner"
@@ -242,6 +244,10 @@ msgstr "Ein modernes kleines Museum über das Bucegi-Gebirge und lokale Traditio
 #: .\services\templates\services\info-points.html:36
 msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
 msgstr "In Bușteni Stadt, Kreis Prahova, auf die Str. Telecabinei 54"
+
+#: .\services\templates\services\map-coming-soon.html:9
+msgid "An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready"
+msgstr "Eine interaktive Online-Karte unseres Parks ist in Arbeit. Bleiben Sie dran, denn wir werden das Horn ertönen lassen, wenn sie fertig ist"
 
 #: services/templates/services/home.html: 239
 msgid "Scenery"
@@ -1641,6 +1647,9 @@ msgstr "<span>Karte von Bucegi</span> <span>NaturPark</span>"
 #: services/templates/services/home.html: 187
 msgid "See map"
 msgstr "Karte sehen"
+#: services/templates/services/home.html: 187
+msgid "between November until April"
+msgstr "zwischen November und April"
 #: services/templates/services/home.html: 313
 msgid "Ialomița Monastery"
 msgstr "Kloster Ialomița"
