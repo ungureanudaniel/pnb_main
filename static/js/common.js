@@ -821,7 +821,7 @@
 
 			slider.slick({
 
-				arrows: false,
+				arrows: true,
 				dots: false,
 				slidesToShow: 6,
 				responsive: [{
