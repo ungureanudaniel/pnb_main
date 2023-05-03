@@ -193,7 +193,7 @@ def coming_soon(request):
 def eventlist_view(request):
     template = 'services/events.html'
 
-    context = {"events":Event.objects.all()}
+    context = {"events":Event.objects.all().order_by("-timestamp")}
     return render(request, template, context)
 #======================== gallery page================================
 def gallery(request):
@@ -499,7 +499,7 @@ def bloglist_view(request):
 
 
     context = {
-    "blogposts": BlogPost.objects.all(),
+    "blogposts": BlogPost.objects.all().order_by("-created_date"),
     "categories": BlogPostCategory.objects.all(),
     "group_archive": group_archive,
     "group_categ":group_categ,

@@ -43,7 +43,7 @@ class AnnouncementAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_ro', 'title_de',  'text', 'text_ro', 'text_de', 'image', 'date']
+    fields = ['timestamp', 'expiry', 'title', 'title_ro', 'title_de',  'text', 'text_ro', 'text_de', 'image']
 
 class SubscriberAdmin(admin.ModelAdmin):
     list_display = ('email', 'conf_num', 'confirmed')
@@ -52,7 +52,7 @@ class SubscriberAdmin(admin.ModelAdmin):
 class BlogPostCategoryAdmin(admin.ModelAdmin):
     fields = ['title', 'title_ro', 'title_de']
 class BlogPostAdmin(admin.ModelAdmin):
-    fields = ['author', 'title', 'title_ro', 'title_de', 'image', 'text', 'text_ro', 'text_de', 'category', 'featured', 'status']
+    fields = ['author', 'created_date', 'title', 'title_ro', 'title_de', 'image', 'text', 'text_ro', 'text_de', 'category', 'featured', 'status']
 
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)

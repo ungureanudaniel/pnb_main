@@ -4,6 +4,7 @@ from django_resized import ResizedImageField
 from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 import datetime
+from django.utils import timezone
 import os
 from django.contrib.auth.models import User
 #blog imports
@@ -52,11 +53,12 @@ class Event(models.Model):
     title = models.CharField(max_length=30)
     text = RichTextField(max_length=3000)
     image = ResizedImageField(size=[640,None], upload_to='event_images',)
-    date = models.DateTimeField(auto_now_add=True)
+    timestamp = models.DateTimeField(default=timezone.now, blank=True)
+    expiry = models.DateTimeField(default=timezone.now, blank=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-timestamp"]
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
