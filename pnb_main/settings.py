@@ -156,8 +156,8 @@ LOCALE_PATHS = (
 )
 gettext = lambda s: s
 LANGUAGES = (
-    ('ro', _('Română')),
     ('en', _('English')),
+    ('ro', _('Română')),
     ('de', _('Deutsch')),
 )
 

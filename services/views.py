@@ -426,7 +426,7 @@ def announcement_view(request):
                     except Exception as e:
                         messages.warning(request, e)
                         return redirect('announcement')
-    announ_posts = Announcement.objects.all()
+    announ_posts = Announcement.objects.all().order_by('-timestamp')
     fut_announc = []
     for i in announ_posts:
         if i.expiry >= timezone.now():

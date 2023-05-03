@@ -187,6 +187,10 @@ msgstr "Zahlungen sind sicher und verschlüsselt"
 msgid "You will be redirected to Netopia Payments to complete the payment"
 msgstr "Sie werden zu Netopia Payments weitergeleitet, um die Zahlung abzuschließen"
 
+#: .\services\templates\services\ticket-description.html:9
+msgid "By proceeding you confirm that you accept our"
+msgstr "Wenn Sie mit der Zahlungsmethode fortfahren, bestätigen Sie, dass Sie unsere"
+
 #: .\services\templates\services\terms.html:9
 msgid "<span>Terms</span> and<span> Conditions</span>"
 msgstr "<span>Geschäftsbedingungen</span><span></span>"
@@ -2172,3 +2176,6 @@ msgstr "Erfolgreich! Die Abbestellung wurde abgeschlossen. Wenn Sie Ihre Meinung
 #: services/templates/services/unsubscribe: 134
 msgid "Error! Unsubscribing failed. This email does not exist in our database"
 msgstr "Fehler! Abmeldung fehlgeschlagen. Diese E-Mail existiert nicht in unserer Datenbank"
+#: services/urls.py: 43
+msgid "announcements"
+msgstr "ankündigungen"

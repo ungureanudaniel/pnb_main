@@ -9,7 +9,7 @@ announcement_view, AnnounDetailView, WildlifeDetailView, FloraDetailView, subscr
 unsubscribe
 from django.conf.urls.static import static
 from users.views import user_logout
-
+from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
         #-------Authentication----------------

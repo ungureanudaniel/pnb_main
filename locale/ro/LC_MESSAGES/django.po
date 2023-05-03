@@ -218,6 +218,9 @@ msgstr "Plățile sunt sigure și criptate"
 msgid "You will be redirected to Netopia Payments to complete the payment"
 msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
 
+#: .\services\templates\services\ticket-description.html:9
+msgid "By proceeding you confirm that you accept our"
+msgstr "Continuând către metoda de plată, confirmați că acceptați"
 
 #: .\services\templates\services\ticket-description.html:9
 msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
@@ -1822,6 +1825,7 @@ msgstr "Încă din secolul al XIX-lea, Munții Bucegi au atras numeroși cercet�
 #: services/templates/services/home.html: 239
 msgid "Announcements"
 msgstr "Anunțuri"
+
 #: services/templates/services/history.html: 39
 msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943."
 msgstr "Lucrările științifice elaborate de prestigioși botaniști, la începutul secolului trecut, au stat la baza primului act de constituire a unor rezervații, monumente ale naturii: HCM. 965/ 17.11.1943."
@@ -2089,7 +2093,7 @@ msgstr "Politica de Confidențialitate"
 
 #: services/templates/services/underconstruction.html: 375
 msgid "Terms and Conditions"
-msgstr "Termeni și Condiții"
+msgstr "Termenii și Condițiile"
 
 #: services/templates/services/underconstruction.html: 375
 msgid "Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks"
@@ -2273,3 +2277,6 @@ msgstr "Succes! Dezabonarea a fost finalizată. Dacă vă răzgândiți, vă put
 #: services/templates/services/unsubscribe: 134
 msgid "Error! Unsubscribing failed. This email does not exist in our database"
 msgstr "Eroare! Dezabonarea a eșuat. Acest e-mail nu există în baza noastră de date"
+#: services/urls.py: 43
+msgid "announcements"
+msgstr "anunțuri"
