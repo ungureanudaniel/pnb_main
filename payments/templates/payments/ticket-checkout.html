@@ -21,6 +21,7 @@
 						</div>
 					</div>
 				</section>
+
 				<!-- welcome end-->
 				<!-- section start-->
 				<section class="section checkout">
@@ -54,14 +55,14 @@
 													<div class="row offset-30">
 														<div class="col-12">
 															<div class="form__payments">
-																<label class="form__radio-label"><img class="form__label-img" src="img/paypal.png" alt="paypal"/>
-																	<input class="form__input-radio" type="radio" name="method-select" value="paypal"/><span class="form__radio-mask form__radio-mask"></span>
-																</label>
-																<label class="form__radio-label"><img class="form__label-img" src="img/klarna.png" alt="klarna"/>
-																	<input class="form__input-radio" type="radio" name="method-select" value="klarna"/><span class="form__radio-mask form__radio-mask"></span>
-																</label>
-																<label class="form__radio-label"><img class="form__label-img" src="img/visa.png" alt="visa"/>
+																<label class="form__radio-label"><img class="form__label-img" src="{% static 'img/visa.png' %}" alt="visa"/> Visa & Mastercard
 																	<input class="form__input-radio" type="radio" name="method-select" value="visa" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+																</label>
+																<label class="form__radio-label"><img class="form__label-img" src="{% static 'img/icons/revolut.png' %}" alt="revolut"/> Revolut
+																	<input class="form__input-radio" type="radio" name="method-select" value="revolut"/><span class="form__radio-mask form__radio-mask"></span>
+																</label>
+																<label class="form__radio-label"><img class="form__label-img" src="{% static 'img/icons/crypto.png' %}" alt="crypto"/> Cryptocurrencies
+																	<input class="form__input-radio" type="radio" name="method-select" value="crypto"/><span class="form__radio-mask form__radio-mask"></span>
 																</label>
 															</div>
 														</div>
@@ -148,63 +149,28 @@
 										<div class="col-lg-5 col-xl-4">
 											<div class="checkout__wrapper">
 												<div class="form__fieldset">
-													<h6 class="form__title">Order Summary</h6>
+													<h6 class="form__title">{% trans 'Order Summary' %}</h6>
 													<div class="order-item">
 														<div class="row no-gutters align-items-center">
 															<div class="col-4 col-sm-3 col-md-2 col-lg-4">
-																<div class="order-item__img"><img class="img--contain" src="img/shop_7.png" alt="img"/></div>
-															</div>
-															<div class="col-7 col-sm-8 col-md-9 col-lg-7">
-																<div class="order-item__description"><a class="order-item__link" href="shop-product.html">Mama Lama Cup</a>
-																	<div class="order-item__count"> <span>15.99 USD </span><span>x3</span></div>
+																<div class="order-item__img">
+																	<img class="img--contain" src="{% static 'img/icons/tickets.png' %}" alt="img">
 																</div>
 															</div>
-															<div class="col-1 text-right"><span class="order-item__remove">
-																<svg class="icon">
-																	<use xlink:href="#remove"></use>
-																</svg></span></div>
-														</div>
-													</div>
-													<div class="order-item">
-														<div class="row no-gutters align-items-center">
-															<div class="col-4 col-sm-3 col-md-2 col-lg-4">
-																<div class="order-item__img"><img class="img--contain" src="img/shop_8.png" alt="img"/></div>
-															</div>
 															<div class="col-7 col-sm-8 col-md-9 col-lg-7">
-																<div class="order-item__description"><a class="order-item__link" href="shop-product.html">Lion Water Bottle</a>
-																	<div class="order-item__count"> <span>25.99 USD </span><span>x1</span></div>
+																<div class="order-item__description"><a class="order-item__link" href="shop-product.html">{% trans 'Teens and Adults' %}</a>
+																	<div class="order-item__count"> <span> </span><span id="tickets">{{ tickets }}</span></div>
 																</div>
 															</div>
-															<div class="col-1 text-right"><span class="order-item__remove">
-																<svg class="icon">
-																	<use xlink:href="#remove"></use>
-																</svg></span></div>
-														</div>
-													</div>
-													<div class="order-item">
-														<div class="row no-gutters align-items-center">
-															<div class="col-4 col-sm-3 col-md-2 col-lg-4">
-																<div class="order-item__img"><img class="img--contain" src="img/shop_9.png" alt="img"/></div>
-															</div>
-															<div class="col-7 col-sm-8 col-md-9 col-lg-7">
-																<div class="order-item__description"><a class="order-item__link" href="shop-product.html">Zoo T-Shirt</a>
-																	<div class="order-item__count"> <span>35.99 USD </span><span>x2</span></div>
-																</div>
-															</div>
-															<div class="col-1 text-right"><span class="order-item__remove">
-																<svg class="icon">
-																	<use xlink:href="#remove"></use>
-																</svg></span></div>
 														</div>
 													</div>
 												</div>
 												<div class="form__fieldset no-margin-bottom">
 													<div class="cart-totals">
-														<h6 class="form__title">Cart Total</h6>
+														<h6 class="form__title">{% trans 'Total' %}</h6>
 														<ul class="cart-totals__list">
-															<li><span>Subtotal:</span><span>146 USD</span></li>
-															<li><span>Sale:</span><span>16 USD</span></li>
-															<li><span>Total:</span><span>130 USD</span></li>
+															<li><span>{% trans 'Total tickets' %}:</span><span><input style="width:50px;" id="tickets" name="total" value="" disabled></span></li>
+															<li><span>{% trans 'Total price' %}:</span><span><input style="width:50px;" id="tickets" name="total" value="" disabled></span></li>
 														</ul>
 														<button class="form__submit" type="submit">Checkout</button>
 													</div>
@@ -213,6 +179,9 @@
 										</div>
 									</div>
 								</form>
+								<script>
+
+								</script>
 								<!-- checkout end-->
 							</div>
 						</div>

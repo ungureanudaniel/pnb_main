@@ -168,8 +168,8 @@ msgid "If you want to buy tickets for your friends or family too, you can add be
 msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, können Sie unten die Anzahl der Tickets hinzufügen, die Sie kaufen möchten, und dann auf Kaufen klicken"
 
 #: .\services\templates\services\ticket-description.html:98
-msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is"
-msgstr "Der Endpreis des Besuchertickets beinhaltet auch eine kleine Transaktionssteuer (hier 'Kommission' genannt), die von unserem Zahlungsabwickler verlangt wird"
+msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, Netopia Payments"
+msgstr "Der Endpreis des Besuchertickets beinhaltet auch eine kleine Transaktionssteuer (hier 'Kommission' genannt), die von unserem Zahlungsabwickler, Netopia Payments"
 
 #: .\services\templates\services\ticket-description.html:9
 msgid "Proceed to Payment Method"

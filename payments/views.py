@@ -2,11 +2,18 @@ from django.shortcuts import render
 
 def ticketpay_view(request):
     template = "payments/ticket-description.html"
-    nr_pers = request.POST.get('nr_pers')
-    print(nr_pers)
-    context = {
-        "nr_pers": nr_pers,
-    }
+    context = {}
+    if request.method=="POST":
+        try:
+            pers = request.POST.get('total')
+            print(f"{pers}")
+            context = {
+                "nr_pers": pers,
+            }
+        except Exception as e:
+            print(f"Error:{e}!")
+    else:
+        print("Post request not working!")
     return render(request, template, context)
 
 def checkout_view(request):

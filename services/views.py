@@ -341,7 +341,7 @@ class FloraDetailView(DetailView):
     context_object_name = 'flora'
     slug_field = 'slug'
     count_hit = True
-#========================TICKETS INFO VIEW================================
+#========================INFO VIEW================================
 def ticket_info(request):
     template = 'services/ticket-info.html'
     return render(request, template, {})

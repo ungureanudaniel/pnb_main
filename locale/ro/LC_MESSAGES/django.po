@@ -59,7 +59,7 @@ msgstr "Dreptul la Accesare, Corectare și Ștergere a Datelor Colectate"
 
 #: .\services\templates\services\privacy.html:33
 msgid "Our online visitors have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Administration of Bucegi Natural Park R.A. makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, we do not control each and every risk related to the use of the Internet, and therefore we warn the website users of the potential risks involved in the functioning and use of the Internet. The website may include links to other web sites or other internet sources. As we cannot control these websites and external sources, the Administration of Bucegi Natural Park R.A. cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these websites or external sources"
-msgstr "Vizitatorii nostri au dreptul la a accesa, corecta și sterge datele lor personale, si să isi exprime dezacordul la procesarea acestor date, prin trimiterea unui email sau a unei scrisori la adresele noastre, oricand. Asociatia noastra face toate eforturile sa protejeze securitatea datelor dvs. Totusi, nu putem controla absolut toate riscurile legate de datele furnizate pe internet, si astfel prevenim utilizatorii cu privire la posibile riscuri implicate in furnizarea de date personale. Pagina noastra include link-uri si redirectionari la alte website-uri sau resurse pe internet. Avand in vedere ca noi nu putem controla aceste website-uri si resurse externe, nu putem fi trasi la raspundere pentru eventuale probleme venite din partea lor, continut necorespunzator, servicii externe rau intentionate sau orice alte materiale provenite de la aceste website-uri si resurse externe"
+msgstr "Vizitatorii nostri au dreptul la a accesa, corecta și sterge datele lor personale, si să isi exprime dezacordul la procesarea acestor date, prin trimiterea unui email sau a unei scrisori la adresele noastre, oricând. Asociatia noastra face toate eforturile sa protejeze securitatea datelor dvs. Totusi, nu putem controla absolut toate riscurile legate de datele furnizate pe internet, si astfel prevenim utilizatorii cu privire la posibile riscuri implicate in furnizarea de date personale. Pagina noastra include link-uri si redirectionari la alte website-uri sau resurse pe internet. Având in vedere ca noi nu putem controla aceste website-uri si resurse externe, nu putem fi trasi la raspundere pentru eventuale probleme venite din partea lor, continut necorespunzator, servicii externe rau intentionate sau orice alte materiale provenite de la aceste website-uri si resurse externe"
 #: .\services\templates\services\privacy.html:33
 msgid "Management of Personal Data"
 msgstr "Managementul Datelor Personale"
@@ -186,15 +186,15 @@ msgstr "Comision"
 
 #: .\services\templates\services\ticket-description.html:98
 msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete"
-msgstr "Biletele de vizitator sunt valabile 90 de zile, timp in care puteti vizita intregul Parc Natural Bucegi, oricand. Dacă rangerii noștri vă vor întreba despre bilet, trebuie doar să arătați biletul digital primit prin e-mail, după finalizarea plății"
+msgstr "Biletele de vizitator sunt valabile 90 de zile, timp în care puteți vizita întregul Parc Natural Bucegi, oricând. Dacă rangerii noștri vă vor întreba despre bilet, trebuie doar să arătați biletul digital primit prin e-mail, după finalizarea plății"
 
 #: .\services\templates\services\ticket-description.html:98
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., puteți adăuga mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați"
 
 #: .\services\templates\services\ticket-description.html:98
-msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is"
-msgstr "Prețul final al biletului de vizitator va include, de asemenea, o mică taxă de tranzacție (numită aici 'Comision'), solicitată de procesatorul nostru de plăți, care este"
+msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, Netopia Payments"
+msgstr "Prețul final al biletului de vizitator va include, de asemenea, o mică taxă de tranzacție (numită aici 'Comision'), solicitată de procesatorul nostru de plăți, Netopia Payments"
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"
 msgstr "ani"
@@ -222,9 +222,6 @@ msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
 msgid "By proceeding you confirm that you accept our"
 msgstr "Continuând către metoda de plată, confirmați că acceptați"
 
-#: .\services\templates\services\ticket-description.html:9
-msgid "Your booking confirmation and ticket will arrive in your email inbox, after successful payment"
-msgstr "Confirmarea rezervării și biletul dvs. digital vor ajunge în căsuța dvs. de e-mail, după plata efectuată cu succes"
 #: .\services\templates\services\map-coming-soon.html:9
 msgid "An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready"
 msgstr "O hartă interactivă online a parcului nostru este în construcție. Rămâneți pe fază, pentru că vom suna din goarnă când va fi gata"

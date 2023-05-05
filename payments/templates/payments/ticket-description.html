@@ -35,29 +35,12 @@
       							<div class="col-12">
       								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!{% endblocktranslate %}</p>
 											<br>
-											<div class="instagram-slider">
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/garbage.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/presentation2.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/wooden-trail.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/info-board2.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/resting-places.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/info-board3.webp' %}" alt="img"/>
-												</a>
-												<a class="instagram-slider__item" target="_blank" href="#">
-													<img class="img--bg" width="250" height="250" src="{% static 'img/infrastructure/info-board4.webp' %}" alt="img"/>
-												</a>
-											</div>
+                      <img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/garbage.webp' %}" alt="img"/>
+      								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/presentation2.webp' %}" alt="img"/>
+      								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/wooden-trail.webp' %}" alt="img"/>
+      								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/resting-places.webp' %}" alt="img"/>
+      								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/presentation.webp' %}" alt="img"/>
+      								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/info-board3.webp' %}" alt="img"/>
 											<div class="row mt-5">
           							<div class="col-12 text-center"><a class="button button--white main-menu__link--scroll" style="text-decoration: none;" href="#choose-tickets">{% trans 'Buy your tickets below' %}</a></div>
           						</div>
@@ -70,120 +53,98 @@
 					</div>
 				</section>
 				<!-- section end-->
-				<!-- section end-->
-				<section class="section" id="choose-tickets">
-					<div class="container">
-						<div class="row bottom-50">
-							<div class="col-12">
-								<h3>{% trans 'Note' %}</h3>
-								<p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
-								<p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
-								<p>{% trans "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, which is" %}.</p>
-								<p>{% trans 'Your booking confirmation and ticket will arrive in your email inbox, after successful payment' %}</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 bottom-50">
-								<div class="table ticket-table">
-									<div class="table__header">
-										<div class="table__cell"><strong>{% trans 'Tickets' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Details' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Price' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Commission' %}</strong></div>
-										<div class="table__cell"><strong>{% trans 'Add' %}</strong></div>
-									</div>
-									<div class="table__body">
-										<div class="table__row">
-											<div class="table__cell" data-label="{% trans 'Tickets' %}"><span><strong>{% trans 'Teens and Adults' %}</strong></span></div>
-											<div class="table__cell" data-label="{% trans 'Details' %}"><span>14 + {% trans 'years old' %}</span></div>
-											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>10 RON</strong></span></div>
-											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>0.0952 RON</strong></span></div>
-											<div class="table__cell" data-label="{% trans 'Price' %}">
-												<form class="form product-form" action="javascript:void(0);" method="POST" autocomplete="off">
-													{% csrf_token %}
-													<div class="form__wrapper">
-														<div class="form__count w-100 pr-4 pl-4">
-															<span class="form__minus"></span>
-															<input class="form__field fee" onchange="findTotal()" type="number" value="1">
-															<span class="form__plus"></span>
-														</div>
-													</div>
-												</form>
-											</div>
+        <div class="cart mt-5" id="choose-tickets">
+          <div class="row bottom-50 mx-4">
+            <div class="col-12">
+              <h3>{% trans 'Note' %}</h3>
+              <p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
+              <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
+              <p>{% trans "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95% per transaction" %}.</p>
+            </div>
+          </div>
+          <div class="cart__heading">
+            <div class="row">
+              <div class="col-lg-4">
+                <h6 class="cart__title" style="font-weight:800">{% trans 'Tickets' %}</h6>
+              </div>
+              <div class="col-lg-3 text-center d-none d-lg-block">
+                <h6 class="cart__title" style="font-weight:800">{% trans 'Details' %}</h6>
+              </div>
+              <div class="col-lg-2 text-center d-none d-lg-block">
+                <h6 class="cart__title" style="font-weight:800">{% trans 'Price' %}</h6>
+              </div>
+              <div class="col-lg-3 text-center d-none d-lg-block">
+                <h6 class="cart__title" style="font-weight:800">{% trans 'Add' %}</h6>
+              </div>
+              <!-- <div class="col-lg-1"></div> -->
+            </div>
+          </div>
+          <div class="cart__body">
+            <form class="form" id="" action="{% url 'checkout' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="cart-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4">
+                    <div class="cart-item__product">
+                      <div class="cart-item__product-name">{% trans 'Teens and Adults' %}</div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 text-center">
+                    <div class="cart-item__price"> <span>14 +</span><span>{% trans 'years old' %}</span></div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <div class="cart-item__price"> <span>10</span><span>RON</span></div>
+                  </div>
+                  <div class="col-lg-3 text-center">
+                    <div class="cart-item__count">
+                      <span class="cart-item__minus"></span>
+                      <input class="cart-item__input" type="number" name="adults" value="0">
+                      <span class="cart-item__plus"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-item">
+                <div class="row align-items-center">
+                  <div class="col-lg-4">
+                    <div class="cart-item__product">
+                      <div class="cart-item__product-name">{% trans 'Children' %}</div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 text-center">
+                    <div class="cart-item__price"><span>0 - 14 </span><span>{% trans 'years old' %}</span></div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <div class="cart-item__price"><span>{% trans 'Free' %}</span><span></span></div>
+                  </div>
+                  <div class="col-lg-3 text-center">
+                  </div>
+                </div>
+              </div>
+              <div class="cart__lower">
+								<div class="row">
+									<div class="col-lg-8">
+										<div class="">
+											<p class="" type="submit"><i class="fa fa-lock"></i>  {% trans 'Payments are secure and encrypted' %}.</p>
+											<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to Netopia Payments to complete the payment' %}.</p>
+											<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'By proceeding you confirm that you accept our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a>.</p>
 										</div>
-										<div class="table__row">
-											<div class="table__cell" data-label="{% trans 'Tickets' %}"><span><strong>{% trans 'Children' %}</strong></span></div>
-											<div class="table__cell" data-label="{% trans 'Details' %}"><span>0 - 14 {% trans 'years old' %}</span></div>
-											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>{% trans 'Free' %}</strong></span></div>
-											<div class="table__cell" data-label="{% trans 'Price' %}"><span><strong>{% trans 'Free' %}</strong></span></div>
-											<div class="table__cell product-form" data-label="{% trans 'Price' %}">
-												<!-- <input class="form_field fee" type="number" value="0" min='0' max='100'> -->
-
-												<form class="form product-form" action="javascript:void(0);" autocomplete="off">
-													<div class="form__wrapper">
-														<div class="form__count w-100 pr-4 pl-4">
-															<span class="form__minus"></span>
-															<input class="form__field" type="number" value="0">
-															<span class="form__plus"></span>
-														</div>
-													</div>
-												</form>
-											</div>
-
+									</div>
+									<div class="col-lg-4 text-lg-right">
+										<div class="cart-totals">
+                      <h6 class="cart__title">Totals</h6>
+                      <ul class="cart-totals__list">
+                        <li><span>{% trans 'Total tickets' %}:</span><input id="tickets" name="total" value=""></li>
+                        <li><span>{% trans 'Total price' %}:</span><input id="total" value=""></li>
+                      </ul>
+                      <!-- <a class="cart-totals__link button button--primary" >Proceed to checkout</a> -->
+											<input class="form__submit mt-5" type="submit" name="total" value="{% trans 'Proceed to Payment' %}">
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="cart__lower">
-							<div class="row">
-								<div class="col-lg-8">
-									<!-- <div class="coupon-block">
-										<h6 class="cart__title">Coupon Code</h6>
-										<form class="form coupon-form" action="javascript: void(0);">
-											<input class="form__field" type="text" placeholder="xxx xxx xxx xxx">
-											<button class="form__submit" type="submit">Apply Coupon</button>
-										</form>
-									</div> -->
-									<div class="">
-										<p class="" type="submit"><i class="fa fa-lock"></i>  {% trans 'Payments are secure and encrypted' %}.</p>
-										<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to Netopia Payments to complete the payment' %}.</p>
-										<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'By proceeding you confirm that you accept our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a>.</p>
-									</div>
-								</div>
-								<div class="col-lg-4 text-lg-right">
-									<div class="cart-totals">
-										<h6 class="cart__title">{% trans 'Ticket summary' %}</h6>
-										<ul class="cart-totals__list">
-											<li class=""><span>{% trans 'Net total:' %}</span><span><input class="input_box" value="10" name="net_total" type="number" id="net_total" disabled></span></li>
-											<li><span>{% trans 'Commission' %}:</span><span><input class="input_box" value="0.952" name="comm_total" type="number" id="comm_total" disabled></span></li>
-											<li><span>Total:</span><span><input class="input_box" name="total" type="text" id="all" disabled></span></li>
-										</ul>
-										<a class="cart-totals__link button button--primary" href="{% url 'checkout' %}">{% trans 'Proceed to Payment Method' %}</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</section>
-				<script>
-		      // Use an event delegate on amt
-		      $('.ticket-table').on('change', '.fee', function() {
-		          calculateSum();
-		      });
-
-		      function calculateSum() {
-
-		        var sum = 0;
-		        $(".fee").each(function() {
-
-		          if (!isNaN(this.value) && this.value.length != 0) {
-		            sum += parseFloat(this.value);
-		          }
-
-		        });
-		        $("#net_total").html(sum.toFixed(2));
-		      }
-				</script>
+            </form>
+          </div>
+        </div>
 			</main>
 {% endblock %}

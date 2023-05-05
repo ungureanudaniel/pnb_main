@@ -400,49 +400,75 @@
 
 		// quantity
 
-		// function quantity() {
-		//
-		// 	const count = $('.cart-item__count')
-		//
-		// 	if (!count.length) return
-		//
-		// 	const minus = $('.cart-item__minus')
-		// 	const plus = $('.cart-item__plus')
-		//
-		// 	minus.on('click', function () {
-		//
-		// 		const $input = $(this).parent().find('input')
-		// 		let count = parseInt($input.val()) - 1
-		// 		count = count < 1 ? 1 : count
-		// 		$input.val(count)
-		// 		$input.change()
-		// 		return false
-		// 		$.ajax({
-	  //       type: 'post',
-	  //       url: 'http://127.0.0.1:8000/en/tickets/ticket-details',
-	  //       data: 'key=' + $input.name() + '&quantity=' + $input.val(),
-	  //       dataType: 'json',
-	  //       success: function () {
-	  //         $('#cart > ul').load('http://127.0.0.1:8000/en/tickets/ticket-details');
-	  //       }
-	  //     });
-		//
-		// 	})
-		//
-		// 	plus.on('click', function () {
-		//
-		// 		const $input = $(this).parent().find('input')
-		// 		$input.val(parseInt($input.val()) + 1)
-		// 		$input.change()
-		// 		return false
-		//
-		// 	})
-		//
-		// }
-		//
-		// quantity()
+			function quantity() {
 
-		// form quantity
+				const count = $('.cart-item__count')
+
+				if (!count.length) return
+
+				const minus = $('.cart-item__minus')
+				const plus = $('.cart-item__plus')
+
+				minus.on('click', function () {
+					const $input = $(this).parent().find("input")
+					let count = parseInt($input.val()) - 1
+					count = count < 1 ? 1 : count
+					$input.val(count)
+					$input.change()
+					$('#tickets').val(get_total_tickets());
+					$('#total').val(get_total_price());
+
+					return false
+
+				})
+
+				plus.on('click', function () {
+
+					const $input = $(this).parent().find('input')
+					$input.val(parseInt($input.val()) + 1)
+					$input.change()
+					$('#tickets').val(get_total_tickets());
+					$('#total').val(get_total_price());
+
+					return false
+
+				})
+				// sum up ticket number
+				function get_total_tickets(){
+					let tickets = 0;
+					$("input[name='adults']").each(function(){
+						tickets += +this.value
+						console.log(tickets);
+					});
+					return tickets
+				}
+				// sum up tickets price
+				function get_total_price(){
+					let total = 0;
+					const ticket_val = 10;
+					const fee = 0.952/100
+					$("input[name='adults']").each(function(){
+						total += +this.value*ticket_val*1.0095
+						console.log(total);
+					});
+					return total.toFixed(3)
+				}
+				$.ajax({
+	        type: 'post',
+	        url: "{% url 'ticketdescr' %}",
+	        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
+	        dataType: 'json',
+	        success: function () {
+						console.log(total);
+	          $('#cart > ul').load("{% url 'ticketdescr' %}");
+	        }
+	      });
+			}
+
+
+			quantity()
+
+	//	form quantity
 
 		function formQuantity() {
 			const count = $('.form__count')
@@ -472,7 +498,9 @@
 
 
 		}
+		function gen_rows(i) {
 
+	}
 		formQuantity()
 		// range slider
 
@@ -821,8 +849,8 @@
 
 			slider.slick({
 
-				arrows: true,
-				dots: false,
+				arrows: false,
+				dots: true,
 				slidesToShow: 6,
 				responsive: [{
 					breakpoint: 1600,
