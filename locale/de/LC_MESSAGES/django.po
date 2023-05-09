@@ -152,6 +152,7 @@ msgstr "Kaufen Sie Ihre Tickets unten"
 #: .\services\templates\services\ticket-info.html:32
 msgid "The tickets are valid for 90 days. More about tickets below"
 msgstr "Die Tickets sind 90 Tagen gültig. Mehr über Tickets unten"
+
 #: .\services\templates\services\ticket-descr.html:32
 msgid "Purchase"
 msgstr "Kaufen"
@@ -160,16 +161,16 @@ msgid "If you want to buy tickets for your friends or family too, you can add be
 msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, geben Sie unten die Anzahl der Tickets ein, die Sie kaufen möchten, und klicken Sie dann auf Kaufen. Auf der folgenden Seite müssen Sie ihre Namen, Telefonnummer und E-Mail-Adresse eingeben"
 
 #: .\services\templates\services\ticket-description.html:98
-msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete"
-msgstr "Die Besuchertickets sind 90 Tage lang gültig, in denen Sie jederzeit den gesamten Bucegi-Naturpark besuchen können. Wenn unsere Ranger Sie nach dem Ticket fragen, zeigen Sie nach Abschluss der Zahlung einfach das per E-Mail erhaltene digitale Ticket vor"
+msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime you want. Just make sure you have the tickets with you"
+msgstr "Die Besuchertickets sind 90 Tage lang gültig. In dieser Zeit können Sie den gesamten Naturpark Bucegi besuchen, wann immer Sie wollen. Vergewissern Sie sich einfach, dass Sie die Tickets dabei haben"
 
 #: .\services\templates\services\ticket-description.html:98
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
 msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, können Sie unten die Anzahl der Tickets hinzufügen, die Sie kaufen möchten, und dann auf Kaufen klicken"
 
 #: .\services\templates\services\ticket-description.html:98
-msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, Netopia Payments"
-msgstr "Der Endpreis des Besuchertickets beinhaltet auch eine kleine Transaktionssteuer (hier 'Kommission' genannt), die von unserem Zahlungsabwickler, Netopia Payments"
+msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
+msgstr "Der Endpreis des Besuchertickets enthält auch eine kleine Transaktionsgebühr, die von unserem Zahlungsdienstleister Netopia Payments erhoben wird und 0,95% pro Transaktion beträgt"
 
 #: .\services\templates\services\ticket-description.html:9
 msgid "Proceed to Payment Method"
@@ -207,6 +208,21 @@ msgstr "Sammeltickets"
 msgid "Net total"
 msgstr "Netto insgesamt"
 
+#: .\payments\templates\includes\tickets.html:9
+msgid "Two ways to buy tickets"
+msgstr "Zwei Möglichkeiten, Tickets zu kaufen"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone"
+msgstr "Sie können Besuchertickets online mit einer Kreditkarte, Revolut oder Kryptowährungen kaufen oder alternativ in bar bei einem Ranger in Ihrer Nähe, indem Sie anrufen"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy from rangers"
+msgstr "Von Rangers kaufen"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy Online"
+msgstr "Online kaufen"
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"
 msgstr "Jahre"

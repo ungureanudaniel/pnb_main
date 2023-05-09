@@ -1,0 +1,54 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- promo start-->
+				<section class="welcome-primary">
+					<picture>
+						<source srcset="{% static 'img/backgrounds/tickets2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/tickets2.webp' %}" alt="img"/>
+					</picture>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Park Sector &</span> <span>Map</span>{% endblocktranslate %}</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- promo end-->
+        <section class="section elements bottom-50">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-10">
+                <h4 class="elements__title">{% trans 'All sector and corresponding rangers below' %}</h4>
+              </div>
+            </div>
+            <!-- pricing style-2 start-->
+            <div class="row">
+              {% for i in rangers %}
+              <div class="col-lg-12">
+
+                <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4">
+                      <h6 class="pricing-item__plan">Ranger {{ i.firstname }} {{ i.surname }}</h6>
+                    </div>
+                    <div class="col-lg-4 col-xl-5"><span>{{ i.sector|capfirst|safe }}</span></div>
+                    <div class="col-lg-4 col-xl-3 text-lg-right"><a class="pricing-item__button button button--primary" href="#">{{ i.phone }}</a></div>
+                  </div>
+                </div>
+
+              </div>
+              {% endfor %}
+            </div>
+            <!-- pricing style-2 end-->
+          </div>
+        </section>
+      </main>
+{% endblock %}

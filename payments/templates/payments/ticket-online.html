@@ -26,14 +26,17 @@
 
 				<!-- welcome end-->
         <!-- section start-->
-				<section class="section">
+				<section class="section elements bottom-70">
 					<div class="container">
 						<div class="row">
-              <div class="cta-block">
-      					<div class="container">
-      						<div class="row align-items-center">
-      							<div class="col-12">
-      								<p class="cta-block__text">{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!{% endblocktranslate %}</p>
+							<div class="col-12">
+								<div class="accordion accordion--bordered">
+									<div class="accordion__title-block">
+										<h6 class="accordion__title">{% trans 'Why this visitor tarrif' %}?</h6><span class="accordion__close"></span>
+									</div>
+									<div class="accordion__text-block" style="display: none;">
+										<div class="col-12">
+      								<p>{% blocktranslate %}<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!{% endblocktranslate %}</p>
 											<br>
                       <img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/garbage.webp' %}" alt="img"/>
       								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/presentation2.webp' %}" alt="img"/>
@@ -42,24 +45,23 @@
       								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/presentation.webp' %}" alt="img"/>
       								<img class="img mt-2 mb-2" width="250" height="250" src="{% static 'img/infrastructure/info-board3.webp' %}" alt="img"/>
 											<div class="row mt-5">
-          							<div class="col-12 text-center"><a class="button button--white main-menu__link--scroll" style="text-decoration: none;" href="#choose-tickets">{% trans 'Buy your tickets below' %}</a></div>
+          							<div class="col-12 text-center"><a class="button button--primary main-menu__link--scroll" style="text-decoration: none;" href="#choose-tickets">{% trans 'Buy your tickets below' %}</a></div>
           						</div>
                     </div>
-      						</div>
-      					</div>
-      				</div>
+									</div>
+								</div>
+							</div>
 						</div>
-
 					</div>
 				</section>
 				<!-- section end-->
         <div class="cart mt-5" id="choose-tickets">
           <div class="row bottom-50 mx-4">
-            <div class="col-12">
+            <div class="col-12 text-justified">
               <h3>{% trans 'Note' %}</h3>
-              <p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete' %}.</p>
+              <p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime you want. Just make sure you have the tickets with you' %}.</p>
               <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
-              <p>{% trans "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95% per transaction" %}.</p>
+              <p>{% trans "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction" %}.</p>
             </div>
           </div>
           <div class="cart__heading">

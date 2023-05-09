@@ -331,6 +331,7 @@ class Team(models.Model):
     job = models.CharField(max_length=100, blank=True, null=True)
     text = models.TextField(max_length=300)
     hierarchy = models.IntegerField(default=0)
+    sector = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'Team Member'

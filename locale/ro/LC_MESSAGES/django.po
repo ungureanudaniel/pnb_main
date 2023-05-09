@@ -149,76 +149,93 @@ msgstr "<br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrări
 #: .\services\templates\services\ticket-info.html:32
 msgid "The tickets are valid for 90 days. More about tickets below"
 msgstr "Biletele sunt valabile timp de 90 de zile. Mai multe despre bilete, mai jos"
-#: .\services\templates\services\ticket-description.html:32
+
+#: .\services\templates\services\ticket-online.html:32
 msgid "Purchase"
 msgstr "Cumpărați"
-#: .\services\templates\services\ticket-description.html:32
+#: .\services\templates\services\ticket-online.html:32
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., adăugați mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați. În pagina următoare va trebui să le introduceți numele, telefonul și e-mailul"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "Valid"
 msgstr "Valabilitate"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "90 days"
 msgstr "90 zile"
 
-#: .\services\templates\services\ticket-description.html:99
+#: .\services\templates\services\ticket-online.html:99
 msgid "Transaction"
 msgstr "Tranzacție"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "Add"
 msgstr "Adaugă"
 
-#: .\services\templates\services\ticket-description.html:99
+#: .\services\templates\services\ticket-online.html:99
 msgid "The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each visitor, who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>"
 msgstr "Tariful de vizitare ne ajută să continuăm să facem ceea ce facem, adică să păstrăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, înființăm o mulțime de panouri informative și multe altele. </strong><br>Fiecare vizitator, care plătește tariful, susține conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau plantelor rare în acest an și să salvăm o floare rară să nu fie călcată sau poate evităm derajarea animalelor sălbatice de către vehicule motorizate.<br><br>Mulțumim!<br><br>"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "Buy your tickets below"
 msgstr "Cumpărați bilete de mai jos"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "Commission"
 msgstr "Comision"
 
-#: .\services\templates\services\ticket-description.html:98
-msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime. If our rangers will ask you about the ticket, just show the digital ticket received by email, after the payment is complete"
-msgstr "Biletele de vizitator sunt valabile 90 de zile, timp în care puteți vizita întregul Parc Natural Bucegi, oricând. Dacă rangerii noștri vă vor întreba despre bilet, trebuie doar să arătați biletul digital primit prin e-mail, după finalizarea plății"
+#: .\services\templates\services\ticket-online.html:98
+msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime you want. Just make sure you have the tickets with you"
+msgstr "Biletele de vizitator sunt valabile 90 de zile, timp în care puteți vizita întreg Parcul Natural Bucegi, oricând doriți. Asigurați-vă doar că aveți biletele la dvs"
 
-#: .\services\templates\services\ticket-description.html:98
+#: .\services\templates\services\ticket-online.html:98
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., puteți adăuga mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați"
 
-#: .\services\templates\services\ticket-description.html:98
-msgid "The final price of the visitor ticket will also include a small transaction tax (named here 'Commission'), requested by our payment processor, Netopia Payments"
-msgstr "Prețul final al biletului de vizitator va include, de asemenea, o mică taxă de tranzacție (numită aici 'Comision'), solicitată de procesatorul nostru de plăți, Netopia Payments"
+#: .\payments\templates\includes\tickets.html:9
+msgid "Two ways to buy tickets"
+msgstr "Două moduri de a cumpăra bilete"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone"
+msgstr "Biletele de vizitare pot fi cumpărate online, cu un card de credit, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră, apelând la numărul de telefon"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy from rangers"
+msgstr "Cumpărați de la rangeri"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy Online"
+msgstr "Cumpărați Online"
+
+#: .\services\templates\services\ticket-online.html:98
+msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
+msgstr "Prețul final al biletului de vizitator va include, de asemenea, un mic comision de tranzacție, aplicat de procesatorul nostru de plăți, Netopia Payments și egal cu 0,95% pe tranzacție"
 #: .\services\templates\services\wildlife-details.html:9
 msgid "years"
 msgstr "ani"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "Proceed to Payment Method"
 msgstr "Către metoda de plată"
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "Ticket summary"
 msgstr "Rezumat bilete"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "Payer Personal Information"
 msgstr "Informații personale ale plătitorului"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "Payments are secure and encrypted"
 msgstr "Plățile sunt sigure și criptate"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "You will be redirected to Netopia Payments to complete the payment"
 msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\ticket-online.html:9
 msgid "By proceeding you confirm that you accept our"
 msgstr "Continuând către metoda de plată, confirmați că acceptați"
 
@@ -230,7 +247,194 @@ msgstr "O hartă interactivă online a parcului nostru este în construcție. R�
 msgid "<span>Terms</span> and<span> Conditions</span>"
 msgstr "<span>Termeni</span> și<span> Condiții</span>"
 
-#: .\services\templates\services\ticket-description.html:9
+#: .\services\templates\services\terms.html:9
+msgid "<span>Terms and Conditions of </span><br> Bucegi Natural Park<span> Website</span>"
+msgstr "<span>Termeni și Condiții privind website-ul</span><br> Parcului Natural<span> Bucegi</span>"
+
+#: .\services\templates\services\terms.html:9
+msgid "The Administration of Bucegi Natural Park endeavors to keep its website in line with the most modern Web Stardards of the European Union online regulations and keep this website accessible without barriers"
+msgstr "Administrația Parcului Natural Bucegi se străduiește să mențină website-ul său în conformitate cu cele mai moderne standarde web ale reglementărilor online ale Uniunii Europene și să mențină acest site accesibil fără bariere"
+
+#: .\services\templates\services\terms.html:9
+msgid "GENERAL"
+msgstr "GENERALITĂȚI"
+
+#: .\services\templates\services\terms.html:9
+msgid "The internet page of the Administration of Bucegi Natural Park is from hereon named 'the Website'. Visiting, using, or ordering the visitor tickets on the Website implies acceptance of the Terms of Use that will be detailed below. In order to use the Website in good conditions, it is recommended to carefully read the Terms and Conditions. These Website Terms apply exclusively to your access to, and use of, the Administration of Bucegi Natural Park website www.bucegipark.ro, to all associated subdomains, online services, and mobile applications. These Website Terms do not alter in any way the terms or conditions of any other agreement you may have with the Administration of Bucegi Natural Park. If you are using the Website on behalf of any entity, you represent and warrant that you are authorized to accept these Website Terms on behalf of such entity, and that such entity agrees to indemnify you and the Administration of Bucegi Natural Park for violations of these Website Terms"
+msgstr "Pagina de internet a Administrației Parcului Natural Bucegi este de aici încolo denumită 'Website'. Vizitarea, utilizarea sau comandarea biletelor pentru vizitatori de pe Website-ul www.bucegipark.ro implică acceptarea Termenilor de utilizare care vor fi detaliați mai jos. Pentru a utiliza Website-ul în bune condiții, se recomandă citirea cu atenție a Termenilor și Condițiilor. Acești Termeni de utilizare ai website-ului se aplică exclusiv accesului și utilizării website-ului Administrației Parcului Natural Bucegi www.bucegipark.ro, tuturor subdomeniilor, serviciilor online și aplicațiilor mobile asociate. Acești Termeni ai Website-ului nu modifică în niciun fel termenii sau condițiile oricărui alt acord pe care îl puteți avea cu Administrația Parcului Natural Bucegi. Dacă utilizați Website-ul în numele unei entități, declarați și garantați că sunteți autorizat să acceptați acești Termeni ai Website-ului în numele entității respective și că entitatea respectivă este de acord să vă despăgubească pe dumneavoastră și Administrația Parcului Natural Bucegi pentru încălcări ale acestor Termeni ai Website-ului"
+
+#: .\services\templates\services\terms.html:9
+msgid "The website www.bucegipark.ro is controlled and operated by RNP ROMSILVA - Administrația Parcului Natural Bucegi R.A.(named here the 'Administration of Bucegi Natural Park') with headquarters in the town of Moroieni, Principala street, number 71, Dambovita county, registered at the Trade Register with no. J15/406/2009, CUI 25636012. We reserve our right to make changes to these Terms and Conditions as well as any changes to website www.bucegipark.ro without prior notice. By accessing the Terms and Conditions page, you can always read the latest version of these provisions. If you do not agree to the amended terms, you must stop using the Website"
+msgstr "Website-ul www.bucegipark.ro este controlat și operat de RNP ROMSILVA - Administrația Parcului Natural Bucegi R.A. (denumită în continuare Administrația Parcului Natural Bucegi) cu sediul în localitatea Moroieni, strada Principală, nr. 71, județul Dâmbovița, înregistrată la Registrul Comerțului cu nr. J15/406/2009, CUI 25636012. Ne rezervăm dreptul de a aduce modificări la acești Termeni și Condiții, precum și la orice modificări ale website-ului www.bucegipark.ro fără o notificare prealabilă. Accesând pagina Termeni și Condiții, puteți citi oricând cea mai recentă versiune a acestor prevederi. În cazul în care nu sunteți de acord cu termenii modificați, trebuie să încetați să mai utilizați site-ul"
+
+#: .\services\templates\services\terms.html:9
+msgid "PRICES AND PAYMENT METHODS"
+msgstr "PREȚURI ȘI METODE DE PLATĂ"
+
+#: .\services\templates\services\terms.html:9
+msgid "The prices shown on www.bucegipark.ro include VAT. The purchase price shown on the invoice will be the same as the one shown on the Website at the time of purchase, to which the delivery costs are added, if applicable. Payment for the products is made using the methods of payment available at that time, on the website, when placing an online order. Online payment methods available on the Website, include a payment processor tax, requested by our external payment processor, that shall be stated in the payment page. If you encountered any problems during the payment process, please contact us by email at contact@bucegipark.ro or by phone at +40 758 039 784 to inform us and we will try to help"
+msgstr "Prețurile afișate pe www.bucegipark.ro includ TVA. Prețul de achiziție afișat pe documentul fiscal va fi același cu cel afișat pe Website la momentul achiziției, la care se adaugă și costurile de livrare, dacă sunt aplicabile. Plata produselor se face folosind metodele de plata disponibile la acel moment, pe website, la plasarea unei comenzi online. Metodele de plată online disponibile pe Website, includ o taxă de procesare a plății, solicitată de procesatorul nostru extern de plăți, care va fi menționată în pagina de plată. În cazul în care întâmpinați probleme în timpul procesului de plată, vă rugăm să ne contactați prin e-mail la contact@bucegipark.ro sau prin telefon la +40 758 039 784 pentru a ne informa și vom încerca să vă ajutăm"
+#: .\services\templates\services\terms.html:9
+msgid "DELIVERY INFORMATION"
+msgstr "INFORMAȚII PRIVIND LIVRAREA"
+#: .\services\templates\services\terms.html:9
+msgid "The delivery term is a maximum of 7 working days, counted from the date of receipt of your order. This term can be modified for reasons independent of our will. Delivery costs are specific to the courier company and are borne by the recipient. The delivery is made by a courier company, to the customer's home. If you want to specify certain aspects related to delivery such as: delivery time, address or landmarks, please enter these things in the comments box before completing the order. On the day when the parcel with your order will be shipped, you will be notified by e-mail or telephone by us. The package can be picked up by any member of the family. The products are delivered within the limit of the available stock. If one or more of the ordered products is no longer in stock, you will be notified accordingly. In some cases, the ordered product can be replaced with a similar one if you wish and agree to this. The responsibility for any damage caused to the product, parcel or package sent by us rests with the courier company or the carrier according to the legislation in force. The products will be replaced by us if it is proven that the courier is at fault and we will be notified within 5 days of receiving the package. The digital products sold by the Administration of Bucegi Natural Park will be delivered automatically and free of charge, to the clients email inbox and the delivery timeframe can be anywhere between minutes or hours, for reasons independent of our will (network congestion, website traffic)"
+msgstr "Termenul de livrare este de maximum 5 zile lucratoare, socotite de la data primirii comenzii dvs. Acest termen poate fi modificat din motive independente de voința noastră. Costurile de livrare sunt specifice societății de curierat și sunt suportate de destinatar. Livrarea se face de către o firmă de curierat, la domiciliul clientului. Dacă doriți să specificați anumite aspecte legate de livrare precum: termenul de livrare, adresa sau reperele, vă rugăm sa introduceti aceste lucruri in căsuța de comentarii înainte de a finaliza comanda. În ziua în care va fi expediat coletul cu comanda dumneavoastră, veți fi anunțat prin e-mail sau telefonic de către noi. Pachetul poate fi ridicat de orice membru al familiei. Produsele sunt livrate in limita stocului disponibil. În cazul în care unul sau mai multe dintre produsele comandate nu mai sunt în stoc, veți fi anunțat în consecință. În unele cazuri, produsul comandat poate fi înlocuit cu unul similar dacă doriți și sunteți de acord cu acest lucru. Responsabilitatea pentru orice daune cauzate produsului, coletului sau coletului trimis de noi revine firmei de curierat sau transportatorului conform legislatiei in vigoare. Produsele vor fi înlocuite de noi în cazul în care se va face dovada culpei curierului și suntem înștiintați în termen de 5 zile de la primirea coletului. Produsele digitale comercializate de Administrația Parcului Natural Bucegi vor fi livrate automat și gratuit, către căsuța de e-mail a clienților, iar termenul de livrare poate fi oriunde între minute sau ore, din motive independente de voința noastră (aglomerarea rețelei, traficul de pe website)."
+#: .\services\templates\services\terms.html:9
+msgid "Please refer to our"
+msgstr "Vă rugăm să consultați pagina noastră"
+#: .\services\templates\services\terms.html:9
+msgid "for information on how the Administration of Bucegi Natural Park collects, uses and discloses personally identifiable information from its users"
+msgstr "pentru informații cu privire la modul în care Administrația Parcului Natural Bucegi colectează, utilizează și divulgă informațiile de identificare personală ale utilizatorilor săi"
+
+#: .\services\templates\services\terms.html:9
+msgid "COPYRIGHT AND LIMITED LICENSE"
+msgstr "DREPTURI DE AUTOR ȘI LICENȚĂ LIMITATĂ"
+#: .\services\templates\services\terms.html:9
+msgid "Unless otherwise indicated in the Website, the Website and all content and other materials on the Website, including, without limitation all trademarks, service marks, designs, texts, graphics, pictures, information, data, software, methods, inventions, sound files, other files and the selection and arrangement thereof (collectively, the 'Website Materials') are the proprietary property of the Administration of Bucegi Natural Park or the Administration of Bucegi Natural Park network, licensors, or users and are protected by Romania and international copyright, trademark, and other intellectual property laws. Permission is granted to access and use the Website and to display, copy, print and download the Website Materials for personal, non-commercial use only, in accordance with these Website Terms and the other rules and restrictions contained in the Website, provided you do not modify the Website Materials and that you retain all copyright, trademark, and other proprietary notices contained in the materials. In addition, you agree that such permission does not include:"
+msgstr "Cu excepția cazului în care se indică altfel pe Website, Website-ul și tot conținutul și alte materiale de pe Website, inclusiv, fără a se limita la toate mărcile comerciale, mărcile de serviciu, desenele, textele, grafica, imaginile, informațiile, datele, software-ul, metodele, invențiile, fișierele de sunet, alte fișiere și selecția și aranjarea acestora (colectiv, 'Materialele Website-ului') sunt proprietatea Administrației Parcului Natural Bucegi sau a rețelei Administrației Parcului Natural Bucegi, a licențiatorilor sau a utilizatorilor și sunt protejate de legislația României și internaționale privind drepturile de autor, mărcile comerciale și alte legi privind proprietatea intelectuală. Se acordă permisiunea de a accesa și utiliza Website-ul și de a afișa, copia, imprima și descărca Materialele Website-ului numai pentru uz personal, necomercial, în conformitate cu acești Termeni ai Website-ului și cu celelalte reguli și restricții conținute în Website, cu condiția să nu modificați Materialele Website-ului și să păstrați toate drepturile de autor, mărcile comerciale și alte notificări de proprietate conținute în materiale. În plus, sunteți de acord că o astfel de permisiune nu include:"
+#: .\services\templates\services\terms.html:9
+msgid "any commercial use or any resale or redistribution of the Website or the Website Materials therein"
+msgstr "orice utilizare comercială sau orice revânzare sau redistribuire a Website-ului sau a materialelor Website-ului din acesta"
+#: .\services\templates\services\terms.html:9
+msgid "the collection and use of any product listings, pictures or descriptions"
+msgstr "colectarea și utilizarea oricăror liste, imagini sau descrieri de produse"
+#: .\services\templates\services\terms.html:9
+msgid "the distribution, public performance or public display of any Website Materials"
+msgstr "distribuirea, interpretarea publică sau afișarea publică a oricărui material al Website-ului"
+#: .\services\templates\services\terms.html:9
+msgid "making any derivative uses of the Website and the Website Materials, or any portion thereof"
+msgstr "realizarea de utilizări derivate ale Website-ului și ale materialelor Website-ului sau ale oricărei părți a acestora"
+#: .\services\templates\services\terms.html:9
+msgid "downloading (other than the page caching) of any portion of the Website, the Website Materials or any information contained therein, except as expressly permitted on the Website; or"
+msgstr "descărcarea (alta decât cea a paginii de cache) a oricărei părți a Website-ului, a materialelor Website-ului sau a oricăror informații conținute în acestea, cu excepția celor permise în mod expres pe Website; sau"
+#: .\services\templates\services\terms.html:9
+msgid "any use of the Website or the Website Materials other than for its intended purpose"
+msgstr "orice utilizare a Website-ului sau a materialelor de pe Website în alte scopuri decât cele pentru care a fost conceput"
+#: .\services\templates\services\terms.html:9
+msgid "The permission granted herein is revocable at any time, with or without cause. Except as expressly stated herein, none of the Website Materials may be copied, reproduced, distributed, republished, downloaded, displayed, posted, transmitted or otherwise used in any form or by any means, including, but not limited to, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of the Administration of Bucegi Natural Park or the copyright owner"
+msgstr "Permisiunea acordată prin prezenta este revocabilă în orice moment, cu sau fără motiv. Cu excepția celor menționate în mod expres în prezenta, nici unul dintre materialele Website-ului nu poate fi copiat, reprodus, distribuit, republicat, descărcat, afișat, postat, transmis sau utilizat în orice formă sau prin orice mijloace, inclusiv, dar fără a se limita la, electronice, mecanice, fotocopiere, înregistrare sau în orice alt mod, fără permisiunea prealabilă scrisă a Administrației Parcului Natural Bucegi sau a proprietarului drepturilor de autor"
+#: .\services\templates\services\terms.html:9
+msgid "The permission given to you terminates automatically if you breach any of the Terms and Conditions. Upon termination, you must immediately destroy any downloaded and printed materials. You also may not, without the permission of the Administration of Bucegi Natural Park, 'mirror' any material contained on this Website on any other server. Any unauthorized use of any material contained on this Website may violate applicable law (including copyright laws, trademark laws, the laws of privacy and publicity, and communications regulations and statutes)"
+msgstr "Autorizația care vă este acordată încetează automat dacă încălcați oricare dintre Termeni și Condiții. La reziliere, trebuie să distrugeți imediat toate materialele descărcate și tipărite. De asemenea, nu puteți, fără permisiunea Administrației Parcului Natural Bucegi, să 'oglindiți' niciun material conținut pe acest Website pe un alt server. Orice utilizare neautorizată a oricărui material conținut pe acest Website poate încălca legislația aplicabilă (inclusiv legile privind drepturile de autor, legile privind mărcile comerciale, legile privind confidențialitatea și publicitatea, precum și reglementările și statutele privind comunicațiile)"
+#: .\services\templates\services\terms.html:9
+msgid "REPEAT INFRINGER POLICY"
+msgstr "POLITICA PRIVIND ÎNCĂLCAREA REPETATĂ"
+#: .\services\templates\services\terms.html:9
+msgid "The Administration of Bucegi Natural Park respects the intellectual property of others, and we ask our users to do the same. In accordance with the updated Law no. 84/1998 on trademarks and geographical indications, e-Commerce Directive 2000/31/EC and other applicable law, the Administration of Bucegi Natural Park has adopted a policy of terminating, in appropriate circumstances and at its sole discretion, the account of any users who are deemed to be repeat infringers. the Administration of Bucegi Natural Park may also at its sole discretion limit access to this Website and/or terminate the accounts of any users who infringe the intellectual property rights of others (regardless of whether there is any repeat infringement)"
+msgstr "Administrația Parcului Natural Bucegi respectă proprietatea intelectuală a altora și solicităm utilizatorilor noștri să procedeze la fel. În conformitate cu Legea nr. 84/1998 actualizată privind mărcile și indicațiile geografice, cu Directiva 2000/31/CE privind comerțul electronic și cu alte legi aplicabile, Administrația Parcului Natural Bucegi a adoptat o politică de închidere, în circumstanțe adecvate și la discreția sa, a contului oricărui utilizator care este considerat a fi un infractor recidivist. Administrația Parcului Natural Bucegi poate, de asemenea, la discreția sa exclusivă, să limiteze accesul la acest Website și/sau să închidă conturile oricăror utilizatori care încalcă drepturile de proprietate intelectuală ale altora (indiferent dacă există sau nu încălcări repetate)"
+#: .\services\templates\services\terms.html:9
+msgid "COPYRIGHT COMPLAINTS"
+msgstr "RECLAMAȚII PRIVIND DREPTURILE DE AUTOR"
+#: .\services\templates\services\terms.html:9
+msgid "If you believe in good faith that your copyrighted work has been reproduced on our Website without authorization in a way that constitutes copyright infringement, please provide the Administration of Bucegi Natural Park representative, at the address provided below, the following information:"
+msgstr "Dacă credeți cu bună credință că lucrarea dvs. protejată de drepturi de autor a fost reprodusă pe Website-ul nostru fără autorizație într-un mod care constituie o încălcare a drepturilor de autor, vă rugăm să furnizați reprezentantului Administrației Parcului Natural Bucegi, la adresa de mai jos, următoarele informații:"
+
+#: .\services\templates\services\terms.html:9
+msgid "an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest"
+msgstr "o semnătură electronică sau fizică a persoanei autorizate să acționeze în numele titularului dreptului de autor sau al altui interes de proprietate intelectuală"
+#: .\services\templates\services\terms.html:9
+msgid "a description of the copyrighted work or other intellectual property that you claim has been infringed"
+msgstr "o descriere a lucrării protejate prin drepturi de autor sau a altei proprietăți intelectuale despre care susțineți că a fost încălcată"
+#: .\services\templates\services\terms.html:9
+msgid "a description of where the material that you claim is infringing is located on this Website"
+msgstr "pe acest Website se află o descriere a locului în care materialul despre care pretindeți că îl încalcă"
+#: .\services\templates\services\terms.html:9
+msgid "your address, telephone number, and email address"
+msgstr "adresa dvs., numărul de telefon și adresa dvs. de e-mail"
+#: .\services\templates\services\terms.html:9
+msgid "a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and"
+msgstr "o declarație din partea dvs. conform căreia credeți cu bună-credință că utilizarea contestată nu este autorizată de proprietarul drepturilor de autor, de agentul acestuia sau de lege; și"
+#: .\services\templates\services\terms.html:9
+msgid "a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner’s behalf"
+msgstr "o declarație a dvs., făcută sub sancțiunea de încălcare a unui jurământ, că informațiile de mai sus din notificarea dvs. sunt corecte și că sunteți proprietarul dreptului de autor sau al proprietății intelectuale sau că sunteți autorizat să acționați în numele proprietarului dreptului de autor sau al proprietății intelectuale"
+#: .\services\templates\services\terms.html:9
+msgid "For notice of claims of copyright or other intellectual property infringement, the Administration of Bucegi Natural Park can be reached either by mail to the Park Director, at Administrația Parcului Natura Bucegi, 71 Principala Street, Moroieni Town; or by email to alexandru.coltoiu@bucegipark.ro. This contact information is only for suspected copyright or other intellectual property infringement notices only, and is not for reprint or use permission requests. Contact information for other matters is provided elsewhere on this Website. We may give notice of a claim of copyright infringement to our users by means of a general notice on the Website, electronic mail to a user’s email address in our records, or by written communication sent by mail to a user’s address in our records"
+msgstr "Pentru sesizarea reclamațiilor de drepturi de autor sau alte încălcări ale proprietății intelectuale, Administrația Parcului Natural Bucegi poate fi contactată fie prin poștă către Directorul Parcului, la Administrația Parcului Natura Bucegi, str. Principala 71, orașul Moroieni; sau prin email la alexandru.coltoiu@bucegipark.ro. Aceste informații de contact sunt numai pentru suspecte de drepturi de autor sau alte notificări de încălcare a proprietății intelectuale și nu sunt pentru retipărire sau solicitări de permisiune de utilizare. Informațiile de contact pentru alte probleme sunt furnizate în altă parte pe acest website. Putem notifica utilizatorilor noștri o reclamație de încălcare a drepturilor de autor prin intermediul unei notificări generale pe website, prin e-mail la adresa de e-mail a unui utilizator din evidențele noastre sau printr-o comunicare scrisă trimisă prin poștă la adresa unui utilizator din evidențele noastre"
+
+#: .\services\templates\services\terms.html:9
+msgid "TRADEMARKS"
+msgstr "MĂRCI ÎNREGISTRATE"
+#: .\services\templates\services\terms.html:9
+msgid "The logo of Bucegi Natural Park, and any other product or service name or slogan contained in the Website are trademarks of the Administration of Bucegi Natural Park, the the Administration of Bucegi Natural Park network, its corporate partners, licensors, or other respective owners, and may not be copied, imitated or used, in whole or in part, without the prior written permission of the Administration of Bucegi Natural Park or the applicable trademark holder. You may not use any metatags or any other 'hidden text' using 'the Administration of Bucegi Natural Park', the Administration of Bucegi Natural Park initials, or any other name, trademark or product or service name of the Administration of Bucegi Natural Park without our prior written permission. In addition, the look and feel of the Website, including all page headers, custom graphics, button icons and scripts, is the service mark, trademark and/or trade dress of the Administration of Bucegi Natural Park and may not be copied, imitated or used, in whole or in part, without our prior written permission. Reference to any products, services, promises or other information, by trade name, trademark, manufacturer, supplier or otherwise does not constitute or imply endorsement, sponsorship or recommendation thereof by us"
+msgstr "Sigla Parcului Natural Bucegi, precum și orice alt nume de produs sau serviciu sau slogan conținut în Site sunt mărci comerciale ale Administrației Parcului Natural Bucegi, rețelei Administrației Parcului Natural Bucegi, partenerilor săi corporativi, licențiatori sau alți proprietari respectivi și nu pot fi copiate, imitate sau utilizate, în întregime sau parțial, fără permisiunea prealabilă scrisă a Administrației Parcului Natural Bucegi sau a deținătorului mărcii în cauză. Nu aveți voie să utilizați meta-etichete sau orice alt „text ascuns” folosind „Administrația Parcului Natural Bucegi”, inițialele Administrației Parcului Natural Bucegi sau orice alt nume, marcă comercială sau denumire de produs sau serviciu al Administrației Parcului Natural Bucegi fără permisiunea noastră scrisă prealabilă. În plus, aspectul Website-ului, inclusiv toate anteturile de pagină, graficele personalizate, pictogramele butoanelor și scripturile, este marca de serviciu, marcă comercială și/sau imagine comercială a Administrației Parcului Natural Bucegi și nu poate fi copiată, imitată sau utilizată, integral sau parțial, fără permisiunea noastră prealabilă în scris. Referirea la orice produse, servicii, promisiuni sau alte informații, prin denumire comercială, marcă comercială, producător, furnizor sau în alt mod nu constituie sau implică susținerea, sponsorizarea sau recomandarea acestora de către noi"
+#: .\services\templates\services\terms.html:9
+msgid "WEBSITES LINKED FROM THIS SITE"
+msgstr "WEBSITE-URI LA CARE FACE TRIMITERE ACEST WEBSITE"
+#: .\services\templates\services\terms.html:9
+msgid "This Website may contain links to or may frame third party Websites ('Third Party Websites') and may contain or link to third party information, materials, communications or other content (collectively the “Third Party Content”). Such Third Party Content and Third Party Websites are not under the Administration of Bucegi Natural Park control, and the Administration of Bucegi Natural Park does not endorse, assume any responsibility or liability for, or make any representations or warranties regarding, the Third Party Websites, the Third Party Content or any products or services offered by any third parties on the Website or any Third Party Website. the Administration of Bucegi Natural Park does not intend links on this Website to be referrals or endorsements of the linked entities, or their products or services, and are provided for convenience only. Your use of Third Party Websites or Third Party Content, or any third party products and services, is at your own risk and subject to the terms and conditions or the provider"
+msgstr "Acest Website poate conține link-uri către sau poate încadra website-uri ale terților („Website-uri ale terților”) și poate conține sau face link-uri către informații, materiale, comunicări sau alt conținut de la terți (denumit în mod colectiv „Conținutul terților”). Conținutul terților și website-uri ale terților nu se află sub controlul Administrației Parcului Natural Bucegi, iar Administrația Parcului Natural Bucegi nu aprobă, nu își asumă nicio responsabilitate sau răspundere pentru, și nu face nicio declarație sau garanție cu privire la website-urile terțelor părți, Terții. Conținutul unei părți sau orice produse sau servicii oferite de terți pe website-ul sau pe orice website al unei terțe părți. Administrația Parcului Natural Bucegi nu intenționează ca linkurile de pe acest Website să fie recomandări sau aprobări ale entităților conectate sau ale produselor sau serviciilor acestora și sunt furnizate doar pentru comoditate. Utilizarea de către dvs. a website-urilor terților sau a conținutului terților sau a oricăror produse și servicii terță parte este pe propriul risc și se supune termenilor și condițiilor sau ale furnizorului"
+#: .\services\templates\services\terms.html:9
+msgid "WEBSITES LINKING TO THIS SITE"
+msgstr "WEBSITE-URI CARE FAC TRIMITERE LA ACEST WEBSITE"
+#: .\services\templates\services\terms.html:9
+msgid "If you would like to link another Web Website to this Website, you may only do so if you obtain the Administration of Bucegi Natural Park’s prior permission. Such link may not suggest or imply the Administration of Bucegi Natural Park’s endorsement or approval of any product, position, entity, or individual, or portray the Administration of Bucegi Natural Park in a false, misleading, derogatory or otherwise defamatory manner, and the linking Website may not contain any adult or illegal material or any material that is offensive, harassing or otherwise objectionable. Any right to link may be revoked at any time. You may not use the the Administration of Bucegi Natural Park logo or other proprietary graphic of the Administration of Bucegi Natural Park to link to the Website without the express written permission of the Administration of Bucegi Natural Park. Further, you may not frame or provide inline links to the Website without the Administration of Bucegi Natural Park’s express written consent"
+msgstr "Dacă doriți să conectați un alt website la acest Website, puteți face acest lucru numai dacă obțineți permisiunea prealabilă a Administrației Parcului Natural Bucegi. Un astfel de link nu poate sugera sau implica aprobarea sau aprobarea de către Administrația Parcului Natural Bucegi a vreunui produs, poziție, entitate sau persoană fizică sau să prezinte Administrația Parcului Natural Bucegi într-o manieră falsă, înșelătoare, derogatorie sau defăimătoare, iar pagina de internet care face legătura nu trebuie să conțină materiale pentru adulți sau ilegale sau orice material care este ofensator, hărțuitor sau în orice alt mod inacceptabil. Orice drept de conectare poate fi revocat în orice moment. Nu aveți voie să utilizați sigla Administrației Parcului Natural Bucegi sau alte elemente grafice proprietate a Administrației Parcului Natural Bucegi pentru a face legătura către Website fără permisiunea scrisă expresă a Administrației Parcului Natural Bucegi. În plus, nu puteți încadra sau furniza link-uri inline către Website fără acordul expres scris al Administrației Parcului Natural Bucegi"
+#: .\services\templates\services\terms.html:9
+msgid "FEEDBACK AND MATERIALS"
+msgstr "FEEDBACK ȘI MATERIALE"
+#: .\services\templates\services\terms.html:9
+msgid "Any comments or materials sent to the Administration of Bucegi Natural Park (via any medium including e-mail and regular mail) including feedback data, such as questions, ideas, comments, suggestions, or the like regarding this Website or any other products or programs of the Administration of Bucegi Natural Park (collectively “Feedback”), shall be deemed to be non-confidential and shall become the sole property of the Administration of Bucegi Natural Park. You hereby assign all rights in the Feedback to the Administration of Bucegi Natural Park, and the Administration of Bucegi Natural Park shall have no obligation of any kind with respect to such Feedback. Without limiting the foregoing, the Administration of Bucegi Natural Park shall be free to reproduce, use, disclose, exhibit, display, transform, create derivative works and distribute the Feedback to others without limitation, without acknowledgment or compensation to you. Further, you expressly waive any moral rights you may have in such Feedback"
+msgstr "Orice comentarii sau materiale trimise Administrației Parcului Natural Bucegi (prin orice mijloc, inclusiv e-mail și poștă obișnuită), inclusiv date de feedback, cum ar fi întrebări, idei, comentarii, sugestii sau altele asemenea referitoare la acest Website sau la orice alte produse sau programe ale Bucegi Administrația Parcului Natural (colectiv „Feedback”), va fi considerată a fi neconfidențială și va deveni proprietatea exclusivă a Administrației Parcului Natural Bucegi. Prin prezenta atribuiți toate drepturile în Feedback-ului Administrației Parcului Natural Bucegi, iar Administrația Parcului Natural Bucegi nu va avea nicio obligație cu privire la acest Feedback. Fără a limita cele de mai sus, Administrația Parcului Natural Bucegi va fi liberă să reproducă, să utilizeze, să dezvăluie, să expună, să afișeze, să transforme, să creeze lucrări derivate și să distribuie Feedback-ul altora fără limitare, fără a vă recunoaște sau compensa. În plus, renunțați în mod expres la orice drepturi morale pe care le aveți în acest Feedback"
+#: .\services\templates\services\terms.html:9
+msgid "REFUND POLICY"
+msgstr "POLITICA DE RAMBURSARE"
+#: .\services\templates\services\terms.html:9
+msgid "The Administration of Bucegi Natural Park can only refund payments according to existing Romanian laws (O.U.G. 34/2014) and as a consequence, the digital products, that are not physical/material, are not refundable (e.g. digital visitor tickets). In any case, please tell us your problem using the contact details on the Website and, as a gesture of goodwill, we shall try to help, if possible. The refunding, if applicable, is done using the same means of payment as the initial payment, received from the client. Also, the Administration of Bucegi Natural Park is grateful for all donations received in support of our conservation work. Due to restrictions imposed by law and the nature of charitable donations, we cannot provide refunds for donations once they have been received. However, if you believe that your donation was made in error please contact us. All mistaken or unauthorized donations are refunded using the original method of payment"
+msgstr "Administrația Parcului Natural Bucegi poate rambursa plățile doar în conformitate cu legile românești în vigoare (O.U.G. 34/2014) și, în consecință, produsele digitale, care nu sunt fizice/materiale, nu sunt rambursabile (de exemplu, biletele de vizitare digitale). În orice caz, vă rugăm să ne comunicați problema dvs. folosind datele de contact de pe website și, cu bună credință, vom încerca să vă ajutăm, dacă este posibil. Rambursarea, dacă este cazul, se face folosind același mijloc de plată ca și plata inițială, primită de la client. De asemenea, Administrația Parcului Natural Bucegi este recunoscătoare pentru toate donațiile primite în sprijinul activității noastre de conservare. Din cauza restricțiilor impuse de lege și a naturii donațiilor caritabile, nu putem oferi rambursări pentru donații odată ce acestea au fost primite. Cu toate acestea, dacă credeți că donația dvs. a fost făcută din greșeală, vă rugăm să ne contactați. Toate donațiile greșite sau neautorizate sunt rambursate folosind metoda de plată inițială"
+#: .\services\templates\services\terms.html:9
+msgid "USER CONTENT AND INTERACTIVE SERVICES OR AREAS"
+msgstr "CONȚINUTUL UTILIZATORULUI ȘI SERVICII SAU ZONE INTERACTIVE"
+#: .\services\templates\services\terms.html:9
+msgid "The Administration of Bucegi Natural Park takes no responsibility and assumes no liability for any User Content posted, stored or uploaded by you or any third party, or for any loss or damage thereto, nor is the Administration of Bucegi Natural Park liable for any mistakes, defamation, slander, libel, omissions, falsehoods, obscenity, pornography or profanity you may encounter. Your use of Interactive Areas is at your own risk. As a provider of interactive services, the Administration of Bucegi Natural Park is not liable for any statements, representations or User Content provided by its users in any public forum, personal home page or other Interactive Area. Although the Administration of Bucegi Natural Park has no obligation to screen, edit or monitor any of the Content posted in any Interactive Area, the Administration of Bucegi Natural Park reserves the right, and has absolute discretion, to remove, screen or edit any User Content posted or stored on the Website at any time and for any reason without notice, and you are solely responsible for creating backup copies of and replacing any User Content you post or store on the Website at your sole cost and expense. Any use of the Interactive Areas or other portions of the Website in violation of the foregoing violates these Website Terms and may result in, among other things, termination or suspension of your rights to use the Interactive Areas and/or the Website"
+msgstr "Administrația Parcului Natural Bucegi nu este responsabilă și nu își asumă nicio responsabilitate pentru orice Conținut de utilizator afișat, stocat sau încărcat de dvs. sau de orice terță parte, sau pentru orice pierdere sau deteriorare a acestuia și nici nu este Administrația Parcului Natural Bucegi responsabilă pentru greșeli, defăimări, calomnii, omisiuni, minciuni, obscenitate, pornografie sau blasfemie pe care le puteți întâlni. Utilizarea zonelor interactive este pe propriul risc. În calitate de furnizor de servicii interactive, Administrația Parcului Natural Bucegi nu este responsabilă pentru nici o declarație, reprezentare sau Conținut de Utilizator furnizat de utilizatorii săi în orice forum public, pagină personală sau altă zonă interactivă. Deși Administrația Parcului Natural Bucegi nu are obligația de a verifica, edita sau monitoriza conținutul postat în zonele interactive, Administrația Parcului Natural Bucegi își rezervă dreptul și are la discreție absolută capacitatea de a elimina, respinge sau edita orice conținut de utilizator postat sau stocat pe Website în orice moment și din orice motiv fără notificare și sunteți singurul responsabil pentru crearea copiilor de rezervă și înlocuirea oricărui Conținut de utilizator pe care îl postați sau îl stocați pe Website, pe cheltuiala dvs. Orice utilizare a Zonelor Interactive sau a altor părți ale Website-ului cu încălcarea celor de mai sus încalcă acești Termeni ai Website-ului și poate duce, printre altele, la încetarea sau suspendarea drepturilor dumneavoastră de a utiliza Zonele Interactive și/sau Website-ul"
+#: .\services\templates\services\terms.html:9
+msgid "REGISTRATION DATA; ACCOUNT SECURITY"
+msgstr "DATE DE ÎNREGISTRARE; SECURITATEA CONTULUI"
+
+#: .\services\templates\services\terms.html:9
+msgid "In consideration of your use of the Website, if you create any account on the Website, you agree to: (a) provide accurate, current and complete information about you as may be prompted by any registration forms on the Website (“Registration Data”); (b) maintain the security of your password and identification; (c) maintain and promptly update the Registration Data, and any other information you provide to the Administration of Bucegi Natural Park, to keep it accurate, current and complete; and (d) accept all risks of unauthorized access to the Registration Data and any other information you provide to the Administration of Bucegi Natural Park"
+msgstr "Având în vedere utilizarea de către dvs. a Website-ului, dacă creați orice cont pe Website, sunteți de acord să: (a) să furnizați informații exacte, actuale și complete despre dvs., așa cum vă pot fi solicitate de către formularele de înregistrare de pe Website ('Date de înregistrare'); (b) mențineți securitatea parolei și a datelor dvs de identificare; (c) să mențineți și să actualizați prompt Datele de înregistrare și orice alte informații pe care le furnizați Administrației Parcului Natural Bucegi, pentru a le menține exacte, actuale și complete; și (d) acceptați toate riscurile de acces neautorizat la Datele de înregistrare și la orice alte informații pe care le furnizați Administrației Parcului Natural Bucegi"
+
+#: .\services\templates\services\terms.html:9
+msgid "LIMITATION OF LIABILITY"
+msgstr "LIMITAREA RĂSPUNDERII"
+
+#: .\services\templates\services\terms.html:9
+msgid "IN NO EVENT SHALL THE ADMINISTRATION OF BUCEGI NATURAL PARK, ANY OTHER PARTY (WHETHER OR NOT INVOLVED IN CREATING, PRODUCING, MAINTAINING OR DELIVERING THE WEBSITE), AND/OR THEIR OFFICIALS, DIRECTORS, EMPLOYEES, AGENTS BE LIABLE FOR ANY DIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, LOSS OF USE, LOSS OF INCOME, LOSS OF ACTUAL OR ANTICIPATED PROFITS, LOSS OF BUSINESS, LOSS OF CONTRACTS, LOSS OF GOODWILL OR REPUTATION, LOSS OF ANTICIPATED SAVINGS, LOSS OF DAMAGE TO OR CORRUPTION OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE) OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF THE WEBSITE, THE SERVICES, THE CONTENT OR THE MATERIALS CONTAINED IN OR ACCESSED THROUGH THE SITE, INCLUDING WITHOUT LIMITATION ANY DAMAGES CASED BY OR RESULTING FROM RELIANCE BY USER ON ANY INFORMATION OBTAINED FROM ADMINISTRATION OF BUCEGI NATURAL PARK, OR THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAIL, ERRORS, DEFECTS, VIRUSES, DELAYS IN OPERATION OR TRANSMISSION OR ANY FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF COMMUNICATIONS FAILURE, THEFT, DESTRUCTION OR UNAUTHORIZED ACCESS TO THE RECORDS OF THE ADMINISTRATION OF BUCEGI NATURAL PARK, PROGRAMS OR SERVICES. IN NO EVENT SHALL THE AGGREGATE LIABILITY OF ADMINISTRATION OF BUCEGI NATURA PARK, WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY, ARISING OUT OF OR RELATING TO THE USE OF THE SITE EXCEED ANY COMPENSATION YOU PAY, IF ANY, TO THE ADMINISTRATION OF BUCEGI NATURAL PARK, FOR ACCESS TO OR USE OF THE WEBSITE"
+msgstr "ÎN NICI UN CAZ ADMINISTRAȚIA PARCULUI NATURAL BUCEGI, ORICE ALTĂ PARTE (IMPLICATĂ SAU NU ÎN CREAREA, PRODUCEREA, MENTINEREA SAU LIVRAREA WEBSITE-ULUI) ȘI/SAU OFICIALI, DIRECTORI, ANGAJAȚI, AGENȚI AI ACESTORA, NU VA RĂSPUNDE PENTRU ORICE DAUNE DIRECTE, INCIDENTALE SAU CONSECUȚIONALE DE ORICE FEL, INCLUSIV, FĂRĂ LIMITARE, PIERDERE DE UTILIZARE, PIERDERE DE VENIT, PIERDERE DE PROFIT REAL SAU ANTICIPAT, PIERDERE DE AFACERI, PIERDERE DE CONTRACTE, PIERDERE DE BUNĂ CREDINȚĂ SAU REPUTAȚIE, PIERDERE DE ECONOMII ANTICIPATE, DETERMINAREA SAU CORUPEREA DATELOR, FIE ÎNTR-O SITUAȚIE ÎNTR-UN CONTRACT, DELICT (INCLUSIV, DAR NU LIMITAT LA NEGLIGENȚĂ) SAU ÎN ALT MOD, REZULTAND DIN SAU LEGAT ÎN ORICE MOD DE UTILIZAREA WEBSITE-ULUI, A SERVICIILOR, A CONȚINUTULUI SAU MATERIALELOR CONȚINUTE SAU ACCESATE PRIN WEBSITE, INCLUSIV, FĂRĂ LIMITARE LA, ORICE DAUNE PROVOCATE DE SAU REZULTATE DIN INCREDEREA UTILIZATORULUI ÎN ORICE INFORMAȚII OBȚINUTE DE LA ADMINISTRAȚIA PARCULUI NATURAL BUCEGI, SAU CARE SUNT REZULTATE DIN GREȘELI, OMISIUNI, ÎNTRERUPERI, ȘTERGERI DE FIȘIERE SAU EMAIL-URI, ERORI, DEFECTE, VIRUȘI, ÎNTÂRZIERI ÎN FUNCȚIONARE SAU TRANSMITERE, SAU ORICE AFECTARE A PERFORMANȚEI, REZULTATĂ SAU NU DIN EȘUĂRI ALE COMUNICĂRII, FURT, DISTRUGERE SAU ACCESUL NEAUTORIZAT LA ARHIVELE ADMINISTRAȚIEI PARCULUI NATURAL BUCEGI, A PROGRAMELOR SAU SERVICIILOR. ÎN NICI UN CAZ, RĂSPUNDEREA AGREGATĂ A ADMINISTRAȚIEI PARCULUI NATURAL BUCEGI, FIE SUB CONTRACT, GARANȚIE, DELICT (INCLUZAND NEGLIGENȚA, ACTIVĂ, PASIVĂ SAU IMPUTATĂ), RĂSPUNDEREA PENTRU PRODUS, RESPONSABILITATEA STRICTĂ SAU ALTĂ SITUAȚIE, REZULTATĂ DIN SAU LEGATĂ DE UTILIZAREA WEBSITE-ULUI, NU VA DEPĂȘI ORICE COMPENSAȚIE PLĂTITĂ, DACĂ ESTE APLICABILĂ, CĂTRE ADMINISTRATIA PARCULUI NATURAL BUCEGI PENTRU ACCESUL SAU UTILIZAREA WEBSITE-ULUI"
+#: .\services\templates\services\terms.html:9
+msgid "INDEMNITY"
+msgstr "DESPĂGUBIRE"
+#: .\services\templates\services\terms.html:9
+msgid "You agree to defend, indemnify and hold the Administration of Bucegi Natural Park, and its affiliates, independent contractors, service providers, suppliers, licensors and consultants, and their respective officials, directors, employees, and agents (the 'Indemnified Parties'), harmless from and against any claims, damages, costs, actions, demands, liabilities, and settlements and expenses (including without limitation, reasonable attorneys’ fees) arising out of or related to your violation of these Terms and Conditions, any User Content you post, store or otherwise transmit on or through the Website, or your use of or inability to use the Website, including without limitation any actual or threatened suit, demand or claim made against the Indemnified Parties, arising out of or relating to the Content, your conduct, or your violation of the rights of any third party"
+msgstr "Sunteți de acord să apărați, să despăgubiți și să țineți Administrația Parcului Natural Bucegi și afiliații săi, contractorii independenți, furnizorii de servicii, furnizorii, licențiatorii și consultanții săi, și, respectiv, oficialii, directorii, angajații și agenții acesteia ('Părțile despăgubite'), în afara răspunderii față de orice pretenții, daune, costuri, acțiuni, cereri, răspunderi, cereri de decontări și cheltuieli (inclusiv, fără limitare la, onorariile rezonabile ale avocaților) care decurg din sau sunt legate de încălcarea de către dvs. a acestor Termeni și Condiții, orice Conținut de utilizator pe care îl postați, stocarea sau transmiterea în alt mod pe sau prin intermediul Website-ului, sau utilizarea sau incapacitatea dvs. de a utiliza Website-ul, inclusiv, fără limitare, orice proces, cerere sau reclamație reală sau amenințare formulată împotriva Părților Despăgubite, care decurg din sau este legată de Conținut, comportamentul dvs., sau încălcarea dvs. a drepturilor oricărei terțe părți"
+#: .\services\templates\services\terms.html:9
+msgid "TERMINATION; REMOVAL OF USER CONTENT"
+msgstr "TERMINAREA; ELIMINAREA CONȚINUTULUI UTILIZATORULUI"
+#: .\services\templates\services\terms.html:9
+msgid "Notwithstanding any of these Website Terms, the Administration of Bucegi Natural Park reserves the right, without notice and in its sole discretion, to discontinue the Website or any Services offered through the Website and to terminate your license to use and block your access to the Website at any time without notice. In addition, the Administration of Bucegi Natural Park reserves the right to delete, edit or modify any and all User Content contained in the Website and any services offered through the Website at any time without notice"
+msgstr "Fără a aduce atingere oricăruia dintre acești Termeni ai Website-ului, Administrația Parcului Natural Bucegi își rezervă dreptul, fără notificare și la discreția sa, de a întrerupe Website-ul sau orice Servicii oferite prin intermediul Website-ului și de a vă revoca dreptul de utilizare și de a vă bloca accesul la Website în orice moment, fără notificare prealabilă. În plus, Administrația Parcului Natural Bucegi își rezervă dreptul de a șterge, edita sau modifica parțial sau tot Conținutul utilizatorului din Website și orice servicii oferite prin intermediul Website-ului în orice moment, fără notificare prealabilă"
+#: .\services\templates\services\terms.html:9
+msgid "SEVERABILITY/WAIVER"
+msgstr "SEPARABILITATE/RENUNȚARE"
+#: .\services\templates\services\terms.html:9
+msgid "If any provision of these Website Terms is deemed unlawful, void or for any reason unenforceable, then such provision shall be deemed severable from these Website Terms and shall not affect the validity and enforceability of any remaining provisions. No waiver of any of these Website Terms shall be deemed a further or continuing waiver of such term or condition or any other term or condition"
+msgstr "Dacă vreo prevedere a acestor Termeni ai Website-ului este considerată ilegală, nulă sau din orice motiv inaplicabilă, atunci o astfel de prevedere va fi considerată separabilă de acești Termeni ai Website-ului și nu va afecta valabilitatea și aplicabilitatea oricăror prevederi rămase. Nicio renunțare la nici unul dintre acești Termeni ai Website-ului nu va fi considerată o renunțare ulterioară sau continuă la un astfel de termen sau condiție sau la orice alt termen sau condiție"
+#: .\services\templates\services\terms.html:9
+msgid "GOVERNING LAW AND JURISDICTION"
+msgstr "LEGEA APLICABILĂ ȘI JURISDICȚIA"
+#: .\services\templates\services\terms.html:9
+msgid "These Website Terms and your use of the Website are governed and construed in accordance with the Romanian laws, applicable to agreements made and to be entirely performed in Romania, without resort to its conflict of law provisions. You agree that any action at law or in equity arising or in any way relating to these Website Terms shall be filed only in the Romanian courts and you hereby irrevocably and unconditionally consent and submit to the exclusive jurisdiction of such courts over any suit, action or proceeding arising out of these Website Terms"
+msgstr "Acești Termeni ai Website-ului și utilizarea de către dvs. a Website-ului sunt guvernate și interpretate în conformitate cu legislația României, aplicabile acordurilor încheiate și care urmează să fie executate în întregime în România, fără a recurge la prevederile sale de conflict de legi. Sunteți de acord că orice acțiune în justiție sau în echitate care decurge sau se referă în orice mod la acești Termeni ai Website-ului va fi depusă numai în instanțele României și, prin prezenta, sunteți de acord irevocabil și necondiționat și vă supuneți jurisdicției exclusive a acestor instanțe asupra oricăror procese, acțiuni sau procedură care decurge din acești Termeni ai Website-ului"
+#: .\services\templates\services\terms.html:9
+msgid "QUESTIONS & CONTACT INFORMATION"
+msgstr "ÎNTREBĂRI ȘI INFORMAȚII DE CONTACT"
+#: .\services\templates\services\terms.html:9
+msgid "Thank you for your cooperation. Questions or comments regarding the Website should be directed by electronic mail to contact@bucegipark.ro"
+msgstr "Mulțumim pentru înțelegere și cooperare. Întrebările sau comentariile cu privire la Website trebuie adresate prin e-mail la contact@bucegipark.ro"
+
+#: .\services\templates\services\ticket-online.html:9
 msgid "Net total"
 msgstr "Total net"
 

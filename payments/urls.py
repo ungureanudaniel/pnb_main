@@ -5,7 +5,7 @@ from .views import ticketpay_view, checkout_view
 
 urlpatterns = [
     #------ general urls-------------------
-    path('ticket-details', ticketpay_view, name="ticketdescr"),
+    path('online-ticket-details', ticketpay_view, name="ticket-online"),
     path('payment-checkout', checkout_view, name="checkout"),
 
     ]

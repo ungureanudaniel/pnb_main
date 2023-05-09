@@ -196,6 +196,19 @@ def eventlist_view(request):
     context = {"events":Event.objects.all().order_by("-timestamp")}
     return render(request, template, context)
 #======================== gallery page================================
+def sector_map_view(request):
+    template = 'services/sector-map.html'
+    # if request.method == "POST":
+    #     gallery_form =  GalleryForm()
+    #     if gallery_form.is_valid():
+    #         new_photo = gallery_form.save()
+    # else:
+    #     gallery_form =  GalleryForm()
+    context = {
+        "rangers": Team.objects.filter(job__exact="Ranger").order_by("surname")
+    }
+    return render(request, template, context)
+#======================== gallery page================================
 def gallery(request):
     template = 'services/gallery.html'
     # if request.method == "POST":

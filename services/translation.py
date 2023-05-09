@@ -17,7 +17,7 @@ class WildlifeCatTranslationOptions(TranslationOptions):
 class WildlifeTranslationOptions(TranslationOptions):
     fields = ('name', 'habitat', 'text', 'diet')
 class TeamTranslationOptions(TranslationOptions):
-    fields = ('text', 'job')
+    fields = ('text', 'job', 'sector')
 class PublicCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class AnnouncementTranslationOptions(TranslationOptions):

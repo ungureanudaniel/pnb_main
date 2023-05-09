@@ -1,0 +1,58 @@
+{% load static %}
+{% load i18n %}
+<!-- Add  new attraction form: Vertical  -->
+<div class="modal fade" id="ticketsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="card">
+
+        <!-- Close -->
+        <!-- <button type="button" class="btn-close bg-dark text-white" data-bs-dismiss="modal" aria-label="Close">X</button> -->
+        <button type="button" class="btn-close close text-left" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- Image -->
+        <img src="{% static 'img/icons/tickets2.png' %}" alt="..." class="card-img-top">
+        {% if messages %}
+        <div class="container error-container">
+          <div class="alert" id="form_message" role="alert"></div>
+
+          <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+            {% include 'includes/messages.html' %}
+          </div>
+          {% else %}
+          <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+          </div>
+
+        </div>
+        {% endif %}
+        <!-- Shape -->
+        <!-- <div class="inter-shapes">
+          <div class="shape shape-bottom shape-fluid-x text-white">
+            <svg viewBox="0 0 2880 480" fill="" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill=""></path></svg>          </div>
+        </div> -->
+        <section class="section elements button-elements pt-0 bottom-50">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-12">
+                <h2 class="mb-5 fw-bold text-center" id="modalSignin">
+                  {% trans 'Two ways to buy tickets' %}
+                </h2>
+                <p class="mb-6 text-center text-muted">
+                  {% trans 'You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone' %}.
+                </p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 text-center">
+                <a class="col-6 button button--primary" href="{% url 'sector-map' %}">{% trans 'Buy from rangers' %}</a>
+                <a class="col-6 button button--primary button--filled" href="{% url 'ticket-online' %}">{% trans 'Buy Online' %}</a>
+              </div>
+						</div>
+					</div>
+				</section>
+
+      </div>
+    </div>
+  </div>
+</div>

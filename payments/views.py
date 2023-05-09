@@ -1,19 +1,19 @@
 from django.shortcuts import render
-
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 def ticketpay_view(request):
-    template = "payments/ticket-description.html"
+    template = "payments/ticket-online.html"
     context = {}
     if request.method=="POST":
         try:
             pers = request.POST.get('total')
-            print(f"{pers}")
             context = {
                 "nr_pers": pers,
             }
         except Exception as e:
-            print(f"Error:{e}!")
+            messages.warning(request, _(f"Failed! {e}"))
     else:
-        print("Post request not working!")
+        messages.warning(request, _(f"Failed! Try again or contact us."))
     return render(request, template, context)
 
 def checkout_view(request):
