@@ -329,6 +329,7 @@ class Team(models.Model):
     firstname = models.CharField(max_length=30)
     image = ResizedImageField(size=[640,None], upload_to='team_images',)
     phone = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=254)
     job = models.CharField(max_length=100, blank=True, null=True)
     text = models.TextField(max_length=300)
     hierarchy = models.IntegerField(default=0)
