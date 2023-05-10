@@ -292,18 +292,19 @@
 							</ul>
 							<!-- lang select start-->
 
-								{% get_available_languages as LANGUAGES %}
 
-								{% get_language_info_list for LANGUAGES as languages %}
-								{% get_language_info for LANGUAGE_CODE as lang %}
 							<ul class="lang-select">
 
 								<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>
 										<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
 											<!-- <p class="text-white">{{ languages }}</p> -->
 									<ul class="lang-select__sub-list">
+										{% get_available_languages as LANGUAGES %}
+
+										{% get_language_info_list for LANGUAGES as languages %}
+										{% get_language_info for LANGUAGE_CODE as lang %}
 										{% for language in languages %}
-										<li value="{{ language.name_local }}"><a href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
+										<li value="{{ language.name_local }}"><a href="{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
 										{% endfor %}
 									</ul>
 								</li>
