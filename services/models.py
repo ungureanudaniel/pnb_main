@@ -145,7 +145,7 @@ class Attraction(models.Model):
     settings.py file.
     """
     name = models.CharField(max_length=30)
-    image = ResizedImageField(size=[640,None], upload_to='attraction_images',)
+    image = models.ImageField(upload_to='attraction_images',)
     text = models.TextField(max_length=2000)
     categ = models.ForeignKey(AttractionCategory, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
