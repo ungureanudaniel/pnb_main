@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 # import debug_toolbar
+from django.conf.urls import handler404, handler500
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
@@ -39,3 +40,5 @@ urlpatterns += i18n_patterns(
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+handler404 = "services.views.page_not_found"
+handler500 = "services.views.server_error"

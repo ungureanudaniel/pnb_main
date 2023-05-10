@@ -46,9 +46,14 @@ msgstr "Engleză"
 #: .\pnb_main\settings.py:159
 msgid "Deutsch"
 msgstr ""
-#: .\services\templates\services\privacy.html:18
-msgid "<span>Privacy</span> <span> Policy</span>"
-msgstr "<span>Declarație</span> <span>de Confidențialitate</span>"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "<span>Park Sector</span> <span>Map</span>"
+msgstr "<span>Harta Sectoarelor</span> <span>Parcului</span>"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "All sectors and corresponding rangers below"
+msgstr "Toate sectoarele și rangerii aferenți se regăsesc mai jos"
 
 #: .\services\templates\services\privacy.html:33
 msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
@@ -59,7 +64,7 @@ msgstr "Dreptul la Accesare, Corectare și Ștergere a Datelor Colectate"
 
 #: .\services\templates\services\privacy.html:33
 msgid "Our online visitors have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Administration of Bucegi Natural Park R.A. makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, we do not control each and every risk related to the use of the Internet, and therefore we warn the website users of the potential risks involved in the functioning and use of the Internet. The website may include links to other web sites or other internet sources. As we cannot control these websites and external sources, the Administration of Bucegi Natural Park R.A. cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these websites or external sources"
-msgstr "Vizitatorii nostri au dreptul la a accesa, corecta și sterge datele lor personale, si să isi exprime dezacordul la procesarea acestor date, prin trimiterea unui email sau a unei scrisori la adresele noastre, oricând. Asociatia noastra face toate eforturile sa protejeze securitatea datelor dvs. Totusi, nu putem controla absolut toate riscurile legate de datele furnizate pe internet, si astfel prevenim utilizatorii cu privire la posibile riscuri implicate in furnizarea de date personale. Pagina noastra include link-uri si redirectionari la alte website-uri sau resurse pe internet. Având in vedere ca noi nu putem controla aceste website-uri si resurse externe, nu putem fi trasi la raspundere pentru eventuale probleme venite din partea lor, continut necorespunzator, servicii externe rau intentionate sau orice alte materiale provenite de la aceste website-uri si resurse externe"
+msgstr "Vizitatorii nostri au dreptul la a accesa, corecta și sterge datele lor personale, si să isi exprime dezacordul la procesarea acestor date, prin trimiterea unui email sau a unei scrisori la adresele noastre, oricând. Asociatia noastra face toate eforturile sa protejeze securitatea datelor dvs. Totusi, nu putem controla absolut toate riscurile legate de datele furnizate pe internet, si astfel prevenim utilizatorii cu privire la posibile riscuri implicate in furnizarea de date personale. Pagina noastra include link-uri si redirecționări la alte website-uri sau resurse pe internet. Având in vedere ca noi nu putem controla aceste website-uri si resurse externe, nu putem fi trasi la raspundere pentru eventuale probleme venite din partea lor, continut necorespunzator, servicii externe rau intentionate sau orice alte materiale provenite de la aceste website-uri si resurse externe"
 #: .\services\templates\services\privacy.html:33
 msgid "Management of Personal Data"
 msgstr "Managementul Datelor Personale"
@@ -153,9 +158,18 @@ msgstr "Biletele sunt valabile timp de 90 de zile. Mai multe despre bilete, mai 
 #: .\services\templates\services\ticket-online.html:32
 msgid "Purchase"
 msgstr "Cumpărați"
+
+#: .\services\templates\services\ticket-online.html:19
+msgid "Visitor</span> <span>Tickets"
+msgstr "Bilete</span> <span>Vizitatori"
+
+#: .\services\templates\services\ticket-online.html:35
+msgid "Why this visitor tarrif"
+msgstr "De ce acest tarif de vizitare"
+
 #: .\services\templates\services\ticket-online.html:32
-msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
-msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., adăugați mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați. În pagina următoare va trebui să le introduceți numele, telefonul și e-mailul"
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Proceed to Payment"
+msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., adăugați mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Mergeți la Plată"
 
 #: .\services\templates\services\ticket-online.html:98
 msgid "Valid"
@@ -193,21 +207,86 @@ msgstr "Biletele de vizitator sunt valabile 90 de zile, timp în care puteți vi
 msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., puteți adăuga mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați"
 
+#: .\services\templates\services\ticket-online.html:143
+msgid "Proceed to Payment"
+msgstr "Mergeți la Plată"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Ticket</span> <span> Checkout"
+msgstr "Checkout</span> <span> Bilete"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "First Name"
+msgstr "Prenume"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Last Name"
+msgstr "Nume de Familie"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Address"
+msgstr "Adresă"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "State/County"
+msgstr "Județ/Regiune"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Select Country"
+msgstr "Selectați țara"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "City"
+msgstr "Localitate"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "ZIP"
+msgstr "Cod Poștal"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Notes"
+msgstr "Observații"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Payment Method"
+msgstr "Modalitatea de plată"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Cryptocurrencies"
+msgstr "Cryptomonede"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Order Summary"
+msgstr "Sumarul comenzii"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Checkout"
+msgstr "Către Plată"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Final cost"
+msgstr "Cost final"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Number of tickets"
+msgstr "Numărul de bilete"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "I read and accept the "
+msgstr "Am citit și accept "
+
 #: .\payments\templates\includes\tickets.html:9
 msgid "Two ways to buy tickets"
 msgstr "Două moduri de a cumpăra bilete"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone"
-msgstr "Biletele de vizitare pot fi cumpărate online, cu un card de credit, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră, apelând la numărul de telefon"
+msgstr "Biletele de vizitare pot fi cumpărate online, cu card bancar, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră, apelând la numărul de telefon"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"
-msgstr "Cumpărați de la rangeri"
+msgstr "De la rangeri"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy Online"
-msgstr "Cumpărați Online"
+msgstr "Online"
 
 #: .\services\templates\services\ticket-online.html:98
 msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
@@ -236,9 +315,12 @@ msgid "You will be redirected to Netopia Payments to complete the payment"
 msgstr "Veți fi redirecționat către Netopia Payments pentru a finaliza plata"
 
 #: .\services\templates\services\ticket-online.html:9
-msgid "By proceeding you confirm that you accept our"
-msgstr "Continuând către metoda de plată, confirmați că acceptați"
+msgid "You can consult our"
+msgstr "Puteți consulta"
 
+#: .\services\templates\services\ticket-online.html:9
+msgid "here"
+msgstr "aici"
 #: .\services\templates\services\map-coming-soon.html:9
 msgid "An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready"
 msgstr "O hartă interactivă online a parcului nostru este în construcție. Rămâneți pe fază, pentru că vom suna din goarnă când va fi gata"
@@ -2315,6 +2397,23 @@ msgstr "Ce părere aveți despre Parcul nostru Natural? Scrieți câteva cuvinte
 #: services/templates/services/coming-soon.html: 15
 msgid "Page under construction"
 msgstr "Pagină în construcție"
+
+#: services/templates/services/404.html: 15
+msgid "Page not found"
+msgstr "Pagina nu a fost găsită"
+
+#: services/templates/services/404.html: 15
+msgid "Sorry, but that page never returned from a trip to the mountains. So you better come back home"
+msgstr "Ne pare rău, dar pagina respectivă nu s-a mai întors niciodată dintr-o excursie la munte. Așa că mai bine vă întoarceți acasă"
+
+
+#: services/templates/services/500.html: 15
+msgid "Server malfunction"
+msgstr "Defecțiune a serverului"
+
+#: services/templates/services/500.html: 15
+msgid "Please try to return to the home page or contact the website administrator, at daniel.ungureanu@bucegipark.ro"
+msgstr "Vă rugăm să încercați să reveniți la pagina principală sau să contactați administratorul website-ului, la daniel.ungureanu@bucegipark.ro"
 
 #: services/templates/services/coming-soon.html: 15
 msgid "We are very sorry, but this page is taking a little longer to design. Stay tuned!"

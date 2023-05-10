@@ -453,16 +453,6 @@
 					});
 					return total.toFixed(3)
 				}
-				$.ajax({
-	        type: 'post',
-	        url: "{% url 'ticketdescr' %}",
-	        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
-	        dataType: 'json',
-	        success: function () {
-						console.log(total);
-	          $('#cart > ul').load("{% url 'ticketdescr' %}");
-	        }
-	      });
 			}
 
 
@@ -1002,20 +992,5 @@
 		form()
 
 	})
-	$('.minus').click(function () {
-     var $input = $(this).parent().find('#score');
-     var count = parseInt($input.val()) - 1;
-     count = count < 1 ? 1 : count;
-     $input.val(count);
-     $input.change();
-      $.ajax({
-        type: 'post',
-        url: 'index.php?route=checkout/cart/edit',
-        data: 'key=' + $input.name() + '&quantity=' + $input.val(),
-        dataType: 'json',
-        success: function () {
-          $('#cart > ul').load('index.php?route=common/cart/info ul li');
-        }
-      });
-    });
+
 }(jQuery))

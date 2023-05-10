@@ -385,12 +385,12 @@ def faq_view(request):
     }
     return render(request, template, context)
 #======================== page not found page================================
-def page_not_found(request):
+def page_not_found(request, exception):
     template = 'services/404.html'
     return render(request, template, {})
-#======================== invalid header page================================
-def invalid_header(request):
-    template = 'services/invalid_header.html'
+#======================== page not found page================================
+def server_error(request):
+    template = 'services/500.html'
     return render(request, template, {})
 #======================== privacy page================================
 def privacy_view(request):

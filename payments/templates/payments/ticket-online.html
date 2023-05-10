@@ -16,14 +16,21 @@
 							<div class="col-auto">
 								<div class="align-container">
                   <div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Visitor</span> <span>Ticket{% endblocktranslate %}</span></h1>
+										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Visitor</span> <span>Tickets{% endblocktranslate %}</span></h1>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-
+				{% if messages %}
+				<div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+					{% include 'includes/messages.html' %}
+				</div>
+				{% else %}
+				<div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+				</div>
+				{% endif %}
 				<!-- welcome end-->
         <!-- section start-->
 				<section class="section elements bottom-70">
@@ -60,7 +67,7 @@
             <div class="col-12 text-justified">
               <h3>{% trans 'Note' %}</h3>
               <p>{% trans 'The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime you want. Just make sure you have the tickets with you' %}.</p>
-              <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase' %}.</p>
+              <p>{% trans 'If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Proceed to Payment' %}.</p>
               <p>{% trans "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction" %}.</p>
             </div>
           </div>
@@ -82,7 +89,7 @@
             </div>
           </div>
           <div class="cart__body">
-            <form class="form" id="" action="{% url 'checkout' %}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{% url 'checkout' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="cart-item">
                 <div class="row align-items-center">
@@ -129,18 +136,18 @@
 										<div class="">
 											<p class="" type="submit"><i class="fa fa-lock"></i>  {% trans 'Payments are secure and encrypted' %}.</p>
 											<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to Netopia Payments to complete the payment' %}.</p>
-											<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'By proceeding you confirm that you accept our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a>.</p>
+											<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'You can consult our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a> {% trans 'here' %}.</p>
 										</div>
 									</div>
 									<div class="col-lg-4 text-lg-right">
 										<div class="cart-totals">
                       <h6 class="cart__title">Totals</h6>
                       <ul class="cart-totals__list">
-                        <li><span>{% trans 'Total tickets' %}:</span><input id="tickets" name="total" value=""></li>
-                        <li><span>{% trans 'Total price' %}:</span><input id="total" value=""></li>
+                        <li><span>{% trans 'Number of tickets' %}:</span><input id="tickets" name="tickets_nr" value="" readonly></li>
+                        <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li>
                       </ul>
                       <!-- <a class="cart-totals__link button button--primary" >Proceed to checkout</a> -->
-											<input class="form__submit mt-5" type="submit" name="total" value="{% trans 'Proceed to Payment' %}">
+											<input class="form__submit mt-5" type="submit" value="{% trans 'Proceed to Payment' %}">
 										</div>
 									</div>
 								</div>

@@ -2,11 +2,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.views.generic.base import TemplateView
 from .views import home, contacts_view, coming_soon, gallery, team, history,\
-wildlife, flora, invalid_header, faq_view, theme_trails, video_view, public_docs,\
+wildlife, flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, WildlifeDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view
+unsubscribe, sector_map_view, page_not_found, server_error
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _

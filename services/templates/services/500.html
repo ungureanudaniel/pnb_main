@@ -1,0 +1,26 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- section start-->
+				<section class="error section no-padding-top no-padding-bottom"><img class="img--bg" src="{% static 'img/backgrounds/404.webp' %}" alt="img">
+					<div class="align-container">
+						<div class="align-container__item">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-6 offset-lg-6 col-xl-5 offset-xl-7 text-center">
+										<div class="error__title">500</div>
+										<div class="error__subtitle">{% trans 'Server malfunction' %}</div>
+										<div class="error__text">{% trans 'Please try to return to the home page or contact the website administrator, at daniel.ungureanu@bucegipark.ro' %}</div><a class="button button--filled" href="{% url 'home' %}">{% trans 'Home' %}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}
