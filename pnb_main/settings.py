@@ -158,6 +158,7 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
 gettext = lambda s: s
+DEFAULT_LANGUAGE = 1
 LANGUAGES = (
     ('en', _('English')),
     ('ro', _('Română')),

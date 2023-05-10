@@ -200,7 +200,7 @@
 							{% get_language_info_list for LANGUAGES as languages %}
 							{% get_language_info for LANGUAGE_CODE as lang %}
 							{% for language in languages %}
-							<div class="screen__item"><a class="screen__link" value="{{ language.name_local }}" href="{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></div>
+							<div class="screen__item"><a class="screen__link" value="{{ language.name_local }}" href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></div>
 							{% endfor %}
 
 					</div>
@@ -304,7 +304,7 @@
 										{% get_language_info_list for LANGUAGES as languages %}
 										{% get_language_info for LANGUAGE_CODE as lang %}
 										{% for language in languages %}
-										<li value="{{ language.name_local }}"><a href="{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
+										<li value="{{ language.name_local }}"><a href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
 										{% endfor %}
 									</ul>
 								</li>
