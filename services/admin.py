@@ -28,7 +28,7 @@ class PartnerAdmin(admin.ModelAdmin):
     fields = ['title', 'image']
 
 class TeamAdmin(admin.ModelAdmin):
-    fields = ['firstname', 'surname', 'image', 'text', 'phone', 'job','job_ro', 'job_de', 'sector', 'sector_ro', 'sector_de', 'hierarchy']
+    fields = ['firstname', 'surname', 'image', 'text', 'phone', 'email', 'job','job_ro', 'job_de', 'judet', 'sector', 'sector_ro', 'sector_de', 'hierarchy']
 
 class ContactAdmin(admin.ModelAdmin):
     fields = ['subject', 'author', 'email']
