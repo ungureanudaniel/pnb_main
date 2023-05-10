@@ -251,6 +251,10 @@ msgstr "Unsere </span> <span>Veranstaltungen"
 msgid "Unfortunatelly there are no upcoming events yet"
 msgstr "Leider gibt es noch keine kommenden Veranstaltungen"
 
+#: .\services\templates\services\ticket-online.html:143
+msgid "For more information on litigations/dispute resolutions, please also consult the <a href='https://anpc.ro/en/'>ANPC (Consumer Protection National Agency) website</a> and <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Order 449 / 2022</a>"
+msgstr "Informationen über Rechtsstreitigkeiten/Streitbeilegung finden Sie auch auf der Website <a href='https://anpc.ro/en/'>ANPC (Nationale Verbraucherschutzbehörde)</a> und <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Verordnung 449 / 2022</a>"
+
 #: .\services\templates\services\events.html:55
 msgid "But stay tuned for news, by subscribing to our newsletter, below"
 msgstr "Aber bleiben Sie auf dem Laufenden, indem Sie unseren Newsletter abonnieren"
