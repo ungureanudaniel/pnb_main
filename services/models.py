@@ -339,7 +339,7 @@ class Team(models.Model):
     firstname = models.CharField(max_length=30)
     image = ResizedImageField(size=[640,None], upload_to='team_images',)
     phone = models.CharField(max_length=100, blank=True, null=True)
-    email = models.EmailField(max_length=254)
+    # email = models.EmailField(max_length=254)
     judet = models.CharField(max_length=10, default='Draft', choices=COUNTY)
     job = models.CharField(max_length=100, blank=True, null=True)
     text = models.TextField(max_length=300)
