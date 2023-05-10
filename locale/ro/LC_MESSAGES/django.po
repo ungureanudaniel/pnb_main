@@ -48,13 +48,24 @@ msgid "Deutsch"
 msgstr ""
 
 #: .\services\templates\services\sector-map.html:18
-msgid "<span>Park Sector</span> <span>Map</span>"
-msgstr "<span>Harta Sectoarelor</span> <span>Parcului</span>"
+msgid "<span>Park Rangers</span> & <span> Areas"
+msgstr "<span>Rangeri</span> & <span> Sectoare"
 
 #: .\services\templates\services\sector-map.html:18
 msgid "All sectors and corresponding rangers below"
 msgstr "Toate sectoarele și rangerii aferenți se regăsesc mai jos"
 
+#: .\services\templates\services\sector-map.html:18
+msgid "Brașov county"
+msgstr "Județul Brașov"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Dâmbovița county"
+msgstr "Județul Dâmbovița"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Prahova county"
+msgstr "Județul Prahova"
 #: .\services\templates\services\privacy.html:33
 msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
 msgstr "<span>Protecția Datelor pe pagina Parcului Natural Bucegi </span><br> <span> Declarație de Confidențialitate</span>"

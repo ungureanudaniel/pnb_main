@@ -205,7 +205,10 @@ def sector_map_view(request):
     # else:
     #     gallery_form =  GalleryForm()
     context = {
-        "rangers": Team.objects.filter(job__exact="Ranger").order_by("surname")
+        "rangers_bv": Team.objects.filter(job__exact="Ranger",judet__exact="Brașov").order_by("surname"),
+        "rangers_db": Team.objects.filter(job__exact="Ranger",judet__exact="Dâmbovița").order_by("surname"),
+        "rangers_ph": Team.objects.filter(job__exact="Ranger",judet__exact="Prahova").order_by("surname")
+
     }
     return render(request, template, context)
 #======================== gallery page================================
