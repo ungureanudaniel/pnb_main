@@ -297,6 +297,30 @@ msgstr "Landschaften"
 msgid "Announcements"
 msgstr "Ankündigungen"
 
+#: .\payments\templates\includes\home.html:9
+msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
+msgstr "Beobachten Sie</h6><a class='destination-item__link' href='#'>Wildtiere"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
+msgstr "Besuchen Sie</h6><a class='destination-item__link' href='#'>Historische Sehenswürdigkeiten"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
+msgstr "Erkunden Sie</h6><a class='destination-item__link' href='#'>Schöne Wanderwege"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
+msgstr "Verbinden Sie</h6><a class='destination-item__link' href='#'>Mit der Natur"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
+msgstr "Schmecken Sie </h6><a class='destination-item__link' href='#'>Lokale Küche"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
+msgstr "Winter </h6><a class='destination-item__link' href='#'>Sport"
+
 #: .\services\templates\services\info-points.html:34
 msgid " Peștera <br/> <strong>Information point</strong>"
 msgstr " Peștera <br/> <strong>Informationspunkt</strong>"
@@ -1741,26 +1765,6 @@ msgstr "Naturschutzgebieten"
 #: services/templates/services/home.html: 313
 msgid "Flora"
 msgstr "Flora"
-#: services/templates/services/home.html: 202
-msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
-msgstr "Beobachten Sie </h6><a class='destination-item__link' href='#'>Wildtiere"
-#: services/templates/services/home.html: 202
-msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
-msgstr "Besuchen Sie</h6><a class='destination-item__link' href='#'>Historische Punkte von Interesse"
-#: services/templates/services/home.html: 202
-msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
-msgstr "Erkunden Sie </h6><a class='destination-item__link' href='#'>Schöne Wanderwege"
-#: services/templates/services/home.html: 202
-msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
-msgstr "Verbinden Sie</h6><a class='destination-item__link' href='#'>mit der Natur"
-#: services/templates/services/home.html: 202
-msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
-msgstr "Schmecken Sie</h6><a class='destination-item__link' href='#'>die Lokale Küche"
-
-#: services/templates/services/home.html: 202
-msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
-msgstr "Winter</h6><a class='destination-item__link' href='#'> Sportarten"
-
 msgid "About"
 msgstr "Über uns"
 msgid "Explore"

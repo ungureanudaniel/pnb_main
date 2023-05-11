@@ -302,6 +302,29 @@ msgstr "De la rangeri"
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy Online"
 msgstr "Online"
+#: .\services/templates/services\home.html:9
+msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
+msgstr "Observați </h6><a class='destination-item__link' href='#'>Fauna sălbatică"
+
+#: .\services/templates/services\home.html:9
+msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
+msgstr "Vizitați</h6><a class='destination-item__link' href='#'>Puncte de Interes Istoric"
+
+#: .\services/templates/services\home.html:9
+msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
+msgstr "Explorați </h6><a class='destination-item__link' href='#'>Trasee Uimitoare"
+
+#: .\services/templates/services\home.html:9
+msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
+msgstr "Conectați-vă</h6><a class='destination-item__link' href='#'>cu Natura"
+
+#: .\services/templates/services\home.html:9
+msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
+msgstr "Gustați</h6><a class='destination-item__link' href='#'>Bucătăria Locală"
+
+#: .\services/templates/services\home.html:9
+msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
+msgstr "Sporturi</h6><a class='destination-item__link' href='#'> de Iarnă"
 
 #: .\services\templates\services\ticket-online.html:98
 msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
@@ -1985,25 +2008,6 @@ msgstr "Activități"
 #: services/templates/services/home.html: 202
 msgid "things</span> <span>you can do"
 msgstr "Ce poți</span> <span>face aici"
-#: services/templates/services/home.html: 202
-msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
-msgstr "Observă </h6><a class='destination-item__link' href='#'>Fauna Sălbatică"
-#: services/templates/services/home.html: 202
-msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
-msgstr "Vizitează</h6><a class='destination-item__link' href='#'>Puncte de Interes Istoric"
-#: services/templates/services/home.html: 202
-msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
-msgstr "Explorează </h6><a class='destination-item__link' href='#'>Trasee Uimitoare"
-#: services/templates/services/home.html: 202
-msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
-msgstr "Conectează-te</h6><a class='destination-item__link' href='#'>cu Natura"
-#: services/templates/services/home.html: 202
-msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
-msgstr "Gustă</h6><a class='destination-item__link' href='#'>Bucătăria Locală"
-
-#: services/templates/services/home.html: 202
-msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
-msgstr "Sporturi</h6><a class='destination-item__link' href='#'> de Iarnă"
 
 msgid "About"
 msgstr "Despre noi"
