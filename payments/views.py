@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from .models import Ticket, Payment
 import random, string
+import datetime
 from django.utils.text import slugify
 #----------generate unique code for email subscription conf--------------------
 def random_ticket_nr():
@@ -49,7 +50,7 @@ def checkout_view(request):
         print(code)
         #=============save new payment in database ============
         try:
-            new_pay = Payment(payment_code=code, sum=price, buyer_fname=fname, buyer_lname=lname, phone=phone, email=email, address=address, county=county, country=country, city=city,zip=zip, notes=note)
+            new_pay = Payment(payment_code=code, sum=price, buyer_fname=fname, buyer_lname=lname, phone=phone, email=email, address=address, county=county, country=country, city=city,zip=zip, notes=note, timestamp=datetime.datetime.now())
             new_pay.slug = slugify(code)
             new_pay.save()
         except Exception as e:
@@ -61,5 +62,6 @@ def checkout_view(request):
             "tickets": tickets,
             "price": price,
         })
+
 
     return render(request, template, context)

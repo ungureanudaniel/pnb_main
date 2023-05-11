@@ -39,6 +39,7 @@ class Payment(models.Model):
     city = models.CharField(max_length=30)
     zip = models.CharField(max_length=30)
     notes = models.TextField()
+    timestamp = models.DateTimeField(default=now(), blank=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     def save(self, *args, **kwargs):
