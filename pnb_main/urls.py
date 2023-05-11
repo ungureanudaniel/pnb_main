@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.static import serve
 from django.conf import settings
 # import debug_toolbar
 from django.conf.urls import handler404, handler500
@@ -27,6 +28,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     # path('__debug__/', include('debug_toolbar.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path("robots.txt", TemplateView.as_view(template_name="services/robots.txt", content_type="text/plain"),),
@@ -39,6 +41,6 @@ urlpatterns += i18n_patterns(
     path('captcha/', include('captcha.urls')),
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = "services.views.page_not_found"
 handler500 = "services.views.server_error"

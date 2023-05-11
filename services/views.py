@@ -414,6 +414,7 @@ def announcement_view(request):
     posts_categs = {}
     #------- post per categories count using annotate---------
     group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
+    print(group_archive)
     if request.method=="POST":
 
         #--------------check if newsletter email exists already---------
