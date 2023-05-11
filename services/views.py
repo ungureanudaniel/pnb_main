@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
+from django.utils import translation
 from utils.weather_scrape import scraped_data
 from django.views.decorators.gzip import gzip_page
 import datetime
@@ -114,12 +115,15 @@ def home(request):
         #--------------check if newsletter email exists already---------
         if request.POST.get('form-type') == "subscribe":
             newsletter_email = request.POST.get('subscriber')
+            lang = translation.get_language_from_request(request)
+            translation.activate(lang)
+            request.LANGUAGE_CODE = translation.get_language()
             if newsletter_email:
                 try:
                     duplicate = Subscriber.objects.get(email=newsletter_email)
                     if duplicate:
                         messages.warning(request, _("This email already exists in our database!"))
-                        return redirect('/')
+                        return redirect('home')
                 except:
                     #-----------------------SAVE IN DATABASE----------------
                     sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
@@ -129,14 +133,14 @@ def home(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-                        return redirect('/')
+                        return redirect('home')
                     except Exception as e:
                         messages.warning(request, e)
-                        return redirect('/')
+                        return redirect('home')
 
 
     #fetching data from the database and adding to context dict
