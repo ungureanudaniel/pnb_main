@@ -289,6 +289,96 @@ msgstr "Störung des Servers"
 msgid "Please try to return to the home page or contact the website administrator, at daniel.ungureanu@bucegipark.ro"
 msgstr "Bitte versuchen Sie, zur Startseite zurückzukehren, oder wenden Sie sich an den Administrator der Website unter daniel.ungureanu@bucegipark.ro"
 
+#: .\services\templates\services\sector-map.html:18
+msgid "<span>Park Rangers</span> & <span> Gebiete"
+msgstr "<span>Rangeri</span> & <span> Sectoare"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "All sectors and corresponding rangers below"
+msgstr "Alle Sektoren und die entsprechenden Ranger unten"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Brașov county"
+msgstr "Brașov Landkreis"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Dâmbovița county"
+msgstr "Dâmbovița Landkreis"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Prahova county"
+msgstr "Prahova Landkreis"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Ticket</span> <span> Checkout"
+msgstr "Ticket</span> <span> Checkout"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "First Name"
+msgstr "Vorname"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Last Name"
+msgstr "Nachname"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Address"
+msgstr "Adresse"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "State/County"
+msgstr "Staat/Landkreis"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Select Country"
+msgstr "Land auswählen"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "City"
+msgstr "Stadt"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "ZIP"
+msgstr "Postleitzahl"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Notes"
+msgstr "Anmerk"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Payment Method"
+msgstr "Zahlungsmethode"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Cryptocurrencies"
+msgstr "Kryptowährungen"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Order Summary"
+msgstr "Zusammenfassung der Bestellung"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Checkout"
+msgstr "Zur Kasse"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Final cost"
+msgstr "Endgültige Kosten"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Number of tickets"
+msgstr "Anzahl der Tickets"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "I read and accept the "
+msgstr "Ich habe gelesen und akzeptiere die "
+
+#: .\services\templates\services\ticket-online.html:143
+msgid "Proceed to Payment"
+msgstr "Weiter zur Zahlung"
+#: .\services\templates\services\ticket-online.html:9
+msgid "You can consult our"
+msgstr "Sie können unser"
+
+#: .\services\templates\services\ticket-online.html:9
+msgid "here"
+msgstr "hier"
 #: services/templates/services/home.html: 239
 msgid "Scenery"
 msgstr "Landschaften"
