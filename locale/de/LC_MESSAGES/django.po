@@ -293,6 +293,9 @@ msgstr "Bitte versuchen Sie, zur Startseite zurückzukehren, oder wenden Sie sic
 msgid "<span>Park Rangers</span> & <span> Gebiete"
 msgstr "<span>Rangeri</span> & <span> Sectoare"
 
+#: .\services\templates\services\ticket-online.html:35
+msgid "Why this visitor tariff"
+msgstr "Warum dieser Besuchertarif"
 #: .\services\templates\services\sector-map.html:18
 msgid "All sectors and corresponding rangers below"
 msgstr "Alle Sektoren und die entsprechenden Ranger unten"
