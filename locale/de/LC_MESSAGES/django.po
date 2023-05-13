@@ -138,7 +138,7 @@ msgid "Buy Tickets"
 msgstr "Karten kaufen"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tariff, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
 msgstr "<strong>Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nämlich diesen Berg für zukünftige Generationen zu erhalten. Wir sorgen für Ordnung und Einhaltung der Besucherordnung, pflegen Wanderwege, helfen bei Problemen am Berg, sammeln Müll, schützen Flora und Fauna, bilden Kinder und Erwachsene aus, wir laden Fotos in sozialen Medien hoch, um Ihnen die lokale Naturschönheit zu zeigen, viele Informationstafeln aufstellen und vieles mehr. </strong><br><br>Jeder Besucher, der den Besuchertarif bezahlt, unterstützt den Naturschutz auf diesem Berg, so können wir vielleicht gemeinsam dieses Jahr weitere Störungen der Tierwelt oder seltener Blumen verhindern. Vielen Dank!"
 
 #: .\services\templates\services\ticket-info.html:30
@@ -213,8 +213,8 @@ msgid "Two ways to buy tickets"
 msgstr "Zwei Möglichkeiten, Tickets zu kaufen"
 
 #: .\payments\templates\includes\tickets.html:9
-msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone"
-msgstr "Sie können Besuchertickets online mit einer Kreditkarte, Revolut oder Kryptowährungen kaufen oder alternativ in bar bei einem Ranger in Ihrer Nähe, indem Sie anrufen"
+msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
+msgstr "Sie können Besuchertickets online mit einer Kreditkarte, Revolut oder Kryptowährungen kaufen oder alternativ in bar bei einem Ranger in Ihrer Nähe"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"
@@ -1978,7 +1978,7 @@ msgid "In the meanwhile, check other info below!"
 msgstr "In der Zwischenzeit finden Sie weitere Informationen unter!"
 
 #: services/templates/services/underconstruction.html: 161
-msgid "Online Park Visitor Tarrif"
+msgid "Online Park Visitor tariff"
 msgstr "Online-Tarif für Parkbesucher"
 
 #: services/templates/services/underconstruction.html: 164

@@ -155,7 +155,7 @@ msgid "Buy Tickets"
 msgstr "Cumpără Bilete"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tariff, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
 msgstr "<strong>Tariful de vizitare ne ajută să continuăm in ceea ce facem, adică să conservăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții cu privire la mediu, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, instălam o mulțime de panouri informative și multe altele. </strong><br><br>Fiecare vizitator care plătește tariful, sprijină conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau ale florei rare, în acest an. Mulțumim! </strong>"
 
 #: .\services\templates\services\ticket-info.html:30
@@ -175,7 +175,7 @@ msgid "Visitor</span> <span>Tickets"
 msgstr "Bilete</span> <span>Vizitatori"
 
 #: .\services\templates\services\ticket-online.html:35
-msgid "Why this visitor tarrif"
+msgid "Why this visitor tariff"
 msgstr "De ce acest tarif de vizitare"
 
 #: .\services\templates\services\ticket-online.html:32
@@ -199,7 +199,7 @@ msgid "Add"
 msgstr "Adaugă"
 
 #: .\services\templates\services\ticket-online.html:99
-msgid "The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each visitor, who pays the visitor tarrif, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>"
+msgid "The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br>Each visitor, who pays the visitor tariff, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year and save a rare flower from being stepped on, or maybe wild animals being scared away by illegal motorized vehicles.<br><br>Thank you!<br><br>"
 msgstr "Tariful de vizitare ne ajută să continuăm să facem ceea ce facem, adică să păstrăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, înființăm o mulțime de panouri informative și multe altele. </strong><br>Fiecare vizitator, care plătește tariful, susține conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau plantelor rare în acest an și să salvăm o floare rară să nu fie călcată sau poate evităm derajarea animalelor sălbatice de către vehicule motorizate.<br><br>Mulțumim!<br><br>"
 
 #: .\services\templates\services\ticket-online.html:98
@@ -292,8 +292,8 @@ msgid "Two ways to buy tickets"
 msgstr "Două moduri de a cumpăra bilete"
 
 #: .\payments\templates\includes\tickets.html:9
-msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area, by calling on the phone"
-msgstr "Biletele de vizitare pot fi cumpărate online, cu card bancar, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră, apelând la numărul de telefon"
+msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
+msgstr "Biletele de vizitare pot fi cumpărate online, cu card bancar, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"
@@ -2291,7 +2291,7 @@ msgid "In the meanwhile, check other info below!"
 msgstr "Între timp, puteți afla mai multe, mai jos!"
 
 #: services/templates/services/underconstruction.html: 161
-msgid "Online Park Visitor Tarrif"
+msgid "Online Park Visitor tariff"
 msgstr "Tarif de Vizitare Online"
 
 #: services/templates/services/underconstruction.html: 164
