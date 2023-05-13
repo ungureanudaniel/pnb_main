@@ -392,9 +392,10 @@ def faq_view(request):
     }
     return render(request, template, context)
 #======================== page not found page================================
-def page_not_found(request, exception):
+def page_not_found(request, exception=None):
     template = 'services/404.html'
-    return render(request, template, {})
+
+    return render(request, 'services/home.html', {})
 #======================== page not found page================================
 def server_error(request):
     template = 'services/500.html'

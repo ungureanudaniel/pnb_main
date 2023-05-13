@@ -42,5 +42,8 @@ urlpatterns += i18n_patterns(
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = "services.views.page_not_found"
-handler500 = "services.views.server_error"
+if settings.DEBUG==False:
+    handler404 = "services.views.page_not_found"
+    handler500 = "services.views.server_error"
+else:
+    pass
