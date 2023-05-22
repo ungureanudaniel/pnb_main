@@ -1,7 +1,7 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import Team, AttractionCategory, PublicCategory, Attraction,\
 BlogPostCategory, BlogPost, Event, Announcement, FloraCategory,\
-WildlifeCategory, Flora, Wildlife
+WildlifeCategory, Flora, Wildlife, Partner
 
 
 class AttractionCatTranslationOptions(TranslationOptions):
@@ -22,6 +22,8 @@ class PublicCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class AnnouncementTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
+class PartnerTranslationOptions(TranslationOptions):
+    fields = ('title',)
 class EventTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class BlogPostCategoryTranslationOptions(TranslationOptions):
@@ -31,6 +33,7 @@ class BlogPostTranslationOptions(TranslationOptions):
 
 translator.register(BlogPost, BlogPostTranslationOptions)
 translator.register(Announcement, AnnouncementTranslationOptions)
+translator.register(Partner, PartnerTranslationOptions)
 translator.register(BlogPostCategory, BlogPostCategoryTranslationOptions)
 translator.register(AttractionCategory, AttractionCatTranslationOptions)
 translator.register(Attraction, AttractionTranslationOptions)

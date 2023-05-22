@@ -326,6 +326,10 @@ msgstr "Gustați</h6><a class='destination-item__link' href='#'>Bucătăria Loca
 msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
 msgstr "Sporturi</h6><a class='destination-item__link' href='#'> de Iarnă"
 
+#: .\services/templates/services\home.html:9
+msgid "<span>Who</span> <span>Support Us and our </span>Efforts</h2>"
+msgstr "<span>Care</span> <span>Ne Sprijină pe noi și </span>Eforturile Noastre</h2>"
+
 #: .\services\templates\services\ticket-online.html:98
 msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
 msgstr "Prețul final al biletului de vizitator va include, de asemenea, un mic comision de tranzacție, aplicat de procesatorul nostru de plăți, Netopia Payments și egal cu 0,95% pe tranzacție"
@@ -574,8 +578,8 @@ msgstr "Dietă"
 msgid "Our Partners"
 msgstr "Partenerii noștri"
 #: .\services\templates\services\partners.html:9
-msgid "Companies that</span> <span>help us"
-msgstr "Companii care</span> <span>ne susțin"
+msgid "<span>Our</span> <span>Support</span>"
+msgstr "<span>Sprijinul</span> <span>nostru</span>"
 
 #: .\services\templates\services\events.html:17
 msgid "Our </span> <span>Events"

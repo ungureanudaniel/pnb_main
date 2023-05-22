@@ -25,7 +25,7 @@ class TestimonialAdmin(admin.ModelAdmin):
     fields = ['status', 'fname', 'lname', 'email', 'thumbnail', 'text']
 
 class PartnerAdmin(admin.ModelAdmin):
-    fields = ['title', 'image']
+    fields = ['title', 'title_ro', 'title_de', 'link', 'image']
 
 class TeamAdmin(admin.ModelAdmin):
     fields = ['firstname', 'surname', 'image', 'text', 'phone', 'email', 'job','job_ro', 'job_de', 'judet', 'sector', 'sector_ro', 'sector_de', 'hierarchy']
@@ -39,7 +39,7 @@ class PublicCategoryAdmin(admin.ModelAdmin):
     list_display = ('title_en',)
     fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
 class AnnouncementAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_ro', 'title_de', 'expiry', 'image', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro',]
+    fields = ['title', 'title_ro', 'title_de','timestamp','expiry', 'image', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro']
 class CommentAdmin(admin.ModelAdmin):
     fields = ['name', 'text', 'thumbnail', 'active']
 class EventAdmin(admin.ModelAdmin):

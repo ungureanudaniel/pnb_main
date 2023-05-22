@@ -60,24 +60,6 @@ def add_testimonial(request):
 
     return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
 
-#========================add attraction view=================================
-# def add_attraction(request):
-#     template = 'services/add_attraction.html'
-#
-#     if request.method=='POST':
-#         attr_form = AttractionForm()
-#         try:
-#             if review_form.is_valid():
-#                 new_review = review_form.save(commit=False)
-#                 new_review.status = False
-#                 new_review.save()
-#             else:
-#                 messages.error(request, "Please check for empty fields.")
-#                 return redirect('.')
-#         except Exception as e:
-#             messages.error(request, "Please check for empty fields.")
-#
-#     return render(request, template, {"attr_form":AttractionForm()})
 #========================home page=================================
 def home(request):
     template = 'services/home.html'
@@ -133,7 +115,7 @@ def home(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
@@ -149,6 +131,7 @@ def home(request):
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
         'reviews': Testimonial.objects.filter(status=True),
+        'partners': Partner.objects.all(),
         })
     return render(request, template, context)
 
@@ -313,7 +296,6 @@ def unsubscribe(request):
     else:
         return render(request, template, {})
 
-
 #========================history page================================
 def history(request):
     template = 'services/history.html'
@@ -440,7 +422,7 @@ def announcement_view(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
@@ -461,13 +443,6 @@ def announcement_view(request):
     }
 
     return render(request, template, context)
-#======================== announcement detail page================================
-# class AnnounDetailView(HitCountDetailView, FormMixin):
-#     model = Announcement
-#     template_name = 'services/announc-details.html'
-#     context_object_name = 'announcement'
-#     slug_field = 'slug'
-#     count_hit = True
 #======================== announcement detail page================================
 class AnnounDetailView(HitCountDetailView):
     model = Announcement
@@ -510,7 +485,7 @@ def bloglist_view(request):
                     sub_subject = _("Newsletter Bucegi Natural Park")
                     from_email='contact@bucegipark.ro'
                     sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/', sub.email, sub.conf_num))
+                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
                     try:
                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
@@ -585,3 +560,8 @@ def blogsearch_view(request):
             messages.warning(request, _("We did not find any posts containing that word!"))
 
         return render(request, template, context)
+#=========================parc rules view======================================
+def park_rules(request):
+    template = 'services/rules.html'
+    context = {}
+    return render(request, template, context)

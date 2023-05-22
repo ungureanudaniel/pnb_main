@@ -38,6 +38,7 @@ class Partner(models.Model):
     """
     title = models.CharField(max_length=30)
     image = ResizedImageField(size=[640,None], upload_to='partner_images',)
+    link = models.URLField(max_length = 300)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     def save(self, *args, **kwargs):
@@ -423,6 +424,12 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.slug
+
+#----------------------PARK RULES MODEL--------------------------------------------
+class ParkRules(models.Model):
+    name = models.CharField(max_length=255)
+    text=RichTextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 #----------------------COMMENTS MODEL--------------------------------------------
 class Comment(models.Model):
     thumbnail = models.ImageField(upload_to='comments')

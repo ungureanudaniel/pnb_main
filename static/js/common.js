@@ -874,11 +874,11 @@
 
 		function destSlider() {
 
-			const slider = $('.destination-slider')
+			const dest_slider = $('.destination-slider')
 
-			if (!slider.length) return
+			if (!dest_slider.length) return
 
-			slider.slick({
+			dest_slider.slick({
 
 				arrows: false,
 				dots: true,

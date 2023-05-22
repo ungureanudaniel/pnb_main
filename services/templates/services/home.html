@@ -158,6 +158,28 @@
 					</div>
 				</section>
 				<!-- section end-->
+				<section class="section">
+					<div class="container">
+						<div class="row bottom-50">
+							<div class="col-12">
+								<div class="heading heading--primary heading--center"><span class="heading__pre-title">{% trans 'Our Partners' %}</span>
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Our</span> <span>Support</span>{% endblocktranslate %}</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="logos-slider">
+									{% for i in partners %}
+									<div class="logos-slider__item"><img src="{{ i.image.url }}" alt="partners_img"/></div>
+									{% endfor %}
+								</div>
+								<div class="logos-slider__dots dots--style-2"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
 				<!-- section discover us start -->
 				<section class="section gallery" id="attractions">
 					<div class="container">

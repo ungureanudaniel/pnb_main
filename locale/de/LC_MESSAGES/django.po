@@ -241,9 +241,9 @@ msgstr "Diät"
 #: .\services\templates\services\partners.html:9
 msgid "Our Partners"
 msgstr "Unsere Partner"
-#: .\services\templates\services\partners.html:10
-msgid "Companies that</span> <span>help us"
-msgstr "Unternehmen, die</span> <span>uns helfen"
+#: .\services\templates\services\partners.html:9
+msgid "<span>Our</span> <span>Support</span>"
+msgstr "<span>Unsere</span> <span>Unterstützung</span>"
 #: .\services\templates\services\events.html:17
 msgid "Our </span> <span>Events"
 msgstr "Unsere </span> <span>Veranstaltungen"
@@ -413,6 +413,10 @@ msgstr "Schmecken Sie </h6><a class='destination-item__link' href='#'>Lokale Kü
 #: .\payments\templates\includes\home.html:9
 msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
 msgstr "Winter </h6><a class='destination-item__link' href='#'>Sport"
+
+#: .\services/templates/services\home.html:9
+msgid "<span>Who</span> <span>Support Us and our </span>Efforts</h2>"
+msgstr "<span>Wer</span> <span>uns und unsere Bemühungen </span>unterstützt</h2>"
 
 #: .\services\templates\services\info-points.html:34
 msgid " Peștera <br/> <strong>Information point</strong>"
