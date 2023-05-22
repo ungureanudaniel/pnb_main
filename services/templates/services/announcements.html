@@ -161,15 +161,7 @@
 									<h5 class="blog__title">Tags</h5>
 									<div class="tags tags--style-2"><a class="tags__item" href="#">Animal</a><a class="tags__item" href="#">Monkey</a><a class="tags__item" href="#">Zoo</a><a class="tags__item" href="#">Kids</a><a class="tags__item" href="#">Lion</a><a class="tags__item" href="#">Giraffe</a></div>
 								</div> -->
-								<div class="subscribe-block" id="newsletter">
-									<h5 class="subscribe-block__title">{% trans 'Subscribe Now' %}</h5>
-									<p>{% trans 'And get our latest updates' %}</p>
-									<form class="form subscribe-form" action="{% url 'announcement' %}" method="POST">
-										{% csrf_token %}
-										<input class="form__field" type="email" name="subscriber" placeholder="{% trans 'Your email' %}"/>
-										<button class="form__submit" type="submit" name="form-type" value="subscribe">{% trans 'Subscribe' %}</button>
-									</form>
-								</div>
+								<!-- ================Blog code was here ============-->
 							</div>
 						</div>
 					</div>
