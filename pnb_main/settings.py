@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.gis',#django gis activation
     #developer added libraries
-    'debug_toolbar',
+    # 'debug_toolbar',
     'django.contrib.sitemaps',
     'ckeditor',
     'hitcount',
