@@ -1814,6 +1814,11 @@ msgstr "von November bis April"
 #: services/templates/services/base.html: 187
 msgid "from May to October"
 msgstr "von Mai bis Oktober"
+
+#: services/templates/services/base.html: 187
+msgid "Saturday - Sunday"
+msgstr "Sâmbătă - Duminică"
+
 #: services/templates/services/home.html: 313
 msgid "Ialomița Monastery"
 msgstr "Kloster Ialomița"

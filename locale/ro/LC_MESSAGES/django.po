@@ -1983,13 +1983,17 @@ msgstr "Aflați mai multe"
 #: services/templates/services/home.html: 187
 msgid "<span>Map of Bucegi</span> <span>Natural Park</span>"
 msgstr "<span>Hartă a</span> <span>Parcului Natural Bucegi</span>"
-#: services/templates/services/home.html: 187
+#: services/templates/services/base.html: 187
 msgid "from November to April"
 msgstr "din noiembrie până în aprilie"
 
-#: services/templates/services/home.html: 187
+#: services/templates/services/base.html: 187
 msgid "from May to October"
 msgstr "din Mai până în Octombrie"
+
+#: services/templates/services/base.html: 187
+msgid "Saturday - Sunday"
+msgstr "Sâmbătă - Duminică"
 
 #: services/templates/services/home.html: 187
 msgid "See map"
