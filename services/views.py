@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 import requests
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import activate
 from django.views.decorators.csrf import csrf_protect
 #----blog imports
 from django.db.models import Q, Count
@@ -100,9 +101,6 @@ def home(request):
         #--------------check if newsletter email exists already---------
         if request.POST.get('form-type') == "subscribe":
             newsletter_email = request.POST.get('subscriber')
-            # lang = translation.get_language_from_request(request)
-            # translation.activate(lang)
-            # request.LANGUAGE_CODE = translation.get_language()
             if newsletter_email:
                 try:
                     duplicate = Subscriber.objects.get(email=newsletter_email)
@@ -136,6 +134,7 @@ def home(request):
         'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all(),
         })
+    
     return render(request, template, context)
 
 #------------------------CONTACT apge------------------------------------CONTACT

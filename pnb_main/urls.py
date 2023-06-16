@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
-# import debug_toolbar
 from django.conf.urls import handler404, handler500
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
@@ -28,19 +27,19 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
-    # path('__debug__/', include('debug_toolbar.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path("robots.txt", TemplateView.as_view(template_name="services/robots.txt", content_type="text/plain"),),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    path('captcha/', include('captcha.urls')),
 ]
 urlpatterns += i18n_patterns(
-    path('users/', include('users.urls')),
     path('', include('services.urls')),
+    path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
-    path('captcha/', include('captcha.urls')),
 )
+#------------add custom media path for production mode-----------
+urlpatterns += re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG==False:
     handler404 = "services.views.page_not_found"
     handler500 = "services.views.server_error"
