@@ -133,7 +133,7 @@ def home(request):
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
-        # 'reviews': Testimonial.objects.filter(status=True),
+        'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all(),
         })
     return render(request, template, context)

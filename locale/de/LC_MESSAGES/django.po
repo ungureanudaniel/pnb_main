@@ -1,0 +1,2359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-16 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: geemap/templates/geemap/map.html:17
+#: payments/templates/payments/ticket-checkout.html:16
+#: payments/templates/payments/ticket-description_issues.html:18
+#: payments/templates/payments/ticket-online.html:18
+#: services/templates/blog/blog-details.html:16
+#: services/templates/blog/blog.html:16
+#: services/templates/includes/testimonials.html:17
+#: services/templates/services/add_testimonial.html:14
+#: services/templates/services/announc-details.html:17
+#: services/templates/services/announcements.html:17
+#: services/templates/services/base.html:11
+#: services/templates/services/contact.html:14
+#: services/templates/services/events.html:16
+#: services/templates/services/flora-details.html:17
+#: services/templates/services/flora.html:16
+#: services/templates/services/flora.html:30
+#: services/templates/services/gallery.html:16
+#: services/templates/services/gallery.html:31
+#: services/templates/services/history.html:16
+#: services/templates/services/info-points.html:16
+#: services/templates/services/invalid_header.html:12
+#: services/templates/services/privacy.html:17
+#: services/templates/services/public_docs.html:15
+#: services/templates/services/sector-map.html:16
+#: services/templates/services/subscription_conf.html:21
+#: services/templates/services/team.html:16
+#: services/templates/services/terms.html:17
+#: services/templates/services/theme-trails.html:16
+#: services/templates/services/ticket-info.html:16
+#: services/templates/services/unsubscribe.html:13
+#: services/templates/services/videos.html:16
+#: services/templates/services/videos.html:30
+#: services/templates/services/wildlife-details.html:17
+#: services/templates/services/wildlife.html:16
+
+#: .\pnb_main\settings.py:157
+msgid "Română"
+msgstr ""
+#: .\services\flora.html.py:189
+msgid "Flowering"
+msgstr "Blüte"
+#: .\services\flora.html.py:189
+msgid "Life span"
+msgstr "Lebensdauer"
+#: .\services\flora.html.py:189
+msgid "Height"
+msgstr "Höhe"
+#: .\services\base.html.py:189
+msgid "Language"
+msgstr "Sprache"
+#: .\services\base.html.py:189
+msgid "Closed"
+msgstr "Geschlossen"
+#: .\services\templates\services\privacy.html:18
+msgid "<span>Privacy</span> <span> Policy</span>"
+msgstr "<span>Declarație</span> <span>de Confidențialitate</span>"
+#: services/templates/services/announcements.html: 198
+msgid "No announcements for now, but stay tuned for news by subscribing our newsletter"
+msgstr "Im Moment gibt es keine Ankündigungen, aber bleiben Sie auf dem Laufenden, indem Sie unseren Newsletter abonnieren"
+#: services/templates/services/announcements.html: 198
+msgid "Click here to subscribe"
+msgstr "Klicken Sie hier um zu abonnieren"
+#: .\services\templates\services\privacy.html:33
+msgid "<span>Data protection in Bucegi Natural Park </span><br> <span> Privacy Statement</span>"
+msgstr "<span>Protecția Datelor pe pagina Parcului Natural Bucegi </span><br> <span> Declarație de Confidențialitate</span>"
+#: services/templates/services/includes/announcement.html: 166
+msgid "Click the title to open the announcement"
+msgstr "Klicken Sie auf den Titel, um die Ankündigung zu öffnen"
+#: .\services\templates\services\privacy.html:46
+msgid "Welcome to our website. Data protection is a high priority for the Administration of Bucegi Natural Park R.A. The use of the Internet pages of the Administration of Bucegi Natural Park R.A. is possible without any indication of personal data. However, if a data subject wants to use special services provided by our enterprise via our website, processing of personal data could become necessary. If processing of personal data is necessary and there is no legal basis for such processing, we will generally obtain the consent of the data subject. The processing of personal data, such as the name, address, e-mail address, or telephone number of a data subject shall always be in line with the country-specific data protection regulations applicable to the Administration of Bucegi Natural Park R.A. By means of this data protection declaration, our company would like to inform the public about the type, scope and purpose of the personal data we collect, use and process. Furthermore, data subjects are informed of their rights by means of this data protection declaration. As the controller, the Administration of Bucegi Natural Park R.A. has implemented numerous technical and organizational measures to ensure the most complete protection of personal data processed through this website. Nevertheless, Internet-based data transmissions can always be subject to security vulnerabilities, so that absolute protection cannot be guaranteed. For this reason, every data subject is free to transmit personal data to us by alternative means, for example by telephone"
+msgstr "Willkommen auf unserer Website. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der Bucegi Natural Park R.A. Die Nutzung der Internetseiten der Bucegi Natural Park ist ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein. Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die Verwaltung des Naturparks Bucegi R.A. geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt. Die Verwaltung des Naturparks Bucegi R.A. hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, so dass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln"
+
+#: .\services\templates\services\privacy.html:33
+msgid "Right to Access, Correct and Delete Data and to Object to Data Processing"
+msgstr "Recht auf Zugriff, Berichtigung und Löschung von Daten und auf Widerspruch gegen die Datenverarbeitung"
+
+#: .\services\templates\services\privacy.html:33
+msgid "Our online visitors have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Administration of Bucegi Natural Park R.A. makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, we do not control each and every risk related to the use of the Internet, and therefore we warn the website users of the potential risks involved in the functioning and use of the Internet. The website may include links to other web sites or other internet sources. As we cannot control these websites and external sources, the Administration of Bucegi Natural Park R.A. cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these websites or external sources"
+msgstr "Unsere Kunden haben jederzeit das Recht, auf sie betreffende personenbezogene Daten zuzugreifen, sie zu berichtigen und zu löschen sowie der Verarbeitung dieser Daten zu widersprechen, indem sie einen schriftlichen Antrag stellen. Das Unternehmen ist bestrebt, geeignete Vorkehrungen zu treffen, um die Sicherheit und den Schutz der personenbezogenen Daten zu gewährleisten und zu verhindern, dass diese verändert, beschädigt oder zerstört werden oder unbefugten Dritten zugänglich sind. Das Unternehmen hat jedoch nicht alle Risiken im Zusammenhang mit der Nutzung des Internets unter Kontrolle und warnt daher die Nutzer der Website vor den potenziellen Risiken, die mit dem Betrieb und der Nutzung des Internets verbunden sind. Die Website kann Links zu anderen Websites oder anderen Internetquellen enthalten. Da das Unternehmen diese Websites und externen Quellen nicht kontrollieren kann, kann das Unternehmen nicht für die Bereitstellung oder Anzeige dieser Websites und externen Quellen verantwortlich gemacht werden und kann nicht für den Inhalt, die Werbung, die Produkte, die Dienstleistungen oder sonstiges Material, das auf oder von diesen Websites oder externen Quellen verfügbar ist, haftbar gemacht werden"
+#: .\services\templates\services\privacy.html:33
+msgid "Management of Personal Data"
+msgstr "Verwaltung der persönlichen Daten"
+#: .\services\templates\services\privacy.html:33
+msgid "You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive communications from our website by email. If you receive newsletter emails from us and would like to opt out, you can do so by following the directions at the bottom of the page"
+msgstr "Sie können Ihre persönlichen Daten für viele unserer Dienste online einsehen oder bearbeiten. Sie haben auch die Möglichkeit, über die Erfassung und Verwendung Ihrer Daten durch uns zu entscheiden. Wie Sie auf Ihre personenbezogenen Daten zugreifen oder sie kontrollieren können, hängt davon ab, welche Dienste Sie nutzen. Sie können wählen, ob Sie Werbemitteilungen von unserer Website per E-Mail erhalten möchten. Wenn Sie Werbe-E-Mails von uns erhalten und diese abbestellen möchten, können Sie dies tun, indem Sie den Anweisungen am Ende der Seite folgen"
+#: .\services\templates\services\privacy.html:33
+msgid "Information We Collect"
+msgstr "Informationen, die wir sammeln"
+#: .\services\templates\services\privacy.html:33
+msgid "Our services may collect email addresses, storing them in a list to be able later to send you newsletters and other info that we consider important, in an automatic way. Also, the contact form, in the Contact section, collects Surnames, First Names, Emails and Phone numbers, useful to enhance the speed at which we can answer your questions or sugestions. All of these are stored in a MySQL database, which sits, encrypted, on a remote hosting server secured at the highest standards. The probability of a database breach is very low"
+msgstr "Unsere Dienste sammeln E-Mail-Adressen und speichern sie in einer Liste, um Ihnen später automatisch Newsletter und andere Informationen zu senden, die wir für wichtig halten. Auch das Kontaktformular im Abschnitt Kontakte sammelt Nachnamen, Vornamen, E-Mail-Adressen und Telefonnummern, damit wir Ihre Fragen oder Vorschläge schneller beantworten können. Alle diese Daten werden in unserer MySQL-Datenbank gespeichert, einer professionellen Datenbank, die verschlüsselt auf dem Hosting-Server liegt. Die Wahrscheinlichkeit einer Verletzung der Datenbank ist sehr gering"
+
+#: .\services\templates\services\privacy.html:33
+msgid "How We Use Your Information"
+msgstr "Wie wir Ihre Informationen verwenden"
+#: .\services\templates\services\privacy.html:33
+msgid "We only use your data to send you emails with newsletters or events, or to answer quickly to your questions/suggestion. We do not use it for anything else"
+msgstr "Wir verwenden Ihre Daten nur, um Ihnen E-Mails mit Newslettern oder Veranstaltungen zu schicken oder um schnell auf Ihre Fragen/Anregungen zu antworten. Wir verwenden sie nicht für andere Zwecke"
+#: .\services\templates\services\privacy.html:33
+msgid "Sharing Your Information"
+msgstr "Weitergabe Ihrer Informationen"
+#: .\services\templates\services\privacy.html:33
+msgid "We do not share your personal info with no external entity, they are visible only to the webpage admin, which is the Administration of Bucegi Natural Park R.A., autonomous subunit of RNP Romsilva"
+msgstr "Wir geben Ihre persönlichen Daten nicht an externe Stellen weiter, sie sind nur für den Administrator der Webseite sichtbar"
+
+#: .\services\templates\services\ticket-info.html:17
+msgid "<span>Tickets &</span> <span>Prices</span>"
+msgstr "<span>Karten &</span> <span>Preise</span>"
+
+#: .\services\templates\services\ticket-info.html:43
+msgid "<span>Three Months</span> <span>Ticket</span>"
+msgstr "<span>Drei Monate</span> <span>Karten</span>"
+
+#: .\services\templates\services\ticket-info.html:52
+msgid "Details"
+msgstr "Einzelheiten"
+
+#: .\services\templates\services\ticket-info.html:53
+msgid "Price"
+msgstr "Preis"
+
+#: .\services\templates\services\ticket-info.html:57
+msgid "Teens and Adults"
+msgstr "Jugendlicher und Eltern"
+
+#: .\services\templates\services\ticket-info.html:58
+msgid "years old"
+msgstr "Jahre alt"
+
+#: .\services\templates\services\ticket-info.html:62
+msgid "Children"
+msgstr "Kinder"
+#: .\services\templates\services\ticket-info.html:64
+msgid "Note"
+msgstr "Anmerkungen"
+
+#: .\services\templates\services\ticket-info.html:64
+msgid "Free"
+msgstr "Kostenlos"
+#: .\services\templates\services\ticket-description.html:98
+msgid "Valid"
+msgstr "Gültig"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "90 days"
+msgstr "90 Tagen"
+
+#: .\services\templates\services\ticket-description.html:99
+msgid "Transaction"
+msgstr "Transaktion"
+
+#: .\services\templates\services\ticket-info.html:69
+msgid "Buy Tickets"
+msgstr "Karten kaufen"
+
+#: .\services\templates\services\ticket-info.html:30
+msgid "<strong>The visitor fee supports us in keeping doing what we do, which is preserving this mountain for future generations. We maintain order and compliance with visitor regulations, maintain trails, assist you when you are in trouble on the mountain, collect garbage, protect flora and fauna, educate children and adults, we upload photos on social media to show you the local natural beauty, set up lots of information boards, and much more. </strong><br><br>Each visitor who pays the visitor tariff, supports nature conservation on this mountain, thus maybe together we can prevent more disturbance to wildlife or rare flowers this year. Thank you!"
+msgstr "<strong>Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nämlich diesen Berg für zukünftige Generationen zu erhalten. Wir sorgen für Ordnung und Einhaltung der Besucherordnung, pflegen Wanderwege, helfen bei Problemen am Berg, sammeln Müll, schützen Flora und Fauna, bilden Kinder und Erwachsene aus, wir laden Fotos in sozialen Medien hoch, um Ihnen die lokale Naturschönheit zu zeigen, viele Informationstafeln aufstellen und vieles mehr. </strong><br><br>Jeder Besucher, der den Besuchertarif bezahlt, unterstützt den Naturschutz auf diesem Berg, so können wir vielleicht gemeinsam dieses Jahr weitere Störungen der Tierwelt oder seltener Blumen verhindern. Vielen Dank!"
+
+#: .\services\templates\services\ticket-info.html:30
+msgid "<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
+msgstr "<br><br> Tickets können vorerst entweder bei unseren Rangern an den Parkeingängen oder über <a href='https://easy2visit.com/en/bucegi-natural-park/' erworben werden. >Easy2visit</a>. Bald können Sie die Tickets kaufen, indem Sie oben auf die Schaltfläche TICKETS klicken, in jeder Währung, sogar mit Revolut oder Bitcoin"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "Buy your tickets below"
+msgstr "Kaufen Sie Ihre Tickets unten"
+
+#: .\services\templates\services\ticket-info.html:32
+msgid "The tickets are valid for 90 days. More about tickets below"
+msgstr "Die Tickets sind 90 Tagen gültig. Mehr über Tickets unten"
+
+#: .\services\templates\services\ticket-descr.html:32
+msgid "Purchase"
+msgstr "Kaufen"
+#: .\services\templates\services\ticket-descr.html:32
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase. In the following page you will have to type in their names, phone and email"
+msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, geben Sie unten die Anzahl der Tickets ein, die Sie kaufen möchten, und klicken Sie dann auf Kaufen. Auf der folgenden Seite müssen Sie ihre Namen, Telefonnummer und E-Mail-Adresse eingeben"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The visitor tickets are valid for 90 days, during which you can visit the entire Bucegi Natural Park, anytime you want. Just make sure you have the tickets with you"
+msgstr "Die Besuchertickets sind 90 Tage lang gültig. In dieser Zeit können Sie den gesamten Naturpark Bucegi besuchen, wann immer Sie wollen. Vergewissern Sie sich einfach, dass Sie die Tickets dabei haben"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "If you want to buy tickets for your friends or family too, you can add below the number of tickets you want to buy, then press Purchase"
+msgstr "Wenn Sie auch Tickets für Ihre Freunde oder Familie kaufen möchten, können Sie unten die Anzahl der Tickets hinzufügen, die Sie kaufen möchten, und dann auf Kaufen klicken"
+
+#: .\services\templates\services\ticket-description.html:98
+msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
+msgstr "Der Endpreis des Besuchertickets enthält auch eine kleine Transaktionsgebühr, die von unserem Zahlungsdienstleister Netopia Payments erhoben wird und 0,95% pro Transaktion beträgt"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Proceed to Payment Method"
+msgstr "Zum der Zahlungsmethode"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payer Personal Information"
+msgstr "Persönliche Daten des Zahlers"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Payments are secure and encrypted"
+msgstr "Zahlungen sind sicher und verschlüsselt"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "You will be redirected to Netopia Payments to complete the payment"
+msgstr "Sie werden zu Netopia Payments weitergeleitet, um die Zahlung abzuschließen"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "By proceeding you confirm that you accept our"
+msgstr "Wenn Sie mit der Zahlungsmethode fortfahren, bestätigen Sie, dass Sie unsere"
+
+#: .\services\templates\services\terms.html:9
+msgid "<span>Terms</span> and<span> Conditions</span>"
+msgstr "<span>Geschäftsbedingungen</span><span></span>"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Commission"
+msgstr "Kommission"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Ticket summary"
+msgstr "Sammeltickets"
+
+#: .\services\templates\services\ticket-description.html:9
+msgid "Net total"
+msgstr "Netto insgesamt"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Two ways to buy tickets"
+msgstr "Zwei Möglichkeiten, Tickets zu kaufen"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
+msgstr "Sie können Besuchertickets online mit einer Kreditkarte, Revolut oder Kryptowährungen kaufen oder alternativ in bar bei einem Ranger in Ihrer Nähe"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy from rangers"
+msgstr "Von Rangers"
+
+#: .\payments\templates\includes\tickets.html:9
+msgid "Buy Online"
+msgstr "Online"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "years"
+msgstr "Jahre"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Conservation status"
+msgstr "Status der Bestandserhaltung"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Body size"
+msgstr "Körpergröße"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Native habitat"
+msgstr "Einheimischer Lebensraum"
+#: .\services\templates\services\wildlife-details.html:9
+msgid "Diet"
+msgstr "Diät"
+#: .\services\templates\services\partners.html:9
+msgid "Our Partners"
+msgstr "Unsere Partner"
+#: .\services\templates\services\partners.html:9
+msgid "<span>Our</span> <span>Support</span>"
+msgstr "<span>Unsere</span> <span>Unterstützung</span>"
+#: .\services\templates\services\events.html:17
+msgid "Our </span> <span>Events"
+msgstr "Unsere </span> <span>Veranstaltungen"
+#: .\services\templates\services\events.html:54
+msgid "Unfortunatelly there are no upcoming events yet"
+msgstr "Leider gibt es noch keine kommenden Veranstaltungen"
+
+#: .\services\templates\services\ticket-online.html:143
+msgid "For more information on litigations/dispute resolutions, please also consult the <a href='https://anpc.ro/en/'>ANPC (Consumer Protection National Agency) website</a> and <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Order 449 / 2022</a>"
+msgstr "Informationen über Rechtsstreitigkeiten/Streitbeilegung finden Sie auch auf der Website <a href='https://anpc.ro/en/'>ANPC (Nationale Verbraucherschutzbehörde)</a> und <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Verordnung 449 / 2022</a>"
+
+#: .\services\templates\services\events.html:55
+msgid "But stay tuned for news, by subscribing to our newsletter, below"
+msgstr "Aber bleiben Sie auf dem Laufenden, indem Sie unseren Newsletter abonnieren"
+#: .\services\templates\services\info-points.html:34
+msgid " <br/> 'Alexandru Beldie'<br><strong>Visitor Center</strong>"
+msgstr " <br/> 'Alexandru Beldie'<br><strong>Besucherzentrum</strong>"
+
+#: .\services\templates\services\info-points.html:35
+msgid "A modern small sized museum about Bucegi Mountains and local traditions, with presentation rooms, insect collections, rock collections, fossils, vintage nature photos and more"
+msgstr "Ein modernes kleines Museum über das Bucegi-Gebirge und lokale Traditionen, mit Präsentationsräumen, Insektensammlungen, Gesteinssammlungen, Fossilien, alten Naturfotos und mehr"
+#: .\services\templates\services\info-points.html:36
+msgid "Located in the town of Bușteni, Prahova County, on Str. Telecabinei 54"
+msgstr "In Bușteni Stadt, Kreis Prahova, auf die Str. Telecabinei 54"
+
+#: .\services\templates\services\map-coming-soon.html:9
+msgid "An interactive online map of our park is underway. Stay tuned, because we will sound the horn when it is ready"
+msgstr "Eine interaktive Online-Karte unseres Parks ist in Arbeit. Bleiben Sie dran, denn wir werden das Horn ertönen lassen, wenn sie fertig ist"
+
+#: services/templates/services/404.html: 15
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: services/templates/services/404.html: 15
+msgid "Sorry, but that page never returned from a trip to the mountains. So you better come back home"
+msgstr "Tut mir leid, aber diese Seite ist nie von einem Ausflug in die Berge zurückgekehrt. Also kommen Sie besser wieder nach Startseite"
+
+#: services/templates/services/404.html: 15
+msgid "Server malfunction"
+msgstr "Störung des Servers"
+
+#: services/templates/services/404.html: 15
+msgid "Please try to return to the home page or contact the website administrator, at daniel.ungureanu@bucegipark.ro"
+msgstr "Bitte versuchen Sie, zur Startseite zurückzukehren, oder wenden Sie sich an den Administrator der Website unter daniel.ungureanu@bucegipark.ro"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "<span>Park Rangers</span> & <span> Gebiete"
+msgstr "<span>Rangeri</span> & <span> Sectoare"
+
+#: .\services\templates\services\ticket-online.html:35
+msgid "Why this visitor tariff"
+msgstr "Warum dieser Besuchertarif"
+#: .\services\templates\services\sector-map.html:18
+msgid "All sectors and corresponding rangers below"
+msgstr "Alle Sektoren und die entsprechenden Ranger unten"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Brașov county"
+msgstr "Brașov Landkreis"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Dâmbovița county"
+msgstr "Dâmbovița Landkreis"
+
+#: .\services\templates\services\sector-map.html:18
+msgid "Prahova county"
+msgstr "Prahova Landkreis"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Ticket</span> <span> Checkout"
+msgstr "Ticket</span> <span> Checkout"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "First Name"
+msgstr "Vorname"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Last Name"
+msgstr "Nachname"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Address"
+msgstr "Adresse"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "State/County"
+msgstr "Staat/Landkreis"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Select Country"
+msgstr "Land auswählen"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "City"
+msgstr "Stadt"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "ZIP"
+msgstr "Postleitzahl"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Notes"
+msgstr "Anmerk"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Payment Method"
+msgstr "Zahlungsmethode"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Cryptocurrencies"
+msgstr "Kryptowährungen"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Order Summary"
+msgstr "Zusammenfassung der Bestellung"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Checkout"
+msgstr "Zur Kasse"
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Final cost"
+msgstr "Endgültige Kosten"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Number of tickets"
+msgstr "Anzahl der Tickets"
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "I read and accept the "
+msgstr "Ich habe gelesen und akzeptiere die "
+
+#: .\services\templates\services\ticket-online.html:143
+msgid "Proceed to Payment"
+msgstr "Weiter zur Zahlung"
+#: .\services\templates\services\ticket-online.html:9
+msgid "You can consult our"
+msgstr "Sie können unser"
+
+#: .\services\templates\services\ticket-online.html:9
+msgid "here"
+msgstr "hier"
+#: services/templates/services/home.html: 239
+msgid "Scenery"
+msgstr "Landschaften"
+
+#: services/templates/services/home.html: 239
+msgid "Announcements"
+msgstr "Ankündigungen"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
+msgstr "Beobachten Sie</h6><a class='destination-item__link' href='#'>Wildtiere"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
+msgstr "Besuchen Sie</h6><a class='destination-item__link' href='#'>Historische Sehenswürdigkeiten"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
+msgstr "Erkunden Sie</h6><a class='destination-item__link' href='#'>Schöne Wanderwege"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
+msgstr "Verbinden Sie</h6><a class='destination-item__link' href='#'>Mit der Natur"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
+msgstr "Schmecken Sie </h6><a class='destination-item__link' href='#'>Lokale Küche"
+
+#: .\payments\templates\includes\home.html:9
+msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
+msgstr "Winter </h6><a class='destination-item__link' href='#'>Sport"
+
+#: .\services/templates/services\home.html:9
+msgid "<span>Who</span> <span>Support Us and our </span>Efforts</h2>"
+msgstr "<span>Wer</span> <span>uns und unsere Bemühungen </span>unterstützt</h2>"
+
+#: .\services\templates\services\info-points.html:34
+msgid " Peștera <br/> <strong>Information point</strong>"
+msgstr " Peștera <br/> <strong>Informationspunkt</strong>"
+#: .\services\templates\services\info-points.html:34
+msgid "</span> <span>Information Points"
+msgstr "</span> <span>Informationspunkte"
+#: .\services\templates\services\info-points.html:35
+msgid "A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike"
+msgstr "Eine kleine, aber moderne Hütte auf dem Gipfel des Berges, im Herzen unseres Parks, mit vielen Informationen für Wanderer, Touristen und dergleichen"
+#: .\services\templates\services\info-points.html:36
+msgid "Located at the end of the access road, next to the Mountain Rescue Service building, which is underconstruction"
+msgstr "Am Ende der Zufahrtsstraße, neben dem Gebäude des Bergrettungsdienstes, das sich im Bau befindet"
+
+#: .\services\templates\services\info-points.html:34
+msgid "Main  <br/> <strong>office building</strong> & Information point"
+msgstr "<br/> <strong>Hauptverwaltungsgebäude</strong> & Informationspunkt"
+
+#: .\services\templates\services\info-points.html:35
+msgid "The main office of the administrative personnel, where we also have a 3d park map and other info to help you on your trip"
+msgstr "Das Hauptbüro des Verwaltungspersonals, wo wir auch eine 3D-Parkkarte und andere Informationen für Ihre Reise bereithalten"
+#: .\services\templates\services\info-points.html:36
+msgid "Located in Moroieni, Str. Principala 71, Dâmbovița county"
+msgstr "In Moroieni, Str. Principală 71, Kreis Dâmbovița gelegen"
+
+#: .\services\forms.py:36
+msgid "Your name"
+msgstr "Ihre Name"
+
+#: .\services\forms.py:36
+msgid "Write your opinion here"
+msgstr "Schreiben Sie Ihre Meinung hier"
+#: .\services\forms.py:36
+msgid "Add a photo of yourself"
+msgstr "Fügen Sie ein Foto von sich hinzu"
+#: .\pnb_main\settings.py:158
+msgid "English"
+msgstr ""
+
+#: .\pnb_main\settings.py:159
+msgid "Deutsch"
+msgstr ""
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/messages/apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:51
+msgid "That page number is not an integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:53
+msgid "That page number is less than 1"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/paginator.py:58
+msgid "That page contains no results"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:93
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:675
+msgid "Enter a valid URL."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:150
+msgid "Enter a valid integer."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:161
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:262
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:269
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:278
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:288
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:311
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:296
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:306
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:310
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:340
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:346
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:379
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:388
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:398
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:413
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:432
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:292
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:327
+msgid "Enter a number."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:439
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:444
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:506
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/core/validators.py:559
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1210
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Annual"
+msgstr "Einjährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Perennial"
+msgstr "Mehrjährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Biennial"
+msgstr "Zweijährig"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Fish"
+msgstr "Fisch"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "Deer"
+msgstr "Hirsch"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "wild board"
+msgstr "Wildschwein"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "grass"
+msgstr "Gras"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "leaves"
+msgstr "Blätter"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "buds"
+msgstr "Knospen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "larvae"
+msgstr "Larven"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "nuts"
+msgstr "Nüsse"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "seeds"
+msgstr "Samen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "snakes"
+msgstr "Schlangen"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "frogs"
+msgstr "Frösche"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small birds"
+msgstr "kleine Vögel"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "fruits"
+msgstr "Früchte"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "roots"
+msgstr "Wurzeln"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "bark"
+msgstr "Rinde"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "insects"
+msgstr "Insekten"
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:768
+msgid "small rodents"
+msgstr "kleine Nagetiere"
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/base.py:1212
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:100
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:101
+msgid "This field cannot be null."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:102
+msgid "This field cannot be blank."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:103
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:126
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:958
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:959
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:961
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1002
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1096
+msgid "Comma-separated integers"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1145
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1147
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1290
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1150
+msgid "Date (without time)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1288
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1292
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1296
+msgid "Date (with time)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1444
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1446
+msgid "Decimal number"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1585
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1588
+msgid "Duration"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1638
+msgid "Email address"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1661
+msgid "File path"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1727
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1729
+msgid "Floating point number"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1767
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1769
+msgid "Integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1852
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1867
+msgid "Small integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1875
+msgid "IPv4 address"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1906
+msgid "IP address"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1986
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1987
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1989
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2043
+msgid "Positive big integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2056
+msgid "Positive integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2069
+msgid "Positive small integer"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2083
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2115
+msgid "Text"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2181
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2183
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2186
+msgid "Time"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2312
+msgid "URL"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2334
+msgid "Raw binary data"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2399
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2401
+msgid "Universally unique identifier"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/files.py:226
+msgid "File"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/files.py:375
+msgid "Image"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:790
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:792
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1045
+msgid "One-to-one relationship"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1099
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1100
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/db/models/fields/related.py:1142
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: myvenv/lib/python3.6/site-packages/django/forms/boundfield.py:150
+msgid ":?.!"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:54
+msgid "This field is required."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:247
+msgid "Enter a whole number."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:402
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1143
+msgid "Enter a valid date."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:426
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1144
+msgid "Enter a valid time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:454
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:488
+msgid "Enter a valid duration."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:489
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:549
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:550
+msgid "No file was submitted."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:551
+msgid "The submitted file is empty."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:553
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:556
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:617
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:779
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:869
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1309
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:870
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:985
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1308
+msgid "Enter a list of values."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:986
+msgid "Enter a complete value."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1202
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/fields.py:1232
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: myvenv/lib/python3.6/site-packages/django/forms/forms.py:76
+msgid ":"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/forms.py:203
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:370
+#, python-format
+msgid "Please submit at most %d form."
+msgid_plural "Please submit at most %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:377
+#, python-format
+msgid "Please submit at least %d form."
+msgid_plural "Please submit at least %d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:405
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:412
+msgid "Order"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/formsets.py:417
+msgid "Delete"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:763
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:767
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:773
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:782
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1109
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1193
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/models.py:1311
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/utils.py:172
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:403
+msgid "Clear"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:404
+msgid "Currently"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:405
+msgid "Change"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:714
+msgid "Unknown"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:715
+msgid "Yes"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/forms/widgets.py:716
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:817
+msgid "yes,no,maybe"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:846
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:863
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:865
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:867
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:869
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:871
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/template/defaultfilters.py:873
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:66
+msgid "p.m."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:67
+msgid "a.m."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:72
+msgid "PM"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:73
+msgid "AM"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:146
+msgid "midnight"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dateformat.py:148
+msgid "noon"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr ""
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "January"
+msgstr "Januar"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "February"
+msgstr "Februar"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "March"
+msgstr "März"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "April"
+msgstr "April"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "May"
+msgstr "Mai"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:14
+msgid "June"
+msgstr "Juni"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "July"
+msgstr "Juli"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "August"
+msgstr "August"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "September"
+msgstr "September"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "October"
+msgstr "Oktober"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:15
+msgid "November"
+msgstr "November"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:16
+msgid "December"
+msgstr "Dezember"
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "jan"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "feb"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "mar"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "apr"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "may"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:19
+msgid "jun"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "jul"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "aug"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "sep"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "oct"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "nov"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:20
+msgid "dec"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:71
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:240
+msgid "or"
+msgstr "oder"
+
+#. Translators: This string is used as a separator between list elements
+#: myvenv/lib/python3.6/site-packages/django/utils/text.py:259
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:94
+msgid ", "
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:110
+msgid "Forbidden"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:111
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:115
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:120
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:124
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:132
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:137
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/csrf.py:142
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:41
+msgid "No year specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:61
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:111
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:208
+msgid "Date out of range"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:90
+msgid "No month specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:142
+msgid "No day specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:188
+msgid "No week specified"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:338
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:367
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:594
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:628
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:67
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:72
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/generic/list.py:154
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:40
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:42
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/static.py:80
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:7
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: myvenv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: pnb_main/settings.py:150
+msgid "French"
+msgstr ""
+
+#: pnb_main/settings.py:151
+msgid "Polish"
+msgstr ""
+
+msgid "German"
+msgstr "Germană"
+
+msgid "Romanian"
+msgstr "Română"
+
+#: services/templates/services/home.html: 12
+msgid "<span>Bucegi</span> <span>Natural Park</span>"
+msgstr "<span>Bucegi</span> <span>NaturPark</span>"
+
+#: services/templates/services/home.html: 151
+msgid "Bucegi Natural Park attractions"
+msgstr "Attraktionen des Naturparks Bucegi"
+
+#: services/templates/services/home.html: 151
+msgid "<span>Discover </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Entdecken Sie </span><span>den Naturpark Bucegi</span>"
+
+#: services/templates/services/home.html: 51
+msgid "Home"
+msgstr "Startseite"
+#: services/templates/services/home.html: 201
+msgid "Activities"
+msgstr "Aktivitäten"
+#: services/templates/services/home.html: 202
+msgid "things</span> <span>you can do"
+msgstr "Was kanst du</span> <span>machen"
+#: services/templates/services/home.html: 187
+msgid "Omu Peak"
+msgstr "Omu-Spitze"
+#: services/templates/services/home.html: 187
+msgid "Bucegi Mountains"
+msgstr "Bucegi Berge"
+#: services/templates/services/home.html: 187
+msgid "Find out More"
+msgstr "Weitere Informationen"
+#: services/templates/services/home.html: 187
+msgid "<span>Map of Bucegi</span> <span>Natural Park</span>"
+msgstr "<span>Karte von Bucegi</span> <span>NaturPark</span>"
+#: services/templates/services/home.html: 187
+msgid "See map"
+msgstr "Karte sehen"
+#: services/templates/services/base.html: 187
+msgid "from November to April"
+msgstr "von November bis April"
+#: services/templates/services/base.html: 187
+msgid "from May to October"
+msgstr "von Mai bis Oktober"
+
+#: services/templates/services/base.html: 187
+msgid "Saturday - Sunday"
+msgstr "Sâmbătă - Duminică"
+
+#: services/templates/services/home.html: 313
+msgid "Ialomița Monastery"
+msgstr "Kloster Ialomița"
+#: services/templates/services/home.html: 313
+msgid "Caraiman Valley"
+msgstr "Caraiman Tal"
+#: services/templates/services/home.html: 313
+msgid "Brown bear"
+msgstr "Braunbär"
+#: services/templates/services/home.html: 313
+msgid "Capercaillie"
+msgstr "Auerhuhn"
+#: services/templates/services/home.html: 313
+msgid "Chamois"
+msgstr "Chamois"
+#: services/templates/services/home.html: 313
+msgid "Red Deer"
+msgstr "Rothirsch"
+#: services/templates/services/home.html: 313
+msgid "Wild Cat"
+msgstr "Wildkatze"
+#: services/templates/services/home.html: 313
+msgid "European Lynx"
+msgstr "Europäischer Luchs"
+#: services/templates/services/home.html: 313
+msgid "The screaming waterfall"
+msgstr "Der schreiende Wasserfall"
+#: services/templates/services/home.html: 313
+msgid "Lăptici Peat Bog"
+msgstr "Torfmoor Lăptici"
+#: services/templates/services/home.html: 313
+msgid "Ural owl"
+msgstr "Habichtskauz"
+#: services/templates/services/home.html: 313
+msgid "The Sphinx"
+msgstr "Der Sphinx"
+#: services/templates/services/home.html: 313
+msgid "Natural Monuments"
+msgstr "Naturdenkmäler"
+#: services/templates/services/home.html: 313
+msgid "Wildlife"
+msgstr "Widltiere"
+#: services/templates/services/home.html: 313
+msgid "Nature Reserves"
+msgstr "Naturschutzgebieten"
+#: services/templates/services/home.html: 313
+msgid "Flora"
+msgstr "Flora"
+msgid "About"
+msgstr "Über uns"
+msgid "Explore"
+msgstr "Erkunden Sie"
+msgid "Attractions"
+msgstr "Attraktionen"
+msgid "Tickets"
+msgstr "Eintrittskarten"
+msgid "Education"
+msgstr "Bildung"
+msgid "Map"
+msgstr "Karte"
+msgid "Events"
+msgstr "Veranstaltungen"
+msgid "Donate"
+msgstr "Doneaza"
+msgid "Our team"
+msgstr "Unser Team"
+msgid "Gallery"
+msgstr "Gallerie"
+msgid "Projects"
+msgstr "Projekte"
+msgid "Ticket Prices"
+msgstr "Ticket-Preise"
+msgid "Theme Trails"
+msgstr "Themenwanderwege"
+msgid "Hiking Trails"
+msgstr "Wanderwege"
+msgid "Climbing Trails"
+msgstr "Bergsteigerpfade"
+msgid "Info Points"
+msgstr "Infopunkte"
+msgid "Caves"
+msgstr "Höhlen"
+msgid "Visitor Center"
+msgstr "Besucherzentrum"
+msgid "View Points"
+msgstr "Aussichtspunkte"
+msgid "Today"
+msgstr "Heute"
+msgid "Cold Wind"
+msgstr "Kalter Wind"
+#: services/templates/services/home.html: 265
+msgid "Beautiful"
+msgstr "Schöne"
+msgid "Landscapes and Trails"
+msgstr "Landschaften und Wanderwege"
+msgid "Some of the most iconic"
+msgstr "Einige der kultigsten"
+msgid "Wildlife species in Europe"
+msgstr "Wildtierarten in Europa"
+msgid "Unique Rock Formations"
+msgstr "Einzigartige Felsformationen"
+msgid "Discover"
+msgstr "Entdecken Sie"
+#: services/templates/services/home.html: 268
+msgid "Canions, blue water lakes with small wooded bridges, alpine hiking trails, will send you thinking at fairytales"
+msgstr "Schluchten, blaue Seen mit kleinen Waldbrücken, alpine Wanderwege, die Sie an Märchen denken lassen"
+#: services/templates/services/home.html: 291
+msgid "The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, Lynx, wolverines and even golden eagles have been spotted here."
+msgstr "Das Bucegi-Gebirge beherbergt eine große Artenvielfalt, darunter Braunbären, Wölfe, Gämsen, Rothirsche, Luchse, Vielfraße und sogar Steinadler wurden hier schon gesichtet."
+#: services/templates/services/home.html: 313
+
+#: services/templates/services/history.html: 38
+msgid "Since the 19th century, Bucegi Mountain has attracted numerous researchers and nature lovers from the country and abroad, holding a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity"
+msgstr "Seit dem 19. Jahrhundert hat das Bucegi-Gebirge zahlreiche Forscher und Naturliebhaber aus dem In- und Ausland angezogen und nimmt mit seiner seltenen und vielfältigen Flora einen Spitzenplatz in der rumänischen Karpatenkette ein"
+
+#: services/templates/services/history.html: 39
+msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943."
+msgstr "Die wissenschaftlichen Arbeiten angesehener Botaniker zu Beginn des letzten Jahrhunderts bildeten die Grundlage für das erste Gesetz zur Einrichtung von Naturschutzgebieten und Denkmälern: HCM. 965/17.11.1943."
+
+#: services/templates/services/history.html: 41
+msgid "Around year 1990, unorganized tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, urged the authorities at that time, to create a management framework in the area, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necessary for specific conservation and protection measures"
+msgstr "Um das Jahr 1990 drängten der unorganisierte Tourismus, die intensive Gewinnung natürlicher Ressourcen und der anschließende großflächige Prozess der Zerstörung der biologischen Vielfalt und deren Einfluss auf die Umweltfaktoren die damaligen Behörden dazu, durch die Einrichtung des Naturparks Bucegi (O.M. 7/27.01.1990) einen Verwaltungsrahmen für das Gebiet zu schaffen, der für spezifische Erhaltungs- und Schutzmaßnahmen erforderlich war"
+
+#: services/templates/services/history.html: 36
+msgid "How it</span><br/> <span> Started"
+msgstr "Wie es</span><br/> begann"
+
+#: services/templates/services/history.html: 41
+msgid "Due to unorganized tourism, intensive natural resources extraction and the subsequent large-scale process of destruction of biological diversity and its influence on environmental factors, a management framework was created, through the establishment of the Bucegi Natural Park, by O.M. 7/27.01.1990, necessary for specific conservation and protection measures"
+msgstr "Mit der Förderung und Entwicklung des Fremdenverkehrs, der intensiven Gewinnung natürlicher Ressourcen und der damit einhergehenden großflächigen Zerstörung der biologischen Vielfalt und deren Einfluss auf die Umweltfaktoren wurde mit der Einrichtung des Naturparks Bucegi durch die O.M. 7/27.01.1990 ein Verwaltungsrahmen geschaffen, der für spezifische Erhaltungs- und Schutzmaßnahmen notwendig ist"
+
+#: services/templates/services/history.html: 40
+msgid "The need to establish protected natural areas and to harmonize the local environment protection legislation with the European legislation - Paris Convention, Rio Convention, Washington Convention, Bonn Convention, Bern Convention - a basic condition for Romania to be accepted in the EU, led to the emergence of more modern laws on which the Administration of Bucegi Natural Park is based today"
+msgstr "Die Notwendigkeit, geschützte Naturgebiete einzurichten und die lokale Umweltschutzgesetzgebung mit der europäischen Gesetzgebung zu harmonisieren - Pariser Übereinkommen, Rio-Übereinkommen, Washingtoner Übereinkommen, Bonner Übereinkommen, Berner Übereinkommen - eine Grundvoraussetzung für die Aufnahme Rumäniens in die EU, führte zur Entstehung modernerer Gesetze, auf denen die Verwaltung des Naturparks Bucegi heute beruht"
+
+#: services/templates/services/history.html: 39
+msgid "The scientific work carried out by prestigious botanists at the beginning of the last century formed the basis of the first act establishing nature reserves, monuments: HCM. 965/17.11.1943"
+msgstr "Die wissenschaftlichen Arbeiten angesehener Botaniker zu Beginn des letzten Jahrhunderts bildeten die Grundlage für das erste Gesetz zur Einrichtung von Naturschutzgebieten und Denkmälern: HCM. 965/17.11.1943"
+
+#: services/templates/services/history.html: 38
+msgid "The Bucegi Massif holds a leading place in the Romanian Carpathian chain for its flora of rare richness and diversity, which has attracted numerous researchers and nature lovers from the country and abroad since the 19th century"
+msgstr "Das Bucegi-Massiv nimmt in der rumänischen Karpatenkette aufgrund seiner seltenen und vielfältigen Flora, die seit dem 19. Jahrhundert zahlreiche Forscher und Naturliebhaber aus dem In- und Ausland angezogen hat, einen Spitzenplatz ein"
+
+#: services/templates/services/history.html: 53
+msgid "<span>Administration of</span><br/> <span>Bucegi Natural Park</span>"
+msgstr "<span>Verwaltung des Naturparks</span><br/> <span>Bucegi</span>"
+
+#: services/templates/services/history.html: 55
+msgid "<strong>Bucegi Natural Park Administration</strong>"
+msgstr "<strong>Die Verwaltung des Naturparks Bucegi</strong>"
+
+#: services/templates/services/history.html: 55
+msgid "is an autonomous structure, constituted as a subunit of the National Forest Administration - RNP ROMSILVA and has the role to preserve nature, wildlife, cultural heritage and sustainable land management, while allowing people to enjoy the local natural beauty, on an area of 32,500 ha, overlapping most of the Natura 2000 Site ROSCI0013 Bucegi"
+msgstr "ist eine autonome Struktur mit Rechtspersönlichkeit, die als Untereinheit der Nationalen Forstverwaltung - RNP ROMSILVA - gegründet wurde und die Aufgabe hat, die Harmonie zwischen den lokalen Gemeinschaften und der Natur auf einer Fläche von 32,500 ha zu gewährleisten, was etwa 84 % des Natura 2000-Gebiets ROSCI0013 Bucegi entspricht"
+
+#: services/templates/services/history.html: 56
+msgid "In addition to the Bucegi Massif, the <strong>park area</strong> includes small parts of neighbouring mountains such as Leaota. The natural park has more than 15 peaks exceeding 2,000 m in altitude, the highest in the massif being Omu Peak, at 2,505 m"
+msgstr "Neben dem Bucegi-Massiv umfasst <strong>das Parkgebiet</strong> auch kleine Teile der benachbarten Berge wie den Leaota. Im Naturpark gibt es mehr als 15 Gipfel, die über 2.000 m hoch sind. Der höchste Gipfel des Massivs ist der Omu Peak mit 2.505 m"
+
+#: services/templates/services/history.html: 57
+msgid "The main activities of Bucegi Natural Park are"
+msgstr "Die Haupttätigkeiten der Parkverwaltung sind"
+
+#: services/templates/services/history.html: 59
+msgid "permanent supervision of the park and Natura 2000 site ROSCI0013 BUCEGI, through the work of 11 field staff, coordinated and supervised by the management staff (head of the park, head of security department, biologist)"
+msgstr "ständige Überwachung des Parks und des Natura 2000 Gebiete ROSCI0013 BUCEGI durch die Arbeit von 11 Außendienstmitarbeitern, die von der Direktion koordiniert und überwacht werden (Leiter des Parks, Leiter der Sicherheitsabteilung, Biologe)"
+
+#: services/templates/services/history.html: 60
+msgid "public awareness and environmental education for visitors, both on tourist trails and in an organized ways, in accommodation units - this activity is especially addressed to groups of pupils and students coming to the Park"
+msgstr "Sensibilisierung der Öffentlichkeit und Umwelterziehung für Besucher, sowohl auf den Wanderwegen als auch in organisierter Form in den Unterkünften - diese Tätigkeit richtet sich insbesondere an Schüler- und Studentengruppen, die den Park besuchen"
+
+#: services/templates/services/history.html: 61
+msgid "greening activities (rubbish collection) in the area bordering tourist routes and access roads"
+msgstr "Begrünungsmaßnahmen (Müllsammeln) im Bereich der touristischen Routen und Zufahrtsstraßen"
+
+#: services/templates/services/history.html: 62
+msgid "public order specific activities, in collaboration with other institutions, like the"
+msgstr "Spezifische Aktivitäten im Bereich der öffentlichen Ordnung, in Zusammenarbeit mit anderen Institutionen, wie der"
+#: services/templates/services/history.html: 62
+msgid "Romanian Mountain Gendarmerie"
+msgstr "rumänischen Bergwacht"
+
+#: services/templates/services/history.html: 62
+msgid "Romanian Mountain Rescue Service"
+msgstr "rumänischen Bergrettungsdienst"
+#: services/templates/services/history.html: 63
+msgid "constant monitoring of state owned or private forests for Forest Code and protected area laws compliance"
+msgstr "ständige Überwachung staatlicher oder privater Wälder im Hinblick auf die Einhaltung des Forstgesetzes und der Gesetze für geschützte Gebiete"
+
+#: services/templates/services/history.html: 78
+msgid "A short trip</span><br/> <span> Back in Time "
+msgstr "Eine kurze Reise</span><br/> <span>in die Vergangenheit "
+
+#: services/templates/services/history.html: 82
+msgid "Cabin"
+msgstr "Hütte"
+
+#: services/templates/services/history.html: 95
+msgid "Cross"
+msgstr "Kreuz"
+
+#: services/templates/services/history.html: 100
+msgid "Cave"
+msgstr "Höhle"
+#: services/templates/services/theme-trails.html: 198
+msgid "GPX File (not yet ready)"
+msgstr "GPX datei (noch nicht verfügbar)"
+
+#: services/templates/services/team.html: 17
+msgid "Our</span> <span> Team"
+msgstr "Unser</span> <span> Team"
+
+#: services/templates/services/team.html: 32
+msgid "Administrative</span> <span>Staff"
+msgstr "Verwaltungs</span>personal<span>"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "<strong>There are a total of 10 theme trails throughout Bucegi Natural Park. </strong><br><br> Most of them are easy - average dificulty, with only a few of average dificulty, meaning some steep slopes and rocky terrain"
+msgstr "<strong>Im gesamten Naturpark Bucegi gibt es insgesamt 10 Themenwanderwege. </strong><br><br> Die meisten von ihnen sind leicht bis mittelschwer, nur einige wenige sind mittelschwer, d.h. es gibt steile Hänge und felsiges Gelände"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "Read more below"
+msgstr "Lesen Sie weiter unten"
+
+#: services/templates/services/theme-trails.html: 17
+msgid "hours"
+msgstr "Stunden"
+
+#: services/templates/services/team.html: 62
+msgid "Field </span> <span>Staff"
+msgstr "Außendienst</span><span>mitarbeiter"
+
+#: services/templates/services/team.html: 64
+msgid "Touch to see phone number"
+msgstr "Berühren, um die Telefonnummer zu sehen"
+
+#: services/templates/services/public-docs.html: 18
+msgid "<span>Public</span><span> Documents</span>"
+msgstr "<span>Öffentliche</span><span> Dokumente</span>"
+
+#: services/templates/services/public-docs.html: 42
+msgid "Year"
+msgstr "Jahr"
+
+#: services/templates/services/public-docs.html: 40
+msgid "The official document can be downloaded below"
+msgstr "Das offizielle Dokument kann unten heruntergeladen werden"
+
+#: services/templates/services/underconstruction.html: 136
+msgid "New Website"
+msgstr "Neue Website"
+
+#: services/templates/services/underconstruction.html: 136
+msgid "Under Construction"
+msgstr "Im Aufbau"
+
+#: services/templates/services/underconstruction.html: 138
+msgid "In the meanwhile, check other info below!"
+msgstr "In der Zwischenzeit finden Sie weitere Informationen unter!"
+
+#: services/templates/services/underconstruction.html: 161
+msgid "Online Park Visitor tariff"
+msgstr "Online-Tarif für Parkbesucher"
+
+#: services/templates/services/underconstruction.html: 164
+msgid "Will be payable from this website by card."
+msgstr "Wird auf dieser Website per Karte bezahlt."
+
+#: services/templates/services/underconstruction.html: 137
+msgid "Bucegi Natural Park will have a new website in a few days. Stay tuned!"
+msgstr "Der Naturpark Bucegi wird in wenigen Tagen eine neue Website haben. Dranbleiben!"
+
+#: services/templates/services/underconstruction.html: 164
+msgid "Unique Experience"
+msgstr "Einzigartige Erfahrung"
+
+#: services/templates/services/underconstruction.html: 164
+msgid "This new website will be a modern experience, with lots of educational information and news."
+msgstr "Diese neue Website wird ein modernes Erlebnis mit vielen pädagogischen Informationen und Nachrichten sein."
+
+#: services/templates/services/underconstruction.html: 207
+msgid "Wind"
+msgstr "Wind"
+
+#: services/templates/services/underconstruction.html: 231
+msgid "Bucegi"
+msgstr "Bucegi"
+
+#: services/templates/services/underconstruction.html: 231
+msgid "Natural Park"
+msgstr "Naturpark"
+
+#: services/templates/services/underconstruction.html: 233
+msgid "Located in the heart of Romania, between urban areas of major importance and close to the famous mountain resort - Sinaia, Bucegi Natural Park is an extremely popular protected area in our country and part of the international Natura 2000 network. Some of the most famous attractions associated with Bucegi Natural Park, besides the large bear population and breath-taking scenery, are the Sphinx and Babele, conglomerate rocks carved by wind erosion. Bucegi Natural Park was established in 2003 by the Romanian government, becoming a sanctuary for the preservation of traditional cultural landscapes, where sustainable human activities are part of nature. With an impressive biodiversity of fauna and flora, including endemic and rare species, this protected area has been a subject of study for local and international biologists since the 19th century. Moreover, many legends and supernatural stories from the Bucegi Mountains have made this area famous as one of the most mysterious in the country"
+msgstr "Der Naturpark Bucegi liegt im Herzen Rumäniens, zwischen bedeutenden städtischen Gebieten und in der Nähe des berühmten Gebirgsortes Sinaia. Er ist ein äußerst beliebtes nationales Schutzgebiet und Teil des internationalem Natura-2000-Netzes. Zu den berühmtesten Attraktionen des Naturparks Bucegi, gehören neben der großen Bärenpopulation und der atemberaubenden Landschaft, die Sphinx und Babele, durch Winderosion entstandene Konglomeratfelsen. Der Naturpark Bucegi wurde 2003 von der rumänischen Regierung eingerichtet und ist ein Schutzgebiet für die Erhaltung traditioneller Kulturlandschaften, in dem nachhaltige menschliche Aktivitäten Teil der Natur sind. Mit seiner beeindruckenden Artenvielfalt an Fauna und Flora, darunter auch endemische und seltene Arten, ist dieses Schutzgebiet seit dem 19. Jahrhundert Gegenstand von Studien lokaler und internationaler Biologen. Zahlreiche Legenden und übernatürliche Geschichten aus dem Bucegi-Gebirge haben dieses Gebiet als eines der geheimnisvollsten des Landes bekannt gemacht"
+
+#: services/templates/services/underconstruction.html: 239
+msgid "Area"
+msgstr "Fläche"
+
+#: services/templates/services/underconstruction.html: 247
+msgid "Highest peak"
+msgstr "Höchste Spitze"
+
+#: services/templates/services/underconstruction.html: 255
+msgid "Tourists per year"
+msgstr "Touristen pro Jahr"
+
+#: services/templates/services/underconstruction.html: 260
+msgid "More about"
+msgstr "Mehr über"
+
+#: services/templates/services/underconstruction.html: 323
+msgid "Menu & Links"
+msgstr "Menü & Links"
+
+#: services/templates/services/underconstruction.html: 330
+msgid "Support"
+msgstr "Unterstützung"
+
+#: services/templates/services/underconstruction.html: 335
+msgid "Main Office"
+msgstr "Hauptverwaltung"
+
+#: services/templates/services/underconstruction.html: 337
+msgid "Location"
+msgstr "Standort"
+
+#: services/templates/services/underconstruction.html: 338
+msgid "Phone"
+msgstr "Telefon"
+
+#: services/templates/services/underconstruction.html: 340
+msgid "Openning hours"
+msgstr "Öffnungszeit"
+
+#: services/templates/services/underconstruction.html: 362
+msgid "Contact Information"
+msgstr "Kontaktinformationen"
+
+#: services/templates/services/announcement.html: 340
+msgid "Open"
+msgstr "Öffnen"
+
+#: services/templates/services/underconstruction.html: 363
+msgid "Public Documents"
+msgstr "Öffentliche Dokumente"
+
+#: services/templates/services/underconstruction.html: 363
+msgid "Privacy Policy"
+msgstr "Datenschutzbestimmungen"
+
+#: services/templates/services/underconstruction.html: 375
+msgid "Terms and Conditions"
+msgstr "Bedingungen und Konditionen"
+
+#: services/templates/services/underconstruction.html: 375
+msgid "Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks"
+msgstr "Der Naturpark Bucegi beherbergt einige der beeindruckendsten natürlichen Felszeichnungen in Europa, die im Laufe der Jahrtausende durch Winderosion auf Konglomeratfelsen entstanden sind. Zu den bekanntesten gehören die Sphinx und Babele, ein menschlicher Kopf bzw. mehrere pilzförmige Felsen"
+
+#: services/templates/services/testimonials.html: 16
+msgid "Testimonials"
+msgstr "Empfehlungsschreiben"
+
+#: services/templates/services/testimonials.html: 18
+msgid "<span>Stories written by our<br/></span> <span> visitors</span>"
+msgstr "<span>Besuchern<br/></span> <span> Geschichten</span>"
+
+#: services/templates/services/testimonials.html: 18
+msgid "What do you think of our Natural Park? Leave your own review here"
+msgstr "Was halten Sie von unserem Naturpark? Hinterlassen Sie hier Ihre eigene Bewertung"
+
+#: services/templates/services/coming-soon.html: 15
+msgid "Page under construction"
+msgstr "Seite im Aufbau"
+#: services/templates/services/coming-soon.html: 15
+msgid "We are very sorry, but this page is taking a little longer to design. Stay tuned!"
+msgstr "Es tut uns sehr leid, aber die Gestaltung dieser Seite dauert etwas länger. Bleiben Sie dran!"
+#: services/templates/services/contact.html: 17
+msgid "Bucegi Natural Park"
+msgstr "Bucegi Naturpark"
+#: services/templates/services/contact.html: 18
+msgid "<span>Contact</span> <span> Us</span>"
+msgstr "<span>Kontaktieren Sie </span> <span> uns</span>"
+#: services/templates/services/contact.html: 32
+msgid "<span>Get in touch</span> <span> with us</span>"
+msgstr "<span>Schreiben Sie uns</span> <span> eine Nachricht</span>"
+#: services/templates/services/contact.html: 66
+msgid "<strong>Well done!</strong> Your message has been sent"
+msgstr "<strong>Gut gemacht!</strong> Ihre Nachricht wurde gesendet"
+#: services/templates/services/contact.html: 57
+msgid "Send"
+msgstr "Senden Sie"
+#: services/templates/services/contact.html: 57
+msgid "Please type in the following letters to show you are human"
+msgstr "Bitte geben Sie die folgenden Buchstaben ein, um zu zeigen, dass Sie ein Mensch sind"
+#: services/templates/services/contact.html: 57
+msgid "<span>Write us</span> <span>a message</span>"
+msgstr "<span>Schreiben Sie uns</span> <span>ein Nachricht</span>"
+#: services/templates/services/testimonial.html: 37
+msgid "<span>Write us</span> <span> about your experience</span>"
+msgstr "<span>Schreiben Sie uns</span> <span> uber Ihre Erlebnisse</span>"
+#: services/templates/services/includes/newsletter.html: 9
+msgid "<h4 class='cta-block__title'>Join Our <span>Newsletter</span></h4>"
+msgstr "<h4 class='cta-block__title'>Unsere Newsletter <span>abonnieren</span></h4>"
+#: services/templates/services/includes/newsletter.html: 9
+msgid "Your email"
+msgstr "Ihre E-Mail"
+
+#: services/templates/services/includes/newsletter.html: 9
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+#: services/templates/services/includes/newsletter.html: 9
+msgid "<p class='cta-block__text'>Subscribe and get our latest updates</p>"
+msgstr "<p class='cta-block__text'>und erhalten Sie unsere neuesten Updates</p>"
+#: services/templates/services/includes/blog.html: 166
+msgid "Subscribe Now"
+msgstr "Jetzt abonnieren"
+#: services/templates/services/includes/blog.html: 166
+msgid "Latest Posts"
+msgstr "Neueste Beiträge"
+#: services/templates/services/includes/blog.html: 166
+msgid "Archive"
+msgstr "Archiv"
+#: services/templates/services/includes/announcement.html: 166
+msgid "Download"
+msgstr "Download"
+
+#: services/templates/services/includes/blog.html: 167
+msgid "And get our latest updates"
+msgstr "Und erhalten Sie unsere neuesten Informationen"
+#: services/templates/services/includes/blog.html: 167
+msgid "Views"
+msgstr "Ansichten"
+
+#: services/templates/services/includes/gallery.html: 31
+msgid "<span>Check out photos from </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Sehen Sie sich Fotos aus </span><span>Parcul Natural Bucegi</span>"
+#: services/templates/services/includes/add_gallery.html: 27
+msgid "Add a photography"
+msgstr "Hinzufügen einer Fotografie"
+#: services/templates/services/includes/add_gallery.html: 27
+msgid "Our</span> <span>Pictures Gallery"
+msgstr "Unsere</span> <span>Bilder"
+#: services/templates/services/includes/flora.html: 17
+msgid "Our </span> <span>Flora"
+msgstr "Unsere </span> <span>Flora"
+#: services/templates/services/includes/videos.html: 31
+msgid "<span>Check out videos from </span><span>Bucegi Natural Park</span>"
+msgstr "<span>Sehen Sie sich Videos von </span><span>Bucegi NaturPark</span>"
+#: services/templates/services/views.py: 120
+msgid "This email already exists in our database!"
+msgstr "Diese E-Mail existiert bereits in unserer Datenbank!"
+#: services/templates/services/views.py: 128
+msgid "Newsletter Bucegi Natural Park"
+msgstr "Newsletter Naturpark Bucegi"
+#: services/templates/services/views.py: 128
+msgid "Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> button</a>."
+msgstr "Danke, dass Sie sich für unseren Newsletter angemeldet haben! Sie können den Vorgang abschließen, indem Sie auf diese <a style='padding:2px 1px;border:2px solid black' href='{}subscription_confirmation/?email={}&conf_num={}'> Schaltfläche</a> klicken."
+#: services/templates/services/views.py: 134
+msgid "A confirmation link was sent to your email inbox. Please check!"
+msgstr "Ein Bestätigungslink wurde an Ihren E-Mail-Posteingang gesendet. Bitte überprüfen!"
+#: services/templates/services/views.py: 134
+msgid "User does not exist!"
+msgstr "Benutzer existiert nicht!"
+#: services/templates/services/subscription_conf: 134
+msgid "Subscription confirmation"
+msgstr "Bestätigung des Abonnements"
+#: services/templates/services/subscription_conf: 134
+msgid "Congratulations! You have been subscribed to our newsletter"
+msgstr "Herzlichen Glückwunsch! Sie haben sich für unseren Newsletter angemeldet"
+#: services/templates/services/subscription_conf: 134
+msgid "If you decide though, to unsubscribe, you can always click on the unsubscribe button, at the bottom of the page"
+msgstr "Wenn Sie sich dennoch entscheiden, das Abonnement zu kündigen, können Sie jederzeit auf die Schaltfläche 'Abmelden' unten auf der Seite klicken"
+#: services/templates/services/unsubscribe: 134
+msgid "<span>Unsubscribe</span> <span></span>"
+msgstr "<span>Abmelden</span> <span></span>"
+#: services/templates/services/subscription_conf: 134
+msgid "<span>Subscription</span> <span> Confirmation</span>"
+msgstr "<span>Konfirmation</span> <span> Anmelden Newsletter</span>"
+#: services/templates/services/unsubscribe: 134
+msgid "<h4 class='cta-block__title'>Unsubscribe <span>from Newsletter</span></h4>"
+msgstr "<h4 class='cta-block__title'>Newsletter <span>abbestellen</span></h4>"
+#: services/templates/services/subscription_conf: 134
+msgid "Error! Your email cannot be registered. Please contact our IT department at +40 758 039 784"
+msgstr "Fehler! Ihre E-Mail kann nicht registriert werden. Bitte kontaktieren Sie unsere IT-Abteilung unter +40758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Are you sure you wish to cancel your subscription? If yes please type your email address in the box bellow"
+msgstr "Sind Sie sicher, dass Sie Ihr Abonnement kündigen möchten? Wenn ja, geben Sie bitte Ihre E-Mail-Adresse in das unten stehende Feld ein"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. Please contact our IT department at +40 758 039 784"
+msgstr "Fehler! Abmeldung fehlgeschlagen. Bitte kontaktieren Sie unsere IT-Abteilung unter +40 758 039 784"
+#: services/templates/services/unsubscribe: 134
+msgid "Success! Unsubscribing was finalized. If you change your mind you can subscribe again anytime"
+msgstr "Erfolgreich! Die Abbestellung wurde abgeschlossen. Wenn Sie Ihre Meinung ändern, können Sie sich jederzeit wieder anmelden"
+#: services/templates/services/unsubscribe: 134
+msgid "Error! Unsubscribing failed. This email does not exist in our database"
+msgstr "Fehler! Abmeldung fehlgeschlagen. Diese E-Mail existiert nicht in unserer Datenbank"
+#: services/urls.py: 43
+msgid "announcements"
+msgstr "ankündigungen"
