@@ -132,7 +132,7 @@ def home(request):
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
         'reviews': Testimonial.objects.filter(status=True),
-        'partners': Partner.objects.all(),
+        'partners': Partner.objects.all().order_by("rank"),
         })
     
     return render(request, template, context)

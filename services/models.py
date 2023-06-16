@@ -40,7 +40,7 @@ class Partner(models.Model):
     image = ResizedImageField(size=[640,None], upload_to='partner_images',)
     link = models.URLField(max_length = 300)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
-
+    rank = models.IntegerField()
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
