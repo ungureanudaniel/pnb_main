@@ -25,7 +25,7 @@ class TestimonialAdmin(admin.ModelAdmin):
     fields = ['status', 'fname', 'lname', 'email', 'thumbnail', 'text']
 
 class PartnerAdmin(admin.ModelAdmin):
-    fields = ['title','link', 'image']
+    fields = ['title','link', 'image','rank']
 
 class TeamAdmin(admin.ModelAdmin):
     fields = ['firstname', 'surname', 'image', 'text', 'phone', 'email', 'job','job_ro', 'job_de', 'judet', 'sector', 'sector_ro', 'sector_de', 'hierarchy']
