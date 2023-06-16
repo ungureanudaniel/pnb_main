@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 #blog imports
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
-#================Partners models=====================================
+#================Announcement models=====================================
 class Announcement(models.Model):
     """
     This class creates database tables for each announcement of bucegi natural park

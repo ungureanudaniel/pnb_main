@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
-from django.utils import translation
+from django.utils import translation, formats, timezone
 from utils.weather_scrape import scraped_data
 from django.views.decorators.gzip import gzip_page
 import datetime
@@ -13,12 +13,15 @@ import requests
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_protect
 #----blog imports
-from django.db.models import Q
-from django.db.models import Count
+from django.db.models import Q, Count
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
-from django.utils import timezone
+
+# -----------examples for using localized dae objects----------------
+# localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
+# localized_time = formats.time_format(time_obj, 'SHORT_TIME_FORMAT')
+
 #----------generate unique code for email subscription conf--------------------
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
@@ -97,9 +100,9 @@ def home(request):
         #--------------check if newsletter email exists already---------
         if request.POST.get('form-type') == "subscribe":
             newsletter_email = request.POST.get('subscriber')
-            lang = translation.get_language_from_request(request)
-            translation.activate(lang)
-            request.LANGUAGE_CODE = translation.get_language()
+            # lang = translation.get_language_from_request(request)
+            # translation.activate(lang)
+            # request.LANGUAGE_CODE = translation.get_language()
             if newsletter_email:
                 try:
                     duplicate = Subscriber.objects.get(email=newsletter_email)
@@ -130,7 +133,7 @@ def home(request):
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
-        'reviews': Testimonial.objects.filter(status=True),
+        # 'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all(),
         })
     return render(request, template, context)

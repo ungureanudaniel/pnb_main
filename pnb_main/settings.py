@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = []
 if os.getenv('ALLOWED_HOSTS'):
     ALLOWED_HOSTS.extend(os.getenv('ALLOWED_HOSTS').split(','))
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.gis',#django gis activation
     #developer added libraries
-    # 'debug_toolbar',
+    'debug_toolbar',
     'django.contrib.sitemaps',
     'ckeditor',
     'hitcount',
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -80,19 +80,19 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.i18n',
+                # 'django.template.context_processors.i18n',
 
             ],
         },
     },
 ]
 #
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-#         'LOCATION': '127.0.0.1:8000',
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': os.getenv('CACHES_LOC'),
+    }
+}
 
 WSGI_APPLICATION = 'pnb_main.wsgi.application'
 
@@ -133,13 +133,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ro'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bucharest'
 
 USE_I18N = True
 
 USE_TZ = True
+
+USE_L10N = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -151,17 +153,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale/'),
-)
-gettext = lambda s: s
-DEFAULT_LANGUAGE = 1
+
+# gettext = lambda s: s
 LANGUAGES = (
-    ('en', _('English')),
     ('ro', _('Română')),
+    ('en', _('English')),
     ('de', _('Deutsch')),
 )
-
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 #==============EMAIL SETTINGS==========================
 #-----test
 # EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
