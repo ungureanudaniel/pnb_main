@@ -70,7 +70,7 @@
 											<img class="img--bg" src="{{ i.image.url }}" alt="img"/>
 										</div>
 										<div class="pricing-item__subject">{{ i.title|capfirst }} {{ i.firstname }} {{ i.surname }}</div>
-										<div class="pricing-item__price"><span>{% trans 'Area of Interest' %}</span><span>{{ i.interest|lower|capfirst }}</span>
+										<div class="pricing-item__price"><span>{% trans 'Area of Interest' %}</span><br><span>{{ i.interest|lower|capfirst }}</span>
 										</div>
 										<div class="pricing-item__price">
 											<span >{{ i.email|lower }}</span>
