@@ -50,7 +50,11 @@
 											<img class="img--bg" src="{{ i.image.url }}" alt="img"/>
 										</div>
 										<div class="pricing-item__subject">{{ i.title|capfirst }} {{ i.firstname }} {{ i.surname }}</div>
-										<div class="pricing-item__price"><span>{% trans 'Area of Interest' %}</span><br><span>{{ i.interest }}</span></div>
+										<div class="pricing-item__price"><span>{% trans 'Area of Interest' %}</span><br><span>{{ i.interest }}</span>
+										</div>
+										<div class="pricing-item__price">
+											<span >{{ i.email|lower }}</span>
+										</div>
 									</div>
 									<div class="pricing-item__lower"><a class="pricing-item__button button button--primary" href="{{ i.cv }}">{% trans 'Curriculum Vitae' %}</a></div>
 								</div>
