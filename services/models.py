@@ -361,7 +361,7 @@ class SCouncil(models.Model):
     images will be automatically resized using a package : django-resized.
 
     """
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=20, blank=True)
     surname = models.CharField(max_length=30)
     firstname = models.CharField(max_length=30)
     image = ResizedImageField(size=[640,None], upload_to='scouncil_images',)
