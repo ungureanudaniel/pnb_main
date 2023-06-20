@@ -678,15 +678,78 @@ msgstr "Adăugați o fotografie portret"
 msgid "f'Thank you for writting us {message_author}! We will answer as soon as possible.'"
 msgstr "f'Mulțumim pentru mesaj {message_author}! Vom răspunde cât de curând posibil.'"
 #: services/urls.py:
+msgid "home"
+msgstr "acasă"
+#: services/urls.py:
 msgid "frequently-asked-questions"
-msgstr "intrebari-frecvente"
+msgstr "întrebări-frecvente"
+#: services/urls.py:
+msgid "gallery"
+msgstr "galerie-foto"
+#: services/urls.py:
+msgid "team"
+msgstr "echipă"
+#: services/urls.py:
+msgid "wildlife"
+msgstr "faună"
+#: services/urls.py:
+msgid "wildlife-info/<slug:slug>/"
+msgstr "informații-faună/<slug:slug>/"
+#: services/urls.py:
+msgid "flora"
+msgstr "floră"
+#: services/urls.py:
+msgid "flora-info/<slug:slug>/"
+msgstr "informații-floră/<slug:slug>/"
+#: services/urls.py:
+msgid "history"
+msgstr "istorie"
+#: services/urls.py:
+msgid "videos"
+msgstr "video"
+#: services/urls.py:
+msgid "theme-trails"
+msgstr "trasee-tematice"
+#: services/urls.py:
+msgid "public-documents"
+msgstr "documente-publice"
+#: services/urls.py:
+msgid "ticket-information"
+msgstr "informații-bilete"
+#: services/urls.py:
+msgid "privacy_information"
+msgstr "confidențialitate"
+#: services/urls.py:
+msgid "terms-conditions"
+msgstr "termeni-condiții"
+#: services/urls.py:
+msgid "info-points"
+msgstr "puncte-de-informare"
+#: services/urls.py:
+msgid "announcements"
+msgstr "anunțuri"
+#: services/urls.py:
+msgid "announcements/<slug:slug>/"
+msgstr "anunțuri/<slug:slug>/"
+#: services/urls.py:
+msgid "subscription-confirmation"
+msgstr "confirmarea-înscrierii"
+#: services/urls.py:
+msgid "unsubscribe"
+msgstr "dezabonare"
+#: services/urls.py:
+msgid "scientific-council"
+msgstr "consiliul-științific"
+#: services/urls.py:
+msgid "events"
+msgstr "evenimente"
 #: myvenv/lib/python3.6/site-packages/ckeditor_uploader/forms.py:6
 msgid "Search files"
 msgstr "Cauta fisiere"
 
 #: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
 msgid "Select an image to embed"
-msgstr "Cauta o image pentru incarcare"
+msgstr "Cauta o image pentru încarcare"
 
 #: myvenv/lib/python3.6/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
 msgid "Browse for the image you want, then click 'Embed Image' to continue..."
@@ -2640,6 +2703,24 @@ msgstr "Succes! Dezabonarea a fost finalizată. Dacă vă răzgândiți, vă put
 #: services/templates/services/unsubscribe: 134
 msgid "Error! Unsubscribing failed. This email does not exist in our database"
 msgstr "Eroare! Dezabonarea a eșuat. Acest e-mail nu există în baza noastră de date"
-#: services/urls.py: 43
-msgid "announcements"
-msgstr "anunțuri"
+#: services/models.py: 352
+msgid "Scientific Council Member"
+msgstr "Membru al Consiliului Științific"
+#: services/models.py: 353
+msgid "Scientific Council Members"
+msgstr "Membrii Consiliului Științific"
+#: services/base.html: 161
+msgid "Scientific Council"
+msgstr "Consiliul Științific"
+#: services/base.html: 161
+msgid "Members"
+msgstr "Membri"
+#: services/consiliul-stiintific.html: 161
+msgid "Scientific</span> <span> Council"
+msgstr "Consiliul</span> <span> Științific"
+#: services/consiliul-stiintific.html: 161
+msgid "President"
+msgstr "Președinte"
+#: services/consiliul-stiintific.html: 161
+msgid "Area of Interest"
+msgstr "Domeniu de Expertiză"

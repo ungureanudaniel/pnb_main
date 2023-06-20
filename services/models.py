@@ -323,7 +323,7 @@ class Wildlife(models.Model):
 class Team(models.Model):
     """
     This class creates database tables for each team member of natural park. The
-    images for attraction will be automatically resized using a package : django-resized.
+    images for each member will be automatically resized using a package : django-resized.
 
     """
     COUNTY = (
@@ -354,6 +354,30 @@ class Team(models.Model):
     def __str__(self):
         return f"{self.surname}" + " " + f"{self.firstname}"
 
+#================Scientific council model=====================================
+class SCouncil(models.Model):
+    """
+    This class creates database tables for each scientific council member of Bucegi natural park. The
+    images will be automatically resized using a package : django-resized.
+
+    """
+    title = models.CharField(max_length=20)
+    surname = models.CharField(max_length=30)
+    firstname = models.CharField(max_length=30)
+    image = ResizedImageField(size=[640,None], upload_to='scouncil_images',)
+    phone = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=254)
+    cv = models.FileField(upload_to='scouncil/', max_length=254, blank =True, null=True)
+    interest = models.CharField(max_length=200)
+    hierarchy = models.IntegerField(default=0)
+
+    class Meta:
+        verbose_name = _('Scientific Council Member')
+        verbose_name_plural = _("Scientific Council Members")
+
+    def __str__(self):
+        return f"{self.surname}" + " " + f"{self.firstname}"
+    
 #================contact model=====================================
 class Contact(models.Model):
     """

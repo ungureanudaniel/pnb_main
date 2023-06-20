@@ -2354,6 +2354,90 @@ msgstr "Erfolgreich! Die Abbestellung wurde abgeschlossen. Wenn Sie Ihre Meinung
 #: services/templates/services/unsubscribe: 134
 msgid "Error! Unsubscribing failed. This email does not exist in our database"
 msgstr "Fehler! Abmeldung fehlgeschlagen. Diese E-Mail existiert nicht in unserer Datenbank"
-#: services/urls.py: 43
+#: services/urls.py:
+msgid "home"
+msgstr "home"
+#: services/urls.py:
+msgid "frequently-asked-questions"
+msgstr "häufig-gestellte-fragen"
+#: services/urls.py:
+msgid "gallery"
+msgstr "galerie"
+#: services/urls.py:
+msgid "team"
+msgstr "team"
+#: services/urls.py:
+msgid "wildlife"
+msgstr "wildtiere"
+#: services/urls.py:
+msgid "wildlife-info/<slug:slug>/"
+msgstr "wildtiere-info/<slug:slug>/"
+#: services/urls.py:
+msgid "flora"
+msgstr "flora"
+#: services/urls.py:
+msgid "flora-info/<slug:slug>/"
+msgstr "flora-info/<slug:slug>/"
+#: services/urls.py:
+msgid "history"
+msgstr "geschichte"
+#: services/urls.py:
+msgid "videos"
+msgstr "video"
+#: services/urls.py:
+msgid "theme-trails"
+msgstr "themenwege"
+#: services/urls.py:
+msgid "public-documents"
+msgstr "öffentliche-dokumente"
+#: services/urls.py:
+msgid "ticket-information"
+msgstr "ticket-informationen"
+#: services/urls.py:
+msgid "privacy_information"
+msgstr "datenschutz_informationen"
+#: services/urls.py:
+msgid "terms-conditions"
+msgstr "bedingungen-konditionen"
+#: services/urls.py:
+msgid "info-points"
+msgstr "info-punkte"
+#: services/urls.py:
 msgid "announcements"
 msgstr "ankündigungen"
+#: services/urls.py:
+msgid "announcements/<slug:slug>/"
+msgstr "ankündigungen/<slug:slug>/"
+#: services/urls.py:
+msgid "subscription-confirmation"
+msgstr "abonnement-bestätigung"
+#: services/urls.py:
+msgid "unsubscribe"
+msgstr "abbestellen"
+#: services/urls.py: 43
+msgid "scientific-council"
+msgstr "wissenschaftsrat"
+#: services/urls.py:
+msgid "events"
+msgstr "veranstaltungen"
+#: services/models.py: 352
+msgid "Scientific Council Member"
+msgstr "Mitglied des wissenschaftlichen Rates"
+#: services/models.py: 353
+msgid "Scientific Council Members"
+msgstr "Mitglieder des wissenschaftlichen Rates"
+#: services/base.html: 161
+msgid "Scientific Council"
+msgstr "Wissenschaftsrat"
+#: services/base.html: 161
+msgid "Members"
+msgstr "Mitglieder"
+#: services/consiliul-stiintific.html: 161
+msgid "Scientific</span> <span> Council"
+msgstr "Wissenschaftlicher</span> <span> Rat"
+#: services/consiliul-stiintific.html: 161
+msgid "President"
+msgstr "Präsident"
+#: services/consiliul-stiintific.html: 161
+msgid "Area of Interest"
+msgstr "Bereich von Interesse"

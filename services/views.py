@@ -309,7 +309,16 @@ def team(request):
     context = {
         'dir_members': Team.objects.filter(hierarchy=0),
         'adm_members': Team.objects.filter(hierarchy=1).order_by("surname"),
-        'field_members': Team.objects.filter(job__exact="Ranger").order_by("surname"),
+        'field_members': Team.objects.filter(hierarchy=2).order_by("surname"),
+    }
+    return render(request, template, context)
+#========================council page================================
+def council_view(request):
+    template = 'services/consiliul_stiintific.html'
+
+    context = {
+        'president': SCouncil.objects.filter(hierarchy=0),
+        'other_members': SCouncil.objects.filter(hierarchy=1).order_by("surname"),
     }
     return render(request, template, context)
 #========================wildlife page================================
