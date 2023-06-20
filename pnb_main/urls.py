@@ -35,8 +35,8 @@ urlpatterns = [
 ]
 urlpatterns += i18n_patterns(
     path('users/', include('users.urls')),
-    path('', include('services.urls')),
-    path('tickets/', include('payments.urls')),
+    re_path('', include('services.urls')),
+    re_path('tickets/', include('payments.urls')),
     path('captcha/', include('captcha.urls')),
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
