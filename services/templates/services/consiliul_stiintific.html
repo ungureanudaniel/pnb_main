@@ -22,6 +22,14 @@
 					</div>
 				</section>
 				<!-- welcome end-->
+				{% if user.is_authenticated %}
+				<div class="col-12 filter-panel__item  mb-5">
+					<a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'admin:index' %}services/scouncil/">
+						<img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">{% trans 'Add a member' %}</span>
+					</a>
+				</div>
+				{% endif %}
+									
 				<!-- section start-->
 				<section class="section">
 					<div class="container">
