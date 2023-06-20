@@ -679,7 +679,7 @@ msgid "f'Thank you for writting us {message_author}! We will answer as soon as p
 msgstr "f'Mulțumim pentru mesaj {message_author}! Vom răspunde cât de curând posibil.'"
 #: services/urls.py:
 msgid "home"
-msgstr "acasă"
+msgstr "acasa"
 #: services/urls.py:
 msgid "frequently-asked-questions"
 msgstr "întrebări-frecvente"
