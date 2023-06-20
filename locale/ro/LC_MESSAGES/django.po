@@ -2723,4 +2723,4 @@ msgid "President"
 msgstr "Președinte"
 #: services/consiliul-stiintific.html: 161
 msgid "Area of Interest"
-msgstr "Domeniu de Expertiză"
+msgstr "Domeniul de Expertiză"
