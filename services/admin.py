@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
-Flora, Wildlife
+Flora, Wildlife, SCouncil
 
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
@@ -25,7 +25,7 @@ class TestimonialAdmin(admin.ModelAdmin):
     fields = ['status', 'fname', 'lname', 'email', 'thumbnail', 'text']
 
 class PartnerAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_ro', 'title_de', 'link', 'image']
+    fields = ['title','link', 'image','rank']
 
 class TeamAdmin(admin.ModelAdmin):
     fields = ['firstname', 'surname', 'image', 'text', 'phone', 'email', 'job','job_ro', 'job_de', 'judet', 'sector', 'sector_ro', 'sector_de', 'hierarchy']
@@ -53,7 +53,8 @@ class BlogPostCategoryAdmin(admin.ModelAdmin):
     fields = ['title', 'title_ro', 'title_de']
 class BlogPostAdmin(admin.ModelAdmin):
     fields = ['author', 'created_date', 'title', 'title_ro', 'title_de', 'image', 'text', 'text_ro', 'text_de', 'category', 'featured', 'status']
-
+class SCouncilAdmin(admin.ModelAdmin):
+    fields = ['title', 'firstname', 'surname', 'image', 'cv', 'interest', 'interest_ro', 'interest_de', 'phone', 'email', 'hierarchy']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
@@ -72,3 +73,4 @@ admin.site.register(Flora, FloraAdmin)
 admin.site.register(Wildlife, WildlifeAdmin)
 admin.site.register(FloraCategory, FloraCategoryAdmin)
 admin.site.register(WildlifeCategory, WildlifeCategoryAdmin)
+admin.site.register(SCouncil, SCouncilAdmin)

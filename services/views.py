@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 import requests
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import activate
 from django.views.decorators.csrf import csrf_protect
 #----blog imports
 from django.db.models import Q, Count
@@ -100,9 +101,6 @@ def home(request):
         #--------------check if newsletter email exists already---------
         if request.POST.get('form-type') == "subscribe":
             newsletter_email = request.POST.get('subscriber')
-            # lang = translation.get_language_from_request(request)
-            # translation.activate(lang)
-            # request.LANGUAGE_CODE = translation.get_language()
             if newsletter_email:
                 try:
                     duplicate = Subscriber.objects.get(email=newsletter_email)
@@ -133,9 +131,10 @@ def home(request):
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
-        # 'reviews': Testimonial.objects.filter(status=True),
-        'partners': Partner.objects.all(),
+        'reviews': Testimonial.objects.filter(status=True),
+        'partners': Partner.objects.all().order_by("rank"),
         })
+    
     return render(request, template, context)
 
 #------------------------CONTACT apge------------------------------------CONTACT
@@ -310,7 +309,16 @@ def team(request):
     context = {
         'dir_members': Team.objects.filter(hierarchy=0),
         'adm_members': Team.objects.filter(hierarchy=1).order_by("surname"),
-        'field_members': Team.objects.filter(job__exact="Ranger").order_by("surname"),
+        'field_members': Team.objects.filter(hierarchy=2).order_by("surname"),
+    }
+    return render(request, template, context)
+#========================council page================================
+def council_view(request):
+    template = 'services/consiliul_stiintific.html'
+
+    context = {
+        'president': SCouncil.objects.filter(hierarchy=0),
+        'other_members': SCouncil.objects.filter(hierarchy=1).order_by("surname"),
     }
     return render(request, template, context)
 #========================wildlife page================================

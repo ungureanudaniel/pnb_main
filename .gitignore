@@ -12,6 +12,7 @@ venv/
 media
 # Database
 db.sqlite3
-
+#debug
+pnb_main.log
 # Static folder at project root
 staticfiles

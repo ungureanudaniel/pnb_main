@@ -6,7 +6,7 @@ wildlife, flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, WildlifeDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view, page_not_found, server_error, park_rules
+unsubscribe, sector_map_view, page_not_found, server_error, park_rules,council_view
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
@@ -15,7 +15,7 @@ urlpatterns = [
         #-------Authentication----------------
         path('logout/', user_logout, name='signout'),
         #-------Visitor urls------------------
-        path('', home, name="home"),
+        path('home', home, name="home"),
         path('contact', contacts_view, name="contact"),
         path('coming-soon', coming_soon, name="coming-soon"),
         path('gallery', gallery, name="gallery"),
@@ -24,7 +24,7 @@ urlpatterns = [
         path('flora', flora, name="flora"),
         path('history', history, name="history"),
         path('videos', video_view, name="videos"),
-        path('_(frequently-asked-questions)', faq_view, name="faq"),
+        path('frequently-asked-questions', faq_view, name="faq"),
         path('theme-trails', theme_trails, name="theme-trails"),
         path('public-documents', public_docs, name="public-docs"),
         path('ticket-information', ticket_info, name="ticket-info"),
@@ -37,6 +37,7 @@ urlpatterns = [
         path('flora-info/<slug:slug>/', FloraDetailView.as_view(), name='flora-details'),
         path('subscription-confirmation/', subscription_conf_view, name='subscription-confirmation'),
         path('unsubscribe', unsubscribe, name='unsubscribe'),
+        path('scientific-council', council_view, name='scientific-council'),
 
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),

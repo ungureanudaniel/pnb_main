@@ -32,10 +32,10 @@
 								<div class="row">
 									{% if user.is_authenticated %}
 									<div class="col-12 filter-panel__item  mb-5">
-			              <a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'admin:index' %}">
-			                <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">{% trans 'Add an announcement' %}</span>
-			              </a>
-			            </div>
+										<a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'admin:index' %}services/announcement">
+											<img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">{% trans 'Add an announcement' %}</span>
+										</a>
+			            			</div>
 									{% endif %}
 									{% if fut_announc %}
 										{% for a in fut_announc %}
