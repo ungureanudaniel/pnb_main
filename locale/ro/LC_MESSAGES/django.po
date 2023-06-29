@@ -255,8 +255,8 @@ msgid "If you want to buy tickets for your friends or family too, you can add be
 msgstr "Dacă doriți să cumpărați bilete și pentru prietenii sau familia dvs., puteți adăuga mai jos numărul de bilete pe care doriți să le cumpărați, apoi apăsați Cumpărați"
 
 #: .\services\templates\services\ticket-online.html:143
-msgid "Proceed to Payment"
-msgstr "Mergeți la Plată"
+msgid "Forward"
+msgstr "Mai departe"
 
 #: .\services\templates\services\ticket-online.html:143
 msgid "For more information on litigations/dispute resolutions, please also consult the <a href='https://anpc.ro/en/'>ANPC (Consumer Protection National Agency) website</a> and <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Order 449 / 2022</a>"
@@ -310,7 +310,7 @@ msgid "Order Summary"
 msgstr "Sumarul comenzii"
 
 #: .\services\templates\services\ticket-checkout.html:143
-msgid "Checkout"
+msgid "Pay"
 msgstr "Către Plată"
 
 #: .\services\templates\services\ticket-checkout.html:143
@@ -537,11 +537,11 @@ msgstr "FEEDBACK ȘI MATERIALE"
 msgid "Any comments or materials sent to the Administration of Bucegi Natural Park (via any medium including e-mail and regular mail) including feedback data, such as questions, ideas, comments, suggestions, or the like regarding this Website or any other products or programs of the Administration of Bucegi Natural Park (collectively “Feedback”), shall be deemed to be non-confidential and shall become the sole property of the Administration of Bucegi Natural Park. You hereby assign all rights in the Feedback to the Administration of Bucegi Natural Park, and the Administration of Bucegi Natural Park shall have no obligation of any kind with respect to such Feedback. Without limiting the foregoing, the Administration of Bucegi Natural Park shall be free to reproduce, use, disclose, exhibit, display, transform, create derivative works and distribute the Feedback to others without limitation, without acknowledgment or compensation to you. Further, you expressly waive any moral rights you may have in such Feedback"
 msgstr "Orice comentarii sau materiale trimise Administrației Parcului Natural Bucegi (prin orice mijloc, inclusiv e-mail și poștă obișnuită), inclusiv date de feedback, cum ar fi întrebări, idei, comentarii, sugestii sau altele asemenea referitoare la acest Website sau la orice alte produse sau programe ale Bucegi Administrația Parcului Natural (colectiv „Feedback”), va fi considerată a fi neconfidențială și va deveni proprietatea exclusivă a Administrației Parcului Natural Bucegi. Prin prezenta atribuiți toate drepturile în Feedback-ului Administrației Parcului Natural Bucegi, iar Administrația Parcului Natural Bucegi nu va avea nicio obligație cu privire la acest Feedback. Fără a limita cele de mai sus, Administrația Parcului Natural Bucegi va fi liberă să reproducă, să utilizeze, să dezvăluie, să expună, să afișeze, să transforme, să creeze lucrări derivate și să distribuie Feedback-ul altora fără limitare, fără a vă recunoaște sau compensa. În plus, renunțați în mod expres la orice drepturi morale pe care le aveți în acest Feedback"
 #: .\services\templates\services\terms.html:9
-msgid "REFUND POLICY"
-msgstr "POLITICA DE RAMBURSARE"
+msgid "RETURN / CANCELLATION POLICY"
+msgstr "RETUR / ANULARE"
 #: .\services\templates\services\terms.html:9
-msgid "The Administration of Bucegi Natural Park can only refund payments according to existing Romanian laws (O.U.G. 34/2014) and as a consequence, the digital products, that are not physical/material, are not refundable (e.g. digital visitor tickets). In any case, please tell us your problem using the contact details on the Website and, as a gesture of goodwill, we shall try to help, if possible. The refunding, if applicable, is done using the same means of payment as the initial payment, received from the client. Also, the Administration of Bucegi Natural Park is grateful for all donations received in support of our conservation work. Due to restrictions imposed by law and the nature of charitable donations, we cannot provide refunds for donations once they have been received. However, if you believe that your donation was made in error please contact us. All mistaken or unauthorized donations are refunded using the original method of payment"
-msgstr "Administrația Parcului Natural Bucegi poate rambursa plățile doar în conformitate cu legile românești în vigoare (O.U.G. 34/2014) și, în consecință, produsele digitale, care nu sunt fizice/materiale, nu sunt rambursabile (de exemplu, biletele de vizitare digitale). În orice caz, vă rugăm să ne comunicați problema dvs. folosind datele de contact de pe website și, cu bună credință, vom încerca să vă ajutăm, dacă este posibil. Rambursarea, dacă este cazul, se face folosind același mijloc de plată ca și plata inițială, primită de la client. De asemenea, Administrația Parcului Natural Bucegi este recunoscătoare pentru toate donațiile primite în sprijinul activității noastre de conservare. Din cauza restricțiilor impuse de lege și a naturii donațiilor caritabile, nu putem oferi rambursări pentru donații odată ce acestea au fost primite. Cu toate acestea, dacă credeți că donația dvs. a fost făcută din greșeală, vă rugăm să ne contactați. Toate donațiile greșite sau neautorizate sunt rambursate folosind metoda de plată inițială"
+msgid "The visitor tickets bought on this platform are exclusively digital products, generated by computer software and sent to customers by email automatically. The Administration of Bucegi Natural Park can only refund payments according to existing Romanian laws (O.U.G. 34/2014, Art. 16, lit m) and as a consequence, the <strong>digital products</strong>, that are not physical/material, <strong>cannot be returned, cancelled nor refunded</strong> (e.g., digital visitor tickets). In any case, please tell us your problem using the contact details on the Website and, as a gesture of goodwill, we shall try to help, if possible. In the case <strong>physical goods</strong> sold on this online platform, <strong>customers can return products</strong> within 14 days from the receiving day, with a prior notification by email or phone. Refunding, if applicable, is done using the same means of payment as the initial payment, received from the client, within 30 days from the day we received back the goods, in a perfect state, unaltered by the customer. Also, the Administration of Bucegi Natural Park is grateful for all donations received in support of our conservation work. Due to restrictions imposed by law and the nature of charitable donations, we cannot provide refunds for donations once they have been received. However, if you believe that your donation was made in error, please contact us. All mistaken or unauthorized donations are refunded using the original method of payment"
+msgstr "Biletele pentru vizitatori cumpărate de pe această platformă sunt produse exclusiv digitale, generate de un program informatic și trimise clienților prin e-mail automat. Administrația Parcului Natural Bucegi poate rambursa plățile numai conform legilor române în vigoare (O.U.G. 34/2014, Art. 16, lit m) și, în consecință, <strong>produsele digitale</strong>, care nu sunt fizice/materiale, <strong>nu pot fi returnate, anulate sau rambursate</strong> (de exemplu, bilete digitale pentru vizitatori). În orice caz, vă rugăm să ne spuneți problema dvs. folosind datele de contact de pe Site și, ca un gest de bunăvoință, vom încerca să vă ajutăm, dacă este posibil. În cazul unor eventuale <strong>bunuri fizice</strong> vândute pe această platformă online, <strong>clienții pot returna produsele</strong> în termen de 14 zile de la data primirii, cu o notificare prealabilă prin email sau telefon. Rambursarea, dacă este cazul, se face folosind același mijloc de plată ca și plata inițială, primită de la client, în termen de 30 zile de la data primirii bunurilor returnate, în caz că acestea sunt în stare perfectă și nealterate de către cumpărător. De asemenea, Administrația Parcului Natural Bucegi este recunoscătoare pentru toate donațiile primite în sprijinul activității noastre de conservare. Din cauza restricțiilor impuse de lege și a naturii donațiilor caritabile, nu putem oferi rambursări pentru donații odată ce acestea au fost primite. Cu toate acestea, dacă credeți că donația dvs. a fost făcută din greșeală, vă rugăm să ne contactați. Toate donațiile greșite sau neautorizate sunt rambursate folosind metoda inițială de plată"
 #: .\services\templates\services\terms.html:9
 msgid "USER CONTENT AND INTERACTIVE SERVICES OR AREAS"
 msgstr "CONȚINUTUL UTILIZATORULUI ȘI SERVICII SAU ZONE INTERACTIVE"
@@ -2724,3 +2724,15 @@ msgstr "Președinte"
 #: services/consiliul-stiintific.html: 161
 msgid "Area of Interest"
 msgstr "Domeniul de Expertiză"
+#: tickets/payment-confirmation.html: 161
+msgid "<span>Payment</span> <span> Confirmation</span>"
+msgstr "<span>Confirmarea</span> <span> Plății</span>"
+#: tickets/payment-confirmation.html: 38
+msgid "Congratulations! Your payment was successful"
+msgstr "Felicitări! Plata dvs. a fost înregistrată"
+#: tickets/payment-confirmation.html: 39
+msgid "Digital tickets have been sent to the specified email address"
+msgstr "Biletele digitale au fost trimise pe adresa de email specificată"
+#: tickets/payment-return.html: 38
+msgid "Unfortunatelly, your payment was not successful"
+msgstr "Din păcate plata dvs. nu a fost finalizată"

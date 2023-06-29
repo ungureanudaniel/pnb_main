@@ -11,3 +11,5 @@ pymemcache
 django-modeltranslation
 django-hitcount
 django-multiselectfield
+pycryptodome
+pyopenssl

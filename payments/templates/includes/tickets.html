@@ -12,7 +12,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <!-- Image -->
-        <img style="" src="{% static 'img/icons/tickets2.png' %}" alt="..." class="card-img-top">
+        <img style="height:auto;width:400px;" src="{% static 'img/icons/tickets2.png' %}" alt="..." class="card-img-top">
         {% if messages %}
         <div class="container error-container">
           <div class="alert" id="form_message" role="alert"></div>
@@ -46,7 +46,7 @@
 						<div class="row">
 							<div class="col-12 text-center">
                 <a class="col-6 button button--primary" href="{% url 'sector-map' %}">{% trans 'Buy from rangers' %}</a>
-                <a class="col-6 button button--primary button--filled" href="{% url 'ticket-online' %}">{% trans 'Buy Online' %}</a>
+                <a class="col-6 button button--primary button--filled" href="{% url 'choose-tickets' %}">{% trans 'Buy Online' %}</a>
               </div>
 						</div>
 					</div>

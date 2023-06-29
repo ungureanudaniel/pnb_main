@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
-from django.utils.timezone import now
+from django.utils import timezone
 from datetime import timedelta
 #================Ticket buyer models=====================================
 class Ticket(models.Model):
@@ -15,8 +15,8 @@ class Ticket(models.Model):
     ticket_series =  models.CharField(max_length=3)
     ticket_nr = models.CharField(max_length=8)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
-    start_date = models.DateTimeField(default=now(), blank=True)
-    expiry = models.DateTimeField(default=now() + timedelta(days=90), blank=True)
+    start_date = models.DateTimeField(default=timezone.now(), blank=True)
+    expiry = models.DateTimeField(default=timezone.now() + timedelta(days=90), blank=True)
     def save(self, *args, **kwargs):
         self.slug = slugify(f"{self.buyer_fname}+'-'+{self.buyer_lname}")
         super().save(*args, **kwargs)
@@ -39,7 +39,7 @@ class Payment(models.Model):
     city = models.CharField(max_length=30)
     zip = models.CharField(max_length=30)
     notes = models.TextField()
-    timestamp = models.DateTimeField(default=now(), blank=True)
+    timestamp = models.DateTimeField(default=timezone.now(), blank=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     def save(self, *args, **kwargs):

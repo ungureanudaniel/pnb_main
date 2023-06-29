@@ -36,7 +36,7 @@
 						<div class="row">
 							<div class="col-12">
 								<!-- checkout start-->
-								<form class="form checkout-form" action="." method="POST" enctype="multipart/form-data">
+								<form class="form checkout-form" action="https://sandboxsecure.mobilpay.ro/" method="POST" enctype="multipart/form-data">
 									{% csrf_token %}
 									<div class="row">
 										<div class="col-lg-7 col-xl-8">
@@ -381,7 +381,7 @@
 															<li><span><input type="checkbox" id="terms" name="terms" value=""/></span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
 														</ul>
 
-														<button class="form__submit" type="submit">{% trans 'Checkout' %}</button>
+														<button class="form__submit" type="submit">{% trans 'Pay' %}</button>
 														<p class="form__title text-warning">{% trans 'Disabled for now, but not for long. Stay tuned!' %}</p>
 													</div>
 												</div>

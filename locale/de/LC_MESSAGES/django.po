@@ -209,10 +209,6 @@ msgid "The final price of the visitor ticket will also include a small transacti
 msgstr "Der Endpreis des Besuchertickets enthält auch eine kleine Transaktionsgebühr, die von unserem Zahlungsdienstleister Netopia Payments erhoben wird und 0,95% pro Transaktion beträgt"
 
 #: .\services\templates\services\ticket-description.html:9
-msgid "Proceed to Payment Method"
-msgstr "Zum der Zahlungsmethode"
-
-#: .\services\templates\services\ticket-description.html:9
 msgid "Payer Personal Information"
 msgstr "Persönliche Daten des Zahlers"
 
@@ -395,7 +391,7 @@ msgid "Order Summary"
 msgstr "Zusammenfassung der Bestellung"
 
 #: .\services\templates\services\ticket-checkout.html:143
-msgid "Checkout"
+msgid "Pay"
 msgstr "Zur Kasse"
 
 #: .\services\templates\services\ticket-checkout.html:143
@@ -409,8 +405,8 @@ msgid "I read and accept the "
 msgstr "Ich habe gelesen und akzeptiere die "
 
 #: .\services\templates\services\ticket-online.html:143
-msgid "Proceed to Payment"
-msgstr "Weiter zur Zahlung"
+msgid "Forwand"
+msgstr "Weiter"
 #: .\services\templates\services\ticket-online.html:9
 msgid "You can consult our"
 msgstr "Sie können unser"
@@ -2441,3 +2437,13 @@ msgstr "Präsident"
 #: services/consiliul-stiintific.html: 161
 msgid "Area of Interest"
 msgstr "Bereich von Interesse"
+#: tickets/payment-confirmation.html: 161
+msgid "<span>Payment</span> <span> Confirmation</span>"
+msgstr "<span>Zahlung</span> <span> Konfirmation</span>"
+#: tickets/payment-confirmation.html: 38
+msgid "Congratulations! Your payment was successful"
+msgstr "Herzlichen Glückwunsch! Ihre Zahlung war erfolgreich"
+#: tickets/payment-confirmation.html: 39
+msgid "Digital tickets have been sent to the specified email address"
+msgstr "Digitale Tickets wurden an die angegebene E-Mail Adresse gesendet"
+#: tickets/payment-return.html: 38
