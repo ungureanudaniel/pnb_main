@@ -12,6 +12,8 @@ venv/
 media
 # Database
 db.sqlite3
+#certificates
+payments/util/mobilpay_pubkey.cer
 #debug
 pnb_main.log
 # Static folder at project root
