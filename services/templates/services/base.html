@@ -93,7 +93,15 @@
 							</span>
 						</div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></div>
-						<div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></div>
+						<!-- <div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></div> -->
+						<div class="screen__item screen--trigger" data-category="public-docs">
+							<span>{% trans 'Public Documents' %}</span>
+							<span>
+								<svg class="icon">
+									<use xlink:href="#chevron"></use>
+								</svg>
+							</span>
+						</div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">{% trans 'Contact' %}</a></div>
 						<div class="screen__item screen--trigger" data-category="language">
 							<span>{% trans 'Language' %}</span>
@@ -184,6 +192,19 @@
 						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'Caves' %}</a></div>
 
 
+					</div>
+				</div>
+				<div class="menu-dropdown__inner" data-value="public-docs">
+					<div class="screen screen--sub">
+						<div class="screen__heading">
+							<h6 class="screen__back">
+								<svg class="icon">
+									<use xlink:href="#chevron-left"></use>
+								</svg> <span>{% trans 'Public Documents' %}</span>
+							</h6>
+						</div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Administrație' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'council-docs' %}">{% trans 'Consiliu Consultativ' %}</a></div>
 					</div>
 				</div>
 				<div class="menu-dropdown__inner" data-value="language">
@@ -285,7 +306,6 @@
 							<ul class="lower-menu">
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Education' %}</a></li>
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'map_coming_soon' %}">{% trans 'Map' %}</a></li>
-								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></li>
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
 								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">FAQ</a></li>
@@ -295,7 +315,17 @@
 							</ul>
 							<!-- lang select start-->
 
+							<ul class="lang-select">
 
+								<li class="lang-select__item lang-select__item--active"><span>{% trans 'Public Documents' %}</span>
+										<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
+											<!-- <p class="text-white">{{ languages }}</p> -->
+									<ul class="lang-select__sub-list">
+										<li><a href="{% url 'public-docs' %}">{% trans 'Administrație' %}</a></li>
+										<li><a href="{% url 'council-docs' %}">{% trans 'Consiliu Consultativ' %}</a></li>
+									</ul>
+								</li>
+							</ul>
 							<ul class="lang-select">
 
 								<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>

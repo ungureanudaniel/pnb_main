@@ -377,6 +377,15 @@ def public_docs(request):
     'links':PublicCatLink.objects.all()
     }
     return render(request, template, context)
+#======================== consulting council documents page================================
+def council_docs(request):
+    template = 'services/documente_consiliu_consultativ.html'
+
+    context = {
+    'council_docs': CouncilDocsCategory.objects.all(),
+    'links':CouncilCatLink.objects.all()
+    }
+    return render(request, template, context)
 #======================== faq page================================
 def faq_view(request):
     template = 'services/faq.html'

@@ -103,6 +103,41 @@ class PublicCatLink(models.Model):
 
     def __str__(self):
         return self.year
+#================Council docs Category models=====================================
+class CouncilDocsCategory(models.Model):
+    """
+    This class creates database tables for categories for each council documents
+    category for natural park bucegi administration
+    """
+    title = models.CharField(max_length=70)
+    text = RichTextField()
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Council Document'
+        verbose_name_plural = "Council Documents"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+#================Council docs links models=====================================
+class CouncilCatLink(models.Model):
+    """
+    This class creates database tables for download links per years for each council
+    documents category, linked by foreignkey to CouncilDocsCategory
+    """
+    year = models.CharField(max_length=4)
+    category = models.ForeignKey(CouncilDocsCategory, on_delete=models.CASCADE)
+    link = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=300, blank =True, null=True)
+
+    class Meta:
+        verbose_name = 'Council Documents Link'
+        verbose_name_plural = "Council Documents Links"
+        ordering = ["-year"]
+
+    def __str__(self):
+        return self.year
 #================testimonial model=====================================
 class Testimonial(models.Model):
     """

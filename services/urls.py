@@ -6,7 +6,7 @@ wildlife, flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, WildlifeDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view, page_not_found, server_error, park_rules,council_view
+unsubscribe, sector_map_view, page_not_found, server_error, park_rules,council_view, council_docs
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
@@ -27,6 +27,7 @@ urlpatterns = [
         path('frequently-asked-questions', faq_view, name="faq"),
         path('theme-trails', theme_trails, name="theme-trails"),
         path('public-documents', public_docs, name="public-docs"),
+        path('documente-consiliu-consultativ', council_docs, name="council-docs"),
         path('ticket-information', ticket_info, name="ticket-info"),
         path('privacy_information', privacy_view, name="privacy_info"),
         path('terms-conditions', terms_view, name="terms"),

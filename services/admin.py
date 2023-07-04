@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
-Flora, Wildlife, SCouncil
+Flora, Wildlife, SCouncil, CouncilDocsCategory, CouncilCatLink
 
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
@@ -35,9 +35,15 @@ class ContactAdmin(admin.ModelAdmin):
 class PublicCatLinkAdmin(admin.ModelAdmin):
     list_display = ('year', 'category', 'link_ro', 'link_en')
     fields = ['year', 'category', 'link_ro', 'link_en']
+class CouncilCatLinkAdmin(admin.ModelAdmin):
+    list_display = ('year', 'category', 'link')
+    fields = ['year', 'category', 'link']
 class PublicCategoryAdmin(admin.ModelAdmin):
     list_display = ('title_en',)
     fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
+class CouncilDocsCategoryAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    fields = ['title', 'text',]
 class AnnouncementAdmin(admin.ModelAdmin):
     fields = ['title', 'title_ro', 'title_de','timestamp','expiry', 'image', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro']
 class CommentAdmin(admin.ModelAdmin):
@@ -74,3 +80,6 @@ admin.site.register(Wildlife, WildlifeAdmin)
 admin.site.register(FloraCategory, FloraCategoryAdmin)
 admin.site.register(WildlifeCategory, WildlifeCategoryAdmin)
 admin.site.register(SCouncil, SCouncilAdmin)
+admin.site.register(CouncilCatLink, CouncilCatLinkAdmin)
+admin.site.register(CouncilDocsCategory, CouncilDocsCategoryAdmin)
+
