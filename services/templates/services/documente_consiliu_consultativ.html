@@ -41,7 +41,7 @@
 									</div>
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
-										<p>După introducerea câtorva informații despre dvs., documentul oficial va fi trimis la adresa de email specificată</p>
+										<p>Documentul oficial va putea fi descărcat după introducerea informațiilor cerute mai jos și apăsarea butonului Confirmare</p>
 										<form id="council_download_form" class="mb-6" method="POST" action="{% url 'council-docs' %}">
 											{% csrf_token %}
 											<!-- Institution name -->
