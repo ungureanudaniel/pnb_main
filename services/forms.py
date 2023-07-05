@@ -1,6 +1,6 @@
 from django import forms
 from .models import Testimonial, AttractionCategory, Attraction, Contact,\
-Comment
+Comment, PublicDocsDownloaderEntity
 from ckeditor.widgets import CKEditorWidget
 from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
@@ -24,7 +24,20 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment
         fields=['name', 'text', 'thumbnail']
+#----------file download form-----------
+class CouncilDocsForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(CouncilDocsForm, self).__init__(*args, **kwargs)
+        self.fields['institution'].label = _("Numele instituției dvs.")
+        self.fields['name'].label = _("Numele dvs.")
+        self.fields['email'].label = _("Adresa dvs. de email")
 
+        self.fields['institution'].widget.attrs['style']="width:450px;margin:0 20px 20px 0px;"
+        self.fields['name'].widget.attrs['style']="width:450px;margin:0 20px 20px 0px;"
+        self.fields['email'].widget.attrs['style']="width:450px;margin:0 20px 20px 0px;"
+    class Meta:
+        model=PublicDocsDownloaderEntity
+        fields=['institution', 'name', 'email']
 # attr_choices = AttractionCategory.objects.all().values_list('name', 'name')
 #
 # attr_choices_list = []

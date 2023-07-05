@@ -27,42 +27,74 @@
 				<!-- section start-->
 				<section class="section elements mt-2 pt-1 mb-5">
 					<div class="container">
+						{% include 'includes/messages.html' %}
+						
 						<div class="row">
 							<div class="col-xl-8">
 								<h4 class="elements__title"></h4>
-
 								{% for item in council_docs %}
+								
+
 								<div class="accordion accordion--primary">
 									<div class="accordion__title-block">
 										<h6 class="accordion__title">{{ item.title|capfirst }}</h6><span class="accordion__close"></span>
 									</div>
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
-										<p>{% trans "The official document can be downloaded below" %}</p>
-											{% for link in links|in_category:item %}
-												<!-- {{ link.category }} = {{ item.title }} -->
-													{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
-
-													<a href="{{ link.link.url }}" download class="button button--primary button--rounded">
-														<table style="text-decoration:none">
-														  <tr>
-																<!-- {{ link.category }} {{ item.slug }} -->
-																<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
-																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-														  </tr>
-														</table>
-													</a>
-													{% else %}
-													<a href="{{ link.link.url }}" download class="button button--primary button--rounded">
-														<table style="text-decoration:none">
-														  <tr>
-																<th><p> </p></th>
-																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-														  </tr>
-														</table>
-													</a>
-													{% endif %}
+										<p>După introducerea câtorva informații despre dvs., documentul oficial va fi trimis la adresa de email specificată</p>
+										<form id="council_download_form" class="mb-6" method="POST" action="{% url 'council-docs' %}">
+											{% csrf_token %}
+											<!-- Institution name -->
+											<div class="form-group">
+											  <label class="visually-hidden" for="modalSigninName">
+												Nume instituție
+											  </label>
+											  <input type="text" name="institution" class="form-control" id="modalSigninName" placeholder="Introduceți numele instituției" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+											</div>
+								
+											<!-- Representative name -->
+											<div class="form-group mb-5">
+											  <label class="visually-hidden" for="modalSigninName">
+												Nume reprezentant
+											  </label>
+											  <input type="text" name="name" class="form-control" id="modalSigninName" placeholder="Introduceți numele dvs" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+											</div>
+											<!-- Email -->
+											<div class="form-group">
+											  <label class="visually-hidden" for="modalSigninName">
+												Email
+											  </label>
+											  <input type="text" name="email" class="form-control" id="modalSigninName" placeholder="Introduceți email dvs" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+											</div>
+											<div class="col-12 mb-5">
+												<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
+											  	<br>
+											  	{{ form.captcha }}
+											  	<br>
+											</div>											
+											<input value="Confirmare" type="submit" class="button w-100 text-dark button--primary button--rounded">											
+											
+										</form>
+										
+										{% for link in links|in_category:item %}
+										{{ institution_form.email }}
+										<script>
+											
+												document.getElementById('council_download_form').addEventListener('submit', function() {
+												// Delay the download action slightly to allow the form submission to complete
+												setTimeout(function() {
+													window.location.href = "{{ link.link.url }}";
+												}, 10);
+												});
+										  </script>
 										{% endfor %}
+										<!-- <script type="text/javascript">
+											function refresh_file_download() {    
+												setTimeout(function () {
+													location.reload()
+												}, 100);
+											}
+										</script> -->
 									</div>
 								</div>
 								{% endfor %}
@@ -72,4 +104,5 @@
 				</section>
 				<!-- section end-->
 			</main>
+			
 {% endblock %}

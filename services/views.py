@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
+from django.conf import settings
 from django.utils import translation, formats, timezone
 from utils.weather_scrape import scraped_data
 from django.views.decorators.gzip import gzip_page
@@ -377,14 +378,40 @@ def public_docs(request):
     'links':PublicCatLink.objects.all()
     }
     return render(request, template, context)
-#======================== consulting council documents page================================
+#======================== consulting council documents pages================================
 def council_docs(request):
-    template = 'services/documente_consiliu_consultativ.html'
+    template_name = 'services/documente_consiliu_consultativ.html'
+    context ={}
+    if request.method == "POST":
+        form = CaptchaForm(request.POST)
+        institution_form=CouncilDocsForm(request.POST)
+        try:
+            if form.is_valid():
+                if institution_form.is_valid():
+                    #=======save data=======
+                    new_downloader = institution_form.save(commit=False)
+                    new_downloader.save()
+                    context.update({'institution_form': institution_form})
+                    institution_form=CouncilDocsForm()
+                else:
+                    messages.warning(request, _("Formularul nu a fost completat corect!"))
+                    return redirect('council-docs')
+            else:
+                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
+                return redirect('council-docs')
+        except Exception as e:
+            messages.warning(request, f"{e}")
+            return redirect('council-docs')
+    else:
+        form = CaptchaForm()
+    context.update(
+        {'council_docs': CouncilDocsCategory.objects.all(),
+         'links':CouncilCatLink.objects.all(),
+         'form': form,
+        })
+    return render(request, template_name, context)
 
-    context = {
-    'council_docs': CouncilDocsCategory.objects.all(),
-    'links':CouncilCatLink.objects.all()
-    }
+    
     return render(request, template, context)
 #======================== faq page================================
 def faq_view(request):

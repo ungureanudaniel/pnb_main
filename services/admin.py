@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
-Flora, Wildlife, SCouncil, CouncilDocsCategory, CouncilCatLink
+Flora, Wildlife, SCouncil, CouncilDocsCategory, CouncilCatLink, PublicDocsDownloaderEntity
 
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
@@ -61,6 +61,8 @@ class BlogPostAdmin(admin.ModelAdmin):
     fields = ['author', 'created_date', 'title', 'title_ro', 'title_de', 'image', 'text', 'text_ro', 'text_de', 'category', 'featured', 'status']
 class SCouncilAdmin(admin.ModelAdmin):
     fields = ['title', 'firstname', 'surname', 'image', 'cv', 'interest', 'interest_ro', 'interest_de', 'phone', 'email', 'hierarchy']
+class PublicDocsDownloaderEntityAdmin(admin.ModelAdmin):
+    fields = ['institution', 'name', 'email']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
@@ -82,4 +84,5 @@ admin.site.register(WildlifeCategory, WildlifeCategoryAdmin)
 admin.site.register(SCouncil, SCouncilAdmin)
 admin.site.register(CouncilCatLink, CouncilCatLinkAdmin)
 admin.site.register(CouncilDocsCategory, CouncilDocsCategoryAdmin)
+admin.site.register(PublicDocsDownloaderEntity, PublicDocsDownloaderEntityAdmin)
 

@@ -138,6 +138,20 @@ class CouncilCatLink(models.Model):
 
     def __str__(self):
         return self.year
+#================person downloading docs model=====================================
+class PublicDocsDownloaderEntity(models.Model):
+    """
+    This class creates database tables for each person/institution downloading documents from the page of
+     Natural park bucegi
+    """
+    institution = models.CharField(max_length=100)
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=254)
+    class Meta:
+        verbose_name = 'Public Documents Downloads'
+        verbose_name_plural = "Public Documents Downloads"
+    def __str__(self):
+        return self.institution
 #================testimonial model=====================================
 class Testimonial(models.Model):
     """
