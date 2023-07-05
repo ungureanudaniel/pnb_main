@@ -63,6 +63,7 @@ class SCouncilAdmin(admin.ModelAdmin):
     fields = ['title', 'firstname', 'surname', 'image', 'cv', 'interest', 'interest_ro', 'interest_de', 'phone', 'email', 'hierarchy']
 class PublicDocsDownloaderEntityAdmin(admin.ModelAdmin):
     fields = ['institution', 'name', 'email']
+    list_display = ('institution', 'name', 'email')
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
