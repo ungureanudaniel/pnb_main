@@ -35,6 +35,8 @@ urlpatterns += i18n_patterns(
     path('', include('services.urls')),
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
+    path('map/', include('geemap.urls')),
+
 )
 #------------add custom media path for production mode-----------
 urlpatterns += re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),

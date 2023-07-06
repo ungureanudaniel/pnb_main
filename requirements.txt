@@ -13,3 +13,5 @@ django-hitcount
 django-multiselectfield
 pycryptodome
 pyopenssl
+folium
+earthengine-api
