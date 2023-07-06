@@ -41,25 +41,33 @@
 									</div>
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
-										<p>Documentul oficial va putea fi descărcat după introducerea informațiilor cerute mai jos și apăsarea butonului Confirmare</p>
-										<form id="council_download_form" class="mb-6" method="POST" action="{% url 'council-docs' %}">
+										<p>{% trans "The official document can be downloaded below" %}</p>
+										{% for link in links|in_category:item %}
+										<a href="{{ link.link.url }}" download class="button button--primary button--rounded">
+											<table style="text-decoration:none">
+											  <tr>
+													<!-- {{ link.category }} {{ item.slug }} -->
+													<th><p></p></th>
+													<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
+											  </tr>
+											</table>
+										</a>
+										{% endfor %}
+										<!-- <form id="council_download_form" class="mb-6" method="POST" action="{% url 'council-docs' %}">
 											{% csrf_token %}
-											<!-- Institution name -->
+											
 											<div class="form-group">
 											  <label class="visually-hidden" for="modalSigninName">
 												Nume instituție
 											  </label>
 											  <input type="text" name="institution" class="form-control" id="modalSigninName" placeholder="Introduceți numele instituției" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
 											</div>
-								
-											<!-- Representative name -->
 											<div class="form-group mb-5">
 											  <label class="visually-hidden" for="modalSigninName">
 												Nume reprezentant
 											  </label>
 											  <input type="text" name="name" class="form-control" id="modalSigninName" placeholder="Introduceți numele dvs" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
 											</div>
-											<!-- Email -->
 											<div class="form-group">
 											  <label class="visually-hidden" for="modalSigninName">
 												Email
@@ -74,27 +82,17 @@
 											</div>											
 											<input value="Confirmare" type="submit" class="button w-100 text-dark button--primary button--rounded">											
 											
-										</form>
+										</form> -->
 										
-										{% for link in links|in_category:item %}
-										{{ institution_form.email }}
-										<script>
+										
+										<!-- <script>
 											
 												document.getElementById('council_download_form').addEventListener('submit', function() {
-												// Delay the download action slightly to allow the form submission to complete
 												setTimeout(function() {
 													window.location.href = "{{ link.link.url }}";
 												}, 10);
 												});
-										  </script>
-										{% endfor %}
-										<!-- <script type="text/javascript">
-											function refresh_file_download() {    
-												setTimeout(function () {
-													location.reload()
-												}, 100);
-											}
-										</script> -->
+										  </script> -->
 									</div>
 								</div>
 								{% endfor %}
