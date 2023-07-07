@@ -5,7 +5,8 @@ from .models import Ticket, Payment
 import random, string
 import datetime
 from django.utils.text import slugify
-
+import warnings 
+warnings.filterwarnings('ignore', message='.*cryptography', )
 #--------------netopia payment imports-----------------
 from urllib.parse import unquote, quote
 import requests

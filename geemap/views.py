@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import warnings 
+warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.utils.translation import gettext_lazy as _
 #import pandas and geopandas
 import pandas as pd
