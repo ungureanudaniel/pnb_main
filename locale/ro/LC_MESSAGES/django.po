@@ -645,6 +645,9 @@ msgstr " Punctul de Informare <br/> <strong>Peștera</strong>"
 #: .\services\templates\services\info-points.html:34
 msgid "</span> <span>Information Points"
 msgstr "</span> <span>Puncte de Informare"
+#: .\services\templates\services\info-points.html:34
+msgid "Peștera Information Point"
+msgstr "Punct de Informare Peștera"
 
 #: .\services\templates\services\info-points.html:35
 msgid "A small but modern cabin, on top of the mountain, in the heart of our park, with lots of information for hikers, tourist and alike"
