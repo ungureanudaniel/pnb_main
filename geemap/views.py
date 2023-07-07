@@ -2,14 +2,10 @@ from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 #import pandas and geopandas
 import pandas as pd
-import matplotlib.pyplot as plt
 import geopandas as gpd
-#coordinates transformer
-from pyproj import Transformer
 #folium
 import folium
 from folium import plugins
-from folium.features import DivIcon
 from django.contrib import messages
 #gee
 import ee
