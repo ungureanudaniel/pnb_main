@@ -1,15 +1,15 @@
 from django.shortcuts import render
 import warnings 
 warnings.filterwarnings('ignore', message='.*cryptography', )
-from django.utils.translation import gettext_lazy as _
-#import pandas and geopandas
+# from django.utils.translation import gettext_lazy as _
+# # import pandas and geopandas
 # import pandas as pd
 # import geopandas as gpd
-#folium
+# #folium
 # import folium
 # from folium import plugins
 # from django.contrib import messages
-#gee
+# #gee
 # import ee
 
 # ee.Initialize()
@@ -18,7 +18,7 @@ def map_view(request):
     template_name="geemap/map.html"
     context = {}
     return render(request, template_name, context)
-# def map_disabled(request):
+# def map_view(request):
 #     template_name = 'geemap/map.html'
 #     #import geojson file for natura2000 site ROSCI0013
 #     park_limits = None
@@ -66,7 +66,10 @@ def map_view(request):
 #             name="Neighbouring U.A.T borders", 
 #             style_function=lambda x:style4,
 #             show=False).add_to(m)
-#         # folium.GeoJson(data=gdf_park['geometry'], name="Bucegi Natural Park", style_function=lambda x:style1).add_to(m)
+#         folium.GeoJson(
+#           data=gdf_park['geometry'], 
+#           name="Bucegi Natural Park", 
+#           style_function=lambda x:style1).add_to(m)
 #         # Add a layer control panel to the map.
 #     except Exception as e:
 #         messages.error(request, f"Error! Sorry for the inconvenience:{e}")
