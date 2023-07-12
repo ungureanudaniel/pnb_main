@@ -2447,3 +2447,11 @@ msgstr "Herzlichen Glückwunsch! Ihre Zahlung war erfolgreich"
 msgid "Digital tickets have been sent to the specified email address"
 msgstr "Digitale Tickets wurden an die angegebene E-Mail Adresse gesendet"
 #: tickets/payment-return.html: 38
+msgid "Unfortunatelly, your payment was not successful"
+msgstr "Leider war Ihre Zahlung nicht erfolgreich"
+#: services/base.html: 38
+msgid "Consultative Council"
+msgstr "Beratender Ausschuss"
+#: services/base.html: 38
+msgid "Administration"
+msgstr "Verwaltung"
