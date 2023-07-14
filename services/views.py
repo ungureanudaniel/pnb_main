@@ -1,4 +1,4 @@
-import warnings 
+import warnings
 warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
@@ -70,6 +70,7 @@ def add_testimonial(request):
 #========================home page=================================
 def home(request):
     template = 'services/home.html'
+    
     # weather = scraped_data()
     captcha_form = CaptchaForm()
     context = {

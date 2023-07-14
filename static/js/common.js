@@ -107,8 +107,8 @@
 		}
 
 		headerFrontThree()
-
-		// header intro
+		
+		//header intro
 
 		function headerIntro () {
 
@@ -994,3 +994,12 @@
 	})
 
 }(jQuery))
+// preloader
+$(document).ready(function ($) {
+	$(window).load(function () {
+		setTimeout(function(){
+			$('.preloader').fadeOut('slow', function () {
+			});
+		},2000); // set the time here
+	});  
+});
