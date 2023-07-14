@@ -158,7 +158,7 @@ def contacts_view(request):
                     new_message = message_form.save(commit=False)
                     new_message.timestamp = datetime.datetime.now()
                     new_message.save()
-                    send_mail(message_subject, message, sender_email, ['contact@bucegipark.ro'], fail_silently=False)
+                    send_mail(message_subject, message, sender_email, ['bucegipark@gmail.com'], fail_silently=False)
                     messages.success(request, _(f'Thank you for writting us {message_author}! We will answer as soon as possible.'))
                     return redirect('/contact')
                     # except Exception as e:
