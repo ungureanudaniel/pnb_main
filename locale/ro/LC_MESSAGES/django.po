@@ -2741,7 +2741,7 @@ msgid "Unfortunatelly, your payment was not successful"
 msgstr "Din păcate plata dvs. nu a fost finalizată"
 #: services/base.html: 38
 msgid "Consultative Council"
-msgstr "Consiliu Consultativ"
+msgstr "Consiliul Consultativ"
 #: services/base.html: 38
 msgid "Administration"
 msgstr "Administrație"
