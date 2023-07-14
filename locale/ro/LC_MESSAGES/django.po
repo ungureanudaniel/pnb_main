@@ -432,8 +432,8 @@ msgid "PRICES AND PAYMENT METHODS"
 msgstr "PREȚURI ȘI METODE DE PLATĂ"
 
 #: .\services\templates\services\terms.html:9
-msgid "The prices shown on www.bucegipark.ro include VAT. The purchase price shown on the invoice will be the same as the one shown on the Website at the time of purchase, to which the delivery costs are added, if applicable. Payment for the products is made using the methods of payment available at that time, on the website, when placing an online order. Online payment methods available on the Website, include a payment processor tax, requested by our external payment processor, that shall be stated in the payment page. If you encountered any problems during the payment process, please contact us by email at contact@bucegipark.ro or by phone at +40 758 039 784 to inform us and we will try to help"
-msgstr "Prețurile afișate pe www.bucegipark.ro includ TVA. Prețul de achiziție afișat pe documentul fiscal va fi același cu cel afișat pe Website la momentul achiziției, la care se adaugă și costurile de livrare, dacă sunt aplicabile. Plata produselor se face folosind metodele de plata disponibile la acel moment, pe website, la plasarea unei comenzi online. Metodele de plată online disponibile pe Website, includ o taxă de procesare a plății, solicitată de procesatorul nostru extern de plăți, care va fi menționată în pagina de plată. În cazul în care întâmpinați probleme în timpul procesului de plată, vă rugăm să ne contactați prin e-mail la contact@bucegipark.ro sau prin telefon la +40 758 039 784 pentru a ne informa și vom încerca să vă ajutăm"
+msgid "The prices shown on www.bucegipark.ro include VAT. The purchase price shown on the invoice will be the same as the one shown on the Website at the time of purchase, to which the delivery costs are added, if applicable. Payment for the products is made using the methods of payment available at that time, on the website, when placing an online order. Online payment methods available on the Website, include a payment processor tax, requested by our external payment processor, that shall be stated in the payment page. If you encountered any problems during the payment process, please contact us by email at bucegipark@gmail.com or by phone at +40 758 039 784 to inform us and we will try to help"
+msgstr "Prețurile afișate pe www.bucegipark.ro includ TVA. Prețul de achiziție afișat pe documentul fiscal va fi același cu cel afișat pe Website la momentul achiziției, la care se adaugă și costurile de livrare, dacă sunt aplicabile. Plata produselor se face folosind metodele de plata disponibile la acel moment, pe website, la plasarea unei comenzi online. Metodele de plată online disponibile pe Website, includ o taxă de procesare a plății, solicitată de procesatorul nostru extern de plăți, care va fi menționată în pagina de plată. În cazul în care întâmpinați probleme în timpul procesului de plată, vă rugăm să ne contactați prin e-mail la bucegipark@gmail.com sau prin telefon la +40 758 039 784 pentru a ne informa și vom încerca să vă ajutăm"
 #: .\services\templates\services\terms.html:9
 msgid "DELIVERY INFORMATION"
 msgstr "INFORMAȚII PRIVIND LIVRAREA"
@@ -591,8 +591,8 @@ msgstr "Acești Termeni ai Website-ului și utilizarea de către dvs. a Website-
 msgid "QUESTIONS & CONTACT INFORMATION"
 msgstr "ÎNTREBĂRI ȘI INFORMAȚII DE CONTACT"
 #: .\services\templates\services\terms.html:9
-msgid "Thank you for your cooperation. Questions or comments regarding the Website should be directed by electronic mail to contact@bucegipark.ro"
-msgstr "Mulțumim pentru înțelegere și cooperare. Întrebările sau comentariile cu privire la Website trebuie adresate prin e-mail la contact@bucegipark.ro"
+msgid "Thank you for your cooperation. Questions or comments regarding the Website should be directed by electronic mail to bucegipark@gmail.com"
+msgstr "Mulțumim pentru înțelegere și cooperare. Întrebările sau comentariile cu privire la Website trebuie adresate prin e-mail la bucegipark@gmail.com"
 
 #: .\services\templates\services\ticket-online.html:9
 msgid "Net total"
