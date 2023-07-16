@@ -71,10 +71,10 @@ def add_testimonial(request):
 def home(request):
     template = 'services/home.html'
     
-    # weather = scraped_data()
+    weather = scraped_data()
     captcha_form = CaptchaForm()
     context = {
-        # "weather": weather,
+        "weather": weather,
         "captcha_form": captcha_form
     }
     if request.method=='POST':

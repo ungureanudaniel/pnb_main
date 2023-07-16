@@ -1000,6 +1000,6 @@ $(document).ready(function ($) {
 		setTimeout(function(){
 			$('.preloader').fadeOut('slow', function () {
 			});
-		},2000); // set the time here
+		},500); // set the time here
 	});  
 });
