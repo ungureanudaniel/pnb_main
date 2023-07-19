@@ -106,6 +106,7 @@ def checkout_view(request):
     payment_url = 'https://sandboxsecure.mobilpay.ro'
     #------path to public certificate that contains the public key
     x509_filePath = r"payments\util\mobilpay_pubkey.cer"
+    print(x509_filePath)
     #---------create Card instance from the class designed in mobilpay folder-------
     obj_pm_req_card = Card()
 
@@ -117,7 +118,7 @@ def checkout_view(request):
             # order id
             obj_pm_req_card.set_order_id(
                 hashlib.md5(str(int(random.random() * int(time.time()))).encode('utf-8')).hexdigest())
-            obj_pm_req_card.set_confirm_url("NULL")
+            obj_pm_req_card.set_confirm_url("pay-confirm")
             obj_pm_req_card.set_return_url("pay-return")
             obj_pm_req_card.set_invoice(Invoice())
             obj_pm_req_card.get_invoice().set_currency("RON")
@@ -129,6 +130,7 @@ def checkout_view(request):
             # get_from_website
             billing_address.set_type("person")
             billing_address.set_first_name(request.POST.get('first-name'))
+            print(billing_address)
             billing_address.set_last_name(request.POST.get('last-name'))
             billing_address.set_address(request.POST.get('address'))
             billing_address.set_email(request.POST.get('email'))
@@ -136,23 +138,23 @@ def checkout_view(request):
 
             obj_pm_req_card.get_invoice().set_billing_address(billing_address)
             print(f"The billing address: {billing_address}")
-            # shipping_address = Address("shipping")
+            shipping_address = Address("shipping")
             # get_from_website
-            # shipping_address.set_type("person")
-            # shipping_address.set_first_name("Netopia")
-            # shipping_address.set_last_name("Payments")
-            # shipping_address.set_address("Pipera")
-            # shipping_address.set_email(request.POST.get('email'))
-            # shipping_address.set_mobile_phone(request.POST.get('phone-number'))
+            shipping_address.set_type("person")
+            shipping_address.set_first_name(request.POST.get('first-name'))
+            shipping_address.set_last_name(request.POST.get('last-name'))
+            shipping_address.set_address("None")
+            shipping_address.set_email(request.POST.get('email'))
+            shipping_address.set_mobile_phone(request.POST.get('phone-number'))
 
 
-            # obj_pm_req_card.get_invoice().set_shipping_address(shipping_address)
+            obj_pm_req_card.get_invoice().set_shipping_address(shipping_address)
 
             """encoded data and env_key"""
             obj_pm_req_card.encrypt(x509_filePath)
             data = obj_pm_req_card.get_enc_data()
             env_key = obj_pm_req_card.get_env_key()
-
+            print("The env_key is:{}".format(env_key))
             try:
                 # data, key = get_and_send_request()
                 r = requests.post(payment_url,
@@ -161,12 +163,12 @@ def checkout_view(request):
                 print(r.status_code, r.reason)
                 # print response
                 print(r.text)
-
+                
             except Exception as e:
                 # catch any error that occured
                 print(e.args)
 
-            return data, env_key
+            return render(request, template, {"env_key":env_key, "data":data, "price":"1010"})
 
         except Exception as e:
             raise Exception(e)
