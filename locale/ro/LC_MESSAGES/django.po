@@ -327,9 +327,13 @@ msgstr "Am citit și accept "
 msgid "Two ways to buy tickets"
 msgstr "Două moduri de a cumpăra bilete"
 
-#: .\payments\templates\includes\tickets.html:9
+#: .\payments\templates\includes\tickets.html:42
 msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
 msgstr "Biletele de vizitare pot fi cumpărate online, cu card bancar, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră"
+
+#: .\payments\templates\includes\tickets.html:45
+msgid "Attention! Until our own online payment service is finalized, we will temporarily work with EasytoVisit for online payments, who shall charge 3 RON extra per ticket as a fee for their service"
+msgstr "Atenție! Până la finalizarea serviciului propriu de plată online, vom lucra temporar cu EasytoVisit pentru plăți online, care va percepe 3 RON în plus pe bilet ca taxă pentru serviciul lor"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"

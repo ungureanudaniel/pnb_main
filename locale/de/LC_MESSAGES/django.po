@@ -244,9 +244,13 @@ msgstr "Netto insgesamt"
 msgid "Two ways to buy tickets"
 msgstr "Zwei Möglichkeiten, Tickets zu kaufen"
 
-#: .\payments\templates\includes\tickets.html:9
+#: .\payments\templates\includes\tickets.html:42
 msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
 msgstr "Sie können Besuchertickets online mit einer Kreditkarte, Revolut oder Kryptowährungen kaufen oder alternativ in bar bei einem Ranger in Ihrer Nähe"
+
+#: .\payments\templates\includes\tickets.html:45
+msgid "Attention! Until our own online payment service is finalized, we will temporarily work with EasytoVisit for online payments, who shall charge 3 RON extra per ticket as a fee for their service"
+msgstr "Achtung! Bis zur Fertigstellung unseres eigenen Online-Zahlungsdienstes arbeiten wir vorübergehend mit EasytoVisit für Online-Zahlungen zusammen, die 3 RON extra pro Ticket als Gebühr für ihren Service erheben werden"
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"
