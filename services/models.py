@@ -104,36 +104,106 @@ class PublicCatLink(models.Model):
     def __str__(self):
         return self.year
 #================Council docs Category models=====================================
-class CouncilDocsCategory(models.Model):
+# class CouncilDocsCategory(models.Model):
+#     """
+#     This class creates database tables for categories for each council documents
+#     category for natural park bucegi administration
+#     """
+#     title = models.CharField(max_length=70)
+#     text = RichTextField()
+#     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+#     class Meta:
+#         verbose_name = 'Council Document'
+#         verbose_name_plural = "Council Documents"
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.title)
+#         super().save(*args, **kwargs)
+#     def __str__(self):
+#         return self.slug
+#================Council docs links models=====================================
+# class CouncilCatLink(models.Model):
+#     """
+#     This class creates database tables for download links per years for each council
+#     documents category, linked by foreignkey to CouncilDocsCategory
+#     """
+#     year = models.CharField(max_length=4)
+#     category = models.ForeignKey(CouncilDocsCategory, on_delete=models.CASCADE)
+#     link = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=300, blank =True, null=True)
+
+#     class Meta:
+#         verbose_name = 'Council Documents Link'
+#         verbose_name_plural = "Council Documents Links"
+#         ordering = ["-year"]
+
+#     def __str__(self):
+#         return self.year
+#================Mng plan docs Category models=====================================
+class MngPlanDocsCategory(models.Model):
     """
-    This class creates database tables for categories for each council documents
-    category for natural park bucegi administration
+    This class creates database tables for categories for each management plan documents
+    category for the administration of bucegi natural park  
     """
     title = models.CharField(max_length=70)
     text = RichTextField()
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
-        verbose_name = 'Council Document'
-        verbose_name_plural = "Council Documents"
+        verbose_name = 'Management Plan Document'
+        verbose_name_plural = "Management Plan Documents"
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
-#================Council docs links models=====================================
-class CouncilCatLink(models.Model):
+#================Mng plan docs links models=====================================
+class MngPlanCatLink(models.Model):
     """
-    This class creates database tables for download links per years for each council
-    documents category, linked by foreignkey to CouncilDocsCategory
+    This class creates database tables for download links per years for each management plan
+    documents category, linked by foreignkey to MngPlanDocsCategory
     """
     year = models.CharField(max_length=4)
-    category = models.ForeignKey(CouncilDocsCategory, on_delete=models.CASCADE)
-    link = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=300, blank =True, null=True)
+    category = models.ForeignKey(MngPlanDocsCategory, on_delete=models.CASCADE)
+    link = models.FileField(upload_to='public_docs/management_plan/%d_%b_%Y/', max_length=300, blank =True, null=True)
 
     class Meta:
-        verbose_name = 'Council Documents Link'
-        verbose_name_plural = "Council Documents Links"
+        verbose_name = 'Management Plan Documents Link'
+        verbose_name_plural = "Management Plan Documents Links"
+        ordering = ["-year"]
+
+    def __str__(self):
+        return self.year
+#================Mng plan docs Category models=====================================
+class ParkRegulationCategory(models.Model):
+    """
+    This class creates database tables for categories for each park regulation documents
+    category for the administration of bucegi natural park  
+    """
+    title = models.CharField(max_length=70)
+    text = RichTextField()
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Park Regulation Document'
+        verbose_name_plural = "Park Regulation Documents"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+#================Mng plan docs links models=====================================
+class ParkRegulationCatLink(models.Model):
+    """
+    This class creates database tables for download links per years for each park regulation
+    documents category, linked by foreignkey to MngPlanDocsCategory
+    """
+    year = models.CharField(max_length=4)
+    category = models.ForeignKey(ParkRegulationCategory, on_delete=models.CASCADE)
+    link = models.FileField(upload_to='public_docs/park-regulation/%d_%b_%Y/', max_length=300, blank =True, null=True)
+
+    class Meta:
+        verbose_name = 'Park Regulation Link'
+        verbose_name_plural = "Park Regulation Links"
         ordering = ["-year"]
 
     def __str__(self):

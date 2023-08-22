@@ -2745,3 +2745,9 @@ msgstr "Consiliul Consultativ"
 #: services/base.html: 38
 msgid "Administration"
 msgstr "Administrație"
+#: services/templates/public_docs/documente-plan-de-mng.html: 16
+msgid "<span>Management</span><span> <br> Plan</span>"
+msgstr "<span>Plan</span>de<span> <br> Management</span>"
+#: services/templates/public_docs/park-regulation.html: 16
+msgid "<span>Park</span><span> <br> Regulations</span>"
+msgstr "<span>Regulament</span><span> <br> Parc</span>"

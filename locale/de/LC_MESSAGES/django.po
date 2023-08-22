@@ -2455,3 +2455,9 @@ msgstr "Beratender Ausschuss"
 #: services/base.html: 38
 msgid "Administration"
 msgstr "Verwaltung"
+#: services/templates/public_docs/documente-plan-de-mng.html: 16
+msgid "<span>Management</span><span> <br> Plan</span>"
+msgstr "<span>Managementplan</span>de<span> <br></span>"
+#: services/templates/public_docs/park-regulation.html: 16
+msgid "<span>Park</span><span> <br> Regulations</span>"
+msgstr "<span>RParkordnung</span><span> <br></span>"

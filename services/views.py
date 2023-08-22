@@ -374,7 +374,7 @@ def massmedia(request):
 
 #======================== public documents page================================
 def public_docs(request):
-    template = 'services/public_docs.html'
+    template = 'public_docs/public_docs.html'
 
     context = {
     'public_docs': PublicCategory.objects.all(),
@@ -382,40 +382,57 @@ def public_docs(request):
     }
     return render(request, template, context)
 #======================== consulting council documents pages================================
-def council_docs(request):
-    template_name = 'services/documente_consiliu_consultativ.html'
+def management_plan(request):
+    template_name = 'public_docs/documente-plan-de-mng.html'
     context ={}
-    if request.method == "POST":
-        form = CaptchaForm(request.POST)
-        institution_form=CouncilDocsForm(request.POST)
-        try:
-            if form.is_valid():
-                if institution_form.is_valid():
-                    #=======save data=======
-                    new_downloader = institution_form.save(commit=False)
-                    new_downloader.save()
-                    context.update({'institution_form': institution_form})
-                    institution_form=CouncilDocsForm()
-                else:
-                    messages.warning(request, _("Formularul nu a fost completat corect!"))
-                    return redirect('council-docs')
-            else:
-                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-                return redirect('council-docs')
-        except Exception as e:
-            messages.warning(request, f"{e}")
-            return redirect('council-docs')
-    else:
-        form = CaptchaForm()
+    # if request.method == "POST":
+        # form = CaptchaForm(request.POST)
+        # institution_form=CouncilDocsForm(request.POST)
+        # try:
+        #     if form.is_valid():
+        #         if institution_form.is_valid():
+        #             #=======save data=======
+        #             new_downloader = institution_form.save(commit=False)
+        #             new_downloader.save()
+        #             context.update({'institution_form': institution_form})
+        #             institution_form=CouncilDocsForm()
+        #         else:
+        #             messages.warning(request, _("Formularul nu a fost completat corect!"))
+        #             return redirect('council-docs')
+        #     else:
+        #         messages.warning(request, _("Failed! Please fill in the captcha field again!"))
+        #         return redirect('council-docs')
+        # except Exception as e:
+        #     messages.warning(request, f"{e}")
+        #     return redirect('council-docs')
+    # else:
+    #     form = CaptchaForm()
     context.update(
-        {'council_docs': CouncilDocsCategory.objects.all(),
-         'links':CouncilCatLink.objects.all(),
-         'form': form,
-        })
+        {'council_docs': MngPlanDocsCategory.objects.all(),
+         'links': MngPlanCatLink.objects.all(),
+        }
+    )
     return render(request, template_name, context)
-
-    
-    return render(request, template, context)
+#========================mng plan documents view =================
+def mng_plan_view(request):
+    template_name = 'public_docs/documente-plan-de-mng.html'
+    context ={}
+    context.update(
+        {'mngplan_docs': MngPlanDocsCategory.objects.all(),
+         'mngplan_links': MngPlanCatLink.objects.all(),
+        }
+    )
+    return render(request, template_name, context)
+#========================park regulations view =================
+def park_regulation_view(request):
+    template_name = 'public_docs/park-regulation.html'
+    context ={}
+    context.update(
+        {'park_regulation': ParkRegulationCategory.objects.all(),
+         'park_reg_links': ParkRegulationCatLink.objects.all(),
+        }
+    )
+    return render(request, template_name, context)
 #======================== faq page================================
 def faq_view(request):
     template = 'services/faq.html'

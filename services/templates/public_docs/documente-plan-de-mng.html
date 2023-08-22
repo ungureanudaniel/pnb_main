@@ -1,0 +1,64 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load filter_links %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary green_background">
+					<div class="container">
+						<div class="row d-flex">
+							<div class="col-auto ">
+								<div class="align-container">
+									<div class="align-container__item w-100"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title pt-2">{% blocktranslate %}<span>Management</span><span> <br> Plan</span>{% endblocktranslate %}</h1>
+										<span class="welcome_icon">
+											<img src="{% static 'img/svg/voice2.svg' %}">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section elements mt-2 pt-1 mb-5">
+					<div class="container">
+						{% include 'includes/messages.html' %}
+						
+						<div class="row">
+							<div class="col-xl-8">
+								<h4 class="elements__title"></h4>
+                                {% for item in mngplan_docs %}
+                                <div class="accordion accordion--primary">
+									<div class="accordion__title-block">
+										<h6 class="accordion__title">{{ item.title|capfirst }}</h6><span class="accordion__close"></span>
+									</div>
+									<div class="accordion__text-block">
+										<p>{{ item.text|safe }}</p>
+										<p>{% trans "The official document can be downloaded below" %}</p>
+										{% for link in mngplan_links|in_category:item %}
+										<a href="{{ link.link.url }}" download class="button button--primary button--rounded">
+											<table style="text-decoration:none">
+											  <tr>
+													<!-- {{ link.category }} {{ item.slug }} -->
+													<th><p></p></th>
+													<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
+											  </tr>
+											</table>
+										</a>
+										{% endfor %}
+									</div>
+								</div>
+                                {% endfor %}
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+			
+{% endblock %}
