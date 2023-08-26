@@ -35,6 +35,7 @@ urlpatterns += i18n_patterns(
     path('', include('services.urls')),
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
+    # path('payments/', include('payments.urls')),
     path('map/', include('geemap.urls')),
 
 )

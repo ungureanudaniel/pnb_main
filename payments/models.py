@@ -3,6 +3,9 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from datetime import timedelta
+#--------django-payments imports
+# from payments import PurchasedItem
+# from payments.models import BasePayment
 #================Ticket buyer models=====================================
 class Ticket(models.Model):
     """
@@ -27,17 +30,26 @@ class Payment(models.Model):
     """
     This class creates database tables for each payment made to bucegi natural park administration
     """
-    payment_code = models.CharField(max_length=100)
-    sum = models.DecimalField(max_digits=10, decimal_places=3)
+    CURRENCY_CHOICES = (
+            ('USD', 'USD'),
+            ('EUR', 'EUR'),
+            ('RON', 'RON'),
+            ('GBP', 'GBP'),
+            ('CHF', 'CHF'),
+        )
+    payment_id = models.CharField(max_length=100)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=3)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
-    phone = models.CharField(max_length=100, blank=True, null=True)
+    phone = models.CharField(max_length=12, blank=False, null=False)
     email = models.EmailField(max_length=254)
-    address =  models.TextField()
+    address = models.TextField()
     county = models.CharField(max_length=30)
-    country = models.CharField(max_length=100)
+    country = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
     zip = models.CharField(max_length=30)
+    currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, default='RON')
     notes = models.TextField()
     timestamp = models.DateTimeField(default=timezone.now(), blank=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
@@ -46,4 +58,5 @@ class Payment(models.Model):
         self.slug = slugify(self.payment_code)
         super().save(*args, **kwargs)
     def __str__(self):
-        return f"{self.buyer_fname}" + " " + f"{self.buyer_lname}"
+        return f"{self.payment_id}"
+# #==================payment model from django payments module==============

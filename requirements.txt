@@ -13,7 +13,8 @@ django-hitcount
 django-multiselectfield
 pycryptodome
 pyopenssl
-folium
-earthengine-api
-pandas
-geopandas
+# folium
+# earthengine-api
+# pandas
+# geopandas
+# django-payments

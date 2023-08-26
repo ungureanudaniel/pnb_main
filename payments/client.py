@@ -10,31 +10,33 @@ import requests
 import hashlib
 import random
 import time
-from payments.address import Address
-from payments.invoice import Invoice
-from payments.request import Request
-from payments.payment.request.crc import Crc
-from payments.payment.request.card import Card
-from payments.payment.request.base_request import BaseRequest
+import os
+from django.conf import settings
+from dotenv import load_dotenv
+from payments.netopia.address import Address
+from payments.netopia.invoice import Invoice
+from payments.netopia.request import Request
+from payments.netopia.payment.request.crc import Crc
+from payments.netopia.payment.request.card import Card
+from payments.netopia.payment.request.base_request import BaseRequest
 
-# implementation example
-
+load_dotenv(verbose=True)
+# implementation
 
 def get_and_send_request():
-    payment_url = 'https://sandboxsecure.mobilpay.ro'
+    payment_url = settings.PAYMENT_SANDBOX_URL
 
     # path to your public certificate that contains the public key
-    x509_filePath = r"payments\templates\utils\mobilpay_pubkey.cer"
-
+    x509_filePath = r'payments\netopia_certif\public.cer'
     obj_pm_req_card = Card()
 
     try:
-        obj_pm_req_card.set_signature("<signature>")
+        obj_pm_req_card.set_signature(settings.PAYMENT_SIGNATURE)
 
         # order id
         obj_pm_req_card.set_order_id(
             hashlib.md5(str(int(random.random() * int(time.time()))).encode('utf-8')).hexdigest())
-        obj_pm_req_card.set_confirm_url("NULL")
+        obj_pm_req_card.set_confirm_url("confirmurl")
         obj_pm_req_card.set_return_url("returnurl")
         obj_pm_req_card.set_invoice(Invoice())
         obj_pm_req_card.get_invoice().set_currency("RON")
@@ -77,16 +79,16 @@ def get_and_send_request():
 
 
 # request example
-# try:
-#     data, key = get_and_send_request()
+try:
+    data, key = get_and_send_request()
 
-#     r = requests.post(payment_url,
-#                       data={'env_key': key, 'data': data})
-#     # get status code
-#     print(r.status_code, r.reason)
-#     # print response
-#     print(r.text)
+    r = requests.post(payment_url,
+                      data={'env_key': key, 'data': data})
+    # get status code
+    print(r.status_code, r.reason)
+    # print response
+    print(r.text)
 
-# except Exception as e:
-#     # catch any error that occured
-#     print(e.args)
+except Exception as e:
+    # catch any error that occured
+    print(e.args)

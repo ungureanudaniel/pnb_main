@@ -446,12 +446,11 @@
 				function get_total_price(){
 					let total = 0;
 					const ticket_val = 10;
-					const fee = 0.952/100
 					$("input[name='adults']").each(function(){
-						total += +this.value*ticket_val*1.0095
+						total += +this.value*ticket_val
 						console.log(total);
 					});
-					return total.toFixed(3)
+					return total.toFixed(0)
 				}
 			}
 
