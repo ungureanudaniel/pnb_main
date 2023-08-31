@@ -328,8 +328,12 @@ msgid "Two ways to buy tickets"
 msgstr "Două moduri de a cumpăra bilete"
 
 #: .\payments\templates\includes\tickets.html:42
-msgid "You can buy visitor tickets online with a credit card, revolut or cryptocurrencies or, alternatively, in cash, from the ranger in your area"
-msgstr "Biletele de vizitare pot fi cumpărate online, cu card bancar, revolut, criptomonede sau, alternativ, în numerar, de la rangerul din zona dumneavoastră"
+msgid "You can buy visitor tickets online or, alternatively, in cash, from the ranger in your area"
+msgstr "Biletele de vizitare pot fi cumpărate online sau, alternativ, în numerar, de la rangerul din zona dumneavoastră"
+
+#: .\payments\templates\includes\tickets.html:44
+msgid "Tickets are <span class='text-danger'>not included</span> in any thirdparty tax inside nor outside the park, but they can be also sold to you, separately by guesthouse or cablecar personnel"
+msgstr "Biletele de vizitare <span class='text-danger'>nu sunt incluse</span> în nici o taxă a terților din interiorul sau exteriorul parcului, dar le puteți achiziționa separat de la pensiuni sau telecabine"
 
 #: .\payments\templates\includes\tickets.html:45
 msgid "Attention! Until our own online payment service is finalized, we will temporarily work with EasytoVisit for online payments, who shall charge 3 RON extra per ticket as a fee for their service"
@@ -2755,3 +2759,6 @@ msgstr "<span>Plan</span>de<span> <br> Management</span>"
 #: services/templates/public_docs/park-regulation.html: 16
 msgid "<span>Park</span><span> <br> Regulations</span>"
 msgstr "<span>Regulament</span><span> <br> Parc</span>"
+#: services/templates/services/sectors-map.html: 16
+msgid "<span>Park Rangers</span><br> & <span> their Sectors</span>"
+msgstr "<span>Rangerii Parcului</span><br> & <span> Sectoarele Aferente</span>"
