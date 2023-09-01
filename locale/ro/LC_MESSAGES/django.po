@@ -57,6 +57,12 @@ msgstr ""
 #: .\pnb_main\settings.py:157
 msgid "Română"
 msgstr "Romanian"
+#: .\services\base.html.py:210
+msgid "Management Plan"
+msgstr "Plan de Management"
+#: .\services\base.html.py:212
+msgid "Park Regulations"
+msgstr "Regulament Parc"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Limbă"
@@ -322,6 +328,10 @@ msgstr "Numărul de bilete"
 #: .\services\templates\services\ticket-checkout.html:143
 msgid "I read and accept the "
 msgstr "Am citit și accept "
+
+#: .\services\templates\services\ticket-checkout.html:143
+msgid "Type first letters of your country of residence..."
+msgstr "Scrie-ți primele litere ale țării de reședință... "
 
 #: .\payments\templates\includes\tickets.html:9
 msgid "Two ways to buy tickets"
@@ -2755,7 +2765,7 @@ msgid "Administration"
 msgstr "Administrație"
 #: services/templates/public_docs/documente-plan-de-mng.html: 16
 msgid "<span>Management</span><span> <br> Plan</span>"
-msgstr "<span>Plan</span>de<span> <br> Management</span>"
+msgstr "<span>Plan de</span><span><br> Management</span>"
 #: services/templates/public_docs/park-regulation.html: 16
 msgid "<span>Park</span><span> <br> Regulations</span>"
 msgstr "<span>Regulament</span><span> <br> Parc</span>"

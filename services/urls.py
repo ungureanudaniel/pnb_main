@@ -41,7 +41,7 @@ urlpatterns = [
         #--------------public documents---------------------
         path('park-rules', park_regulation_view, name="park-rules"),
         path('public-documents', public_docs, name="public-docs"),
-        path('documente-plan-de-management', mng_plan_view, name="mng-plan"),
+        path('management-plan', mng_plan_view, name="mng-plan"),
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),
         path('park-sectors', sector_map_view, name="sector-map"),

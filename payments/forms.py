@@ -1,6 +1,8 @@
 from django import forms
 from .models import *
 from ckeditor.widgets import CKEditorWidget
+from django_countries.fields import CountryField
+from django_countries.widgets import CountrySelectWidget
 from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
 
@@ -28,30 +30,30 @@ class PaymentForm(forms.ModelForm):
 
         self.fields['price'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
         self.fields['quantity'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
-        self.fields['currency'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
-        self.fields['buyer_fname'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
-        self.fields['buyer_lname'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
+        self.fields['currency'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['buyer_fname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['buyer_lname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['address'].widget.attrs['style'] = "margin: 0 20px 20px 0px;"
-        self.fields['county'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
-        self.fields['country'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
-        self.fields['city'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
-        self.fields['zip'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
+        self.fields['county'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['country'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['city'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['zip'].widget.attrs['style'] = "width:320px;margin:0px 20px 20px 0px;"
         self.fields['notes'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
-        self.fields['email'].widget.attrs['style'] = "width:450px;margin-bottom:10px;"
+        self.fields['email'].widget.attrs['style'] = "width:320px;margin-bottom:10px;"
         # self.fields['text'].widget.attrs['style'] = ""
     class Meta:
         model = Payment
-        fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'notes']
+        fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']
         widgets = {
             'price': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Total price'}),
             'quantity': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Total quantity...'}),
             'currency': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Currency of choice...'}),
             'buyer_fname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'First name...'}),
             'buyer_lname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Last name...'}),
-            'address': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your Address...'}),
-            'county': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your County of residence...'}),
-            'country': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your Country of residence...'}),
-            'city': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your City of residence...'}),
+            'address': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your street number, building and apartment...'}),
+            'county': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your County...'}),
+            'country': CountrySelectWidget(attrs = {'class': 'form-control',}),
+            'city': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your City...'}),
             'zip': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your address ZIP code...'}),
             'phone': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your phone number...'}),
             'email': forms.EmailInput(attrs = {'class': 'form-control', 'placeholder': 'Your email...'}),

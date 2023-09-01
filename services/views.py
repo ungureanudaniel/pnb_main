@@ -382,40 +382,10 @@ def public_docs(request):
     }
     return render(request, template, context)
 #======================== consulting council documents pages================================
-def management_plan(request):
-    template_name = 'public_docs/documente-plan-de-mng.html'
-    context ={}
-    # if request.method == "POST":
-        # form = CaptchaForm(request.POST)
-        # institution_form=CouncilDocsForm(request.POST)
-        # try:
-        #     if form.is_valid():
-        #         if institution_form.is_valid():
-        #             #=======save data=======
-        #             new_downloader = institution_form.save(commit=False)
-        #             new_downloader.save()
-        #             context.update({'institution_form': institution_form})
-        #             institution_form=CouncilDocsForm()
-        #         else:
-        #             messages.warning(request, _("Formularul nu a fost completat corect!"))
-        #             return redirect('council-docs')
-        #     else:
-        #         messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-        #         return redirect('council-docs')
-        # except Exception as e:
-        #     messages.warning(request, f"{e}")
-        #     return redirect('council-docs')
-    # else:
-    #     form = CaptchaForm()
-    context.update(
-        {'council_docs': MngPlanDocsCategory.objects.all(),
-         'links': MngPlanCatLink.objects.all(),
-        }
-    )
-    return render(request, template_name, context)
+
 #========================mng plan documents view =================
 def mng_plan_view(request):
-    template_name = 'public_docs/documente-plan-de-mng.html'
+    template_name = 'public_docs/mng-plan.html'
     context ={}
     context.update(
         {'mngplan_docs': MngPlanDocsCategory.objects.all(),

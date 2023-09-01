@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from datetime import timedelta
+from django_countries.fields import CountryField
 #--------django-payments imports
 # from payments import PurchasedItem
 # from payments.models import BasePayment
@@ -46,17 +47,14 @@ class Payment(models.Model):
     email = models.EmailField(max_length=254)
     address = models.TextField()
     county = models.CharField(max_length=30)
-    country = models.CharField(max_length=30)
+    country = CountryField(blank_label="Type first letters of your country of residence...")
     city = models.CharField(max_length=30)
     zip = models.CharField(max_length=30)
     currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, default='RON')
     notes = models.TextField()
+    terms = models.BooleanField()
     timestamp = models.DateTimeField(default=timezone.now(), blank=True)
-    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.payment_code)
-        super().save(*args, **kwargs)
     def __str__(self):
         return f"{self.payment_id}"
 # #==================payment model from django payments module==============

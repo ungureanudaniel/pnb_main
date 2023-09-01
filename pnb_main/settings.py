@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'hitcount',
     'captcha',
     'django.contrib.sites',
+    'django_countries',
     #user apps
     'users',
     'services',

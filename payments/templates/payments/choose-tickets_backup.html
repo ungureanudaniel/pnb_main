@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="cart__body">
-            <form class="form" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{% url 'checkout' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="cart-item">
                 <div class="row align-items-center">

@@ -68,6 +68,12 @@ msgstr "Höhe"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Sprache"
+#: .\services\base.html.py:210
+msgid "Management Plan"
+msgstr "ManagementPlan"
+#: .\services\base.html.py:212
+msgid "Park Regulations"
+msgstr "Parkordnung"
 #: .\services\base.html.py:189
 msgid "Closed"
 msgstr "Geschlossen"
@@ -2465,7 +2471,7 @@ msgid "Administration"
 msgstr "Verwaltung"
 #: services/templates/public_docs/documente-plan-de-mng.html: 16
 msgid "<span>Management</span><span> <br> Plan</span>"
-msgstr "<span>Managementplan</span>de<span> <br></span>"
+msgstr "<span>Management</span>plan<span> <br></span>"
 #: services/templates/public_docs/park-regulation.html: 16
 msgid "<span>Park</span><span> <br> Regulations</span>"
 msgstr "<span>RParkordnung</span><span> <br></span>"

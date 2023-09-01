@@ -27,20 +27,21 @@ def get_and_send_request():
     payment_url = settings.PAYMENT_SANDBOX_URL
 
     # path to your public certificate that contains the public key
-    x509_filePath = r'payments\netopia_certif\public.cer'
+    x509_filePath = r'payments\netopia_certif\sandbox.2RB1-THZT-LU8F-R4R3-O4RH.public.cer'
     obj_pm_req_card = Card()
 
     try:
-        obj_pm_req_card.set_signature(settings.PAYMENT_SIGNATURE)
+        obj_pm_req_card.set_signature(r'payments\netopia_certif\signature.cer')
 
         # order id
         obj_pm_req_card.set_order_id(
             hashlib.md5(str(int(random.random() * int(time.time()))).encode('utf-8')).hexdigest())
-        obj_pm_req_card.set_confirm_url("confirmurl")
-        obj_pm_req_card.set_return_url("returnurl")
+        print(obj_pm_req_card.get_order_id())
+        obj_pm_req_card.set_confirm_url("pay-success")
+        obj_pm_req_card.set_return_url("pay-failure")
         obj_pm_req_card.set_invoice(Invoice())
         obj_pm_req_card.get_invoice().set_currency("RON")
-        obj_pm_req_card.get_invoice().set_amount("0.10")
+        obj_pm_req_card.get_invoice().set_amount("10")
         obj_pm_req_card.get_invoice().set_token_id("<TokenId>")
         obj_pm_req_card.get_invoice().set_details("Plata online cu cardul")
         billing_address = Address("billing")
@@ -68,10 +69,11 @@ def get_and_send_request():
         obj_pm_req_card.get_invoice().set_shipping_address(shipping_address)
 
         """encoded data and env_key"""
+        print(x509_filePath)
         obj_pm_req_card.encrypt(x509_filePath)
         data = obj_pm_req_card.get_enc_data()
         env_key = obj_pm_req_card.get_env_key()
-
+        print(data,env_key)
         return data, env_key
 
     except Exception as e:
@@ -79,16 +81,16 @@ def get_and_send_request():
 
 
 # request example
-try:
-    data, key = get_and_send_request()
+# try:
+#     data, key = get_and_send_request()
 
-    r = requests.post(payment_url,
-                      data={'env_key': key, 'data': data})
-    # get status code
-    print(r.status_code, r.reason)
-    # print response
-    print(r.text)
+#     r = requests.post(payment_url,
+#                       data={'env_key': key, 'data': data})
+#     # get status code
+#     print(r.status_code, r.reason)
+#     # print response
+#     print(r.text)
 
-except Exception as e:
-    # catch any error that occured
-    print(e.args)
+# except Exception as e:
+#     # catch any error that occured
+#     print(e.args)

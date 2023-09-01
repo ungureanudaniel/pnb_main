@@ -10,6 +10,7 @@ python-memcached
 pymemcache
 django-modeltranslation
 django-hitcount
+django-countries
 django-multiselectfield
 pycryptodome
 pyopenssl
