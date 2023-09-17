@@ -53,7 +53,7 @@
 										<div class="events-item__img">
 											<div class="events-item__date"><span>{{ e.date|date:"d" }}</span><span>{{ e.date|date:"m Y" }}</span></div><img class="img--bg" src="{{ e.image.url }}" alt="img"/>
 										</div>
-										<h6 class="events-item__title"><a class="events-item__link" href="#">{{ e.title|capfirst|safe }}</a></h6>
+										<h6 class="events-item__title"><a class="events-item__link" href="{% url 'event-details' e.slug %}">{{ e.title|capfirst|safe }}</a></h6>
 										<p>{{ e.text|truncatechars:100|safe }}</p>
 									</div>
 								</div>

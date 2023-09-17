@@ -188,6 +188,13 @@ def eventlist_view(request):
 
     context = {"events":Event.objects.all().order_by("-timestamp")}
     return render(request, template, context)
+#======================== events detail page================================
+class EventDetailView(DetailView):
+    model = Event
+    template_name = 'services/event-details.html'
+    context_object_name = 'event'
+    slug_field = 'slug'
+    count_hit = True
 #======================== gallery page================================
 def sector_map_view(request):
     template = 'services/sector-map.html'

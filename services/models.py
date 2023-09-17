@@ -51,11 +51,11 @@ class Event(models.Model):
     """
     This class creates database tables for each event in bucegi natural park
     """
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
     text = RichTextField(max_length=3000)
     image = ResizedImageField(size=[640,None], upload_to='event_images',)
-    timestamp = models.DateTimeField(default=timezone.now, blank=True)
-    expiry = models.DateTimeField(default=timezone.now, blank=True)
+    timestamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
+    expiry = models.DateTimeField(default=datetime.datetime.now, blank=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
