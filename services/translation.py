@@ -1,7 +1,8 @@
 from modeltranslation.translator import translator, TranslationOptions
 from .models import Team, AttractionCategory, PublicCategory, Attraction,\
 BlogPostCategory, BlogPost, Event, Announcement, FloraCategory,\
-WildlifeCategory, Flora, Wildlife, SCouncil, MngPlanDocsCategory, ParkRegulationCategory
+WildlifeCategory, Flora, SCouncil, MngPlanDocsCategory, ParkRegulationCategory,\
+Wildlife
 
 
 class AttractionCatTranslationOptions(TranslationOptions):

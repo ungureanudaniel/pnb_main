@@ -602,3 +602,36 @@ def park_rules(request):
     template = 'services/rules.html'
     context = {}
     return render(request, template, context)
+#=========================videos view ==========================================
+def videos_view(request):
+    template_name = 'services/videos.html'
+    #---------------------fetch vid IDs-----------------------
+    p_url = 'https://www.googleapis.com/youtube/v3/search'
+    p_params = {
+        'part': 'snippet',
+        'channelId': settings.CHANNELID,
+        'type': 'video',
+        'key': settings.YOUTUBE_DATA_API_KEY,
+    }
+    videos = []
+    try:
+        p_req = requests.get(p_url, params=p_params)
+        p_results = p_req.json()['items']
+        for p_result in p_results:
+            video_data = {
+                'id': p_result['id']['videoId'],
+                'embed': f'http://www.youtube.com/embed/{ p_result["id"]["videoId"] }',
+                'url': f'https://www.youtube.com/watch?v={ p_result["id"]["videoId"] }',
+                'title': p_result['snippet']['title'],
+                'date': p_result['snippet']['publishedAt'][:4],
+                'thumbnail':p_result['snippet']['thumbnails']['high']['url'],
+            }
+
+            videos.append(video_data)
+            print(videos)
+    except Exception as e:
+        messages.error(request, _('Import video nereusit!'))
+    context = {
+        "videos": videos,
+    }
+    return render(request, template_name, context)

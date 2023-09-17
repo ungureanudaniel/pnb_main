@@ -1,7 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
 from .models import BlogPost, AttractionCategory, Event, Team, FloraCategory, Flora,\
-Wildlife, WildlifeCategory
+WildlifeCategory, Wildlife
 
 class BlogPostSitemap(Sitemap):
     changefreq = "weekly"

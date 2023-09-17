@@ -53,7 +53,7 @@
           <div class="row gallery-masonry no-gutters">
             {% for a in wildlife %}
             <div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
-              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% url 'coming-soon' %}">
+              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{% url 'wildlife-details' a.slug %}">
                 <img class="img--bg" src="{{ a.image.url }}" alt="img"/>
                 <div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
               </a>

@@ -7,14 +7,23 @@
         <!-- welcome start-->
 				<section class="welcome-primary">
 					<picture >
-						<source srcset="{% static 'img/attractions/bear1.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/attractions/bear1.webp' %}" alt="img"/>
+						<source srcset="{% static 'img\backgrounds\videos.png' %}" media="(min-width: 992px)"/>
+            <img class="img--bg mb-5" src="{% static 'img\backgrounds\videos.png' %}" alt="img"/>
 					</picture>
+          {% if messages %}
+          <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+            {% include 'includes/messages.html' %}
+          </div>
+          {% else %}
+          <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+          </div>
+          {% endif %}
 					<div class="container">
 						<div class="row">
 							<div class="col-auto">
 								<div class="align-container">
 									<div class="align-container__item mt-5"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title"><span>{% trans 'Our' %}</span> <span>{% trans 'Pictures Gallery' %}</span></h1>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Our</span> <span>Videos Gallery</span>{% endblocktranslate %}</h1>
 									</div>
 								</div>
 							</div>
@@ -33,33 +42,51 @@
                 <!-- filter panel start-->
                 <ul class="filter-panel">
 
-                  <li class="filter-panel__item filter-panel__item--active" data-filter=".landscapes"><span>{{ attr_categ.0.name|capfirst }}</span></li>
-                  <li class="filter-panel__item " data-filter=".wildlife"><span>{{ attr_categ.1.name|capfirst }}</span></li>
-                  <li class="filter-panel__item " data-filter=".mass-media"><span>{{ attr_categ.2.name|capfirst }}</span></li>
+                  <li class="filter-panel__item filter-panel__item--active" data-filter=".landscapes"><span>{% trans 'Landscapes' %}</span></li>
+                  <li class="filter-panel__item " data-filter=".wildlife"><span>{% trans 'Wildlife' %}</span></li>
+                  <li class="filter-panel__item " data-filter=".mass-media"><span>{% trans 'Mass Media' %}</span></li>
                 </ul>
                 <!-- filter panel end-->
               </div>
             </div>
           </div>
-          <div class="row gallery-masonry no-gutters">
+
+          <div class="row gallery-masonry no-gutters d-flex">
 
             <div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
-              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
-                <iframe width="420" height="315" src="https://www.youtube.com/watch?v=3yUYR8GbPp4"></iframe>
-                <div class="gallery-masonry__description"><span class="">Bears</span><span>???</span></div>
-              </a>
+              <div class="gallery-masonry__img " >
+                <iframe class="video-media-youtube-inner-vi" width="330" height="300" src="https://www.youtube.com/embed/mQeXbWl5uDo?si=cYPuJNiG2PFdJIi3?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
-            <div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
-              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
-                <img class="img--bg" src="{{ a.image.url }}" alt="img"/>
-                <div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
-              </a>
+            <div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe class="video-media-youtube-inner-vi" width="330" height="300" src="https://www.youtube.com/embed/z-ar24OrQ2k?si=VyUfSt1b1JwLd_y0?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              </div>
+            <div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe class="video-media-youtube-inner-vi" width="330" height="300" src="https://www.youtube.com/embed/OqNWJcgqfYU?si=iqxZdMI6oNWD8VC7?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
-            <div class="{{ a.categ }} col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
-              <a class="gallery-masonry__img gallery-masonry__item--height-1" href="{{ a.image.url }}" data-fancybox="gallery">
-                <img class="img--bg" src="{{ a.image.url }}" alt="img"/>
-                <div class="gallery-masonry__description"><span class="">{{ a.categ }}</span><span>{{ a.name|capfirst }}</span></div>
-              </a>
+            <div class="landscapes col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe class="video-media-youtube-inner-vi" width="330" height="300" src="https://www.youtube.com/embed/xjRuwLaxIwQ?si=Ebij0ORFajceOr2l?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>    
+            </div>
+            <div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe class="video-media-youtube-inner-vi" width="330" height="300" src="https://www.youtube.com/embed/3yUYR8GbPp4?si=m2PU9jRKVV90fbqa?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="wildlife col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe width="330" height="300" src="https://www.youtube.com/embed/v0FTjUbeHNg?si=aOVHDH8nLJByHU1q?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="mass-media col-sm-6 col-lg-4 col-xl-3 gallery-masonry__item">
+              <div class="gallery-masonry__img " >
+                <iframe width="330" height="300" src="https://www.youtube.com/embed/iFAjJUGEGCw?si=tJkUGRzVHYZApA-i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
           <div class="container top-70">

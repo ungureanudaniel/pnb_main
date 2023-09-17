@@ -40,7 +40,6 @@ class PaymentForm(forms.ModelForm):
         self.fields['zip'].widget.attrs['style'] = "width:320px;margin:0px 20px 20px 0px;"
         self.fields['notes'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
         self.fields['email'].widget.attrs['style'] = "width:320px;margin-bottom:10px;"
-        # self.fields['text'].widget.attrs['style'] = ""
     class Meta:
         model = Payment
         fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']

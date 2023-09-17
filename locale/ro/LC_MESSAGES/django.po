@@ -426,8 +426,8 @@ msgid "<span>Terms</span> and<span> Conditions</span>"
 msgstr "<span>Termeni</span> și<span> Condiții</span>"
 
 #: .\services\templates\services\terms.html:9
-msgid "<span>Terms and Conditions of </span><br> Bucegi Natural Park<span> Website</span>"
-msgstr "<span>Termeni și Condiții privind website-ul</span><br> Parcului Natural<span> Bucegi</span>"
+msgid "<span>Terms and Conditions </span>"
+msgstr "<span>Termeni și Condiții </span>"
 
 #: .\services\templates\services\terms.html:9
 msgid "The Administration of Bucegi Natural Park endeavors to keep its website in line with the most modern Web Stardards of the European Union online regulations and keep this website accessible without barriers"
@@ -2521,9 +2521,14 @@ msgstr "Documentul oficial poate fi descărcat apăsând butonul de mai jos"
 msgid "Privacy Policy"
 msgstr "Politica de Confidențialitate"
 
-#: services/templates/services/underconstruction.html: 375
+#: services/templates/services/underconstruction.html: 375,
+#: services/templates/services/base.html: 177
 msgid "Terms and Conditions"
-msgstr "Termenii și Condițiile"
+msgstr "Termeni și Condiții"
+
+#: services/templates/services/flora-details.html: 98
+msgid "Description"
+msgstr "Descriere"
 
 #: services/templates/services/underconstruction.html: 375
 msgid "Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks"
@@ -2654,9 +2659,17 @@ msgstr "<span>Aici puteți vedea fotografii din </span><span>Parcul Natural Buce
 #: services/templates/services/includes/add_gallery.html: 27
 msgid "Add a photography"
 msgstr "Adaugă o fotografie"
-#: services/templates/services/includes/add_gallery.html: 27
-msgid "Our</span> <span>Pictures Gallery"
-msgstr "Fotografiile</span> <span>Noastre"
+#: services/templates/services/includes/gallery.html: 27
+msgid "<span>Our</span> <span>Pictures Gallery</span>"
+msgstr "<span>Fotografiile</span> <span>Noastre</span>"
+
+#: services/templates/services/includes/gallery.html: 27
+msgid "<span>Our</span> <span>Videos Gallery</span>"
+msgstr "<span>Înregistrări</span> <span>Video</span>"
+
+#: services/templates/services/includes/videos.html: 27
+msgid "Landscapes"
+msgstr "Peisaje"
 
 #: services/templates/services/includes/videos.html: 31
 msgid "<span>Check out videos from </span><span>Bucegi Natural Park</span>"
@@ -2763,7 +2776,7 @@ msgstr "Consiliul Consultativ"
 #: services/base.html: 38
 msgid "Administration"
 msgstr "Administrație"
-#: services/templates/public_docs/documente-plan-de-mng.html: 16
+#: services/templates/public_docs/mng-plan.html: 16
 msgid "<span>Management</span><span> <br> Plan</span>"
 msgstr "<span>Plan de</span><span><br> Management</span>"
 #: services/templates/public_docs/park-regulation.html: 16
@@ -2772,3 +2785,9 @@ msgstr "<span>Regulament</span><span> <br> Parc</span>"
 #: services/templates/services/sectors-map.html: 16
 msgid "<span>Park Rangers</span><br> & <span> their Sectors</span>"
 msgstr "<span>Rangerii Parcului</span><br> & <span> Sectoarele Aferente</span>"
+#: payments/templates/payments/ticket-checkout.html: 16
+msgid "<span>Payment</span> <span> Failure</span>"
+msgstr "<span>Plată</span> <span> Eșuată</span>"
+#: payments/templates/payments/ticket-checkout.html: 16
+msgid "Please try again with more caution"
+msgstr "Încercați din nou cu mai multă grijă"

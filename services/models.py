@@ -346,12 +346,12 @@ class Flora(models.Model):
 
         )
     FLOWER_LIFE = (
-            (_('Annual'), _('Annual')),
-            (_('Perennial'), _('Perennial')),
-            (_('Biennial'), _('Biennial')),
+            (_("Annual"), _("Annual")),
+            (_("Perennial"), _("Perennial")),
+            (_("Biennial"), _("Biennial")),
         )
     name = models.CharField(max_length=30)
-    image = image = models.ImageField(upload_to='flora_image', blank=True)
+    image = models.ImageField(upload_to='flora_image', blank=True)
     text = models.TextField(max_length=2000)
     height_max = models.IntegerField()
     flowering_start = models.CharField(max_length=30, default='April', choices=MONTHS)
@@ -395,10 +395,8 @@ class Wildlife(models.Model):
     name = models.CharField(max_length=30)
     image = models.ImageField(upload_to='wildlife_image', blank=True)
     text = models.TextField(max_length=2000)
-    # weight_min = models.IntegerField()
-    # weight_max = models.IntegerField()
-    # weight_min = models.DecimalField(max_digits=None, decimal_places=3)
-    # weight_max = models.DecimalField(max_digits=None, decimal_places=3)
+    height_max = models.DecimalField(max_digits=4, decimal_places=2)
+    weight_max = models.DecimalField(max_digits=5, decimal_places=2)
     cons_status = models.CharField(max_length=30, default='Least Concern', choices=CONS_STATUS)
     life_span_max = models.IntegerField()
     habitat = models.TextField(max_length=1000)

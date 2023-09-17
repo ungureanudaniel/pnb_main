@@ -230,14 +230,20 @@ msgstr "Sie werden zu Netopia Payments weitergeleitet, um die Zahlung abzuschlie
 msgid "By proceeding you confirm that you accept our"
 msgstr "Wenn Sie mit der Zahlungsmethode fortfahren, bestätigen Sie, dass Sie unsere"
 
-#: .\services\templates\services\terms.html:9
-msgid "<span>Terms</span> and<span> Conditions</span>"
-msgstr "<span>Geschäftsbedingungen</span><span></span>"
-
 #: .\services\templates\services\ticket-description.html:9
 msgid "Commission"
 msgstr "Kommission"
+#: services/templates/services/includes/gallery.html: 27
+msgid "<span>Our</span> <span>Pictures Gallery</span>"
+msgstr "<span>Unsere</span> <span>Bilder</span>"
 
+#: services/templates/services/includes/videos.html: 27
+msgid "Landscapes"
+msgstr "Landschaften"
+
+#: services/templates/services/includes/add_gallery.html: 27
+msgid "<span>Our</span> <span>Videos Gallery</span>"
+msgstr "<span>Unsere</span> <span>Videos</span>"
 #: .\services\templates\services\ticket-description.html:9
 msgid "Ticket summary"
 msgstr "Sammeltickets"
@@ -2218,8 +2224,17 @@ msgid "Privacy Policy"
 msgstr "Datenschutzbestimmungen"
 
 #: services/templates/services/underconstruction.html: 375
+#: services/templates/services/base.html: 177
 msgid "Terms and Conditions"
 msgstr "Bedingungen und Konditionen"
+
+#: services/templates/services/flora-details.html: 98
+msgid "Description"
+msgstr "Beschreibung"
+
+#: .\services\templates\services\terms.html:9
+msgid "<span>Terms and Conditions </span>"
+msgstr "<span>Termeni și Condiții </span>"
 
 #: services/templates/services/underconstruction.html: 375
 msgid "Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks"
@@ -2307,9 +2322,7 @@ msgstr "<span>Sehen Sie sich Fotos aus </span><span>Parcul Natural Bucegi</span>
 #: services/templates/services/includes/add_gallery.html: 27
 msgid "Add a photography"
 msgstr "Hinzufügen einer Fotografie"
-#: services/templates/services/includes/add_gallery.html: 27
-msgid "Our</span> <span>Pictures Gallery"
-msgstr "Unsere</span> <span>Bilder"
+
 #: services/templates/services/includes/flora.html: 17
 msgid "Our </span> <span>Flora"
 msgstr "Unsere </span> <span>Flora"
@@ -2478,3 +2491,9 @@ msgstr "<span>RParkordnung</span><span> <br></span>"
 #: services/templates/services/sectors-map.html: 16
 msgid "<span>Park Rangers</span><br> & <span> Areas</span>"
 msgstr "<span>Parkwächter</span><br> & <span> verwandte Bereiche</span>"
+#: payments/templates/payments/ticket-checkout.html: 16
+msgid "<span>Payment</span> <span> Failure</span>"
+msgstr "<span>Zahlungs</span><span>ausfall</span>"
+#: payments/templates/payments/ticket-checkout.html: 16
+msgid "Please try again with more caution"
+msgstr "Bitte versuchen Sie es noch einmal mit mehr Vorsicht"

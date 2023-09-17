@@ -30,7 +30,7 @@
 		<link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
 		<!-- select2 dropdown stylesheet -->
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+		<script src="https://www.youtube.com/iframe_api"></script>
 		<!-- web-font loader-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script>
@@ -149,7 +149,7 @@
 						</div>
 
 						<div class="screen__item"><a class="screen__link" href="{% url 'gallery' %}">{% trans 'Gallery' %}</a></div>
-						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">{% trans 'Videos' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'videos' %}">{% trans 'Videos' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'flora' %}">Flora</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'wildlife' %}">{% trans 'Wildlife' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'events' %}">{% trans 'Events' %}</a></div>
@@ -174,6 +174,8 @@
 						<div class="screen__item"><a class="screen__link" href="{% url 'blog' %}">Blog</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'home' %}#testimonials">{% trans 'Testimonials' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'ticket-info' %}">{% trans 'Ticket prices' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></div>
+
 
 					</div>
 				</div>
@@ -261,6 +263,7 @@
 										<li><a href="{% url 'blog' %}"><span>Blog</span></a></li>
 										<li><a href="{% url 'home' %}#testimonials"><span>{% trans 'Testimonials' %}</span></a></li>
 										<li><a href="{% url 'ticket-info' %}"><span>{% trans 'Ticket Prices' %}</span></a></li>
+										<li><a href="{% url 'terms' %}"><span>{% trans 'Terms and Conditions' %}</span></a></li>
 									</ul>
 									<!-- sub menu end-->
 								</li>
@@ -268,7 +271,7 @@
 									<!-- sub menu start-->
 									<ul class="main-menu__sub-list">
 										<li><a href="{% url 'gallery' %}"><span>{% trans 'Gallery' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Videos' %}</span></a></li>
+										<li><a href="{% url 'videos' %}"><span>{% trans 'Videos' %}</span></a></li>
 										<li><a href="{% url 'flora' %}"><span>Flora</span></a></li>
 										<li><a href="{% url 'wildlife' %}"><span>{% trans 'Fauna' %}</span></a></li>
 										<li><a href="{% url 'events' %}"><span>{% trans 'Events' %}</span></a></li>
@@ -377,7 +380,7 @@
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}">{% trans 'Events' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}">{% trans 'Info points' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
-
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></li>
 
 							</ul>
 						</div>
@@ -418,11 +421,6 @@
 
 							</ul>
 						</div>
-						<div class="col-md-6 text-center text-md-right">
-
-								 <!-- <span class="footer-privacy__divider">|</span><a class="footer-privacy__link" href="{% url 'coming-soon' %}">{% trans 'Terms and Conditions' %}</a></div> -->
-							</div>
-						</div>
 						<div class="col-md-12 text-center text-md-right mt-5" style="display:flex;flex-wrap: wrap;align-items:center;">
 							<a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img/logo/bucegi_logo.png' %}" alt="logo"/> </a>
 							<a class="logo logo--footer pr-4" href="http://www.rosilva.ro/"><img class="logo__img" src="{% static 'img/logo/rnp-romsilva3.png' %}" alt="logo"/> </a>
@@ -431,9 +429,9 @@
 							<a class="logo logo--footer pr-4" href="http://ananp.gov.ro/"><img class="logo__img" src="{% static 'img/logo/logo-ananp.png' %}" alt="logo"/> </a>
 							<a class="logo logo--footer pr-4" href="https://www.sts.ro/ro/despre-112"><img class="logo__img" src="{% static 'img/logo/112-logo.png' %}" alt="logo"/> </a>
 							<a class="logo logo--footer pr-4" href="https://anpc.ro/en/"><img class="logo__img" src="{% static 'img/logo/SAL-PICTOGRAMA.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer netopia" href="https://netopia-payments.com/">
+							<!-- <a class="logo logo--footer netopia" href="https://netopia-payments.com/">
 								<script src="https://mny.ro/npId.js?p=128648" type="text/javascript" data-version="vertical" data-contrast-color="#012560" ></script>
-							</a>
+							</a> -->
 						</div>
 
 					</div>

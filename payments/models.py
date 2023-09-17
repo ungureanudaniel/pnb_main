@@ -38,7 +38,7 @@ class Payment(models.Model):
             ('GBP', 'GBP'),
             ('CHF', 'CHF'),
         )
-    payment_id = models.CharField(max_length=100)
+    payment_id = models.CharField(max_length=100, null=True, blank=True, default="a")
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=3)
     buyer_fname = models.CharField(max_length=100)

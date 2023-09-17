@@ -135,8 +135,8 @@
 									<div class="col-lg-8">
 										<div class="">
 											<p class="" type="submit"><i class="fa fa-lock"></i>  {% trans 'Payments are secure and encrypted' %}.</p>
-											<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to Netopia Payments to complete the payment' %}.</p>
-                      <script src="https://mny.ro/npId.js?p=128648" type="text/javascript" data-version="vertical" data-contrast-color="#012560" ></script>
+											<p class="" type="submit"><i class="fa fa-google-wallet"></i>  {% trans 'You will be redirected to EuPlătesc Secure Payments Page, to complete the payment' %}.</p>
+                      <!-- <script src="https://mny.ro/npId.js?p=128648" type="text/javascript" data-version="vertical" data-contrast-color="#012560" ></script> -->
 											<p class="" type="submit"><i class="fa fa-ticket"></i>  {% trans 'You can consult our' %} <a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a> {% trans 'here' %}.</p>
 										</div>
 									</div>
@@ -147,6 +147,7 @@
                         <li><span>{% trans 'Number of tickets' %}:</span><input id="tickets" name="tickets_nr" value="" readonly></li>
                         <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li>
                       </ul>
+											<!-- <button class="form__submit mt-5" type="submit">{% trans 'Proceed' %}</button> -->
                       <!-- <a class="cart-totals__link button button--primary" >Proceed to checkout</a> -->
 											<input class="form__submit mt-5" type="submit" value="{% trans 'Forward' %}">
 										</div>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'captcha',
     'django.contrib.sites',
     'django_countries',
+    'debug_toolbar',
     #user apps
     'users',
     'services',
@@ -56,6 +57,7 @@ INTERNAL_IPS = [
 ]
 MIDDLEWARE = [
     'django.middleware.gzip.GZipMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -86,12 +88,12 @@ TEMPLATES = [
     },
 ]
 #
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-#         'LOCATION': os.getenv('CACHES_LOC'),
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': os.getenv('CACHES_LOC'),
+    }
+}
 
 WSGI_APPLICATION = 'pnb_main.wsgi.application'
 
@@ -247,4 +249,9 @@ PAYMENT_MODEL = 'payments.models.Payment'
 # }
 #===================Default primary key field type
 #================https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+#===============django debug profilling ======================================
+#===============youtube credentials====================
+CHANNELID=os.getenv("CHANNELID")
+YOUTUBE_DATA_API_KEY=os.getenv("YOUTUBE_DATA_API_KEY")
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

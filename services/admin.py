@@ -2,15 +2,15 @@ from django.contrib import admin
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
-Flora, Wildlife, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
-ParkRegulationCategory, ParkRegulationCatLink
-
+Flora, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
+ParkRegulationCategory, ParkRegulationCatLink,\
+Wildlife
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
 class AttractionAdmin(admin.ModelAdmin):
     fields = ['categ','name', 'name_ro', 'name_de', 'image', 'text', 'text_ro', 'text_de', 'featured']
-
+    list_display = ('name', 'categ', 'image', 'featured')
 class WildlifeCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
@@ -20,7 +20,7 @@ class FloraCategoryAdmin(admin.ModelAdmin):
 class FloraAdmin(admin.ModelAdmin):
     fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'height_max', 'flowering_start', 'flowering_end', 'habitat', 'habitat_ro', 'habitat_de', 'cons_status', 'life_span', 'text', 'text_ro', 'text_de', 'featured']
 class WildlifeAdmin(admin.ModelAdmin):
-    fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'weight_min', 'weight_max', 'life_span_min', 'life_span_max', 'habitat', 'habitat_ro', 'habitat_de', 'diet', 'diet_ro', 'diet_de', 'cons_status', 'text', 'text_ro', 'text_de', 'featured']
+    fields = [ 'categ', 'name', 'name_ro', 'name_de', 'image', 'height_max', 'weight_max', 'life_span_max', 'habitat', 'habitat_ro', 'habitat_de', 'diet', 'diet_ro', 'diet_de', 'cons_status', 'text', 'text_ro', 'text_de', 'featured']
 
 class TestimonialAdmin(admin.ModelAdmin):
     fields = ['status', 'fname', 'lname', 'email', 'thumbnail', 'text']
