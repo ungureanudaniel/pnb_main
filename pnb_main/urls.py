@@ -31,15 +31,14 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path("robots.txt", TemplateView.as_view(template_name="services/robots.txt", content_type="text/plain"),),
     path('captcha/', include('captcha.urls')),
+    # path("__debug__/", include("debug_toolbar.urls"))
 ]
-
-# urlpatterns += path("__debug__/", include("debug_toolbar.urls"))
 
 urlpatterns += i18n_patterns(
     path('', include('services.urls')),
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
-    # path('payments/', include('payments.urls')),
+    path('payments/', include('payments.urls')),
     path('map/', include('geemap.urls')),
 
 )
