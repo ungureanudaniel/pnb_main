@@ -22,7 +22,7 @@ ALLOWED_HOSTS = []
 if os.getenv('ALLOWED_HOSTS'):
     ALLOWED_HOSTS.extend(os.getenv('ALLOWED_HOSTS').split(','))
 
-DEVELOPMENT = False
+DEVELOPMENT = os.getenv('DEBUG')== 'True'
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,13 +42,14 @@ INSTALLED_APPS = [
     'captcha',
     'django.contrib.sites',
     'django_countries',
-    'debug_toolbar',
+    # 'debug_toolbar'
     #user apps
     'users',
     'services',
     'payments',
     'geemap',
     ]
+
 SITE_ID = 1
 INTERNAL_IPS = [
     # ...
@@ -57,7 +58,7 @@ INTERNAL_IPS = [
 ]
 MIDDLEWARE = [
     'django.middleware.gzip.GZipMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -211,42 +212,42 @@ PAYMENT_MODEL = 'payments.models.Payment'
 #                 })
 # }
 #=====================LOGGING  ERORRS=========================
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'formatters': {
-#         'verbose': {
-#             'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-#             'datefmt' : "%d/%b/%Y %H:%M:%S"
-#         },
-#         'simple': {
-#             'format': '%(levelname)s %(message)s'
-#         },
-#     },
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': 'pnb_main.log',
-#             'formatter': 'verbose'
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers':['file'],
-#             'propagate': True,
-#             'level':'DEBUG',
-#         },
-#         'services': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#         },
-#         'payments': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#         },
-#     }
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'pnb_main.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'services': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+        'payments': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    }
+}
 #===================Default primary key field type
 #================https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 #===============django debug profilling ======================================

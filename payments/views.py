@@ -3,12 +3,14 @@ from django.utils.translation import gettext_lazy as _
 from .models import Ticket, Payment
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import PaymentForm
+from django.views.decorators.csrf import csrf_exempt
 import random, string
 from django.urls import reverse
 import datetime
 from django.conf import settings
 from django.utils.text import slugify
 import warnings
+from django.http import JsonResponse
 
 warnings.filterwarnings('ignore', message='.*cryptography', )
 #--------------netopia payment imports-----------------
@@ -58,11 +60,7 @@ def choosetickets_view(request):
             request.session['price'] = request.POST.get('total_price') # set 'total_price' in the session
             request.session['tickets'] = request.POST.get('tickets_nr') # set 'tickets_nr' in the session
 
-            context = {
-                "tickets":request.POST.get('tickets_nr'),
-                "price":request.POST.get('total_price'),
-            }
-            return redirect('checkout')
+            return redirect("checkout")
         except Exception as e:
             messages.warning(request, _(f"Failed! {e}"))
             return render(request,template,context)
@@ -175,7 +173,7 @@ def payment_processing(request):
     #     "tickets":tickets,
     # }
     # return render(request, template, context)
-
+@csrf_exempt
 def checkout_view(request):
     template = "payments/ticket-checkout.html"
     #fetch ticket nr and price from session
@@ -189,17 +187,15 @@ def checkout_view(request):
     params= {}
     if request.method=='POST':
         #assign form instance to variable
-        # form = PaymentForm(request.POST or None)
-        form = PaymentForm(initial={'quantity': tickets,'price': price})
+        form = PaymentForm(request.POST or None, initial={"price": price, "quantity": tickets})
+
+        # form = PaymentForm(initial={'quantity': tickets,'price': price})
         if form.is_valid():
             try:
                 new_payment=form.save(commit=False)
-                new_payment.quantity = tickets
-                new_payment.price = price
                 new_payment.payment_id = "1234test"
                 new_payment.save()
                 #euplatesc parameters
-                print("form is valid!")
                 params={
                     'amount':price,
                     'curr':'RON',
@@ -212,16 +208,15 @@ def checkout_view(request):
                 oparam=[params['amount'],params['curr'],params['invoice_id'],params['order_desc'],params['merch_id'],params['timestamp'],params['nonce']]
                 params['fp_hash']=euplatesc_mac(key,oparam)
                 print(f"Form is valid!Nr of ticket {tickets}, price {price} and parameters are:{params['fp_hash']}")
-                messages.success(request, e)
-                return render(request, "https://secure.euplatesc.ro/tdsprocess/tranzactd.php", oparam)
+                return JsonResponse("https://secure.euplatesc.ro/tdsprocess/tranzactd.php", data = oparam)
             except Exception as e:
                 print("e")
                 messages.warning(request, _(f"Failed! {e}"))
                 raise Exception(e)    
         else:
             print(form.errors.as_data())
-            messages.warning(request, form.errors.as_data())
-            return render(request, "choose-tickets", {})
+            messages.warning(request, f"Something went wrong. Please try again! ({form.errors.as_data()})")
+            return redirect("checkout")
     else:
         form = PaymentForm()
         context = {

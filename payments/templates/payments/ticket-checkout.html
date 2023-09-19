@@ -45,13 +45,23 @@
 						<div class="row">
 							<div class="col-12">
 								<!-- checkout start-->
-								<form class="form checkout-form" method="POST">
+								<form class="form checkout-form" action="{% url 'checkout' %}" method="POST">
 									{% csrf_token %}
 									<div class="row">
 										<div class="col-lg-7 col-xl-8">
 											<div class="checkout__wrapper">
 												<div class="form__fieldset">
 													<h6 class="form__title">{% trans 'Payer Personal Information' %}</h6>
+													<div class="row offset-30 mb-5">
+														<div class="col-md-6">
+															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->
+															<!-- {{ form.quantity }} -->
+														</div>
+														<div class="col-md-6">
+															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->
+															<!-- {{ form.price }} -->
+														</div>
+													</div>
 													<div class="row offset-30">
 														<div class="col-md-6">
 															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->

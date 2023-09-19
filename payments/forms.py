@@ -28,8 +28,8 @@ class PaymentForm(forms.ModelForm):
         # self.fields['email'].label = _("Your email address")
         # self.fields['notes'].label = _("You can write some notes here")
 
-        self.fields['price'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
-        self.fields['quantity'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
+        self.fields['price'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
+        self.fields['quantity'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['currency'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['buyer_fname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['buyer_lname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
@@ -43,6 +43,7 @@ class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
         fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']
+        exclude = () 
         widgets = {
             'price': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Total price'}),
             'quantity': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Total quantity...'}),
