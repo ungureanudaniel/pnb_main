@@ -42,14 +42,13 @@ INSTALLED_APPS = [
     'captcha',
     'django.contrib.sites',
     'django_countries',
-    # 'debug_toolbar'
+    'debug_toolbar',
     #user apps
     'users',
     'services',
     'payments',
     'geemap',
     ]
-
 SITE_ID = 1
 INTERNAL_IPS = [
     # ...
@@ -58,7 +57,7 @@ INTERNAL_IPS = [
 ]
 MIDDLEWARE = [
     'django.middleware.gzip.GZipMiddleware',
-    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",

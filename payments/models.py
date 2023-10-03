@@ -39,8 +39,8 @@ class Payment(models.Model):
             ('CHF', 'CHF'),
         )
     payment_id = models.CharField(max_length=100, null=True, blank=True, default="a")
-    quantity = models.IntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=3)
+    quantity = models.IntegerField(default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=3, default=0)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
     phone = models.CharField(max_length=12, blank=False, null=False)
@@ -53,7 +53,7 @@ class Payment(models.Model):
     currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, default='RON')
     notes = models.TextField()
     terms = models.BooleanField()
-    timestamp = models.DateTimeField(default=timezone.now(), blank=True)
+    timestamp = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return f"{self.payment_id}"

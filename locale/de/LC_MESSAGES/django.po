@@ -257,8 +257,8 @@ msgid "Two ways to buy tickets"
 msgstr "Zwei Möglichkeiten, Tickets zu kaufen"
 
 #: .\payments\templates\includes\tickets.html:42
-msgid "You can buy visitor tickets online or, alternatively, in cash, from the ranger in your area"
-msgstr "Sie können Besuchertickets online oder alternativ in bar bei einem Ranger in Ihrer Nähe"
+msgid "You can buy visitor tickets online or, alternatively, in cash, from the ranger in your area and their cost is 10 RON / adult / 3 months"
+msgstr "Sie können Besuchertickets online oder alternativ in bar bei einem Ranger in Ihrer Nähe und ihre Kosten betragen 10 RON / Erwachsener / 3 Monate"
 
 #: .\payments\templates\includes\tickets.html:44
 msgid "Tickets are <span class='text-danger'>not included</span> in any thirdparty tax inside nor outside the park, but they can be also sold to you, separately by guesthouse or cablecar personnel"

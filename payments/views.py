@@ -6,6 +6,7 @@ from .forms import PaymentForm
 from django.views.decorators.csrf import csrf_exempt
 import random, string
 from django.urls import reverse
+from django.utils import timezone
 import datetime
 from django.conf import settings
 from django.utils.text import slugify
@@ -173,31 +174,33 @@ def payment_processing(request):
     #     "tickets":tickets,
     # }
     # return render(request, template, context)
-@csrf_exempt
 def checkout_view(request):
     template = "payments/ticket-checkout.html"
     #fetch ticket nr and price from session
-    price = request.session['price']
-    tickets = request.session['tickets']
+    # price = request.session.get('price')
+    # quantity = request.session.get('tickets')
     
     
     #euplatesc account credentials
     key="00112233445566778899AABBCCDDEEFF"
     mid="testaccount"
     params= {}
+    #assign form instance to variable
+    form = PaymentForm(request.POST or None)
     if request.method=='POST':
-        #assign form instance to variable
-        form = PaymentForm(request.POST or None, initial={"price": price, "quantity": tickets})
 
-        # form = PaymentForm(initial={'quantity': tickets,'price': price})
+        # form = PaymentForm(initial={'quantity': quantity,'price': price})
         if form.is_valid():
             try:
                 new_payment=form.save(commit=False)
                 new_payment.payment_id = "1234test"
+                # new_payment.quantity = quantity
+                # new_payment.price = price
+                new_payment.timestamp = timezone.now()
                 new_payment.save()
                 #euplatesc parameters
                 params={
-                    'amount':price,
+                    'amount':new_payment.price,
                     'curr':'RON',
                     'invoice_id':random_ticket_nr(),
                     'order_desc':'Test order Bucegi',
@@ -207,8 +210,8 @@ def checkout_view(request):
                 }
                 oparam=[params['amount'],params['curr'],params['invoice_id'],params['order_desc'],params['merch_id'],params['timestamp'],params['nonce']]
                 params['fp_hash']=euplatesc_mac(key,oparam)
-                print(f"Form is valid!Nr of ticket {tickets}, price {price} and parameters are:{params['fp_hash']}")
-                return JsonResponse("https://secure.euplatesc.ro/tdsprocess/tranzactd.php", data = oparam)
+                print(f"Form is valid!Nr of ticket {new_payment.quantity}, price {new_payment.price} and parameters are:{params['fp_hash']}")
+                return render(request, "", {"params":params})
             except Exception as e:
                 print("e")
                 messages.warning(request, _(f"Failed! {e}"))
@@ -221,8 +224,8 @@ def checkout_view(request):
         form = PaymentForm()
         context = {
             "form":form,
-            "price":price,
-            "tickets":tickets,
+            # "price":price,
+            # "tickets":quantity,
             }
     return render(request, template, context)
 

@@ -21,6 +21,10 @@ from django.db.models import Q, Count
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
+#---------codecs----------
+import sys
+import codecs
+sys.stdout = codecs.getwriter("iso-8859-1")(sys.stdout, 'xmlcharrefreplace')
 
 # -----------examples for using localized dae objects----------------
 # localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
@@ -135,7 +139,7 @@ def home(request):
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.date.today(),
-        'reviews': Testimonial.objects.filter(status=True),
+        # 'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all().order_by("rank"),
         })
     
@@ -417,15 +421,6 @@ def faq_view(request):
     context = {
     }
     return render(request, template, context)
-#======================== page not found page================================
-def page_not_found(request, exception=None):
-    template = 'services/404.html'
-
-    return render(request, 'services/home.html', {})
-#======================== page not found page================================
-def server_error(request):
-    template = 'services/500.html'
-    return render(request, template, {})
 #======================== privacy page================================
 def privacy_view(request):
     template = 'services/privacy.html'

@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.static import serve
 from django.conf import settings
-from django.conf.urls import handler404, handler500
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
@@ -10,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 from services.sitemaps import *
+from django.views.decorators.csrf import csrf_exempt
 
 
 sitemaps = {
@@ -31,14 +31,15 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path("robots.txt", TemplateView.as_view(template_name="services/robots.txt", content_type="text/plain"),),
     path('captcha/', include('captcha.urls')),
-    # path("__debug__/", include("debug_toolbar.urls"))
+    path("__debug__/", include("debug_toolbar.urls")),
+    
 ]
 
 urlpatterns += i18n_patterns(
     path('', include('services.urls')),
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
-    path('payments/', include('payments.urls')),
+    # path('payments/', include('payments.urls')),
     path('map/', include('geemap.urls')),
 
 )
@@ -46,8 +47,4 @@ urlpatterns += i18n_patterns(
 urlpatterns += re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-if settings.DEBUG==False:
-    handler404 = "services.views.page_not_found"
-    handler500 = "services.views.server_error"
-else:
-    pass
+

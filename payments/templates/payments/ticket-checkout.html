@@ -16,13 +16,13 @@
 				<!-- welcome start-->
 				<section class="welcome-primary">
 					<picture>
-						<source srcset="{% static 'img/wildlife/lake.webp' %}" media="(min-width: 992px)"><img class="img--bg" src="{% static 'img/wildlife/lake.webp' %}" alt="img">
+						<source srcset="{% static 'img/wildlife/lake.webp' %}" media="(min-width: 992px)"><img class="bucegi-bolboci-lake" src="{% static 'img/wildlife/lake.webp' %}" alt="img">
 					</picture>
 					<div class="container">
 						<div class="row">
 							<div class="col-auto">
 								<div class="align-container">
-                  <div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+                  					<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
 										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Ticket</span> <span> Checkout{% endblocktranslate %}</span></h1>
 									</div>
 								</div>
@@ -47,21 +47,20 @@
 								<!-- checkout start-->
 								<form class="form checkout-form" action="{% url 'checkout' %}" method="POST">
 									{% csrf_token %}
+									
 									<div class="row">
 										<div class="col-lg-7 col-xl-8">
 											<div class="checkout__wrapper">
 												<div class="form__fieldset">
 													<h6 class="form__title">{% trans 'Payer Personal Information' %}</h6>
-													<div class="row offset-30 mb-5">
+													<!-- <div class="row offset-30 mb-5">
 														<div class="col-md-6">
-															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->
-															<!-- {{ form.quantity }} -->
+															{{ form.quantity.value }}
 														</div>
 														<div class="col-md-6">
-															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->
-															<!-- {{ form.price }} -->
+															{{ form.price.value }}
 														</div>
-													</div>
+													</div> -->
 													<div class="row offset-30">
 														<div class="col-md-6">
 															<!-- <input class="form__field" type="text" name="first-name" placeholder="{% trans 'First Name' %}"/> -->
@@ -118,13 +117,12 @@
 														</div>
 													</div>
 												</div>
-												
 												<div class="form__fieldset">
 													<h6 class="form__title">{% trans 'Payment Method' %}</h6>
 													<div class="row offset-30">
 														<div class="col-12">
 															<div class="form__payments">
-																<label class="form__radio-label"><img class="form__label-img" style="height:70px;width:auto;" src="{% static 'img/icons/netopia-256x256.jpg' %}" alt="revolut"/>
+																<label class="form__radio-label"><img class="form__label-img" style="height:30px;width:auto;" src="https://w7.pngwing.com/pngs/363/177/png-transparent-visa-mastercard-logo-visa-mastercard-computer-icons-visa-text-payment-logo.png" alt="revolut"/>
 																	<input class="form__input-radio" type="radio" name="method-select" value="visa" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
 																</label>
 																<label class="form__radio-label"><img class="form__label-img" src="{% static 'img/icons/revolut.png' %}" alt="revolut"/> Revolut
@@ -161,17 +159,34 @@
 															</div>
 															<div class="col-7 col-sm-8 col-md-9 col-lg-7">
 																<div class="order-item__description"><h4>{% trans 'Teens and Adults' %}</h4>
-																	<div class="order-item__count"> <span> </span><span id="tickets"></span></div>
 																</div>
+																<p>{% trans '*Free for Children*' %}</p>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="form__fieldset no-margin-bottom">
+												<script type="text/javascript" charset="utf-8">
+
+													function updatePrice(){
+														tickets = document.getElementsByName("adults").value;
+														document.getElementById("price").value = tickets*10;
+													}
+												
+												</script>
+												<div class="form__fieldset no-margin-bottom cart-item">
 													<div class="cart-totals">
-														<ul class="cart-totals__list">
-															<li><span>{% trans 'Number of tickets' %}:</span><span><input style="width:50px;" id="tickets" name="tickets_nr" value="{{ tickets }}" readonly></span></li>
-															<li><span>{% trans 'Final cost' %} (RON):</span><span><input style="width:50px;" id="tickets" name="total_price" value="{{ price }}" readonly></span></li>
+														<ul class="cart-totals__list align-items-center">
+															<!-- <li><span>{% trans 'Number of tickets' %}:</span><input id="tickets" name="tickets_nr" value="" readonly></li> -->
+															<li clas="align-items-center"><span>{% trans 'Number of tickets' %}:</span>
+																<div class="cart-item__count">
+																	<span class="cart-item__minus"></span>
+																	{{ form.quantity }}
+																	<!-- <input class="cart-item__input" id="tickets" name="tickets_nr" value="" readonly> -->
+																	<span class="cart-item__plus"></span>
+															  	</div>
+															</li>
+															<li><span>{% trans 'Final cost' %}:</span>{{ form.price }}</li>
+															<!-- <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li> -->
 															<li><span>{{ form.terms }}</span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
 															
 														</ul>

@@ -416,7 +416,7 @@
 					$input.val(count)
 					$input.change()
 					$('#tickets').val(get_total_tickets());
-					$('#total').val(get_total_price());
+					$('#total_price').val(get_total_price());
 
 					return false
 
@@ -428,7 +428,7 @@
 					$input.val(parseInt($input.val()) + 1)
 					$input.change()
 					$('#tickets').val(get_total_tickets());
-					$('#total').val(get_total_price());
+					$('#total_price').val(get_total_price());
 
 					return false
 
@@ -446,7 +446,7 @@
 				function get_total_price(){
 					let total = 0;
 					const ticket_val = 10;
-					$("input[name='adults']").each(function(){
+					$("input[name='price']").each(function(){
 						total += +this.value*ticket_val
 						console.log(total);
 					});

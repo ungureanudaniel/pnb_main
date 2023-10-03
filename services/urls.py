@@ -1,12 +1,11 @@
 from django.urls import path, include
 from django.conf import settings
-from django.views.generic.base import TemplateView
 from .views import home, contacts_view, coming_soon, gallery, team, history,\
 flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view, page_not_found, server_error, park_rules, council_view, mng_plan_view,\
+unsubscribe, sector_map_view, council_view, mng_plan_view,\
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
 from django.conf.urls.static import static
 from users.views import user_logout
@@ -16,7 +15,7 @@ urlpatterns = [
         #-------Authentication----------------
         path('logout/', user_logout, name='signout'),
         #-------Visitor urls------------------
-        path('home', home, name="home"),
+        path('', home, name="home"),
         path('contact', contacts_view, name="contact"),
         path('coming-soon', coming_soon, name="coming-soon"),
         path('gallery', gallery, name="gallery"),
