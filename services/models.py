@@ -22,6 +22,7 @@ class Announcement(models.Model):
     link_en = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
     timestamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
+    # date = models.DateField(default=datetime.datetime.now)
     expiry = models.DateTimeField(blank=True)
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

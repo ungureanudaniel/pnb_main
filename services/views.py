@@ -18,14 +18,12 @@ from django.utils.translation import activate
 from django.views.decorators.csrf import csrf_protect
 #----blog imports
 from django.db.models import Q, Count
+from django.db.models import Func
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
-#---------codecs----------
-import sys
-import codecs
-sys.stdout = codecs.getwriter("iso-8859-1")(sys.stdout, 'xmlcharrefreplace')
-
+#---------cache decorator----------
+# from django.views.decorators.cache import cache_page
 # -----------examples for using localized dae objects----------------
 # localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
 # localized_time = formats.time_format(time_obj, 'SHORT_TIME_FORMAT')
@@ -159,7 +157,6 @@ def contacts_view(request):
                     sender_email = message_form.cleaned_data.get('email')
                     message = message_form.cleaned_data.get('text')
                     #=======send email=======
-                    print(f"{message_subject},{message_author},{sender_email}")
                     new_message = message_form.save(commit=False)
                     new_message.timestamp = datetime.datetime.now()
                     new_message.save()
@@ -438,6 +435,7 @@ def infopoints_view(request):
 def announcement_view(request):
     template = 'services/announcements.html'
     posts_categs = {}
+    # date = datetime.datetime.strptime(str(Announcement.objects.values('timestamp')), "%d%b")
     #------- post per categories count using annotate---------
     group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
     print(group_archive)
@@ -630,7 +628,6 @@ def videos_view(request):
             }
 
             videos.append(video_data)
-            print(videos)
     except Exception as e:
         messages.error(request, _('Import video nereusit!'))
     context = {

@@ -60,9 +60,13 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    #--------caching middleware------------------
+    #--------whitenoise middleware for media load
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    #--------django internalization for language selection
     "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
+    #--------caching middleware-------------------
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -87,14 +91,16 @@ TEMPLATES = [
         },
     },
 ]
-#
+# Enable caching in project
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-        'LOCATION': os.getenv('CACHES_LOC'),
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+        "LOCATION": [
+            "127.0.0.1:11211",
+            "47.245.97.115:11211"
+        ]
     }
 }
-
 WSGI_APPLICATION = 'pnb_main.wsgi.application'
 
 
