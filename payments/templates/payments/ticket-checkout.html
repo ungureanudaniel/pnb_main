@@ -169,7 +169,7 @@
 													<div class="cart-totals">
 														<ul class="cart-totals__list align-items-center">
 															<!-- <li><span>{% trans 'Number of tickets' %}:</span><input id="tickets" name="tickets_nr" value="" readonly></li> -->
-															<li class="align-items-center"><span>{% trans 'Number of tickets' %}:</span>
+															<li class="align-items-center"><span style="width:100px;">{% trans 'Number of adults' %}:</span>
 																<div class="cart-item__count">
 																	<span class="cart-item__minus"></span>
 																	{{ form.quantity }}
@@ -177,15 +177,15 @@
 																	<span class="cart-item__plus"></span>
 															  	</div>
 															</li>
-															<li class="align-items-center"><span>{% trans 'Number of children tickets' %}:</span>
+															<li class="align-items-center"><span style="width:100px;">{% trans 'Number of children' %}:</span>
 																<div class="cart-item__count">
 																	<span class="cart-item__minus"></span>
-																	{{ form.quantity }}
+																	{{ form.quantity_kids }}
 																	<!-- <input class="cart-item__input" id="tickets" name="tickets_nr" value="" readonly> -->
 																	<span class="cart-item__plus"></span>
 															  	</div>
 															</li>
-															<li class="align-items-center"><span>{% trans 'Final cost' %}:</span>{{ form.price }}</li>
+															<li class="align-items-center"><span style="width:100px;">{% trans 'Final cost' %}:</span>{{ form.price }} RON</li>
 															<!-- <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li> -->
 															<li class="align-items-center check"><span>{{ form.terms }}</span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
 															

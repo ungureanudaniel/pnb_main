@@ -352,10 +352,21 @@ msgstr "Atenție! Până la finalizarea serviciului propriu de plată online, vo
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy from rangers"
 msgstr "De la rangeri"
-
+#: .\payments\templates\includes\ticket-checkout.html:9
+msgid "Number of adults"
+msgstr "Număr de adulți"
+#: .\payments\templates\includes\ticket-checkout.html:9
+msgid "Number of children"
+msgstr "Număr de copii"
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy Online"
 msgstr "Online"
+#: .\payments\templates\includes\views.html:9
+msgid "Your children tickets have been sent to the email you introduced. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"
+msgstr "Biletele de vizitator pentru copii dvs. au fost trimise pe emailul introdus. Copiii dvs. ar trebui să aibă cu ei biletele de vizitator atunci când vizitează Parcul Natural Bucegi. Mulțumim!"
+#: .\payments\templates\includes\views.html:9
+msgid "You must choose at least one ticket to finalize the purchase."
+msgstr "Trebuie să alegeți cel puțin un bilet pentru a finaliza achiziția."
 #: .\services/templates/services\home.html:9
 msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
 msgstr "Observați </h6><a class='destination-item__link' href='#'>Fauna sălbatică"

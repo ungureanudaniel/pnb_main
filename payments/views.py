@@ -73,31 +73,38 @@ def checkout_view(request):
             try:
                 #save payment to database
                 new_payment=form.save(commit=False)
-                new_payment.timestamp = timezone.now()
-                new_payment.save()
-                #euplatesc parameters
-                params={
-                    'amount':str(1),
-                    'curr':'RON',
-                    'invoice_id':str(new_payment.payment_id),
-                    'order_desc':'Test order Bucegi',
-                    'merch_id':mid,
-                    'timestamp':strftime("%Y%m%d%H%M%S"),
-                    'nonce': uuid.uuid4().hex
-                }
-                oparam=[params['amount'],params['curr'],params['invoice_id'],params['order_desc'],params['merch_id'],params['timestamp'],params['nonce']]
-                params['fp_hash']=euplatesc_mac(key,oparam)
-                # print(f"Form is valid!Nr of ticket {new_payment.quantity}, price {new_payment.price} and parameters are:{params['fp_hash']}")
-                
-                #----create a url with the parameters in it  and redirect to it
-                params['ExtraData[silenturl]']='https://bucegipark.ro/en/tickets/status'
-                query_string = urlencode(params)
-                payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
-                print(f"post data is: {request.POST}")
-                print(f"post data is: {params}")
+                if new_payment.quantity > 0:
 
-                return redirect(payment_url)
-                
+                    new_payment.timestamp = timezone.now()
+                    new_payment.save()
+                    #euplatesc parameters
+                    params={
+                        'amount':str(1),
+                        'curr':'RON',
+                        'invoice_id':str(new_payment.payment_id),
+                        'order_desc':'Test order Bucegi',
+                        'merch_id':mid,
+                        'timestamp':strftime("%Y%m%d%H%M%S"),
+                        'nonce': uuid.uuid4().hex
+                    }
+                    oparam=[params['amount'],params['curr'],params['invoice_id'],params['order_desc'],params['merch_id'],params['timestamp'],params['nonce']]
+                    params['fp_hash']=euplatesc_mac(key,oparam)
+                    # print(f"Form is valid!Nr of ticket {new_payment.quantity}, price {new_payment.price} and parameters are:{params['fp_hash']}")
+                    
+                    #----create a url with the parameters in it  and redirect to it
+                    params['ExtraData[silenturl]']='https://bucegipark.ro/en/tickets/status'
+                    query_string = urlencode(params)
+                    payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
+                    print(f"post data is: {request.POST}")
+                    print(f"post data is: {params}")
+
+                    return redirect(payment_url)
+                elif new_payment.quantity == 0 and new_payment.quantity_kids > 0:
+                    messages.success(request, _("Your children tickets have been sent to the email you introduced. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"))
+                    return redirect("pay-success")
+                else:
+                    messages.warning(request, _("You must choose at least one ticket to finalize the purchase."))
+                    return redirect("checkout")
             except Exception as e:
                 print(e)
                 messages.warning(request, _(f"Failed! {e}"))

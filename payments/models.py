@@ -33,7 +33,6 @@ class Payment(models.Model):
     This class creates database tables for each payment made to bucegi natural park administration
     """
     CURRENCY_CHOICES = (
-            ('EUR', 'EUR'),
             ('RON', 'RON'),
         )
     STATUS_CHOICES = (
@@ -43,7 +42,8 @@ class Payment(models.Model):
     )
     payment_id = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     quantity = models.IntegerField(default=0)
-    price = models.IntegerField()
+    quantity_kids = models.IntegerField(default=0)
+    price = models.DecimalField(decimal_places=2, max_digits=5)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
     phone = models.CharField(max_length=12, blank=False, null=False)
