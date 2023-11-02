@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from datetime import timedelta
+import uuid
 from django_countries.fields import CountryField
 #--------django-payments imports
 # from payments import PurchasedItem
@@ -32,15 +33,17 @@ class Payment(models.Model):
     This class creates database tables for each payment made to bucegi natural park administration
     """
     CURRENCY_CHOICES = (
-            ('USD', 'USD'),
             ('EUR', 'EUR'),
             ('RON', 'RON'),
-            ('GBP', 'GBP'),
-            ('CHF', 'CHF'),
         )
-    payment_id = models.CharField(max_length=100, null=True, blank=True, default="a")
+    STATUS_CHOICES = (
+            ('pending', 'pending'),
+            ('successful', 'successful'),
+            ('failed', 'failed'),
+    )
+    payment_id = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     quantity = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=10, decimal_places=3, default=0)
+    price = models.IntegerField()
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
     phone = models.CharField(max_length=12, blank=False, null=False)
@@ -53,8 +56,9 @@ class Payment(models.Model):
     currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, default='RON')
     notes = models.TextField()
     terms = models.BooleanField()
+    status = models.CharField(choices=STATUS_CHOICES, max_length=12, default='pending')
     timestamp = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return f"{self.payment_id}"
-# #==================payment model from django payments module==============
+#==================payment model from django payments module==============

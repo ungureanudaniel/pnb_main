@@ -52,9 +52,11 @@
 						<div class="row">
 							<div class="col-12 text-center">
                 <a class="col-6 button button--primary" href="{% url 'sector-map' %}">{% trans 'Buy from rangers' %}</a>
-                <!-- <a class="col-6 button button--primary button--filled" href="{% url 'checkout' %}">{% trans 'Buy Online' %}</a> -->
+                {% if user.is_authenticated %}
+                <a class="col-6 button button--primary button--filled" href="{% url 'checkout' %}">{% trans 'Buy Online' %}</a>
+                {% else %}
                 <a class="col-6 button button--primary button--filled" href="https://easy2visit.com/en/bucegi-natural-park/">{% trans 'Buy Online' %}</a>
-
+                {% endif %}
               </div>
 						</div>
 					</div>

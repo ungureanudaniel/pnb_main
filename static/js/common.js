@@ -415,7 +415,7 @@
 					count = count < 1 ? 1 : count
 					$input.val(count)
 					$input.change()
-					$('#tickets').val(get_total_tickets());
+					// $('#tickets').val(get_total_tickets());
 					$('#total_price').val(get_total_price());
 
 					return false
@@ -427,31 +427,47 @@
 					const $input = $(this).parent().find('input')
 					$input.val(parseInt($input.val()) + 1)
 					$input.change()
-					$('#tickets').val(get_total_tickets());
+					// $('#tickets').val(get_total_tickets());
 					$('#total_price').val(get_total_price());
 
 					return false
 
 				})
+				function updateTotal() {
+					var quantity = parseInt($('#quantity').val()) || 0; // ParseInt to ensure a number, default to 0 if not a valid number
+					var price = 10; // ParseFloat to ensure a number, default to 0 if not a valid number
+					var total = quantity * price;
+					
+					// Update the total field with the calculated value
+					$('#total_price').val(total.toFixed(0)); // Using toFixed(2) to format the total as a decimal with two decimal places
+				  }
+			  
+				  // Attach the updateTotal function to the change event of quantity and price fields
+				  $('#quantity').on('change', function () {
+					updateTotal();
+				  });
+			  
+				  // Initial update on page load
+				  updateTotal();
 				// sum up ticket number
-				function get_total_tickets(){
-					let tickets = 0;
-					$("input[name='adults']").each(function(){
-						tickets += +this.value
-						console.log(tickets);
-					});
-					return tickets
-				}
+				// function get_total_tickets(){
+				// 	let tickets = 0;
+				// 	$("input[name='adults']").each(function(){
+				// 		tickets += +this.value
+				// 		console.log(tickets);
+				// 	});
+				// 	return tickets
+				// }
 				// sum up tickets price
-				function get_total_price(){
-					let total = 0;
-					const ticket_val = 10;
-					$("input[name='price']").each(function(){
-						total += +this.value*ticket_val
-						console.log(total);
-					});
-					return total.toFixed(0)
-				}
+				// function get_total_price(){
+				// 	let total = 0;
+				// 	const ticket_val = 10;
+				// 	$("input[name='price']").each(function(){
+				// 		total += +this.value*ticket_val
+				// 		console.log(total);
+				// 	});
+				// 	return total
+				// 	}
 			}
 
 

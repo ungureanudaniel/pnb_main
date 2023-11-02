@@ -16,13 +16,13 @@
 				<!-- welcome start-->
 				<section class="welcome-primary">
 					<picture>
-						<source srcset="{% static 'img/wildlife/lake.webp' %}" media="(min-width: 992px)"><img class="bucegi-bolboci-lake" src="{% static 'img/wildlife/lake.webp' %}" alt="img">
+						<source srcset="{% static 'img/backgrounds/rhododendron.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/rhododendron.webp' %}" alt="img"/>
 					</picture>
 					<div class="container">
 						<div class="row">
 							<div class="col-auto">
 								<div class="align-container">
-                  					<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
 										<h1 class="welcome-primary__title"><span>{% blocktranslate %}Ticket</span> <span> Checkout{% endblocktranslate %}</span></h1>
 									</div>
 								</div>
@@ -40,12 +40,12 @@
 				{% endif %}
 				<!-- welcome end-->
 				<!-- section start-->
-				<section class="section checkout">
+				<section class="section checkout pt-0">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
 								<!-- checkout start-->
-								<form class="form checkout-form" action="{% url 'checkout' %}" method="POST">
+								<form class="form checkout-form" method="POST">
 									{% csrf_token %}
 									
 									<div class="row">
@@ -165,19 +165,11 @@
 														</div>
 													</div>
 												</div>
-												<script type="text/javascript" charset="utf-8">
-
-													function updatePrice(){
-														tickets = document.getElementsByName("adults").value;
-														document.getElementById("price").value = tickets*10;
-													}
-												
-												</script>
 												<div class="form__fieldset no-margin-bottom cart-item">
 													<div class="cart-totals">
 														<ul class="cart-totals__list align-items-center">
 															<!-- <li><span>{% trans 'Number of tickets' %}:</span><input id="tickets" name="tickets_nr" value="" readonly></li> -->
-															<li clas="align-items-center"><span>{% trans 'Number of tickets' %}:</span>
+															<li class="align-items-center"><span>{% trans 'Number of tickets' %}:</span>
 																<div class="cart-item__count">
 																	<span class="cart-item__minus"></span>
 																	{{ form.quantity }}
@@ -185,14 +177,25 @@
 																	<span class="cart-item__plus"></span>
 															  	</div>
 															</li>
-															<li><span>{% trans 'Final cost' %}:</span>{{ form.price }}</li>
+															<li class="align-items-center"><span>{% trans 'Number of children tickets' %}:</span>
+																<div class="cart-item__count">
+																	<span class="cart-item__minus"></span>
+																	{{ form.quantity }}
+																	<!-- <input class="cart-item__input" id="tickets" name="tickets_nr" value="" readonly> -->
+																	<span class="cart-item__plus"></span>
+															  	</div>
+															</li>
+															<li class="align-items-center"><span>{% trans 'Final cost' %}:</span>{{ form.price }}</li>
 															<!-- <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li> -->
-															<li><span>{{ form.terms }}</span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
+															<li class="align-items-center check"><span>{{ form.terms }}</span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
 															
 														</ul>
-
+														{% if user.is_authenticated %}
 														<button class="form__submit" type="submit">{% trans 'Pay' %}</button>
+														{% else %}
+														<a class="form__submit" type="">{% trans 'Pay' %}</a>
 														<p class="form__title text-warning">{% trans 'Disabled for now, but not for long. Stay tuned!' %}</p>
+														{% endif %}
 													</div>
 												</div>
 											</div>
