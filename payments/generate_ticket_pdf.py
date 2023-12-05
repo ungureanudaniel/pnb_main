@@ -6,13 +6,8 @@ from django.http import FileResponse
 import io
 from django.utils.translation import gettext_lazy as _
 #==========qr code module=========================
-import qrcode
+
 #============generate pdf ticket====================
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.units import inch
-from reportlab.lib.styles import getSampleStyleSheet
 
 #----------generate unique code for email subscription conf--------------------
 def ticket_series(y):
@@ -100,103 +95,6 @@ if __name__ == "__main__":
                         "ticketseries": "Serie tichet",
                     }
     generate_pdf_ticket(data)
-# def generate_pdf_ticket(data:dict):
-   
-#     ticket = []
-    
-#     # Initialise the simple document template
-#     doc = SimpleDocTemplate(f"{data['file']}",
-#                             page_size=letter,
-#                             bottomMargin=.4 * cm,
-#                             topMargin=.4 * cm,
-#                             rightMargin=.8 * cm,
-#                             leftMargin=.8 * cm)
-    
-#     # set the font style
-#     styles = getSampleStyleSheet()
-#     styleN = styles['Normal']
-
-#     p_count = Paragraph(f" Buyer Name: {data['first_name']} {data['last_name']} ")
-#     ticket.append(Spacer(5, 20))
-#     ticket.append(p_count)
-#     # extract and add key value pairs to PDF
-#     p = Paragraph("Numar si serie" + " : " + str(data['series']), styleN)
-#     ticket.append(p)
-#     ticket.append(Spacer(1, 2))
-#     # build PDF using the data
-#     doc.build(ticket)
-#     doc.save()
-
-#============generate the pdf file==================
-# def create_ticket_pdf(file_name:str, series:str, extension:str):
-#     c = canvas.Canvas(f"tickets/{file_name}{extension}", pagesize=letter)
-#     c.setFillColor(colors.grey)
-#     c.setFont("Helvetica-Bold", 24)
-#     c.drawString(50, 700, "Visitor Ticket for Bucegi Natural Park")
-
-#     c.setFillColor(colors.black)
-#     c.setFont("Helvetica", 14)
-#     c.drawString(50, 660, "REGIA NAȚIONALĂ A PĂDURILOR ROMSILVA R.A.")
-#     c.drawString(50, 660, "ADMINISTRAȚIA PARCULUI NATURAL BUCEGI R.A.")
-
-#     c.drawString(50, 640, series)
-#     c.drawString(50, 620, "watermark")
-#     c.drawString(50, 620, "contact info")
-
-
-#     park_logo_path = os.path.join(os.getcwd(), r"C:\Users\ungur\Documents\code\pnb_main\static\img\logo\bucegi_logo.png")
-#     rosilva_logo_path = os.path.join(os.getcwd(), r"C:\Users\ungur\Documents\code\pnb_main\static\img\logo\rnp-romsilva3.png")
-    
-#     c.drawImage(park_logo_path, 50, 400, width=150, height=150)
-#     c.drawImage(rosilva_logo_path, 50, 400, width=150, height=150)
-#     c.save()
-# def generate_pdf_file(buyer_fname, buyer_lname,file_name:str, series:str, extension:str, adult_tickets:int):
-#     from io import BytesIO
- 
-#     buffer = BytesIO()
-#     p = canvas.Canvas(buffer)
- 
-#     # Create a PDF document
-#     p.drawString(100, 750, "Book Catalog")
- 
-#     y = 700
-#     for i in range(0,adult_tickets):
-#         p.drawString(100, y, f"Type: {series}")
-#         p.drawString(100, y - 20, f"Author: {buyer_fname} {buyer_lname}")
-#         p.drawString(100, y - 40, f"Year: {'sgfgfhgj'}")
-#         y -= 60
- 
-#     p.showPage()
-#     p.save()
- 
-#     buffer.seek(0)
-#     return buffer
-
-# def generate_pdf_ticket(buyer_fname, buyer_lname,file_name:str, series:str, adult_tickets:int):
-#     #create bitestream buffer
-#     buffer = io.BytesIO()
-#     c = canvas.Canvas(buffer, pagesize=letter, bottomup=0)
-#     textobj = c.beginText()
-#     textobj.setTextOrigin(cm,cm)
-#     textobj.setFont("Helvetica", 16)
-#     #lines of text
-#     lines = [
-#         buyer_fname,
-#         buyer_lname,
-#         series,
-#         "RNP ROMSILVA",
-
-#     ]
-#     #loop through each line
-#     for line in lines:
-#         textobj.textLine(line)
-    
-#     #finish generating 
-#     c.drawText(textobj)
-#     c.showPage()
-#     c.save()
-#     buffer.seek(0)
-#     return FileResponse(buffer, as_attachment=True, filename=file_name)
 
 
     
