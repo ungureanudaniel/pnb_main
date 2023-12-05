@@ -2828,14 +2828,14 @@ msgstr "Acces motorizat"
 msgid "Allowed Vehicles"
 msgstr "Vehicule cu acces permis"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "<span>Vehicles with </span><br> & <span> granted access</span>"
-msgstr "<span>Vehicule cu </span><br> & <span> acces permis</span>"
+msgid "<span>Vehicles with </span><br> <span> granted access</span>"
+msgstr "<span>Vehicule cu </span><br> <span> acces permis</span>"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Bucegi Natural Park has many private property owners and thus, it has to allow them access by motorized vehicles, ouside public roads, in order to carry goods to their properties"
-msgstr "În Parcul Natural Bucegi există mulți proprietari privați și acestora trebuie să le asigurăm accesul motorizat, în afara drumurilor publice, pentru transport de bunuri la proprietăți"
+msgid "Check if a vehicle inside Bucegi Natural Park has authorised access"
+msgstr "Verifică dacă un autovehicul are accesul autorizat în Parcul Natural Bucegi"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Below is the list of motorized vehicles allowed to drive specific properties"
-msgstr "Mai jos este lista cu autovehicule motorizate, cu accesul permis"
+msgid "Write the car plates series in the box below"
+msgstr "Scrie numărul de înmatriculare în căsuța de mai jos"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Owner firstname and lastname"
 msgstr "Prenume și nume de familie proprietar"
@@ -2845,3 +2845,6 @@ msgstr "Număr de înmatriculare"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Type of vehicle"
 msgstr "Tip de vehicul"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Search Here"
+msgstr "Căutare"

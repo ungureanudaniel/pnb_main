@@ -89,8 +89,20 @@ def add_vehicle(request):
 #========================add allowed vehicle VIEW=================================
 def allowed_vehicles(request):
     template = 'services/allowed_vehicles.html'
+    allowed_vehicles = AllowedVehicles.objects.all()
+    context = {}
+    if request.method == "GET":
+        query = request.GET.get("q")
+        queryset = allowed_vehicles.filter(Q(plate_nr__icontains=query))
+        if queryset:
+            context.update({
+                "query":query,
+                "car":queryset,
 
-    return render(request, template, {"allowed_vehicles": AllowedVehicles.objects.all()})
+            })
+        else:
+            messages.warning(request, _("This car is not authorized!"))
+    return render(request, template, context)
 #========================home page=================================
 @csrf_exempt
 def home(request):

@@ -301,6 +301,8 @@ class AllowedVehicles(models.Model):
     description = models.TextField(max_length=1000)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     plate_nr = models.CharField(max_length=8)
+    permit_nr = models.CharField(max_length=50)
+    permit_date = models.DateField()
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     class Meta:
         verbose_name = _('Allowed Vehicles')
