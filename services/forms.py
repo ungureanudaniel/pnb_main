@@ -95,6 +95,31 @@ class TestimonialForm(forms.ModelForm):
 
 
         }
+# class VehicleForm(forms.ModelForm):
+#     def __init__(self, *args, **kwargs):
+#         super(VehicleForm, self).__init__(*args, **kwargs)
+#         self.fields['owner_fname'].label = _("Owner first name")
+#         self.fields['owner_lname'].label = _("Owner last name")
+#         self.fields['description'].label = _("Other info if needed...")
+#         self.fields['plate_nr'].label = _("Plates number")
+
+#         self.fields['owner_fname'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
+#         self.fields['owner_lname'].widget.attrs['style'] = "width:450px;margin:0 20px 20px 0px;"
+#         self.fields['plate_nr'].widget.attrs['style'] = "margin: 0 20px 20px 0px;"
+#         self.fields['categ'].widget.attrs['style'] = "width:450px;margin-bottom:10px;"
+#         self.fields['description'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
+#         # self.fields['text'].widget.attrs['style'] = ""
+#     class Meta:
+#         model = AllowedVehicles
+#         fields = ['owner_fname', 'owner_lname', 'plate_nr', 'description', 'categ']
+#         widgets = {
+#             'owner_fname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'First name...'}),
+#             'owner_lname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Last name...'}),
+#             'plate_nr': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Plate nr...'}),
+#             'description': forms.EmailInput(attrs = {'class': 'form-control', 'placeholder': 'Other info...'}),
+
+
+#         }
 class ContactForm(forms.ModelForm):
 
     class Meta:

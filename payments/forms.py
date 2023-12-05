@@ -30,7 +30,7 @@ class PaymentForm(forms.ModelForm):
 
         self.fields['price'].widget.attrs['style'] = "width:79px;font-weight:700;margin:15px 10px 20px 0px;border:none"
         self.fields['quantity'].widget.attrs['style'] = "width:40px;margin:0 10px 0px 10px;background-color:#e9ecef"
-        self.fields['quantity_kids'].widget.attrs['style'] = "width:40px;margin:0 10px 0px 10px;background-color:#e9ecef"
+        # self.fields['quantity_kids'].widget.attrs['style'] = "width:40px;margin:0 10px 0px 10px;background-color:#e9ecef"
         self.fields['currency'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['buyer_fname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
         self.fields['buyer_lname'].widget.attrs['style'] = "width:320px;margin:0 20px 20px 0px;"
@@ -44,12 +44,12 @@ class PaymentForm(forms.ModelForm):
         self.fields['email'].widget.attrs['style'] = "width:320px;margin-bottom:20px;"
     class Meta:
         model = Payment
-        fields = ['quantity', 'quantity_kids', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']
+        fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']
         exclude = () 
         readonly_fields = ('price',)
         widgets = {
             'quantity': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity', 'type': 'number', 'name':'adults', 'placeholder': '',}),
-            'quantity_kids': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity_kids', 'type': 'number', 'name':'kids', 'placeholder': '',}),
+            # 'quantity_kids': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity_kids', 'type': 'number', 'name':'kids', 'placeholder': '',}),
             'price': forms.TextInput(attrs = {'class': 'form-control', 'id':'total_price', 'name':'price', 'placeholder': '', 'readonly': 'readonly'}),
             'currency': forms.Select(attrs = {'class': 'form-control', 'placeholder': 'Currency of choice...'}),
             'buyer_fname': forms.TextInput(attrs = {'class': 'form-control', 'value':'Daniel', 'placeholder': 'First name...'}),

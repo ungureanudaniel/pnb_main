@@ -177,25 +177,21 @@
 																	<span class="cart-item__plus"></span>
 															  	</div>
 															</li>
-															<li class="align-items-center"><span style="width:100px;">{% trans 'Number of children' %}:</span>
+															<!-- <li class="align-items-center"><span style="width:100px;">{% trans 'Number of children' %}:</span>
 																<div class="cart-item__count">
 																	<span class="cart-item__minus"></span>
 																	{{ form.quantity_kids }}
-																	<!-- <input class="cart-item__input" id="tickets" name="tickets_nr" value="" readonly> -->
+																	<input class="cart-item__input" id="tickets" name="tickets_nr" value="" readonly>
 																	<span class="cart-item__plus"></span>
 															  	</div>
-															</li>
+															</li> -->
 															<li class="align-items-center"><span style="width:100px;">{% trans 'Final cost' %}:</span>{{ form.price }} RON</li>
 															<!-- <li><span>{% trans 'Final cost' %}:</span><input id="total" name="total_price" value="" readonly></li> -->
 															<li class="align-items-center check"><span>{{ form.terms }}</span><span>{% trans 'I read and accept the ' %}<a href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></span></li>
 															
 														</ul>
-														{% if user.is_authenticated %}
-														<button class="form__submit" type="submit">{% trans 'Pay' %}</button>
-														{% else %}
-														<a class="form__submit" type="">{% trans 'Pay' %}</a>
-														<p class="form__title text-warning">{% trans 'Disabled for now, but not for long. Stay tuned!' %}</p>
-														{% endif %}
+														<button class="form__submit" target="_blank" type="submit">{% trans 'Pay' %}</button>
+														<p class="form__title text-warning">{% trans 'Only test payments only for now' %}</p>
 													</div>
 												</div>
 											</div>

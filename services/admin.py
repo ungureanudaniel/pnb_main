@@ -4,7 +4,7 @@ PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
 Flora, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
 ParkRegulationCategory, ParkRegulationCatLink,\
-Wildlife
+Wildlife, VehicleCategory, AllowedVehicles
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
@@ -76,6 +76,12 @@ class ParkRegulationCategoryAdmin(admin.ModelAdmin):
 class ParkRegulationCatLinkAdmin(admin.ModelAdmin):
     list_display = ('year', 'category', 'link')
     fields = ['year', 'category', 'link']
+class VehicleCategoryAdmin(admin.ModelAdmin):
+    list_display = ('title','title_ro', 'title_de')
+    fields = ['title', 'title_ro', 'title_de',]
+class AllowedVehiclesAdmin(admin.ModelAdmin):
+    list_display = ('owner_fname','owner_lname', 'categ', 'plate_nr')
+    fields = ['owner_fname','owner_lname', 'categ', 'plate_nr']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
@@ -101,4 +107,6 @@ admin.site.register(PublicDocsDownloaderEntity, PublicDocsDownloaderEntityAdmin)
 admin.site.register(MngPlanCatLink, MngPlanCatLinkAdmin)
 admin.site.register(MngPlanDocsCategory, MngPlanDocsCategoryAdmin)
 admin.site.register(ParkRegulationCatLink, ParkRegulationCatLinkAdmin)
+admin.site.register(VehicleCategory, VehicleCategoryAdmin)
 admin.site.register(ParkRegulationCategory, ParkRegulationCategoryAdmin)
+admin.site.register(AllowedVehicles, AllowedVehiclesAdmin)

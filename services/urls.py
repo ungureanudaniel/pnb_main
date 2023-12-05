@@ -5,7 +5,7 @@ flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view, council_view, mng_plan_view,\
+unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
 from django.conf.urls.static import static
 from users.views import user_logout
@@ -42,6 +42,7 @@ urlpatterns = [
         path('park-rules', park_regulation_view, name="park-rules"),
         path('public-documents', public_docs, name="public-docs"),
         path('management-plan', mng_plan_view, name="mng-plan"),
+        path('allowed-vehicles', allowed_vehicles, name="auto-access"),
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),
         path('park-sectors', sector_map_view, name="sector-map"),
@@ -51,7 +52,6 @@ urlpatterns = [
         path('blog-search/q/', blogsearch_view, name="blogsearch"),
         #--------events urls-----------------------------
         path('events', eventlist_view, name="events"),
-
         #---------add content urls---------------------
         path('add-testimonial', add_testimonial, name="add_testimonial"),
 

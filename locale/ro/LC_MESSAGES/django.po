@@ -361,40 +361,59 @@ msgstr "Număr de copii"
 #: .\payments\templates\includes\tickets.html:9
 msgid "Buy Online"
 msgstr "Online"
-#: .\payments\templates\includes\views.html:9
-msgid "Your children tickets have been sent to the email you introduced. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"
+#: .\payments\templates\includes\views.py:9
+msgid "Your children tickets have been sent to the email you provided. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"
 msgstr "Biletele de vizitator pentru copii dvs. au fost trimise pe emailul introdus. Copiii dvs. ar trebui să aibă cu ei biletele de vizitator atunci când vizitează Parcul Natural Bucegi. Mulțumim!"
+#: .\payments\templates\includes\payment-failure.html:9
+msgid "Payment failure! Please try again. If the system doesn't seem to work please contact the administrator at daniel.ungureanu@bucegipark.ro."
+msgstr "Plată eșuată! Vă rugăm încercați din nou. În caz că sistemul nu pare să funcționeze corect, vă rugăm contactați administratorul la daniel.ungureanu@bucegipark.ro."
+#: .\payments\templates\includes\payment-success.html:9
+msgid "Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"
+msgstr "Plată efectuată cu succes! Ticketele dvs. au fost trimise la emailul furnizat. Va fi nevoie să aveți la dvs. biletele de vizitator, atunci când vizitați Parcul Natural Bucegi. Vă mulțumim!"
+#: .\payments\templates\includes\views.py:9
+msgid "Invoice from Bucegi Natural Park"
+msgstr "Factura din partea Parcului Natural Bucegi"
+
 #: .\payments\templates\includes\views.html:9
 msgid "You must choose at least one ticket to finalize the purchase."
 msgstr "Trebuie să alegeți cel puțin un bilet pentru a finaliza achiziția."
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Observe </h6><a class='destination-item__link' href='#'>Wildlife"
 msgstr "Observați </h6><a class='destination-item__link' href='#'>Fauna sălbatică"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Visit</h6><a class='destination-item__link' href='#'>Historical Points of Interest"
 msgstr "Vizitați</h6><a class='destination-item__link' href='#'>Puncte de Interes Istoric"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Explore </h6><a class='destination-item__link' href='#'>Beautiful trails"
 msgstr "Explorați </h6><a class='destination-item__link' href='#'>Trasee Uimitoare"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Connect</h6><a class='destination-item__link' href='#'>With Nature"
 msgstr "Conectați-vă</h6><a class='destination-item__link' href='#'>cu Natura"
+#: .\services/templates/services\generate_ticket_pdf.py:9
+msgid "Visitor Ticket for Bucegi Natural Park"
+msgstr "Tichet de Vizitator pentru Parcul Natural Bucegi"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Taste</h6><a class='destination-item__link' href='#'>Local Cuisine"
 msgstr "Gustați</h6><a class='destination-item__link' href='#'>Bucătăria Locală"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "Winter</h6><a class='destination-item__link' href='#'> Sports"
 msgstr "Sporturi</h6><a class='destination-item__link' href='#'> de Iarnă"
 
-#: .\services/templates/services\home.html:9
+#: .\services/templates/services/home.html:9
 msgid "<span>Who</span> <span>Support Us and our </span>Efforts</h2>"
 msgstr "<span>Care</span> <span>Ne Sprijină pe noi și </span>Eforturile Noastre</h2>"
 
+#: .\payments/templates/payments/generate_ticket_pdf.py
+msgid "Ticket series"
+msgstr "Serie tichet"
+#: .\payments/templates/payments/generate_ticket_pdf.py
+msgid "Buyer"
+msgstr "Cumpărător"
 #: .\services\templates\services\ticket-online.html:98
 msgid "The final price of the visitor ticket will also include a small transaction fee, applied by our payment processor, Netopia Payments and equal to 0.95 percent per transaction"
 msgstr "Prețul final al biletului de vizitator va include, de asemenea, un mic comision de tranzacție, aplicat de procesatorul nostru de plăți, Netopia Payments și egal cu 0,95% pe tranzacție"
@@ -2307,7 +2326,7 @@ msgid "is an autonomous structure, constituted as a subunit of the National Fore
 msgstr "este o structură autonomă, constituită ca subunitate a Regiei Naționale a Pădurilor - RNP ROMSILVA și are rolul de a conserva natura, fauna sălbatică, patrimoniul cultural și managementul sustenabil a terenurilor, permițând în același timp oamenilor să se bucure de natură, pe o suprafață de 32,500 ha, suprapusă majoritar peste situl Natura 2000 ROSCI0013 Bucegi"
 
 #: services/templates/services/history.html: 56
-msgid "In addition to the Bucegi Massif, the <strong>park area</strong> includes small parts of neighbouring mountains such as Leaota. The natural park has more than 15 peaks exceeding 2,000 m in altitude, the highest in the massif being Omu Peak, at 2,505 m"
+msgid "In addition to the Bucegi Massif, the <strong>park area</strong> includes small parts of neighboring mountains such as Leaota. The natural park has more than 15 peaks exceeding 2,000 m in altitude, the highest in the massif being Omu Peak, at 2,505 m"
 msgstr "<strong>Suprafaţa parcului</strong> include, pe lângă Masivul Bucegi și alte mici părţi din unităţile montane vecine, cum ar fi Leaota. Parcul natural are mai bine de 15 vârfuri care depășesc 2,000 de metri, cel mai înalt din masiv fiind Vârful Omu, 2,505m"
 
 #: services/templates/services/history.html: 57
@@ -2802,3 +2821,27 @@ msgstr "<span>Plată</span> <span> Eșuată</span>"
 #: payments/templates/payments/ticket-checkout.html: 16
 msgid "Please try again with more caution"
 msgstr "Încercați din nou cu mai multă grijă"
+#: services/templates/services/base.html: 134
+msgid "Motorized Access"
+msgstr "Acces motorizat"
+#: services/templates/services/base.html: 134
+msgid "Allowed Vehicles"
+msgstr "Vehicule cu acces permis"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "<span>Vehicles with </span><br> & <span> granted access</span>"
+msgstr "<span>Vehicule cu </span><br> & <span> acces permis</span>"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Bucegi Natural Park has many private property owners and thus, it has to allow them access by motorized vehicles, ouside public roads, in order to carry goods to their properties"
+msgstr "În Parcul Natural Bucegi există mulți proprietari privați și acestora trebuie să le asigurăm accesul motorizat, în afara drumurilor publice, pentru transport de bunuri la proprietăți"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Below is the list of motorized vehicles allowed to drive specific properties"
+msgstr "Mai jos este lista cu autovehicule motorizate, cu accesul permis"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Owner firstname and lastname"
+msgstr "Prenume și nume de familie proprietar"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Plates number"
+msgstr "Număr de înmatriculare"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Type of vehicle"
+msgstr "Tip de vehicul"

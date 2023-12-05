@@ -1,20 +1,22 @@
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-from .models import Ticket, Payment
-from django.shortcuts import get_object_or_404, redirect, render
+from .models import Payment, Ticket
+from django.shortcuts import redirect, render
 from .forms import PaymentForm
 from django.views.decorators.csrf import csrf_exempt
 import random, string
-from django.urls import reverse
+from django.core.mail import send_mail, EmailMessage
 from django.utils import timezone
-import datetime
 from django.conf import settings
 from django.utils.text import slugify
 import warnings
-from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from urllib.parse import urlencode
+#-----------invoice and ticket generation imports
 
+from .generate_ticket_pdf import generate_pdf_ticket
+
+#--------------------------------------------------
 warnings.filterwarnings('ignore', message='.*cryptography', )
 #------------euplatesc imports--------------------------------
 import hashlib 
@@ -22,9 +24,8 @@ import hmac
 import uuid
 from time import strftime
 
-#----------generate unique code for email subscription conf--------------------
-def ticket_nr():
-    return "%0.12d" % random.randint(0, 99999999)
+#----------generate unique code for invoice and ticket--------------------
+
 #-----------------generate euplatesc hash -------------------
 def euplatesc_mac(key,params):
     data=""
@@ -39,8 +40,12 @@ def euplatesc_mac(key,params):
 
     return hmac.new(bytes.fromhex(key),data.encode(),hashlib.md5).hexdigest().upper()
 #----------generate unique code for email subscription conf--------------------
-def random_series(y):
+def ticket_series(y):
     return ''.join(random.choice(string.ascii_letters) for x in range(y))
+#----------generate unique code for email subscription conf--------------------
+def ticket_nr(y):
+    return ''.join(random.choice(string.ascii_letters) for x in range(y))
+
 #===============the ticket description view======================
 # def choosetickets_view(request):
 #     template = "payments/choose-tickets.html"
@@ -91,17 +96,18 @@ def checkout_view(request):
                     params['fp_hash']=euplatesc_mac(key,oparam)
                     # print(f"Form is valid!Nr of ticket {new_payment.quantity}, price {new_payment.price} and parameters are:{params['fp_hash']}")
                     
-                    #----create a url with the parameters in it  and redirect to it
-                    params['ExtraData[silenturl]']='https://bucegipark.ro/en/tickets/status'
+                    #----add parameters for post data server to server and for redirection to merchant site
+                    params['ExtraData[silenturl]']=f'{settings.BASE_URL}/tickets/payment-processing/'
+                    params['ExtraData[successurl]']=f'{settings.BASE_URL}/tickets/payment-success/'
+                    params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
+                    params['ExtraData[backtosite]']=f'{settings.BASE_URL}/tickets/ticket-checkout/'
                     query_string = urlencode(params)
                     payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
-                    print(f"post data is: {request.POST}")
-                    print(f"post data is: {params}")
-
                     return redirect(payment_url)
-                elif new_payment.quantity == 0 and new_payment.quantity_kids > 0:
-                    messages.success(request, _("Your children tickets have been sent to the email you introduced. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"))
-                    return redirect("pay-success")
+                #functionality for separate kids tickets
+                # elif new_payment.quantity == 0 and new_payment.quantity_kids > 0:
+                #     messages.success(request, _("Your children tickets have been sent to the email you provided. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"))
+                #     return redirect("pay-success")
                 else:
                     messages.warning(request, _("You must choose at least one ticket to finalize the purchase."))
                     return redirect("checkout")
@@ -121,44 +127,137 @@ def checkout_view(request):
             # "tickets":quantity,
             }
     return render(request, template, context)
-
-#============call back url=====================	
-def pay_callback(request):
-	#aici se va actualiza statusul payment-ului
-	#in POST se va primi parametrul invoice_id
-	#iar daca parametrul action=0 atunci plata este cu success
-	#...
-    template_success= "payments\payment-success.html"
-    template_failure="payments\payment-failure.html"
-    try:
-        invoice_id = request.GET['invoice_id']
-        print(f"Invoice id is: {invoice_id}")
-        payment_id = Payment.objects.get(payment_id=request.GET['invoice_id'])
-        print(payment_id)
-        if request.action == "0":
-        
-            return render(request, "https://bucegipark.ro/en/tickets/status/", {'status': 'successful'})
-    except Exception as e:
-        messages.warning(request, e)
-        return render(request, template_failure, {'status': 'failed'})
-    return render(request, "", {})
 #=============payment callback data=========================
-#crsf token exempted in urls.py
 def check_status(request):
+    """
+    crsf token exempted in urls.py
+    this function fetches the callback data from the payment provider server and updates
+    payment status in the database
+    """
     if request.method == 'POST':
-        messages.warning(request, request.POST)
-        print(f"callback data is: {request.POST}")# examine the data returned from the API
+        try:
+            payment = Payment.objects.get(payment_id=request.POST['invoice_id'])
+            print(f" current id is {payment.payment_id} and status: {payment.status}")
+            if request.POST['action'] == '0' and payment.status == 'pending':
+                payment.status = 'successful'
+                payment.bank_message = request.POST['message']
+                payment.save()
+                #---------fetch the current ticket nr
+                # next_ticket = Ticket.objects.all().count() + 1
+                
+                
+                try:
+                    #----------generate new subsequent ticket series and nr
+                    ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
+                    print(f"Current ticket nr:{ticket_nr}")
+                    ticket_series="DBPNO"
+                    print(f"Current series is:{ticket_series}{ticket_nr}")
+                    ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
+                    ticket_id = f"{ticket_series}{ticket_nr}"
+                    data = {
+                        "qr":payment.payment_id,
+                        "first_name":payment.buyer_fname,
+                        "last_name":payment.buyer_lname,
+                        "file":ticket_file_name,
+                        "series":ticket_id,
+                        "amount": request.POST['amount'],#in production need to divide by 10
+                        "buyer": _("Buyer"),
+                        "ticketseries": _("Ticket series"),
+                    }
+                    
+                except Exception as e:
+                    messages.warning(request, f"Ticket creation error! Details:{e}")
+                    print(e)
+                attachment = generate_pdf_ticket(data)
+                print(f"attachment is:{attachment}")
+                #----------save new subsequent ticket in the database
+                try:
+                    new_ticket = Ticket(
+                            # payment_id=payment.payment_id,
+                            buyer_fname=payment.buyer_fname,
+                            buyer_lname=payment.buyer_lname,
+                            ticket_series=ticket_series,
+                            ticket_nr=ticket_nr,
+                            ticket_pdf=attachment,
+                            slug=slugify(ticket_series+ticket_nr))
+                    new_ticket.save()
+                    try:
+                        email = EmailMessage(
+                            _("Bucegi Natural Park"),
+                            _(f"Dear {payment.buyer_fname}, Your visitor tickets are attached to this email"),
+                            "contact@bucegipark.ro",
+                            [f"{payment.email}",],
+                            ["daniel.ungureanu@bucegipark.ro"],
+                            reply_to=["contact@bucegipark.ro"],
+                            headers={"Message-ID": settings.TICKET_EMAIL_HEADER},
+                        )
+                        email.attach(new_ticket.ticket_pdf, 'application/pdf')
+                        email.send()
+
+                        # response = FileResponse(create_ticket_pdf(), 
+                        #                     as_attachment=True, 
+                        #                     filename=f"bucegi-ticket-{new_ticket.ticket_series}{new_ticket.ticket_nr}.pdf")
+                    
+                        return redirect(f'{settings.BASE_URL}/tickets/payment-success')
+                    except Exception as e:
+                        messages.warning(request, f"Application error:{e}")
+                        print(e)
+                        return redirect(f'{settings.BASE_URL}/tickets/payment-success')
+                        # str(request.POST['ticket_series'] + request.POST['ticket_nr'])
+                except Exception as e:
+                    messages.warning(request, f"Application error:{e}")
+                    print(e)
+                #-----------generate ticket pdf using reportlabs module
+                
+            else:
+                payment.status = 'failed'
+                payment.save()
+                # return redirect('https://a80e-84-232-140-74.ngrok-free.app/en/tickets/payment-failure/')
+        except Exception as e:
+            messages.warning(request, f"Application error:{e}. Please contact the administrator at daniel.ungureanu@bucegipark.ro")
+            sub_subject = _("To Website Admin: Payment application error")
+            from_email='contact@bucegipark.ro'
+            sub_message = ''
+            html_content=_("Please check payment error with id: {}, connected to email {}.".format(payment.payment_id, payment.email))
+            try:
+                send_mail(sub_subject, sub_message, from_email, ['daniel.ungureanu@bucegipark.ro'], html_message=html_content)
+            except Exception as e:
+                messages.warning(request, e)
 #==============pay_success_view=================
 def pay_success_view(request):
     template = "payments\payment-success.html"
+    messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
+    print(f"successful payment data: {request.POST}")
+    try:
+        payment = Payment
+        new_ticket = Ticket()
+    except Exception as e:
+        messages.warning(request, f"Application error:{e}")
+        print(e)
+    # try:
+    #     ticket_id = str(request.POST['ticket_series'] + request.POST['ticket_nr'])
+    #     print(ticket_id)
+    # except Exception as e:
+    #     messages.warning(request, f"Application error:{e}")
+    #     print(e)
+    # try:
+    #     response = FileResponse(generate_pdf_file(), 
+    #                         as_attachment=True, 
+    #                         filename=f"pnb-ticket-{ticket_id}.pdf")
+    #     return redirect('https://684a-84-232-140-74.ngrok-free.app/en/tickets/payment-success')
+    # except Exception as e:
+    #     messages.warning(request, f"Application error:{e}")
+    #     print(e)
+    #     return redirect('https://684a-84-232-140-74.ngrok-free.app/en/tickets/payment-success')
+
     context = {}
     return render(request, template, context)
 #==============pay_failure_view=================
 def pay_failure_view(request):
     template = "payments\payment-failure.html"
+    messages.warning(request, _("Payment failure! Please try again. If the system doesn't seem to work please contact the administrator at daniel.ungureanu@bucegipark.ro."))
     context = {}
     return render(request, template, context)
-
 
     
 	

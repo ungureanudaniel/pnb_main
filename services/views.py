@@ -1,12 +1,12 @@
 import warnings
 warnings.filterwarnings('ignore', message='.*cryptography', )
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.conf import settings
 from django.utils import translation, formats, timezone
 from utils.weather_scrape import scraped_data
-from django.views.decorators.gzip import gzip_page
+# from django.views.decorators.gzip import gzip_page
 import datetime
 from django.contrib import messages
 import random
@@ -14,11 +14,10 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 import requests
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import activate
 from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 #----blog imports
 from django.db.models import Q, Count
-from django.db.models import Func
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from hitcount.views import HitCountDetailView
@@ -68,8 +67,32 @@ def add_testimonial(request):
             messages.error(request, "Please check for empty fields.")
 
     return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
+#========================add allowed vehicle VIEW=================================
+def add_vehicle(request):
+    template = 'services/add_vehicle.html'
+    captcha_form = CaptchaForm()
+    if request.method=='POST':
+        review_form = TestimonialForm(request.POST or None, request.FILES or None)
+        try:
+            if captcha_form.is_valid():
+                if review_form.is_valid():
+                    new_review = review_form.save(commit=False)
+                    new_review.status = False
+                    new_review.save()
+                else:
+                    messages.error(request, "Please check for empty fields.")
+                    return redirect('.')
+        except Exception as e:
+            messages.error(request, "Please check for empty fields.")
 
+    return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
+#========================add allowed vehicle VIEW=================================
+def allowed_vehicles(request):
+    template = 'services/allowed_vehicles.html'
+
+    return render(request, template, {"allowed_vehicles": AllowedVehicles.objects.all()})
 #========================home page=================================
+@csrf_exempt
 def home(request):
     template = 'services/home.html'
     

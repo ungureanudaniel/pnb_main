@@ -259,5 +259,6 @@ LOGGING = {
 #===============youtube credentials====================
 CHANNELID=os.getenv("CHANNELID")
 YOUTUBE_DATA_API_KEY=os.getenv("YOUTUBE_DATA_API_KEY")
-
+TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
+BASE_URL = os.getenv("BASE_URL")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
