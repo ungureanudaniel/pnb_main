@@ -2832,10 +2832,10 @@ msgid "<span>Vehicles with </span><br> <span> granted access</span>"
 msgstr "<span>Vehicule cu </span><br> <span> acces permis</span>"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Check if a vehicle inside Bucegi Natural Park has authorised access"
-msgstr "Verifică dacă un autovehicul are accesul autorizat în Parcul Natural Bucegi"
+msgstr "Verificați dacă un autovehicul are accesul autorizat în Parcul Natural Bucegi"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Write the car plates series in the box below"
-msgstr "Scrie numărul de înmatriculare în căsuța de mai jos"
+msgstr "scrieți numărul de înmatriculare în căsuța de mai jos"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Owner firstname and lastname"
 msgstr "Prenume și nume de familie proprietar"
