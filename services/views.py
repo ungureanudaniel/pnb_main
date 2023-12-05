@@ -93,7 +93,9 @@ def allowed_vehicles(request):
     context = {}
     if request.method == "GET":
         query = request.GET.get("q")
+        
         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
+        print(query)
         if r:
             context.update({"car_info":r,})
         else:

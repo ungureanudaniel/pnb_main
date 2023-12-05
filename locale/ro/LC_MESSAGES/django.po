@@ -2856,7 +2856,7 @@ msgid "This car is not authorized!"
 msgstr "Acest autovehicul nu este autorizat!"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Write here"
-msgstr "Scrie aici"
+msgstr "Scrieți aici"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "For registered vehicles with a license plate, please write the plate number without any spaces (ex: DB10XYZ)"
 msgstr "În cazul vehiculelor cu număr de înmatriculare, vă rugăm să scrieți numărul de înmatriculare fără spații (de exemplu, DB10XYZ)"
