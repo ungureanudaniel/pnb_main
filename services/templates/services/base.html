@@ -491,9 +491,7 @@
 						<div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Administration' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'mng-plan' %}">{% trans 'Management Plan' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'park-rules' %}">{% trans 'Park Regulations' %}</a></div>
-						{% if user.is_authenticated %}
 						<div class="screen__item"><a class="screen__link" href="{% url 'auto-access' %}">{% trans 'Motorized Access' %}</a></div>
-						{% endif %}
 					</div>
 				</div>
 				<div class="menu-dropdown__inner" data-value="language">
@@ -614,9 +612,7 @@
 										<li><a href="{% url 'public-docs' %}">{% trans 'Administration' %}</a></li>
 										<li><a href="{% url 'mng-plan' %}">{% trans 'Management Plan' %}</a></li>
 										<li><a href="{% url 'park-rules' %}">{% trans 'Park Regulations' %}</a></li>
-										{% if user.is_authenticated %}
 										<li><a href="{% url 'auto-access' %}">{% trans 'Motorized Access' %}</a></li>
-										{% endif %}
 									</ul>
 								</li>
 							</ul>

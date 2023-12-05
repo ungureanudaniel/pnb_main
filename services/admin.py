@@ -80,8 +80,8 @@ class VehicleCategoryAdmin(admin.ModelAdmin):
     list_display = ('title','title_ro', 'title_de')
     fields = ['title', 'title_ro', 'title_de',]
 class AllowedVehiclesAdmin(admin.ModelAdmin):
-    list_display = ('owner_fname','owner_lname', 'categ', 'plate_nr', 'permit_nr', 'permit_date')
-    fields = ['owner_fname','owner_lname', 'categ', 'plate_nr', 'permit_nr', 'permit_date']
+    list_display = ('owner_fname','owner_lname', 'categ', 'identification_nr', 'permit_nr', 'permit_date')
+    fields = ['owner_fname','owner_lname', 'categ', 'identification_nr', 'permit_nr', 'permit_date']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)

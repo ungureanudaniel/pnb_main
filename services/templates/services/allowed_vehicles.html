@@ -25,14 +25,22 @@
         <section class="section elements bottom-50">
           <div class="container">
             <div class="row">
-              <div class="col-xl-10">
+              <div class="col-xl-12">
                 <h4 class="elements__title">{% trans 'Check if a vehicle inside Bucegi Natural Park has authorised access' %}</h4>
-                <p class="elements__title">{% trans 'Write the car plates series in the box below' %}</p>
+                
+                <p class="elements__title"><i class="fa fa-info mr-2 p-1" style="display:inline;border: 2px solid #282f34;border-radius: 80px;" aria-hidden="true" id="btnEditStatus"></i>{% trans 'For registered vehicles with a license plate, please write the plate number without any spaces (ex: DB10XYZ)' %}</p>
+                <div class="d-flex">
+                  <p class="elements__title w-75"><i class="fa fa-info mr-2 p-1" style="display:inline;border: 2px solid red;border-radius: 80px;" aria-hidden="true" id="btnEditStatus"></i>{% trans 'For vehicles without a license plate, like snowmobiles, please write the number received from the Park Administration (ex: 2/PH/2024)' %}</p>
+                  <span>
+                    <img class="img" style="width:120px;height:120px;" src="{% static 'img/infrastructure/snowmobile_nr_ex.jpeg' %}" alt="img"/>
+                  </span>
+                </div>
               </div>
             </div>
+            {% include 'includes/messages.html' %}
             <div class="blog__inner-block bottom-50">
-              <form class="search-form" action="." method="GET">
-                <input class="search-form__input" type="search" name="q" placeholder={% trans "Search Here" %}>
+              <form class="search-form" method="GET">
+                <input class="search-form__input" type="search" name="q" placeholder={% trans "Write here" %} value="">
                 <button class="form__submit" type="submit" name="form-type" value="search">{% trans 'Search' %}</button>
                   <svg class="icon">
                     <use xlink:href="#search"></use>
@@ -42,9 +50,34 @@
             </div>
             <!-- vehicles style-2 start-->
             <div class="row">
-              {% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}services/allowedvehicles/"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}
+            {% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}services/allowedvehicles/"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}
               
             </div>
+            {% if car_info %}
+            <div class="col-lg-12">
+              <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                <div class="row align-items-center">
+                  <div class="col-lg-3 col-xl-3"><span>{% trans 'Owner firstname and lastname' %}</span></div>
+                  <div class="col-lg-3 col-xl-3"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
+                  <div class="col-lg-3 col-xl-3 my-3"><span>{% trans 'Type of vehicle' %}</span></div>
+                  <div class="col-lg-3 col-xl-3 my-3"><span>{% trans 'Permit' %}</span></div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                <div class="row align-items-center">
+                  <div class="col-lg-3 col-xl-3">
+                    <h6 class="pricing-item__plan">{{ car_info.0.owner_fname }} {{ car_info.0.owner_lname }}</h6>
+                  </div>
+                  <div class="col-lg-3 col-xl-3"><span>{{ car_info.0.identification_nr|safe }}</span></div>
+                  <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}</span></div>
+                  <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.permit_nr|lower|safe }}/{{ car_info.0.permit_date|lower|safe }}</span></div>
+                </div>
+              </div>
+            </div>
+              {% endif %}
             <!-- vehicles style-2 end-->
           </div>
         </section>

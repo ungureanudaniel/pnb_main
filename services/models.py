@@ -300,7 +300,7 @@ class AllowedVehicles(models.Model):
     owner_fname = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
-    plate_nr = models.CharField(max_length=8)
+    identification_nr = models.CharField(max_length=20)
     permit_nr = models.CharField(max_length=50)
     permit_date = models.DateField()
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
@@ -308,7 +308,7 @@ class AllowedVehicles(models.Model):
         verbose_name = _('Allowed Vehicles')
         verbose_name_plural = _("Allowed Vehicles")
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.plate_nr)
+        self.slug = slugify(self.identification_nr)
         super().save(*args, **kwargs)
 
     def __str__(self):

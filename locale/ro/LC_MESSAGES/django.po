@@ -2840,11 +2840,26 @@ msgstr "Scrie numărul de înmatriculare în căsuța de mai jos"
 msgid "Owner firstname and lastname"
 msgstr "Prenume și nume de familie proprietar"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Plates number"
-msgstr "Număr de înmatriculare"
+msgid "Identification Number (Car plates or given number for snowmobiles)"
+msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru snowmobile)"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Type of vehicle"
 msgstr "Tip de vehicul"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Search Here"
-msgstr "Căutare"
+msgid "Permit"
+msgstr "Aviz"
+#: services/templates/services/views.py: 134
+msgid "Not found"
+msgstr "Nu a fost găsit"
+#: services/templates/services/views.py: 134
+msgid "This car is not authorized!"
+msgstr "Acest autovehicul nu este autorizat!"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Write here"
+msgstr "Scrie aici"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "For registered vehicles with a license plate, please write the plate number without any spaces (ex: DB10XYZ)"
+msgstr "În cazul vehiculelor cu număr de înmatriculare, vă rugăm să scrieți numărul de înmatriculare fără spații (de exemplu, DB10XYZ)"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "For vehicles without a license plate, like snowmobiles, please write the number received from the Park Administration (ex: 2/PH/2024)"
+msgstr "Pentru vehiculele fără plăcuțe de înmatriculare, cum ar fi snowmobilele, vă rugăm să scrieți numărul primit de la Administrația Parcului (ex: 2/PH/2024)"

@@ -93,13 +93,9 @@ def allowed_vehicles(request):
     context = {}
     if request.method == "GET":
         query = request.GET.get("q")
-        queryset = allowed_vehicles.filter(Q(plate_nr__icontains=query))
-        if queryset:
-            context.update({
-                "query":query,
-                "car":queryset,
-
-            })
+        r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
+        if r:
+            context.update({"car_info":r,})
         else:
             messages.warning(request, _("This car is not authorized!"))
     return render(request, template, context)
