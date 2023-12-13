@@ -2837,8 +2837,8 @@ msgstr "Verificați dacă un autovehicul are accesul autorizat în Parcul Natura
 msgid "Write the car plates series in the box below"
 msgstr "scrieți numărul de înmatriculare în căsuța de mai jos"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Owner firstname and lastname"
-msgstr "Prenume și nume de familie proprietar"
+msgid "Owner"
+msgstr "Proprietar"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Identification Number (Car plates or given number for snowmobiles)"
 msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru snowmobile)"

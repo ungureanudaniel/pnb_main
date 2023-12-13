@@ -284,11 +284,14 @@ class VehicleCategory(models.Model):
     This class creates database tables for categories for each allowed vehicle in
     natural park bucegi
     """
-    title = models.CharField(max_length=30)
-
+    title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=100, blank=True, null=True)
     class Meta:
         verbose_name = 'Vehicle Category'
         verbose_name_plural = "Vehicle Categories"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
     def __str__(self):
         return self.title
 #================Motorized access model=====================================
@@ -296,13 +299,14 @@ class AllowedVehicles(models.Model):
     """
     This class creates database tables for each allowed motorized vehicle inside the park
     """
-    owner_lname = models.CharField(max_length=100)
-    owner_fname = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
+    owner = models.CharField(max_length=100)
+    description = models.TextField(max_length=1000, null=True, blank=True)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     identification_nr = models.CharField(max_length=20)
     permit_nr = models.CharField(max_length=50)
     permit_date = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     class Meta:
         verbose_name = _('Allowed Vehicles')

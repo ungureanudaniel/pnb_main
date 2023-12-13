@@ -7,7 +7,7 @@ from django.conf import settings
 from django.utils import translation, formats, timezone
 from utils.weather_scrape import scraped_data
 # from django.views.decorators.gzip import gzip_page
-import datetime
+from datetime import datetime, date
 from django.contrib import messages
 import random
 from django.core.mail import send_mail
@@ -91,15 +91,19 @@ def allowed_vehicles(request):
     template = 'services/allowed_vehicles.html'
     allowed_vehicles = AllowedVehicles.objects.all()
     context = {}
-    if request.method == "GET":
+    if request.method == "GET" and request.GET.get('form-type') == "search":
         query = request.GET.get("q")
-        
         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
-        print(query)
         if r:
-            context.update({"car_info":r,})
+            if r[0]['end_date'] >= datetime.today().date():
+                messages.success(request, _("This car is allowed in the park!"))
+                context.update({"car_info":r,})
+            elif r[0]['end_date'] < datetime.today().date():
+                messages.warning(request, _("This car was previously authorized but permit is expired!"))
         else:
             messages.warning(request, _("This car is not authorized!"))
+    else:
+        context = {}
     return render(request, template, context)
 #========================home page=================================
 @csrf_exempt

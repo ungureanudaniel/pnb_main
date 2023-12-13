@@ -77,11 +77,13 @@ class ParkRegulationCatLinkAdmin(admin.ModelAdmin):
     list_display = ('year', 'category', 'link')
     fields = ['year', 'category', 'link']
 class VehicleCategoryAdmin(admin.ModelAdmin):
-    list_display = ('title','title_ro', 'title_de')
-    fields = ['title', 'title_ro', 'title_de',]
+    list_display = ('title',)
+    fields = ['title', 'title_ro', 'title_de','slug',]
+    # readonly_fields = ["slug", "slug_ro", 'slug_de']
+    prepopulated_fields = {"slug": ("title",),}
 class AllowedVehiclesAdmin(admin.ModelAdmin):
-    list_display = ('owner_fname','owner_lname', 'categ', 'identification_nr', 'permit_nr', 'permit_date')
-    fields = ['owner_fname','owner_lname', 'categ', 'identification_nr', 'permit_nr', 'permit_date']
+    list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date', 'start_date', 'end_date')
+    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date', 'description', 'start_date', 'end_date']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
