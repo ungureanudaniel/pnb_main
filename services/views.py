@@ -101,7 +101,7 @@ def allowed_vehicles(request):
             elif r[0]['end_date'] < datetime.today().date():
                 messages.warning(request, _("This car was previously authorized but permit is expired!"))
         else:
-            messages.warning(request, _("This car is not authorized!"))
+            messages.error(request, _("This car is not authorized!"))
     else:
         context = {}
     return render(request, template, context)
