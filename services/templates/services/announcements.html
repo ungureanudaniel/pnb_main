@@ -37,8 +37,9 @@
 										</a>
 			            			</div>
 									{% endif %}
-									{% if fut_announc %}
-										{% for a in fut_announc %}
+									{% if page_obj %}
+									{% for a in page_obj.object_list.0 %}
+									{# the list of posts are in the page_obj.object_list not page_obj #}
 									<div class="col-12 mb-5">
 										<div class="blog-item">
 											<div class="blog-item__img"><img class="img--bg" src="{{ a.image.url }}" alt="announcement_ad">
@@ -78,7 +79,7 @@
 											</div>
 										</div>
 									</div>
-										{% endfor %}
+									{% endfor %}
 									{% else %}
 									<div class="cta-block mb-5">
 										<div class="container">
@@ -92,19 +93,31 @@
 										</div>
 									</div>
 									{% endif %}
-									<!-- <div class="col-12 text-center mb-5">
+									<div class="col-12 text-center mb-5">
 										<ul class="pagination blog__pagination">
-											<li class="pagination__item pagination__item--prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
+											
+											<li class="pagination__item pagination__item--prev">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												{%if page_obj.has_previous %} {# whether the previous page exists #}
+												<span><a href="?page={{page_obj.previous_page_number}}">{% trans 'Back' %}</a></span>
+												{% endif %}
 											</li>
-											<li class="pagination__item"><span>1</span></li>
-											<li class="pagination__item pagination__item--active"><span>2</span></li>
+											
+											<li class="pagination__item"><span>{{ page_obj.number }}</span></li>
+											<!-- <li class="pagination__item pagination__item--active"><span>2</span></li>
 											<li class="pagination__item"><span>3</span></li>
 											<li class="pagination__item"><span>4</span></li>
-											<li class="pagination__item"><span>5</span></li>
-											<li class="pagination__item pagination__item--next"><span>Next</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+											<li class="pagination__item"><span>5</span></li> -->
+											
+											<li class="pagination__item pagination__item--next">
+												{%if page_obj.has_next %} {# whether the next page exists #}
+												<span><a href="?page={{page_obj.next_page_number}}">{% trans 'Next' %}</a></span>
+												{% endif %}
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
 											</li>
+											
 										</ul>
-									</div> -->
+									</div>
 								</div>
 							</div>
 							<div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0 col-xl-3">

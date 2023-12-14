@@ -1,6 +1,7 @@
 import warnings
 warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
 from django.http import Http404
@@ -474,71 +475,44 @@ def infopoints_view(request):
 #======================== announcement main page================================
 def announcement_view(request):
     template = 'services/announcements.html'
-    posts_categs = {}
-    #------- post per categories count using annotate---------
-    # group_archive = Announcement.objects.values().annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
-    # print(group_archive)
-    if request.method=="POST":
-
-        #--------------check if newsletter email exists already---------
-        if request.POST.get('form-type') == "subscribe":
-            newsletter_email = request.POST.get('subscriber')
-            if newsletter_email:
-                try:
-                    duplicate = Subscriber.objects.get(email=newsletter_email)
-                    if duplicate:
-                        messages.warning(request, _("This email already exists in our database!"))
-                        return redirect('blog')
-                except:
-                    #-----------------------SAVE IN DATABASE----------------
-                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
-                    sub.save()
-
-                    #---------------------send confirmation email settings------
-                    sub_subject = _("Newsletter Bucegi Natural Park")
-                    from_email='contact@bucegipark.ro'
-                    sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
-                    try:
-                        send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-                        messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-                        return redirect('announcement')
-                    except Exception as e:
-                        messages.warning(request, e)
-                        return redirect('announcement')
-    announ_posts = Announcement.objects.all().order_by('-timestamp')
-    fut_announc = []
-    for i in announ_posts:
-        if i.expiry >= timezone.now():
-            fut_announc.append(i)
+    announc = Announcement.objects.all().order_by('-timestamp'),
+    pag = Paginator(announc, 3)  # creating a paginator object
+    page_number = request.GET.get('page')
+    try:
+        page_obj = pag.get_page(page_number)  # returns the desired page object
+    except PageNotAnInteger:
+        # if page_number is not an integer then assign the first page
+        page_obj = pag.page(1)
+    except EmptyPage:
+        # if page is empty then return last page
+        page_obj = pag.page(pag.num_pages)
 
     context = {
-    "fut_announc": fut_announc,
-    "announc": announ_posts,
+    "page_obj":page_obj,
     "group_archive": Announcement.objects.order_by('timestamp'),
     }
 
     return render(request, template, context)
 #======================== announcement archive page================================
-class ArticleMonthArchiveView(MonthArchiveView):
-    queryset = Announcement.objects.all()
-    date_field = "timestamp"
-    allow_future = True
-    def get_month(self):
-        try:
-            month = super(ArticleMonthArchiveView, self).get_month()
-        except Http404:
-            month = now().strftime(self.get_month_format())
+# class ArticleMonthArchiveView(MonthArchiveView):
+#     queryset = Announcement.objects.all()
+#     date_field = "timestamp"
+#     allow_future = True
+#     def get_month(self):
+#         try:
+#             month = super(ArticleMonthArchiveView, self).get_month()
+#         except Http404:
+#             month = now().strftime(self.get_month_format())
 
-        return month
+#         return month
 
-    def get_year(self):
-        try:
-            year = super(ArticleMonthArchiveView, self).get_year()
-        except Http404:
-            year = now().strftime(self.get_year_format())
+#     def get_year(self):
+#         try:
+#             year = super(ArticleMonthArchiveView, self).get_year()
+#         except Http404:
+#             year = now().strftime(self.get_year_format())
 
-        return year
+#         return year
 #======================== announcement detail page================================
 class AnnounDetailView(HitCountDetailView):
     model = Announcement
