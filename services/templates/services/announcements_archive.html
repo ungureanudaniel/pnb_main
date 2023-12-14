@@ -37,8 +37,8 @@
 										</a>
 			            			</div>
 									{% endif %}
-									{% if fut_announc %}
-										{% for a in fut_announc %}
+									{% if queryset %}
+									{% for a in queryset %}
 									<div class="col-12 mb-5">
 										<div class="blog-item">
 											<div class="blog-item__img"><img class="img--bg" src="{{ a.image.url }}" alt="announcement_ad">
@@ -136,7 +136,7 @@
 											{% regroup year.list by timestamp.month as month_list %}
 											<ul class="categories-list">
 												{% for m in month_list %}
-												<a href="#"><li class="categories-list__item categories-list__item--active"><span class="categories-list__name">{{ m.list.0.timestamp|date:"M" }}</span><span class="categories-list__count">{{ m.list|length }}</span></li></a>
+												<li class="categories-list__item categories-list__item--active"><span class="categories-list__name">{{ m.list.0.timestamp|date:"b" }}</span><span class="categories-list__count">{{ m.list|length }}</span></li>
 												{% endfor %}
 											</ul>
 										</li>

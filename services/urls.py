@@ -6,7 +6,7 @@ add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 announcement_view, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
-park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
+park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, ArticleMonthArchiveView
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
@@ -31,6 +31,7 @@ urlpatterns = [
         path('terms-conditions', terms_view, name="terms"),
         path('info-points', infopoints_view, name="infopoints"),
         path('announcements', announcement_view, name="announcement"),
+        path('<int:year>/<str:month>/', ArticleMonthArchiveView.as_view(), name="announcements_archive"),
         path('announcements/<slug:slug>/', AnnounDetailView.as_view(), name='announ-details'),
         path('wildlife-info/<slug:slug>/', WildlifeDetailView.as_view(), name='wildlife-details'),
         path('flora-info/<slug:slug>/', FloraDetailView.as_view(), name='flora-details'),

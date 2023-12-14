@@ -3,11 +3,13 @@ warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.http import Http404
+from django.utils.timezone import now
 from django.conf import settings
-from django.utils import translation, formats, timezone
+from django.utils import timezone
 from utils.weather_scrape import scraped_data
 # from django.views.decorators.gzip import gzip_page
-from datetime import datetime, date
+from datetime import datetime
 from django.contrib import messages
 import random
 from django.core.mail import send_mail
@@ -17,9 +19,10 @@ from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
 #----blog imports
-from django.db.models import Q, Count
+from django.db.models import Q
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
+from django.views.generic import MonthArchiveView
 from hitcount.views import HitCountDetailView
 #---------cache decorator----------
 # from django.views.decorators.cache import cache_page
@@ -472,10 +475,9 @@ def infopoints_view(request):
 def announcement_view(request):
     template = 'services/announcements.html'
     posts_categs = {}
-    # date = datetime.datetime.strptime(str(Announcement.objects.values('timestamp')), "%d%b")
     #------- post per categories count using annotate---------
-    group_archive = Announcement.objects.values('timestamp').annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
-    print(group_archive)
+    # group_archive = Announcement.objects.values().annotate(count=Count('id')).values('timestamp', 'count').order_by('timestamp')
+    # print(group_archive)
     if request.method=="POST":
 
         #--------------check if newsletter email exists already---------
@@ -513,10 +515,30 @@ def announcement_view(request):
     context = {
     "fut_announc": fut_announc,
     "announc": announ_posts,
-    "group_archive": group_archive,
+    "group_archive": Announcement.objects.order_by('timestamp'),
     }
 
     return render(request, template, context)
+#======================== announcement archive page================================
+class ArticleMonthArchiveView(MonthArchiveView):
+    queryset = Announcement.objects.all()
+    date_field = "timestamp"
+    allow_future = True
+    def get_month(self):
+        try:
+            month = super(ArticleMonthArchiveView, self).get_month()
+        except Http404:
+            month = now().strftime(self.get_month_format())
+
+        return month
+
+    def get_year(self):
+        try:
+            year = super(ArticleMonthArchiveView, self).get_year()
+        except Http404:
+            year = now().strftime(self.get_year_format())
+
+        return year
 #======================== announcement detail page================================
 class AnnounDetailView(HitCountDetailView):
     model = Announcement
@@ -538,8 +560,8 @@ def bloglist_view(request):
     template = 'blog/blog.html'
     posts_categs = {}
     #------- post per categories count using annotate---------
-    group_categ = BlogPostCategory.objects.all().annotate(count=Count('postcategory')).values()
-    group_archive = BlogPost.objects.values('created_date').annotate(count=Count('id')).values('created_date', 'count').order_by('created_date')
+    # group_categ = BlogPostCategory.objects.all().annotate(count=Count('postcategory')).values()
+    # group_archive = BlogPost.objects.values('created_date').annotate(count=Count('id')).values('created_date', 'count').order_by('created_date')
     if request.method=="POST":
         newsletter_email = request.POST.get('subscriber')
         #--------------check if newsletter email exists already---------
@@ -572,8 +594,8 @@ def bloglist_view(request):
     context = {
     "blogposts": BlogPost.objects.all().order_by("-created_date"),
     "categories": BlogPostCategory.objects.all(),
-    "group_archive": group_archive,
-    "group_categ":group_categ,
+    # "group_archive": group_archive,
+    # "group_categ":group_categ,
     }
 
     return render(request, template, context)
