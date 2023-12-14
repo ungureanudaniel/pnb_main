@@ -2852,6 +2852,12 @@ msgstr "Aviz"
 msgid "Not found"
 msgstr "Nu a fost găsit"
 #: services/templates/services/views.py: 134
+msgid "This car is allowed in the park!"
+msgstr "Acest autovehicul are accesul permis în parc!"
+#: services/templates/services/views.py: 134
+msgid "This car was previously authorized but permit is expired!"
+msgstr "Acest autovehicul a fost autorizat anterior pentru acces în parc, dar acum are avizul expirat!"
+#: services/templates/services/views.py: 134
 msgid "This car is not authorized!"
 msgstr "Acest autovehicul nu este autorizat!"
 #: services/templates/services/allowed_vehicles.html: 134
