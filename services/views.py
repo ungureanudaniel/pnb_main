@@ -478,6 +478,10 @@ class AnnouncementView(ListView):
     context_object_name = 'announcements'
     ordering = ['-timestamp']
     paginate_by = 3
+    def get_context_data(self, **kwargs):          
+        context = super().get_context_data(**kwargs)                     
+        context["group_archive"] = Announcement.objects.order_by('timestamp')
+        return context
 # def announcement_view(request):
 #     template = 'services/announcements.html'
 #     announc = Announcement.objects.all().order_by('-timestamp'),
