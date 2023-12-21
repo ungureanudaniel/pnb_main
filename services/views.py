@@ -7,7 +7,6 @@ from .forms import *
 from django.http import Http404
 from django.utils.timezone import now
 from django.conf import settings
-from django.utils import timezone
 from utils.weather_scrape import scraped_data
 # from django.views.decorators.gzip import gzip_page
 from datetime import datetime
@@ -23,7 +22,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
-from django.views.generic import MonthArchiveView
+from django.views.generic import MonthArchiveView, ListView
 from hitcount.views import HitCountDetailView
 #---------cache decorator----------
 # from django.views.decorators.cache import cache_page
@@ -473,26 +472,32 @@ def infopoints_view(request):
     context = {}
     return render(request, template, context)
 #======================== announcement main page================================
-def announcement_view(request):
-    template = 'services/announcements.html'
-    announc = Announcement.objects.all().order_by('-timestamp'),
-    pag = Paginator(announc, 3)  # creating a paginator object
-    page_number = request.GET.get('page')
-    try:
-        page_obj = pag.get_page(page_number)  # returns the desired page object
-    except PageNotAnInteger:
-        # if page_number is not an integer then assign the first page
-        page_obj = pag.page(1)
-    except EmptyPage:
-        # if page is empty then return last page
-        page_obj = pag.page(pag.num_pages)
+class AnnouncementView(ListView):
+    model = Announcement
+    template_name = 'services/announcements.html'
+    context_object_name = 'announcements'
+    ordering = ['-timestamp']
+    paginate_by = 3
+# def announcement_view(request):
+#     template = 'services/announcements.html'
+#     announc = Announcement.objects.all().order_by('-timestamp'),
+#     pag = Paginator(announc, 3)  # creating a paginator object
+#     page_number = request.GET.get('page')
+#     try:
+#         page_obj = pag.page(page_number)  # returns the desired page object
+#     except PageNotAnInteger:
+#         # if page_number is not an integer then assign the first page
+#         page_obj = pag.page(1)
+#     except EmptyPage:
+#         # if page is empty then return last page
+#         page_obj = pag.page(pag.num_pages)
 
-    context = {
-    "page_obj":page_obj,
-    "group_archive": Announcement.objects.order_by('timestamp'),
-    }
+#     context = {
+#     "page_obj":page_obj,
+#     "group_archive": Announcement.objects.order_by('timestamp'),
+#     }
 
-    return render(request, template, context)
+#     return render(request, template, context)
 #======================== announcement archive page================================
 # class ArticleMonthArchiveView(MonthArchiveView):
 #     queryset = Announcement.objects.all()

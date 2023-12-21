@@ -137,7 +137,8 @@ def check_status(request):
     if request.method == 'POST':
         try:
             payment = Payment.objects.get(payment_id=request.POST['invoice_id'])
-            print(f" current id is {payment.payment_id} and status: {payment.status}")
+            print(f"Payment timestamp is : {payment.timestamp.date()}")
+            print(f"current id is {payment.payment_id} and status: {payment.status}")
             if request.POST['action'] == '0' and payment.status == 'pending':
                 payment.status = 'successful'
                 payment.bank_message = request.POST['message']
@@ -154,6 +155,8 @@ def check_status(request):
                     print(f"Current series is:{ticket_series}{ticket_nr}")
                     ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
                     ticket_id = f"{ticket_series}{ticket_nr}"
+                    validity = payment.timestamp.date() + timezone.timedelta(days=90)
+
                     data = {
                         "qr":payment.payment_id,
                         "first_name":payment.buyer_fname,
@@ -161,8 +164,8 @@ def check_status(request):
                         "file":ticket_file_name,
                         "series":ticket_id,
                         "amount": request.POST['amount'],#in production need to divide by 10
+                        "validity": validity,
                         "buyer": _("Buyer"),
-                        "ticketseries": _("Ticket series"),
                     }
                     
                 except Exception as e:

@@ -56,7 +56,13 @@
 											<span >{{ i.email|lower }}</span>
 										</div>
 									</div>
-									<div class="pricing-item__lower"><a class="pricing-item__button button button--primary" href="{{ i.cv }}">{% trans 'Curriculum Vitae' %}</a></div>
+									<!-- <div class="pricing-item__lower">
+										{% if i.cv %}
+										<a class="pricing-item__button button button--primary" href="{{ i.cv.url }}">{% trans 'Curriculum Vitae' %}</a>
+										{% else %}
+										<a class="pricing-item__button button button--primary" href="#">{% trans 'Curriculum Vitae' %}</a>
+										{% endif %}
+									</div> -->
 								</div>
 							</div>
 							{% endfor %}
@@ -88,13 +94,13 @@
 											<span >{{ i.email|lower }}</span>
 										</div>
 									</div>
-									<div class="pricing-item__lower">
+									<!-- <div class="pricing-item__lower">
 										{% if i.cv %}
 										<a class="pricing-item__button button button--primary" href="{{ i.cv.url }}">{% trans 'Curriculum Vitae' %}</a>
 										{% else %}
 										<a class="pricing-item__button button button--primary" href="#">{% trans 'Curriculum Vitae' %}</a>
 										{% endif %}
-									</div>
+									</div> -->
 								</div>
 							</div>
 							{% endfor %}
