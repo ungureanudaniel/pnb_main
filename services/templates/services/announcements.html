@@ -47,7 +47,7 @@
 											</div>
 
 											<h4 class="blog-item__title"><a href="{% url 'announ-details' a.slug %}">{{ a.title|capfirst|safe }}</a></h4>
-											<p class="text-justify">{{ a.text|truncatechars:700|safe }} </p><br>
+											<p class="text-justify">{{ a.text|truncatechars:300|safe }} </p><br>
 											<div class="blog-post__details">
 												<div class="row align-items-center">
 													<div class="col-md-3 text-center text-md-left ">
@@ -96,28 +96,28 @@
 									<div class="col-12 text-center mb-5">
 										<ul class="pagination blog__pagination">
 											{% if is_paginated %}
-											{%if page_obj.has_previous %}
-											<a href="?page={{page_obj.previous_page_number}}">
-												<li class="pagination__item pagination__item--prev">
-													<i class="fa fa-angle-left" aria-hidden="true"></i>												
-												</li>
-											</a>
-											{% else %}
-											{% endif %}
-											{% for i in paginator.page_range %} 
-											{% if page_obj.number == i %}
-											<li class="pagination__item"><a href="?page={{ i }}"><span>{{ i }}</span></a></li>
-											{% else %}
-											<li class="pagination__item"><a href="?page={{ i }}"><span>{{ i }}</span></a></li>
-											{% endif %}
-											{% endfor %}
-											{%if page_obj.has_next %}
-											<a href="?page={{page_obj.next_page_number}}">
-												<li class="pagination__item pagination__item--next">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>												
-												</li>
-											</a>
-											{% endif %}
+												{%if page_obj.has_previous %}
+												<a href="?page={{page_obj.previous_page_number}}">
+													<li class="pagination__item pagination__item--prev">
+														<i class="fa fa-angle-left" aria-hidden="true"></i>												
+													</li>
+												</a>
+												{% else %}
+												{% endif %}
+												{% for i in paginator.page_range %} 
+												{% if page_obj.number == i %}
+												<li class="pagination__item"><a href="?page={{ i }}"><span>{{ i }}</span></a></li>
+												{% else %}
+												<li class="pagination__item"><a href="?page={{ i }}"><span>{{ i }}</span></a></li>
+												{% endif %}
+												{% endfor %}
+												{%if page_obj.has_next %}
+												<a href="?page={{page_obj.next_page_number}}">
+													<li class="pagination__item pagination__item--next">
+														<i class="fa fa-angle-right" aria-hidden="true"></i>												
+													</li>
+												</a>
+												{% endif %}
 											{% endif %}
 										</ul>
 									</div>
