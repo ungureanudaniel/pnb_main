@@ -2837,8 +2837,17 @@ msgstr "Verificați dacă un autovehicul are accesul autorizat în Parcul Natura
 msgid "Write the car plates series in the box below"
 msgstr "scrieți numărul de înmatriculare în căsuța de mai jos"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Owner"
-msgstr "Proprietar"
+msgid "Entity"
+msgstr "Entitate"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Authorized Area"
+msgstr "Zonă de Acces Autorizată"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Issuance date"
+msgstr "Dată emitere"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Expiry date"
+msgstr "Dată expirare"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Identification Number (Car plates or given number for snowmobiles)"
 msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru snowmobile)"
@@ -2846,8 +2855,8 @@ msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru sno
 msgid "Type of vehicle"
 msgstr "Tip de vehicul"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Permit"
-msgstr "Aviz"
+msgid "Permit Nr."
+msgstr "Nr. Aviz"
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
