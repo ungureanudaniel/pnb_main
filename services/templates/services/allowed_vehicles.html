@@ -61,8 +61,8 @@
                   <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
                   <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
                   <!-- <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}{% trans 'Type of vehicle' %}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit Nr.' %}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Issuance date' %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit' %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date' %}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Expiry date' %}</span></div>
 
                 </div>
@@ -77,7 +77,7 @@
                   <div class="col-lg-2 col-xl-2"><span>{{ car_info.0.identification_nr|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2"><span>{{ car_info.0.area|safe }}</span></div>
                   <!-- <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.permit_nr|lower|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.permit_nr|lower|safe }}/{{ car_info.0.permit_date|lower|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.start_date|lower|safe }} </span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.end_date|lower|safe }}</span></div>
 

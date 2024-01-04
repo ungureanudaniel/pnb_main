@@ -305,7 +305,7 @@ class AllowedVehicles(models.Model):
     identification_nr = models.CharField(max_length=20)
     area = models.CharField(max_length=50)
     permit_nr = models.CharField(max_length=50)
-    # permit_date = models.DateField()
+    permit_date = models.DateField()
     start_date = models.DateField()
     end_date = models.DateField(default="2024-12-31")
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)

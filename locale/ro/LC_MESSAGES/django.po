@@ -2843,8 +2843,8 @@ msgstr "Entitate"
 msgid "Authorized Area"
 msgstr "Zonă de Acces Autorizată"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Issuance date"
-msgstr "Dată emitere"
+msgid "Start date"
+msgstr "Dată început"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Expiry date"
 msgstr "Dată expirare"
@@ -2855,8 +2855,8 @@ msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru sno
 msgid "Type of vehicle"
 msgstr "Tip de vehicul"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Permit Nr."
-msgstr "Nr. Aviz"
+msgid "Permit"
+msgstr "Aviz"
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
