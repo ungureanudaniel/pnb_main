@@ -299,14 +299,23 @@ class AllowedVehicles(models.Model):
     """
     This class creates database tables for each allowed motorized vehicle inside the park
     """
+    ACCESS_AREA = (
+        (_('Acces general'), _('Acces general')),
+        (_('Area 2'), _('Area 2')),
+        (_('Area 3'), _('Area 3')),
+        (_('Area 4'), _('Area 4')),
+        (_('Area 5'), _('Area 5')),
+        (_('Area 6'), _('Area 6')),
+        (_('Area 7'), _('Area 7')),
+    )
     owner = models.CharField(max_length=100)
     description = models.TextField(default="...", max_length=1000, null=True, blank=True)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     identification_nr = models.CharField(max_length=20)
-    area = models.CharField(max_length=50)
+    area = models.CharField(choices=ACCESS_AREA, max_length=50)
     permit_nr = models.CharField(max_length=50)
-    permit_date = models.DateField()
-    start_date = models.DateField()
+    permit_date = models.DateField(default="2024-01-03")
+    start_date = models.DateField(default="2024-01-03")
     end_date = models.DateField(default="2024-12-31")
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     class Meta:

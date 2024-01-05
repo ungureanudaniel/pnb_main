@@ -2860,6 +2860,7 @@ msgstr "Aviz"
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
+
 #: services/templates/services/views.py: 134
 msgid "This car is allowed in the park!"
 msgstr "Acest autovehicul are accesul permis în parc!"
