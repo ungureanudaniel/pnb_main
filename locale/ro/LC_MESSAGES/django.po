@@ -2831,8 +2831,8 @@ msgstr "Vehicule cu acces permis"
 msgid "<span>Vehicles with </span><br> <span> granted access</span>"
 msgstr "<span>Vehicule cu </span><br> <span> acces permis</span>"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Check if a vehicle inside Bucegi Natural Park has authorised access"
-msgstr "Verificați dacă un autovehicul are accesul autorizat în Parcul Natural Bucegi"
+msgid "VERIFICATION of vehicles with authorized access inside Bucegi Natural Park OFF PUBLIC ROADS (on technological roads closed to public traffic)"
+msgstr "VERIFICARE autovehicul/autoutilitar cu accesul autorizat în Parcul Natural Bucegi ÎN AFARA DRUMURILOR PUBLICE (pe drumurile tehnologice închise circulației publice)"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Write the car plates series in the box below"
 msgstr "scrieți numărul de înmatriculare în căsuța de mai jos"
@@ -2857,6 +2857,9 @@ msgstr "Tip de vehicul"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Permit"
 msgstr "Aviz"
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "MAI, MAPN and mountain rescue vehicles with special license plates have access allowed inside the park. Timber transporters can be checked in SUMAL, using the vehicle registration number"
+msgstr "Autovehiculele MAI, MAPN și Salvamont cu numere de înmatriculare speciale, au acces general autorizat în interiorul parcului. Transportatorii de masă lemnoasă pot fi verificați în SUMAL, folosind numărul de înmatriculare"
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
@@ -2874,8 +2877,8 @@ msgstr "Acest autovehicul nu este autorizat!"
 msgid "Write here"
 msgstr "Scrieți aici"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "For registered vehicles with a license plate, please write the plate number without any spaces (ex: DB10XYZ)"
-msgstr "În cazul vehiculelor cu număr de înmatriculare, vă rugăm să scrieți numărul de înmatriculare fără spații (de exemplu, DB10XYZ)"
+msgid "For registered vehicles with a license plate, check by writing below, the plate number without any spaces (ex: DB10XYZ)"
+msgstr "În cazul vehiculelor cu număr de înmatriculare, pentru verificare vă rugăm să scrieți mai jos, numărul de înmatriculare fără spații (ex: DB10XYZ)"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "For vehicles without a license plate, like snowmobiles, please write the number received from the Park Administration (ex: 2/PH/2024)"
-msgstr "Pentru vehiculele fără plăcuțe de înmatriculare, cum ar fi snowmobilele, vă rugăm să scrieți numărul primit de la Administrația Parcului (ex: 2/PH/2024)"
+msgid "For vehicles without registration plates (e.g. snowmobiles) a sticker is issued according to the attached photo, which must be displayed in a visible place, issued individually for each utility vehicle (check according to example: 2/PH/2024)"
+msgstr "Pentru vehiculele fără plăcuțe de înmatriculare  (ex:  snowmobile) se eliberează un sticker conform foto alăturate, obligatoriu lipit la vedere, eliberat individual pentru fiecare vehicul utilitar (verificarea se face după exemplul:  2/PH/2024)"

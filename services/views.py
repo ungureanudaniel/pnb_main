@@ -95,7 +95,7 @@ def allowed_vehicles(request):
     allowed_vehicles = AllowedVehicles.objects.all()
     context = {}
     if request.method == "GET" and request.GET.get('form-type') == "search":
-        query = request.GET.get("q")
+        query = request.GET.get("q").replace(" ", "")
         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
         if r:
             if r[0]['end_date'] >= datetime.today().date():
