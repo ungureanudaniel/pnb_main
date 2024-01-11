@@ -47,7 +47,7 @@
 							{% endif %}
 						<div class="row">
 							<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-								<form class="form" id="" action="{% url 'home' %}#testimonials" method="post">
+								<form class="form" id="" method="post">
 									{% csrf_token %}
 									<div class="row">
 										<div class="col-md-6">
@@ -68,7 +68,7 @@
 										<div class="col-12 mb-5">
 											<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
 											<br>
-											{{ captcha_form.captcha }}
+											{{ form.captcha }}
 											<br>
 										</div>
 										<div class="col-12 text-center">

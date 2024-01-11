@@ -54,22 +54,27 @@ def map_coming_soon(request):
 #========================add testimonial VIEW=================================
 def add_testimonial(request):
     template = 'services/add_testimonial.html'
-    captcha_form = CaptchaForm()
+    form = CaptchaForm()
     if request.method=='POST':
         review_form = TestimonialForm(request.POST or None, request.FILES or None)
         try:
-            if captcha_form.is_valid():
+            if form.is_valid():
                 if review_form.is_valid():
                     new_review = review_form.save(commit=False)
                     new_review.status = False
                     new_review.save()
+                    messages.success(request, "Message send for approval.")
+                    return redirect('home')
                 else:
                     messages.error(request, "Please check for empty fields.")
-                    return redirect('.')
+                    return redirect('add_testimonial')
+            else:
+                messages.error(request, "Captcha incorrect.")
+                return redirect('add_testimonial')
         except Exception as e:
             messages.error(request, "Please check for empty fields.")
 
-    return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
+    return render(request, template, {"form":form,"review_form":TestimonialForm()})
 #========================add allowed vehicle VIEW=================================
 def add_vehicle(request):
     template = 'services/add_vehicle.html'
