@@ -177,7 +177,7 @@ def home(request):
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.today().date(),
-        # 'reviews': Testimonial.objects.filter(status=True),
+        'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all().order_by("rank"),
         })
     
