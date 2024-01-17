@@ -4,8 +4,7 @@ PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
 Flora, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
 ParkRegulationCategory, ParkRegulationCatLink,\
-Wildlife, VehicleCategory, AccessArea
-#, AllowedVehicles
+Wildlife, VehicleCategory, AccessArea, AllowedVehicles
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
@@ -86,9 +85,9 @@ class AccessAreaAdmin(admin.ModelAdmin):
     fields = ['name','slug']
     prepopulated_fields = {"slug": ("name",),}
 
-# class AllowedVehiclesAdmin(admin.ModelAdmin):
-#     list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date','end_date',)
-#     fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','area','description']
+class AllowedVehiclesAdmin(admin.ModelAdmin):
+    list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date','end_date',)
+    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','description']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
@@ -117,4 +116,4 @@ admin.site.register(ParkRegulationCatLink, ParkRegulationCatLinkAdmin)
 admin.site.register(VehicleCategory, VehicleCategoryAdmin)
 admin.site.register(ParkRegulationCategory, ParkRegulationCategoryAdmin)
 admin.site.register(AccessArea, AccessAreaAdmin)
-# admin.site.register(AllowedVehicles, AllowedVehiclesAdmin)
+admin.site.register(AllowedVehicles, AllowedVehiclesAdmin)

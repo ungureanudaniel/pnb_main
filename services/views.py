@@ -95,24 +95,24 @@ def add_testimonial(request):
 
 #     return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
 #========================add allowed vehicle VIEW=================================
-# def allowed_vehicles(request):
-#     template = 'services/allowed_vehicles.html'
-#     allowed_vehicles = AllowedVehicles.objects.all()
-#     context = {}
-#     if request.method == "GET" and request.GET.get('form-type') == "search":
-#         query = request.GET.get("q").replace(" ", "")
-#         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
-#         if r:
-#             if r[0]['end_date'] >= datetime.today().date():
-#                 messages.success(request, _("This car is allowed in the park!"))
-#                 context.update({"car_info":r,})
-#             elif r[0]['end_date'] < datetime.today().date():
-#                 messages.warning(request, _("This car was previously authorized but permit is expired!"))
-#         else:
-#             messages.error(request, _("This car is not authorized!"))
-#     else:
-#         context = {}
-#     return render(request, template, context)
+def allowed_vehicles(request):
+    template = 'services/allowed_vehicles.html'
+    allowed_vehicles = AllowedVehicles.objects.all()
+    context = {}
+    if request.method == "GET" and request.GET.get('form-type') == "search":
+        query = request.GET.get("q").replace(" ", "")
+        r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
+        if r:
+            if r[0]['end_date'] >= datetime.today().date():
+                messages.success(request, _("This car is allowed in the park!"))
+                context.update({"car_info":r,})
+            elif r[0]['end_date'] < datetime.today().date():
+                messages.warning(request, _("This car was previously authorized but permit is expired!"))
+        else:
+            messages.error(request, _("This car is not authorized!"))
+    else:
+        context = {}
+    return render(request, template, context)
 #========================home page=================================
 @csrf_exempt
 def home(request):
