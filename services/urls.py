@@ -7,7 +7,7 @@ blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
-#, ArticleMonthArchiveView
+#, ArticleMonthArchiveView, 
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _

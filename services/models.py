@@ -294,25 +294,33 @@ class VehicleCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+#================Access areas model=====================================
+class AccessArea(models.Model):
+    """
+    This class creates database tables for each area with motorized access inside bucegi natural park
+    and it connect to AllowedVehicles model below
+    """
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Access areas'
+        verbose_name_plural = "Access areas"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
 #================Motorized access model=====================================
 class AllowedVehicles(models.Model):
     """
     This class creates database tables for each allowed motorized vehicle inside the park
     """
-    ACCESS_AREA = (
-        (_('Acces general'), _('Acces general')),
-        (_('Area 2'), _('Area 2')),
-        (_('Area 3'), _('Area 3')),
-        (_('Area 4'), _('Area 4')),
-        (_('Area 5'), _('Area 5')),
-        (_('Area 6'), _('Area 6')),
-        (_('Area 7'), _('Area 7')),
-    )
     owner = models.CharField(max_length=100)
     description = models.TextField(default="...", max_length=1000, null=True, blank=True)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     identification_nr = models.CharField(max_length=20)
-    area = models.CharField(choices=ACCESS_AREA, max_length=50)
+    area = models.ForeignKey(AccessArea, on_delete=models.CASCADE, related_name='area_name')
     permit_nr = models.CharField(max_length=50)
     permit_date = models.DateField(default="2024-01-03")
     start_date = models.DateField(default="2024-01-03")
