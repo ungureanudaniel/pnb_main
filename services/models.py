@@ -312,29 +312,29 @@ class AccessArea(models.Model):
     def __str__(self):
         return self.slug
 #================Motorized access model=====================================
-class AllowedVehicles(models.Model):
-    """
-    This class creates database tables for each allowed motorized vehicle inside the park
-    """
-    owner = models.CharField(max_length=100)
-    description = models.TextField(default="...", max_length=1000, null=True, blank=True)
-    categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
-    identification_nr = models.CharField(max_length=20)
-    area = models.ForeignKey(AccessArea, on_delete=models.CASCADE, related_name='area_name')
-    permit_nr = models.CharField(max_length=50)
-    permit_date = models.DateField(default="2024-01-03")
-    start_date = models.DateField(default="2024-01-03")
-    end_date = models.DateField(default="2024-12-31")
-    slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
-    class Meta:
-        verbose_name = _('Allowed Vehicles')
-        verbose_name_plural = _("Allowed Vehicles")
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.identification_nr)
-        super().save(*args, **kwargs)
+# class AllowedVehicles(models.Model):
+#     """
+#     This class creates database tables for each allowed motorized vehicle inside the park
+#     """
+#     owner = models.CharField(max_length=100)
+#     description = models.TextField(default="...", max_length=1000, null=True, blank=True)
+#     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
+#     identification_nr = models.CharField(max_length=20)
+#     area = models.ForeignKey(AccessArea, on_delete=models.CASCADE, related_name='area_name')
+#     permit_nr = models.CharField(max_length=50)
+#     permit_date = models.DateField(default="2024-01-03")
+#     start_date = models.DateField(default="2024-01-03")
+#     end_date = models.DateField(default="2024-12-31")
+#     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
+#     class Meta:
+#         verbose_name = _('Allowed Vehicles')
+#         verbose_name_plural = _("Allowed Vehicles")
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.identification_nr)
+#         super().save(*args, **kwargs)
 
-    def __str__(self):
-        return self.slug
+#     def __str__(self):
+#         return self.slug
 #================Flora category models=====================================
 class FloraCategory(models.Model):
     """

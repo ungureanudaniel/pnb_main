@@ -5,9 +5,9 @@ flora, faq_view, theme_trails, video_view, public_docs,\
 add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
-unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
+unsubscribe, sector_map_view, council_view, mng_plan_view, \
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
-#, ArticleMonthArchiveView, 
+#, ArticleMonthArchiveView, allowed_vehicles,
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
@@ -44,7 +44,7 @@ urlpatterns = [
         path('park-rules', park_regulation_view, name="park-rules"),
         path('public-documents', public_docs, name="public-docs"),
         path('management-plan', mng_plan_view, name="mng-plan"),
-        path('allowed-vehicles', allowed_vehicles, name="auto-access"),
+        # path('allowed-vehicles', allowed_vehicles, name="auto-access"),
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),
         path('park-sectors', sector_map_view, name="sector-map"),
