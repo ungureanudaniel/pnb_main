@@ -301,16 +301,12 @@ class AccessArea(models.Model):
     and it connect to AllowedVehicles model below
     """
     name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Access areas'
         verbose_name_plural = "Access areas"
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
     def __str__(self):
-        return self.slug
+        return self.name
 #================Motorized access model=====================================
 class AllowedVehicles(models.Model):
     """

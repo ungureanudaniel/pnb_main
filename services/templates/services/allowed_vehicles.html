@@ -57,6 +57,7 @@
               
             </div>
             {% if car_info %}
+            {% for car in car_info %}
             <div class="col-xs-6 col-lg-12">
               <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
                 <div class="row align-items-center">
@@ -74,18 +75,19 @@
               <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
                 <div class="row align-items-center">
                   <div class="col-lg-2 col-xl-2">
-                    <h6 class="pricing-item__plan">{{ car_info.0.owner }}</h6>
+                    <h6 class="pricing-item__plan">{{ car.owner }}</h6>
                   </div>
-                  <div class="col-lg-2 col-xl-2"><span>{{ car_info.0.identification_nr|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{{ car_info.0.area_name|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{{ area }}</span></div>
                   <!-- <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.permit_nr|lower|safe }}/{{ car_info.0.permit_date|lower|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.start_date|lower|safe }} </span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car_info.0.end_date|lower|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}/{{ car.permit_date|lower|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|lower|safe }} </span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div>
 
                 </div>
               </div>
             </div>
+            {% endfor %}
               {% endif %}
             <!-- vehicles style-2 end-->
           </div>

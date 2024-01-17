@@ -82,9 +82,8 @@ class VehicleCategoryAdmin(admin.ModelAdmin):
     # readonly_fields = ["slug", "slug_ro", 'slug_de']
     prepopulated_fields = {"slug": ("title",),}
 class AccessAreaAdmin(admin.ModelAdmin):
-    fields = ['name','slug']
-    prepopulated_fields = {"slug": ("name",),}
-
+    fields = ['name',]
+    list_display = ('name',)
 class AllowedVehiclesAdmin(admin.ModelAdmin):
     list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date','end_date',)
     fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','area','description']

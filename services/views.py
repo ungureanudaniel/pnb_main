@@ -105,7 +105,7 @@ def allowed_vehicles(request):
         if r:
             if r[0]['end_date'] >= datetime.today().date():
                 messages.success(request, _("This car is allowed in the park!"))
-                context.update({"car_info":r,})
+                context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==r[0]['area_id']][0]})
             elif r[0]['end_date'] < datetime.today().date():
                 messages.warning(request, _("This car was previously authorized but permit is expired!"))
         else:
