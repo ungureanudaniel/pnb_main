@@ -86,8 +86,8 @@ class AccessAreaAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",),}
 
 class AllowedVehiclesAdmin(admin.ModelAdmin):
-    list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date', 'end_date',)
-    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','description']
+    list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date','end_date',)
+    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','area','description']
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
