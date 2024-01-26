@@ -43,10 +43,10 @@ def generate_pdf_ticket(data:dict):
     ticket.add_page()
     #font
     #background watermark image
-    ticket.image("ticket_logos/ticket_bg.png", x=0, y=0, w=200, h=80)                
+    ticket.image(r"payments/ticket_logos/ticket_bg.png", x=0, y=0, w=200, h=80)                
     #add park logo
     ticket.set_xy(5,5)
-    ticket.image('ticket_logos/bucegi2.png', w=22, h=19)
+    ticket.image(r'payments/ticket_logos/bucegi2.png', w=22, h=19)
                 
     #add header text
     ticket.set_font('helvetica', size =12)
@@ -55,7 +55,7 @@ def generate_pdf_ticket(data:dict):
                 
     #add romsilva logo
     ticket.set_xy(175,4)
-    ticket.image('ticket_logos/rnp-romsilva3.png', w=22, h=21)
+    ticket.image(r'payments/ticket_logos/rnp-romsilva3.png', w=22, h=21)
                 
     # add buyer name
     ticket.set_xy(10,30)
@@ -102,21 +102,23 @@ def generate_pdf_ticket(data:dict):
     #export
     ticket.output("tickets/{}".format(data['file']))
     return "tickets/{}".format(data['file'])
-if __name__ == "__main__":
-    y = 3
-    x = 6
-    series='DBPNO000001'
-    file_nr = f"{series}{ticket_series()}"
-    data = {
-                        "first_name":'daniel',
-                        "last_name":'ungureanu',
-                        "file":'ticket-{}.pdf'.format(file_nr),
-                        "series":'https://bucegipark.ro',
-                        "amount": 10,
-                        "date": datetime.today().date() + timedelta(days=90),
-                        "ticketseries": "Serie tichet",
-                    }
-    generate_pdf_ticket(data)
+# if __name__ == "__main__":
+#     y = 3
+#     x = 6
+#     series='DBPNO000001'
+#     file_nr = f"{series}{ticket_series()}"
+#     data = {
+#                         "first_name":'daniel',
+#                         "last_name":'ungureanu',
+#                         "file":'ticket-{}.pdf'.format(file_nr),
+#                         "series":'https://bucegipark.ro',
+#                         "amount": int(30),
+#                         "date": datetime.today().date() + timedelta(days=90),
+#                         "ticketseries": "Serie tichet",
+#                     }
+#     for i in range(0,int(data['amount']/10)):
+#         generate_pdf_ticket(data)
+
 
 
     

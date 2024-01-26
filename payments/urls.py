@@ -10,7 +10,7 @@ urlpatterns = [
     path('payment-checkout/', csrf_exempt(checkout_view), name="checkout"),
     path('payment-success/', csrf_exempt(pay_success_view), name="pay-success"),
     path('payment-failure/', csrf_exempt(pay_failure_view), name="pay-failure"),
-    path('payment-processing/', csrf_exempt(check_status), name='payment-processing'),
+    path('status/', csrf_exempt(check_status), name='status'),
 
 
     ]

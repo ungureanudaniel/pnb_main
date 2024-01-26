@@ -373,6 +373,7 @@
 			masonryGallery.isotope({
 				itemSelector: '.gallery-masonry__item',
 				percentPosition: true,
+				filter:'nature-reserves',
 			})
 
 			const filter = $('.filter-panel__item')

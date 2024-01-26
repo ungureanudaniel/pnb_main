@@ -97,12 +97,13 @@ def checkout_view(request):
                     # print(f"Form is valid!Nr of ticket {new_payment.quantity}, price {new_payment.price} and parameters are:{params['fp_hash']}")
                     
                     #----add parameters for post data server to server and for redirection to merchant site
-                    params['ExtraData[silenturl]']=f'{settings.BASE_URL}/tickets/payment-processing/'
-                    params['ExtraData[successurl]']=f'{settings.BASE_URL}/tickets/payment-success/'
-                    params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
-                    params['ExtraData[backtosite]']=f'{settings.BASE_URL}/tickets/ticket-checkout/'
+                    params['ExtraData[silenturl]']=f'{settings.BASE_URL}/en/tickets/status/'
+                    # params['ExtraData[successurl]']=f'{settings.BASE_URL}/en/tickets/status/'
+                    # params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
+                    params['ExtraData[backtosite]']=f'{settings.BASE_URL}/tickets/payment-checkout/'
                     query_string = urlencode(params)
                     payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
+                    print("Step 1. Successful payment!")
                     return redirect(payment_url)
                 #functionality for separate kids tickets
                 # elif new_payment.quantity == 0 and new_payment.quantity_kids > 0:
@@ -134,19 +135,22 @@ def check_status(request):
     this function fetches the callback data from the payment provider server and updates
     payment status in the database
     """
-    if request.method == 'POST':
+    print(f'Post request data from server: {request.POST}')
+    if request.method == "POST":
+
         try:
             payment = Payment.objects.get(payment_id=request.POST['invoice_id'])
+            print("Step 2: Successful payment instance fetched for changing status variable! Payment details below")
             print(f"Payment timestamp is : {payment.timestamp.date()}")
             print(f"current id is {payment.payment_id} and status: {payment.status}")
             if request.POST['action'] == '0' and payment.status == 'pending':
                 payment.status = 'successful'
                 payment.bank_message = request.POST['message']
                 payment.save()
-                #---------fetch the current ticket nr
-                # next_ticket = Ticket.objects.all().count() + 1
-                
-                
+                    
+                    # response = FileResponse(create_ticket_pdf(), 
+                    #                     as_attachment=True, 
+                    #                     filename=f"bucegi-ticket-{new_ticket.ticket_series}{new_ticket.ticket_nr}.pdf")
                 try:
                     #----------generate new subsequent ticket series and nr
                     ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
@@ -156,66 +160,64 @@ def check_status(request):
                     ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
                     ticket_id = f"{ticket_series}{ticket_nr}"
                     validity = payment.timestamp.date() + timezone.timedelta(days=90)
-
+                    print(validity)
+                    print("ticket series generated!")
                     data = {
-                        "qr":payment.payment_id,
-                        "first_name":payment.buyer_fname,
-                        "last_name":payment.buyer_lname,
-                        "file":ticket_file_name,
-                        "series":ticket_id,
-                        "amount": request.POST['amount'],#in production need to divide by 10
-                        "validity": validity,
-                        "buyer": _("Buyer"),
+                                    "qr":payment.payment_id,
+                                    "first_name":payment.buyer_fname,
+                                    "last_name":payment.buyer_lname,
+                                    "file":ticket_file_name,
+                                    "series":ticket_id,
+                                    "amount": request.POST['amount'],#in production need to divide by 10
+                                    "validity": validity,
+                                    "buyer": _("Buyer"),
                     }
-                    
-                except Exception as e:
-                    messages.warning(request, f"Ticket creation error! Details:{e}")
-                    print(e)
-                attachment = generate_pdf_ticket(data)
-                print(f"attachment is:{attachment}")
-                #----------save new subsequent ticket in the database
-                try:
-                    new_ticket = Ticket(
-                            # payment_id=payment.payment_id,
-                            buyer_fname=payment.buyer_fname,
-                            buyer_lname=payment.buyer_lname,
-                            ticket_series=ticket_series,
-                            ticket_nr=ticket_nr,
-                            ticket_pdf=attachment,
-                            slug=slugify(ticket_series+ticket_nr))
-                    new_ticket.save()
+                    attachment = generate_pdf_ticket(data)
+                    print(f"attachment is:{attachment}")
+                    #----------save new subsequent ticket in the database
                     try:
-                        email = EmailMessage(
-                            _("Bucegi Natural Park"),
-                            _(f"Dear {payment.buyer_fname}, Your visitor tickets are attached to this email"),
-                            "contact@bucegipark.ro",
-                            [f"{payment.email}",],
-                            ["daniel.ungureanu@bucegipark.ro"],
-                            reply_to=["contact@bucegipark.ro"],
-                            headers={"Message-ID": settings.TICKET_EMAIL_HEADER},
-                        )
-                        email.attach(new_ticket.ticket_pdf, 'application/pdf')
-                        email.send()
-
-                        # response = FileResponse(create_ticket_pdf(), 
-                        #                     as_attachment=True, 
-                        #                     filename=f"bucegi-ticket-{new_ticket.ticket_series}{new_ticket.ticket_nr}.pdf")
-                    
-                        return redirect(f'{settings.BASE_URL}/tickets/payment-success')
+                        new_ticket = Ticket(
+                                        # payment_id=payment.payment_id,
+                                        buyer_fname=payment.buyer_fname,
+                                        buyer_lname=payment.buyer_lname,
+                                        ticket_type = "3 luni",
+                                        ticket_series=ticket_series,
+                                        ticket_nr=ticket_nr,
+                                        ticket_pdf=attachment,
+                                        slug=slugify(ticket_series+ticket_nr))
+                        new_ticket.save()
+                        try:
+                            email = EmailMessage(
+                                        _("Bucegi Natural Park"),
+                                        _(f"Dear {payment.buyer_fname}, Your visitor tickets are attached to this email"),
+                                        "contact@bucegipark.ro",
+                                        [f"{payment.email}",],
+                                        ["daniel.ungureanu@bucegipark.ro"],
+                                        reply_to=["contact@bucegipark.ro"],
+                                        headers={"Message-ID": settings.TICKET_EMAIL_HEADER},
+                            )
+                            email.attach_file(new_ticket.ticket_pdf, 'application/pdf')
+                            email.send()
+                            return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
+                        #-----------generate ticket pdf using reportlabs module
+                        except Exception as e:
+                            messages.warning(request, f"Application error:{e}")
+                            print(e)
                     except Exception as e:
-                        messages.warning(request, f"Application error:{e}")
+                        messages.warning(request, f"Ticket creation error! Details:{e}")
                         print(e)
-                        return redirect(f'{settings.BASE_URL}/tickets/payment-success')
-                        # str(request.POST['ticket_series'] + request.POST['ticket_nr'])
+                        #attaching the generated pdf ticket
+                        return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
                 except Exception as e:
                     messages.warning(request, f"Application error:{e}")
                     print(e)
-                #-----------generate ticket pdf using reportlabs module
+                    return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
                 
             else:
                 payment.status = 'failed'
+                payment.bank_message = request.POST['message']
                 payment.save()
-                # return redirect('https://a80e-84-232-140-74.ngrok-free.app/en/tickets/payment-failure/')
+                return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
         except Exception as e:
             messages.warning(request, f"Application error:{e}. Please contact the administrator at daniel.ungureanu@bucegipark.ro")
             sub_subject = _("To Website Admin: Payment application error")
@@ -226,40 +228,26 @@ def check_status(request):
                 send_mail(sub_subject, sub_message, from_email, ['daniel.ungureanu@bucegipark.ro'], html_message=html_content)
             except Exception as e:
                 messages.warning(request, e)
+    else:
+        messages.warning(request, f"Application error: No POST data!")
+        print("No POST data!")
+        return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
+        
+def check_status_test(request):
+    pass
 #==============pay_success_view=================
 def pay_success_view(request):
     template = "payments\payment-success.html"
     messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
-    print(f"successful payment data: {request.POST}")
-    try:
-        payment = Payment
-        new_ticket = Ticket()
-    except Exception as e:
-        messages.warning(request, f"Application error:{e}")
-        print(e)
-    # try:
-    #     ticket_id = str(request.POST['ticket_series'] + request.POST['ticket_nr'])
-    #     print(ticket_id)
-    # except Exception as e:
-    #     messages.warning(request, f"Application error:{e}")
-    #     print(e)
-    # try:
-    #     response = FileResponse(generate_pdf_file(), 
-    #                         as_attachment=True, 
-    #                         filename=f"pnb-ticket-{ticket_id}.pdf")
-    #     return redirect('https://684a-84-232-140-74.ngrok-free.app/en/tickets/payment-success')
-    # except Exception as e:
-    #     messages.warning(request, f"Application error:{e}")
-    #     print(e)
-    #     return redirect('https://684a-84-232-140-74.ngrok-free.app/en/tickets/payment-success')
-
-    context = {}
-    return render(request, template, context)
+    
+    return render(request, template, {'data':123})
 #==============pay_failure_view=================
 def pay_failure_view(request):
     template = "payments\payment-failure.html"
     messages.warning(request, _("Payment failure! Please try again. If the system doesn't seem to work please contact the administrator at daniel.ungureanu@bucegipark.ro."))
-    context = {}
+    context = {
+        'data':123,
+    }
     return render(request, template, context)
 
     

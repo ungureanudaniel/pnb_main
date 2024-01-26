@@ -189,7 +189,7 @@
 								</div>
 								<!-- filter panel start-->
 								<ul class="filter-panel">
-									<li class="filter-panel__item filter-panel__item--active" data-filter=".{{ attr_categ.0.slug }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
+									<li class="filter-panel__item " data-filter=".{{ attr_categ.0.slug }}"><span>{{ attr_categ.0.name|capfirst }}</span></li>
 									<li class="filter-panel__item " data-filter=".{{ attr_categ.1.slug }}"><span>{{ attr_categ.1.name|capfirst }}</span></li>
 									<li class="filter-panel__item " data-filter=".{{ attr_categ.2.slug }}"><span>{{ attr_categ.2.name|capfirst }}</span></li>
 									<li class="filter-panel__item " data-filter=".{{ attr_categ.3.slug }}"><span>{{ attr_categ.3.name|capfirst }}</span></li>
@@ -204,7 +204,7 @@
 
 									{% if user.is_authenticated %}
 									<li class="filter-panel__item">
-			              <a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}">
+			              <a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}services/attraction/">
 			                <img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus">
 			              </a>
 			            </li>
