@@ -1,5 +1,6 @@
 from django.conf import settings
 import random, string
+import io
 from fpdf import FPDF, HTMLMixin
 import qrcode
 from django.http import FileResponse
@@ -37,13 +38,13 @@ class PDF(FPDF, HTMLMixin):
 #loop through the number of tickets to be generated
 # for i in range(1,int(data['amount'])):
 def generate_pdf_ticket(data:dict):
-        
-    ticket = FPDF('P','mm', format=(200,80))
+    buffer=io.BytesIO()
+    ticket = FPDF('P','mm', format=(200,100))
     ticket.set_auto_page_break(auto=True, margin = 2)
     ticket.add_page()
     #font
     #background watermark image
-    ticket.image(r"payments/ticket_logos/ticket_bg.png", x=0, y=0, w=200, h=80)                
+    ticket.image(r"payments/ticket_logos/ticket_bg.png", x=0, y=0, w=200, h=100)                
     #add park logo
     ticket.set_xy(5,5)
     ticket.image(r'payments/ticket_logos/bucegi2.png', w=22, h=19)
@@ -100,24 +101,23 @@ def generate_pdf_ticket(data:dict):
     ticket.set_xy(110,66)
     ticket.cell(70,10,"Email: contact@bucegipark.ro",link="mailto:contact@bucegipark.ro")            
     #export
-    ticket.output("tickets/{}".format(data['file']))
-    return "tickets/{}".format(data['file'])
-# if __name__ == "__main__":
-#     y = 3
-#     x = 6
-#     series='DBPNO000001'
-#     file_nr = f"{series}{ticket_series()}"
-#     data = {
-#                         "first_name":'daniel',
-#                         "last_name":'ungureanu',
-#                         "file":'ticket-{}.pdf'.format(file_nr),
-#                         "series":'https://bucegipark.ro',
-#                         "amount": int(30),
-#                         "date": datetime.today().date() + timedelta(days=90),
-#                         "ticketseries": "Serie tichet",
-#                     }
-#     for i in range(0,int(data['amount']/10)):
-#         generate_pdf_ticket(data)
+    pdf = ticket.output("tickets/{}".format(data['file']))
+    return FileResponse(pdf, as_attachment=True, filename=f"{data['ticket_id']}")
+if __name__ == "__main__":
+    y = 3
+    x = 6
+    series='DBPNO000001'
+    file_nr = f"{series}{ticket_series()}"
+    data = {
+                        "first_name":'daniel',
+                        "last_name":'ungureanu',
+                        "file":'ticket-{}.pdf'.format(file_nr),
+                        "series":'https://bucegipark.ro',
+                        "amount": 10,
+                        "date": datetime.today().date() + timedelta(days=90),
+                        "ticketseries": "Serie tichet",
+                    }
+    generate_pdf_ticket(data)
 
 
 

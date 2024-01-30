@@ -50,7 +50,7 @@ class Ticket(models.Model):
     """
     This class creates database tables for each visitor ticket for bucegi natural park
     """
-    payment_id = models.ForeignKey(Payment, on_delete=models.CASCADE)
+    payment_id = models.CharField(max_length=1000)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
     ticket_series =  models.CharField(max_length=5, default="DBPN1")
@@ -59,7 +59,7 @@ class Ticket(models.Model):
     expiry_date = models.DateTimeField(default=timezone.now() + timedelta(days=90), blank=True)
     ticket_pdf = models.FileField(upload_to="payments/tickets", blank=True)
     ticket_type = models.CharField(max_length=50)
-    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=True)
     def save(self, *args, **kwargs):
         self.slug = slugify(f"{self.ticket_series} + {self.ticket_nr}")
         super().save(*args, **kwargs)

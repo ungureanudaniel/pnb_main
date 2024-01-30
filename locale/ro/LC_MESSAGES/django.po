@@ -2882,3 +2882,6 @@ msgstr "În cazul vehiculelor cu număr de înmatriculare, pentru verificare vă
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "For vehicles without registration plates (e.g. snowmobiles) a sticker is issued according to the attached photo, which must be displayed in a visible place, issued individually for each utility vehicle (check according to example: 2/PH/2024)"
 msgstr "Pentru vehiculele fără plăcuțe de înmatriculare  (ex:  snowmobile) se eliberează un sticker conform foto alăturate, obligatoriu lipit la vedere, eliberat individual pentru fiecare vehicul utilitar (verificarea se face după exemplul:  2/PH/2024)"
+#: payments/views.py: 230
+msgid "f"Dear {payment.buyer_fname}, Your visitor tickets for Bucegi Natural Park are attached to this email"
+msgstr "f"Dragă {payment.buyer_fname}, Tichetele tale de vizitator al Parcului Natural Bucegi sunt în atașamentul acestui email"
