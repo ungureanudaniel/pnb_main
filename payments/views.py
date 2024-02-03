@@ -279,13 +279,13 @@ def check_status_test(request):
     pass
 #==============pay_success_view=================
 def pay_success_view(request):
-    template = "payments\payment-success.html"
+    template = "payments/payment-success.html"
     messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
     
     return render(request, template, {'data':123})
 #==============pay_failure_view=================
 def pay_failure_view(request):
-    template = "payments\payment-failure.html"
+    template = "payments/payment-failure.html"
     messages.warning(request, _("Payment failure! Please check whether your card is expired or it does not have enough funds."))
     context = {
         'data':123,
