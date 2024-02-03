@@ -1,7 +1,6 @@
 from django import forms
 from .models import Testimonial, AttractionCategory, Attraction, Contact,\
 Comment, PublicDocsDownloaderEntity
-from ckeditor.widgets import CKEditorWidget
 from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
 

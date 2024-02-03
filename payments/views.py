@@ -4,7 +4,9 @@ from .models import Payment, Ticket
 from django.shortcuts import redirect, render
 from .forms import PaymentForm
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
+from email.mime.base import MIMEBase
+from email import encoders
 from django.utils import timezone
 from django.conf import settings
 from django.utils.text import slugify
@@ -12,7 +14,7 @@ import warnings
 from django.contrib.auth.decorators import login_required
 from urllib.parse import urlencode
 #-----------invoice and ticket generation imports
-# import random, string
+import random, string
 # from fpdf import FPDF, HTMLMixin
 import qrcode
 import io
@@ -20,7 +22,7 @@ from django.http import FileResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.units import mm
-# from .generate_ticket_pdf4 import generate_pdf_ticket
+from .generate_ticket_pdf2 import generate_pdf_ticket, save_pdf_to_location
 
 #--------------------------------------------------
 warnings.filterwarnings('ignore', message='.*cryptography', )
@@ -104,8 +106,8 @@ def checkout_view(request):
                     
                     #----add parameters for post data server to server and for redirection to merchant site
                     params['ExtraData[silenturl]']=f'{settings.BASE_URL}/en/tickets/status/'
-                    # params['ExtraData[successurl]']=f'{settings.BASE_URL}/en/tickets/status/'
-                    # params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
+                    params['ExtraData[successurl]']=f'{settings.BASE_URL}/en/tickets/payment-success/'
+                    params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
                     params['ExtraData[backtosite]']=f'{settings.BASE_URL}/tickets/payment-checkout/'
                     query_string = urlencode(params)
                     payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
@@ -153,109 +155,100 @@ def check_status(request):
                 payment.status = 'successful'
                 payment.bank_message = request.POST['message']
                 payment.save()
-                    
-                    # response = FileResponse(create_ticket_pdf(), 
-                    #                     as_attachment=True, 
-                    #                     filename=f"bucegi-ticket-{new_ticket.ticket_series}{new_ticket.ticket_nr}.pdf")
-                try:
-                    #----------generate new subsequent ticket series and nr
-                    ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
-                    print(f"Current ticket nr:{ticket_nr}")
-                    ticket_series="DBPNO"
-                    print(f"Current series is:{ticket_series}{ticket_nr}")
-                    ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
-                    ticket_id = f"{ticket_series}{ticket_nr}"
-                    validity = payment.timestamp.date() + timezone.timedelta(days=90)
-                    print(f'Ticket validity is:{validity}')
-                    print("ticket series generated!")
-                    print(f"Amount is : {request.POST['amount']}")
-                    data = {
-                                    "qr":payment.payment_id,
-                                    "first_name":payment.buyer_fname,
-                                    "last_name":payment.buyer_lname,
-                                    "file":ticket_file_name,
-                                    "series":ticket_id,
-                                    "amount": request.POST['amount'],#in production need to divide by 10
-                                    "validity": validity,
-                                    "buyer": _("Buyer"),
-                    }
-                    print(f'data sent to ticket generator: {data}')
-                    #======generate pdf ticket====================
-                    
-                    x=200
-                    y=90
-                    buffer=io.BytesIO()
-                    ticket=canvas.Canvas(buffer,pagesize=letter)
-                    
-                    try:
-                        ticket.drawImage(r'payments/ticket_logos/rnp-romsilva3.png', x=0, y=0,width=200, preserveAspectRatio=True, mask='auto')
-                        #add park logo
-                        ticket.drawImage('payments/ticket_logos/bucegi2.png', x=175, y=4,width=22)
-                        #add company title
-                        ticket.drawString(145,10, r"RNP ROMSILVA - ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.")
-                        #add romsilva logo
-                        ticket.drawImage('payments/ticket_logos/rnp-romsilva3.png', x=5, y=5,width=22)
-                        # add buyer
-                        ticket.drawString(10,30, f"Cumparator: {data['first_name'].title()} {data['last_name'].title()}")
-                        # add expiry date
-                        ticket.drawString(10,40,"Data expirarii: {}".format(data['date']))
-                    except Exception as e:
-                        print(e)
-                    ticket.showPage()
-                    ticket.save()
-                    pdf=buffer.getvalue()
-                    buffer.close()
-                    #==========end pdf genetarion===========
-                    print(f"attachment is:....")
-                    print(f'buyer is:{payment.buyer_fname}')
-                    response = FileResponse(pdf, 
-                                        as_attachment=True, 
-                                        filename=f"bucegi-ticket-{ticket_id}.pdf")
                 
-                    #----------save new subsequent ticket in the database
-                    try:
-                        new_ticket = Ticket(
-                                        payment_id=payment.payment_id,
-                                        buyer_fname=payment.buyer_fname,
-                                        buyer_lname=payment.buyer_lname,
-                                        ticket_type = "3 luni",
-                                        ticket_series=ticket_series,
-                                        ticket_nr=ticket_nr,
-                                        ticket_pdf="response",
-                                        )
-                        new_ticket.save()
-                        try:
-                            email_body = """\
-                                <html>
-                                <head></head>
-                                <body>
-                                    <h2>{% trans 'Dear' %} %s,</h2>
-                                    <p>{% trans 'Your visitor tickets are attached to this email' %}</p>
-                                    <h5>{% trans 'Best regards' %},</h5>
-                                    <h5>{% trans 'Administratia Parcului Natural Bucegi R.A.' %}</h5>
-                                </body>
-                                </html>""" % (payment.buyer_fname)
+                try:
+                    # this must be CHANGED in production...its only to simulate several tickets at once
+                    amount = 30
+                    tickets =[]
+                    for i in range(int(amount/10)):
+                        #----------generate new subsequent ticket series and nr
+                        ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
+                        print(f"Current ticket nr:{ticket_nr}")
+                        ticket_series="DBPNO"
+                        print(f"Current series is:{ticket_series}{ticket_nr}")
+                        ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
+                        ticket_id = f"{ticket_series}{ticket_nr}"
+                        validity = payment.timestamp.date() + timezone.timedelta(days=90)
+                        print(f'Ticket validity is:{validity}')
+                        print("ticket series generated!")
+                        print(f"Amount is : {request.POST['amount']}")
+                        # create dictionary with all the necessary data for the ticket generator
+                        data = {
+                                        "qr":ticket_id,
+                                        "first_name":payment.buyer_fname,
+                                        "last_name":payment.buyer_lname,
+                                        "file":ticket_file_name,
+                                        "series":ticket_id,
+                                        "amount": amount,#in production need to divide by 10
+                                        "validity": validity,
+                                        'title':"TICHET DE VIZITATOR",
+                                        'background_image_path':r"payments/ticket_logos/ticket_bg.png",
+                                        "bucegi_logo": r'payments/ticket_logos/bucegi2.png',
+                                        "rnp_logo": r'payments/ticket_logos/rnp-romsilva3.png',
+                                        "company_name":r'RNP ROMSILVA',
+                                        "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
+                        }
+                        print(f'data sent to ticket generator: {data}')
 
-                            email = EmailMessage(
-                                        _("Bucegi Natural Park"),
-                                        email_body,
-                                        settings.EMAIL_HOST_USER,
-                                        (f"{payment.email}",),
-                                        headers={"Message-ID": settings.TICKET_EMAIL_HEADER},
-                            )
-                            email.attach(f"{ticket_id}", pdf, 'application/pdf')
-                            email.send()
-                            print(f"successful email delivery")
-                            return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
-                        #-----------generate ticket pdf using reportlabs module
+                        
+                        # save_pdf_to_location(pdf, "tickets/{}".format(data['file']))
+                        
+                
+                        #----------save new subsequent ticket in the database
+                        try:
+                            #======generate pdf ticket for each adult in order and append to list====================
+                            tickets.append(generate_pdf_ticket(data))
+                            new_ticket = Ticket(
+                                            payment_id=payment.payment_id,
+                                            buyer_fname=payment.buyer_fname,
+                                            buyer_lname=payment.buyer_lname,
+                                            ticket_type = "3 luni",
+                                            ticket_series=ticket_series,
+                                            ticket_nr=ticket_nr,
+                                            
+                                            )
+                            new_ticket.save()
                         except Exception as e:
-                            messages.warning(request, f"Application error:{e}")
-                            print(f"Cannot send email because:{e}")
+                            messages.warning(request, f"Ticket creation error! Details:{e}")
+                            print(f"Cannot save ticket because:{e}")
+                            # attaching the generated pdf ticket
+                            return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
+                        
+                    try:
+                        from django.template.loader import render_to_string
+                        from django.utils.html import strip_tags
+                        # set email content from html template in /mails/visitor_ticket_email.html with variable buyer names
+                        email_body = render_to_string('mails/visitor_ticket_email.html', {'buyer': payment.buyer_fname})
+                        # set email data
+                        email = EmailMultiAlternatives(
+                                            _("Bucegi Natural Park"),
+                                            email_body,
+                                            settings.EMAIL_HOST_USER,
+                                            (f"{payment.email}",),
+                                            headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
+                        )
+                        # Set the content subtype to HTML
+                        email.content_subtype = 'html'
+                        # Attach each PDF ticket to the email
+                        for i, pdf_ticket in enumerate(tickets, start=1):
+                            ticket_name = f'ticket_{i}.pdf'
+                            part = MIMEBase('application', 'octet-stream')
+                            part.set_payload(pdf_ticket)
+                            encoders.encode_base64(part)
+                            part.add_header('Content-Disposition', f'attachment; filename={ticket_name}')
+                            email.attach(part)
+
+                        # Send the email
+                        email.send()    
+                        # email.content_subtype = "html"
+                        # email.attach(f"{ticket_id}", pdf, 'application/pdf')
+                        # email.send()
+                        print(f"successful email delivery")
+                        return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
                     except Exception as e:
-                        messages.warning(request, f"Ticket creation error! Details:{e}")
-                        print(f"Cannot save ticket because:{e}")
-                        #attaching the generated pdf ticket
-                        return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
+                        messages.warning(request, f"Application error:{e}")
+                        print(f"Cannot send email because:{e}")
+                    
                 except Exception as e:
                     messages.warning(request, f"Application error:{e}")
                     print(e)
@@ -265,6 +258,7 @@ def check_status(request):
                 payment.status = 'failed'
                 payment.bank_message = request.POST['message']
                 payment.save()
+                messages.warning(request, "Payment failed"+f":{payment.bank_message}")
                 return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
         except Exception as e:
             messages.warning(request, f"Application error:{e}. Please contact the administrator at daniel.ungureanu@bucegipark.ro")
@@ -292,7 +286,7 @@ def pay_success_view(request):
 #==============pay_failure_view=================
 def pay_failure_view(request):
     template = "payments\payment-failure.html"
-    messages.warning(request, _("Payment failure! Please try again. If the system doesn't seem to work please contact the administrator at daniel.ungureanu@bucegipark.ro."))
+    messages.warning(request, _("Payment failure! Please check whether your card is expired or it does not have enough funds."))
     context = {
         'data':123,
     }

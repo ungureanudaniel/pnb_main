@@ -205,17 +205,7 @@ CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"
 CAPTCHA_FOREGROUND_COLOR = "black"
 #================django payments settings=====================
-PAYMENT_SIGNATURE = os.getenv("NETOPIA_SIGNATURE")
-PAYMENT_SANDBOX_URL = 'https://sandboxsecure.mobilpay.ro/'
-PAYMENT_URL = 'https://secure.mobilpay.ro'
-PAYMENT_USES_SSL = False
-PAYMENT_MODEL = 'payments.models.Payment'
-# PAYMENT_VARIANTS = {
-#     'netopia': ('payments.netopia.Netopia',
-#                 {
-                    
-#                 })
-# }
+
 #=====================LOGGING  ERORRS=========================
 LOGGING = {
     'version': 1,
@@ -260,5 +250,5 @@ LOGGING = {
 CHANNELID=os.getenv("CHANNELID")
 YOUTUBE_DATA_API_KEY=os.getenv("YOUTUBE_DATA_API_KEY")
 TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
-BASE_URL = os.getenv("BASE_URL")
+BASE_URL = os.getenv('BASE_URL')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

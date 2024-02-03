@@ -404,6 +404,7 @@
 			function quantity() {
 
 				const count = $('.cart-item__count')
+				const maxIncrement = 10; // Maximum allowed increment
 
 				if (!count.length) return
 
@@ -422,18 +423,32 @@
 					return false
 
 				})
-
 				plus.on('click', function () {
+					const $input = $(this).parent().find('input');
+					const currentQuantity = parseInt($input.val()) || 0;
+					const maxIncrement = 9; // Maximum allowed increment
+			
+					// Check if new quantity exceeds maximum increment or is less than or equal to it
+					if ((currentQuantity + 1) % maxIncrement === 0 || currentQuantity + 1 <= maxIncrement) {
+						$input.val(currentQuantity + 1);
+						$input.change();
+						updateTotal(); // Update the total price when the quantity changes
+					}
+			
+					return false;
+				});
+			
+				// plus.on('click', function () {
+					
+				// 	const $input = $(this).parent().find('input')
+				// 	$input.val(parseInt($input.val()) + 1)
+				// 	$input.change()
+				// 	// $('#tickets').val(get_total_tickets());
+				// 	$('#total_price').val(get_total_price());
 
-					const $input = $(this).parent().find('input')
-					$input.val(parseInt($input.val()) + 1)
-					$input.change()
-					// $('#tickets').val(get_total_tickets());
-					$('#total_price').val(get_total_price());
+				// 	return false
 
-					return false
-
-				})
+				// })
 				function updateTotal() {
 					var quantity = parseInt($('#quantity').val()) || 0; // ParseInt to ensure a number, default to 0 if not a valid number
 					var price = 10; // ParseFloat to ensure a number, default to 0 if not a valid number

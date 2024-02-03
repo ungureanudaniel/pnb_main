@@ -365,8 +365,8 @@ msgstr "Online"
 msgid "Your children tickets have been sent to the email you provided. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"
 msgstr "Biletele de vizitator pentru copii dvs. au fost trimise pe emailul introdus. Copiii dvs. ar trebui să aibă cu ei biletele de vizitator atunci când vizitează Parcul Natural Bucegi. Mulțumim!"
 #: .\payments\templates\includes\payment-failure.html:9
-msgid "Payment failure! Please try again. If the system doesn't seem to work please contact the administrator at daniel.ungureanu@bucegipark.ro."
-msgstr "Plată eșuată! Vă rugăm încercați din nou. În caz că sistemul nu pare să funcționeze corect, vă rugăm contactați administratorul la daniel.ungureanu@bucegipark.ro."
+msgid "Payment failure! Please check whether your card is expired or it does not have enough funds."
+msgstr "Plată eșuată! Vă rugăm să verificați dacă aveți destule fonduri pe card sau dacă este expirat."
 #: .\payments\templates\includes\payment-success.html:9
 msgid "Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"
 msgstr "Plată efectuată cu succes! Ticketele dvs. au fost trimise la emailul furnizat. Va fi nevoie să aveți la dvs. biletele de vizitator, atunci când vizitați Parcul Natural Bucegi. Vă mulțumim!"
@@ -2882,6 +2882,4 @@ msgstr "În cazul vehiculelor cu număr de înmatriculare, pentru verificare vă
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "For vehicles without registration plates (e.g. snowmobiles) a sticker is issued according to the attached photo, which must be displayed in a visible place, issued individually for each utility vehicle (check according to example: 2/PH/2024)"
 msgstr "Pentru vehiculele fără plăcuțe de înmatriculare  (ex:  snowmobile) se eliberează un sticker conform foto alăturate, obligatoriu lipit la vedere, eliberat individual pentru fiecare vehicul utilitar (verificarea se face după exemplul:  2/PH/2024)"
-#: payments/views.py: 230
-msgid "f"Dear {payment.buyer_fname}, Your visitor tickets for Bucegi Natural Park are attached to this email"
-msgstr "f"Dragă {payment.buyer_fname}, Tichetele tale de vizitator al Parcului Natural Bucegi sunt în atașamentul acestui email"
+
