@@ -24,8 +24,7 @@ class Payment(models.Model):
     )
     payment_id = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     quantity = models.IntegerField(default=0)
-    #if we want kids tickets compulsory then we activate this database column
-    # quantity_kids = models.IntegerField(default=0)
+    #if we want kids tickets compulsory then we activate this database column : quantity_kids = models.IntegerField(default=0)
     price = models.DecimalField(decimal_places=2, max_digits=5)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)

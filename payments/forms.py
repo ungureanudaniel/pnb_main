@@ -49,7 +49,6 @@ class PaymentForm(forms.ModelForm):
         readonly_fields = ('price',)
         widgets = {
             'quantity': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity', 'type': 'number', 'name':'adults', 'placeholder': '',}),
-            # 'quantity_kids': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity_kids', 'type': 'number', 'name':'kids', 'placeholder': '',}),
             'price': forms.TextInput(attrs = {'class': 'form-control', 'id':'total_price', 'name':'price', 'placeholder': '', 'readonly': 'readonly'}),
             'currency': forms.Select(attrs = {'class': 'form-control', 'placeholder': 'Currency of choice...'}),
             'buyer_fname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'First name...'}),
