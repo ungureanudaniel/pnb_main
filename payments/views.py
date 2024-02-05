@@ -48,11 +48,11 @@ def euplatesc_mac(key,params):
 
     return hmac.new(bytes.fromhex(key),data.encode(),hashlib.md5).hexdigest().upper()
 #----------generate unique code for email subscription conf--------------------
-def ticket_series(y):
-    return ''.join(random.choice(string.ascii_letters) for x in range(y))
-#----------generate unique code for email subscription conf--------------------
-def ticket_nr(y):
-    return ''.join(random.choice(string.ascii_letters) for x in range(y))
+# def ticket_series(y):
+#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
+# #----------generate unique code for email subscription conf--------------------
+# def ticket_nr(y):
+#     return ''.join(random.choice(string.ascii_letters) for x in range(y))
 
 #===============the ticket description view======================
 # def choosetickets_view(request):
@@ -72,12 +72,15 @@ def ticket_nr(y):
 @login_required
 def checkout_view(request):
     template = "payments/ticket-checkout.html"
-    #fetch ticket nr and price from session
+    #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
     # price = request.session.get('price')
     # quantity = request.session.get('tickets')
+    #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
+
     #euplatesc account credentials
     key="00112233445566778899AABBCCDDEEFF"
     mid="testaccount"
+
     params= {}
     #assign form instance to variable
     form = PaymentForm(request.POST or None)
@@ -139,18 +142,35 @@ def checkout_view(request):
 #=============payment callback data=========================
 def check_status(request):
     """
-    crsf token exempted in urls.py
-    this function fetches the callback data from the payment provider server and updates
-    payment status in the database
+    This function, check_status, is responsible for handling payment status updates received from a payment provider server in a Django web application.
+
+    Process Overview:
+    1. Request Validation:
+    - Validates that the HTTP request method is POST, ensuring it only processes POST requests, typically used for form submissions.
+
+    2. Payment Status Handling:
+    - Retrieves a payment object from the database based on the invoice ID provided in the POST data.
+    - If the payment object is found and the payment status is 'pending', and the action indicates a successful payment ('0' in this case), it updates the payment status to 'successful' in the database. Additional information like the bank message associated with the payment is also saved.
+
+    3. Ticket Generation:
+    - Generates tickets for successful payments based on the payment details. Each ticket has a unique series and number, along with other relevant information such as validity and buyer details.
+    - Iterates over the number of tickets to be generated, creating a new ticket object for each and saving it to the database.
+
+    4. Email Notification:
+    - Constructs an email message to notify the buyer about the successful payment and attaches the generated PDF tickets to the email.
+    - Sends the email using Django's email functionality.
+
+    5. Error Handling:
+    - Includes exception handling blocks to catch any errors that may occur during the process, such as database errors, ticket generation errors, or email sending errors.
+    - If an error occurs, it redirects the user to a failure page and logs the error details for further investigation.
     """
-    print(f'Post request data from server: {request.POST}')
     if request.method == "POST":
 
         try:
             payment = Payment.objects.get(payment_id=request.POST['invoice_id'])
-            print("Step 2: Successful payment instance fetched for changing status variable! Payment details below")
-            print(f"Payment timestamp is : {payment.timestamp.date()}")
-            print(f"current id is {payment.payment_id} and status: {payment.status}")
+            # print("Step 2: Successful payment instance fetched for changing status variable! Payment details below")
+            # print(f"Payment timestamp is : {payment.timestamp.date()}")
+            # print(f"current id is {payment.payment_id} and status: {payment.status}")
             if request.POST['action'] == '0' and payment.status == 'pending':
                 payment.status = 'successful'
                 payment.bank_message = request.POST['message']
@@ -163,15 +183,10 @@ def check_status(request):
                     for i in range(int(amount/10)):
                         #----------generate new subsequent ticket series and nr
                         ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
-                        print(f"Current ticket nr:{ticket_nr}")
                         ticket_series="DBPNO"
-                        print(f"Current series is:{ticket_series}{ticket_nr}")
                         ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
                         ticket_id = f"{ticket_series}{ticket_nr}"
                         validity = payment.timestamp.date() + timezone.timedelta(days=90)
-                        print(f'Ticket validity is:{validity}')
-                        print("ticket series generated!")
-                        print(f"Amount is : {request.POST['amount']}")
                         # create dictionary with all the necessary data for the ticket generator
                         data = {
                                         "qr":ticket_id,
@@ -188,7 +203,6 @@ def check_status(request):
                                         "company_name":r'RNP ROMSILVA',
                                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
                         }
-                        print(f'data sent to ticket generator: {data}')
 
                         
                         # save_pdf_to_location(pdf, "tickets/{}".format(data['file']))
@@ -210,7 +224,6 @@ def check_status(request):
                             new_ticket.save()
                         except Exception as e:
                             messages.warning(request, f"Ticket creation error! Details:{e}")
-                            print(f"Cannot save ticket because:{e}")
                             # attaching the generated pdf ticket
                             return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
                         
@@ -272,7 +285,6 @@ def check_status(request):
                 messages.warning(request, e)
     else:
         messages.warning(request, f"Application error: No POST data!")
-        print("No POST data!")
         return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
         
 def check_status_test(request):
