@@ -75,12 +75,7 @@
 												<label>{% trans 'Other info' %}</label>
 												<textarea class="form__field form__message" name="message" placeholder=""></textarea>
 											</div>
-											<div class="col-12 mb-5">
-												<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
-												<br>
-												{{ form.captcha }}
-												<br>
-											</div>
+											<div class="g-recaptcha" data-sitekey="6Le0NIIpAAAAAKt12jCQLOhsGoWrqN9h2-9dMf2B"></div>
 											<div class="col-12 text-center">
 												<input class="form__submit" type="submit" value="{% trans 'Send' %}">
 											</div>
