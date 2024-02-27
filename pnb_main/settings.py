@@ -202,7 +202,7 @@ DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 #==============recaptcha keys===============================
 RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
 RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
-SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+# SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 #================django simple captcha======================
 CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"

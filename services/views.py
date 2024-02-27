@@ -161,7 +161,7 @@ def home(request):
                         return redirect('home')
                 except:
                     #-----------------------SAVE IN DATABASE----------------
-                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
+                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
                     sub.save()
 
                     #---------------------send confirmation email settings------
@@ -204,7 +204,7 @@ def contacts_view(request):
                     message = message_form.cleaned_data.get('text')
                     #=======send email=======
                     new_message = message_form.save(commit=False)
-                    new_message.timestamp = datetime.datetime.now()
+                    new_message.timestamp = datetime.now()
                     new_message.save()
                     send_mail(message_subject, message, sender_email, ['bucegipark@gmail.com'], fail_silently=False)
                     messages.success(request, _(f'Thank you for writing us {message_author}! We will answer as soon as possible.'))
@@ -563,7 +563,7 @@ def bloglist_view(request):
                         return redirect('blog')
                 except:
                     #-----------------------SAVE IN DATABASE----------------
-                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.datetime.now())
+                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
                     sub.save()
 
                     #---------------------send confirmation email settings------
