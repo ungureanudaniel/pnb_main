@@ -367,7 +367,7 @@ def ticket_invoice(request):
                 return redirect('checkout')
             else:
                 messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-                return redirect('ticket_invoice')
+                return redirect('home')
         else:
             form = CaptchaForm()
     else:
