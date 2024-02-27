@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
-from django.http import Http404
 from django.utils.timezone import now
 from django.conf import settings
 from utils.weather_scrape import scraped_data
@@ -24,8 +23,9 @@ from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from django.views.generic import MonthArchiveView, ListView
 from hitcount.views import HitCountDetailView
+
 #---------cache decorator----------
-# from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page
 # -----------examples for using localized dae objects----------------
 # localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
 # localized_time = formats.time_format(time_obj, 'SHORT_TIME_FORMAT')
@@ -115,6 +115,7 @@ def allowed_vehicles(request):
     return render(request, template, context)
 #========================home page=================================
 @csrf_exempt
+@cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def home(request):
     template = 'services/home.html'
     
@@ -206,7 +207,7 @@ def contacts_view(request):
                     new_message.timestamp = datetime.datetime.now()
                     new_message.save()
                     send_mail(message_subject, message, sender_email, ['bucegipark@gmail.com'], fail_silently=False)
-                    messages.success(request, _(f'Thank you for writting us {message_author}! We will answer as soon as possible.'))
+                    messages.success(request, _(f'Thank you for writing us {message_author}! We will answer as soon as possible.'))
                     return redirect('/contact')
                     # except Exception as e:
                     #     messages.warning(request, f'Error: {e}!')

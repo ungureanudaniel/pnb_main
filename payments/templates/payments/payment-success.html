@@ -26,8 +26,8 @@
 				  <div class="container">
 
 				    <div class="row align-items-center">
-				      <div class="col-lg-12">
-						{% if messages %}
+				      	<div class="col-lg-12">
+							{% if messages %}
 							<div id="error-section" class="pb-3 col-12 justify-content-center text-justify" style="justify-content:center">
 								{% include 'includes/messages.html' %}
 							</div>
@@ -37,7 +37,13 @@
 							{% endif %}
 								<!-- <h4 class='cta-block__title'><span>{% trans 'Congratulations! Your payment was successful' %}.</span></h4>
 								<p class='cta-block__text'>{% trans 'Digital tickets have been sent to the specified email address' %}.</p> -->
+							<div class="pb-3 col-12 justify-content-center text-justify" style="justify-content:center">
+								<form method="POST">
+									{% csrf_token %}
+									<a style="border: 2px solid #fdd340;background: #fdd340;"class="button button--primary button--filled" href="{% url 'ticket_invoice' %}">{% trans 'Facturare' %}</a>
+								</form>
 							</div>
+						</div>
 				    </div>
 				  </div>
 				</div>

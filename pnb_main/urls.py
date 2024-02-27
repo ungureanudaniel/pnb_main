@@ -30,7 +30,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path("robots.txt", TemplateView.as_view(template_name="services/robots.txt", content_type="text/plain"),),
-    path('captcha/', include('captcha.urls')),
+    # path('captcha/', include('captcha.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
     
 ]

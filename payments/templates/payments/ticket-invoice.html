@@ -12,7 +12,7 @@
 							<div class="col-auto">
 								<div class="align-container">
 									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Contact</span> <span> Us</span>{% endblocktranslate %}</h1>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Ticket</span> <span> Invoice Request</span>{% endblocktranslate %}</h1>
 										<span class="welcome_icon">
 											<img src="{% static 'img/svg/mail.svg' %}">
 										</span>
@@ -34,7 +34,8 @@
 						<div class="row bottom-50">
 							<div class="col-12">
 								<div class="heading heading--primary heading--center">
-									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write us</span> <span>a message</span>{% endblocktranslate %}</h2>
+									<h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Write your</span> <span>invoicing info below</span>{% endblocktranslate %}</h2>
+									<p>{% trans 'Some of the info will be already filled in according to your previous payment information' %}</p>
 								</div>
 							</div>
 							{% if messages %}
@@ -45,39 +46,48 @@
 							<div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
 							</div>
 							{% endif %}
-						<div class="row">
-							<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-								<form class="form" id="" action="{% url 'contact' %}" method="post">
-									{% csrf_token %}
-									<div class="row">
-										<div class="col-md-6">
-											{{ message_form.author }}
+							<div class="row">
+								<div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+									<form class="form" id="ajax-form" action="." method="POST" >
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-md-6">
+												<label>{% trans 'First Name' %}</label>
+												<input class="form__field" type="text" name="fname" value="{{first_name}}" placeholder="">
+											</div>
+											<div class="col-md-6">
+												<label>{% trans 'Last Name' %}</label>
+												<input class="form__field" type="text" name="lname" value="{{ last_name }}" placeholder="">
+											</div>
+											<div class="col-md-6">
+												<label>{% trans 'Your email' %}</label>
+												<input class="form__field" type="email" name="email" value="{{ email }}" placeholder="">
+											</div>
+											<div class="col-md-6">
+												<label>{% trans 'Your phone number' %}</label>
+												<input class="form__field" type="tel" name="phone" value="{{ phone }}" placeholder="">
+											</div>
+											<div class="col-md-6">
+												<label>{% trans 'Your Personal Identification Number' %}</label>
+												<input class="form__field" type="text" name="cnp" placeholder="Subject">
+											</div>
+											<div class="col-12">
+												<label>{% trans 'Other info' %}</label>
+												<textarea class="form__field form__message" name="message" placeholder=""></textarea>
+											</div>
+											<div class="col-12 mb-5">
+												<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
+												<br>
+												{{ form.captcha }}
+												<br>
+											</div>
+											<div class="col-12 text-center">
+												<input class="form__submit" type="submit" value="{% trans 'Send' %}">
+											</div>
 										</div>
-										<div class="col-md-6">
-											{{ message_form.email }}
-										</div>
-										<div class="col-md-6">
-											{{ message_form.phone }}
-										</div>
-										<div class="col-md-6">
-											{{ message_form.subject }}
-										</div>
-										<div class="col-12">
-											{{ message_form.text }}
-										</div>
-										<div class="col-12 mb-5">
-											<label class="text-warning">{% trans 'Please type in the following letters to show you are human' %}.</label>
-											<br>
-											{{ form.captcha }}
-											<br>
-										</div>
-										<div class="col-12 text-center">
-											<input class="form__submit" type="submit" value="{% trans 'Send' %}"/>
-										</div>
-									</div>
-								</form>
+									</form>
+								</div>
 							</div>
-						</div>
 					</div>
 				</section>
 

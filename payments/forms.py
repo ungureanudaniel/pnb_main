@@ -3,12 +3,16 @@ from .models import *
 from ckeditor.widgets import CKEditorWidget
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
-from captcha.fields import CaptchaField
+# from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
 
-
+from django_recaptcha.fields import ReCaptchaField
+  
+  
 class CaptchaForm(forms.Form):
-    captcha = CaptchaField()
+    captcha = ReCaptchaField()
+# # class CaptchaForm(forms.Form):
+# #     captcha = CaptchaField()
 
 #==========user personal information for payment================
 class PaymentForm(forms.ModelForm):

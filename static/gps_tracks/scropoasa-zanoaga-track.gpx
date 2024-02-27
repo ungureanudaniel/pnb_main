@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.8.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<bounds minlat="45.314220097550411" minlon="25.418341868338949" maxlat="45.331390096054918" maxlon="25.430005097946296"/>                                       
+</metadata>
+<trk>
+  <extensions>
+    <ogr:OBJECTID>2</ogr:OBJECTID>
+    <ogr:Denumire_t>Lacul Scropoasa - Cheile Zanogei - Zanoaga</ogr:Denumire_t>
+    <ogr:cod>1</ogr:cod>
+    <ogr:JUDET>DAMBOVITA</ogr:JUDET>
+    <ogr:Shape_Leng>2509.09189404000017</ogr:Shape_Leng>
+    <ogr:Distanta>2509</ogr:Distanta>
+  </extensions>
+  <trkseg>
+    <trkpt lat="45.314220097550411" lon="25.421058916692136">
+    </trkpt>
+    <trkpt lat="45.314347784256896" lon="25.421063040508034">
+    </trkpt>
+    <trkpt lat="45.314477817109378" lon="25.421038602774377">
+    </trkpt>
+    <trkpt lat="45.314677475463817" lon="25.420967052603519">
+    </trkpt>
+    <trkpt lat="45.314891989119616" lon="25.420816227858833">
+    </trkpt>
+    <trkpt lat="45.315056165466778" lon="25.420645976584087">
+    </trkpt>
+    <trkpt lat="45.315128852383545" lon="25.420376609401092">
+    </trkpt>
+    <trkpt lat="45.315237043801076" lon="25.420199590753064">
+    </trkpt>
+    <trkpt lat="45.315394544884519" lon="25.420016585046042">
+    </trkpt>
+    <trkpt lat="45.315610224442942" lon="25.419853062059619">
+    </trkpt>
+    <trkpt lat="45.315915583778583" lon="25.419254766770084">
+    </trkpt>
+    <trkpt lat="45.316897492813361" lon="25.418736445672941">
+    </trkpt>
+    <trkpt lat="45.317666961877457" lon="25.418366707917734">
+    </trkpt>
+    <trkpt lat="45.318435050930425" lon="25.418372374865942">
+    </trkpt>
+    <trkpt lat="45.319388679026801" lon="25.418341868338949">
+    </trkpt>
+    <trkpt lat="45.320235812086594" lon="25.418460749058994">
+    </trkpt>
+    <trkpt lat="45.320764011097872" lon="25.418877632004964">
+    </trkpt>
+    <trkpt lat="45.321530718885839" lon="25.419258741631623">
+    </trkpt>
+    <trkpt lat="45.322271354576969" lon="25.419527033105425">
+    </trkpt>
+    <trkpt lat="45.323063300107243" lon="25.420246259028733">
+    </trkpt>
+    <trkpt lat="45.323855518540419" lon="25.420890414152343">
+    </trkpt>
+    <trkpt lat="45.324371863556664" lon="25.421645175839902">
+    </trkpt>
+    <trkpt lat="45.325005854601912" lon="25.422100453092725">
+    </trkpt>
+    <trkpt lat="45.325667165286958" lon="25.42233066047454">
+    </trkpt>
+    <trkpt lat="45.326355100132098" lon="25.422523523529403">
+    </trkpt>
+    <trkpt lat="45.327213150872566" lon="25.422731827775273">
+    </trkpt>
+    <trkpt lat="45.328024818769023" lon="25.422235577292295">
+    </trkpt>
+    <trkpt lat="45.328537227226022" lon="25.42209926310316">
+    </trkpt>
+    <trkpt lat="45.329064118502956" lon="25.422585019320682">
+    </trkpt>
+    <trkpt lat="45.329687009112355" lon="25.423975255768351">
+    </trkpt>
+    <trkpt lat="45.330294603333968" lon="25.425011866218945">
+    </trkpt>
+    <trkpt lat="45.330509688558266" lon="25.425607097482359">
+    </trkpt>
+    <trkpt lat="45.330565460997789" lon="25.426283792528523">
+    </trkpt>
+    <trkpt lat="45.3305523847147" lon="25.42694494067857">
+    </trkpt>
+    <trkpt lat="45.330549312642937" lon="25.42776396212977">
+    </trkpt>
+    <trkpt lat="45.330611388692944" lon="25.428170196469118">
+    </trkpt>
+    <trkpt lat="45.330836449719904" lon="25.428363508952135">
+    </trkpt>
+    <trkpt lat="45.331190250843278" lon="25.428711838321135">
+    </trkpt>
+    <trkpt lat="45.331359427564415" lon="25.428825831707652">
+    </trkpt>
+    <trkpt lat="45.331390096054918" lon="25.429126635768025">
+    </trkpt>
+    <trkpt lat="45.331303256677423" lon="25.42966700598609">
+    </trkpt>
+    <trkpt lat="45.331296681404595" lon="25.430005097946296">
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

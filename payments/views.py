@@ -11,15 +11,10 @@ from django.utils import timezone
 from django.conf import settings
 from django.utils.text import slugify
 import warnings
+from .forms import CaptchaForm
 from django.contrib.auth.decorators import login_required
 from urllib.parse import urlencode
 #-----------invoice and ticket generation imports
-import random, string
-# from fpdf import FPDF, HTMLMixin
-import qrcode
-import io
-from django.http import FileResponse
-from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.units import mm
 from .generate_ticket_pdf2 import generate_pdf_ticket, save_pdf_to_location
@@ -43,8 +38,8 @@ def euplatesc_mac(key,params):
         else:
             data+=str(len(p))+p
    
-    print(data)
-    print("\n")
+    # print(data)
+    # print("\n")
 
     return hmac.new(bytes.fromhex(key),data.encode(),hashlib.md5).hexdigest().upper()
 #----------generate unique code for email subscription conf--------------------
@@ -77,7 +72,7 @@ def checkout_view(request):
     # quantity = request.session.get('tickets')
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
-    #euplatesc account credentials
+    #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
     key="00112233445566778899AABBCCDDEEFF"
     mid="testaccount"
 
@@ -93,11 +88,14 @@ def checkout_view(request):
 
                     new_payment.timestamp = timezone.now()
                     new_payment.save()
-                    #euplatesc parameters
+                    #----euplatesc parameters
                     params={
-                        'amount':str(1),
+                        # 'amount':str(new_payment.price),
+                        #=============switch the amount param to take new_payment.price======================================!!!!!!!!!!!
+                        'amount': '1',
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
+                        #==========need to change this in production=========================================================!!!!!!!!!!!
                         'order_desc':'Test order Bucegi',
                         'merch_id':mid,
                         'timestamp':strftime("%Y%m%d%H%M%S"),
@@ -110,11 +108,10 @@ def checkout_view(request):
                     #----add parameters for post data server to server and for redirection to merchant site
                     params['ExtraData[silenturl]']=f'{settings.BASE_URL}/en/tickets/status/'
                     params['ExtraData[successurl]']=f'{settings.BASE_URL}/en/tickets/payment-success/'
-                    params['ExtraData[failedurl]']=f'{settings.BASE_URL}/tickets/payment-failure/'
+                    params['ExtraData[failedurl]']=f'{settings.BASE_URL}/en/tickets/payment-failure/'
                     params['ExtraData[backtosite]']=f'{settings.BASE_URL}/tickets/payment-checkout/'
                     query_string = urlencode(params)
                     payment_url=f'https://secure.euplatesc.ro/tdsprocess/tranzactd.php?{query_string}'
-                    print("Step 1. Successful payment!")
                     return redirect(payment_url)
                 #functionality for separate kids tickets
                 # elif new_payment.quantity == 0 and new_payment.quantity_kids > 0:
@@ -206,8 +203,6 @@ def check_status(request):
 
                         
                         # save_pdf_to_location(pdf, "tickets/{}".format(data['file']))
-                        
-                
                         #----------save new subsequent ticket in the database
                         try:
                             #======generate pdf ticket for each adult in order and append to list====================
@@ -292,15 +287,104 @@ def check_status_test(request):
 #==============pay_success_view=================
 def pay_success_view(request):
     template = "payments/payment-success.html"
+    print(request.POST)
+    # Store payment_id in session
+    request.session['payment_id'] = request.POST['invoice_id']
+
     messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
+    messages.warning(request, _("If you would like to receive an invoice please press the following button in order to add the necessary info:"))
+    context = {
+
+    }
+    return render(request, template, context)
+#==============ticket invoice view=================
+def ticket_invoice(request):
+    template = "payments/ticket-invoice.html"
     
-    return render(request, template, {'data':123})
+    # Retrieve payment_id from session
+    # payment = Payment.objects.last() #this method is not the best because if another client does a payment before the previous client finishes sending invoice details we get into trouble
+    payment_id = request.session.get('payment_id')
+    print(f"Payment is : {payment_id}")
+
+    # Query the Payment object with the retrieved payment_id
+    payment = Payment.objects.filter(payment_id=payment_id).first()
+    print(payment.price)
+
+    # Check if payment exists before accessing its attributes
+    if payment:
+        # Query the Ticket objects related to the payment
+        tickets = Ticket.objects.filter(payment_id=payment_id)
+        #create form instance
+        form = CaptchaForm(request.POST)
+        
+        context = {
+            'price': payment.price,
+            'quantity': payment.quantity,
+            'last_name': payment.buyer_lname,
+            'first_name': payment.buyer_fname,
+            'phone':payment.phone,
+            'email':payment.email,
+            'address':payment.address,
+            'form': form,
+            }
+        if request.method == 'POST':
+            if form.is_valid():
+                from django.template.loader import render_to_string
+                from django.utils.html import strip_tags
+                fname = request.POST['fname']
+                lname = request.POST['fname']
+                email = request.POST['email']
+                phone = request.POST['phone']
+                cnp = request.POST['cnp']
+
+                ticket_series_list = [ticket.ticket_series for ticket in tickets]
+
+                #====send email with invoicing data to bucegipark@gmail.com======
+                email_body = render_to_string(
+                    'mails/visitor_ticket_email.html', {
+                        'buyer_fname': fname,
+                        'buyer_lname': lname,
+                        'cnp': cnp,
+                        'email': email,
+                        'phone': phone,
+                        'address': payment.address,
+                        'series': ticket_series_list,
+                        'price': payment.price,
+                        'quantity': payment.quantity,
+                        })
+                email = EmailMultiAlternatives(
+                                                _("Factură tichete vizitator"),
+                                                email_body,
+                                                settings.EMAIL_HOST_USER,
+                                                (settings.ACCOUNTANT_EMAIL,),
+                                                headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
+                            )
+                            # Set the content subtype to HTML
+                email.content_subtype = 'html'
+                # Clear the session after retrieving payment_id
+                request.session.clear()
+                messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
+                return redirect('checkout')
+            else:
+                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
+                return redirect('ticket_invoice')
+        else:
+            form = CaptchaForm()
+    else:
+        # Handle case where payment does not exist
+        messages.error(request, _("Payment not found. Please contact support at daniel.ungureanu@bucegipark.ro"))
+    return render(request, template, context)
 #==============pay_failure_view=================
 def pay_failure_view(request):
     template = "payments/payment-failure.html"
-    messages.warning(request, _("Payment failure! Please check whether your card is expired or it does not have enough funds."))
+    payment = Payment.objects.last()
+    if payment:
+
+        messages.warning(request, _(f"Payment failure! Bank message:") + " " + f"{payment.bank_message}")
+    else:
+        messages.warning(request, _("Payment failure! There is no payment!"))
     context = {
-        'data':123,
+       
     }
     return render(request, template, context)
 

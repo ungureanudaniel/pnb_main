@@ -1,0 +1,23 @@
+{% load i18n %}
+<html>
+    <head></head>
+        <body>
+            <h2>{% trans 'Dragă' %} Alina,</h2>
+            <p></p>
+            <p>{% trans 'Un vizitator al Parcului Natural Bucegi dorește o factură pentru biletele de vizitator cumpărate.' %}</p>
+            <p>{% trans 'Informațiile necesare facturării sunt mai jos:' %}</p>
+
+            <p class="font-weight-bold">{% trans 'Nume de familie' %}: </p><span>{{ lname }}</span>
+            <p class="font-weight-bold">{% trans 'Prenume' %}: </p><span>{{ fname }}</span>
+            <p class="font-weight-bold">{% trans 'Nr de telefon' %}: </p><span>{{ phone }}</span>
+            <p class="font-weight-bold">{% trans 'Email' %}: </p><span>{{ email }}</span>
+            <p class="font-weight-bold">{% trans 'Adresă' %}: </p><span>{{ address }}</span>
+            <p class="font-weight-bold">{% trans 'CNP' %}: </p><span>{{ cnp }}</span>
+            <p class="font-weight-bold">{% trans 'Serii bilete achiziționate' %}: </p><span>{{ series }}</span>
+            <p class="font-weight-bold">{% trans 'Valoare factură' %}: </p><span>{{ price }}</span>
+            <p class="font-weight-bold">{% trans 'Nr de bilete' %}: </p><span>{{ quantity }}</span>
+
+            <h5>{% trans 'O zi faină!' %},</h5>
+            <p>{% trans 'Website-ul Parcului' %}</p>
+        </body>
+</html>

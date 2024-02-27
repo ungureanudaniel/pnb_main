@@ -365,14 +365,28 @@ msgstr "Online"
 msgid "Your children tickets have been sent to the email you provided. Your kids should always have the tickets with them when visiting Bucegi Natural Park. Thank you!"
 msgstr "Biletele de vizitator pentru copii dvs. au fost trimise pe emailul introdus. Copiii dvs. ar trebui să aibă cu ei biletele de vizitator atunci când vizitează Parcul Natural Bucegi. Mulțumim!"
 #: .\payments\templates\includes\payment-failure.html:9
-msgid "Payment failure! Please check whether your card is expired or it does not have enough funds."
-msgstr "Plată eșuată! Vă rugăm să verificați dacă aveți destule fonduri pe card sau dacă este expirat."
+msgid "Payment failure! Bank message:"
+msgstr "Plată eșuată! Mesajul băncii este:"
+#: .\payments\templates\includes\payment-failure.html:9
+msgid "Payment failure! There is no payment!"
+msgstr "Plată eșuată! Nu există nici o plată!"
+#: .\payments\templates\includes\payment-failure.html:9
+msgid "If you would like to receive and invoice please press the following button:"
+msgstr "Dacă ai nevoie de factură pentru această achiziție, te rugăm apasă butonul de mai jos:"
+
 #: .\payments\templates\includes\payment-success.html:9
 msgid "Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"
 msgstr "Plată efectuată cu succes! Ticketele dvs. au fost trimise la emailul furnizat. Va fi nevoie să aveți la dvs. biletele de vizitator, atunci când vizitați Parcul Natural Bucegi. Vă mulțumim!"
 #: .\payments\templates\includes\views.py:9
 msgid "Invoice from Bucegi Natural Park"
 msgstr "Factura din partea Parcului Natural Bucegi"
+
+#: .\payments\templates\includes\views.py:9
+msgid "If you would like to receive an invoice please press the following button in order to add the necessary info:"
+msgstr "Dacă doriți să primiți o factură, vă rugăm să adăugați informațiile necesare apăsând pe butonul de mai jos:"
+#: .\payments\templates\includes\views.py:9
+msgid "Invoice"
+msgstr "Facturare"
 
 #: .\payments\templates\includes\views.html:9
 msgid "You must choose at least one ticket to finalize the purchase."
@@ -2624,7 +2638,7 @@ msgid "<strong>Well done!</strong> Your message has been sent"
 msgstr "<strong>Felicitări!</strong> Mesajul tău a fost trimis"
 #: services/templates/services/contact.html: 57
 msgid "Send"
-msgstr "Trimite-ți"
+msgstr "Trimitere"
 #: services/templates/services/contact.html: 57
 msgid "Please type in the following letters to show you are human"
 msgstr "Vă rugăm să scrieți literele următoare mai jos pentru a arăta ca sunteți uman"
@@ -2635,10 +2649,22 @@ msgstr "<h4 class='cta-block__title'>Abonați-vă la <span>Newsletter-ul nostru<
 #: services/templates/services/includes/newsletter.html: 9
 msgid "<p class='cta-block__text'>Subscribe and get our latest updates</p>"
 msgstr "<p class='cta-block__text'>Și veți primi cele mai noi știri</p>"
+#: payments/templates/payments/views.py: 349
+msgid "The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided."
+msgstr "Informațiile necesare facturării au fost trimise către departamentul financiar și curând veți primi factura pe emailul furnizat."
 
 #: services/templates/services/includes/newsletter.html: 9
 msgid "Your email"
-msgstr "Emailul dvs"
+msgstr "Emailul Dvs."
+#: payments/templates/payments/ticket-invoice.html: 9
+msgid "Other info"
+msgstr "Alte informații"
+#: payments/templates/payments/ticket-invoice.html: 9
+msgid "Your phone number"
+msgstr "Numărul Dvs. de telefon"
+#: payments/templates/payments/ticket-invoice.html: 9
+msgid "Your Personal Identification Number"
+msgstr "Codul Dvs. Numeric Personal"
 
 #: services/templates/services/includes/newsletter.html: 9
 msgid "Subscribe"
@@ -2882,4 +2908,20 @@ msgstr "În cazul vehiculelor cu număr de înmatriculare, pentru verificare vă
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "For vehicles without registration plates (e.g. snowmobiles) a sticker is issued according to the attached photo, which must be displayed in a visible place, issued individually for each utility vehicle (check according to example: 2/PH/2024)"
 msgstr "Pentru vehiculele fără plăcuțe de înmatriculare  (ex:  snowmobile) se eliberează un sticker conform foto alăturate, obligatoriu lipit la vedere, eliberat individual pentru fiecare vehicul utilitar (verificarea se face după exemplul:  2/PH/2024)"
+#: payments/templates/payments/views.py: 134
+msgid "Unknown reason"
+msgstr "Motiv necunoscut"
+#: payments/templates/payments/ticket-invoice.html: 134
+msgid "<span>Ticket</span> <span> Invoice Request</span>"
+msgstr "<span>Cerere</span> <span> Facturare</span>"
+#: payments/templates/payments/ticket-invoice.html: 134
+msgid "<span>Write your</span> <span>invoicing info below</span>"
+msgstr "<span>Introduceți</span> <span>datele de facturare mai jos</span>"
 
+#: services/templates/services/theme-trails.html: 134
+msgid "MAP"
+msgstr "HARTĂ"
+
+#: services/templates/services/theme-trails.html: 134
+msgid "If you want to see them on the map please click the MAP button. On the map you can filter trails by clicking on the right side and clear the filter when you want to see all of them. You can also search for one using the binoculars icon on the left. The upper layers button will show you the legend of the map. Also when hovering over a trail a pop-up message will show you info about time, distance and difficulty"
+msgstr "Dacă doriți să le vizualizați pe hartă, vă rugăm să apăsați butonul HARTĂ. Pe hartă puteți filtra traseele făcând clic în partea dreaptă și puteți elimina filtrul atunci când doriți să le vizualizați pe toate. De asemenea, puteți căuta după nume folosind iconița de binoclu din stânga. Butonul de sus cu straturi vă va arăta legenda hărții. De asemenea, când plasați cursorul peste un traseu, va apărea un mesaj pop-up care vă va afișa informații legate de durată, distanță, dificultate"

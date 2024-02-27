@@ -1025,6 +1025,14 @@
 	})
 
 }(jQuery))
+// google maps opens a kml file with the track
+// function openGoogleEarth(kmlUrl) {
+// 	// Construct the Google Earth URL with the KML parameter
+// 	var earthUrl = "https://earth.google.com/web/search/" + encodeURIComponent(kmlUrl);
+  
+// 	// Open the URL
+// 	window.open(earthUrl, '_blank');
+//   }
 // preloader
 $(document).ready(function ($) {
 	$(window).load(function () {

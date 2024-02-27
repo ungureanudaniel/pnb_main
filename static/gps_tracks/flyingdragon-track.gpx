@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.8.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<bounds minlat="45.384878294200320" minlon="25.439175701559741" maxlat="45.384901515591537" maxlon="25.439448162194410"/>                                       
+</metadata>
+<trk>
+  <extensions>
+    <ogr:OBJECTID>9</ogr:OBJECTID>
+    <ogr:Denumire_t>The Flying Dragon</ogr:Denumire_t>
+    <ogr:JUDET>DAMBOVITA</ogr:JUDET>
+    <ogr:timp>30 min</ogr:timp>
+    <ogr:distanta_m>1250.0</ogr:distanta_m>
+    <ogr:dificultat>Usoara - Moderata</ogr:dificultat>
+    <ogr:Distanta>1250 metri</ogr:Distanta>
+  </extensions>
+  <trkseg>
+    <trkpt lat="45.384901515591537" lon="25.439175701559741">
+    </trkpt>
+    <trkpt lat="45.384885845539593" lon="25.439406276169557">
+    </trkpt>
+    <trkpt lat="45.38487829420032" lon="25.43944816219441">
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

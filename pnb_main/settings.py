@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'ckeditor',
     'hitcount',
-    'captcha',
     'django.contrib.sites',
+    'django_recaptcha',
     'django_countries',
     'debug_toolbar',
     #user apps
@@ -94,10 +94,10 @@ TEMPLATES = [
 # Enable caching in project
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+        "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
         "LOCATION": [
             "127.0.0.1:11211",
-            "47.245.97.115:11211"
+            "929a-212-93-144-83.ngrok-free.app"
         ]
     }
 }
@@ -183,7 +183,7 @@ EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 EMAIL_HOST_USER='contact@bucegipark.ro'
 EMAIL_HOST_PASSWORD=os.getenv('EMAIL_HOST_PASSWORD')
-
+ACCOUNTANT_EMAIL=os.getenv('ACCOUNTANT_EMAIL')
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
         messages.INFO: 'alert-info',
@@ -199,13 +199,17 @@ DJANGORESIZED_DEFAULT_KEEP_META = True
 DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WebP'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WebP': ".WebP"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
-
+#==============recaptcha keys===============================
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
+SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 #================django simple captcha======================
 CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"
 CAPTCHA_FOREGROUND_COLOR = "black"
 #================django payments settings=====================
-
+TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
+BASE_URL = os.getenv('BASE_URL')
 #=====================LOGGING  ERORRS=========================
 LOGGING = {
     'version': 1,
@@ -249,6 +253,5 @@ LOGGING = {
 #===============youtube credentials====================
 CHANNELID=os.getenv("CHANNELID")
 YOUTUBE_DATA_API_KEY=os.getenv("YOUTUBE_DATA_API_KEY")
-TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
-BASE_URL = os.getenv('BASE_URL')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

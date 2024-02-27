@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.8.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata>
+<bounds minlat="45.370703775122784" minlon="25.437665948932203" maxlat="45.372293779477069" maxlon="25.439769711493440"/>                                       
+</metadata>
+<trk>
+  <extensions>
+    <ogr:OBJECTID>6</ogr:OBJECTID>
+    <ogr:Denumire_t>Turbaria Laptici</ogr:Denumire_t>
+    <ogr:cod>1</ogr:cod>
+    <ogr:JUDET>DAMBOVITA</ogr:JUDET>
+    <ogr:Shape_Leng>562.568827254999974</ogr:Shape_Leng>
+    <ogr:Distanta>563</ogr:Distanta>
+  </extensions>
+  <trkseg>
+    <trkpt lat="45.372132574362233" lon="25.437677981603869">
+    </trkpt>
+    <trkpt lat="45.372040313543842" lon="25.437882400917893">
+    </trkpt>
+    <trkpt lat="45.371954082828026" lon="25.438053374784026">
+    </trkpt>
+    <trkpt lat="45.371879961299882" lon="25.438144900616248">
+    </trkpt>
+    <trkpt lat="45.37179121567948" lon="25.438202821328023">
+    </trkpt>
+    <trkpt lat="45.371723366672406" lon="25.438198108124958">
+    </trkpt>
+    <trkpt lat="45.371617320728113" lon="25.438151234506304">
+    </trkpt>
+    <trkpt lat="45.371511145607904" lon="25.438137851059132">
+    </trkpt>
+    <trkpt lat="45.371404760477091" lon="25.438178888903447">
+    </trkpt>
+    <trkpt lat="45.371271528895853" lon="25.438295072776935">
+    </trkpt>
+    <trkpt lat="45.371171093490929" lon="25.438323597414897">
+    </trkpt>
+    <trkpt lat="45.371052873443659" lon="25.438372915466218">
+    </trkpt>
+    <trkpt lat="45.37091396653021" lon="25.438430445320183">
+    </trkpt>
+    <trkpt lat="45.370810580425761" lon="25.438458946452297">
+    </trkpt>
+    <trkpt lat="45.370727978219698" lon="25.438454118418356">
+    </trkpt>
+    <trkpt lat="45.370703775122784" lon="25.438608824313935">
+    </trkpt>
+    <trkpt lat="45.370768091387653" lon="25.438764218384105">
+    </trkpt>
+    <trkpt lat="45.370788212406033" lon="25.438902523585949">
+    </trkpt>
+    <trkpt lat="45.370740063597559" lon="25.439144956116674">
+    </trkpt>
+    <trkpt lat="45.370712989833038" lon="25.439278707892754">
+    </trkpt>
+    <trkpt lat="45.370709326792486" lon="25.439462877505662">
+    </trkpt>
+    <trkpt lat="45.370708743715845" lon="25.439613580728661">
+    </trkpt>
+    <trkpt lat="45.370767335523766" lon="25.439722881616923">
+    </trkpt>
+    <trkpt lat="45.37086747961105" lon="25.43976971149344">
+    </trkpt>
+    <trkpt lat="45.370942104626955" lon="25.439548416892428">
+    </trkpt>
+    <trkpt lat="45.371034595076075" lon="25.439285397172135">
+    </trkpt>
+    <trkpt lat="45.371168393978607" lon="25.439022698078418">
+    </trkpt>
+    <trkpt lat="45.371346145013199" lon="25.438839880375035">
+    </trkpt>
+    <trkpt lat="45.371496854783373" lon="25.438782442851551">
+    </trkpt>
+    <trkpt lat="45.371667847293665" lon="25.438821449883726">
+    </trkpt>
+    <trkpt lat="45.371839017552432" lon="25.438814407920734">
+    </trkpt>
+    <trkpt lat="45.371977892429349" lon="25.438765250687357">
+    </trkpt>
+    <trkpt lat="45.372090421461508" lon="25.438661464885065">
+    </trkpt>
+    <trkpt lat="45.372132490197096" lon="25.438465029609553">
+    </trkpt>
+    <trkpt lat="45.372142020655311" lon="25.438289273578842">
+    </trkpt>
+    <trkpt lat="45.372231282993866" lon="25.438097390794372">
+    </trkpt>
+    <trkpt lat="45.372293779477069" lon="25.437959723290966">
+    </trkpt>
+    <trkpt lat="45.372256195436982" lon="25.43775848267671">
+    </trkpt>
+    <trkpt lat="45.372200487786529" lon="25.437665948932203">
+    </trkpt>
+  </trkseg>
+</trk>
+</gpx>

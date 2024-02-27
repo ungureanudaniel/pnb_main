@@ -1,12 +1,13 @@
 from django import forms
 from .models import Testimonial, AttractionCategory, Attraction, Contact,\
 Comment, PublicDocsDownloaderEntity
-from captcha.fields import CaptchaField
+# from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
-
-
+from django_recaptcha.fields import ReCaptchaField
+  
+  
 class CaptchaForm(forms.Form):
-    captcha = CaptchaField()
+    captcha = ReCaptchaField()
 
 class CommentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
