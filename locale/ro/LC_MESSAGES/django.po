@@ -2405,6 +2405,9 @@ msgstr "<strong>Există un total de 10 trasee tematice în cuprinsul Parcului Na
 #: services/templates/services/theme-trails.html: 17
 msgid "Read more below"
 msgstr "Citiți alte informații mai jos"
+#: services/templates/services/theme-trails.html: 17
+msgid "More info on trails also below"
+msgstr "Mai multe informații mai jos"
 
 #: services/templates/services/theme-trails.html: 17
 msgid "hours"
