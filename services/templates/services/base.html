@@ -34,7 +34,7 @@
 		<meta property="og:image" content="https://bucegipark.ro/static/img/logo/bucegi_logo.png">
 		<meta property="og:image:alt" content="The Sphinx">
 
-		<link rel="canonical" href="https://bucegipark.ro/">
+		<link rel="canonical" href="https://www.bucegipark.ro/ro/">
 		<!-- styles-->
 		<link rel="stylesheet" href="{% static 'css/styles.min.css' %}"/>
 		<!-- bootstrap link -->
@@ -72,7 +72,6 @@
 
 			font()
 		</script>
-		<script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -543,50 +542,50 @@
 							<!-- main menu start-->
 							<ul class="main-menu">
 								<li class="main-menu__item"><a class="main-menu__link" href="{% url 'home' %}"><span>{% trans 'Home' %}</span></a></li>
-								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'About' %}</span></a>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" title="About Bucegi Natural Park dropdown list" href="javascript:void(0);"><span>{% trans 'About' %}</span></a>
 									<!-- sub menu start-->
 									<ul class="main-menu__sub-list">
-										<li><a href="{% url 'history' %}"><span>{% trans 'History' %}</span></a></li>
-										<li><a href="{% url 'team' %}"><span>{% trans 'Our team' %}</span></a></li>
-										<li><a href="{% url 'scientific-council' %}"><span>{% trans 'Scientific Council' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Mass-Media' %}</span></a></li>
-										<li><a href="{% url 'blog' %}"><span>Blog</span></a></li>
-										<li><a href="{% url 'home' %}#testimonials"><span>{% trans 'Testimonials' %}</span></a></li>
-										<li><a href="{% url 'ticket-info' %}"><span>{% trans 'Ticket Prices' %}</span></a></li>
-										<li><a href="{% url 'terms' %}"><span>{% trans 'Terms and Conditions' %}</span></a></li>
+										<li><a href="{% url 'history' %}" title="History of Bucegi Natural Park"><span>{% trans 'History' %}</span></a></li>
+										<li><a href="{% url 'team' %}" title="Team of Bucegi Natural Park"><span>{% trans 'Our team' %}</span></a></li>
+										<li><a href="{% url 'scientific-council' %}" title="Scientifil Council of Bucegi Natural Park"><span>{% trans 'Scientific Council' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}" title="Bucegi Natural Park in Mass Media"><span>{% trans 'Mass-Media' %}</span></a></li>
+										<li><a href="{% url 'blog' %}" title="Blog of Bucegi Natural Park"><span>Blog</span></a></li>
+										<li><a href="{% url 'home' %}#testimonials" title="Testimonials of Bucegi Natural Park"><span>{% trans 'Testimonials' %}</span></a></li>
+										<li><a href="{% url 'ticket-info' %}" title="Ticket prices for visiting Bucegi Natural Park"><span>{% trans 'Ticket Prices' %}</span></a></li>
+										<li><a href="{% url 'terms' %}" title="Terms and Conditions of Bucegi Natural Park website usage"><span>{% trans 'Terms and Conditions' %}</span></a></li>
 									</ul>
 									<!-- sub menu end-->
 								</li>
-								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'Explore' %}</span></a>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" title="Explore website of Bucegi Natural Park - dropdown list" href="javascript:void(0);"><span>{% trans 'Explore' %}</span></a>
 									<!-- sub menu start-->
 									<ul class="main-menu__sub-list">
-										<li><a href="{% url 'gallery' %}"><span>{% trans 'Gallery' %}</span></a></li>
-										<li><a href="{% url 'videos' %}"><span>{% trans 'Videos' %}</span></a></li>
-										<li><a href="{% url 'flora' %}"><span>Flora</span></a></li>
-										<li><a href="{% url 'wildlife' %}"><span>{% trans 'Fauna' %}</span></a></li>
-										<li><a href="{% url 'events' %}"><span>{% trans 'Events' %}</span></a></li>
+										<li><a href="{% url 'gallery' %}" title="Picture Gallery of Bucegi Natural Park"><span>{% trans 'Gallery' %}</span></a></li>
+										<li><a href="{% url 'videos' %}" title="Videos from Bucegi Natural Park"><span>{% trans 'Videos' %}</span></a></li>
+										<li><a href="{% url 'flora' %}" title="Flora of Bucegi Natural Park"><span>Flora</span></a></li>
+										<li><a href="{% url 'wildlife' %}" title="Fauna of Bucegi Natural Park"><span>{% trans 'Fauna' %}</span></a></li>
+										<li><a href="{% url 'events' %}" title="Events in Bucegi Natural Park"><span>{% trans 'Events' %}</span></a></li>
 										<!-- <li><a href="{% url 'coming-soon' %}"><span>{% trans 'Projects' %}</span></a></li> -->
 										<!-- <li><a href="{% url 'coming-soon' %}"><span>Calendar</span></a></li> -->
 
 									</ul>
 								</li>
-								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="javascript:void(0);"><span>{% trans 'Attractions' %}</span></a>
+								<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" title="Attractions of Bucegi Natural Park dropdown list" href="javascript:void(0);"><span>{% trans 'Attractions' %}</span></a>
 									<!-- sub menu start-->
 									<ul class="main-menu__sub-list sub-list--style-2" style="width:400px;">
-										<li><a href="{% url 'theme-trails' %}"><span>{% trans 'Theme Trails' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Hiking Trails' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Climbing Trails' %}</span></a></li>
+										<li><a href="{% url 'theme-trails' %}" title="Theme trails of Bucegi Natural Park"><span>{% trans 'Theme Trails' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}" title="Hiking trails of Bucegi Natural Park"><span>{% trans 'Hiking Trails' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}" title="Climbing trails of Bucegi Natural Park"><span>{% trans 'Climbing Trails' %}</span></a></li>
 										<!-- <li><a href="{% url 'coming-soon' %}"><span>{% trans 'Visitor Center' %}</span></a></li> -->
-										<li><a href="{% url 'infopoints' %}"><span>{% trans 'Info Points' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'View Points' %}</span></a></li>
-										<li><a href="{% url 'coming-soon' %}"><span>{% trans 'Caves' %}</span></a></li>
+										<li><a href="{% url 'infopoints' %}" title="Information points of Bucegi Natural Park"><span>{% trans 'Info Points' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}" title="View points of Bucegi Natural Park"><span>{% trans 'View Points' %}</span></a></li>
+										<li><a href="{% url 'coming-soon' %}" title="Caves in Bucegi Natural Park"><span>{% trans 'Caves' %}</span></a></li>
 									</ul>
 									<!-- sub menu end-->
 								</li>
-								<li class="main-menu__item"><a class="main-menu__link" href="{% url 'contact' %}"><span>Contact</span></a></li>
+								<li class="main-menu__item"><a class="main-menu__link" title="Contact form for Bucegi Natural Park Administration" href="{% url 'contact' %}"><span>Contact</span></a></li>
 							</ul>
 							<!-- main menu end-->
-							<a class="header__button" data-toggle="modal" name="signinmodal" href="#ticketsModal">{% trans 'Tickets' %}</a>
+							<a class="header__button" data-toggle="modal" name="signinmodal" title="Signin modal for Bucegi Natural Park admin" href="#ticketsModal">{% trans 'Tickets' %}</a>
 							<!-- <a class="header__button" href="{% url 'coming-soon' %}" target="_blank">{% trans 'Tickets' %}</a> -->
 							<!-- menu-trigger start-->
 							<div class="hamburger">
@@ -602,13 +601,13 @@
 					<div class="row">
 						<div class="col-auto d-flex align-items-center">
 							<ul class="lower-menu">
-								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Education' %}</a></li>
-								<li class="lower-menu__item"><a class="lower-menu__link" target="_blank" href="http://map.bucegipark.ro">{% trans 'Map' %}</a></li>
-								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}" title="Education activities in Bucegi Natural Park">{% trans 'Education' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" target="_blank" href="http://map.bucegipark.ro" title="Live Map of Bucegi Natural Park">{% trans 'Map' %}</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'announcement' %}" title="Announcements of Bucegi Natural Park">{% trans 'Announcements' %}</a></li>
 								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
-								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">FAQ</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}" title="FAQ of Bucegi Natural Park">FAQ</a></li>
 								{% if user.is_authenticated %}
-								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}">Logout</a></li>
+								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}" title="Signout button for Bucegi Natural Park website admin">Logout</a></li>
 								{% endif %}
 							</ul>
 							<!-- lang select start-->
@@ -619,10 +618,10 @@
 										<!-- <p class="text-white">{{ LANGUAGES }}</p> -->
 											<!-- <p class="text-white">{{ languages }}</p> -->
 									<ul class="lang-select__sub-list" style="width:200px">
-										<li><a href="{% url 'public-docs' %}">{% trans 'Administration' %}</a></li>
-										<li><a href="{% url 'mng-plan' %}">{% trans 'Management Plan' %}</a></li>
-										<li><a href="{% url 'park-rules' %}">{% trans 'Park Regulations' %}</a></li>
-										<li><a href="{% url 'auto-access' %}">{% trans 'Motorized Access' %}</a></li>
+										<li><a href="{% url 'public-docs' %}" title="Admnistrative documents of Bucegi Natural Park">{% trans 'Administration' %}</a></li>
+										<li><a href="{% url 'mng-plan' %}" title="Management Plan of Bucegi Natural Park">{% trans 'Management Plan' %}</a></li>
+										<li><a href="{% url 'park-rules' %}" title="Bucegi Natural Park Visitor Rules">{% trans 'Park Regulations' %}</a></li>
+										<li><a href="{% url 'auto-access' %}" title="Motorized access database of Bucegi Natural Park">{% trans 'Motorized Access' %}</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -637,17 +636,17 @@
 										{% get_language_info_list for LANGUAGES as languages %}
 										{% get_language_info for LANGUAGE_CODE as lang %}
 										{% for language in languages %}
-										<li value="{{ language.name_local }}"><a href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}">{{ language.name_local }}</a></li>
+										<li value="{{ language.name_local }}"><a href="/{{ language.code }}/{{ request.get_full_path |slice:'4:'}}" title="Language switch of Bucegi Natural Park website">{{ language.name_local }}</a></li>
 										{% endfor %}
 									</ul>
 								</li>
 							</ul>
 							<!-- lang select end-->
 							<ul class="header__socials">
-								<li><a class="item--facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a class="item--twitter" target="_blank" href="https://twitter.com/BucegiPark"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a class="item--youtube" target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-								<li><a class="item--instagram" target="_blank" href="https://www.instagram.com/parculnaturalbucegi/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a class="item--facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100057429310837/" title="Facebook page of Bucegi Natural Park"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a class="item--twitter" target="_blank" href="https://twitter.com/BucegiPark" title="Twitter page of Bucegi Natural Park"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="item--youtube" target="_blank" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ" title="Youtube channel of Bucegi Natural Park"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<li><a class="item--instagram" target="_blank" href="https://www.instagram.com/parculnaturalbucegi/" title="Instagram account of Bucegi Natural Park"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -663,14 +662,14 @@
 						<div class="col-lg-4 d-lg-block">
 							<h6 class="footer__title">{% trans 'Menu & Links' %}</h6>
 							<ul class="footer-menu">
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'home' %}">{% trans 'Home' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'history' %}">{% trans 'About' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'blog' %}">{% trans 'Blog' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'theme-trails' %}">{% trans 'Attractions' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}">{% trans 'Events' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}">{% trans 'Info points' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'home' %}" title="Home page of Bucegi Natural Park website">{% trans 'Home' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'history' %}" title="History page of Bucegi Natural Park website">{% trans 'About' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'blog' %}" title="Blog page of Bucegi Natural Park website">{% trans 'Blog' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'theme-trails' %}" title="Theme trails page of Bucegi Natural Park website">{% trans 'Attractions' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}" title="Events page of Bucegi Natural Park website">{% trans 'Events' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}" title="Infopoints page of Bucegi Natural Park website">{% trans 'Info points' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'announcement' %}" title="Announcements page of Bucegi Natural Park website">{% trans 'Announcements' %}</a></li>
+								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'terms' %}" title="Terms page of Bucegi Natural Park website">{% trans 'Terms and Conditions' %}</a></li>
 
 							</ul>
 						</div>
@@ -678,8 +677,8 @@
 							<h6 class="footer__title">{% trans 'Main Office' %}</h6>
 							<div class="footer__details bottom-30">
 								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Principala 71, Moroeni, Dambovita, Romania</span></p>
-								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40 245 772 640">+40 245 772 640</a></p>
-								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:bucegipark@gmail.com">bucegipark@gmail.com</a></p>
+								<p><strong>{% trans 'Phone' %}:</strong> <a href="tel:+40 245 772 640" title="Official Phone of Bucegi Natural Park">+40 245 772 640</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:bucegipark@gmail.com" title="Official email of Bucegi Natural Park">bucegipark@gmail.com</a></p>
 								<p><strong>{% trans 'Openning hours' %}:</strong> <span>8:00 AM - 16:30 PM</span></p>
 							</div>
 						</div>
@@ -687,7 +686,7 @@
 							<h6 class="footer__title">{% trans 'Visitor Center' %}</h6>
 							<div class="footer__details">
 								<p><strong>{% trans 'Location' %}:</strong> <span>Str. Telecabinei 54, 105500, Busteni, Prahova, Romania</span></p>
-								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:visitorcenter@bucegipark.ro">visitorcenter@bucegipark.ro</a></p>
+								<p><strong>{% trans 'Email' %}:</strong> <a href="mailto:visitorcenter@bucegipark.ro" title="Official visitor center email of Bucegi Natural Park website">visitorcenter@bucegipark.ro</a></p>
 								<p><strong>{% trans 'Openning hours' %}:</strong> <span>9:00 AM - 15:00 PM {% trans 'Saturday - Sunday' %}, {% trans 'from May to October' %}</span></p>
 								<p><strong>{% trans 'Closed' %}:</strong> <span>{% trans 'from November to April' %}</span></p>
 							</div>
@@ -696,14 +695,14 @@
 					<div class="row align-items-end">
 						<div class="col-md-12 text-center text-md-left">
 							<ul class="socials">
-								<li class="socials__item"><a class="socials__link" href="https://www.facebook.com/profile.php?id=100057429310837/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li class="socials__item"><a class="socials__link" href="https://twitter.com/BucegiPark" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="socials__item"><a class="socials__link" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-								<li class="socials__item"><a class="socials__link" href="https://www.instagram.com/parculnaturalbucegi/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.facebook.com/profile.php?id=100057429310837/" title="Facebook page of Bucegi Natural Park website" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://twitter.com/BucegiPark" target="_blank" title="Twitter page of Bucegi Natural Park website"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.youtube.com/channel/UC9qvl74Lfld73eiqlLSPiqQ" title="Youtube page of Bucegi Natural Park website" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<li class="socials__item"><a class="socials__link" href="https://www.instagram.com/parculnaturalbucegi/" target="_blank" title="Instagram page of Bucegi Natural Park website"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 							</ul>
 							<ul class="footer__additional">
 								<li><a href="{% url 'contact' %}">{% trans 'Contact Information' %}</a></li>
-								<li><a class="public_docs" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a>{% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}services/publiccategory"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}</li>
+								<li><a class="public_docs" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a>{% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" title="Public official documents page of Bucegi Natural Park website"target="_blank" href="{% url 'admin:index' %}services/publiccategory"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}</li>
 								<!-- <li><a href="#">Site Map</a></li> -->
 								<li><a href="{% url 'privacy_info' %}">{% trans 'Privacy Policy' %}</a></li>
 								<li style="color:#83888b;">© {% now "Y" %} RNP ROMSILVA - Administrația {% if user.is_authenticated %} Parcului {% else %}<a class="text-decoration-none" data-toggle="modal" name="signinmodal" href="#signinModal">Parcului</a>{% endif %} Natural Bucegi R.A.</li>
@@ -712,19 +711,19 @@
 							</ul>
 						</div>
 						<div class="col-md-12 text-center text-md-right mt-5" style="display:flex;flex-wrap: wrap;align-items:center;">
-							<a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img/logo/bucegi_logo.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="http://www.rosilva.ro/"><img class="logo__img" src="{% static 'img/logo/rnp-romsilva3.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="https://romaqua-group.ro/"><img class="logo__img" src="{% static 'img/logo/aquatique.png' %}" alt="logo"/></a>
-							<a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img/logo/sigla-aaanp-transp.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="http://ananp.gov.ro/"><img class="logo__img" src="{% static 'img/logo/logo-ananp.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="https://www.sts.ro/ro/despre-112"><img class="logo__img" src="{% static 'img/logo/112-logo.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="https://anpc.ro/en/"><img class="logo__img" src="{% static 'img/logo/SAL-PICTOGRAMA.png' %}" alt="logo"/> </a>
-							<a class="logo logo--footer pr-4" href="https://www.euplatesc.ro/"><img class="logo__img" src="{% static 'img/logo/logo-eu-platesc.png' %}" alt="logo"/> </a>
+							<a class="logo logo--footer pr-4" href="{% url 'home' %}"><img class="logo__img" src="{% static 'img/logo/bucegi_logo.png' %}" title="Logo of Bucegi Natural Park" alt="logo_bucegi"/> </a>
+							<a class="logo logo--footer pr-4" href="http://www.rosilva.ro/"><img class="logo__img" src="{% static 'img/logo/rnp-romsilva3.png' %}" title="Logo of rnp romsilva" alt="logo_romsilva"/> </a>
+							<a class="logo logo--footer pr-4" href="https://romaqua-group.ro/"><img class="logo__img" src="{% static 'img/logo/aquatique.png' %}" title="Logo of Romaqua Group" alt="logo_romaqua_group"/></a>
+							<a class="logo logo--footer pr-4" href="https://ananp.gov.ro/"><img class="logo__img" src="{% static 'img/logo/sigla-aaanp-transp.png' %}" title="Logo of ANANP" alt="logo_ananp"/> </a>
+							<a class="logo logo--footer pr-4" href="http://ananp.gov.ro/"><img class="logo__img" src="{% static 'img/logo/logo-ananp.png' %}" title="Logo of ANANP again" alt="logo_ananp2"/> </a>
+							<a class="logo logo--footer pr-4" href="https://www.sts.ro/ro/despre-112"><img class="logo__img" src="{% static 'img/logo/112-logo.png' %}" title="Logo of STS EMERGENCY NUMBER" alt="logo_sts_112"/> </a>
+							<a class="logo logo--footer pr-4" href="https://anpc.ro/en/"><img class="logo__img" src="{% static 'img/logo/SAL-PICTOGRAMA.png' %}" title="Logo of anpc" alt="logo_anpc"/> </a>
+							<a class="logo logo--footer pr-4" href="https://www.euplatesc.ro/"><img class="logo__img" src="{% static 'img/logo/logo-eu-platesc.png' %}" title="Logo of Euplatesc payment processor" alt="logo_euplatesc"/> </a>
 
 						</div>
 
 					</div>
-					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#f5f5f5" href="{% url 'unsubscribe' %}"><p>&#x2022; {% trans 'Unsubscribe' %} &#x2022;</p></div>
+					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#f5f5f5" href="{% url 'unsubscribe' %}" title="Unsubscribe from newsletter"><p>&#x2022; {% trans 'Unsubscribe' %} &#x2022;</p></div>
 					<div class="col-12 text-center mt-5" style="justify-content:center;"><a class="" style="color:#f5f5f5" href="#"><p>&#x2022; {% trans 'Designed by Daniel Ungureanu, IT Specialist at the Administration of Bucegi Natural Park R.A.' %} &#x2022;</p></div>
 					
 			</footer>
@@ -744,7 +743,7 @@
 		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 		<!-- scripts-->
-		<script src="{% static 'js/common.js' %}"></script>
+		<script src="{% static 'js/common.min.js' %}"></script>
 
 
 

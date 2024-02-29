@@ -27,13 +27,13 @@
 										    <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
 										    </div>
 										    {% endif %}
-												<div class="promo-slider__wrapper-1">
+												<div class="promo-slider__wrapper-1" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<h2 class="promo-slider__title"><span>{% trans 'Beautiful' %}</span><br/> <span>{% trans 'Landscapes and Trails' %}</span></h2>
 												</div>
-												<div class="promo-slider__wrapper-2">
+												<div class="promo-slider__wrapper-2" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<p class="promo-slider__subtitle">{% trans 'Canions, blue water lakes with small wooded bridges, alpine hiking trails, will send you thinking at fairytales' %}.</p>
 												</div>
-												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button main-menu__link--scroll button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+												<div class="promo-slider__wrapper-3" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)"><a class="button promo-slider__button main-menu__link--scroll button--primary" title="About Bucegi Natural Park" href="#about-bucegi">{% trans 'Discover' %}</a></div>
 											</div>
 										</div>
 									</div>
@@ -50,13 +50,13 @@
 									<div class="col-xl-8 offset-xl-2">
 										<div class="align-container">
 											<div class="align-container__item">
-												<div class="promo-slider__wrapper-1">
+												<div class="promo-slider__wrapper-1" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<h2 class="promo-slider__title"><span>{% trans 'Some of the most iconic' %}</span><br/> <span>{% trans 'Wildlife species in Europe' %}</span></h2>
 												</div>
-												<div class="promo-slider__wrapper-2">
+												<div class="promo-slider__wrapper-2" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<p class="promo-slider__subtitle">{% trans 'The Bucegi Mountains are home to a large biodiversity, the most iconic being brown bears, wolves, chamois, red deer, lynx, martens, otters and even golden eagles have been spotted here.' %}</p>
 												</div>
-												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+												<div class="promo-slider__wrapper-3" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
 											</div>
 										</div>
 									</div>
@@ -65,20 +65,20 @@
 						</div>
 						<div class="promo-slider__item promo-slider__item--style-2">
 							<picture>
-								<source srcset="{% static 'img/backgrounds/promo2.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo2.webp' %}" alt="img"/>
+								<source srcset="{% static 'img/backgrounds/promo2.webp' %}" media="(min-width: 992px)"/><img class="" style="position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:top center;object-position:top center;font-family:'object-fit: cover; object-position: top center';z-index:-1;" src="{% static 'img/backgrounds/promo2.webp' %}" alt="img"/>
 							</picture>
 							<div class="container">
 								<div class="row">
 									<div class="col-xl-10 offset-xl-1">
 										<div class="align-container">
 											<div class="align-container__item text-center">
-												<div class="promo-slider__wrapper-1">
+												<div class="promo-slider__wrapper-1" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<h2 class="promo-slider__title"><span></span><br/><span>{% trans 'Unique Rock Formations' %}</span></h2>
 												</div>
-												<div class="promo-slider__wrapper-2">
+												<div class="promo-slider__wrapper-2" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<p class="promo-slider__subtitle">{% trans 'Bucegi Natural Park is home to some of the most impressive natural rock carvings in Europe, which resulted from wind erosion on conglomerate rocks, over thousands of years. The most popular are The Sphinx and Babele, a human head and respectively several mushroom shaped rocks' %}. </p>
 												</div>
-												<div class="promo-slider__wrapper-3"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
+												<div class="promo-slider__wrapper-3" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)"><a class="button promo-slider__button button--primary" href="#about-bucegi">{% trans 'Discover' %}</a></div>
 											</div>
 										</div>
 									</div>
@@ -111,6 +111,7 @@
 							</div>
 							<span class="" style="align-items:right;">{% trans 'Wind' %} {{ weather.description }}</span><br><br>
 							<span class="location font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
+						</div>
 					</div>
 					<!-- promo pannel end-->
 				</section>

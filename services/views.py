@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
+# from django.http import JsonResponse
 from django.utils.timezone import now
 from django.conf import settings
 from utils.weather_scrape import scraped_data
@@ -113,16 +114,20 @@ def allowed_vehicles(request):
     else:
         context = {}
     return render(request, template, context)
+#========================weatehr data page=================================
+# async def weather_data(request):
+#     # Fetch weather data asynchronously
+#     weather = await scraped_data()
+#     return JsonResponse(weather)
 #========================home page=================================
 @csrf_exempt
 @cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def home(request):
     template = 'services/home.html'
     
-    weather = scraped_data()
+
     captcha_form = CaptchaForm()
     context = {
-        "weather": weather,
         "captcha_form": captcha_form
     }
     if request.method=='POST':
@@ -177,7 +182,13 @@ def home(request):
                         messages.warning(request, e)
                         return redirect('home')
 
+    
+    # Fetch weather data 
+    weather = scraped_data()
+    # Wait for weather data to be fetched asynchronously
 
+    # Add weather data to context
+    context['weather'] = weather
     #fetching data from the database and adding to context dict
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
