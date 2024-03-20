@@ -204,6 +204,9 @@ RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
 RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
 if os.getenv('DEVELOPMENT') == 'True':
     SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+#================EU PLATESC KEYS============================
+KEY = os.getenv('KEY')
+MID = os.getenv('MID')
 #================django simple captcha======================
 CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"

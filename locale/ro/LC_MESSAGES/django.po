@@ -2688,6 +2688,9 @@ msgstr "Arhiva"
 msgid "Add an announcement"
 msgstr "Adaugă un anunț"
 
+#: payments/templates/payments/ticket-checkout.html: 166
+msgid "Only test payments for now"
+msgstr "Doar plăți de test momentan"
 
 #: services/templates/services/includes/blog.html: 167
 msgid "And get our latest updates"
