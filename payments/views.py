@@ -174,7 +174,8 @@ def check_status(request):
                 
                 try:
                     # this must be CHANGED in production...its only to simulate several tickets at once
-                    amount = 30
+                    amount = payment.price
+                    print(f"Number of tickets to purchase: {amount}")
                     tickets =[]
                     for i in range(int(amount/10)):
                         #----------generate new subsequent ticket series and nr
