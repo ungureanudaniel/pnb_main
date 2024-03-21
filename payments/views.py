@@ -73,9 +73,8 @@ def checkout_view(request):
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
     #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
-    key="00112233445566778899AABBCCDDEEFF"
-    mid="testaccount"
-
+    key = settings.KEY
+    mid = settings.MID
     params= {}
     #assign form instance to variable
     form = PaymentForm(request.POST or None)
@@ -90,9 +89,9 @@ def checkout_view(request):
                     new_payment.save()
                     #----euplatesc parameters
                     params={
-                        # 'amount':str(new_payment.price),
+                        'amount':str(new_payment.price),
                         #=============switch the amount param to take new_payment.price======================================!!!!!!!!!!!
-                        'amount': '1',
+                        # 'amount': '1',
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
                         #==========need to change this in production=========================================================!!!!!!!!!!!

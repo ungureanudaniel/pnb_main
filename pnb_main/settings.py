@@ -207,6 +207,8 @@ if os.getenv('DEVELOPMENT') == 'True':
 #================EU PLATESC KEYS============================
 KEY = os.getenv('KEY')
 MID = os.getenv('MID')
+TEST_MID = os.getenv('TEST_MID')
+TEST_KEY = os.getenv('TEST_KEY')
 #================django simple captcha======================
 CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"
