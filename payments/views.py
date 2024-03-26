@@ -64,7 +64,6 @@ def euplatesc_mac(key,params):
 #             return render(request,template,context)
 #     return render(request,template,context)
 #================= checkout view =========================
-@login_required
 def checkout_view(request):
     template = "payments/ticket-checkout.html"
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
