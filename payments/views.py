@@ -73,6 +73,9 @@ def checkout_view(request):
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
     #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
+    # key = settings.TEST_KEY
+    # mid = settings.TEST_MID
+
     key = settings.KEY
     mid = settings.MID
     params= {}
