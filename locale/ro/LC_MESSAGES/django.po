@@ -2664,7 +2664,7 @@ msgid "Your email..."
 msgstr "Emailul Dvs..."
 #: services/templates/services/includes/newsletter.html: 9
 msgid "Your phone number (optional)..."
-msgstr "Nr. Dvs. de telefon (opțional)..."
+msgstr "Număr de telefon (opțional)..."
 
 #: payments/templates/payments/ticket-invoice.html: 9
 msgid "Additional information if needed..."
