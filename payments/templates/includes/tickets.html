@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-<!-- <a class="col-6 button button--primary button--filled" href="{% url 'checkout' %}">{% trans 'Buy Online' %}</a> -->
+
 <!-- Add  new attraction form: Vertical  -->
 <div class="modal fade" id="ticketsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -53,7 +53,7 @@
 						<div class="row">
 							<div class="col-12 text-center">
                 <a class="col-6 button button--primary" href="{% url 'sector-map' %}">{% trans 'Buy from rangers' %}</a>
-                
+                <a class="col-6 button button--primary button--filled" href="{% url 'checkout' %}">{% trans 'Buy Online' %}</a>
               </div>
 						</div>
 					</div>
