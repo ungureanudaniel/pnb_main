@@ -98,7 +98,7 @@ def checkout_view(request):
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
                         #==========need to change this in production=========================================================!!!!!!!!!!!
-                        'order_desc':'Test order Bucegi',
+                        'order_desc':'Tarif de vizitare online',
                         'merch_id':mid,
                         'timestamp':strftime("%Y%m%d%H%M%S"),
                         'nonce': uuid.uuid4().hex
