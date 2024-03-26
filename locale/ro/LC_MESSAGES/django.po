@@ -268,42 +268,45 @@ msgstr "Mai departe"
 msgid "For more information on litigations/dispute resolutions, please also consult the <a href='https://anpc.ro/en/'>ANPC (Consumer Protection National Agency) website</a> and <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Order 449 / 2022</a>"
 msgstr "Pentru mai multe informații privind soluționarea litigiilor/disputelor, vă rugăm să consultați si website-ul <a href='https://anpc.ro/en/'>ANPC (Agenția Națională pentru Protecția Consumatorilor)</a> și <a href='https://legislatie.just.ro/Public/DetaliiDocument/257649?fs=e&s=cl'>Ordinul 449 / 2022</a>"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "Ticket</span> <span> Checkout"
 msgstr "Checkout</span> <span> Bilete"
+#: .\payments\templates\payments\ticket-checkout.html:143
+msgid "Free for Children"
+msgstr "Gratuit pentru copii"
 
-#: .\services\templates\services\ticket-checkout.html:143
-msgid "First Name"
-msgstr "Prenume"
+#: .\payments\templates\payments\ticket-checkout.html:143
+msgid "First Name..."
+msgstr "Prenume..."
 
-#: .\services\templates\services\ticket-checkout.html:143
-msgid "Last Name"
-msgstr "Nume de Familie"
+#: .\payments\templates\payments\ticket-checkout.html:143
+msgid "Last Name..."
+msgstr "Nume de Familie..."
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "Address"
 msgstr "Adresă"
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "State/County"
 msgstr "Județ/Regiune"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "Select Country"
 msgstr "Selectați țara"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "City"
 msgstr "Localitate"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "ZIP"
 msgstr "Cod Poștal"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "Notes"
 msgstr "Observații"
 
-#: .\services\templates\services\ticket-checkout.html:143
+#: .\payments\templates\payments\ticket-checkout.html:143
 msgid "Payment Method"
 msgstr "Modalitatea de plată"
 
@@ -2657,11 +2660,15 @@ msgid "The invoicing info has been sent to our financial department and you will
 msgstr "Informațiile necesare facturării au fost trimise către departamentul financiar și curând veți primi factura pe emailul furnizat."
 
 #: services/templates/services/includes/newsletter.html: 9
-msgid "Your email"
-msgstr "Emailul Dvs."
+msgid "Your email..."
+msgstr "Emailul Dvs..."
+#: services/templates/services/includes/newsletter.html: 9
+msgid "Your phone number (optional)..."
+msgstr "Nr. Dvs. de telefon (opțional)..."
+
 #: payments/templates/payments/ticket-invoice.html: 9
-msgid "Other info"
-msgstr "Alte informații"
+msgid "Additional information if needed..."
+msgstr "Alte informații..."
 #: payments/templates/payments/ticket-invoice.html: 9
 msgid "Your phone number"
 msgstr "Numărul Dvs. de telefon"

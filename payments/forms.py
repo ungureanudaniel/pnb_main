@@ -55,16 +55,16 @@ class PaymentForm(forms.ModelForm):
             'quantity': forms.TextInput(attrs = {'class': 'form-control cart-item__input text-center', 'id':'quantity', 'type': 'number', 'name':'adults', 'placeholder': '',}),
             'price': forms.TextInput(attrs = {'class': 'form-control', 'id':'total_price', 'name':'price', 'placeholder': '', 'readonly': 'readonly'}),
             'currency': forms.Select(attrs = {'class': 'form-control', 'placeholder': 'Currency of choice...'}),
-            'buyer_fname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'First name...'}),
-            'buyer_lname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Last name...'}),
+            'buyer_fname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': _("First Name...")}),
+            'buyer_lname': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': _("Last Name...")}),
             # 'address': forms.TextInput(attrs = {'class': 'form-control buyer_address', 'placeholder': 'Your street number, building and apartment...'}),
             # 'county': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your County...'}),
             # 'country': CountrySelectWidget(attrs = {'class': 'form-control', }),
             # 'city': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your City...'}),
             # 'zip': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Your address ZIP code...'}),
-            'phone': forms.TextInput(attrs = {'class': 'form-control buyer_phone', 'placeholder': 'Your phone number (optional)...'}),
-            'email': forms.EmailInput(attrs = {'class': 'form-control', 'placeholder': 'Your email...'}),
-            'notes': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Additional information if needed...'}),
+            'phone': forms.TextInput(attrs = {'class': 'form-control buyer_phone', 'placeholder': _("Your phone number (optional)...")}),
+            'email': forms.EmailInput(attrs = {'class': 'form-control', 'placeholder': _("Your email...")}),
+            'notes': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': _("Additional information if needed...")}),
             'terms': forms.CheckboxInput(attrs = {'class': 'form-control', 'required':'required',})
 
         }
