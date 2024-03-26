@@ -49,20 +49,6 @@ def euplatesc_mac(key,params):
 # def ticket_nr(y):
 #     return ''.join(random.choice(string.ascii_letters) for x in range(y))
 
-#===============the ticket description view======================
-# def choosetickets_view(request):
-#     template = "payments/choose-tickets.html"
-#     context = {}
-#     if request.method=='POST':
-#         try:
-#             request.session['price'] = request.POST.get('total_price') # set 'total_price' in the session
-#             request.session['tickets'] = request.POST.get('tickets_nr') # set 'tickets_nr' in the session
-
-#             return redirect("checkout")
-#         except Exception as e:
-#             messages.warning(request, _(f"Failed! {e}"))
-#             return render(request,template,context)
-#     return render(request,template,context)
 #================= checkout view =========================
 def checkout_view(request):
     template = "payments/ticket-checkout.html"
@@ -71,10 +57,10 @@ def checkout_view(request):
     # quantity = request.session.get('tickets')
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
-    #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
+    #test credentials
     # key = settings.TEST_KEY
     # mid = settings.TEST_MID
-
+    #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
     key = settings.KEY
     mid = settings.MID
     params= {}
