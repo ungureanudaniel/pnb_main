@@ -201,8 +201,8 @@ msgid "<strong>The visitor fee supports us in keeping doing what we do, which is
 msgstr "<strong>Tariful de vizitare ne ajută să continuăm în ceea ce facem, adică să conservăm acest munte pentru generațiile viitoare. Menținem ordinea și respectarea regulamentului pentru vizitatori, menținem traseele, vă ajutăm atunci când aveți probleme pe munte, colectăm gunoiul, protejăm flora și fauna, educăm copiii și adulții cu privire la mediu, încărcăm fotografii pe rețelele de socializare pentru a vă arăta frumusețea naturală locală, instălăm o mulțime de panouri informative și multe altele. </strong><br><br>Fiecare vizitator care plătește tariful, sprijină conservarea naturii pe acest munte, astfel că împreună putem preveni mai multe perturbări ale faunei sălbatice sau ale florei rare, în acest an. Mulțumim! </strong>"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
-msgstr "<br><br> Biletele pot fi cumpărate, momentan, de la rangeri la intrările în parc sau accesând pagina <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. În curând veți putea cumpăra folosind butonul TARIF VIZITARE de mai sus, cu orice monedă, inclusiv Revolut sau Bitcoin"
+msgid "<br><br> Tickets can be purchased either online, by clicking the TICKET button in the menu above or in cash, from our park rangers. You can find their contact details by using the TICKETS button as well"
+msgstr "<br><br> Biletele pot fi cumpărate atât online, cu cardul, accesând butonul TARIF VIZITARE din meniu, cât și cu numerar, de la rangerii parcului. Datele lor de contact le puteți afla folosind de asemenea butonul TARIF VIZITARE din meniu"
 
 #: .\services\templates\services\ticket-info.html:32
 msgid "The tickets are valid for 90 days. More about tickets below"
@@ -2665,7 +2665,12 @@ msgstr "Emailul Dvs..."
 #: services/templates/services/includes/newsletter.html: 9
 msgid "Your phone number (optional)..."
 msgstr "Număr de telefon (opțional)..."
-
+#: services/templates/services/includes/subscribe.html: 9
+msgid "Please check again if the email is correct and check the human verification"
+msgstr "Vă rugăm verificați dacă adresa de email este corectă și să bifați că sunteți uman"
+#: services/templates/services/includes/subscribe.html: 9
+msgid "Human verification failed"
+msgstr "Verificarea umană nereușită"
 #: payments/templates/payments/ticket-invoice.html: 9
 msgid "Additional information if needed..."
 msgstr "Alte informații..."

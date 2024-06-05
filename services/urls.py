@@ -6,8 +6,9 @@ add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
 blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
-park_regulation_view, WildlifeDetailView, wildlife, EventDetailView
+park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, subscription
 #, ArticleMonthArchiveView, 
+from utils.weather_scrape import weather_data
 from django.conf.urls.static import static
 from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
@@ -38,6 +39,7 @@ urlpatterns = [
         path('flora-info/<slug:slug>/', FloraDetailView.as_view(), name='flora-details'),
         path('event-details/<slug:slug>/', EventDetailView.as_view(), name='event-details'),
         path('subscription-confirmation/', subscription_conf_view, name='subscription-confirmation'),
+        path('subscribe', subscription, name='subscribe'),
         path('unsubscribe', unsubscribe, name='unsubscribe'),
         path('scientific-council', council_view, name='scientific-council'),
         #--------------public documents---------------------
@@ -56,6 +58,8 @@ urlpatterns = [
         path('events', eventlist_view, name="events"),
         #---------add content urls---------------------
         path('add-testimonial', add_testimonial, name="add_testimonial"),
+        #-----------async requests--------------------
+        path('weather-data/', weather_data, name='weather_data'),
 
 
 

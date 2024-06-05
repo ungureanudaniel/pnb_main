@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load cache %}
 {% block content %}
-			<!-- header end-->
+			<!-- header endd-->
 			<main class="main">
 				<!-- promo start-->
 				<section class="promo promo--front-5">
@@ -104,7 +104,6 @@
 						<div id="scraped-data" class="promo-pannel__weather"><span>{% trans 'Today' %}, {% now "jS F Y" %} </span><br>
 							<div class="weather-lower">
 								<svg class="icon">
-									<!-- <use xlink:href="#wind"></use> -->
 								</svg>
 								<hr>
 								<span><img src="{{ weather.picture }}" height="70" width="70"> {{ weather.temperature }} </span>
@@ -112,6 +111,17 @@
 							<span class="" style="align-items:right;">{% trans 'Wind' %} {{ weather.description }}</span><br><br>
 							<span class="location font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
 						</div>
+						<!-- <div id="scraped-data" class="promo-pannel__weather">
+							<span>{% trans 'Today' %}, {% now "jS F Y" %}</span><br>
+							<div class="weather-lower">
+								<svg class="icon">
+								</svg>
+								<hr>
+								<span><img id="weather-pic" height="70" width="70"> <span id="weather-temp"></span> </span>
+							</div>
+							<span class="" style="align-items:right;">{% trans 'Wind' %} <span id="weather-desc"></span></span><br><br>
+							<span class="location font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
+						</div> -->
 					</div>
 					<!-- promo pannel end-->
 				</section>

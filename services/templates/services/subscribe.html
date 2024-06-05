@@ -1,0 +1,56 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary green_background">
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Subscribe</span> <span></span>{% endblocktranslate %}</h1>
+										<span class="welcome_icon">
+											<img src="{% static 'img/svg/mail.svg' %}">
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col-auto">
+								<span class="welcome_icon">
+									<img src="{% static 'img/svg/mail.svg' %}">
+								</span>
+							</div> -->
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<div class="cta-block top-70 bottom-70"><img class="img--bg" src="{% static 'img/backgrounds/newsletter6.webp' %}" alt="bg">
+				  <div class="container">
+				    <div class="row align-items-center">
+				      <div class="col-lg-6">
+								{% blocktranslate %}<h4 class='cta-block__title'>Subscribe <span>to Our Newsletter</span></h4>{% endblocktranslate %}
+								<p class='cta-block__text'>{% trans 'Please check again if the email is correct and check the human verification' %}
+								
+								</p>
+							</div>
+				  		<div class="col-lg-6 offset-30">
+				        <form class="form cta-form bottom-30" action="." method="POST">
+				          {% csrf_token %}
+						  	<div>
+								<input class="form__field" style="background-color: grey !important;display: block;width: 100%;margin-bottom: 15px;" type="email" name="sub_email" placeholder="{% trans 'Your email' %}" value={{ initial_email }}>
+							</div>
+							
+							<div class="g-recaptcha" style="display: block !important;width: 100%;margin-bottom: 15px;margin: 20px 0 !important;" data-sitekey="6Le0NIIpAAAAAKt12jCQLOhsGoWrqN9h2-9dMf2B"></div>
+							
+				          	<button class="form__submit" style="display: block;width: 100%;margin-bottom: 15px;" type="submit" name="form-type" value="subscribe">{% trans 'Subscribe' %}</button>
+				        </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- section end-->
+			</main>
+{% endblock %}

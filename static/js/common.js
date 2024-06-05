@@ -1034,3 +1034,13 @@ $(document).ready(function ($) {
 		},500); // set the time here
 	});  
 });
+document.addEventListener('DOMContentLoaded', function() {
+	fetch('/weather-data/')
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById('weather-temp').innerText = data.temperature;
+			document.getElementById('weather-pic').src = data.picture;
+			document.getElementById('weather-desc').innerText = data.description;
+		})
+		.catch(error => console.error('Error fetching weather data:', error));
+});

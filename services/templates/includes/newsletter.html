@@ -20,7 +20,7 @@
         <form class="form cta-form bottom-30" action="." method="POST">
           {% csrf_token %}
           <input class="form__field" style="background-color: grey !important;" type="email" name="subscriber" placeholder="{% trans 'Your email' %}">
-          <button class="form__submit" type="submit" name="form-type" value="subscribe">{% trans 'Subscribe' %}</button>
+          <a class="form__submit" style="width:100%;" data-toggle="modal" name="signinmodal" href="#subscribeModal">{% trans 'Subscribe' %}</a>
         </form>
       </div>
     </div>

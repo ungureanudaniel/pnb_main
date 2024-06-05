@@ -184,8 +184,8 @@ msgid "<strong>The visitor fee supports us in keeping doing what we do, which is
 msgstr "<strong>Der Besucherbeitrag unterstützt uns dabei, das zu tun, was wir tun, nämlich diesen Berg für zukünftige Generationen zu erhalten. Wir sorgen für Ordnung und Einhaltung der Besucherordnung, pflegen Wanderwege, helfen bei Problemen am Berg, sammeln Müll, schützen Flora und Fauna, bilden Kinder und Erwachsene aus, wir laden Fotos in sozialen Medien hoch, um Ihnen die lokale Naturschönheit zu zeigen, viele Informationstafeln aufstellen und vieles mehr. </strong><br><br>Jeder Besucher, der den Besuchertarif bezahlt, unterstützt den Naturschutz auf diesem Berg, so können wir vielleicht gemeinsam dieses Jahr weitere Störungen der Tierwelt oder seltener Blumen verhindern. Vielen Dank!"
 
 #: .\services\templates\services\ticket-info.html:30
-msgid "<br><br> Tickets can be purchased, for now, either from our rangers at the park entrances or by accessing <a href='https://easy2visit.com/en/bucegi-natural-park/'>Easy2visit</a>. Soon though you will be able to buy the tickets by clicking on the TICKETS button above, in any currency, even using Revolut or Bitcoin"
-msgstr "<br><br> Tickets können vorerst entweder bei unseren Rangern an den Parkeingängen oder über <a href='https://easy2visit.com/en/bucegi-natural-park/' erworben werden. >Easy2visit</a>. Bald können Sie die Tickets kaufen, indem Sie oben auf die Schaltfläche TICKETS klicken, in jeder Währung, sogar mit Revolut oder Bitcoin"
+msgid "<br><br> Tickets can be purchased either online, by clicking the TICKET button in the menu above or in cash, from our park rangers. You can find their contact details by using the TICKETS button as well"
+msgstr "<br><br> Tickets können entweder online erworben werden, indem Sie auf die Schaltfläche TICKET im Menü oben klicken, oder in bar bei unseren Parkrangern. Die Kontaktdaten unserer Parkranger finden Sie ebenfalls über die Schaltfläche TICKETS"
 
 #: .\services\templates\services\ticket-description.html:98
 msgid "Buy your tickets below"
