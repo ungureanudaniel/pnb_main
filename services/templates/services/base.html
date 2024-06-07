@@ -605,7 +605,7 @@
 								<li class="lower-menu__item"><a class="lower-menu__link" target="_blank" href="http://map.bucegipark.ro" title="Live Map of Bucegi Natural Park">{% trans 'Map' %}</a></li>
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'announcement' %}" title="Announcements of Bucegi Natural Park">{% trans 'Announcements' %}</a></li>
 								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
-								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}" title="FAQ of Bucegi Natural Park">FAQ</a></li>
+								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'faq_list' %}" title="FAQs of Bucegi Natural Park">FAQ</a></li>
 								{% if user.is_authenticated %}
 								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}" title="Signout button for Bucegi Natural Park website admin">Logout</a></li>
 								{% endif %}

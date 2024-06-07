@@ -1,0 +1,48 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+			<!-- header end-->
+			<main class="main">
+				<!-- welcome start-->
+				<section class="welcome-primary green_background">
+					<div class="container">
+						<div class="row d-flex">
+							<div class="col-auto ">
+								<div class="align-container">
+									<div class="align-container__item w-100"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Frequently</span> Asked<span> Questions</span>{% endblocktranslate %}</h1>
+										<span class="welcome_icon">
+											<img src="{% static 'img/svg/voice2.svg' %}">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- welcome end-->
+				<!-- section start-->
+				<section class="section elements mt-2 pt-1 mb-5">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-8">
+								<h4 class="elements__title"></h4>
+
+								{% for f in faqs %}
+								<div class="accordion accordion--primary">
+									<div class="accordion__title-block">
+										<h6 class="accordion__title">{{ f.question|capfirst }}</h6><span class="accordion__close"></span>
+									</div>
+									<div class="accordion__text-block">
+										<p>{{ f.answer|safe }}</p>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+			</main>
+{% endblock %}

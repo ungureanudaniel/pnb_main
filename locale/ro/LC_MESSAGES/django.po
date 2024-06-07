@@ -2907,7 +2907,9 @@ msgstr "Autovehiculele MAI, MAPN și Salvamont cu numere de înmatriculare speci
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
-
+#: frequently_Asked_questions/templates/faqs/faqs.html: 14
+msgid "<span>Frequently</span> Asked<span> Questions</span>"
+msgstr "<span>Întrebări</span><span> Frecvente</span>"
 #: services/templates/services/views.py: 134
 msgid "This car is allowed in the park!"
 msgstr "Acest autovehicul are accesul permis în parc!"

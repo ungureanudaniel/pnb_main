@@ -39,6 +39,8 @@ urlpatterns += i18n_patterns(
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
     path('map/', include('geemap.urls')),
+    path('frequently_asked_questions/', include('frequently_asked_questions.urls')),
+
 
 )
 #------------add custom media path for production mode-----------
