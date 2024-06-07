@@ -2907,6 +2907,10 @@ msgstr "Autovehiculele MAI, MAPN și Salvamont cu numere de înmatriculare speci
 #: services/templates/services/views.py: 134
 msgid "Not found"
 msgstr "Nu a fost găsit"
+#: services/templates/services/views.py: 134
+msgid "Add a Frequently Asked Question"
+msgstr "Adaugă o Întrebare Frecventă"
+
 #: frequently_Asked_questions/templates/faqs/faqs.html: 14
 msgid "<span>Frequently</span> Asked<span> Questions</span>"
 msgstr "<span>Întrebări</span><span> Frecvente</span>"
