@@ -2899,8 +2899,8 @@ msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru sno
 msgid "Type of vehicle"
 msgstr "Tip de vehicul"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Permit"
-msgstr "Aviz"
+msgid "Permit Nr."
+msgstr "Aviz Nr."
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "MAI, MAPN and mountain rescue vehicles with special license plates have access allowed inside the park. Timber transporters can be checked in SUMAL, using the vehicle registration number"
 msgstr "Autovehiculele MAI, MAPN și Salvamont cu numere de înmatriculare speciale, au acces general autorizat în interiorul parcului. Transportatorii de masă lemnoasă pot fi verificați în SUMAL, folosind numărul de înmatriculare"
@@ -2917,6 +2917,10 @@ msgstr "Acest autovehicul a fost autorizat anterior pentru acces în parc, dar a
 #: services/templates/services/views.py: 134
 msgid "This car is not authorized!"
 msgstr "Acest autovehicul nu este autorizat!"
+#: services/templates/services/views.py: 135
+msgid "This car is not yet allowed in the park! Permit starts on {0}."
+msgstr "Acest autovehicul încă nu are accesul permis în parc! Valabilitatea autorizației de acces începe cu data {0}."
+
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Write here"
 msgstr "Scrieți aici"

@@ -96,23 +96,55 @@ def add_testimonial(request):
 
 #     return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
 #========================add allowed vehicle VIEW=================================
+# def allowed_vehicles(request):
+#     template = 'services/allowed_vehicles.html'
+#     allowed_vehicles = AllowedVehicles.objects.all()
+#     context = {}
+#     if request.method == "GET" and request.GET.get('form-type') == "search":
+#         query = request.GET.get("q").replace(" ", "")
+#         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
+#         if r:
+#             vehicle = r[0]
+#             start_date = vehicle['start_date']
+#             end_date = vehicle['end_date']
+#             today = datetime.today().date()
+#             if start_date > today:
+#                 messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
+#             elif end_date >= today:
+#                 messages.success(request, _("This car is allowed in the park!"))
+#                 context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
+#             else:
+#                 messages.warning(request, _("This car was previously authorized but permit is expired!"))
+#         else:
+#             messages.error(request, _("This car is not authorized!"))
+#     else:
+#         context = {}
+#     return render(request, template, context)
+#=================allowed vehicles version 2===============================
 def allowed_vehicles(request):
     template = 'services/allowed_vehicles.html'
-    allowed_vehicles = AllowedVehicles.objects.all()
     context = {}
+
     if request.method == "GET" and request.GET.get('form-type') == "search":
-        query = request.GET.get("q").replace(" ", "")
+        query = request.GET.get("q").replace(" ", "").upper()
         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
-        if r:
-            if r[0]['end_date'] >= datetime.today().date():
+
+        if r.exists():
+            vehicle = r[0]
+            start_date = vehicle['start_date']
+            end_date = vehicle['end_date']
+            today = datetime.today().date()
+
+            if start_date > today:
+                messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
+            elif end_date >= today:
                 messages.success(request, _("This car is allowed in the park!"))
-                context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==r[0]['area_id']][0]})
-            elif r[0]['end_date'] < datetime.today().date():
-                messages.warning(request, _("This car was previously authorized but permit is expired!"))
+                context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
+            else:
+                messages.warning(request, _("This car was previously authorized but the permit is expired!"))
         else:
             messages.error(request, _("This car is not authorized!"))
-    else:
-        context = {}
+
     return render(request, template, context)
 #========================weatehr data page=================================
 # async def weather_data(request):

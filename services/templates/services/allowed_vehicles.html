@@ -51,27 +51,31 @@
                 </button>
               </form>
             </div>
-            <!-- vehicles style-2 start-->
+              <!-- vehicles style-2 start-->
             <div class="row">
             {% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" target="_blank" href="{% url 'admin:index' %}services/allowedvehicles/"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}
               
             </div>
-            {% if car_info %}
-            {% for car in car_info %}
-            <div class="col-xs-6 col-lg-12">
-              <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
-                <div class="row align-items-center">
-                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Entity' %}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
-                  <!-- <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}{% trans 'Type of vehicle' %}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit' %}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date' %}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Expiry date' %}</span></div>
-                </div>
+           
+            <!-- Display on larger screens -->
+            <div class="container d-none d-lg-block">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                          <div class="row align-items-center">
+                              <div class="col-lg-2 col-xl-2"><span>{% trans 'Entity' %}</span></div>
+                              <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
+                              <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
+                              <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit Nr.' %}</span></div>
+                              <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date' %}</span></div>
+                              <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Expiry date' %}</span></div>
+                          </div>
+                      </div>
+                  </div>
               </div>
             </div>
-            <div class="col-xs-6 col-lg-12">
+            {% for car in car_info %}
+            <div class="col-xs-6 col-lg-12 d-none d-lg-block">
               <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
                 <div class="row align-items-center">
                   <div class="col-lg-2 col-xl-2">
@@ -79,8 +83,7 @@
                   </div>
                   <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2"><span>{{ area }}</span></div>
-                  <!-- <div class="col-lg-3 col-xl-3 my-3"><span>{{ car_info.0.categ }}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}/{{ car.permit_date|lower|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|lower|safe }} </span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div>
 
@@ -88,7 +91,27 @@
               </div>
             </div>
             {% endfor %}
-              {% endif %}
+            <!-- Display on smaller screens -->
+            <div class="container d-lg-none">
+              <div class="row">
+                  {% for car in car_info %}
+                  <div class="col-md-6">
+                      <div class="card mb-3">
+                          <div class="card-header">
+                              <h5 class="card-title"><strong>{% trans 'Entity' %}:</strong> {{ car.owner }}</h5>
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text"><strong>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}:</strong> {{ car.identification_nr }}</p>
+                              <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {{ area }}</p>
+                              <p class="card-text"><strong>{% trans 'Permit Nr.' %}:</strong> {{ car.permit_nr }}</p>
+                              <p class="card-text"><strong>{% trans 'Start date' %}:</strong> {{ car.start_date }}</p>
+                              <p class="card-text"><strong>{% trans 'Expiry date' %}:</strong> {{ car.end_date }}</p>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
             <!-- vehicles style-2 end-->
           </div>
         </section>

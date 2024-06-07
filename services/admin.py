@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 from .models import Testimonial, Team, AttractionCategory, Contact,\
 PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
@@ -84,9 +85,26 @@ class VehicleCategoryAdmin(admin.ModelAdmin):
 class AccessAreaAdmin(admin.ModelAdmin):
     fields = ['name',]
     list_display = ('name',)
+#=========overriding the admin form for allowed vehicles in order to strip spaces in car nr input ====
+class AllowedVehiclesForm(forms.ModelForm):
+    class Meta:
+        model = AllowedVehicles
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['identification_nr'].widget.attrs['oninput'] = 'this.value = this.value.replace(" ", "");'
+        self.fields['identification_nr'].widget.attrs['style'] = 'text-transform: uppercase;'
+
+    def clean_identification_nr(self):
+        identification_nr = self.cleaned_data['identification_nr']
+        # Strip spaces and capitalize the input
+        return identification_nr.strip().upper()
+
 class AllowedVehiclesAdmin(admin.ModelAdmin):
-    list_display = ('identification_nr', 'owner', 'categ', 'permit_nr', 'permit_date','start_date','end_date',)
-    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'permit_date','start_date', 'end_date','area','description']
+    list_display = ('id', 'identification_nr', 'owner', 'categ', 'permit_nr', 'timestamp', 'start_date', 'end_date')
+    fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'start_date', 'end_date', 'area', 'description']
+    form = AllowedVehiclesForm
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)

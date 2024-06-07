@@ -1681,7 +1681,18 @@ msgid ""
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
 msgstr ""
-
+#: services/templates/services/views.py: 134
+msgid "This car is allowed in the park!"
+msgstr "Dieses Fahrzeug ist im Park erlaubt!"
+#: services/templates/services/views.py: 134
+msgid "This car was previously authorized but permit is expired!"
+msgstr "Dieses Fahrzeug war zuvor autorisiert, aber die Genehmigung ist abgelaufen!"
+#: services/templates/services/views.py: 134
+msgid "This car is not authorized!"
+msgstr "Dieses Fahrzeug ist nicht autorisiert!"
+#: services/templates/services/views.py: 135
+msgid "'This car is not yet allowed in the park! Permit starts on {0}.').format(start_date)"
+msgstr "'Dieses Fahrzeug ist noch nicht im Park erlaubt! Die Genehmigung beginnt am {0}.').format(start_date)"
 #: myvenv/lib/python3.6/site-packages/django/views/csrf.py:137
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
@@ -1713,6 +1724,34 @@ msgstr ""
 #: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:188
 msgid "No week specified"
 msgstr ""
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Entity"
+msgstr "Entität"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Authorized Area"
+msgstr "Autorisierter Bereich"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Start date"
+msgstr "Startdatum"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Expiry date"
+msgstr "Ablaufdatum"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Identification Number (Car plates or given number for snowmobiles)"
+msgstr "Identifikationsnummer (Autokennzeichen oder gegebene Nummer für Schneemobile)"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Type of vehicle"
+msgstr "Fahrzeugtyp"
+
+#: services/templates/services/allowed_vehicles.html:134
+msgid "Permit Nr."
+msgstr "Genehmigungsnummer"
 
 #: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:338
 #: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:367

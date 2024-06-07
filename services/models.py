@@ -318,9 +318,9 @@ class AllowedVehicles(models.Model):
     identification_nr = models.CharField(max_length=20)
     area = models.ForeignKey(AccessArea, on_delete=models.CASCADE, related_name='area_name')
     permit_nr = models.CharField(max_length=50)
-    permit_date = models.DateField(default="2024-01-03")
-    start_date = models.DateField(default="2024-01-03")
-    end_date = models.DateField(default="2024-12-31")
+    timestamp = models.DateField(default=timezone.now)
+    start_date = models.DateField(default=timezone.now)
+    end_date = models.DateField(default=datetime.date(timezone.now().year, 12, 31))  # End of the current year
     slug = models.SlugField(max_length=100, blank=True, null=True, editable=False)
     class Meta:
         verbose_name = _('Allowed Vehicles')
