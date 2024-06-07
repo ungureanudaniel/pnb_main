@@ -1685,7 +1685,7 @@ msgstr ""
 msgid "This car is allowed in the park!"
 msgstr "Dieses Fahrzeug ist im Park erlaubt!"
 #: services/templates/services/views.py: 134
-msgid "This car was previously authorized but permit is expired!"
+msgid "This car was previously authorized but the permit is expired!"
 msgstr "Dieses Fahrzeug war zuvor autorisiert, aber die Genehmigung ist abgelaufen!"
 #: services/templates/services/views.py: 134
 msgid "This car is not authorized!"
