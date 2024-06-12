@@ -2488,6 +2488,10 @@ msgstr "Acest website nou va fi o experiență modernă, cu multe informații ed
 msgid "Wind"
 msgstr "Vânt"
 
+#: services/templates/services/underconstruction.html: 207
+msgid "Rain"
+msgstr "Ploaie"
+
 #: services/templates/services/underconstruction.html: 231
 msgid "Bucegi"
 msgstr "Parcul Natural"

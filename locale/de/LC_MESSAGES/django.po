@@ -2196,6 +2196,10 @@ msgstr "Diese neue Website wird ein modernes Erlebnis mit vielen pädagogischen 
 msgid "Wind"
 msgstr "Wind"
 
+#: services/templates/services/underconstruction.html: 207
+msgid "Rain"
+msgstr "Regen"
+
 #: services/templates/services/underconstruction.html: 231
 msgid "Bucegi"
 msgstr "Bucegi"

@@ -252,6 +252,10 @@ LOGGING = {
             'handlers': ['file'],
             'level': 'DEBUG',
         },
+        'frequently_asked_questions': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
     }
 }
 #===================Default primary key field type

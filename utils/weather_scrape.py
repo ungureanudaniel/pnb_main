@@ -1,6 +1,9 @@
 from django.http import JsonResponse
 import requests
+from loguru import logger
 from bs4 import BeautifulSoup
+
+
 #async version
 # def scraped_data():
 #     url = "https://www.meteoblue.com/en/weather/week/bucegi-mountains_romania_683598"
@@ -34,19 +37,31 @@ def scraped_data():
     attr_name2 = 'current-picto'
     tag3 = "div"
     attr3 = 'class'
-    attr_name3 = 'current-description'
+    attr_name3 = 'wind'
+    tag4 = "div"
+    attr4 = 'class'
+    attr_name4 = 'tab-precip'
+    tag5 = "div"
+    attr5 = 'class'
+    attr_name5 = 'tab-predictability'
+    
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     temp = soup.find_all(tag1, {attr1:attr_name1})[0].get_text().strip()[:10].strip()
     pic = soup.find_all(tag2, {attr2:attr_name2})[0].find_all("img", src=True)[0]['src']
-    descr = soup.find_all(tag3, {attr3:attr_name3})[0].get_text().strip()[:8]
+    wind = soup.find_all(tag3, {attr3:attr_name3})[0].get_text().strip()[:8]
+    rain = soup.find_all(tag4, {attr4:attr_name4})[0].get_text().strip()[:8]
+    predict = soup.find_all(tag5, {attr5:attr_name5})[0].get('title', '').strip()
+
+
     # Convert the scraped data to a dictionary
-    scraped_data_dict = {'temperature': temp, 'picture': pic, 'description': descr}
+    scraped_data_dict = {'temperature': temp, 'picture': pic, 'wind': wind, 'rain':rain, 'predict':predict}
     # Return the scraped data as a JSON response
     return scraped_data_dict
 
 def weather_data(request):
     data = scraped_data()
+    
     return JsonResponse(data)
 #========asynchronous version =================== not working yet
 # import asyncio
@@ -57,7 +72,7 @@ def weather_data(request):
 
 # async def scraped_data():
 #     try:
-#         url = "https://www.meteoblue.com/en/weather/week/bucegi-mountains_romania_683598"
+#         url = "https://www.meteoblue.com/ro/weather/week/bucegi-mountains_romania_683598"
 
 #         async with aiohttp.ClientSession() as session:
 #             async with session.get(url) as response:

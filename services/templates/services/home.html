@@ -107,21 +107,13 @@
 								</svg>
 								<hr>
 								<span><img src="{{ weather.picture }}" height="70" width="70"> {{ weather.temperature }} </span>
-							</div>
-							<span class="" style="align-items:right;">{% trans 'Wind' %} {{ weather.description }}</span><br><br>
+							</div><br>
+							<div class="weather-details" style="display: flex;justify-content: space-between;width: 100%">
+								<span class="weather-item"><span>{% trans 'Wind' %}</span> {{ weather.wind }}</span>
+								<span class="weather-item"><span>{% trans 'Rain' %}</span> {{ weather.rain }}</span>
+							</div><br>
 							<span class="location font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
 						</div>
-						<!-- <div id="scraped-data" class="promo-pannel__weather">
-							<span>{% trans 'Today' %}, {% now "jS F Y" %}</span><br>
-							<div class="weather-lower">
-								<svg class="icon">
-								</svg>
-								<hr>
-								<span><img id="weather-pic" height="70" width="70"> <span id="weather-temp"></span> </span>
-							</div>
-							<span class="" style="align-items:right;">{% trans 'Wind' %} <span id="weather-desc"></span></span><br><br>
-							<span class="location font-weight-bold">{% trans 'Omu Peak' %}, {% trans 'Bucegi Mountains' %}</span>
-						</div> -->
 					</div>
 					<!-- promo pannel end-->
 				</section>

@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
+from loguru import logger
 # from django.http import JsonResponse
 from django.utils.timezone import now
 from django.conf import settings
@@ -30,7 +31,6 @@ from django.views.decorators.cache import cache_page
 # -----------examples for using localized dae objects----------------
 # localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
 # localized_time = formats.time_format(time_obj, 'SHORT_TIME_FORMAT')
-
 #----------generate unique code for email subscription conf--------------------
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
@@ -76,25 +76,6 @@ def add_testimonial(request):
             messages.error(request, "Please check for empty fields.")
 
     return render(request, template, {"form":form,"review_form":TestimonialForm()})
-#========================add allowed vehicle VIEW=================================
-# def add_vehicle(request):
-#     template = 'services/add_vehicle.html'
-#     captcha_form = CaptchaForm()
-#     if request.method=='POST':
-#         review_form = TestimonialForm(request.POST or None, request.FILES or None)
-#         try:
-#             if captcha_form.is_valid():
-#                 if review_form.is_valid():
-#                     new_review = review_form.save(commit=False)
-#                     new_review.status = False
-#                     new_review.save()
-#                 else:
-#                     messages.error(request, "Please check for empty fields.")
-#                     return redirect('.')
-#         except Exception as e:
-#             messages.error(request, "Please check for empty fields.")
-
-#     return render(request, template, {"captcha_form":captcha_form,"review_form":TestimonialForm()})
 #========================add allowed vehicle VIEW=================================
 # def allowed_vehicles(request):
 #     template = 'services/allowed_vehicles.html'
@@ -172,7 +153,6 @@ def home(request):
     # Fetch weather data 
     weather = scraped_data()
     context['weather'] = weather
-
     # Fetching data from the database and adding to context
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
@@ -227,84 +207,6 @@ def handle_subscription(request, context):
             except Exception as e:
               messages.warning(request, e)
               return redirect('home')
-#version 2 unrefined
-# def home(request):
-#     template = 'services/home.html'
-    
-
-#     captcha_form = CaptchaForm()
-#     context = {
-#         "captcha_form": captcha_form
-#     }
-#     if request.method=='POST':
-#         if request.POST.get('form-type') == "signin-form":
-
-#             #---------user login functions-----------
-#             user = None
-#             try:
-#                 username = request.POST.get('signin-name')
-#                 password = request.POST.get('signin-password')
-#                 # user_check = User.object.get(username = username)
-#                 user = authenticate(username=username, password=password)
-#                 if user is not None:
-#                     try:
-#                         login(request, user)
-#                         context['user'] = username
-#                         return redirect('.')
-#                     except Exception as e:
-#                         messages.warning(request, _("Warning! {e}"))
-#                         return redirect('.')
-#                 else:
-#                     messages.warning(request, _("User does not exist!"))
-#                     return redirect('.')
-
-#             except (Exception, User.DoesNotExist) as e:
-#                 messages.warning(request, _("Warning! {e}"))
-
-#         #--------------check if newsletter email exists already---------
-#         if request.POST.get('form-type') == "subscribe":
-#             newsletter_email = request.POST.get('subscriber')
-#             if newsletter_email:
-#                 try:
-#                     duplicate = Subscriber.objects.get(email=newsletter_email)
-#                     if duplicate:
-#                         messages.warning(request, _("This email already exists in our database!"))
-#                         return redirect('home')
-#                 except:
-#                     #-----------------------SAVE IN DATABASE----------------
-#                     sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
-#                     sub.save()
-
-#                     #---------------------send confirmation email settings------
-#                     sub_subject = _("Newsletter Bucegi Natural Park")
-#                     from_email='contact@bucegipark.ro'
-#                     sub_message = ''
-#                     html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
-#                     try:
-#                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-#                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-#                         return redirect('home')
-#                     except Exception as e:
-#                         messages.warning(request, e)
-#                         return redirect('home')
-
-    
-#     # Fetch weather data 
-#     weather = scraped_data()
-#     # Wait for weather data to be fetched asynchronously
-
-#     # Add weather data to context
-#     context['weather'] = weather
-#     #fetching data from the database and adding to context dict
-#     context.update({
-#         'attr_categ': AttractionCategory.objects.all(),
-#         'attractions': Attraction.objects.filter(featured=True),
-#         'current_date': datetime.today().date(),
-#         'reviews': Testimonial.objects.filter(status=True),
-#         'partners': Partner.objects.all().order_by("rank"),
-#         })
-    
-#     return render(request, template, context)
 
 #------------------------SUBSCRIBE---------------------------------------SUBSCRIBE
 def subscription(request):
