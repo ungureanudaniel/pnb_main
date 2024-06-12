@@ -47,15 +47,17 @@ def scraped_data():
     
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
+    logger.debug(soup)
     temp = soup.find_all(tag1, {attr1:attr_name1})[0].get_text().strip()[:10].strip()
     pic = soup.find_all(tag2, {attr2:attr_name2})[0].find_all("img", src=True)[0]['src']
     wind = soup.find_all(tag3, {attr3:attr_name3})[0].get_text().strip()[:8]
-    rain = soup.find_all(tag4, {attr4:attr_name4})[0].get_text().strip()[:8]
-    predict = soup.find_all(tag5, {attr5:attr_name5})[0].get('title', '').strip()
+    wind_glyph = soup.find("span", class_='glyph winddir')['class'][-1]  # Extract wind direction glyph class
 
+    rain = soup.find_all(tag4, {attr4:attr_name4})[0].get_text().strip()[:8]
+    rain_glyph = soup.find("span", class_='glyph rain')['class'][-1]  # Extract rain glyph class
 
     # Convert the scraped data to a dictionary
-    scraped_data_dict = {'temperature': temp, 'picture': pic, 'wind': wind, 'rain':rain, 'predict':predict}
+    scraped_data_dict = {'temperature': temp, 'picture': pic, 'wind': wind, 'wind_glyph':wind_glyph, 'rain':rain, 'rain_glyph': rain_glyph}
     # Return the scraped data as a JSON response
     return scraped_data_dict
 

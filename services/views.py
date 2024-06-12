@@ -153,6 +153,7 @@ def home(request):
     # Fetch weather data 
     weather = scraped_data()
     context['weather'] = weather
+    logger.debug(context['weather'])
     # Fetching data from the database and adding to context
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
