@@ -1683,21 +1683,26 @@ msgid ""
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
 msgstr ""
-#: services/templates/services/views.py: 134
-msgid "This car is allowed in the park!"
-msgstr "Dieses Fahrzeug ist im Park erlaubt!"
-#: services/templates/services/views.py: 134
-msgid "This car was previously authorized but the permit is expired!"
-msgstr "Dieses Fahrzeug war zuvor autorisiert, aber die Genehmigung ist abgelaufen!"
-#: services/templates/services/views.py: 134
-msgid "This car is not authorized!"
-msgstr "Dieses Fahrzeug ist nicht autorisiert!"
-#: services/templates/services/views.py: 135
-msgid "'This car is not yet allowed in the park! Permit starts on {0}.').format(start_date)"
-msgstr "'Dieses Fahrzeug ist noch nicht im Park erlaubt! Die Genehmigung beginnt am {0}.').format(start_date)"
-#: services/templates/services/views.py: 135
+#: services/templates/services/views.py:134
+msgid "Vehicle with plates number {} is allowed in the park!"
+msgstr "Fahrzeug mit Kennzeichen {} darf in den Park einfahren!"
+
+#: services/templates/services/views.py:134
+msgid "Vehicle with plates number {} was previously authorized but the permit is expired!"
+msgstr "Fahrzeug mit Kennzeichen {} war zuvor autorisiert, aber die Genehmigung ist abgelaufen!"
+
+#: services/templates/services/views.py:134
+msgid "Vehicle with plates number {} is not authorized!"
+msgstr "Fahrzeug mit Kennzeichen {} ist nicht autorisiert!"
+
+#: services/templates/services/views.py:135
+msgid "Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}"
+msgstr "Fahrzeug mit Kennzeichen {} darf noch nicht in den Park einfahren! Die Genehmigung beginnt am {}"
+
+#: services/templates/services/views.py:135
 msgid "Invalid search query!"
 msgstr "Ungültige Suchanfrage!"
+
 #: myvenv/lib/python3.6/site-packages/django/views/csrf.py:137
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
