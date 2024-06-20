@@ -121,7 +121,7 @@ def allowed_vehicles(request):
                     if start_date > today:
                         messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
                     elif end_date >= today:
-                        messages.success(request, _("This car is allowed in the park!"))
+                        messages.success(request, _('This car with plates number {}, is allowed in the park!').format(vehicle['identification_nr']))
                         context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
                     else:
                         messages.warning(request, _("This car was previously authorized but the permit is expired!"))
@@ -159,7 +159,7 @@ def home(request):
     # Fetch weather data 
     weather = scraped_data()
     context['weather'] = weather
-    logger.debug(context['weather'])
+    # logger.debug(context['weather'])
     # Fetching data from the database and adding to context
     context.update({
         'attr_categ': AttractionCategory.objects.all(),
