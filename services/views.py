@@ -108,23 +108,29 @@ def allowed_vehicles(request):
 
     if request.method == "GET" and request.GET.get('form-type') == "search":
         query = request.GET.get("q").replace(" ", "").upper()
-        r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
+        if query:
+            try:
+                # Fetch the most recent permit based on the end date
+                r = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").values()
+                if r:
+                    vehicle = r[0]
+                    start_date = vehicle['start_date']
+                    end_date = vehicle['end_date']
+                    today = datetime.today().date()
 
-        if r.exists():
-            vehicle = r[0]
-            start_date = vehicle['start_date']
-            end_date = vehicle['end_date']
-            today = datetime.today().date()
-
-            if start_date > today:
-                messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
-            elif end_date >= today:
-                messages.success(request, _("This car is allowed in the park!"))
-                context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
-            else:
-                messages.warning(request, _("This car was previously authorized but the permit is expired!"))
+                    if start_date > today:
+                        messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
+                    elif end_date >= today:
+                        messages.success(request, _("This car is allowed in the park!"))
+                        context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
+                    else:
+                        messages.warning(request, _("This car was previously authorized but the permit is expired!"))
+                else:
+                    messages.error(request, _("This car is not authorized!"))
+            except Exception as e:
+                messages.error(request, _("An error occurred: {0}").format(str(e)))
         else:
-            messages.error(request, _("This car is not authorized!"))
+            messages.error(request, _("Invalid search query!"))
 
     return render(request, template, context)
 #========================weatehr data page=================================

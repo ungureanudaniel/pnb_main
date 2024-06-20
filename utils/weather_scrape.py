@@ -47,7 +47,7 @@ def scraped_data():
     
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
-    logger.debug(soup)
+    # logger.debug(soup)
     temp = soup.find_all(tag1, {attr1:attr_name1})[0].get_text().strip()[:10].strip()
     pic = soup.find_all(tag2, {attr2:attr_name2})[0].find_all("img", src=True)[0]['src']
     wind = soup.find_all(tag3, {attr3:attr_name3})[0].get_text().strip()[:8]

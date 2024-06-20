@@ -426,7 +426,7 @@
 				plus.on('click', function () {
 					const $input = $(this).parent().find('input');
 					const currentQuantity = parseInt($input.val()) || 0;
-					const maxIncrement = 9; // Maximum allowed increment
+					// const maxIncrement = 9; // Maximum allowed increment
 			
 					// Check if new quantity exceeds maximum increment or is less than or equal to it
 					if ((currentQuantity + 1) % maxIncrement === 0 || currentQuantity + 1 <= maxIncrement) {

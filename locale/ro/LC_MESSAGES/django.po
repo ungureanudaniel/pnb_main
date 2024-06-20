@@ -2930,6 +2930,9 @@ msgstr "Acest autovehicul nu este autorizat!"
 #: services/templates/services/views.py: 135
 msgid "This car is not yet allowed in the park! Permit starts on {0}."
 msgstr "Acest autovehicul încă nu are accesul permis în parc! Valabilitatea autorizației de acces începe cu data {0}."
+#: services/templates/services/views.py: 135
+msgid "Invalid search query!"
+msgstr "Nu ați introdus nimic în căsuța de căutare!"
 
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Write here"

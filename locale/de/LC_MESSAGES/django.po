@@ -1695,6 +1695,9 @@ msgstr "Dieses Fahrzeug ist nicht autorisiert!"
 #: services/templates/services/views.py: 135
 msgid "'This car is not yet allowed in the park! Permit starts on {0}.').format(start_date)"
 msgstr "'Dieses Fahrzeug ist noch nicht im Park erlaubt! Die Genehmigung beginnt am {0}.').format(start_date)"
+#: services/templates/services/views.py: 135
+msgid "Invalid search query!"
+msgstr "Ungültige Suchanfrage!"
 #: myvenv/lib/python3.6/site-packages/django/views/csrf.py:137
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
