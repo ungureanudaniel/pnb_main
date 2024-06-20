@@ -1696,8 +1696,8 @@ msgid "Vehicle with plates number {} is not authorized!"
 msgstr "Fahrzeug mit Kennzeichen {} ist nicht autorisiert!"
 
 #: services/templates/services/views.py:135
-msgid "Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}"
-msgstr "Fahrzeug mit Kennzeichen {} darf noch nicht in den Park einfahren! Die Genehmigung beginnt am {}"
+msgid "Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}."
+msgstr "Fahrzeug mit Kennzeichen {} darf noch nicht in den Park einfahren! Die Genehmigung beginnt am {}."
 
 #: services/templates/services/views.py:135
 msgid "Invalid search query!"

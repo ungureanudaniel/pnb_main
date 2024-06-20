@@ -119,14 +119,14 @@ def allowed_vehicles(request):
                     today = datetime.today().date()
 
                     if start_date > today:
-                        messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {0}').format(start_date))
+                        messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}.').format(vehicle['identification_nr'], start_date))
                     elif end_date >= today:
                         messages.success(request, _('Vehicle with plates number {} is allowed in the park!').format(vehicle['identification_nr']))
                         context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
                     else:
-                        messages.warning(request, _("Vehicle with plates number {} was previously authorized but the permit is expired!"))
+                        messages.warning(request, _('Vehicle with plates number {} was previously authorized but the permit is expired!').format(vehicle['identification_nr']))
                 else:
-                    messages.error(request, _("Vehicle with plates number {} is not authorized!"))
+                    messages.error(request, _('Vehicle with plates number {} is not authorized!').format(query))
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
         else:
