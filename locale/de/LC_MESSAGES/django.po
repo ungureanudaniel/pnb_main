@@ -1687,6 +1687,10 @@ msgstr ""
 msgid "Vehicle with plates number {} is allowed in the park!"
 msgstr "Fahrzeug mit Kennzeichen {} darf in den Park einfahren!"
 
+#: services/templates/services/allowed_vehicles.html: 134
+msgid "Start date/<br>End date"
+msgstr "Startdatum/<br>Enddatum"
+
 #: services/templates/services/views.py:134
 msgid "Vehicle with plates number {} was previously authorized but the permit is expired!"
 msgstr "Fahrzeug mit Kennzeichen {} war zuvor autorisiert, aber die Genehmigung ist abgelaufen!"
@@ -1761,7 +1765,7 @@ msgstr "Fahrzeugtyp"
 
 #: services/templates/services/allowed_vehicles.html:134
 msgid "Permit Nr."
-msgstr "Genehmigungsnummer"
+msgstr "Genehmigungsnr."
 
 #: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:338
 #: myvenv/lib/python3.6/site-packages/django/views/generic/dates.py:367

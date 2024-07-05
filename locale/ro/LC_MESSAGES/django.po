@@ -2897,6 +2897,10 @@ msgstr "Dată început"
 msgid "Expiry date"
 msgstr "Dată expirare"
 #: services/templates/services/allowed_vehicles.html: 134
+msgid "Start date/<br>End date"
+msgstr "Dată început/<br>Dată sfârșit"
+
+#: services/templates/services/allowed_vehicles.html: 134
 msgid "Identification Number (Car plates or given number for snowmobiles)"
 msgstr "Număr de identificare (Nr. înmatriculare sau număr primit, pentru snowmobile)"
 #: services/templates/services/allowed_vehicles.html: 134
@@ -2918,16 +2922,16 @@ msgstr "Adaugă o Întrebare Frecventă"
 #: frequently_Asked_questions/templates/faqs/faqs.html: 14
 msgid "<span>Frequently</span> Asked<span> Questions</span>"
 msgstr "<span>Întrebări</span><span> Frecvente</span>"
-#: services/templates/services/views.py: 134
+#: services/templates/services/allowed_vehicles.html: 134
 msgid "Vehicle with plates number {} is allowed in the park!"
 msgstr "Autovehiculul cu numărul {} are accesul permis în parc!"
-#: services/templates/services/views.py: 134
+#: services/templates/services/allowed_vehicles.html: 134
 msgid "Vehicle with plates number {} was previously authorized but the permit is expired!"
 msgstr "Autovehiculul cu numărul {} a fost autorizat anterior pentru acces în parc, dar acum are avizul expirat!"
-#: services/templates/services/views.py: 134
+#: services/templates/services/allowed_vehicles.html: 134
 msgid "Vehicle with plates number {} is not authorized!"
 msgstr "Autovehiculul cu numărul {} nu este autorizat!"
-#: services/templates/services/views.py: 135
+#: services/templates/services/allowed_vehicles.html: 135
 msgid "Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}."
 msgstr "Autovehiculul cu numărul {} încă nu are accesul permis în parc! Valabilitatea autorizației de acces începe cu data {}."
 #: services/templates/services/views.py: 135
