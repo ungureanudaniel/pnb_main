@@ -2561,7 +2561,7 @@ msgstr "Bärenbewusstsein und Bildung"
 
 #: education/templates/education/bear-awareness.html:15
 msgid "<span>Bear</span> <span>Safety and Awareness</span>"
-msgstr "<span>Conștientizare și Educație</span> <span>privind Urșii</span>"
+msgstr "<span>Bären</span> <span>Sicherheit und Bewusstsein</span>"
 
 #: education/templates/education/bear-awareness.html:26
 msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Here are some important tips to keep in mind during your visit:"
