@@ -2970,6 +2970,10 @@ msgid "<span>Bear</span> <span>Safety and Awareness</span>"
 msgstr "<span>Conștientizare și Educație</span> <span>privind Urșii</span>"
 
 #: education/templates/education/bear-awareness.html:15
+msgid "Bear Awareness"
+msgstr "Informații despre Urși"
+
+#: education/templates/education/bear-awareness.html:15
 msgid "Bear Safety and Awareness"
 msgstr "Conștientizare și Educație privind Urșii"
 
