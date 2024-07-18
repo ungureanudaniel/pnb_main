@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'services',
     'payments',
     'geemap',
+    'education',
     'frequently_asked_questions',
     ]
 SITE_ID = 1

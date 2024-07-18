@@ -83,7 +83,7 @@
                     <h6 class="pricing-item__plan">{{ car.owner }}</h6>
                   </div>
                   <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{{ area }}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{% for a in car.area.all %}{{ a }}{% endfor %}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|date:"d.m.Y" }}/<br>{{ car.end_date|date:"d.m.Y" }} </span></div>
                   <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div> -->

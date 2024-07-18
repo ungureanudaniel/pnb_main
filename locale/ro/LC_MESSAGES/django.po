@@ -2964,3 +2964,171 @@ msgstr "HARTĂ"
 #: services/templates/services/theme-trails.html: 134
 msgid "If you want to see them on the map please click the MAP button. On the map you can filter trails by clicking on the right side and clear the filter when you want to see all of them. You can also search for one using the binoculars icon on the left. The upper layers button will show you the legend of the map. Also when hovering over a trail a pop-up message will show you info about time, distance and difficulty"
 msgstr "Dacă doriți să le vizualizați pe hartă, vă rugăm să apăsați butonul HARTĂ. Pe hartă puteți filtra traseele făcând clic în partea dreaptă și puteți elimina filtrul atunci când doriți să le vizualizați pe toate. De asemenea, puteți căuta după nume folosind iconița de binoclu din stânga. Butonul de sus cu straturi vă va arăta legenda hărții. De asemenea, când plasați cursorul peste un traseu, va apărea un mesaj pop-up care vă va afișa informații legate de durată, distanță, dificultate"
+
+#: education/templates/education/bear-awareness.html:15
+msgid "<span>Bear</span> <span>Safety and Awareness</span>"
+msgstr "<span>Conștientizare și Educație</span> <span>privind Urșii</span>"
+
+#: education/templates/education/bear-awareness.html:15
+msgid "Bear Safety and Awareness"
+msgstr "Conștientizare și Educație privind Urșii"
+
+#: education/templates/education/bear-awareness.html:15
+msgid "<span>Safety Tips</span> <span>and Information</span>"
+msgstr "<span>Sfaturi de</span> <span>Siguranță și Informații</span>"
+
+#: education/templates/education/bear-awareness.html:26
+msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Here are some important tips to keep in mind during your visit:"
+msgstr "<strong>Înțelegerea și respectarea urșilor este crucială atât pentru siguranța dvs., cât și pentru conservarea acestor creaturi magnifice. Urmând aceste linii directoare, vă sporiți protecția personală, a urșilor și a habitatului acestora.</strong><br><br> Iată câteva sfaturi importante de reținut în timpul vizitei dvs.:"
+
+#: education/templates/education/bear-awareness.html:35
+msgid "Scroll down for more detailed information."
+msgstr "Derulați în jos pentru informații mai detaliate."
+
+#: education/templates/education/bear-awareness.html:68
+msgid "Guideline"
+msgstr "Ghid"
+
+msgid "General Preventive Measures"
+msgstr "Măsuri Preventive Generale"
+
+msgid "Travel in Groups"
+msgstr "Călătoriți în Grupuri"
+
+msgid "Bears are less likely to approach larger groups."
+msgstr "Urșii sunt mai puțin probabil să se apropie de grupuri mai mari."
+
+msgid "Make Noise"
+msgstr "Faceți Zgomot"
+
+msgid "Talk, sing, or clap to make your presence known, especially in areas with dense vegetation."
+msgstr "Vorbiți, cântați sau bateți din palme pentru a vă face simțită prezența, mai ales în zonele cu vegetație deasă."
+
+msgid "Keep Dogs Leashed"
+msgstr "Țineți Câinii în Lesă"
+
+msgid "Dogs can provoke bears, increasing the risk of an encounter."
+msgstr "Câinii pot provoca urșii, crescând riscul unei întâlniri."
+
+msgid "Use Marked Trails and Travel During the Day"
+msgstr "Folosiți Trasee Marcate și Călătoriți în Timpul Zilei"
+
+msgid "Stick to established paths and avoid hiking at night."
+msgstr "Rămâneți pe traseele stabilite și evitați drumețiile noaptea."
+
+msgid "Avoid Attractants"
+msgstr "Evitați Atractanții"
+
+msgid "Properly store food and keep picnic/camping areas clean. Avoid bringing strong-smelling foods or products."
+msgstr "Depozitați corect mâncarea și mențineți curate zonele de picnic/camping. Evitați aducerea alimentelor sau produselor cu miros puternic."
+
+msgid "Do Not Try to Feed the Bears"
+msgstr "Nu Încercați să Hrăniți Urșii"
+
+msgid "Do Not Stand in the Bear's Path"
+msgstr "Nu Stați în Calea Ursului"
+
+msgid "If the bear is coming towards you, give it space to pass."
+msgstr "Dacă ursul vine spre dvs., oferiți-i spațiu să treacă."
+
+msgid "If You See a Bear from a Distance"
+msgstr "Dacă Vedeți un Urs de la Distanță"
+
+msgid "Stay Calm"
+msgstr "Rămâneți Calm"
+
+msgid "Do not panic or run."
+msgstr "Nu intrați în panică și nu alergați."
+
+msgid "Give the Bear Space"
+msgstr "Oferiți Spațiu Ursului"
+
+msgid "Slowly retreat and increase the distance between you and the bear."
+msgstr "Retrageți-vă încet și măriți distanța dintre dvs. și urs."
+
+msgid "Do Not Approach"
+msgstr "Nu vă Apropiați"
+
+msgid "Do not approach a bear for any reason."
+msgstr "Nu vă apropiați de un urs pentru niciun motiv."
+
+msgid "If the Bear Is Unaware of Your Presence"
+msgstr "Dacă Ursul Nu este Conștient de Prezența Dvs."
+
+msgid "Retreat Slowly"
+msgstr "Retrageți-vă Încet"
+
+msgid "Try to retreat without drawing attention to yourself."
+msgstr "Încercați să vă retrageți fără a atrage atenția asupra dvs."
+
+msgid "Avoid Sudden Movements and Loud Noises"
+msgstr "Evitați Mișcările Bruște și Zgomotele Puternice"
+
+msgid "If the Bear Is Aware of Your Presence"
+msgstr "Dacă Ursul este Conștient de Prezența Dvs."
+
+msgid "Keep your movements slow and deliberate."
+msgstr "Păstrați mișcările lente și deliberate."
+
+msgid "Identify Yourself"
+msgstr "Identificați-vă"
+
+msgid "Speak calmly and firmly to let the bear know you are human and not prey. When a bear stands on its hind legs, it is attentive to its surroundings, not preparing to attack."
+msgstr "Vorbiți calm și ferm pentru a-l anunța pe urs că sunteți uman și nu pradă. Când un urs stă în picioare, este atent la împrejurimi, nu se pregătește să atace."
+
+msgid "Do Not Run"
+msgstr "Nu Alergați"
+
+msgid "Running might trigger a chase."
+msgstr "Alergatul poate declanșa o urmărire."
+
+msgid "Maintain eye contact and avoid turning your back on the bear."
+msgstr "Mențineți contactul vizual și evitați să întoarceți spatele ursului."
+
+msgid "Make Yourself Look Bigger"
+msgstr "Faceți-vă să Păreți Mai Mare"
+
+msgid "Raise your arms, open your jacket, and stand tall. If you are with others, stay together to appear as a larger group."
+msgstr "Ridicați brațele, deschideți geaca și stați drept. Dacă sunteți cu alții, rămâneți împreună pentru a părea un grup mai mare."
+
+msgid "If the Bear Approaches"
+msgstr "Dacă Ursul se Apropie"
+
+msgid "Stand Your Ground"
+msgstr "Rămâneți pe Loc"
+
+msgid "Clap, shout, and make yourself look as intimidating as possible."
+msgstr "Bateți din palme, strigați și faceți-vă să păreți cât mai intimidant posibil."
+
+msgid "Drop Your Pack"
+msgstr "Lăsați Vă Ajunul"
+
+msgid "To distract the bear, drop items (camera case, water bottle, jacket, etc.) while retreating."
+msgstr "Pentru a distrage atenția ursului, lăsați obiecte (carcasă pentru cameră, sticlă de apă, geacă etc.) în timp ce vă retrageți."
+
+msgid "Use Bear Spray"
+msgstr "Folosiți Spray de Urs"
+
+msgid "If the bear is within 6-9 meters, use bear spray. Aim slightly downward, directly at or towards the bear's face, adjusting for wind."
+msgstr "Dacă ursul este la 6-9 metri, folosiți spray de urs. Țintiți ușor în jos, direct spre fața ursului, ajustând în funcție de vânt."
+
+msgid "If the Bear Attacks"
+msgstr "Dacă Ursul Atacă"
+
+msgid "Many attacks are bluff charges. The bear may veer off or stop abruptly."
+msgstr "Multe atacuri sunt încărcături false. Ursul poate devia sau se poate opri brusc."
+
+msgid "If the bear closes in, use bear spray."
+msgstr "Dacă ursul se apropie, folosiți spray de urs."
+
+msgid "If the Bear Physically Attacks"
+msgstr "Dacă Ursul Atacă Fizic"
+
+msgid "Fight Back"
+msgstr "Luptați-vă"
+
+msgid "Use any available objects (sticks, rocks, etc.) to defend yourself. Aim for the bear’s face, especially the eyes and nose."
+msgstr "Folosiți orice obiecte disponibile (bețe, pietre, etc.) pentru a vă apăra. Țintiți spre fața ursului, în special spre ochi și nas."
+
+msgid "Following these guidelines can minimize the risk of a dangerous encounter with a bear and increase your chances of a safe experience."
+msgstr "Urmând aceste ghiduri, puteți minimiza riscul unei întâlniri periculoase cu un urs și vă puteți crește șansele de a avea o experiență sigură."

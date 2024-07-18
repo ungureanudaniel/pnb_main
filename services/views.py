@@ -101,6 +101,7 @@ def add_testimonial(request):
 #     else:
 #         context = {}
 #     return render(request, template, context)
+
 #=================allowed vehicles version 2===============================
 def allowed_vehicles(request):
     template = 'services/allowed_vehicles.html'
@@ -111,9 +112,14 @@ def allowed_vehicles(request):
         if query:
             try:
                 # Fetch the most recent permit based on the end date
-                r = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").values()
-                if r:
-                    vehicle = r[0]
+                # vehicle = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").first()
+                v = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").values()
+                # vehicle = AllowedVehicles.objects.get(identification_nr=query)
+
+                logger.debug(v)
+                if v:
+                    vehicle = v.first()
+                    logger.debug(vehicle)
                     start_date = vehicle['start_date']
                     end_date = vehicle['end_date']
                     today = datetime.today().date()
@@ -122,9 +128,10 @@ def allowed_vehicles(request):
                         messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}.').format(vehicle['identification_nr'], start_date))
                     elif end_date >= today:
                         messages.success(request, _('Vehicle with plates number {} is allowed in the park!').format(vehicle['identification_nr']))
-                        context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
+
+                        context.update({"car_info":vehicle})
                     else:
-                        messages.warning(request, _('Vehicle with plates number {} was previously authorized but the permit is expired!').format(vehicle['identification_nr']))
+                        messages.warning(request, _('Vehicle with plates number {} is not authorized!').format(query))
                 else:
                     messages.error(request, _('Vehicle with plates number {} is not authorized!').format(query))
             except Exception as e:

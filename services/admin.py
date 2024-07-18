@@ -102,7 +102,7 @@ class AllowedVehiclesForm(forms.ModelForm):
         return identification_nr.strip().upper()
 
 class AllowedVehiclesAdmin(admin.ModelAdmin):
-    list_display = ('id', 'identification_nr', 'owner', 'categ', 'permit_nr', 'timestamp', 'start_date', 'end_date')
+    list_display = ('id', 'identification_nr', 'owner','categ', 'permit_nr', 'timestamp', 'start_date', 'end_date')
     fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'start_date', 'end_date', 'area', 'description']
     form = AllowedVehiclesForm
 admin.site.register(Comment, CommentAdmin)

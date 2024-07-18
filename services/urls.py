@@ -42,6 +42,7 @@ urlpatterns = [
         path('subscribe', subscription, name='subscribe'),
         path('unsubscribe', unsubscribe, name='unsubscribe'),
         path('scientific-council', council_view, name='scientific-council'),
+
         #--------------public documents---------------------
         path('park-rules', park_regulation_view, name="park-rules"),
         path('public-documents', public_docs, name="public-docs"),

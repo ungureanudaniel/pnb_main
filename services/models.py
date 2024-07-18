@@ -316,7 +316,7 @@ class AllowedVehicles(models.Model):
     description = models.TextField(default="...", max_length=1000, null=True, blank=True)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     identification_nr = models.CharField(max_length=20)
-    area = models.ForeignKey(AccessArea, on_delete=models.CASCADE, related_name='area_name')
+    area = models.ManyToManyField(AccessArea, related_name='access_area', blank=True)
     permit_nr = models.CharField(max_length=50)
     timestamp = models.DateField(default=timezone.now)
     start_date = models.DateField(default=timezone.now)

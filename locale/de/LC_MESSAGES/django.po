@@ -2554,3 +2554,76 @@ msgstr "<span>Zahlungs</span><span>ausfall</span>"
 #: payments/templates/payments/ticket-checkout.html: 16
 msgid "Please try again with more caution"
 msgstr "Bitte versuchen Sie es noch einmal mit mehr Vorsicht"
+
+#: education/templates/education/bear-awareness.html:15
+msgid "Bear Awareness and Education"
+msgstr "Bärenbewusstsein und Bildung"
+
+#: education/templates/education/bear-awareness.html:15
+msgid "<span>Bear</span> <span>Safety and Awareness</span>"
+msgstr "<span>Conștientizare și Educație</span> <span>privind Urșii</span>"
+
+#: education/templates/education/bear-awareness.html:26
+msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Here are some important tips to keep in mind during your visit:"
+msgstr "<strong>Das Verstehen und Respektieren von Bären ist entscheidend für Ihre Sicherheit und den Erhalt dieser großartigen Kreaturen.</strong><br><br> Indem Sie diese Richtlinien befolgen, helfen Sie, die Bären und ihren natürlichen Lebensraum zu schützen:"
+
+#: education/templates/education/bear-awareness.html:28
+msgid "Here are some important tips to keep in mind during your visit:"
+msgstr "Hier sind einige wichtige Tipps, die Sie während Ihres Besuchs beachten sollten:"
+
+#: education/templates/education/bear-awareness.html:35
+msgid "Scroll down for more detailed information."
+msgstr "Scrollen Sie nach unten für detailliertere Informationen."
+
+#: education/templates/education/bear-awareness.html:15
+msgid "<span>Safety Tips</span> <span>and Information</span>"
+msgstr "<span>Sicherheitstipps und</span> <span>Informationen</span>"
+
+#: education/templates/education/bear-awareness.html:68
+msgid "Guideline"
+msgstr "Richtlinie"
+
+msgid "General Preventive Measures"
+msgstr "Allgemeine Vorbeugende Maßnahmen"
+
+msgid "Travel in Groups"
+msgstr "Reisen Sie in Gruppen"
+
+msgid "Bears are less likely to approach larger groups."
+msgstr "Bären nähern sich weniger wahrscheinlich größeren Gruppen."
+
+msgid "Make Noise"
+msgstr "Machen Sie Lärm"
+
+msgid "Talk, sing, or clap to make your presence known, especially in areas with dense vegetation."
+msgstr "Sprechen, singen oder klatschen Sie, um Ihre Anwesenheit bekannt zu machen, besonders in Gebieten mit dichter Vegetation."
+
+msgid "Keep Dogs Leashed"
+msgstr "Halten Sie Hunde an der Leine"
+
+msgid "Dogs can provoke bears, increasing the risk of an encounter."
+msgstr "Hunde können Bären provozieren und das Risiko einer Begegnung erhöhen."
+
+msgid "Use Marked Trails and Travel During the Day"
+msgstr "Benutzen Sie Markierte Wege und Reisen Sie Tagsüber"
+
+msgid "Stick to established paths and avoid hiking at night."
+msgstr "Bleiben Sie auf den festgelegten Wegen und vermeiden Sie Wanderungen in der Nacht."
+
+msgid "Avoid Attractants"
+msgstr "Vermeiden Sie Lockstoffe"
+
+msgid "Properly store food and keep picnic/camping areas clean. Avoid bringing strong-smelling foods or products."
+msgstr "Lebensmittel ordnungsgemäß lagern und Picknick-/Campingplätze sauber halten. Vermeiden Sie es, stark riechende Lebensmittel oder Produkte mitzubringen."
+
+msgid "If the Bear Physically Attacks"
+msgstr "Wenn der Bär körperlich angreift"
+
+msgid "Fight Back"
+msgstr "Setzen Sie sich zur Wehr"
+
+msgid "Use any available objects (sticks, rocks, etc.) to defend yourself. Aim for the bear’s face, especially the eyes and nose."
+msgstr "Verwenden Sie alle verfügbaren Gegenstände (Stöcke, Steine usw.), um sich zu verteidigen. Zielen Sie auf das Gesicht des Bären, besonders auf die Augen und die Nase."
+
+msgid "Following these guidelines can minimize the risk of a dangerous encounter with a bear and increase your chances of a safe experience."
+msgstr "Wenn Sie diesen Richtlinien folgen, können Sie das Risiko eines gefährlichen Zusammentreffens mit einem Bären minimieren und die Chancen auf eine sichere Erfahrung erhöhen."
