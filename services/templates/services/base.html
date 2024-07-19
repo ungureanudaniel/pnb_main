@@ -75,7 +75,7 @@
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M76BT4GQ"
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M76BT4GQ"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -460,7 +460,6 @@
 						<div class="screen__item"><a class="screen__link" href="{% url 'team' %}">{% trans 'Our team' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'scientific-council' %}">{% trans 'Scientific Council' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'coming-soon' %}">Mass-Media</a></div>
-						<div class="screen__item"><a class="screen__link" href="{% url 'blog' %}">Blog</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'home' %}#testimonials">{% trans 'Testimonials' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'ticket-info' %}">{% trans 'Ticket prices' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'terms' %}">{% trans 'Terms and Conditions' %}</a></div>
@@ -549,7 +548,6 @@
 										<li><a href="{% url 'team' %}" title="Team of Bucegi Natural Park"><span>{% trans 'Our team' %}</span></a></li>
 										<li><a href="{% url 'scientific-council' %}" title="Scientifil Council of Bucegi Natural Park"><span>{% trans 'Scientific Council' %}</span></a></li>
 										<li><a href="{% url 'coming-soon' %}" title="Bucegi Natural Park in Mass Media"><span>{% trans 'Mass-Media' %}</span></a></li>
-										<li><a href="{% url 'blog' %}" title="Blog of Bucegi Natural Park"><span>Blog</span></a></li>
 										<li><a href="{% url 'home' %}#testimonials" title="Testimonials of Bucegi Natural Park"><span>{% trans 'Testimonials' %}</span></a></li>
 										<li><a href="{% url 'ticket-info' %}" title="Ticket prices for visiting Bucegi Natural Park"><span>{% trans 'Ticket Prices' %}</span></a></li>
 										<li><a href="{% url 'terms' %}" title="Terms and Conditions of Bucegi Natural Park website usage"><span>{% trans 'Terms and Conditions' %}</span></a></li>
@@ -664,7 +662,6 @@
 							<ul class="footer-menu">
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'home' %}" title="Home page of Bucegi Natural Park website">{% trans 'Home' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'history' %}" title="History page of Bucegi Natural Park website">{% trans 'About' %}</a></li>
-								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'blog' %}" title="Blog page of Bucegi Natural Park website">{% trans 'Blog' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'theme-trails' %}" title="Theme trails page of Bucegi Natural Park website">{% trans 'Attractions' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'events' %}" title="Events page of Bucegi Natural Park website">{% trans 'Events' %}</a></li>
 								<li class="footer-menu__item"><a class="footer-menu__link" href="{% url 'infopoints' %}" title="Infopoints page of Bucegi Natural Park website">{% trans 'Info points' %}</a></li>
@@ -705,7 +702,7 @@
 								<li><a class="public_docs" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a>{% if user.is_authenticated %}	<a class="nav-link text-decoration-none" id="navbarDocumentation" title="Public official documents page of Bucegi Natural Park website"target="_blank" href="{% url 'admin:index' %}services/publiccategory"><img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"></a>{% endif %}</li>
 								<!-- <li><a href="#">Site Map</a></li> -->
 								<li><a href="{% url 'privacy_info' %}">{% trans 'Privacy Policy' %}</a></li>
-								<li style="color:#83888b;">© {% now "Y" %} RNP ROMSILVA - Administrația {% if user.is_authenticated %} Parcului {% else %}<a class="text-decoration-none" data-toggle="modal" name="signinmodal" data-target="#signinModal">Parcului</a>{% endif %} Natural Bucegi R.A.</li>
+								<li style="color:#83888b;">© {% now "Y" %} RNP ROMSILVA - Administrația {% if user.is_authenticated %} Parcului {% else %}<a class="text-decoration-none" href="{% url 'signin' %}">Parcului</a>{% endif %} Natural Bucegi R.A.</li>
 
 
 							</ul>
@@ -729,7 +726,6 @@
 			<!-- footer end-->
 		</div>
 
-		{% include 'users/login.html' %}
 		{% include 'includes/tickets.html' %}
 
 		<script>

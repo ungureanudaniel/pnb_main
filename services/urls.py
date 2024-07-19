@@ -2,12 +2,12 @@ from django.urls import path, include
 from django.conf import settings
 from .views import home, contacts_view, coming_soon, gallery, team, history,\
 flora, faq_view, theme_trails, video_view, public_docs,\
-add_testimonial, ticket_info, bloglist_view, privacy_view, PostDetailView,\
-blogsearch_view, eventlist_view, map_coming_soon, terms_view, infopoints_view,\
+add_testimonial, ticket_info, privacy_view,\
+eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view, allowed_vehicles,\
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, subscription
-#, ArticleMonthArchiveView, 
+#, ArticleMonthArchiveView, bloglist_view, blogsearch_view, PostDetailView
 from utils.weather_scrape import weather_data
 from django.conf.urls.static import static
 from users.views import user_logout
@@ -16,6 +16,7 @@ from django.utils.translation import gettext_lazy as _
 urlpatterns = [
         #-------Authentication----------------
         path('logout/', user_logout, name='signout'),
+
         #-------Visitor urls------------------
         path('', home, name="home"),
         path('contact', contacts_view, name="contact"),
@@ -52,9 +53,9 @@ urlpatterns = [
         path('park-map', map_coming_soon, name="map_coming_soon"),
         path('park-sectors', sector_map_view, name="sector-map"),
         #------------blog urls------------------------------
-        path('blog', bloglist_view, name="blog"),
-        path('blog/<slug:slug>/', PostDetailView.as_view(), name='blog-details'),
-        path('blog-search/q/', blogsearch_view, name="blogsearch"),
+        # path('blog', bloglist_view, name="blog"),
+        # path('blog/<slug:slug>/', PostDetailView.as_view(), name='blog-details'),
+        # path('blog-search/q/', blogsearch_view, name="blogsearch"),
         #--------events urls-----------------------------
         path('events', eventlist_view, name="events"),
         #---------add content urls---------------------

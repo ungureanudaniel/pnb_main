@@ -155,13 +155,13 @@ def home(request):
         "captcha_form": captcha_form
     }
     #handle post requests
-    if request.method == 'POST':
-        form_type = request.POST.get('form-type')
+    # if request.method == 'POST':
+    #     form_type = request.POST.get('form-type')
 
-        if form_type == "signin-form":
-            handle_signin(request, context)
-        elif form_type == "subscribe":
-            handle_subscription(request, context)
+    #     if form_type == "signin-form":
+    #         handle_signin(request, context)
+    #     elif form_type == "subscribe":
+    #         handle_subscription(request, context)
 
     # Fetch weather data 
     weather = scraped_data()
@@ -178,49 +178,8 @@ def home(request):
     
     return render(request, template, context)
 
-def handle_signin(request, context):
-    username = request.POST.get('signin-name')
-    password = request.POST.get('signin-password')
-    user = authenticate(username=username, password=password)
-    
-    if user is not None:
-        try:
-            login(request, user)
-            context['user'] = username
-            return redirect('.')
-        except Exception as e:
-            messages.warning(request, _("Warning! {e}").format(e=e))
-            return redirect('.')
-    else:
-        messages.warning(request, _("User does not exist!"))
-        return redirect('.')
+#------------------------SUBSCRIPTION---------------------------------------
 
-def handle_subscription(request, context):
-    newsletter_email = request.POST.get('subscriber')
-    
-    if newsletter_email:
-        try:
-            duplicate = Subscriber.objects.get(email=newsletter_email)
-            if duplicate:
-                messages.warning(request, _("This email already exists in our database!"))
-                return redirect('home')
-        except Subscriber.DoesNotExist:
-            # Save in database
-            sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
-            sub.save()
-
-            # Send confirmation email settings
-            sub_subject = _("Newsletter Bucegi Natural Park")
-            from_email='contact@bucegipark.ro'
-            sub_message = ''
-            html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
-            try:
-                send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-                messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-                return redirect('home')
-            except Exception as e:
-              messages.warning(request, e)
-              return redirect('home')
 
 #------------------------SUBSCRIBE---------------------------------------SUBSCRIBE
 def subscription(request):
@@ -617,106 +576,103 @@ class AnnounDetailView(HitCountDetailView):
     def announcement(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
 #======================== blog main page================================
-def bloglist_view(request):
-    template = 'blog/blog.html'
-    posts_categs = {}
-    #------- post per categories count using annotate---------
-    # group_categ = BlogPostCategory.objects.all().annotate(count=Count('postcategory')).values()
-    # group_archive = BlogPost.objects.values('created_date').annotate(count=Count('id')).values('created_date', 'count').order_by('created_date')
-    if request.method=="POST":
-        newsletter_email = request.POST.get('subscriber')
-        #--------------check if newsletter email exists already---------
-        if "subscriber" in request.POST:
-            if newsletter_email:
-                try:
-                    duplicate = Subscriber.objects.get(email=newsletter_email)
-                    if duplicate:
-                        messages.warning(request, _("This email already exists in our database!"))
-                        return redirect('blog')
-                except:
-                    #-----------------------SAVE IN DATABASE----------------
-                    sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
-                    sub.save()
+# def bloglist_view(request):
+#     template = 'blog/blog.html'
+#     posts_categs = {}
+#     if request.method=="POST":
+#         newsletter_email = request.POST.get('subscriber')
+#         #--------------check if newsletter email exists already---------
+#         if "subscriber" in request.POST:
+#             if newsletter_email:
+#                 try:
+#                     duplicate = Subscriber.objects.get(email=newsletter_email)
+#                     if duplicate:
+#                         messages.warning(request, _("This email already exists in our database!"))
+#                         return redirect('blog')
+#                 except:
+#                     #-----------------------SAVE IN DATABASE----------------
+#                     sub = Subscriber(email=newsletter_email, conf_num=random_digits(), timestamp=datetime.now())
+#                     sub.save()
 
-                    #---------------------send confirmation email settings------
-                    sub_subject = _("Newsletter Bucegi Natural Park")
-                    from_email='contact@bucegipark.ro'
-                    sub_message = ''
-                    html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
-                    try:
-                        send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
-                        messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
-                        return redirect('blog')
-                    except Exception as e:
-                        messages.warning(request, e)
-                        return redirect('blog')
+#                     #---------------------send confirmation email settings------
+#                     sub_subject = _("Newsletter Bucegi Natural Park")
+#                     from_email='contact@bucegipark.ro'
+#                     sub_message = ''
+#                     html_content=_("Thank you for subscribing to our newsletter! You can finalize the process by clicking on this <a style='padding:2px 1px;border:2px solid black;background-color:black;color:white;font-weight:500;text-decoration:none;' href='{}{}/subscription-confirmation/?email={}&conf_num={}'> button</a>.".format('https://www.bucegipark.ro/',request.LANGUAGE_CODE, sub.email, sub.conf_num))
+#                     try:
+#                         send_mail(sub_subject, sub_message, from_email, [sub], html_message=html_content)
+#                         messages.success(request, _("A confirmation link was sent to your email inbox. Please check!"))
+#                         return redirect('blog')
+#                     except Exception as e:
+#                         messages.warning(request, e)
+#                         return redirect('blog')
 
 
-    context = {
-    "blogposts": BlogPost.objects.all().order_by("-created_date"),
-    "categories": BlogPostCategory.objects.all(),
-    # "group_archive": group_archive,
-    # "group_categ":group_categ,
-    }
+#     context = {
+#     "blogposts": BlogPost.objects.all().order_by("-created_date"),
+#     "categories": BlogPostCategory.objects.all(),
+#     # "group_archive": group_archive,
+#     # "group_categ":group_categ,
+#     }
 
-    return render(request, template, context)
+#     return render(request, template, context)
 
 #======================== blog detail page================================
-class PostDetailView(HitCountDetailView, FormMixin):
-    model = BlogPost
-    template_name = 'blog/blog-details.html'
-    context_object_name = 'blogpost'
-    slug_field = 'slug'
-    form_class = CommentForm
-    # set to True to count the hit
-    count_hit = True
+# class PostDetailView(HitCountDetailView, FormMixin):
+#     model = BlogPost
+#     template_name = 'blog/blog-details.html'
+#     context_object_name = 'blogpost'
+#     slug_field = 'slug'
+#     form_class = CommentForm
+#     # set to True to count the hit
+#     count_hit = True
 
-    def get_context_data(self, **kwargs):
-        context = super(PostDetailView, self).get_context_data(**kwargs)
-        posts = BlogPost.objects.all()
-        form = self.get_form()
-        comms = Comment.objects.filter(post=BlogPost.objects.get(slug=self.object.slug))
-        context.update({
-        # ----------- most viewed posts---------------------------------------
-        # 'popular_posts': posts.order_by('-hit_count_generic__hits')[:3],
-        # ----------- comments -------------------------------------------
-        'comms': comms,
-        'comments': comms.count(),
-        # ----------- recent posts ---------------------------------------
-        'recent_posts': posts.order_by("-created_date")[:5],
-        # ----------- most posts  ---------------------------------------
-        'posts': posts,
-        'form': form,
-        'form_captcha': CaptchaForm()
-        })
-        return context
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.save()
-        return super().form_valid(form)
-    def post(self, request, *args, **kwargs):
-        return self.get(request, *args, **kwargs)
+#     def get_context_data(self, **kwargs):
+#         context = super(PostDetailView, self).get_context_data(**kwargs)
+#         posts = BlogPost.objects.all()
+#         form = self.get_form()
+#         comms = Comment.objects.filter(post=BlogPost.objects.get(slug=self.object.slug))
+#         context.update({
+#         # ----------- most viewed posts---------------------------------------
+#         # 'popular_posts': posts.order_by('-hit_count_generic__hits')[:3],
+#         # ----------- comments -------------------------------------------
+#         'comms': comms,
+#         'comments': comms.count(),
+#         # ----------- recent posts ---------------------------------------
+#         'recent_posts': posts.order_by("-created_date")[:5],
+#         # ----------- most posts  ---------------------------------------
+#         'posts': posts,
+#         'form': form,
+#         'form_captcha': CaptchaForm()
+#         })
+#         return context
+#     def form_valid(self, form):
+#         # This method is called when valid form data has been POSTed.
+#         # It should return an HttpResponse.
+#         form.save()
+#         return super().form_valid(form)
+#     def post(self, request, *args, **kwargs):
+#         return self.get(request, *args, **kwargs)
 #======================== blog search page================================
-def blogsearch_view(request):
-    template = 'blog/blog_search.html'
-    context = {}
-    blog_posts = BlogPost.objects.all()
-    if request.method == "GET":
-        query = request.GET.get("search")
-        queryset = blog_posts.filter(Q(title__icontains=query) | Q(text__icontains=query))
-        if queryset:
-            count = queryset.count()
-            context.update({
-                "count":count,
-                "query":query,
-                "posts":queryset,
+# def blogsearch_view(request):
+#     template = 'blog/blog_search.html'
+#     context = {}
+#     blog_posts = BlogPost.objects.all()
+#     if request.method == "GET":
+#         query = request.GET.get("search")
+#         queryset = blog_posts.filter(Q(title__icontains=query) | Q(text__icontains=query))
+#         if queryset:
+#             count = queryset.count()
+#             context.update({
+#                 "count":count,
+#                 "query":query,
+#                 "posts":queryset,
 
-            })
-        else:
-            messages.warning(request, _("We did not find any posts containing that word!"))
+#             })
+#         else:
+#             messages.warning(request, _("We did not find any posts containing that word!"))
 
-        return render(request, template, context)
+#         return render(request, template, context)
 #=========================parc rules view======================================
 def park_rules(request):
     template = 'services/rules.html'
