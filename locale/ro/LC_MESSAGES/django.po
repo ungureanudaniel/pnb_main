@@ -2966,8 +2966,8 @@ msgid "If you want to see them on the map please click the MAP button. On the ma
 msgstr "Dacă doriți să le vizualizați pe hartă, vă rugăm să apăsați butonul HARTĂ. Pe hartă puteți filtra traseele făcând clic în partea dreaptă și puteți elimina filtrul atunci când doriți să le vizualizați pe toate. De asemenea, puteți căuta după nume folosind iconița de binoclu din stânga. Butonul de sus cu straturi vă va arăta legenda hărții. De asemenea, când plasați cursorul peste un traseu, va apărea un mesaj pop-up care vă va afișa informații legate de durată, distanță, dificultate"
 
 #: education/templates/education/bear-awareness.html:15
-msgid "<span>Bear</span> <span>Safety</span>"
-msgstr "<span>Informare</span> <span>privind Urșii</span>"
+msgid "<span>Bear</span> <br><span>Safety</span>"
+msgstr "<span>Informare</span> <br><span>privind Urșii</span>"
 
 #: education/templates/education/bear-awareness.html:15
 msgid "Bear Safety"
