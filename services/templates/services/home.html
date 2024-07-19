@@ -97,9 +97,15 @@
 					</div>
 					<!-- promo pannel start-->
 					<div class="promo-pannel">
-						<a class="video-trigger" href="https://www.youtube.com/watch?v=cpp4yjHVGWo&t=25s">
-							<img class="img--bg" src="{% static 'img/reddeer2.webp' %}" alt="welcome_video"/>
+						<!-- <a class="video-trigger" href="https://www.youtube.com/watch?v=ZJMeSCIXQf8&t=25s">
+							<img class="img--bg" src="{% static 'img/wildlife/bears2.webp' %}" alt="welcome_video"/>
 							<span class="video-trigger__icon"><span>YouTube</span><i class="fa fa-play" aria-hidden="true"></i></span>
+
+						</a> -->
+						<a class="bear-safety-link" href="{% url 'bear-awareness' %}">
+							<img class="img--bg" src="{% static 'img/icons/BEAR_SAFETY5.png' %}" alt="welcome_video"/>
+							<!-- <h5 class="video-trigger__icon pt-5 mt-5">{% trans 'Bear Safety' %}</h5> -->
+
 						</a>
 						<div id="scraped-data" class="promo-pannel__weather"><span>{% trans 'Today' %}, {% now "jS F Y" %} </span><br>
 							<div class="weather-lower">

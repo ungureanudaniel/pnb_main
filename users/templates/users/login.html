@@ -1,28 +1,22 @@
 {% load static %}
 {% load i18n %}
-<!-- Add  new attraction form: Vertical  -->
-<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card">
 
-        <!-- Close -->
-        <!-- <button type="button" class="btn-close bg-dark text-white" data-bs-dismiss="modal" aria-label="Close">X</button> -->
-        <button type="button" class="btn-close close text-left" data-dismiss="modal" aria-label="Close">
+        <!-- Close Button -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        
         <!-- Image -->
         <img src="{% static 'img/unlock1.webp' %}" alt="..." class="card-img-top">
 
-        <!-- Shape -->
-        <!-- <div class="inter-shapes">
-          <div class="shape shape-bottom shape-fluid-x text-white">
-            <svg viewBox="0 0 2880 480" fill="" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill=""></path></svg>          </div>
-        </div> -->
-
-        <!-- Body -->
+        <!-- Card Body -->
         <div class="card-body">
-
           <!-- Heading -->
           <h2 class="mb-0 fw-bold text-center" id="modalSignin">
             Sign In
@@ -34,14 +28,15 @@
           </p>
           <div class="container error-container mt-n5">
             <div class="alert" id="form_message" role="alert"></div>
-                  {% if messages %}
-                    {% for message in messages %}
-                    <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      {{ message.message }}
-                    </div>
-                    {% endfor %}
-                  {% endif %}
+            {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                {{ message.message }}
+              </div>
+              {% endfor %}
+            {% endif %}
           </div>
+          
           <!-- Form -->
           <form class="mb-6" method="POST" action=".">
             {% csrf_token %}
@@ -50,7 +45,7 @@
               <label class="visually-hidden" for="modalSigninName">
                 User name
               </label>
-              <input type="text" name="signin-name" class="form-control" id="modalSigninName" placeholder="Your email" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+              <input type="text" name="signin-name" class="form-control" id="modalSigninName" placeholder="Your email" autocomplete="off">
             </div>
 
             <!-- Password -->
@@ -58,24 +53,21 @@
               <label class="visually-hidden" for="modalSigninPassword">
                 Password
               </label>
-              <input type="password" name="signin-password" class="form-control" id="modalSigninPassword" placeholder="Enter your password" autocomplete="off" style="background-image: url(#); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+              <input type="password" name="signin-password" class="form-control" id="modalSigninPassword" placeholder="Enter your password" autocomplete="off">
             </div>
-            <!-- Password -->
-            
-            <!-- Submit -->
+
+            <!-- Submit Button -->
             <button class="btn w-100 btn-primary" name="form-type" value="signin-form" type="submit">
               Sign in
             </button>
-
           </form>
 
-          <!-- Text -->
+          <!-- Optional Text -->
           <!-- <p class="mb-0 fs-sm text-center text-muted">
             Don't have an account yet? <a href="#modalSignup">Sign up</a>.
           </p> -->
 
         </div>
-
       </div>
     </div>
   </div>
