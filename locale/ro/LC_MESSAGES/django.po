@@ -2979,7 +2979,7 @@ msgstr "<span>Sfaturi de</span> <span>Siguranță și Informații</span>"
 
 #: education/templates/education/bear-awareness.html:15
 msgid "<strong>In Bucegi Natural Park, there is a significant bear population that forms a crucial part of the park's natural heritage. These majestic creatures are not only an iconic species within the park but also play a vital role in maintaining the ecological balance of the region.</strong>"
-msgstr "<strong>În Parcul Natural Bucegi, există o populație semnificativă de urși, o parte esențială a patrimoniului natural al parcului. Aceste creaturi majestuoase nu sunt doar o specie emblematică, ci joacă și un rol vital în menținerea echilibrului ecologic al regiunii.</strong>"
+msgstr "<strong>În Parcul Natural Bucegi, există o populație semnificativă de urși, o parte esențială a patrimoniului natural al parcului. Aceste creaturi maiestuoase nu sunt doar o specie emblematică, ci joacă și un rol vital în menținerea echilibrului ecologic al regiunii.</strong>"
 
 #: education/templates/education/bear-awareness.html:26
 msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Scroll down for some important tips to keep in mind during your visit:"
