@@ -17,7 +17,7 @@
                         <div class="align-container__item">
                             <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
                             <h1 class="welcome-primary__title">
-                                {% blocktranslate %}<span>Bear</span> <span>Safety and Awareness</span>{% endblocktranslate %}
+                                {% blocktranslate %}<span>Bear</span> <span>Safety</span>{% endblocktranslate %}
                             </h1>
                         </div>
                     </div>
@@ -33,15 +33,14 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="video-container mt-2 mb-2">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZJMeSCIXQf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZJMeSCIXQf8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                     <p class="cta-block__text">
-                        {% blocktranslate %}<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Here are some important tips to keep in mind during your visit:{% endblocktranslate %}
+                        {% blocktranslate %}<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Scroll down for some important tips to keep in mind during your visit:{% endblocktranslate %}
                     </p>
                     
-                    <p class="cta-block__text">
-                        {% trans 'Scroll down for more detailed information.' %}
-                    </p>
                     <img class="img mt-2 mb-2 ml-5" width="100" height="100" src="{% static 'img/chevron-down-w.png' %}" alt="More Info"/>
                 </div>
             </div>
@@ -55,7 +54,7 @@
             <div class="row bottom-50">
                 <div class="col-12">
                     <div class="heading heading--primary heading--center">
-                        <span class="heading__pre-title">{% trans 'Bear Safety and Awareness' %}</span>
+                        <span class="heading__pre-title">{% trans 'Bear Safety' %}</span>
                         <h2 class="heading__title no-margin-bottom">
                             {% blocktranslate %}<span>Safety Tips</span> <span>and Information</span>{% endblocktranslate %}
                         </h2>
@@ -70,30 +69,13 @@
                             <div class="table__cell"><strong>{% trans 'Details' %}</strong></div>
                         </div>
                         <div class="table__body">
-                            
-                            <div class="table__row">
-                                <div class="table__cell" style="display: flex;flex-direction: column;" data-label="{% trans 'Guideline' %}"><span><strong>{% trans 'General Preventive Measures' %}</strong></span></div>
-                                <div class="table__cell" data-label="{% trans 'Details' %}">
-                                    <ol>
-                                        <li><strong>{% trans 'Travel in Groups' %}</strong>: {% trans 'Bears are less likely to approach larger groups.' %}</li>
-                                        <li><strong>{% trans 'Make Noise' %}</strong>: {% trans 'Talk, sing, or clap to make your presence known, especially in areas with dense vegetation.' %}</li>
-                                        <li><strong>{% trans 'Keep Dogs Leashed' %}</strong>: {% trans 'Dogs can provoke bears, increasing the risk of an encounter.' %}</li>
-                                        <li><strong>{% trans 'Use Marked Trails and Travel During the Day' %}</strong>: {% trans 'Stick to established paths and avoid hiking at night.' %}</li>
-                                        <li><strong>{% trans 'Avoid Attractants' %}</strong>: {% trans 'Properly store food and keep picnic/camping areas clean. Avoid bringing strong-smelling foods or products.' %}</li>
-                                        <li><strong>{% trans 'Do Not Try to Feed the Bears' %}</strong></li>
-                                        <li><strong>{% trans "Do Not Stand in the Bear's Path" %}</strong>: {% trans 'If the bear is coming towards you, give it space to pass.' %}</li>
-
-                                    </ol>
-                                </div>
-                            </div>
                             <div class="table__row">
                                 <div class="table__cell" style="display: flex;flex-direction: column;" data-label="{% trans 'Guideline' %}"><span><strong>{% trans 'If You See a Bear from a Distance' %}</strong></span></div>
                                 <div class="table__cell" data-label="{% trans 'Details' %}">
                                     <ol>
                                         <li><strong>{% trans 'Stay Calm' %}</strong>: {% trans 'Do not panic or run.' %}</li>
-                                        <li><strong>{% trans 'Give the Bear Space' %}</strong>: {% trans 'Slowly retreat and increase the distance between you and the bear.' %}</li>
+                                        <li><strong>{% trans 'Give the Bear Space' %}</strong>: {% trans 'Slowly retreat and increase the distance.' %}</li>
                                         <li><strong>{% trans 'Do Not Approach' %}</strong>: {% trans 'Do not approach a bear for any reason.' %}</li>
-
                                     </ol>
                                 </div>
                             </div>
@@ -102,7 +84,7 @@
                                     <div class="table__cell" data-label="{% trans 'Details' %}">
                                         <ol>
                                             <li><strong>{% trans 'Retreat Slowly' %}</strong>: {% trans 'Try to retreat without drawing attention to yourself.' %}</li>
-                                            <li><strong>{% trans 'Avoid Sudden Movements and Loud Noises' %}</strong>: {% trans 'Slowly retreat and increase the distance between you and the bear.' %}</li>
+                                            <li><strong>{% trans 'Avoid Sudden Movements and Loud Noises' %}</strong>: {% trans 'Slowly retreat and increase the distance.' %}</li>
                                         </ol>
                                     </div>
                             </div>
@@ -111,10 +93,10 @@
                                 <div class="table__cell" data-label="{% trans 'Details' %}">
                                     <ol>
                                         <li><strong>{% trans 'Stay Calm' %}</strong>: {% trans 'Keep your movements slow and deliberate.' %}</li>
-                                        <li><strong>{% trans 'Identify Yourself' %}</strong>: {% trans 'Speak calmly and firmly to let the bear know you are human and not prey. When a bear stands on its hind legs, it is attentive to its surroundings, not preparing to attack.' %}</li>
+                                        <li><strong>{% trans 'Identify Yourself' %}</strong>: {% trans 'Speak firmly to let it know you are human. When a bear stands on its hind legs, it is checking surroundings, not preparing to attack.' %}</li>
                                         <li><strong>{% trans 'Do Not Run' %}</strong>: {% trans 'Running might trigger a chase.' %}</li>
                                         <li><strong>{% trans 'Retreat Slowly' %}</strong>: {% trans 'Maintain eye contact and avoid turning your back on the bear.' %}</li>
-                                        <li><strong>{% trans 'Make Yourself Look Bigger' %}</strong>: {% trans 'Raise your arms, open your jacket, and stand tall. If you are with others, stay together to appear as a larger group.' %}</li>
+                                        <li><strong>{% trans 'Make Yourself Look Bigger' %}</strong>: {% trans 'Raise your arms, your backpack, open your jacket, and stand tall. If you are with others, stay together.' %}</li>
                                     </ol>
                                 </div>
                             </div>
@@ -124,8 +106,8 @@
                                     <ol>
                                         <li><strong>{% trans 'Stand Your Ground' %}</strong>: {% trans 'Do not panic or run.' %}</li>
                                         <li><strong>{% trans 'Make Noise' %}</strong>: {% trans 'Clap, shout, and make yourself look as intimidating as possible.' %}</li>
-                                        <li><strong>{% trans 'Drop Your Pack' %}</strong>: {% trans 'To distract the bear, drop items (camera case, water bottle, jacket, etc.) while retreating.' %}</li>
-                                        <li><strong>{% trans 'Use Bear Spray' %}</strong>: {% trans "If the bear is within 6-9 meters, use bear spray. Aim slightly downward, directly at or towards the bear's face, adjusting for wind." %}</li>
+                                        <li><strong>{% trans 'Drop Your Pack' %}</strong>: {% trans 'To distract the bear, drop items while retreating.' %}</li>
+                                        <li><strong>{% trans 'Use Bear Spray' %}</strong>: {% trans "If the bear is within 6-9 meters, use bear spray. Aim slightly downward, towards the bear's face, adjusting for wind." %}</li>
                                     </ol>
                                 </div>
                             </div>
@@ -142,15 +124,31 @@
                                 <div class="table__cell" style="display: flex;flex-direction: column;" data-label="{% trans 'Guideline' %}"><span><strong>{% trans 'If the Bear Physically Attacks' %}</strong></span></div>
                                 <div class="table__cell" data-label="{% trans 'Details' %}">
                                     <ol>
-                                        <li><strong>{% trans 'Fight Back' %}</strong>: {% trans 'Use any available objects (sticks, rocks, etc.) to defend yourself. Aim for the bear’s face, especially the eyes and nose.' %}</li>
+                                        <li><strong>{% trans 'Fight Back' %}</strong>: {% trans "Use any available objects to defend yourself. Aim for the eyes and nose." %}</li>
                                     </ol>
                                 </div>
                             </div>
+                            <div class="table__row">
+                                <div class="table__cell" style="display: flex;flex-direction: column;" data-label="{% trans 'Guideline' %}"><span><strong>{% trans 'General Preventive Measures' %}</strong></span></div>
+                                <div class="table__cell" data-label="{% trans 'Details' %}">
+                                    <ol>
+                                        <li><strong>{% trans 'Travel in Groups' %}</strong>: {% trans 'Bears are less likely to approach larger groups.' %}</li>
+                                        <li><strong>{% trans 'Make Noise' %}</strong>: {% trans 'Make your presence known, especially in areas with dense vegetation.' %}</li>
+                                        <li><strong>{% trans 'Keep Dogs Leashed' %}</strong>: {% trans 'Dogs can provoke bears.' %}</li>
+                                        <li><strong>{% trans 'Use Marked Trails and Travel During the Day' %}</strong>: {% trans 'Stick to established paths and avoid hiking at night.' %}</li>
+                                        <li><strong>{% trans 'Avoid Attractants' %}</strong>: {% trans 'Properly store food and keep picnic/camping areas clean.' %}</li>
+                                        <li><strong>{% trans 'Do Not Try to Feed the Bears' %}</strong></li>
+                                        <li><strong>{% trans "Do Not Stand in the Bear's Path" %}</strong>: {% trans 'If the bear is coming towards you, give it space to pass.' %}</li>
+
+                                    </ol>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row m-1">
                 <h5>{% trans 'Following these guidelines can minimize the risk of a dangerous encounter with a bear and increase your chances of a safe experience.' %}</h5>
             </div>
         </div>

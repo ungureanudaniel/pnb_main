@@ -2554,76 +2554,170 @@ msgstr "<span>Zahlungs</span><span>ausfall</span>"
 #: payments/templates/payments/ticket-checkout.html: 16
 msgid "Please try again with more caution"
 msgstr "Bitte versuchen Sie es noch einmal mit mehr Vorsicht"
+#: education/templates/education/bear-awareness.html:15
+msgid "<span>Bear</span> <span>Safety</span>"
+msgstr "<span>Bären</span> <span>Sicherheit</span>"
 
 #: education/templates/education/bear-awareness.html:15
-msgid "Bear Awareness and Education"
-msgstr "Bärenbewusstsein und Bildung"
+msgid "Bear Safety"
+msgstr "Bärensicherheit"
 
 #: education/templates/education/bear-awareness.html:15
-msgid "<span>Bear</span> <span>Safety and Awareness</span>"
-msgstr "<span>Bären</span> <span>Sicherheit und Bewusstsein</span>"
+msgid "<span>Safety Tips</span> <span>and Information</span>"
+msgstr "<span>Sicherheitstipps</span> <span>und Informationen</span>"
 
 #: education/templates/education/bear-awareness.html:26
-msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Here are some important tips to keep in mind during your visit:"
-msgstr "<strong>Das Verstehen und Respektieren von Bären ist entscheidend für Ihre Sicherheit und den Erhalt dieser großartigen Kreaturen.</strong><br><br> Indem Sie diese Richtlinien befolgen, helfen Sie, die Bären und ihren natürlichen Lebensraum zu schützen:"
-
-#: education/templates/education/bear-awareness.html:28
-msgid "Here are some important tips to keep in mind during your visit:"
-msgstr "Hier sind einige wichtige Tipps, die Sie während Ihres Besuchs beachten sollten:"
+msgid "<strong>Understanding and respecting bears is crucial for both your safety and the preservation of these magnificent creatures. By following these guidelines, you will protect yourself, the bears and their natural habitat.</strong><br><br> Scroll down for some important tips to keep in mind during your visit:"
+msgstr "<strong>Das Verständnis und die Achtung von Bären sind entscheidend für Ihre Sicherheit und den Erhalt dieser großartigen Kreaturen. Wenn Sie diese Richtlinien befolgen, schützen Sie sich selbst, die Bären und ihren natürlichen Lebensraum.</strong><br><br> Scrollen Sie nach unten für einige wichtige Tipps, die Sie während Ihres Besuchs beachten sollten:"
 
 #: education/templates/education/bear-awareness.html:35
 msgid "Scroll down for more detailed information."
 msgstr "Scrollen Sie nach unten für detailliertere Informationen."
-
-#: education/templates/education/bear-awareness.html:15
-msgid "<span>Safety Tips</span> <span>and Information</span>"
-msgstr "<span>Sicherheitstipps und</span> <span>Informationen</span>"
 
 #: education/templates/education/bear-awareness.html:68
 msgid "Guideline"
 msgstr "Richtlinie"
 
 msgid "General Preventive Measures"
-msgstr "Allgemeine Vorbeugende Maßnahmen"
+msgstr "Allgemeine Vorsichtsmaßnahmen"
 
 msgid "Travel in Groups"
-msgstr "Reisen Sie in Gruppen"
+msgstr "In Gruppen reisen"
 
 msgid "Bears are less likely to approach larger groups."
-msgstr "Bären nähern sich weniger wahrscheinlich größeren Gruppen."
+msgstr "Bären neigen weniger dazu, größere Gruppen anzusprechen."
 
 msgid "Make Noise"
-msgstr "Machen Sie Lärm"
+msgstr "Lärm machen"
 
-msgid "Talk, sing, or clap to make your presence known, especially in areas with dense vegetation."
-msgstr "Sprechen, singen oder klatschen Sie, um Ihre Anwesenheit bekannt zu machen, besonders in Gebieten mit dichter Vegetation."
+msgid "Make your presence known, especially in areas with dense vegetation."
+msgstr "Machen Sie Ihre Anwesenheit bekannt, insbesondere in Gebieten mit dichter Vegetation."
 
 msgid "Keep Dogs Leashed"
-msgstr "Halten Sie Hunde an der Leine"
+msgstr "Hunde an der Leine halten"
 
-msgid "Dogs can provoke bears, increasing the risk of an encounter."
-msgstr "Hunde können Bären provozieren und das Risiko einer Begegnung erhöhen."
+msgid "Dogs can provoke bears."
+msgstr "Hunde können Bären provozieren."
 
 msgid "Use Marked Trails and Travel During the Day"
-msgstr "Benutzen Sie Markierte Wege und Reisen Sie Tagsüber"
+msgstr "Markierte Wege nutzen und tagsüber reisen"
 
 msgid "Stick to established paths and avoid hiking at night."
-msgstr "Bleiben Sie auf den festgelegten Wegen und vermeiden Sie Wanderungen in der Nacht."
+msgstr "Bleiben Sie auf den festgelegten Wegen und vermeiden Sie nächtliche Wanderungen."
 
 msgid "Avoid Attractants"
-msgstr "Vermeiden Sie Lockstoffe"
+msgstr "Lockstoffe vermeiden"
 
-msgid "Properly store food and keep picnic/camping areas clean. Avoid bringing strong-smelling foods or products."
-msgstr "Lebensmittel ordnungsgemäß lagern und Picknick-/Campingplätze sauber halten. Vermeiden Sie es, stark riechende Lebensmittel oder Produkte mitzubringen."
+msgid "Properly store food and keep picnic/camping areas clean."
+msgstr "Lagern Sie Lebensmittel richtig und halten Sie Picknick- / Campingplätze sauber."
+
+msgid "Do Not Try to Feed the Bears"
+msgstr "Versuchen Sie nicht, die Bären zu füttern"
+
+msgid "Do Not Stand in the Bear's Path"
+msgstr "Stellen Sie sich nicht in den Weg des Bären"
+
+msgid "If the bear is coming towards you, give it space to pass."
+msgstr "Wenn der Bär auf Sie zukommt, geben Sie ihm Raum, um vorbeizugehen."
+
+msgid "If You See a Bear from a Distance"
+msgstr "Wenn Sie einen Bären aus der Ferne sehen"
+
+msgid "Stay Calm"
+msgstr "Ruhe bewahren"
+
+msgid "Do not panic or run."
+msgstr "Verfallen Sie nicht in Panik und laufen Sie nicht weg."
+
+msgid "Give the Bear Space"
+msgstr "Geben Sie dem Bären Raum"
+
+msgid "Slowly retreat and increase the distance."
+msgstr "Gehen Sie langsam zurück und vergrößern Sie den Abstand."
+
+msgid "Do Not Approach"
+msgstr "Nicht nähern"
+
+msgid "Do not approach a bear for any reason."
+msgstr "Nähren Sie sich aus keinem Grund einem Bären."
+
+msgid "If the Bear Is Unaware of Your Presence"
+msgstr "Wenn der Bär Ihre Anwesenheit nicht bemerkt"
+
+msgid "Retreat Slowly"
+msgstr "Langsam zurückziehen"
+
+msgid "Try to retreat without drawing attention to yourself."
+msgstr "Versuchen Sie, sich zurückzuziehen, ohne Aufmerksamkeit auf sich zu ziehen."
+
+msgid "Avoid Sudden Movements and Loud Noises"
+msgstr "Vermeiden Sie plötzliche Bewegungen und laute Geräusche"
+
+msgid "If the Bear Is Aware of Your Presence"
+msgstr "Wenn der Bär Ihre Anwesenheit bemerkt"
+
+msgid "Keep your movements slow and deliberate."
+msgstr "Behalten Sie langsame und gezielte Bewegungen bei."
+
+msgid "Identify Yourself"
+msgstr "Sich identifizieren"
+
+msgid "Speak firmly to let it know you are human. When a bear stands on its hind legs, it is checking surroundings, not preparing to attack."
+msgstr "Sprechen Sie fest, um ihm zu zeigen, dass Sie ein Mensch sind. Wenn ein Bär auf den Hinterbeinen steht, überprüft er die Umgebung und bereitet sich nicht auf einen Angriff vor."
+
+msgid "Do Not Run"
+msgstr "Nicht laufen"
+
+msgid "Running might trigger a chase."
+msgstr "Laufen könnte eine Verfolgung auslösen."
+
+msgid "Maintain eye contact and avoid turning your back on the bear."
+msgstr "Halten Sie Blickkontakt und vermeiden Sie es, dem Bären den Rücken zuzuwenden."
+
+msgid "Make Yourself Look Bigger"
+msgstr "Machen Sie sich größer"
+
+msgid "Raise your arms, your backpack, open your jacket, and stand tall. If you are with others, stay together."
+msgstr "Heben Sie Ihre Arme, Ihren Rucksack, öffnen Sie Ihre Jacke und stehen Sie aufrecht. Wenn Sie mit anderen zusammen sind, bleiben Sie zusammen."
+
+msgid "If the Bear Approaches"
+msgstr "Wenn der Bär sich nähert"
+
+msgid "Stand Your Ground"
+msgstr "Bleiben Sie standhaft"
+
+msgid "Clap, shout, and make yourself look as intimidating as possible."
+msgstr "Klatschen Sie, rufen Sie und machen Sie sich so einschüchternd wie möglich."
+
+msgid "Drop Your Pack"
+msgstr "Lassen Sie Ihren Rucksack fallen"
+
+msgid "To distract the bear, drop items while retreating."
+msgstr "Um den Bären abzulenken, lassen Sie Gegenstände fallen, während Sie sich zurückziehen."
+
+msgid "Use Bear Spray"
+msgstr "Bärenspray verwenden"
+
+msgid "If the bear is within 6-9 meters, use bear spray. Aim slightly downward, towards the bear's face, adjusting for wind."
+msgstr "Wenn der Bär sich in einem Abstand von 6-9 Metern befindet, verwenden Sie Bärenspray. Zielen Sie leicht nach unten, auf das Gesicht des Bären, und passen Sie die Richtung je nach Wind an."
+
+msgid "If the Bear Attacks"
+msgstr "Wenn der Bär angreift"
+
+msgid "Many attacks are bluff charges. The bear may veer off or stop abruptly."
+msgstr "Viele Angriffe sind Scheinhiebe. Der Bär könnte abweichen oder plötzlich anhalten."
+
+msgid "If the bear closes in, use bear spray."
+msgstr "Wenn der Bär sich nähert, verwenden Sie Bärenspray."
 
 msgid "If the Bear Physically Attacks"
-msgstr "Wenn der Bär körperlich angreift"
+msgstr "Wenn der Bär physisch angreift"
 
 msgid "Fight Back"
-msgstr "Setzen Sie sich zur Wehr"
+msgstr "Wehren Sie sich"
 
-msgid "Use any available objects (sticks, rocks, etc.) to defend yourself. Aim for the bear’s face, especially the eyes and nose."
-msgstr "Verwenden Sie alle verfügbaren Gegenstände (Stöcke, Steine usw.), um sich zu verteidigen. Zielen Sie auf das Gesicht des Bären, besonders auf die Augen und die Nase."
+msgid "Use any available objects to defend yourself. Aim for the eyes and nose."
+msgstr "Verwenden Sie alle verfügbaren Gegenstände zur Verteidigung. Zielen Sie auf die Augen und die Nase."
 
 msgid "Following these guidelines can minimize the risk of a dangerous encounter with a bear and increase your chances of a safe experience."
-msgstr "Wenn Sie diesen Richtlinien folgen, können Sie das Risiko eines gefährlichen Zusammentreffens mit einem Bären minimieren und die Chancen auf eine sichere Erfahrung erhöhen."
+msgstr "Das Befolgen dieser Richtlinien kann das Risiko einer gefährlichen Begegnung mit einem Bären minimieren und Ihre Chancen auf ein sicheres Erlebnis erhöhen."
