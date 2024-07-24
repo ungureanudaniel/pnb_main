@@ -6,7 +6,7 @@ from .views import allowed_vehicles
 urlpatterns = [
     #------ general urls-------------------
     # path('choose-tickets', choosetickets_view, name="choose-tickets"),
-    path('allowed-vehicles', allowed_vehicles, name="auto-access"),
+    path('allowed-vehicles/', allowed_vehicles, name="auto-access"),
 
     ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
