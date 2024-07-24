@@ -36,7 +36,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', include('services.urls')),
-    path('access_and_rules', include('access_and_rules_compliance.urls')),
+    path('access_and_rules/', include('access_and_rules_compliance.urls')),
     path('', include('biodiversity.urls')),
     path('users/', include('users.urls')),
     path('tickets/', include('payments.urls')),
