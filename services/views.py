@@ -102,44 +102,7 @@ def add_testimonial(request):
 #         context = {}
 #     return render(request, template, context)
 
-#=================allowed vehicles version 2===============================
-def allowed_vehicles(request):
-    template = 'services/allowed_vehicles.html'
-    context = {}
 
-    if request.method == "GET" and request.GET.get('form-type') == "search":
-        query = request.GET.get("q").replace(" ", "").upper()
-        if query:
-            try:
-                # Fetch the most recent permit based on the end date
-                # vehicle = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").first()
-                v = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").values()
-                # vehicle = AllowedVehicles.objects.get(identification_nr=query)
-
-                logger.debug(v)
-                if v:
-                    vehicle = v.first()
-                    logger.debug(vehicle)
-                    start_date = vehicle['start_date']
-                    end_date = vehicle['end_date']
-                    today = datetime.today().date()
-
-                    if start_date > today:
-                        messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}.').format(vehicle['identification_nr'], start_date))
-                    elif end_date >= today:
-                        messages.success(request, _('Vehicle with plates number {} is allowed in the park!').format(vehicle['identification_nr']))
-
-                        context.update({"car_info":vehicle})
-                    else:
-                        messages.warning(request, _('Vehicle with plates number {} is not authorized!').format(query))
-                else:
-                    messages.error(request, _('Vehicle with plates number {} is not authorized!').format(query))
-            except Exception as e:
-                messages.error(request, _("An error occurred: {}").format(str(e)))
-        else:
-            messages.error(request, _("Invalid search query!"))
-
-    return render(request, template, context)
 #========================weatehr data page=================================
 # async def weather_data(request):
 #     # Fetch weather data asynchronously

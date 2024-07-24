@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'users',
     'services',
     'payments',
+    'access_and_rules_compliance',
+    'biodiversity',
     'geemap',
     'education',
     'frequently_asked_questions',

@@ -83,7 +83,7 @@
                     <h6 class="pricing-item__plan">{{ car.owner }}</h6>
                   </div>
                   <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{% for a in car.area.all %}{{ a }}{% endfor %}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{% for a in car.area %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
                   <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|date:"d.m.Y" }}/<br>{{ car.end_date|date:"d.m.Y" }} </span></div>
                   <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div> -->
@@ -105,7 +105,7 @@
                           </div>
                           <div class="card-body">
                               <p class="card-text"><strong>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}:</strong> {{ car.identification_nr }}</p>
-                              <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {{ area }}</p>
+                              <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {% for a in car.area %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
                               <p class="card-text"><strong>{% trans 'Permit Nr.' %}:</strong> {{ car.permit_nr }}</p>
                               <p class="card-text"><strong>{% trans 'Start date' %}:</strong> {{ car.start_date|date:"d.m.Y" }}</p>
                               <p class="card-text"><strong>{% trans 'Expiry date' %}:</strong> {{ car.end_date|date:"d.m.Y" }}</p>
