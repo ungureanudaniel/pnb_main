@@ -28,7 +28,7 @@ class Payment(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=5)
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
-    phone = models.CharField(max_length=12, blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=True)
     email = models.EmailField(max_length=254)
     address = models.TextField(blank=True, null=True)
     county = models.CharField(max_length=30,blank=True, null=True)
