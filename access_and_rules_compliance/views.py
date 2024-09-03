@@ -17,7 +17,8 @@ def allowed_vehicles(request):
         if query:
             try:
                 # Fetch the most recent permit based on the end date
-                vehicles = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("-end_date").prefetch_related('area')
+                vehicles = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("end_date").prefetch_related('area')
+                print(vehicles)
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
             try:
@@ -27,19 +28,20 @@ def allowed_vehicles(request):
                     for vehicle in vehicles:
                         start_date = vehicle.start_date
                         end_date = vehicle.end_date
-
-                        car_info.append({
-                            'owner': vehicle.owner,
-                            'identification_nr': vehicle.identification_nr,
-                            'area': [a.name for a in vehicle.area.all()],  # Convert related areas to a list of names
-                            'permit_nr': vehicle.permit_nr,
-                            'start_date': vehicle.start_date,
-                            'end_date': vehicle.end_date,
-                            'description': vehicle.description,
-                        })
+                        if end_date >= today:
+                            car_info.append({
+                                'owner': vehicle.owner,
+                                'identification_nr': vehicle.identification_nr,
+                                'area': [a.name for a in vehicle.area.all()],  # Convert related areas to a list of names
+                                'permit_nr': vehicle.permit_nr,
+                                'start_date': vehicle.start_date,
+                                'end_date': vehicle.end_date,
+                                'description': vehicle.description,
+                            })
+                            continue
                     if start_date > today:
                         messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}.').format(vehicle.identification_nr, start_date))
-                    elif end_date >= today:
+                    elif start_date <= today and end_date >= today:
                         messages.success(request, _('Vehicle with plates number {} is allowed in the park!').format(vehicle.identification_nr))
                         context.update({"car_info": car_info})
                     else:
