@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from services.models import AllowedVehicles
+from .models import Law
 from loguru import logger
 from datetime import datetime
 from django.contrib import messages
@@ -54,3 +55,9 @@ def allowed_vehicles(request):
             messages.error(request, _("Invalid search query!"))
 
     return render(request, template, context)
+#=================laws===============================
+def laws(request):
+    template = "laws/laws.html"
+    context = {"laws":Law.objects.all()}
+    return render(request, template, context)
+

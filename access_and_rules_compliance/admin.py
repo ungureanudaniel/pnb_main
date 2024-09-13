@@ -1,5 +1,6 @@
 from django.contrib import admin
 from services.models import AllowedVehicles, VehicleCategory, AccessArea
+from .models import Law, LawCategory
 from django import forms
 
 class VehicleCategoryAdmin(admin.ModelAdmin):
@@ -31,7 +32,16 @@ class AllowedVehiclesAdmin(admin.ModelAdmin):
     list_display = ('id', 'identification_nr', 'owner','categ', 'permit_nr', 'timestamp', 'start_date', 'end_date')
     fields = ['owner', 'categ', 'identification_nr', 'permit_nr', 'start_date', 'end_date', 'area', 'description']
     form = AllowedVehiclesForm
+class LawCategoryAdmin(admin.ModelAdmin):
+    fields = ['name', 'name_ro','name_de']
+    list_display = ('name',)
+    prepopulated_fields = {"name_en": ("name",),}
+class LawAdmin(admin.ModelAdmin):
+    fields = ['category', 'title', 'text', 'publish_date', 'language']
+    list_display = ('title', 'publish_date')
 
+admin.site.register(Law, LawAdmin)
+admin.site.register(LawCategory, LawCategoryAdmin)
 admin.site.register(VehicleCategory, VehicleCategoryAdmin)
 admin.site.register(AccessArea, AccessAreaAdmin)
 admin.site.register(AllowedVehicles, AllowedVehiclesAdmin)
