@@ -2878,6 +2878,23 @@ msgstr "<span>Legislație</span><span></span>"
 #: services/templates/services/base.html: 134
 msgid "Allowed Vehicles"
 msgstr "Vehicule cu acces permis"
+
+#: access.../templates/laws/laws.html: 134
+msgid "Search by publish year..."
+msgstr "Caută după anul publicării..."
+
+#: access.../templates/laws/laws.html: 134
+msgid "Search by title keywords..."
+msgstr "Caută după cuvinte cheie în titlu..."
+
+#: access.../templates/laws/laws.html: 134
+msgid "Search by document number..."
+msgstr "Caută după numărul documentului..."
+
+#: access.../templates/laws/laws.html: 134
+msgid "Search by document type..."
+msgstr "Caută după tipul documentului..."
+
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "<span>Vehicles with </span><br> <span> granted access</span>"
 msgstr "<span>Vehicule cu </span><br> <span> acces permis</span>"

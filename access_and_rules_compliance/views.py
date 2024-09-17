@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from services.models import AllowedVehicles
 from .models import Law
+from django.db.models import Q
 from loguru import logger
 from datetime import datetime
 from django.contrib import messages
@@ -61,4 +62,31 @@ def laws(request):
     template = "laws/laws.html"
     context = {"laws":Law.objects.all()}
     return render(request, template, context)
+#=================search laws===============================
+def search_laws(request):
+    template = "laws/search_laws.html"
+    title = request.GET.get('title', '')
+    doc_nr = request.GET.get('doc_nr', '')
+    publish_year = request.GET.get('publish_year', '')
+    doc_type = request.GET.get('doc_type', '')
 
+    # Start with the full queryset
+    query= Q()
+
+    # Apply filters based on the presence of query parameters
+    if title:
+        query &= Q(title__icontains=title)
+    if doc_nr:
+        query &= Q(doc_nr__icontains=doc_nr)
+    if publish_year:
+        try:
+            # Try to parse the date string
+            year = int(publish_year)
+            query &= Q(publish_date__year=year)
+        except ValueError:
+            # Handle invalid date format
+            query = Q()
+    if doc_type:
+        query = Q(doc_nr__icontains=doc_nr)
+
+    return render(request, template, {'laws': Law.objects.filter(query)})
