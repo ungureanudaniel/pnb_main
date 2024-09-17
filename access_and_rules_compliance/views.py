@@ -6,8 +6,9 @@ from datetime import datetime
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
-
+from django.views.decorators.cache import cache_page
 #=================allowed vehicles version 2===============================
+@cache_page(60 * 15)
 def allowed_vehicles(request):
     template = 'access/allowed_vehicles.html'
     context = {}
