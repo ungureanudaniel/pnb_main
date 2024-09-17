@@ -2887,6 +2887,10 @@ msgstr "Caută după anul publicării..."
 msgid "Search by title keywords..."
 msgstr "Caută după cuvinte cheie în titlu..."
 
+#: services/templates/services/base.html: 134
+msgid "Legislation"
+msgstr "Legislație"
+
 #: access.../templates/laws/laws.html: 134
 msgid "Search by document number..."
 msgstr "Caută după numărul documentului..."
