@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 #blog imports
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
+
 #================Announcement models=====================================
 class Announcement(models.Model):
     """

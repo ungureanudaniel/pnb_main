@@ -55,13 +55,11 @@ INSTALLED_APPS = [
     ]
 SITE_ID = 1
 INTERNAL_IPS = [
-    # ...
     "127.0.0.1",
-    # ...
 ]
 MIDDLEWARE = [
-    'django.middleware.gzip.GZipMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # 'django.middleware.gzip.GZipMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     #--------caching middleware------------------
@@ -96,13 +94,23 @@ TEMPLATES = [
     },
 ]
 # Enable caching in project
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
+#         "LOCATION": [
+#             "127.0.0.1:11211",
+#             "bucegipark.ro"
+#         ]
+#     }
+# }
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
-        "LOCATION": [
-            "127.0.0.1:11211",
-            "bucegipark.ro"
-        ]
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": "./caching",  # Ensure this directory is writable
+        "OPTIONS": {
+            "MAX_ENTRIES": 1000,  # Maximum number of cache entries
+            "CULL_FREQUENCY": 3,  # Frequency of culling old entries
+        }
     }
 }
 WSGI_APPLICATION = 'pnb_main.wsgi.application'

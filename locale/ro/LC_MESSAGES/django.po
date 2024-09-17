@@ -2873,8 +2873,8 @@ msgstr "Încercați din nou cu mai multă grijă"
 msgid "Motorized Access"
 msgstr "Acces motorizat"
 #: services/templates/services/base.html: 134
-msgid "Useful Laws"
-msgstr "Legislație Utilă"
+msgid "<span>Legislation</span><span></span>"
+msgstr "<span>Legislație</span><span></span>"
 #: services/templates/services/base.html: 134
 msgid "Allowed Vehicles"
 msgstr "Vehicule cu acces permis"

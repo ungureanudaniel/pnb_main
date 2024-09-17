@@ -7,7 +7,7 @@ urlpatterns = [
     #------ general urls-------------------
     # path('choose-tickets', choosetickets_view, name="choose-tickets"),
     path('allowed-vehicles/', allowed_vehicles, name="auto-access"),
-    path('useful-laws/', laws, name="laws"),
+    path('legislation/', laws, name="legislation"),
 
 
     ]

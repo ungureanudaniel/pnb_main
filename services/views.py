@@ -1,7 +1,6 @@
 import warnings
 warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.shortcuts import render, redirect
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
 from loguru import logger
@@ -9,28 +8,21 @@ from loguru import logger
 from django.utils.timezone import now
 from django.conf import settings
 from utils.weather_scrape import scraped_data
-# from django.views.decorators.gzip import gzip_page
 from datetime import datetime
 from django.contrib import messages
 import random
 from django.core.mail import send_mail
-from django.contrib.auth import authenticate, login
-import requests
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
 #----blog imports
-from django.db.models import Q
-from django.views.generic.edit import FormMixin
 from django.views.generic.detail import DetailView
 from django.views.generic import MonthArchiveView, ListView
 from hitcount.views import HitCountDetailView
 
-#---------cache decorator----------
+#---------cache decorators----------
+from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-# -----------examples for using localized dae objects----------------
-# localized_date = formats.date_format(date_obj, 'SHORT_DATE_FORMAT')
-# localized_time = formats.time_format(time_obj, 'SHORT_TIME_FORMAT')
 #----------generate unique code for email subscription conf--------------------
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
@@ -46,7 +38,6 @@ def random_digits():
 #     }
 #     return render(request, template, context)
 #========================map coming soon VIEW=================================
-
 def map_coming_soon(request):
     template = "services/map-coming-soon.html"
     context = {}
@@ -76,33 +67,6 @@ def add_testimonial(request):
             messages.error(request, "Please check for empty fields.")
 
     return render(request, template, {"form":form,"review_form":TestimonialForm()})
-#========================add allowed vehicle VIEW=================================
-# def allowed_vehicles(request):
-#     template = 'services/allowed_vehicles.html'
-#     allowed_vehicles = AllowedVehicles.objects.all()
-#     context = {}
-#     if request.method == "GET" and request.GET.get('form-type') == "search":
-#         query = request.GET.get("q").replace(" ", "")
-#         r = AllowedVehicles.objects.filter(Q(identification_nr=query)).values()
-#         if r:
-#             vehicle = r[0]
-#             start_date = vehicle['start_date']
-#             end_date = vehicle['end_date']
-#             today = datetime.today().date()
-#             if start_date > today:
-#                 messages.warning(request, _('This car is not yet allowed in the park! Permit starts on {0}.').format(start_date))
-#             elif end_date >= today:
-#                 messages.success(request, _("This car is allowed in the park!"))
-#                 context.update({"car_info":r, 'area':[i['name'] for i in AccessArea.objects.all().values() if i['id']==vehicle['area_id']][0]})
-#             else:
-#                 messages.warning(request, _("This car was previously authorized but permit is expired!"))
-#         else:
-#             messages.error(request, _("This car is not authorized!"))
-#     else:
-#         context = {}
-#     return render(request, template, context)
-
-
 #========================weatehr data page=================================
 # async def weather_data(request):
 #     # Fetch weather data asynchronously
@@ -140,10 +104,6 @@ def home(request):
     })
     
     return render(request, template, context)
-
-#------------------------SUBSCRIPTION---------------------------------------
-
-
 #------------------------SUBSCRIBE---------------------------------------SUBSCRIBE
 def subscription(request):
     template_name = 'services/subscribe.html'
@@ -184,6 +144,7 @@ def subscription(request):
                             messages.warning(request, _(f'Human verification failed.'))
     return render(request, template_name, context)
 #------------------------CONTACT apge------------------------------------CONTACT
+@cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def contacts_view(request):
     template_name = 'services/contact.html'
     if request.method == "POST":
@@ -236,6 +197,8 @@ class EventDetailView(DetailView):
     context_object_name = 'event'
     slug_field = 'slug'
     count_hit = True
+
+    
 #======================== gallery page================================
 def sector_map_view(request):
     template = 'services/sector-map.html'
@@ -407,6 +370,7 @@ class FloraDetailView(DetailView):
     slug_field = 'slug'
     count_hit = True
 #========================INFO VIEW================================
+@cache_page(60 * 15)  # Cache for 15 minutes (in seconds)
 def ticket_info(request):
     template = 'services/ticket-info.html'
     return render(request, template, {})
@@ -421,6 +385,7 @@ def massmedia(request):
     return render(request, template, {})
 
 #======================== public documents page================================
+@cache_page(60 * 15)  # Cache for 15 minutes (in seconds)
 def public_docs(request):
     template = 'public_docs/public_docs.html'
 
@@ -482,26 +447,11 @@ class AnnouncementView(ListView):
         context = super().get_context_data(**kwargs)                     
         context["group_archive"] = Announcement.objects.order_by('timestamp')
         return context
-# def announcement_view(request):
-#     template = 'services/announcements.html'
-#     announc = Announcement.objects.all().order_by('-timestamp'),
-#     pag = Paginator(announc, 3)  # creating a paginator object
-#     page_number = request.GET.get('page')
-#     try:
-#         page_obj = pag.page(page_number)  # returns the desired page object
-#     except PageNotAnInteger:
-#         # if page_number is not an integer then assign the first page
-#         page_obj = pag.page(1)
-#     except EmptyPage:
-#         # if page is empty then return last page
-#         page_obj = pag.page(pag.num_pages)
 
-#     context = {
-#     "page_obj":page_obj,
-#     "group_archive": Announcement.objects.order_by('timestamp'),
-#     }
-
-#     return render(request, template, context)
+    # Apply cache_page to the dispatch method
+    @method_decorator(cache_page(60 * 15))  # Cache for 15 minutes
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 #======================== announcement archive page================================
 # class ArticleMonthArchiveView(MonthArchiveView):
 #     queryset = Announcement.objects.all()
@@ -522,6 +472,11 @@ class AnnouncementView(ListView):
 #             year = now().strftime(self.get_year_format())
 
 #         return year
+
+    # Apply cache_page to the dispatch method
+    # @method_decorator(cache_page(60 * 15))  # Cache for 15 minutes
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 #======================== announcement detail page================================
 class AnnounDetailView(HitCountDetailView):
     model = Announcement
@@ -641,35 +596,3 @@ def park_rules(request):
     template = 'services/rules.html'
     context = {}
     return render(request, template, context)
-#=========================videos view ==========================================
-def videos_view(request):
-    template_name = 'services/videos.html'
-    #---------------------fetch vid IDs-----------------------
-    p_url = 'https://www.googleapis.com/youtube/v3/search'
-    p_params = {
-        'part': 'snippet',
-        'channelId': settings.CHANNELID,
-        'type': 'video',
-        'key': settings.YOUTUBE_DATA_API_KEY,
-    }
-    videos = []
-    try:
-        p_req = requests.get(p_url, params=p_params)
-        p_results = p_req.json()['items']
-        for p_result in p_results:
-            video_data = {
-                'id': p_result['id']['videoId'],
-                'embed': f'http://www.youtube.com/embed/{ p_result["id"]["videoId"] }',
-                'url': f'https://www.youtube.com/watch?v={ p_result["id"]["videoId"] }',
-                'title': p_result['snippet']['title'],
-                'date': p_result['snippet']['publishedAt'][:4],
-                'thumbnail':p_result['snippet']['thumbnails']['high']['url'],
-            }
-
-            videos.append(video_data)
-    except Exception as e:
-        messages.error(request, _('Import video nereusit!'))
-    context = {
-        "videos": videos,
-    }
-    return render(request, template_name, context)

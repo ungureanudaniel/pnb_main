@@ -35,10 +35,10 @@ class AllowedVehiclesAdmin(admin.ModelAdmin):
 class LawCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro','name_de']
     list_display = ('name',)
-    prepopulated_fields = {"name_en": ("name",),}
+    # prepopulated_fields = {"name": ("name_en",),}
 class LawAdmin(admin.ModelAdmin):
-    fields = ['category', 'title', 'text', 'publish_date', 'language']
-    list_display = ('title', 'publish_date')
+    fields = ['category', 'title', 'text', 'doc_type', 'doc_nr', 'publish_date', 'language', 'link']
+    list_display = ('title', 'doc_nr', 'publish_date')
 
 admin.site.register(Law, LawAdmin)
 admin.site.register(LawCategory, LawCategoryAdmin)
