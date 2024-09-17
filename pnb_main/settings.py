@@ -106,7 +106,7 @@ TEMPLATES = [
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
-        "LOCATION": "./caching",  # Ensure this directory is writable
+        "LOCATION": os.getenv('CACHING_DIR'),  # Ensure this directory is writable
         "OPTIONS": {
             "MAX_ENTRIES": 1000,  # Maximum number of cache entries
             "CULL_FREQUENCY": 3,  # Frequency of culling old entries
