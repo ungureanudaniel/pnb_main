@@ -168,12 +168,12 @@ def generate_pdf_ticket(data):
 if __name__ == "__main__":
     y = 3
     x = 6
-    series='DBPNO000001'
-    file_nr = f"{series}{ticket_series()}"
+    series='DBPNO009235'
+    file_nr = f"{series}"
     data = {            
-                        "qr":"sadadasdada13",
-                        "first_name":'daniel',
-                        "last_name":'ungureanu',
+                        "qr":series,
+                        "first_name":'Vlad',
+                        "last_name":'Craita',
                         "file":'ticket-{}.pdf'.format(file_nr),
                         "series":series,
                         "amount": 1,#in production need to divide by 10
