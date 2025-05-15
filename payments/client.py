@@ -2,7 +2,6 @@
 """
     Client side / Front End
 
-    Path of the imports should be changed according to the location of the module in your project
 """
 
 from urllib.parse import unquote, quote

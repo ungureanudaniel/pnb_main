@@ -17,7 +17,7 @@ from urllib.parse import urlencode
 #-----------invoice and ticket generation imports
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.units import mm
-from .generate_ticket_pdf2 import generate_pdf_ticket, save_pdf_to_location
+from .generate_ticket_pdf2 import generate_pdf_ticket
 
 #--------------------------------------------------
 warnings.filterwarnings('ignore', message='.*cryptography', )
@@ -58,11 +58,11 @@ def checkout_view(request):
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
     #test credentials
-    # key = settings.TEST_KEY
-    # mid = settings.TEST_MID
+    key = settings.TEST_KEY
+    mid = settings.TEST_MID
     #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
-    key = settings.KEY
-    mid = settings.MID
+    # key = settings.KEY
+    # mid = settings.MID
     params= {}
     #assign form instance to variable
     form = PaymentForm(request.POST or None)
@@ -189,7 +189,7 @@ def check_status(request):
                                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
                         }
 
-                        
+                        # Note: We're not storing PDFs on disk to save space. PDFs are sent via email only. Left this code below for future reference.
                         # save_pdf_to_location(pdf, "tickets/{}".format(data['file']))
                         #----------save new subsequent ticket in the database
                         try:

@@ -6,7 +6,8 @@ add_testimonial, ticket_info, privacy_view,\
 eventlist_view, map_coming_soon, terms_view, infopoints_view,\
 AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view,\
-park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, subscription
+park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, subscription,\
+nat_reserves_view
 #, ArticleMonthArchiveView, bloglist_view, blogsearch_view, PostDetailView
 from utils.weather_scrape import weather_data
 from django.conf.urls.static import static
@@ -48,7 +49,7 @@ urlpatterns = [
         path('park-rules', park_regulation_view, name="park-rules"),
         path('public-documents', public_docs, name="public-docs"),
         path('management-plan', mng_plan_view, name="mng-plan"),
-        
+        path('natural-reserves', nat_reserves_view, name="nat-reserves"),
         #------------map urls-------------------------------
         path('park-map', map_coming_soon, name="map_coming_soon"),
         path('park-sectors', sector_map_view, name="sector-map"),

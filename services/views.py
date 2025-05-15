@@ -394,8 +394,16 @@ def public_docs(request):
     'links':PublicCatLink.objects.all()
     }
     return render(request, template, context)
-#======================== consulting council documents pages================================
-
+#======================== natural reserves documents pages================================
+def nat_reserves_view(request):
+    template_name = 'public_docs/nat-reserves.html'
+    context ={}
+    context.update(
+        {'nat_reserves_docs': NatReservesDocsCategory.objects.all(),
+         'nat_reserves_links': NatReservesCatLink.objects.all(),
+        }
+    )
+    return render(request, template_name, context)
 #========================mng plan documents view =================
 def mng_plan_view(request):
     template_name = 'public_docs/mng-plan.html'

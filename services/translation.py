@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import Team, AttractionCategory, PublicCategory, Attraction,\
 BlogPostCategory, BlogPost, Event, Announcement, FloraCategory,\
 WildlifeCategory, Flora, SCouncil, MngPlanDocsCategory, ParkRegulationCategory,\
-Wildlife, VehicleCategory
+Wildlife, VehicleCategory, NatReservesDocsCategory
 
 
 class AttractionCatTranslationOptions(TranslationOptions):
@@ -33,6 +33,8 @@ class SCouncilTranslationOptions(TranslationOptions):
     fields = ('interest',)
 class MngPlanDocsCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
+class NatReservesDocsCategoryTranslationOptions(TranslationOptions):
+    fields = ('title', 'text',)
 class ParkRegulationCategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
 class VehicleCategoryTranslationOptions(TranslationOptions):
@@ -51,5 +53,6 @@ translator.register(Flora, FloraTranslationOptions)
 translator.register(Wildlife, WildlifeTranslationOptions)
 translator.register(SCouncil, SCouncilTranslationOptions)
 translator.register(MngPlanDocsCategory, MngPlanDocsCategoryTranslationOptions)
+translator.register(NatReservesDocsCategory, NatReservesDocsCategoryTranslationOptions)
 translator.register(ParkRegulationCategory, ParkRegulationCategoryTranslationOptions)
 translator.register(VehicleCategory, VehicleCategoryTranslationOptions)

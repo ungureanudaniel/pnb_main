@@ -5,7 +5,7 @@ PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
 Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
 Flora, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
 ParkRegulationCategory, ParkRegulationCatLink,\
-Wildlife, VehicleCategory, AccessArea, AllowedVehicles
+Wildlife, VehicleCategory, AccessArea, AllowedVehicles, NatReservesDocsCategory, NatReservesCatLink
 class AttractionCategoryAdmin(admin.ModelAdmin):
     fields = ['name', 'name_ro', 'name_de']
 
@@ -71,6 +71,12 @@ class MngPlanDocsCategoryAdmin(admin.ModelAdmin):
 class MngPlanCatLinkAdmin(admin.ModelAdmin):
     list_display = ('year', 'category', 'link')
     fields = ['year', 'category', 'link']
+class NatReservesDocsCategoryAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
+class NatReservesCatLinkAdmin(admin.ModelAdmin):
+    list_display = ('year', 'category', 'link')
+    fields = ['year', 'category', 'link']
 class ParkRegulationCategoryAdmin(admin.ModelAdmin):
     list_display = ('title',)
     fields = ['title', 'title_ro', 'title_de', 'text', 'text_ro', 'text_de']
@@ -103,6 +109,7 @@ admin.site.register(SCouncil, SCouncilAdmin)
 admin.site.register(PublicDocsDownloaderEntity, PublicDocsDownloaderEntityAdmin)
 admin.site.register(MngPlanCatLink, MngPlanCatLinkAdmin)
 admin.site.register(MngPlanDocsCategory, MngPlanDocsCategoryAdmin)
+admin.site.register(NatReservesDocsCategory, NatReservesDocsCategoryAdmin)
+admin.site.register(NatReservesCatLink, NatReservesCatLinkAdmin)
 admin.site.register(ParkRegulationCatLink, ParkRegulationCatLinkAdmin)
-
 admin.site.register(ParkRegulationCategory, ParkRegulationCategoryAdmin)

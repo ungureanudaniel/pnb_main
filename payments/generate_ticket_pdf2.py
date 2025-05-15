@@ -23,7 +23,7 @@ def ticket_nr(y):
 
 def save_pdf_to_location(pdf_data, file_path):
     """
-    Save the PDF data to a physical location on the hard drive.
+    Save the PDF data to a physical location on the hard drive. Not being used in production.
     
     Args:
         pdf_data: Binary data of the PDF.
@@ -42,18 +42,7 @@ def save_pdf_to_location(pdf_data, file_path):
     
 def generate_pdf_ticket(data):
     """
-        Save the PDF data to a physical location on the hard drive.
-        
-        Args:
-            pdf_data: Binary data of the PDF.
-            file_path: Path where the PDF should be saved.
-            
-        Returns:
-            True if the PDF was successfully saved, False otherwise.
-    """
-    from io import BytesIO
-    """
-    Generate a PDF ticket with background image and other dynamic content.
+    Generate a PDF ticket with background image and other dynamic content, without saving locally.
 
     Args:
         data (dict): Dictionary containing ticket data.
@@ -165,26 +154,27 @@ def generate_pdf_ticket(data):
     buffer.close()
     return pdf
 
-if __name__ == "__main__":
-    y = 3
-    x = 6
-    series='DBPNO009235'
-    file_nr = f"{series}"
-    data = {            
-                        "qr":series,
-                        "first_name":'Vlad',
-                        "last_name":'Craita',
-                        "file":'ticket-{}.pdf'.format(file_nr),
-                        "series":series,
-                        "amount": 1,#in production need to divide by 10
-                        "validity": datetime.today().date() + timedelta(days=90),
-                        'title':"TICHET DE VIZITATOR",
-                        'background_image_path':r"ticket_logos/ticket_bg.png",
-                        "bucegi_logo": r'ticket_logos/bucegi2.png',
-                        "rnp_logo": r'ticket_logos/rnp-romsilva3.png',
-                        "company_name":r'RNP ROMSILVA',
-                        "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
+# if __name__ == "__main__":
+#     y = 3
+#     x = 6
+#     series='DBPNO010392'
+#     file_nr = f"{series}"
+#     data = {            
+#                         "qr":series,
+#                         "first_name":'Irinel',
+#                         "last_name":'Stoica',
+#                         "file":'ticket-{}.pdf'.format(file_nr),
+#                         "series":series,
+#                         "amount": 1,#in production need to divide by 10
+#                         # "validity": datetime.today().date() + timedelta(days=90),
+#                         "validity": datetime.strptime("2025-05-03", "%Y-%m-%d").date() + timedelta(days=90),
+#                         'title':"TICHET DE VIZITATOR",
+#                         'background_image_path':r"ticket_logos/ticket_bg.png",
+#                         "bucegi_logo": r'ticket_logos/bucegi2.png',
+#                         "rnp_logo": r'ticket_logos/rnp-romsilva3.png',
+#                         "company_name":r'RNP ROMSILVA',
+#                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
 
-                    }
-    pdf= generate_pdf_ticket(data)
-    save_pdf_to_location(pdf,"tickets/{}".format(data['file']))
+#                     }
+#     pdf= generate_pdf_ticket(data)
+#     save_pdf_to_location(pdf,"tickets/{}".format(data['file']))

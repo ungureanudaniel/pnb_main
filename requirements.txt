@@ -3,6 +3,7 @@ attrs==22.2.0
 beautifulsoup4==4.12.0
 branca==0.5.0
 cachetools==4.2.4
+celery==5.5.2
 certifi==2022.12.7
 cffi==1.15.1
 charset-normalizer==2.0.12
@@ -44,6 +45,7 @@ python-dateutil==2.8.2
 python-dotenv==0.19.1
 python-memcached==1.59
 pytz==2022.7.1
+redis==5.0.8
 requests==2.27.1
 rsa==4.9
 Shapely==1.8.5.post1

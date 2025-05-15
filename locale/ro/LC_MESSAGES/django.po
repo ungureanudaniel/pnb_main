@@ -60,6 +60,9 @@ msgstr "Romanian"
 #: .\services\base.html.py:210
 msgid "Management Plan"
 msgstr "Plan de Management"
+#: .\services\base.html.py:211
+msgid "Natural Reserves"
+msgstr "Rezervații Naturale"
 #: .\services\base.html.py:212
 msgid "Park Regulations"
 msgstr "Regulament Parc"
@@ -2857,6 +2860,9 @@ msgstr "Administrație"
 #: services/templates/public_docs/mng-plan.html: 16
 msgid "<span>Management</span><span> <br> Plan</span>"
 msgstr "<span>Plan de</span><span><br> Management</span>"
+#: services/templates/public_docs/nat-reserves.html: 16
+msgid "<span>Natural</span><span> <br> Reserves</span>"
+msgstr "<span>Rezervații</span><span><br> Naturale</span>"
 #: services/templates/public_docs/park-regulation.html: 16
 msgid "<span>Park</span><span> <br> Regulations</span>"
 msgstr "<span>Regulament</span><span> <br> Parc</span>"

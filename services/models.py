@@ -175,6 +175,41 @@ class MngPlanCatLink(models.Model):
 
     def __str__(self):
         return self.year
+#================Natural reserves docs Category models=====================================
+class NatReservesDocsCategory(models.Model):
+    """
+    This class creates database tables for categories for each natural reserves documents
+    category for the administration of bucegi natural park
+    """
+    title = models.CharField(max_length=70)
+    text = RichTextField()
+    slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Natural Reserves Document'
+        verbose_name_plural = "Natural Reserves Documents"
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.slug
+#================Mng plan docs links models=====================================
+class NatReservesCatLink(models.Model):
+    """
+    This class creates database tables for download links per years for each natural reserves
+    documents category, linked by foreignkey to NatReservesDocsCategory
+    """
+    year = models.CharField(max_length=4)
+    category = models.ForeignKey(NatReservesDocsCategory, on_delete=models.CASCADE)
+    link = models.FileField(upload_to='public_docs/natural_reserves/%d_%b_%Y/', max_length=300, blank =True, null=True)
+
+    class Meta:
+        verbose_name = 'Natural Reserves Documents Link'
+        verbose_name_plural = "Natural Reserves Documents Links"
+        ordering = ["-year"]
+
+    def __str__(self):
+        return self.year
 #================Mng plan docs Category models=====================================
 class ParkRegulationCategory(models.Model):
     """
