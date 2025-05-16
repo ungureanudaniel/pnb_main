@@ -18,7 +18,8 @@ from urllib.parse import urlencode
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.units import mm
 from .generate_ticket_pdf2 import generate_pdf_ticket
-
+import logging
+logger = logging.getLogger(__name__)
 #--------------------------------------------------
 warnings.filterwarnings('ignore', message='.*cryptography', )
 #------------euplatesc imports--------------------------------
@@ -327,8 +328,6 @@ def ticket_invoice(request):
     if payment:
         # Query the Ticket objects related to the payment
         tickets = Ticket.objects.filter(payment_id=payment_id)
-        # hcaptcha = CaptchaForm()
-        form = CaptchaForm(request.POST)
         
         context = {
             'price': payment.price,
@@ -338,22 +337,21 @@ def ticket_invoice(request):
             'phone':payment.phone,
             'email':payment.email,
             'address':payment.address,
-            'form': form,
             }
         if request.method == 'POST':
-            if form.is_valid():
-                from django.template.loader import render_to_string
-                from django.utils.html import strip_tags
-                fname = request.POST['fname']
-                lname = request.POST['lname']
-                email = request.POST['email']
-                phone = request.POST['phone']
-                cnp = request.POST['cnp']
+            
+            from django.template.loader import render_to_string
+            from django.utils.html import strip_tags
+            fname = request.POST['fname']
+            lname = request.POST['lname']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            cnp = request.POST['cnp']
 
-                ticket_series_list = [ticket.ticket_series for ticket in tickets]
+            ticket_series_list = [ticket.ticket_series for ticket in tickets]
 
-                #====send email with invoicing data to bucegipark@gmail.com======
-                email_body = render_to_string(
+            #====send email with invoicing data to bucegipark@gmail.com======
+            email_body = render_to_string(
                     'mails/visitor_ticket_invoice_email.html', {
                         'buyer_fname': fname,
                         'buyer_lname': lname,
@@ -365,7 +363,7 @@ def ticket_invoice(request):
                         'price': payment.price,
                         'quantity': payment.quantity,
                         })
-                email = EmailMultiAlternatives(
+            email = EmailMultiAlternatives(
                                                 subject=_("Factură tichete vizitator"),
                                                 body= email_body,
                                                 from_email= settings.EMAIL_HOST_USER,
@@ -373,22 +371,21 @@ def ticket_invoice(request):
                                                 headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
                             )
                             # Set the content subtype to HTML
-                email.content_subtype = 'html'
-                email.attach_alternative(email_body, "text/html")
-                email.send()
-                # Clear the session after retrieving payment_id
-                request.session.clear()
-                messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
-                return redirect('checkout')
-            else:
-                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-                return redirect('home')
+            email.content_subtype = 'html'
+            email.attach_alternative(email_body, "text/html")
+            email.send()
+            # Clear the session after retrieving payment_id
+            request.session.clear()
+            messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
+            return redirect('checkout')
         else:
-            form = CaptchaForm()
+            messages.warning(request, _("Failed! Please fill in the captcha field again!"))
+            return redirect('home')
     else:
         # Handle case where payment does not exist
         messages.error(request, _("Payment not found. Please contact support at daniel.ungureanu@bucegipark.ro"))
     return render(request, template, context)
+
 #==============pay_failure_view=================
 def pay_failure_view(request):
     template = "payments/payment-failure.html"
