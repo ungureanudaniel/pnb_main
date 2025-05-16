@@ -214,14 +214,8 @@ DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WebP': ".WebP"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 #==============recaptcha keys===============================
 RECAPTCHA_REQUIRED = not DEBUG
-if DEBUG:
-    # Test keys (always validate as successful)
-    RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
-    RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
-else:
-    # Production keys
-    RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PRODKEY')
-    RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRODSECRET')
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PRODKEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRODSECRET')
 if os.getenv('DEVELOPMENT') == 'True':
     SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 #================EU PLATESC KEYS============================
