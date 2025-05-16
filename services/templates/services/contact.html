@@ -1,7 +1,6 @@
 {% extends "services/base.html" %}
 {% load static %}
 {% load i18n %}
-
 {% block content %}
 			<!-- header end-->
 			<main class="main">
@@ -65,7 +64,9 @@
 										<div class="col-12">
 											{{ message_form.text }}
 										</div>
-										<div class="g-recaptcha" data-sitekey="6Le0NIIpAAAAAKt12jCQLOhsGoWrqN9h2-9dMf2B"></div>
+										<div class="col-12">{{ form.hcaptcha }}</div>
+										
+										<!-- <div class="g-recaptcha" data-sitekey="{{ HCAPTCHA_SITEKEY }}"></div> -->
 
 										<div class="col-12 text-center">
 											<input class="form__submit" type="submit" value="{% trans 'Send' %}"/>

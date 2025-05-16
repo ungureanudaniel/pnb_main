@@ -3,12 +3,24 @@ from .models import Testimonial, AttractionCategory, Attraction, Contact,\
 Comment, PublicDocsDownloaderEntity
 # from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
-from django_recaptcha.fields import ReCaptchaField
-  
+# from django_recaptcha.fields import ReCaptchaField
+from hcaptcha.fields import hCaptchaField
   
 class CaptchaForm(forms.Form):
-    captcha = ReCaptchaField()
+    hcaptcha = hCaptchaField()
 
+class ContactForm(forms.ModelForm):
+    hcaptcha = hCaptchaField()
+    class Meta:
+        model = Contact
+        fields = ['author', 'email', 'phone', 'subject', 'text']
+        widgets = {
+            'author': forms.TextInput(attrs = {'class': 'form__field', 'placeholder': _('Full name...')}),
+            'email': forms.EmailInput(attrs = {'class': 'form__field', 'placeholder': 'Email...'}),
+            'phone': forms.TextInput(attrs = {'class': 'form__field', 'placeholder': _('Phone number...')}),
+            'subject': forms.TextInput(attrs= {'class': 'form__field', 'placeholder': _('Subject...')}),
+            'text': forms.Textarea(attrs= {'class': 'form__field form__message', 'placeholder': _('Your message...')}),
+    }
 class CommentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
@@ -95,17 +107,4 @@ class TestimonialForm(forms.ModelForm):
 
 
         }
-class ContactForm(forms.ModelForm):
 
-    class Meta:
-        model = Contact
-        fields = ['author', 'email', 'phone', 'subject', 'text']
-        widgets = {
-            'author': forms.TextInput(attrs = {'class': 'form__field', 'placeholder': _('Full name...')}),
-            'email': forms.EmailInput(attrs = {'class': 'form__field', 'placeholder': 'Email...'}),
-            'phone': forms.TextInput(attrs = {'class': 'form__field', 'placeholder': _('Phone number...')}),
-            'subject': forms.TextInput(attrs= {'class': 'form__field', 'placeholder': _('Subject...')}),
-            'text': forms.TextInput(attrs= {'class': 'form__field form__message', 'placeholder': _('Your message...')}),
-
-
-        }

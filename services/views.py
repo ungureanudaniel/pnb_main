@@ -113,6 +113,7 @@ def subscription(request):
     context = {
         "initial_email": initial_email,
         "captcha_form": captcha_form,
+        'HCAPTCHA_SITEKEY': settings.HCAPTCHA_SITEKEY,
     }
     if request.POST.get('form-type') == "subscribe":
                 newsletter_email = request.POST.get('subscriber')
@@ -179,7 +180,7 @@ def contacts_view(request):
     else:
         message_form = ContactForm()
         form = CaptchaForm()
-    return render(request, template_name, {'message_form':message_form, 'form': form, 'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,})
+    return render(request, template_name, {'message_form':message_form, 'form': form,})
 #======================== coming soon view================================
 def coming_soon(request):
     template = 'services/coming-soon.html'

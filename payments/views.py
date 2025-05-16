@@ -322,11 +322,12 @@ def ticket_invoice(request):
     # Query the Payment object with the retrieved payment_id
     payment = Payment.objects.filter(payment_id=payment_id).first()
 
+    
     # Check if payment exists before accessing its attributes
     if payment:
         # Query the Ticket objects related to the payment
         tickets = Ticket.objects.filter(payment_id=payment_id)
-        #create form instance
+        # hcaptcha = CaptchaForm()
         form = CaptchaForm(request.POST)
         
         context = {
@@ -338,7 +339,6 @@ def ticket_invoice(request):
             'email':payment.email,
             'address':payment.address,
             'form': form,
-            'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,
             }
         if request.method == 'POST':
             if form.is_valid():

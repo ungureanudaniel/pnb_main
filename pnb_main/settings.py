@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'hitcount',
     'django.contrib.sites',
-    'django_recaptcha',
+    # 'django_recaptcha',
+    'hcaptcha',
     'django_countries',
     'debug_toolbar',
     #user apps
@@ -213,9 +214,8 @@ DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WebP'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WebP': ".WebP"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 #==============recaptcha keys===============================
-RECAPTCHA_REQUIRED = not DEBUG
-RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PRODKEY')
-RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRODSECRET')
+HCAPTCHA_SITEKEY = os.getenv('HCAPTCHA_SITE_KEY')
+HCAPTCHA_SECRET = os.getenv('HCAPTCHA_SECRET_KEY')
 if os.getenv('DEVELOPMENT') == 'True':
     SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 #================EU PLATESC KEYS============================
