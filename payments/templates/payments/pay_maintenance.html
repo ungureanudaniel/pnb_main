@@ -1,0 +1,85 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main class="main">
+    <!-- Maintenance Banner Start -->
+    <section class="welcome-primary">
+        <picture>
+            <source srcset="{% static 'img/backgrounds/rhododendron.webp' %}" media="(min-width: 992px)"/>
+            <img class="img--bg" src="{% static 'img/backgrounds/rhododendron.webp' %}" alt="Bucegi Natural Park"/>
+        </picture>
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="align-container">
+                        <div class="align-container__item">
+                            <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+                            <h1 class="welcome-primary__title">
+                                <span>{% trans 'Payment System Maintenance' %}</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Maintenance Banner End -->
+
+    <!-- Maintenance Content Start -->
+    <section class="section maintenance-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="maintenance-icon mb-4">
+                        <i class="fas fa-tools" style="font-size: 4rem; color: #f39c12;"></i>
+                    </div>
+                    <h2 class="mb-3">{% trans 'Temporarily Unavailable' %}</h2>
+                    <p class="lead mb-4">
+                        {% trans 'We apologize for the inconvenience. Our payment system is currently undergoing scheduled maintenance to serve you better.' %}
+                    </p>
+                    
+                    <div class="maintenance-details bg-light p-4 rounded mb-5">
+                        <h4 class="mb-3">{% trans 'Expected Availability' %}</h4>
+                        <p>
+                            <i class="far fa-clock mr-2"></i>
+                            <strong>{% trans 'The system will be back online soon' %} </strong>
+                        </p>
+                        <p>
+                            <i class="fas fa-info-circle mr-2"></i>
+                            {% trans 'During this time, you can still visit the park and purchase tickets at the entrance.' %}
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h4 class="mb-3">{% trans 'Need Assistance?' %}</h4>
+                        <p>
+                            <i class="fas fa-envelope mr-2"></i>
+                            {% trans 'Email us at:' %} <a href="mailto:contact@bucegipark.ro">contact@bucegipark.ro</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Maintenance Content End -->
+</main>
+
+<style>
+    .maintenance-section {
+        padding: 60px 0;
+    }
+    .maintenance-icon i {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .maintenance-details {
+        border-left: 4px solid #f39c12;
+    }
+</style>
+{% endblock %}

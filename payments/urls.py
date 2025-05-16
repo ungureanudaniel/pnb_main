@@ -2,7 +2,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.decorators.csrf import csrf_exempt
-from .views import checkout_view, pay_success_view, pay_failure_view, check_status, ticket_invoice
+from .views import checkout_view, pay_success_view, pay_failure_view, check_status, ticket_invoice, \
+pay_maintenance
 
 urlpatterns = [
     #------ general urls-------------------
@@ -12,7 +13,7 @@ urlpatterns = [
     path('payment-failure/', csrf_exempt(pay_failure_view), name="pay-failure"),
     path('status/', csrf_exempt(check_status), name='status'),
     path('ticket-invoice/', ticket_invoice, name='ticket_invoice'),
-
+    path('payment_maintenance/', pay_maintenance, name='pay_maintenance'),
     ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

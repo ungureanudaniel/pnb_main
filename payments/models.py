@@ -53,7 +53,7 @@ class Ticket(models.Model):
     buyer_fname = models.CharField(max_length=100)
     buyer_lname = models.CharField(max_length=100)
     ticket_series =  models.CharField(max_length=5, default="DBPN1")
-    ticket_nr = models.CharField(max_length=8)
+    ticket_nr = models.CharField(max_length=15)
     start_date = models.DateTimeField(default=timezone.now(), blank=True)
     expiry_date = models.DateTimeField(default=timezone.now() + timedelta(days=90), blank=True)
     # ticket_pdf = models.BinaryField()

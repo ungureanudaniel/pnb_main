@@ -48,9 +48,12 @@ def euplatesc_mac(key,params):
 # #----------generate unique code for email subscription conf--------------------
 # def ticket_nr(y):
 #     return ''.join(random.choice(string.ascii_letters) for x in range(y))
-
+def pay_maintenance(request):
+    return render(request, 'payments/pay_maintenance.html')
 #================= checkout view =========================
 def checkout_view(request):
+    if getattr(settings, 'PAYMENT_PAGE_MAINTENANCE', False):
+        return redirect('pay_maintenance')  # Name of your maintenance URL
     template = "payments/ticket-checkout.html"
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
     # price = request.session.get('price')
@@ -155,22 +158,24 @@ def check_status(request):
             # print("Step 2: Successful payment instance fetched for changing status variable! Payment details below")
             # print(f"Payment timestamp is : {payment.timestamp.date()}")
             # print(f"current id is {payment.payment_id} and status: {payment.status}")
-            if request.POST['action'] == '0' and payment.status == 'pending':
+            if request.POST['action'] == settings.PAYMENT_PROVIDER_SUCCESS_CODE and payment.status == 'pending':
                 payment.status = 'successful'
                 payment.bank_message = request.POST['message']
                 payment.save()
                 
                 try:
-                    # this must be CHANGED in production...its only to simulate several tickets at once
+                    # this must be CHANGED in production...it only to simulates several tickets at once
                     amount = payment.price
                     print(f"Number of tickets to purchase: {amount}")
                     tickets =[]
-                    for i in range(int(amount/10)):
+                    for i in range(int(amount/settings.TICKET_PRICE)):
                         #----------generate new subsequent ticket series and nr
+                        # Extract first 6 chars from UUID (e.g., "514dae")
+                        uuid_prefix = payment.payment_id.replace("-", "")[:4]  # Removes hyphens first
                         ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
                         ticket_series="DBPNO"
                         ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
-                        ticket_id = f"{ticket_series}{ticket_nr}"
+                        ticket_id = f"{ticket_series}{uuid_prefix}{ticket_nr}"
                         validity = payment.timestamp.date() + timezone.timedelta(days=90)
                         # create dictionary with all the necessary data for the ticket generator
                         data = {

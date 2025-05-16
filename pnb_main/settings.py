@@ -227,6 +227,9 @@ CAPTCHA_BACKGROUND_COLOR = "#2eb872"
 CAPTCHA_FOREGROUND_COLOR = "black"
 #================django payments settings=====================
 TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
+TICKET_PRICE = 10
+PAYMENT_PROVIDER_SUCCESS_CODE = '0'
+PAYMENT_PAGE_MAINTENANCE = os.getenv('PAYMENT_PAGE_MAINTENANCE')
 BASE_URL = os.getenv('BASE_URL')
 #=====================LOGGING  ERORRS=========================
 LOGGING = {
