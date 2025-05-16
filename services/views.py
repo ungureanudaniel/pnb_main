@@ -179,7 +179,7 @@ def contacts_view(request):
     else:
         message_form = ContactForm()
         form = CaptchaForm()
-    return render(request, template_name, {'message_form':message_form, 'form': form})
+    return render(request, template_name, {'message_form':message_form, 'form': form, 'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,})
 #======================== coming soon view================================
 def coming_soon(request):
     template = 'services/coming-soon.html'

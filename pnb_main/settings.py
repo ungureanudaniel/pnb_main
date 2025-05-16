@@ -212,8 +212,15 @@ DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'WebP'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'WebP': ".WebP"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 #==============recaptcha keys===============================
-RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
-RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
+RECAPTCHA_REQUIRED = not DEBUG
+if DEBUG:
+    # Test keys (always validate as successful)
+    RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_KEY')
+    RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_SECRET')
+else:
+    # Production keys
+    RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PRODKEY')
+    RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRODSECRET')
 if os.getenv('DEVELOPMENT') == 'True':
     SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 #================EU PLATESC KEYS============================
@@ -226,10 +233,11 @@ CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"
 CAPTCHA_FOREGROUND_COLOR = "black"
 #================django payments settings=====================
+PAYMENT_TEST_MODE = os.getenv('PAYMENT_TEST_MODE', 'False').lower() == 'true'
 TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
 TICKET_PRICE = 10
 PAYMENT_PROVIDER_SUCCESS_CODE = '0'
-PAYMENT_PAGE_MAINTENANCE = os.getenv('PAYMENT_PAGE_MAINTENANCE')
+PAYMENT_PAGE_MAINTENANCE = os.getenv('PAYMENT_MAINTENANCE', 'False').lower() == 'true'
 BASE_URL = os.getenv('BASE_URL')
 #=====================LOGGING  ERORRS=========================
 LOGGING = {

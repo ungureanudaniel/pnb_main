@@ -404,7 +404,7 @@
 			function quantity() {
 
 				const count = $('.cart-item__count')
-				const maxIncrement = 10; // Maximum allowed increment
+				const maxIncrement = 10; // Maximum allowed increment because too many pdf tickets won't fit in the email
 
 				if (!count.length) return
 

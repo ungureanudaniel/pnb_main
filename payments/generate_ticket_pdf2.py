@@ -154,27 +154,29 @@ def generate_pdf_ticket(data):
     buffer.close()
     return pdf
 
-# if __name__ == "__main__":
-#     y = 3
-#     x = 6
-#     series='DBPNO010392'
-#     file_nr = f"{series}"
-#     data = {            
-#                         "qr":series,
-#                         "first_name":'Irinel',
-#                         "last_name":'Stoica',
-#                         "file":'ticket-{}.pdf'.format(file_nr),
-#                         "series":series,
-#                         "amount": 1,#in production need to divide by 10
-#                         # "validity": datetime.today().date() + timedelta(days=90),
-#                         "validity": datetime.strptime("2025-05-03", "%Y-%m-%d").date() + timedelta(days=90),
-#                         'title':"TICHET DE VIZITATOR",
-#                         'background_image_path':r"ticket_logos/ticket_bg.png",
-#                         "bucegi_logo": r'ticket_logos/bucegi2.png',
-#                         "rnp_logo": r'ticket_logos/rnp-romsilva3.png',
-#                         "company_name":r'RNP ROMSILVA',
-#                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
+if __name__ == "__main__":
+    y = 3
+    x = 6
+    TICKET_CUR_NR = '000001'
+    PAYMENT_ID = 'f0a68b'
+    series='DBPNO-{}{}'.format(PAYMENT_ID, TICKET_CUR_NR)
+    file_nr = f"{series}"
+    data = {            
+                        "qr":series,
+                        "first_name":'Irinel',
+                        "last_name":'Stoica',
+                        "file":'ticket-{}.pdf'.format(file_nr),
+                        "series":series,
+                        "amount": 1,#in production need to divide by 10
+                        # "validity": datetime.today().date() + timedelta(days=90),
+                        "validity": datetime.strptime("2025-05-03", "%Y-%m-%d").date() + timedelta(days=90),
+                        'title':"TICHET DE VIZITATOR",
+                        'background_image_path':r"ticket_logos/ticket_bg.png",
+                        "bucegi_logo": r'ticket_logos/bucegi2.png',
+                        "rnp_logo": r'ticket_logos/rnp-romsilva3.png',
+                        "company_name":r'RNP ROMSILVA',
+                        "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
 
-#                     }
-#     pdf= generate_pdf_ticket(data)
-#     save_pdf_to_location(pdf,"tickets/{}".format(data['file']))
+                    }
+    pdf= generate_pdf_ticket(data)
+    save_pdf_to_location(pdf,"tickets/{}".format(data['file']))

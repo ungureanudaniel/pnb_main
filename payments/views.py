@@ -52,20 +52,44 @@ def pay_maintenance(request):
     return render(request, 'payments/pay_maintenance.html')
 #================= checkout view =========================
 def checkout_view(request):
+    """
+    
+    This function handles the checkout process for purchasing tickets in a Django web application. It includes the following steps:
+    1. **Maintenance Check**:                                       
+        - Checks if the payment page is under maintenance. If so, it redirects to a maintenance page.
+    2. **Template Selection**:
+        - Sets the template for the checkout page.
+    3. **Form Handling**:
+            
+        - Initializes a payment form instance.
+        - If the request method is POST, it validates the form data.
+        - If the form is valid, it creates a new payment object and saves it to the database.
+        - Generates parameters for the payment gateway (Euplatesc) and calculates the hash for security.
+        - Redirects the user to the payment gateway with the generated parameters.
+    4. **Error Handling**:
+        - If the form is invalid, it displays error messages and redirects to the checkout page.
+        - If an exception occurs during the process, it logs the error and redirects to the checkout page.
+    5. **Rendering the Template**:
+        - If the request method is not POST, it renders the checkout template with the payment form.
+    """
+    # Check if the payment page is under maintenance
     if getattr(settings, 'PAYMENT_PAGE_MAINTENANCE', False):
-        return redirect('pay_maintenance')  # Name of your maintenance URL
+        return redirect('pay_maintenance') 
     template = "payments/ticket-checkout.html"
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
     # price = request.session.get('price')
     # quantity = request.session.get('tickets')
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!
 
-    #test credentials
-    key = settings.TEST_KEY
-    mid = settings.TEST_MID
-    #euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
-    # key = settings.KEY
-    # mid = settings.MID
+    # Check if the payment page is in test mode or production mode
+    if settings.PAYMENT_TEST_MODE == True: 
+        # test credentials
+        key = settings.TEST_KEY
+        mid = settings.TEST_MID
+    elif settings.PAYMENT_TEST_MODE == False:
+        # euplatesc account credentials ==== must be imported for env variable in production !!!!!!!!!!!
+        key = settings.KEY
+        mid = settings.MID        
     params= {}
     #assign form instance to variable
     form = PaymentForm(request.POST or None)
@@ -171,10 +195,10 @@ def check_status(request):
                     for i in range(int(amount/settings.TICKET_PRICE)):
                         #----------generate new subsequent ticket series and nr
                         # Extract first 6 chars from UUID (e.g., "514dae")
-                        uuid_prefix = payment.payment_id.replace("-", "")[:4]  # Removes hyphens first
-                        ticket_nr = "%06d" % (Ticket.objects.all().count() + 1)
+                        uuid_prefix = str(payment.payment_id).replace("-", "")[:6]  # Removes hyphens first
+                        ticket_nr = "%06d" % (Ticket.objects.all().count() + 1) 
                         ticket_series="DBPNO"
-                        ticket_file_name = f"pnb-ticket-{ticket_series}{ticket_nr}.pdf"
+                        ticket_file_name = f"pnb-ticket-{ticket_series}{uuid_prefix}{ticket_nr}.pdf"
                         ticket_id = f"{ticket_series}{uuid_prefix}{ticket_nr}"
                         validity = payment.timestamp.date() + timezone.timedelta(days=90)
                         # create dictionary with all the necessary data for the ticket generator
@@ -205,10 +229,9 @@ def check_status(request):
                                             buyer_fname=payment.buyer_fname,
                                             buyer_lname=payment.buyer_lname,
                                             ticket_type = "3 luni",
-                                            ticket_series=ticket_series,
-                                            ticket_nr=ticket_nr,
-                                            
-                                            )
+                                            ticket_series=f"{ticket_series}{uuid_prefix}",
+                                            ticket_nr=f"{ticket_nr}",
+                                        )
                             new_ticket.save()
                         except Exception as e:
                             messages.warning(request, f"Ticket creation error! Details:{e}")
@@ -231,8 +254,8 @@ def check_status(request):
                         # Set the content subtype to HTML
                         email.content_subtype = 'html'
                         # Attach each PDF ticket to the email
-                        for i, pdf_ticket in enumerate(tickets, start=1):
-                            ticket_name = f'ticket_{i}.pdf'
+                        for i, (pdf_ticket, ticket_data) in enumerate(zip(tickets, Ticket.objects.filter(payment_id=payment.payment_id)), start=1):
+                            ticket_name = f'{ticket_data.ticket_series}{ticket_data.ticket_nr}.pdf'
                             part = MIMEBase('application', 'octet-stream')
                             part.set_payload(pdf_ticket)
                             encoders.encode_base64(part)
@@ -248,11 +271,9 @@ def check_status(request):
                         return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
                     except Exception as e:
                         messages.warning(request, f"Application error:{e}")
-                        print(f"Cannot send email because:{e}")
                     
                 except Exception as e:
                     messages.warning(request, f"Application error:{e}")
-                    print(e)
                     return redirect(f'{settings.BASE_URL}/tickets/payment-failure/')
                 
             else:
@@ -280,7 +301,6 @@ def check_status_test(request):
 #==============pay_success_view=================
 def pay_success_view(request):
     template = "payments/payment-success.html"
-    print(request.POST)
     # Store payment_id in session
     request.session['payment_id'] = request.POST['invoice_id']
 
@@ -293,15 +313,13 @@ def pay_success_view(request):
 #==============ticket invoice view=================
 def ticket_invoice(request):
     template = "payments/ticket-invoice.html"
-    
+    context = {}
     # Retrieve payment_id from session
     # payment = Payment.objects.last() #this method is not the best because if another client does a payment before the previous client finishes sending invoice details we get into trouble
     payment_id = request.session.get('payment_id')
-    print(f"Payment is : {payment_id}")
 
     # Query the Payment object with the retrieved payment_id
     payment = Payment.objects.filter(payment_id=payment_id).first()
-    print(payment.price)
 
     # Check if payment exists before accessing its attributes
     if payment:
@@ -319,13 +337,14 @@ def ticket_invoice(request):
             'email':payment.email,
             'address':payment.address,
             'form': form,
+            'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,
             }
         if request.method == 'POST':
             if form.is_valid():
                 from django.template.loader import render_to_string
                 from django.utils.html import strip_tags
                 fname = request.POST['fname']
-                lname = request.POST['fname']
+                lname = request.POST['lname']
                 email = request.POST['email']
                 phone = request.POST['phone']
                 cnp = request.POST['cnp']
@@ -334,7 +353,7 @@ def ticket_invoice(request):
 
                 #====send email with invoicing data to bucegipark@gmail.com======
                 email_body = render_to_string(
-                    'mails/visitor_ticket_email.html', {
+                    'mails/visitor_ticket_invoice_email.html', {
                         'buyer_fname': fname,
                         'buyer_lname': lname,
                         'cnp': cnp,
@@ -346,14 +365,16 @@ def ticket_invoice(request):
                         'quantity': payment.quantity,
                         })
                 email = EmailMultiAlternatives(
-                                                _("Factură tichete vizitator"),
-                                                email_body,
-                                                settings.EMAIL_HOST_USER,
-                                                (settings.ACCOUNTANT_EMAIL,),
+                                                subject=_("Factură tichete vizitator"),
+                                                body= email_body,
+                                                from_email= settings.EMAIL_HOST_USER,
+                                                to= (settings.ACCOUNTANT_EMAIL,),
                                                 headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
                             )
                             # Set the content subtype to HTML
                 email.content_subtype = 'html'
+                email.attach_alternative(email_body, "text/html")
+                email.send()
                 # Clear the session after retrieving payment_id
                 request.session.clear()
                 messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
