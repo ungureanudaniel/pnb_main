@@ -63,6 +63,33 @@ msgstr "Plan de Management"
 #: .\services\base.html.py:211
 msgid "Natural Reserves"
 msgstr "Rezervații Naturale"
+#: .\payments\pay_maintenance.html.py:20
+msgid "Payment System Maintenance"
+msgstr "Sistem de Plăți în Mentenanță"
+#: .\payments\pay_maintenance.html:6
+msgid "We apologize for the inconvenience. Our payment system is currently undergoing scheduled maintenance to serve you better."
+msgstr "Ne cerem scuze pentru inconveniență. Sistemul nostru de plăți este în mentenanță programată pentru a vă servi mai bine."
+
+#: .\payments\pay_maintenance.html:10
+msgid "Expected Availability"
+msgstr "Disponibil din"
+
+#: .\payments\pay_maintenance.html:13
+msgid "The system will be back online soon"
+msgstr "Sistemul va fi din nou disponibil curând"
+
+#: .\payments\pay_maintenance.html:16
+msgid "During this time, you can still visit the park and purchase tickets at the entrance."
+msgstr "În acest interval, puteți vizita parcul și achiziționa bilete la intrare."
+
+#: .\payments\pay_maintenance.html:21
+msgid "Need Assistance?"
+msgstr "Aveți nevoie de ajutor?"
+
+#: .\payments\pay_maintenance.html:28
+msgid "Email us at:"
+msgstr "Scrie-ne la:"
+
 #: .\services\base.html.py:212
 msgid "Park Regulations"
 msgstr "Regulament Parc"

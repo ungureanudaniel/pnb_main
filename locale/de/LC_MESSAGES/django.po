@@ -68,6 +68,33 @@ msgstr "Höhe"
 #: .\services\base.html.py:189
 msgid "Language"
 msgstr "Sprache"
+#: .\payments\pay_maintenance.html.py:20
+msgid "Payment System Maintenance"
+msgstr "Wartungsarbeiten am Zahlungssystem"
+
+#: .\payments\pay_maintenance.html:6
+msgid "We apologize for the inconvenience. Our payment system is currently undergoing scheduled maintenance to serve you better."
+msgstr "Wir entschuldigen uns für die Unannehmlichkeiten. Unser Zahlungssystem wird derzeit gewartet, um Ihnen einen besseren Service zu bieten."
+
+#: .\payments\pay_maintenance.html:10
+msgid "Expected Availability"
+msgstr "Voraussichtlich wieder verfügbar"
+
+#: .\payments\pay_maintenance.html:13
+msgid "The system will be back online soon"
+msgstr "Das System wird in Kürze wieder verfügbar sein"
+
+#: .\payments\pay_maintenance.html:16
+msgid "During this time, you can still visit the park and purchase tickets at the entrance."
+msgstr "Während dieser Zeit können Sie den Park weiterhin besuchen und Tickets am Eingang kaufen."
+
+#: .\payments\pay_maintenance.html:21
+msgid "Need Assistance?"
+msgstr "Benötigen Sie Hilfe?"
+
+#: .\payments\pay_maintenance.html:28
+msgid "Email us at:"
+msgstr "Schreiben Sie uns an:"
 #: .\services\base.html.py:210
 msgid "Management Plan"
 msgstr "ManagementPlan"
