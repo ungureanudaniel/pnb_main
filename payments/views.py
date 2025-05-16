@@ -74,6 +74,7 @@ def checkout_view(request):
     """
     # Check if the payment page is under maintenance
     if getattr(settings, 'PAYMENT_PAGE_MAINTENANCE', False):
+        # raise Exception("Maintenance mode active!")
         return redirect('pay_maintenance') 
     template = "payments/ticket-checkout.html"
     #-------->MUST EDIT THIS to fetch ticket nr and price from session and not hardcoded<------- !!!!!!

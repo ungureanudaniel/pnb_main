@@ -4,6 +4,7 @@ from django.conf import settings
 from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
 from django.utils.translation import gettext_lazy as _
+from distutils.util import strtobool
 
 load_dotenv(verbose=True)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -237,7 +238,9 @@ PAYMENT_TEST_MODE = os.getenv('PAYMENT_TEST_MODE', 'False').lower() == 'true'
 TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
 TICKET_PRICE = 10
 PAYMENT_PROVIDER_SUCCESS_CODE = '0'
-PAYMENT_PAGE_MAINTENANCE = os.getenv('PAYMENT_MAINTENANCE', 'False').lower() == 'true'
+
+PAYMENT_PAGE_MAINTENANCE = bool(strtobool(os.getenv("PAYMENT_PAGE_MAINTENANCE", "False")))
+
 BASE_URL = os.getenv('BASE_URL')
 #=====================LOGGING  ERORRS=========================
 LOGGING = {
