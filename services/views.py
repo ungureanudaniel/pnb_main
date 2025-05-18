@@ -77,9 +77,7 @@ def add_testimonial(request):
 @cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def home(request):
     template = 'services/home.html'
-    captcha_form = CaptchaForm()
     context = {
-        "captcha_form": captcha_form
     }
     #handle post requests
     # if request.method == 'POST':
@@ -109,7 +107,6 @@ def subscription(request):
     template_name = 'services/subscribe.html'
     initial_email = request.GET.get('email', '')
     
-    captcha_form = CaptchaForm()
     context = {
         "initial_email": initial_email,
         "captcha_form": captcha_form,
@@ -145,42 +142,53 @@ def subscription(request):
                             messages.warning(request, _(f'Human verification failed.'))
     return render(request, template_name, context)
 #------------------------CONTACT apge------------------------------------CONTACT
-@cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def contacts_view(request):
     template_name = 'services/contact.html'
+    
     if request.method == "POST":
-        message_form = ContactForm(request.POST or None)
-        form = CaptchaForm(request.POST)
-        try:
-            if form.is_valid():
-                if message_form.is_valid():
-                    message_subject = message_form.cleaned_data.get('subject')
-                    message_author = message_form.cleaned_data.get('author')
-                    sender_email = message_form.cleaned_data.get('email')
-                    message = message_form.cleaned_data.get('text')
-                    #=======send email=======
-                    new_message = message_form.save(commit=False)
-                    new_message.timestamp = datetime.now()
-                    new_message.save()
-                    send_mail(message_subject, message, sender_email, ['bucegipark@gmail.com'], fail_silently=False)
-                    messages.success(request, _(f'Thank you for writing us {message_author}! We will answer as soon as possible.'))
-                    return redirect('/contact')
-                    # except Exception as e:
-                    #     messages.warning(request, f'Error: {e}!')
-                    #     return render(request, 'services/invalid_header.html',{})
-                    # return HttpResponseRedirect('/contact')
-                else:
-                    messages.warning(request, _("Failed! Please make sure your info is correct!"))
-                    return redirect('/contact')
-            else:
-                messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-                return redirect('/contact')
-        except Exception as e:
-            messages.warning(request, f"{e}")
+        message_form = ContactForm(request.POST)
+        if message_form.is_valid():
+            try:
+                message_subject = message_form.cleaned_data['subject']
+                message_author = message_form.cleaned_data['author']
+                sender_email = message_form.cleaned_data['email']
+                message = message_form.cleaned_data['text']
+                
+                # Save message
+                new_message = message_form.save(commit=False)
+                new_message.timestamp = timezone.now()
+                new_message.save()
+                
+                # Send email
+                send_mail(
+                    subject=message_subject,
+                    message=f"From: {message_author} ({sender_email})\n\n{message}",
+                    from_email=sender_email,
+                    recipient_list=['bucegipark@gmail.com'],
+                    fail_silently=False
+                )
+                
+                messages.success(
+                    request, 
+                    _(f'Thank you {message_author}! We will respond soon.')
+                )
+                return redirect('contact')
+                
+            except Exception as e:
+                messages.error(request,_(f'An error occurred: {str(e)}. Please try again later.'))
+                return redirect('contact')
+        else:
+            # Form is invalid - show errors in the template
+            messages.warning(
+                request,
+                _("Form invalid.")
+            )
+            return render(request, template_name, {'message_form': message_form})
+    
     else:
         message_form = ContactForm()
-        form = CaptchaForm()
-    return render(request, template_name, {'message_form':message_form, 'form': form,})
+    
+    return render(request, template_name, {'message_form': message_form})
 #======================== coming soon view================================
 def coming_soon(request):
     template = 'services/coming-soon.html'

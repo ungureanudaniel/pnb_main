@@ -323,35 +323,51 @@ def ticket_invoice(request):
     # Query the Payment object with the retrieved payment_id
     payment = Payment.objects.filter(payment_id=payment_id).first()
 
+    # Check if payment exists before accessing its attributes
+    if not payment:
+        messages.error(request, _("Payment not found. Please contact support at daniel.ungureanu@bucegipark.ro"))
+        return redirect('home')
+
+    # Check if the payment_id is in the session
+    tickets = Ticket.objects.filter(payment_id=payment_id)
     
     # Check if payment exists before accessing its attributes
-    if payment:
-        # Query the Ticket objects related to the payment
-        tickets = Ticket.objects.filter(payment_id=payment_id)
-        
-        context = {
-            'price': payment.price,
-            'quantity': payment.quantity,
-            'last_name': payment.buyer_lname,
-            'first_name': payment.buyer_fname,
-            'phone':payment.phone,
-            'email':payment.email,
-            'address':payment.address,
-            }
-        if request.method == 'POST':
+    # if payment:
+    #     # Query the Ticket objects related to the payment
+    #     tickets = Ticket.objects.filter(payment_id=payment_id)
+    
+    context = {
+        'price': payment.price,
+        'quantity': payment.quantity,
+        'last_name': payment.buyer_lname,
+        'first_name': payment.buyer_fname,
+        'phone': payment.phone,
+        'email': payment.email,
+        'address': payment.address,
+    }
+    # context = {
+    #     'price': payment.price,
+    #     'quantity': payment.quantity,
+    #     'last_name': payment.buyer_lname,
+    #     'first_name': payment.buyer_fname,
+    #     'phone':payment.phone,
+    #     'email':payment.email,
+    #     'address':payment.address,
+    #     }
+    if request.method == 'POST':
             
-            from django.template.loader import render_to_string
-            from django.utils.html import strip_tags
-            fname = request.POST['fname']
-            lname = request.POST['lname']
-            email = request.POST['email']
-            phone = request.POST['phone']
-            cnp = request.POST['cnp']
+        from django.template.loader import render_to_string
+        from django.utils.html import strip_tags
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        cnp = request.POST['cnp']
 
-            ticket_series_list = [ticket.ticket_series for ticket in tickets]
+        ticket_series_list = [ticket.ticket_series for ticket in tickets]
 
-            #====send email with invoicing data to bucegipark@gmail.com======
-            email_body = render_to_string(
+        #====send email with invoicing data to bucegipark@gmail.com======
+        email_body = render_to_string(
                     'mails/visitor_ticket_invoice_email.html', {
                         'buyer_fname': fname,
                         'buyer_lname': lname,
@@ -363,28 +379,23 @@ def ticket_invoice(request):
                         'price': payment.price,
                         'quantity': payment.quantity,
                         })
-            email = EmailMultiAlternatives(
-                                                subject=_("Factură tichete vizitator"),
-                                                body= email_body,
-                                                from_email= settings.EMAIL_HOST_USER,
-                                                to= (settings.ACCOUNTANT_EMAIL,),
-                                                headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
-                            )
-                            # Set the content subtype to HTML
-            email.content_subtype = 'html'
-            email.attach_alternative(email_body, "text/html")
-            email.send()
-            # Clear the session after retrieving payment_id
-            request.session.clear()
-            messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
-            return redirect('checkout')
-        else:
-            messages.warning(request, _("Failed! Please fill in the captcha field again!"))
-            return redirect('home')
-    else:
-        # Handle case where payment does not exist
-        messages.error(request, _("Payment not found. Please contact support at daniel.ungureanu@bucegipark.ro"))
-    return render(request, template, context)
+        email = EmailMultiAlternatives(
+            subject=_("Factură tichete vizitator"),
+            body= email_body,
+            from_email= settings.EMAIL_HOST_USER,
+            to= (settings.ACCOUNTANT_EMAIL,),
+            headers={"Message-ID": settings.TICKET_EMAIL_HEADER,'Content-type': 'text/html'},
+            )
+        # Set the content subtype to HTML
+        email.content_subtype = 'html'
+        email.attach_alternative(email_body, "text/html")
+        email.send()
+
+        # Clear the session after retrieving payment_id
+        request.session.clear()
+        messages.success(request, _('The invoicing info has been sent to our financial department and you will receive your invoice in the inbox of the email you provided.'))
+        return redirect('checkout')
+    return render(request, template, context)    
 
 #==============pay_failure_view=================
 def pay_failure_view(request):

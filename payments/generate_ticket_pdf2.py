@@ -1,6 +1,8 @@
 from django.http import FileResponse
 import io
+import os
 import qrcode
+from pathlib import Path
 import random, string
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import Color, PCMYKColor
@@ -12,6 +14,8 @@ from reportlab.lib.units import mm
 from datetime import timedelta, datetime
 
 from django.utils.translation import gettext_lazy as _
+
+SCRIPT_DIR = Path(__file__).parent.absolute()
 
  #----------generate unique code for email subscription conf--------------------
 def ticket_series():
@@ -157,26 +161,32 @@ def generate_pdf_ticket(data):
 if __name__ == "__main__":
     y = 3
     x = 6
-    TICKET_CUR_NR = '000001'
-    PAYMENT_ID = 'f0a68b'
-    series='DBPNO-{}{}'.format(PAYMENT_ID, TICKET_CUR_NR)
-    file_nr = f"{series}"
+    TICKET_CUR_NR = '010383'
+    PAYMENT_ID = 'b2f8f61a-abff-4f37-b880-0b011ae4149d'
+    series = 'DBPNO'
+    # series='DBPNO-{}{}'.format(PAYMENT_ID, TICKET_CUR_NR)
+    file_nr = f"{series}{TICKET_CUR_NR}"
+    # file_nr = f"{series}"
+
     data = {            
-                        "qr":series,
-                        "first_name":'Irinel',
-                        "last_name":'Stoica',
+                        "qr":file_nr,
+                        "first_name":'Alexandra',
+                        "last_name":'Calciu',
                         "file":'ticket-{}.pdf'.format(file_nr),
                         "series":series,
                         "amount": 1,#in production need to divide by 10
                         # "validity": datetime.today().date() + timedelta(days=90),
                         "validity": datetime.strptime("2025-05-03", "%Y-%m-%d").date() + timedelta(days=90),
                         'title':"TICHET DE VIZITATOR",
-                        'background_image_path':r"ticket_logos/ticket_bg.png",
-                        "bucegi_logo": r'ticket_logos/bucegi2.png',
-                        "rnp_logo": r'ticket_logos/rnp-romsilva3.png',
+                        'background_image_path': str(SCRIPT_DIR / 'ticket_logos' / 'ticket_bg.png'),
+                        # 'background_image_path':r"ticket_logos/ticket_bg.png",
+                        "bucegi_logo": str(SCRIPT_DIR / 'ticket_logos' / 'bucegi2.png'),
+                        "rnp_logo": str(SCRIPT_DIR / 'ticket_logos' / 'rnp-romsilva3.png'),
                         "company_name":r'RNP ROMSILVA',
                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
-
                     }
+    # Ensure tickets directory exists
+    os.makedirs(SCRIPT_DIR / 'tickets', exist_ok=True)
+
     pdf= generate_pdf_ticket(data)
-    save_pdf_to_location(pdf,"tickets/{}".format(data['file']))
+    save_pdf_to_location(pdf, str(SCRIPT_DIR / 'tickets' / data['file']))

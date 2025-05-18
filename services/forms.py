@@ -5,9 +5,15 @@ Comment, PublicDocsDownloaderEntity
 from django.utils.translation import gettext_lazy as _
 # from django_recaptcha.fields import ReCaptchaField
 from hcaptcha.fields import hCaptchaField
-  
+
 class CaptchaForm(forms.Form):
     hcaptcha = hCaptchaField()
+    
+class ContactForm(forms.ModelForm):
+    hcaptcha = hCaptchaField(
+        label=_("Human Verification"),
+        widget_attrs={'data-theme': 'light'}  # Optional: customize hCaptcha appearance
+    )
 
 class ContactForm(forms.ModelForm):
     hcaptcha = hCaptchaField()

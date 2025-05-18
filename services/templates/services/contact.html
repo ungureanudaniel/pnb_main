@@ -64,10 +64,9 @@
 										<div class="col-12">
 											{{ message_form.text }}
 										</div>
-										<div class="col-12">{{ form.hcaptcha }}</div>
-										
-										<div class="h-captcha" data-sitekey="b136d9a6-85fa-4090-a974-631e58b024ae"></div>
-
+										<div class="col-12">
+											{{ message_form.hcaptcha }}
+										</div>
 										<div class="col-12 text-center">
 											<input class="form__submit" type="submit" value="{% trans 'Send' %}"/>
 										</div>
