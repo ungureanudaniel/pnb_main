@@ -3193,3 +3193,6 @@ msgstr "Folosiți orice obiecte disponibile pentru a vă apăra. Țintiți spre 
 
 msgid "Following these guidelines can minimize the risk of a dangerous encounter with a bear and increase your chances of a safe experience."
 msgstr "Urmând aceste ghiduri, puteți minimiza riscul unei întâlniri periculoase cu un urs și vă puteți crește șansele de a avea o experiență sigură."
+
+msgid "Add a theme trail"
+msgstr "Adaugă un traseu tematic"

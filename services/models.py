@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
 
+
 #================Announcement models=====================================
 class Announcement(models.Model):
     """
@@ -33,6 +34,8 @@ class Announcement(models.Model):
     #     return os.path.relpath(self.path, settings.MEDIA_ROOT)
     def __str__(self):
         return self.title
+
+
 #================Partners models=====================================
 class Partner(models.Model):
     """
@@ -48,6 +51,8 @@ class Partner(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+
 #================Events models=====================================
 class Event(models.Model):
     """
@@ -67,6 +72,8 @@ class Event(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+
 #================Public docs models=====================================
 class PublicCategory(models.Model):
     """
@@ -87,6 +94,8 @@ class PublicCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Public docs models=====================================
 class PublicCatLink(models.Model):
     """
@@ -140,6 +149,8 @@ class PublicCatLink(models.Model):
 
 #     def __str__(self):
 #         return self.year
+
+
 #================Mng plan docs Category models=====================================
 class MngPlanDocsCategory(models.Model):
     """
@@ -158,6 +169,8 @@ class MngPlanDocsCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Mng plan docs links models=====================================
 class MngPlanCatLink(models.Model):
     """
@@ -175,6 +188,8 @@ class MngPlanCatLink(models.Model):
 
     def __str__(self):
         return self.year
+
+
 #================Natural reserves docs Category models=====================================
 class NatReservesDocsCategory(models.Model):
     """
@@ -193,6 +208,8 @@ class NatReservesDocsCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Mng plan docs links models=====================================
 class NatReservesCatLink(models.Model):
     """
@@ -210,6 +227,8 @@ class NatReservesCatLink(models.Model):
 
     def __str__(self):
         return self.year
+
+
 #================Mng plan docs Category models=====================================
 class ParkRegulationCategory(models.Model):
     """
@@ -228,6 +247,8 @@ class ParkRegulationCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Mng plan docs links models=====================================
 class ParkRegulationCatLink(models.Model):
     """
@@ -245,6 +266,8 @@ class ParkRegulationCatLink(models.Model):
 
     def __str__(self):
         return self.year
+
+
 #================person downloading docs model=====================================
 class PublicDocsDownloaderEntity(models.Model):
     """
@@ -259,6 +282,8 @@ class PublicDocsDownloaderEntity(models.Model):
         verbose_name_plural = "Public Documents Downloads"
     def __str__(self):
         return self.institution
+
+
 #================testimonial model=====================================
 class Testimonial(models.Model):
     """
@@ -276,6 +301,8 @@ class Testimonial(models.Model):
         verbose_name_plural = "Testimonials"
     def __str__(self):
         return self.email
+
+
 #================Attraction category models=====================================
 class AttractionCategory(models.Model):
     """
@@ -293,6 +320,8 @@ class AttractionCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Attraction model=====================================
 class Attraction(models.Model):
     """
@@ -314,6 +343,8 @@ class Attraction(models.Model):
 
     def __str__(self):
         return self.slug
+
+
 #================vehicle category models=====================================
 class VehicleCategory(models.Model):
     """
@@ -330,6 +361,8 @@ class VehicleCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+
 #================Access areas model=====================================
 class AccessArea(models.Model):
     """
@@ -343,6 +376,8 @@ class AccessArea(models.Model):
         verbose_name_plural = "Access areas"
     def __str__(self):
         return self.name
+
+
 #================Motorized access model=====================================
 class AllowedVehicles(models.Model):
     """
@@ -367,6 +402,8 @@ class AllowedVehicles(models.Model):
 
     def __str__(self):
         return self.slug
+
+
 #================Flora category models=====================================
 class FloraCategory(models.Model):
     """
@@ -385,6 +422,7 @@ class FloraCategory(models.Model):
     def __str__(self):
         return self.slug
 
+
 #================Wildlife category models=====================================
 class WildlifeCategory(models.Model):
     """
@@ -402,6 +440,8 @@ class WildlifeCategory(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.slug
+
+
 #================Flora models=====================================
 class Flora(models.Model):
     """
@@ -464,6 +504,7 @@ class Flora(models.Model):
     def __str__(self):
         return self.slug
 
+
 #================Wildlife model=====================================
 class Wildlife(models.Model):
     """
@@ -505,6 +546,8 @@ class Wildlife(models.Model):
 
     def __str__(self):
         return self.slug
+
+
 #================Gallery model=====================================
 # class Gallery(models.Model):
 #     """
@@ -526,12 +569,13 @@ class Wildlife(models.Model):
 #
 #     def __str__(self):
 #         return self.slug
+
+
 #================Team model=====================================
 class Team(models.Model):
     """
     This class creates database tables for each team member of natural park. The
     images for each member will be automatically resized using a package : django-resized.
-
     """
     COUNTY = (
         ('Brașov', 'Brașov'),
@@ -561,12 +605,12 @@ class Team(models.Model):
     def __str__(self):
         return f"{self.surname}" + " " + f"{self.firstname}"
 
+
 #================Scientific council model=====================================
 class SCouncil(models.Model):
     """
     This class creates database tables for each scientific council member of Bucegi natural park. The
     images will be automatically resized using a package : django-resized.
-
     """
     title = models.CharField(max_length=20, blank=True)
     surname = models.CharField(max_length=30)
@@ -584,7 +628,8 @@ class SCouncil(models.Model):
 
     def __str__(self):
         return f"{self.surname}" + " " + f"{self.firstname}"
-    
+
+
 #================contact model=====================================
 class Contact(models.Model):
     """
@@ -602,8 +647,14 @@ class Contact(models.Model):
         verbose_name_plural = "Contact"
     def __str__(self):
         return '{}'.format(self.email)
+
+
 #================subscribers model=====================================
 class Subscriber(models.Model):
+    """
+    This class creates database tables for each subscriber to the newsletter of
+    Natural Park Bucegi.
+    """
     email = models.EmailField(max_length=200)
     conf_num =  models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
@@ -611,8 +662,11 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.email + " (" + ("not " if not self.confirmed else "") + "confirmed)"
+
+
 #----------------------------------THE CATEGORY MODEL-------------------------
 class BlogPostCategory(models.Model):
+    """Model representing a blog post category."""
     title = models.CharField(max_length=30)
     slug = models.SlugField(max_length=255, unique=True)
 
@@ -625,8 +679,11 @@ class BlogPostCategory(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         return super(BlogPostCategory, self).save(*args, **kwargs)
+
+
 #----------------------------------THE POST MODEL----------------------------
 class BlogPost(models.Model):
+    """Model representing a blog post."""
     STATUS_CHOICES = (
         ('Published', 'Published'),
         ('Draft', 'Draft'),
@@ -656,16 +713,41 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.slug
 
+
 #----------------------PARK RULES MODEL--------------------------------------------
 class ParkRules(models.Model):
+    """Model representing a park rule."""
     name = models.CharField(max_length=255)
     text=RichTextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+
 #----------------------COMMENTS MODEL--------------------------------------------
 class Comment(models.Model):
+    """Model representing a comment on a blog post."""
     thumbnail = models.ImageField(upload_to='comments')
     name = models.CharField(max_length=255)
     text=models.TextField(null=True)
     post=models.ForeignKey(BlogPost,related_name="post",null=True,on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+
+
+DIFFICULTY_LEVELS = [
+    ('Easy', 'Easy'),
+    ('Average', 'Average'),
+    ('Average to Difficult', 'Average to Difficult'),
+    ('Easy to Average', 'Easy to Average'),
+]
+
+
+class ThemeTrail(models.Model):
+    """Model representing a theme trail."""
+    name = models.CharField(max_length=255)
+    distance_km = models.DecimalField(max_digits=5, decimal_places=2)
+    duration_hours = models.DecimalField(max_digits=4, decimal_places=2)
+    difficulty = models.CharField(max_length=30, choices=DIFFICULTY_LEVELS)
+    gpx_file = models.FileField(upload_to='gps_tracks/')
+    
+    def __str__(self):
+        return self.name

@@ -613,3 +613,9 @@ def park_rules(request):
     template = 'services/rules.html'
     context = {}
     return render(request, template, context)
+
+
+#=========================trasee tematice view======================================
+def theme_trails(request):
+    trails = ThemeTrail.objects.all()
+    return render(request, 'services/theme_trails.html', {'trails': trails})
