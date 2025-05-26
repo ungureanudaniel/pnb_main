@@ -304,7 +304,6 @@ def check_status_test(request):
 def pay_success_view(request):
     template = "payments/payment-success.html"
     # Store payment_id in session
-    request.session['payment_id'] = request.POST['invoice_id']
 
     messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
     messages.warning(request, _("Bucegi Natural Park is home to a large bear population. Please check our Bear Safety Guidelines for important information before your visit."))
