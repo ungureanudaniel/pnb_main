@@ -403,23 +403,17 @@ msgstr "Plată eșuată! Mesajul băncii este:"
 #: .\payments\templates\includes\payment-failure.html:9
 msgid "Payment failure! There is no payment!"
 msgstr "Plată eșuată! Nu există nici o plată!"
-#: .\payments\templates\includes\payment-failure.html:9
-msgid "If you would like to receive and invoice please press the following button:"
-msgstr "Dacă ai nevoie de factură pentru această achiziție, te rugăm apasă butonul de mai jos:"
+#: .\payments\templates\includes\views.py:9
+msgid "Bucegi Natural Park is home to a large bear population. Please check our Bear Safety Guidelines for important information before your visit."
+msgstr "Parcul Natural Bucegi găzduiește o populație numeroasă de urși. Vă rugăm să consultați pagina noastră cu Ghidul de Siguranță în Prezența Urșilor pentru informații importante înainte de vizită."
 
 #: .\payments\templates\includes\payment-success.html:9
 msgid "Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"
 msgstr "Plată efectuată cu succes! Ticketele dvs. au fost trimise la emailul furnizat. Va fi nevoie să aveți la dvs. biletele de vizitator, atunci când vizitați Parcul Natural Bucegi. Vă mulțumim!"
-#: .\payments\templates\includes\views.py:9
-msgid "Invoice from Bucegi Natural Park"
-msgstr "Factura din partea Parcului Natural Bucegi"
 
 #: .\payments\templates\includes\views.py:9
-msgid "If you would like to receive an invoice please press the following button in order to add the necessary info:"
-msgstr "Dacă doriți să primiți o factură, vă rugăm să adăugați informațiile necesare apăsând pe butonul de mai jos:"
-#: .\payments\templates\includes\views.py:9
-msgid "Invoice"
-msgstr "Facturare"
+msgid "Bear Safety Guidelines"
+msgstr "Ghidul de Siguranță în prezența urșilor"
 
 #: .\payments\templates\includes\views.html:9
 msgid "You must choose at least one ticket to finalize the purchase."

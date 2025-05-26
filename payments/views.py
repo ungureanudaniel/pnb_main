@@ -307,7 +307,7 @@ def pay_success_view(request):
     request.session['payment_id'] = request.POST['invoice_id']
 
     messages.success(request, _("Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"))
-    messages.warning(request, _("If you would like to receive an invoice please press the following button in order to add the necessary info:"))
+    messages.warning(request, _("Bucegi Natural Park is home to a large bear population. Please check our Bear Safety Guidelines for important information before your visit."))
     context = {
 
     }

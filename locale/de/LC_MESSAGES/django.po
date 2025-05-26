@@ -160,6 +160,10 @@ msgstr "Wir geben Ihre persönlichen Daten nicht an externe Stellen weiter, sie 
 msgid "<span>Tickets &</span> <span>Prices</span>"
 msgstr "<span>Karten &</span> <span>Preise</span>"
 
+#: .\services\templates\services\ticket-info.html:17
+msgid "Bucegi Natural Park is home to a large bear population. Please check our Bear Safety Guidelines for important information before your visit."
+msgstr "Der Naturpark Bucegi ist die Heimat einer großen Bärenpopulation. Bitte lesen Sie unsere Bärensicherheitsrichtlinien für wichtige Informationen vor Ihrem Besuch."
+
 #: .\services\templates\services\ticket-info.html:43
 msgid "<span>Three Months</span> <span>Ticket</span>"
 msgstr "<span>Drei Monate</span> <span>Karten</span>"
@@ -171,6 +175,10 @@ msgstr "Einzelheiten"
 #: .\services\templates\services\ticket-info.html:53
 msgid "Price"
 msgstr "Preis"
+
+#: .\payments\templates\includes\views.py:9
+msgid "Bear Safety Guidelines"
+msgstr "Bärensicherheitsrichtlinien"
 
 #: .\services\templates\services\ticket-info.html:57
 msgid "Teens and Adults"
