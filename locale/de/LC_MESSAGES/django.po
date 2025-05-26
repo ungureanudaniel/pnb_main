@@ -156,6 +156,10 @@ msgstr "Weitergabe Ihrer Informationen"
 msgid "We do not share your personal info with no external entity, they are visible only to the webpage admin, which is the Administration of Bucegi Natural Park R.A., autonomous subunit of RNP Romsilva"
 msgstr "Wir geben Ihre persönlichen Daten nicht an externe Stellen weiter, sie sind nur für den Administrator der Webseite sichtbar"
 
+#: .\payments\templates\includes\payment-success.html:9
+msgid "Payment successful! Your tickets have been sent to the email you provided. You should always have the tickets with you when visiting Bucegi Natural Park. Thank you!"
+msgstr "Zahlung erfolgreich! Ihre Tickets wurden an die von Ihnen angegebene E-Mail-Adresse gesendet. Bitte führen Sie Ihre Tickets immer bei sich, wenn Sie den Naturpark Bucegi besuchen. Vielen Dank!"
+
 #: .\services\templates\services\ticket-info.html:17
 msgid "<span>Tickets &</span> <span>Prices</span>"
 msgstr "<span>Karten &</span> <span>Preise</span>"
