@@ -227,7 +227,9 @@ TEST_KEY = os.getenv('TEST_KEY')
 CAPTCHA_IMAGE_SIZE = (100,50)
 CAPTCHA_BACKGROUND_COLOR = "#2eb872"
 CAPTCHA_FOREGROUND_COLOR = "black"
-#================django payments settings=====================
+#================LOGIN LOGOUT SETTINGS========================
+
+#================django payments settings=================
 PAYMENT_TEST_MODE = os.getenv('PAYMENT_TEST_MODE', 'False').lower() == 'true'
 TICKET_EMAIL_HEADER = os.getenv('TICKET_EMAIL_HEADER')
 TICKET_PRICE = 10

@@ -3190,3 +3190,23 @@ msgstr "Urmând aceste ghiduri, puteți minimiza riscul unei întâlniri pericul
 
 msgid "Add a theme trail"
 msgstr "Adaugă un traseu tematic"
+
+#: forms.py
+msgid "Owner"
+msgstr "Proprietar"
+
+#: forms.py
+msgid "Category"
+msgstr "Categorie"
+
+#: forms.py
+msgid "Identification Number"
+msgstr "Număr de identificare"
+
+#: forms.py
+msgid "Permit Number"
+msgstr "Număr permis"
+
+#: forms.py
+msgid "End Date"
+msgstr "Data de sfârșit"

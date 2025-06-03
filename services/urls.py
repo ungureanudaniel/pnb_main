@@ -8,15 +8,13 @@ AnnouncementView, AnnounDetailView, FloraDetailView, subscription_conf_view,\
 unsubscribe, sector_map_view, council_view, mng_plan_view,\
 park_regulation_view, WildlifeDetailView, wildlife, EventDetailView, subscription,\
 nat_reserves_view
-#, ArticleMonthArchiveView, bloglist_view, blogsearch_view, PostDetailView
 from utils.weather_scrape import weather_data
 from django.conf.urls.static import static
-from users.views import user_logout
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
         #-------Authentication----------------
-        path('logout/', user_logout, name='signout'),
+        # path('logout/', user_logout, name='signout'),
 
         #-------Visitor urls------------------
         path('', home, name="home"),

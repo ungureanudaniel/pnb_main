@@ -665,53 +665,53 @@ class Subscriber(models.Model):
 
 
 #----------------------------------THE CATEGORY MODEL-------------------------
-class BlogPostCategory(models.Model):
-    """Model representing a blog post category."""
-    title = models.CharField(max_length=30)
-    slug = models.SlugField(max_length=255, unique=True)
+# class BlogPostCategory(models.Model):
+#     """Model representing a blog post category."""
+#     title = models.CharField(max_length=30)
+#     slug = models.SlugField(max_length=255, unique=True)
 
-    class Meta:
-        verbose_name = "Blog Post Category"
-        verbose_name_plural = "Blog Post Categories"
+#     class Meta:
+#         verbose_name = "Blog Post Category"
+#         verbose_name_plural = "Blog Post Categories"
 
-    def __str__(self):
-        return '{}'.format(self.title)
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        return super(BlogPostCategory, self).save(*args, **kwargs)
+#     def __str__(self):
+#         return '{}'.format(self.title)
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.title)
+#         return super(BlogPostCategory, self).save(*args, **kwargs)
 
 
 #----------------------------------THE POST MODEL----------------------------
-class BlogPost(models.Model):
-    """Model representing a blog post."""
-    STATUS_CHOICES = (
-        ('Published', 'Published'),
-        ('Draft', 'Draft'),
-    )
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='blog_image', blank=True)
-    text = RichTextField(blank=True, null=True)
-    category = models.ForeignKey(BlogPostCategory, on_delete=models.CASCADE, related_name='postcategory')
-    featured = models.BooleanField()
-    slug = models.SlugField(max_length=255, editable=False)
-    created_date = models.DateTimeField(default=datetime.datetime.now, blank=True)
-    status = models.CharField(max_length=10, default='Draft', choices=STATUS_CHOICES)
-    hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
-     related_query_name='hit_count_generic_relation')
+# class BlogPost(models.Model):
+#     """Model representing a blog post."""
+#     STATUS_CHOICES = (
+#         ('Published', 'Published'),
+#         ('Draft', 'Draft'),
+#     )
+#     author = models.ForeignKey(User, on_delete=models.CASCADE)
+#     title = models.CharField(max_length=255)
+#     image = models.ImageField(upload_to='blog_image', blank=True)
+#     text = RichTextField(blank=True, null=True)
+#     category = models.ForeignKey(BlogPostCategory, on_delete=models.CASCADE, related_name='postcategory')
+#     featured = models.BooleanField()
+#     slug = models.SlugField(max_length=255, editable=False)
+#     created_date = models.DateTimeField(default=datetime.datetime.now, blank=True)
+#     status = models.CharField(max_length=10, default='Draft', choices=STATUS_CHOICES)
+#     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
+#      related_query_name='hit_count_generic_relation')
 
-    class Meta:
-        ordering = ["-created_date"]
+#     class Meta:
+#         ordering = ["-created_date"]
 
-    def get_absolute_url(self):
-        return reverse('blog_detail', kwargs={'slug': self.slug})
+#     def get_absolute_url(self):
+#         return reverse('blog_detail', kwargs={'slug': self.slug})
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        return super(BlogPost, self).save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.title)
+#         return super(BlogPost, self).save(*args, **kwargs)
 
-    def __str__(self):
-        return self.slug
+#     def __str__(self):
+#         return self.slug
 
 
 #----------------------PARK RULES MODEL--------------------------------------------
@@ -723,16 +723,16 @@ class ParkRules(models.Model):
 
 
 #----------------------COMMENTS MODEL--------------------------------------------
-class Comment(models.Model):
-    """Model representing a comment on a blog post."""
-    thumbnail = models.ImageField(upload_to='comments')
-    name = models.CharField(max_length=255)
-    text=models.TextField(null=True)
-    post=models.ForeignKey(BlogPost,related_name="post",null=True,on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
+# class Comment(models.Model):
+#     """Model representing a comment on a blog post."""
+#     thumbnail = models.ImageField(upload_to='comments')
+#     name = models.CharField(max_length=255)
+#     text=models.TextField(null=True)
+#     post=models.ForeignKey(BlogPost,related_name="post",null=True,on_delete=models.CASCADE)
+#     timestamp = models.DateTimeField(auto_now_add=True)
+#     active = models.BooleanField(default=True)
 
-
+# =======================THEME TRAILS MODEL=====================================
 DIFFICULTY_LEVELS = [
     ('Easy', 'Easy'),
     ('Average', 'Average'),

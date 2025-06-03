@@ -3,13 +3,16 @@ from services.models import AllowedVehicles
 from .models import Law
 from django.db.models import Q
 from loguru import logger
+from .forms import VehicleForm, ExcelUploadForm
 from datetime import datetime
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
 from django.views.decorators.cache import cache_page
+from django.contrib.auth.decorators import login_required
 #=================allowed vehicles version 2===============================
 @cache_page(60 * 15)
+@login_required(login_url='login')
 def allowed_vehicles(request):
     template = 'access/allowed_vehicles.html'
     context = {}
@@ -57,6 +60,88 @@ def allowed_vehicles(request):
             messages.error(request, _("Invalid search query!"))
 
     return render(request, template, context)
+
+#=================allowed vehicles input===============================
+def single_vehicle_upload(request):
+    template = 'access/single_vehicle_upload.html'
+    context = {}
+    
+    if request.method == "POST":
+        vehicle_form = VehicleForm(request.POST)
+        if vehicle_form.is_valid():
+            try:
+                vehicle_form.save()
+                messages.success(request, _("Vehicle information saved successfully!"))
+            except Exception as e:
+                messages.error(request, _("An error occurred: {}").format(str(e)))
+        else:
+            messages.error(request, _("Form is not valid! Please check your input."))
+    
+    context['vehicle_form'] = VehicleForm()
+    return render(request, template, context)
+
+#=================bulk vehicle upload===============================
+def bulk_vehicle_upload(request):
+    template = 'access/bulk_vehicle_upload.html'
+    context = {}
+    
+    if request.method == "POST":
+        excel_form = ExcelUploadForm(request.POST, request.FILES)
+        if excel_form.is_valid():
+            try:
+                # Process the uploaded Excel file
+                file = request.FILES['file']
+                # Assuming you have a utility function to handle the import
+                from access_and_rules_compliance.utils import import_vehicles_from_excel
+                result = import_vehicles_from_excel(file)
+                messages.success(request, result)
+            except Exception as e:
+                messages.error(request, _("An error occurred while processing the file: {}").format(str(e)))
+        else:
+            messages.error(request, _("Invalid form submission! Please check your input."))
+    
+    context['excel_form'] = ExcelUploadForm()
+    return render(request, template, context)
+
+#=================registered vehicles list===============================
+def registered_vehicles_list(request):
+    template = 'access/registered_vehicles_list.html'
+    context = {
+        'vehicles': AllowedVehicles.objects.all()
+    }
+    return render(request, template, context)
+
+#=================allowed vehicles input===============================
+# # This view handles the input of allowed vehicles, either through a form or an Excel upload.
+# def allowed_vehicles_input(request):
+#     template = 'access/add_vehicles.html'
+#     context = {}
+#     if request.method == "POST":
+#         if 'excel_upload' in request.POST:
+#             excel_form = ExcelUploadForm(request.POST, request.FILES)
+#             if excel_form.is_valid():
+#                 try:
+#                     # Process the uploaded Excel file
+#                     file = request.FILES['file']
+#                     # Assuming you have a utility function to handle the import
+#                     from access_and_rules_compliance.utils import import_vehicles_from_excel
+#                     result = import_vehicles_from_excel(file)
+#                     messages.success(request, result)
+#                 except Exception as e:
+#                     messages.error(request, _("An error occurred while processing the file: {}").format(str(e)))
+#             else:
+#                 messages.error(request, _("Invalid form submission! Please check your input."))
+#         if 'vehicle_form' in request.POST:
+#             vehicle_form = VehicleForm(request.POST)
+#             if vehicle_form.is_valid():
+#                 try:
+#                     vehicle_form.save()
+#                     messages.success(request, _("Vehicle information saved successfully!"))
+#                 except Exception as e:
+#                     messages.error(request, _("An error occurred: {}").format(str(e)))
+#             else:
+#                 messages.error(request, _("Form is not valid! Please check your input."))
+#     return render(request, template, context)
 #=================laws===============================
 def laws(request):
     template = "laws/laws.html"

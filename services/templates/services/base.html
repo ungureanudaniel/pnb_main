@@ -406,7 +406,7 @@
 							</span>
 						</div>
 						{% if user.is_authenticated %}
-						<div class="screen__item"><a class="screen__link" href="{% url 'signout' %}">Logout</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'logout' %}">Logout</a></div>
 						{% endif %}
 						<ul class="screen__socials">
 							<li><a class="item--facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100057429310837/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -529,10 +529,20 @@
 					</div>
 				</div>
 				{% if user.is_authenticated %}
-				<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}">Logout</a></li>
+				<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></li>
 				{% endif %}
-			</div>
 
+			</div>
+			<div>
+				{% if messages %}
+										    <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+										      {% include 'includes/messages.html' %}
+										    </div>
+										    {% else %}
+										    <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
+										    </div>
+										    {% endif %}
+			</div>
 			<!-- menu dropdown end-->
 			<!-- header start-->
 			<header class="header header-common">
@@ -610,7 +620,7 @@
 								<!-- <li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'coming-soon' %}">{% trans 'Donate' %}</a></li> -->
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'faq_list' %}" title="FAQs of Bucegi Natural Park">FAQ</a></li>
 								{% if user.is_authenticated %}
-								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'signout' %}" title="Signout button for Bucegi Natural Park website admin">Logout</a></li>
+								<li class="lower-menu__item"><a class="btn btn-outline-danger" href="{% url 'logout' %}" title="Signout button for Bucegi Natural Park website admin">Logout</a></li>
 								{% endif %}
 							</ul>
 							<!-- lang select start-->

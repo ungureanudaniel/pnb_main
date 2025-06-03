@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django import forms
 from .models import Testimonial, Team, AttractionCategory, Contact,\
-PublicCategory, Attraction, Subscriber, BlogPost, BlogPostCategory, Event,\
-Partner, Comment, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
+PublicCategory, Attraction, Subscriber, Event,\
+Partner, Announcement, PublicCatLink, FloraCategory, WildlifeCategory,\
 Flora, SCouncil, PublicDocsDownloaderEntity, MngPlanDocsCategory, MngPlanCatLink,\
 ParkRegulationCategory, ParkRegulationCatLink,\
 Wildlife, VehicleCategory, AccessArea, AllowedVehicles, NatReservesDocsCategory, NatReservesCatLink,\
@@ -65,10 +65,6 @@ class AnnouncementAdmin(admin.ModelAdmin):
     fields = ['title', 'title_ro', 'title_de','timestamp','expiry', 'image', 'text', 'text_ro', 'text_de', 'link_en', 'link_ro']
 
 
-class CommentAdmin(admin.ModelAdmin):
-    fields = ['name', 'text', 'thumbnail', 'active']
-
-
 class EventAdmin(admin.ModelAdmin):
     fields = ['timestamp', 'expiry', 'title', 'title_ro', 'title_de',  'text', 'text_ro', 'text_de', 'image']
 
@@ -76,14 +72,6 @@ class EventAdmin(admin.ModelAdmin):
 class SubscriberAdmin(admin.ModelAdmin):
     list_display = ('email', 'conf_num', 'confirmed')
     fields = ['email', 'conf_num', 'confirmed']
-
-
-class BlogPostCategoryAdmin(admin.ModelAdmin):
-    fields = ['title', 'title_ro', 'title_de']
-
-
-class BlogPostAdmin(admin.ModelAdmin):
-    fields = ['author', 'created_date', 'title', 'title_ro', 'title_de', 'image', 'text', 'text_ro', 'text_de', 'category', 'featured', 'status']
 
 
 class SCouncilAdmin(admin.ModelAdmin):
@@ -137,13 +125,10 @@ class ThemeTrailAdmin(admin.ModelAdmin):
     list_display = ('name', 'distance_km', 'duration_hours', 'difficulty')
 
 
-admin.site.register(Comment, CommentAdmin)
 admin.site.register(PublicCatLink, PublicCatLinkAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Partner, PartnerAdmin)
-admin.site.register(BlogPost, BlogPostAdmin)
 admin.site.register(Event, EventAdmin)
-admin.site.register(BlogPostCategory, BlogPostCategoryAdmin)
 admin.site.register(Subscriber, SubscriberAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
 admin.site.register(Team, TeamAdmin)

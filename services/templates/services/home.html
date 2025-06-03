@@ -19,14 +19,6 @@
 									<div class="col-xl-10 offset-xl-1">
 										<div class="align-container">
 											<div class="align-container__item text-center">
-												{% if messages %}
-										    <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
-										      {% include 'includes/messages.html' %}
-										    </div>
-										    {% else %}
-										    <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
-										    </div>
-										    {% endif %}
 												<div class="promo-slider__wrapper-1" style="opacity:0;-webkit-transition:all .6s;-o-transition:all .6s;transition:all .6s;-webkit-transform:translateY(30px);-ms-transform:translateY(30px);transform:translateY(30px)">
 													<h2 class="promo-slider__title"><span>{% trans 'Beautiful' %}</span><br/> <span>{% trans 'Landscapes and Trails' %}</span></h2>
 												</div>
@@ -112,7 +104,7 @@
 								<svg class="icon">
 								</svg>
 								<hr>
-								<span><img src="{{ weather.picture }}" height="70" width="70"> {{ weather.temperature }} </span>
+								<span id="weather-temp"><img id="weather-pic" src="{{ weather.picture }}" height="70" width="70"> {{ weather.temperature }} </span>
 							</div><br>
 							<div class="weather-details" style="display: flex;justify-content: space-between;width: 100%">
 								<span class="weather-item"><span>{% trans 'Wind' %}</span> {{ weather.wind }}</span>

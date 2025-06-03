@@ -13,7 +13,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 sitemaps = {
-    'blogpost':BlogPostSitemap,
     'attraction-category':AttractionCategorySitemap,
     'flora-category':FloraCategorySitemap,
     'flora':FloraSitemap,
