@@ -34,7 +34,6 @@
             <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Vehicle Details</span>{% endblocktranslate %}</h2>
           </div>
         </div>
-
         {% if messages %}
         <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
           {% include 'includes/messages.html' %}
@@ -42,17 +41,24 @@
         {% else %}
         <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center"></div>
         {% endif %}
-
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <form class="form" method="post" action="{% url 'single_vehicle_upload' %}">
             {% csrf_token %}
             <div class="row">
               <div class="col-md-6">{{ vehicle_form.owner.label_tag }}{{ vehicle_form.owner }}</div>
-              <div class="col-md-6">{{ vehicle_form.categ.label_tag }}{{ vehicle_form.categ }}</div>
+              <div class="col-md-6">{{ vehicle_form.categ.label_tag }}{{ vehicle_form.categ }} 
+                <a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'add_vehicle_category' %}">
+											<img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">{% trans 'Add a vehicle category' %}</span>
+								</a>
+              </div>
               <div class="col-md-6">{{ vehicle_form.identification_nr.label_tag }}{{ vehicle_form.identification_nr }}</div>
               <div class="col-md-6">{{ vehicle_form.permit_nr.label_tag }}{{ vehicle_form.permit_nr }}</div>
               <div class="col-md-12">{{ vehicle_form.description.label_tag }}{{ vehicle_form.description }}</div>
-              <div class="col-md-12">{{ vehicle_form.area.label_tag }}{{ vehicle_form.area }}</div>
+              <div class="col-md-12">{{ vehicle_form.area.label_tag }}{{ vehicle_form.area }}
+                <a class="nav-link text-decoration-none bg-light" style="width:100%;" id="navbarDocumentation" href="{% url 'add_vehicle_access_area' %}">
+											<img style="vertical-align:text-top" src="{% static 'img/svg/plus.svg' %}" width="30" height="30" alt="plus"><span style="margin-left:2em;color:black;">{% trans 'Add an area' %}</span>
+								</a>
+              </div>
               <div class="col-md-6">{{ vehicle_form.start_date.label_tag }}{{ vehicle_form.start_date }}</div>
               <div class="col-md-6">{{ vehicle_form.end_date.label_tag }}{{ vehicle_form.end_date }}</div>
               <div class="col-12 text-center  pt-4">

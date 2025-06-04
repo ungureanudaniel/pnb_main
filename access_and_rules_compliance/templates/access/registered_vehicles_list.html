@@ -1,0 +1,186 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<!-- header end-->
+<main class="main">
+  <!-- welcome start-->
+  <section class="welcome-primary green_background">
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <div class="align-container">
+            <div class="align-container__item">
+              <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Add</span> <span>Vehicle</span>{% endblocktranslate %}</h1>
+              <span class="welcome_icon">
+                <img src="{% static 'img/svg/car.svg' %}" alt="{% trans 'Vehicle icon' %}">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- welcome end-->
+
+  <!-- section start-->
+  <section class="section">
+    <div class="container">
+      <div class="row bottom-50">
+        <div class="col-12">
+          <div class="heading heading--primary heading--center">
+            <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Vehicle Details</span>{% endblocktranslate %}</h2>
+          </div>
+        </div>
+
+        {% if messages %}
+        <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
+          {% include 'includes/messages.html' %}
+        </div>
+        {% else %}
+        <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center"></div>
+        {% endif %}
+
+        <div class="container d-lg-block">
+            <div class="row">
+              <div class="col-lg-12 bottom-50">
+									<form class="search-form mb-4" method="GET" action="">
+                    <div class="row align-items-center">
+                      
+                      <!-- Search by owner or ID -->
+                      <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                        <input type="search" name="q" class="form-control w-100" placeholder="{% trans 'Search by owner/ID' %}" value="{{ request.GET.search }}">
+                      </div>
+
+                      <!-- Filter by category -->
+                      <div class="col-lg-4 col-md-6 mb-2">
+                        <select name="category" class="form-control w-100">
+                          <option value="">{% trans 'All Categories' %}</option>
+                          {% for category in categories %}
+                            <option value="{{ category.id }}" {% if request.GET.categ == category.id|stringformat:"s" %}selected{% endif %}>
+                              {{ category.title }}
+                            </option>
+                          {% endfor %}
+                        </select>
+                      </div>
+
+                      <!-- Filter by area -->
+                      <div class="col-lg-3 col-md-6 mb-2">
+                        <select name="area" class="form-control w-100">
+                          <option value="">{% trans 'All Areas' %}</option>
+                          {% for area in areas %}
+                            <option value="{{ area.id }}" {% if request.GET.area == area.id|stringformat:"s" %}selected{% endif %}>
+                              {{ area.name }}
+                            </option>
+                          {% endfor %}
+                        </select>
+                      </div>
+
+                      <!-- Submit button -->
+                      <div class="col-lg-2 col-md-6 mb-2">
+                        <button type="submit" class="btn btn-primary w-100">
+                          <i class="fa fa-search"></i> {% trans "Search" %}
+                        </button>
+                      </div>
+
+                    </div>
+                  </form>
+
+								</div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 d-none">
+                <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                  <div class="row align-items-center">
+                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Entity' %}</span></div>
+                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
+                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
+                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit Nr.' %}</span></div>
+                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date/<br>End date' %}</span></div>
+                    <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Expiry date' %}</span></div> -->
+                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Note' %}</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% for car in vehicles %}
+            <div class="col-xs-6 col-lg-12 d-none d-lg-block">
+              <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+                <div class="row align-items-center">
+                  <div class="col-lg-2 col-xl-2">
+                    <h6 class="pricing-item__plan">{{ car.owner }}</h6>
+                  </div>
+                  <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{% for a in car.area.all %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|date:"d.m.Y" }}/<br>{{ car.end_date|date:"d.m.Y" }} </span></div>
+                  <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div> -->
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.description|capfirst|safe }}</span></div>
+
+
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- Display on smaller screens -->
+            <div class="container d-lg-none">
+              <div class="row">
+                  {% for car in vehicles %}
+                  <div class="col-md-6">
+                      <div class="card mb-3">
+                          <div class="card-header">
+                              <h5 class="card-title"><strong>{% trans 'Entity' %}:</strong> {{ car.owner }}</h5>
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text"><strong>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}:</strong> {{ car.identification_nr }}</p>
+                              <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {% for a in car.area.all %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                              <p class="card-text"><strong>{% trans 'Permit Nr.' %}:</strong> {{ car.permit_nr }}</p>
+                              <p class="card-text"><strong>{% trans 'Start date' %}:</strong> {{ car.start_date|date:"d.m.Y" }}</p>
+                              <p class="card-text"><strong>{% trans 'Expiry date' %}:</strong> {{ car.end_date|date:"d.m.Y" }}</p>
+                              <p class="card-text"><strong>{% trans 'Note' %}:</strong> {{ car.description|capfirst|safe }}</p>
+
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+            </div>
+            <div class="col-12 text-center mb-5">
+										<ul class="pagination blog__pagination">
+											{% if vehicles.has_previous %}
+                        <li class="pagination__item pagination__item--prev">
+                        <a href="?page={{ vehicles.previous_page_number }}">
+                          <i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
+                        </a>
+                      </li>
+                    {% endif %}
+
+                    {% for page_num in vehicles.paginator.page_range %}
+                      {% if page_num == vehicles.number %}
+                        <li class="pagination__item pagination__item--active"><span>{{ page_num }}</span></li>
+                      {% else %}
+                        <li class="pagination__item">
+                          <a href="?page={{ page_num }}"><span>{{ page_num }}</span></a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if vehicles.has_next %}
+                      <li class="pagination__item pagination__item--next">
+                        <a href="?page={{ vehicles.next_page_number }}">
+                          <span>Next</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                  {% endif %}
+								</ul>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>
+  <!-- section end-->
+
+</main>
+{% endblock %}

@@ -1,18 +1,67 @@
-from django.shortcuts import render
-from services.models import AllowedVehicles
+from django.shortcuts import render, redirect
+from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
 from loguru import logger
-from .forms import VehicleForm, ExcelUploadForm
+from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
 from datetime import datetime
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
 from django.views.decorators.cache import cache_page
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
+
+#=================add vehicle category===============================
+@login_required(login_url='signin')
+def add_vehicle_category(request):
+    """
+    This view handles the addition of vehicle categories.
+    It is currently a placeholder and does not implement any functionality.
+    """
+    template = 'access/add_vehicle_category.html'
+    context = {}
+    
+    if request.method == "POST":
+        form = VehicleCategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _("Vehicle category added successfully!"))
+            return redirect('single_vehicle_upload')
+        else:
+            print(form.errors)
+            messages.error(request, _("Form is not valid! Please check your input.{}".format(form.errors)))
+    else:
+        form = VehicleCategoryForm()
+    context['form'] = form
+    return render(request, template, context)
+
+@login_required(login_url='signin')
+def add_vehicle_access_area(request):
+    """
+    This view handles the vehicle access area.
+    It is currently a placeholder and does not implement any functionality.
+    """
+    template = 'access/add_vehicle_access_area.html'
+    context = {}
+    
+    if request.method == "POST":
+        form = VehicleAccessAreaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _("Vehicle access area added successfully!"))
+            return redirect('single_vehicle_upload')
+        else:
+            print(form.errors)
+            messages.error(request, _("Form is not valid! Please check your input.{}".format(form.errors)))
+    else:
+        form = VehicleAccessAreaForm()
+    context['form'] = form
+    return render(request, template, context)
+
 #=================allowed vehicles version 2===============================
 @cache_page(60 * 15)
-@login_required(login_url='login')
 def allowed_vehicles(request):
     template = 'access/allowed_vehicles.html'
     context = {}
@@ -62,6 +111,7 @@ def allowed_vehicles(request):
     return render(request, template, context)
 
 #=================allowed vehicles input===============================
+@login_required(login_url='signin')
 def single_vehicle_upload(request):
     template = 'access/single_vehicle_upload.html'
     context = {}
@@ -70,17 +120,20 @@ def single_vehicle_upload(request):
         vehicle_form = VehicleForm(request.POST)
         if vehicle_form.is_valid():
             try:
+                vehicle_form.owner = vehicle_form.cleaned_data['owner'].capitalize()
                 vehicle_form.save()
                 messages.success(request, _("Vehicle information saved successfully!"))
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
         else:
-            messages.error(request, _("Form is not valid! Please check your input."))
-    
-    context['vehicle_form'] = VehicleForm()
+            messages.error(request, _("Form is not valid! Please check your input. ({}").format(vehicle_form.errors))
+    else:
+        vehicle_form = VehicleForm()
+    context['vehicle_form'] = vehicle_form
     return render(request, template, context)
 
 #=================bulk vehicle upload===============================
+@login_required(login_url='signin')
 def bulk_vehicle_upload(request):
     template = 'access/bulk_vehicle_upload.html'
     context = {}
@@ -98,16 +151,44 @@ def bulk_vehicle_upload(request):
             except Exception as e:
                 messages.error(request, _("An error occurred while processing the file: {}").format(str(e)))
         else:
-            messages.error(request, _("Invalid form submission! Please check your input."))
+            messages.error(request, _("Form is not valid! Please check your input."))
     
     context['excel_form'] = ExcelUploadForm()
     return render(request, template, context)
 
 #=================registered vehicles list===============================
+@login_required(login_url='signin')
 def registered_vehicles_list(request):
     template = 'access/registered_vehicles_list.html'
+
+    query = request.GET.get('q', '').strip()
+    category_id = request.GET.get('category', '').strip()
+    area_id = request.GET.get('area', '').strip()
+
+    vehicles = AllowedVehicles.objects.all().order_by('-timestamp').prefetch_related('area')
+    
+    if query:
+        vehicles = vehicles.filter(
+            Q(identification_nr__icontains=query) |
+            Q(owner__icontains=query)
+        )
+    
+    if category_id:
+        vehicles = vehicles.filter(categ_id=category_id)
+    
+    if area_id:
+        vehicles = vehicles.filter(area__id=area_id)
+
+    paginator = Paginator(vehicles, 5)  # Show 20 vehicles per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
-        'vehicles': AllowedVehicles.objects.all()
+        'vehicles': page_obj,
+        'categories': VehicleCategory.objects.all(),
+        'areas': AccessArea.objects.all(),
+        'query': query,
+        'selected_category': category_id,
+        'selected_area': area_id,
     }
     return render(request, template, context)
 

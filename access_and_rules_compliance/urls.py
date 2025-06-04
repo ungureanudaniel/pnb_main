@@ -2,7 +2,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import allowed_vehicles, laws, search_laws, single_vehicle_upload, bulk_vehicle_upload,\
-      registered_vehicles_list
+      registered_vehicles_list, add_vehicle_category, add_vehicle_access_area
 
 urlpatterns = [
     #------ general urls-------------------
@@ -13,7 +13,8 @@ urlpatterns = [
     path('vehicles/', registered_vehicles_list, name='vehicles_list'),
     path('legislation/', laws, name="legislation"),
     path('search/', search_laws, name='search_laws'),
-
+    path('vehicle/add/category/', add_vehicle_category, name='add_vehicle_category'),
+    path('vehicle/add/access-area/', add_vehicle_access_area, name='add_vehicle_access_area'),
 
     ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

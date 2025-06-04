@@ -13,7 +13,7 @@
           <div class="align-container">
             <div class="align-container__item">
               <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Add</span> <span>Vehicle List</span>{% endblocktranslate %}</h1>
+              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Add</span> <span>Vehicle Category</span>{% endblocktranslate %}</h1>
               <span class="welcome_icon">
                 <img src="{% static 'img/svg/car.svg' %}" alt="{% trans 'Vehicle icon' %}">
               </span>
@@ -31,12 +31,7 @@
       <div class="row bottom-50">
         <div class="col-12">
           <div class="heading heading--primary heading--center">
-            <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Vehicle List</span>{% endblocktranslate %}</h2>
-            <p>{% trans "The list of vehicles to be uploaded has to be an excel file and the table header must match the following format:" %}</p>
-            <img src="{% static 'img/administrative/vehicle_excel_table.png' %}" alt="{% trans 'Excel Vehicle Upload Example' %}">
-            <a href="{% static 'files/lista_vehicule_20250602.xlsx' %}" download class="form__submit">
-              {% trans 'Download Vehicle Template (Excel)' %}
-            </a>
+            <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Details</span>{% endblocktranslate %}</h2>
           </div>
         </div>
 
@@ -49,12 +44,13 @@
         {% endif %}
 
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-          <form class="form" method="post" action="{% url 'bulk_vehicle_upload' %}">
+          <form class="form" method="post" action="{% url 'add_vehicle_category' %}">
             {% csrf_token %}
             <div class="row">
-              <div class="col-md-12">{{ excel_form }}</div>
-              <div class="col-12 text-center  pt-4">
-                <input class="form__submit" type="submit" value="{% trans 'Add Vehicle List' %}" />
+              <div class="col-md-12">{{ form.title.label_tag }}{{ form.title }}</div>
+              
+              <div class="col-12 text-center pt-4">
+                <input class="form__submit" type="submit" value="{% trans 'Add Category' %}" />
               </div>
             </div>
           </form>

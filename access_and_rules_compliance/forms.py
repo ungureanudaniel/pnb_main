@@ -1,9 +1,40 @@
 from django import forms
-from .models import Law, LawCategory
 # from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
-from django_recaptcha.fields import ReCaptchaField
-from services.models import AllowedVehicles
+from services.models import AllowedVehicles, VehicleCategory, AccessArea
+
+class VehicleCategoryForm(forms.ModelForm):
+    """Form for creating or updating vehicle categories."""
+    class Meta:
+        model = VehicleCategory
+        fields = ['title']
+
+        labels = {
+            'title': _('Title'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add Bootstrap styling to all fields
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
+
+
+class VehicleAccessAreaForm(forms.ModelForm):
+    """Form for creating or updating vehicle access areas."""
+    class Meta:
+        model = AccessArea
+        fields = ['name']
+
+        labels = {
+            'name': _('Access Area'),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add Bootstrap styling to all fields
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
 
 
 class VehicleForm(forms.ModelForm):
@@ -35,3 +66,9 @@ class VehicleForm(forms.ModelForm):
 class ExcelUploadForm(forms.Form):
     """Form for uploading an Excel file to import allowed vehicles."""
     file = forms.FileField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add Bootstrap styling to all fields
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})

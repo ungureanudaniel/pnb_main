@@ -56,7 +56,7 @@ msgstr ""
 
 #: .\pnb_main\settings.py:157
 msgid "Română"
-msgstr "Romanian"
+msgstr "Română"
 #: .\services\base.html.py:210
 msgid "Management Plan"
 msgstr "Plan de Management"
@@ -117,7 +117,7 @@ msgstr "Engleză"
 
 #: .\pnb_main\settings.py:159
 msgid "Deutsch"
-msgstr ""
+msgstr "Germană"
 
 #: .\services\templates\services\sector-map.html:18
 msgid "<span>Park Rangers</span> & <span> Areas"
@@ -2944,6 +2944,25 @@ msgstr "Zonă de Acces Autorizată"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Start date"
 msgstr "Dată început"
+
+msgid "Start Date"
+msgstr "Dată început"
+
+msgid "Search by owner/ID"
+msgstr "Căutare după proprietar/număr"
+
+msgid "Search by category"
+msgstr "Căutare după categorie"
+
+msgid "All Categories"
+msgstr "Toate categoriile"
+
+msgid "All Areas"
+msgstr "Toate zonele"
+
+msgid "Search by area"
+msgstr "Căutare după zonă"
+
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Expiry date"
 msgstr "Dată expirare"
@@ -3205,8 +3224,77 @@ msgstr "Număr de identificare"
 
 #: forms.py
 msgid "Permit Number"
-msgstr "Număr permis"
+msgstr "Număr aviz"
 
 #: forms.py
 msgid "End Date"
 msgstr "Data de sfârșit"
+
+msgid "<span>Add</span> <span>Vehicle</span>"
+msgstr "<span>Adaugă</span> <span>Vehicul</span>"
+
+msgid "Vehicle information saved successfully!"
+msgstr "Informațiile vehiculului au fost salvate cu succes!"
+
+msgid "Add an area"
+msgstr "Adaugî o zonă nouă"
+
+msgid "<span>Enter</span> <span>Vehicle Details</span>"
+msgstr "<span>Introdu</span> <span>Detaliile Vehiculului</span>"
+
+msgid "An error occurred: {}"
+msgstr "S-a produs o eroare: {}"
+
+msgid "Form is not valid! Please check your input."
+msgstr "Formularul nu este valid! Verifică mai atent datele introduse."
+
+msgid "An error occurred while processing the file: {}"
+msgstr "S-a produs o eroare la procesarea fișierului: {}"
+
+msgid "Add Vehicle List"
+msgstr "Adaugă lista de vehicule"
+
+msgid "Add a vehicle category"
+msgstr "Adaugă o categorie de vehicule"
+
+msgid "Vehicle category added successfully!"
+msgstr "Categoria de vehicule a fost adaugată cu succes!"
+
+msgid "<span>Add</span> <span>Vehicle Category</span>"
+msgstr "<span>Adaugă</span> <span>Categorie de Vehicule</span>"
+
+msgid "<span>Enter</span> <span>Details</span>"
+msgstr "<span>Introdu</span> <span>Detalii</span>"
+
+msgid "Add Category"
+msgstr "Adaugă Categorie"
+
+msgid "<span>Add</span> <span>Vehicle List</span>"
+msgstr "<span>Adaugă</span> <span>Listă de Vehicule</span>"
+
+msgid "File:"
+msgstr "Fișier:"
+
+msgid "<span>Enter</span> <span>Vehicle List</span>"
+msgstr "<span>Introdu</span> <span>Lista cu Vehicule</span>"
+
+msgid "The list of vehicles to be uploaded has to be an excel file and the table header must match the following format:"
+msgstr "Lista cu vehicule pentru încărcare trebuie să fie un fișier excel, iar capul de tabel trebuie să respecte următorul format:"
+
+msgid "Download Vehicle Template (Excel)"
+msgstr "Descarcă Modelul de Listă cu Vehicule (Excel)"
+
+msgid "<span>Add</span> <span>Vehicle Access Area</span>"
+msgstr "<span>Adaugă</span> <span>Zonă de Acces</span>"
+
+msgid "Vehicle access area added successfully!"
+msgstr "Zona de acces adăugată cu succes!"
+
+msgid "<span>Enter</span> <span>Zone below</span>"
+msgstr "<span>Introdu</span> <span>Zona mai jos</span>"
+
+msgid "Title"
+msgstr "Denumire"
+
+msgid "Access Area"
+msgstr "Zonă de acces"
