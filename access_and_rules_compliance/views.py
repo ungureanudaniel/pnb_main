@@ -166,14 +166,21 @@ def bulk_vehicle_save(request):
             created = 0
             for row in data:
                 if any(row):  # Skip empty rows
+                    # Parse dates safely or default to None
+                    try:
+                        data_inceput = datetime.strptime(row[5], '%d-%m-%Y').date() if row[5] else None
+                        data_sfarsit = datetime.strptime(row[6], '%d-%m-%Y').date() if row[6] else None
+                    except (ValueError, IndexError):
+                        data_inceput = None
+                        data_sfarsit = None
                     AllowedVehicles.objects.create(
                         owner=row[0],
                         categ=row[1],
                         identification_nr=row[2],
                         zona=row[3],
                         nr_aviz=row[4],
-                        data_inceput=row[5],
-                        data_sfarsit=row[6],
+                        data_inceput=data_inceput,
+                        data_sfarsit=data_sfarsit,
                         descriere=row[7],
                     )
                     created += 1
