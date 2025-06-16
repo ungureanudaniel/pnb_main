@@ -3,6 +3,8 @@ from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
 from loguru import logger
+from django.http import JsonResponse
+import json
 from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
 from datetime import datetime
 from django.contrib import messages
@@ -12,6 +14,7 @@ from django.db.models import Q
 from django.views.decorators.cache import cache_page
 from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
+from django.views.decorators.csrf import csrf_exempt
 
 #=================add vehicle category===============================
 @login_required(login_url='signin')
@@ -132,29 +135,52 @@ def single_vehicle_upload(request):
     context['vehicle_form'] = vehicle_form
     return render(request, template, context)
 
+#================= api for serving dropdown list data ===============================
+def get_dropdown_data(request):
+    categories = list(VehicleCategory.objects.values_list('title', flat=True))
+    areas = list(AccessArea.objects.values_list('name', flat=True))
+    return JsonResponse({
+        'categories': categories,
+        'areas': areas
+    })
+
 #=================bulk vehicle upload===============================
 @login_required(login_url='signin')
-def bulk_vehicle_upload(request):
-    template = 'access/bulk_vehicle_upload.html'
-    context = {}
-    
+def bulk_vehicle_entry(request):
+    template = 'access/bulk_vehicle_entry.html'
+    """Render the editable table page for bulk vehicle entry."""
+    categories = list(VehicleCategory.objects.values_list('title', flat=True))
+    areas = list(AccessArea.objects.values_list('name', flat=True))
+
+    return render(request, template, {
+        'categories': categories,
+        'areas': areas,
+    })
+
+#=================bulk vehicle save======================================
+@login_required(login_url='signin')
+def bulk_vehicle_save(request):
     if request.method == "POST":
-        excel_form = ExcelUploadForm(request.POST, request.FILES)
-        if excel_form.is_valid():
-            try:
-                # Process the uploaded Excel file
-                file = request.FILES['file']
-                # Assuming you have a utility function to handle the import
-                from access_and_rules_compliance.utils import import_vehicles_from_excel
-                result = import_vehicles_from_excel(file)
-                messages.success(request, result)
-            except Exception as e:
-                messages.error(request, _("An error occurred while processing the file: {}").format(str(e)))
-        else:
-            messages.error(request, _("Form is not valid! Please check your input."))
-    
-    context['excel_form'] = ExcelUploadForm()
-    return render(request, template, context)
+        try:
+            data = json.loads(request.body)
+            created = 0
+            for row in data:
+                if any(row):  # Skip empty rows
+                    AllowedVehicles.objects.create(
+                        owner=row[0],
+                        categ=row[1],
+                        identification_nr=row[2],
+                        zona=row[3],
+                        nr_aviz=row[4],
+                        data_inceput=row[5],
+                        data_sfarsit=row[6],
+                        descriere=row[7],
+                    )
+                    created += 1
+            return JsonResponse({'message': f"{created} vehicles saved successfully."})
+        except Exception as e:
+            return JsonResponse({'message': f"Error: {str(e)}"}, status=400)
+    return JsonResponse({'message': 'Invalid request'}, status=405)
 
 #=================registered vehicles list===============================
 @login_required(login_url='signin')
@@ -193,36 +219,7 @@ def registered_vehicles_list(request):
     return render(request, template, context)
 
 #=================allowed vehicles input===============================
-# # This view handles the input of allowed vehicles, either through a form or an Excel upload.
-# def allowed_vehicles_input(request):
-#     template = 'access/add_vehicles.html'
-#     context = {}
-#     if request.method == "POST":
-#         if 'excel_upload' in request.POST:
-#             excel_form = ExcelUploadForm(request.POST, request.FILES)
-#             if excel_form.is_valid():
-#                 try:
-#                     # Process the uploaded Excel file
-#                     file = request.FILES['file']
-#                     # Assuming you have a utility function to handle the import
-#                     from access_and_rules_compliance.utils import import_vehicles_from_excel
-#                     result = import_vehicles_from_excel(file)
-#                     messages.success(request, result)
-#                 except Exception as e:
-#                     messages.error(request, _("An error occurred while processing the file: {}").format(str(e)))
-#             else:
-#                 messages.error(request, _("Invalid form submission! Please check your input."))
-#         if 'vehicle_form' in request.POST:
-#             vehicle_form = VehicleForm(request.POST)
-#             if vehicle_form.is_valid():
-#                 try:
-#                     vehicle_form.save()
-#                     messages.success(request, _("Vehicle information saved successfully!"))
-#                 except Exception as e:
-#                     messages.error(request, _("An error occurred: {}").format(str(e)))
-#             else:
-#                 messages.error(request, _("Form is not valid! Please check your input."))
-#     return render(request, template, context)
+
 #=================laws===============================
 def laws(request):
     template = "laws/laws.html"

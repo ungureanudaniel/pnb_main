@@ -4,6 +4,7 @@
 
 {% block content %}
 <!-- header end-->
+
 <main class="main">
   <!-- welcome start-->
   <section class="welcome-primary green_background">
@@ -48,21 +49,31 @@
         <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center"></div>
         {% endif %}
 
-        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-          <form class="form" method="post" action="{% url 'bulk_vehicle_upload' %}">
+        <div class="col-lg-12 col-xl-12 hot">
+          <!-- <form class="form" method="post" action="{% url 'bulk_vehicle_entry' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
-              <div class="col-md-12">{{ excel_form }}</div>
+              <div class="col-md-12">{{ excel_form.as_p }}</div>
               <div class="col-12 text-center  pt-4">
                 <input class="form__submit" type="submit" value="{% trans 'Add Vehicle List' %}" />
               </div>
             </div>
-          </form>
-        </div>
+          </form> -->
+          <div id="vehicleTable" style="height:400px; width:100%; overflow:auto;"></div>
+          <button id="saveButton">Save</button>
       </div>
     </div>
   </section>
   <!-- section end-->
 
 </main>
+<!-- connection to the js code for the handsontable function in special.js -->
+ <script>
+  const vehicleSaveUrl = "{% url 'bulk_vehicle_save' %}";
+  const csrfToken = "{{ csrf_token }}";
+  const dropdownDataUrl = "{% url 'dropdown_data' %}";
+</script>
+<!-- <script src="{% static 'js/special.js' %}"></script> -->
+<!-- Setup dynamic variables -->
+
 {% endblock %}

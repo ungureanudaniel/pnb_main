@@ -57,7 +57,7 @@
                   <div class="col-lg-12">
                     {% if request.user.is_authenticated %}
                     <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'single_vehicle_upload' %}">Introdu un vehicul nou</a>
-                    <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'bulk_vehicle_upload' %}">Încarcă o listă excel cu vehicule</a>
+                    <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'bulk_vehicle_entry' %}">Încarcă o listă cu vehicule</a>
                     <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'vehicles_list' %}">Consultă lista cu vehicule autorizate</a>
                     {% endif %}
                   </div>

@@ -47,6 +47,14 @@
 		<script src="https://www.youtube.com/iframe_api"></script>
 		<!-- web-font loader-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Handsontable imports -->
+		<!-- Handsontable CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css" />
+		<!-- Handsontable CDN -->
+
+		<!-- Handsontable JS -->
+		<script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
+		<!-- <script src="{% static 'js/special.js' %}"></script>  -->
 		<script>
 			WebFontConfig = {
 
@@ -533,16 +541,6 @@
 				{% endif %}
 
 			</div>
-			<div>
-				{% if messages %}
-										    <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
-										      {% include 'includes/messages.html' %}
-										    </div>
-										    {% else %}
-										    <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center">
-										    </div>
-										    {% endif %}
-			</div>
 			<!-- menu dropdown end-->
 			<!-- header start-->
 			<header class="header header-common">
@@ -752,6 +750,7 @@
 		<!-- libs-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="{% static 'js/special.js' %}"></script>
 		<script src="{% static 'js/libs.min.js' %}"></script>
 		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

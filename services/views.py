@@ -397,10 +397,12 @@ def massmedia(request):
 @cache_page(60 * 15)  # Cache for 15 minutes (in seconds)
 def public_docs(request):
     template = 'public_docs/public_docs.html'
-
+    links = PublicCatLink.objects.order_by('-id')
+    print(links)
     context = {
     'public_docs': PublicCategory.objects.all(),
-    'links':PublicCatLink.objects.all()
+    # 'links':links[:5]  # Limit to 5 links for performance
+    'links': links[:1]
     }
     return render(request, template, context)
 #======================== natural reserves documents pages================================
