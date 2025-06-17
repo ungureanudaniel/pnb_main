@@ -39,7 +39,7 @@
 									<div class="accordion__text-block">
 										<p>{{ item.text|safe }}</p>
 										<p>{% trans "The official document can be downloaded below" %}</p>
-											{% for link in links|in_category:item %}
+											{% for link in links|slice:":5" %}
 												<!-- {{ link.category }} = {{ item.title }} -->
 													{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
 

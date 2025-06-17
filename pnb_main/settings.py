@@ -123,7 +123,7 @@ WSGI_APPLICATION = 'pnb_main.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
