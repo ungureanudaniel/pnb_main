@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
 from django_resized import ResizedImageField
-from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 

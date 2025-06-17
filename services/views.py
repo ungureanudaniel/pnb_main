@@ -3,7 +3,6 @@ warnings.filterwarnings('ignore', message='.*cryptography', )
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
-from loguru import logger
 # from django.http import JsonResponse
 from django.utils.timezone import now
 from django.conf import settings

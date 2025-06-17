@@ -4,7 +4,8 @@ from django.conf import settings
 from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
 from django.utils.translation import gettext_lazy as _
-from distutils.util import strtobool
+from .utils import strtobool
+
 
 load_dotenv(verbose=True)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,9 +39,9 @@ INSTALLED_APPS = [
     # 'django.contrib.gis',#django gis activation
     #developer added libraries
     'django.contrib.sitemaps',
-    'ckeditor',
     'hitcount',
     'django.contrib.sites',
+    'tinymce',
     # 'django_recaptcha',
     'hcaptcha',
     'django_countries',

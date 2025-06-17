@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 import requests
-from loguru import logger
 from bs4 import BeautifulSoup
 
 

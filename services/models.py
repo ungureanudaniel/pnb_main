@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from django_resized import ResizedImageField
-from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
+from tinymce.models import HTMLField
 import datetime
 from django.utils import timezone
 import os
@@ -19,7 +19,7 @@ class Announcement(models.Model):
     """
     title = models.CharField(max_length=100)
     image = ResizedImageField(size=[640,None], upload_to='announcement_images',)
-    text = RichTextField()
+    text = HTMLField()
     link_ro = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     link_en = models.FileField(upload_to='announcements/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
@@ -59,7 +59,7 @@ class Event(models.Model):
     This class creates database tables for each event in bucegi natural park
     """
     title = models.CharField(max_length=50)
-    text = RichTextField(max_length=3000)
+    text = HTMLField(max_length=3000)
     image = ResizedImageField(size=[640,None], upload_to='event_images',)
     timestamp = models.DateTimeField(default=datetime.datetime.now, blank=True)
     expiry = models.DateTimeField(default=datetime.datetime.now, blank=True)
@@ -81,7 +81,7 @@ class PublicCategory(models.Model):
     category for natural park bucegi administration
     """
     title = models.CharField(max_length=70)
-    text = RichTextField()
+    text = HTMLField()
     # link_ro = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
     # link_en = models.FileField(upload_to='public_docs/%d_%b_%Y/', max_length=254, blank =True, null=True)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
@@ -121,7 +121,7 @@ class PublicCatLink(models.Model):
 #     category for natural park bucegi administration
 #     """
 #     title = models.CharField(max_length=70)
-#     text = RichTextField()
+#     text = HTMLField()
 #     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
 #     class Meta:
@@ -158,7 +158,7 @@ class MngPlanDocsCategory(models.Model):
     category for the administration of bucegi natural park  
     """
     title = models.CharField(max_length=70)
-    text = RichTextField()
+    text = HTMLField()
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
@@ -197,7 +197,7 @@ class NatReservesDocsCategory(models.Model):
     category for the administration of bucegi natural park
     """
     title = models.CharField(max_length=70)
-    text = RichTextField()
+    text = HTMLField()
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
@@ -236,7 +236,7 @@ class ParkRegulationCategory(models.Model):
     category for the administration of bucegi natural park  
     """
     title = models.CharField(max_length=70)
-    text = RichTextField()
+    text = HTMLField()
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=False)
 
     class Meta:
@@ -384,7 +384,7 @@ class AllowedVehicles(models.Model):
     This class creates database tables for each allowed motorized vehicle inside the park
     """
     owner = models.CharField(max_length=100)
-    description = models.TextField(default="...", max_length=1000, null=True, blank=True)
+    description = HTMLField(default="...", max_length=1000, null=True, blank=True)
     categ = models.ForeignKey(VehicleCategory, on_delete=models.CASCADE)
     identification_nr = models.CharField(max_length=20)
     area = models.ManyToManyField(AccessArea, related_name='access_area', blank=True)
@@ -691,7 +691,7 @@ class Subscriber(models.Model):
 #     author = models.ForeignKey(User, on_delete=models.CASCADE)
 #     title = models.CharField(max_length=255)
 #     image = models.ImageField(upload_to='blog_image', blank=True)
-#     text = RichTextField(blank=True, null=True)
+#     text = HTMLField()
 #     category = models.ForeignKey(BlogPostCategory, on_delete=models.CASCADE, related_name='postcategory')
 #     featured = models.BooleanField()
 #     slug = models.SlugField(max_length=255, editable=False)
@@ -718,7 +718,7 @@ class Subscriber(models.Model):
 class ParkRules(models.Model):
     """Model representing a park rule."""
     name = models.CharField(max_length=255)
-    text=RichTextField()
+    text=HTMLField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
 

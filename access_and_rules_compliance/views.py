@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
-from loguru import logger
 from django.http import JsonResponse
 import json
 from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
