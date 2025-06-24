@@ -4,6 +4,7 @@ from .models import Law
 from django.db.models import Q
 from django.http import JsonResponse
 import json
+import traceback
 from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
 from datetime import datetime
 from django.contrib import messages
@@ -164,27 +165,56 @@ def bulk_vehicle_save(request):
             data = json.loads(request.body)
             created = 0
             for row in data:
-                if any(row):  # Skip empty rows
-                    # Parse dates safely or default to None
+                if not row or not any(row):
+                    continue  # skip empty row
+                # Validate required fields
+                try:
+                    owner = row[0] if len(row) > 0 else ""
+                    categ = row[1] if len(row) > 1 else ""
+                    identification_nr = row[2] if len(row) > 2 else ""
+                    zona = row[3] if len(row) > 3 else ""
+                    nr_aviz = row[4] if len(row) > 4 else ""
+                    data_inceput_raw = row[5] if len(row) > 5 else None
+                    data_sfarsit_raw = row[6] if len(row) > 6 else None
+                    descriere = row[7] if len(row) > 7 else ""
+
                     try:
-                        data_inceput = datetime.strptime(row[5], '%d-%m-%Y').date() if row[5] else None
-                        data_sfarsit = datetime.strptime(row[6], '%d-%m-%Y').date() if row[6] else None
-                    except (ValueError, IndexError):
-                        data_inceput = None
-                        data_sfarsit = None
-                    AllowedVehicles.objects.create(
-                        owner=row[0],
-                        categ=row[1],
-                        identification_nr=row[2],
-                        zona=row[3],
-                        nr_aviz=row[4],
-                        data_inceput=data_inceput,
-                        data_sfarsit=data_sfarsit,
-                        descriere=row[7],
+                        categ_obj = VehicleCategory.objects.get(title=categ)
+                    except VehicleCategory.DoesNotExist:
+                        print(f"Category '{categ}' not found.")
+                        continue
+
+                    try:
+                        zona_obj = AccessArea.objects.get(name=zona)
+                    except AccessArea.DoesNotExist:
+                        print(f"Area '{zona}' not found.")
+                        continue
+
+                    # Convert date strings to date objects
+                    data_inceput = datetime.strptime(row[5], '%d-%m-%Y').date() if row[5] else None
+                    data_sfarsit = datetime.strptime(row[6], '%d-%m-%Y').date() if row[6] else None
+                    
+                    # save the vehicle
+                    vehicle = AllowedVehicles.objects.create(
+                        owner=owner,
+                        categ=categ_obj,
+                        identification_nr=identification_nr,
+                        permit_nr=nr_aviz,
+                        start_date=data_inceput,
+                        end_date=data_sfarsit,
+                        description=descriere,
                     )
-                    created += 1
+
+                    vehicle.area.set([zona_obj])
+                except Exception as inner_e:
+                    print(f"[Vehicle Save Error] Row: {row}")
+                    traceback.print_exc()
+
             return JsonResponse({'message': f"{created} vehicles saved successfully."})
         except Exception as e:
+            print("[Vehicle Save Outer Exception]")
+            print("Data received:", request.body.decode())
+            traceback.print_exc()
             return JsonResponse({'message': f"Error: {str(e)}"}, status=400)
     return JsonResponse({'message': 'Invalid request'}, status=405)
 
