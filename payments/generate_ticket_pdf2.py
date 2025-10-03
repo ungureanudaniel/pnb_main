@@ -161,22 +161,22 @@ def generate_pdf_ticket(data):
 if __name__ == "__main__":
     y = 3
     x = 6
-    TICKET_CUR_NR = '010954'
-    PAYMENT_ID = 'b2f8f61a-abff-4f37-b880-0b011ae4149d'
-    series = 'DBPNO2b041a'
+    TICKET_CUR_NR = '022164'
+    PAYMENT_ID = 'f745726a-9970-4295-b971-eafacf14ef22'
+    series = 'DBPNOf74572'
     # series='DBPNO-{}{}'.format(PAYMENT_ID, TICKET_CUR_NR)
     file_nr = f"{series}{TICKET_CUR_NR}"
     # file_nr = f"{series}"
 
     data = {            
                         "qr":file_nr,
-                        "first_name":'Vlad',
-                        "last_name":'Craita',
+                        "first_name":'ACTIVE',
+                        "last_name":'TRAVEL',
                         "file":'ticket-{}.pdf'.format(file_nr),
                         "series":series,
                         "amount": 1,#in production need to divide by 10
                         # "validity": datetime.today().date() + timedelta(days=90),
-                        "validity": datetime.strptime("2025-05-30", "%Y-%m-%d").date() + timedelta(days=90),
+                        "validity": datetime.strptime("2025-09-26", "%Y-%m-%d").date() + timedelta(days=90),
                         'title':"TICHET DE VIZITATOR",
                         'background_image_path': str(SCRIPT_DIR / 'ticket_logos' / 'ticket_bg.png'),
                         # 'background_image_path':r"ticket_logos/ticket_bg.png",

@@ -30,8 +30,8 @@
 						<div class="row">
 							<div class="col-xl-8">
 								<h4 class="elements__title"></h4>
-
 								{% for item in public_docs %}
+
 								<div class="accordion accordion--primary">
 									<div class="accordion__title-block">
 										<h6 class="accordion__title">{{ item.title|capfirst }}</h6><span class="accordion__close"></span>
@@ -40,9 +40,7 @@
 										<p>{{ item.text|safe }}</p>
 										<p>{% trans "The official document can be downloaded below" %}</p>
 											{% for link in links|slice:":5" %}
-												<!-- {{ link.category }} = {{ item.title }} -->
-													{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
-
+												{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
 													<a href="{{ link.link_en.url }}" download class="button button--primary button--rounded">
 														<table style="text-decoration:none">
 														  <tr>

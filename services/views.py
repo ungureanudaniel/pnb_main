@@ -400,10 +400,12 @@ def public_docs(request):
     
     categories = PublicCategory.objects.all()
     links = PublicCatLink.objects.order_by('-id')
-
+    # links = PublicCatLink.objects.prefetch_related('links')
+    print(links)
     context = {
         'public_docs': categories,
         'links': links,
+        # 'pbl': pbl,
     }
     return render(request, template, context)
 #======================== natural reserves documents pages================================
