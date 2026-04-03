@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from .views import (
     allowed_vehicles, laws, search_laws, single_vehicle_upload, bulk_vehicle_entry,
     registered_vehicles_list, add_vehicle_category, add_vehicle_access_area, get_dropdown_data,
-    bulk_vehicle_save, vehicle_detail, edit_vehicle, delete_vehicle  # Add these new views
+    bulk_vehicle_save, vehicle_detail, edit_vehicle, delete_vehicle
 )
 
 

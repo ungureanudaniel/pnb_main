@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from .forms import CustomAuthenticationForm
+from django.utils.safestring import mark_safe
 
 # def login_view(request):
 #     if request.user.is_authenticated:
@@ -33,6 +34,21 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            
+            # Format the date
+            if user.last_login:
+                last_login_str = user.last_login.strftime('%B %d, %Y at %H:%M')
+                welcome_msg = f"Welcome back, {user.get_full_name() or user.username}! 👋 Last login: {last_login_str}"
+            else:
+                welcome_msg = f"Welcome, {user.get_full_name() or user.username}! 👋 This is your first time logging in."
+            
+            # Mark as safe to render HTML
+            messages.success(request, mark_safe(welcome_msg))
+            
+            # For admin users with HTML link
+            if user.is_staff or user.is_superuser:
+                admin_msg = mark_safe('You have administrator privileges. Access the <a href="/admin/" class="alert-link">admin panel</a> to manage content.')
+                messages.info(request, admin_msg)
             
             # Format the last login date properly
             last_login_msg = ""

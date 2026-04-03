@@ -1,0 +1,136 @@
+{% extends "services/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main class="main">
+  <!-- welcome start-->
+  <section class="welcome-primary green_background">
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <div class="align-container">
+            <div class="align-container__item">
+              <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Vehicle</span> <span>Details</span>{% endblocktranslate %}</h1>
+              <span class="welcome_icon">
+                <img src="{% static 'img/svg/car.svg' %}" alt="{% trans 'Vehicle icon' %}">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- welcome end-->
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <!-- Status Banner -->
+          <div class="alert alert-{% if status == 'active' %}success{% elif status == 'upcoming' %}info{% else %}danger{% endif %} mb-4">
+            <div class="d-flex align-items-center">
+              <div class="mr-3">
+                {% if status == 'active' %}
+                  <i class="fa fa-check-circle fa-2x"></i>
+                {% elif status == 'upcoming' %}
+                  <i class="fa fa-clock-o fa-2x"></i>
+                {% else %}
+                  <i class="fa fa-times-circle fa-2x"></i>
+                {% endif %}
+              </div>
+              <div>
+                <strong>
+                  {% if status == 'active' %}
+                    {% trans "ACTIVE PERMIT" %}
+                  {% elif status == 'upcoming' %}
+                    {% trans "UPCOMING PERMIT" %}
+                  {% else %}
+                    {% trans "EXPIRED PERMIT" %}
+                  {% endif %}
+                </strong><br>
+                {% if status == 'active' %}
+                  {% blocktranslate with days=days_remaining %}Permit expires in {{ days }} days{% endblocktranslate %}
+                {% elif status == 'upcoming' %}
+                  {% blocktranslate with days=days_remaining %}Permit starts in {{ days }} days{% endblocktranslate %}
+                {% else %}
+                  {% trans "This permit has expired" %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Vehicle Details Card -->
+          <div class="card">
+            <div class="card-header bg-white">
+              <h3 class="mb-0">{{ vehicle.identification_nr }}</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <table class="table table-borderless">
+                    <tr>
+                      <th width="40%">{% trans "Owner:" %}</th>
+                      <td>{{ vehicle.owner }}</td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "Category:" %}</th>
+                      <td>{{ vehicle.categ.title }}</td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "Permit Number:" %}</th>
+                      <td>{{ vehicle.permit_nr }}</td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "Start Date:" %}</th>
+                      <td>{{ vehicle.start_date|date:"d-m-Y" }}</td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "End Date:" %}</th>
+                      <td>{{ vehicle.end_date|date:"d-m-Y" }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-6">
+                  <table class="table table-borderless">
+                    <tr>
+                      <th width="40%">{% trans "Access Areas:" %}</th>
+                      <td>
+                        {% for area in areas %}
+                          <span class="badge badge-success">{{ area.name }}</span>
+                        {% empty %}
+                          <span class="text-muted">{% trans "No areas specified" %}</span>
+                        {% endfor %}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "Registration Date:" %}</th>
+                      <td>{{ vehicle.timestamp|date:"d-m-Y" }}</td>
+                    </tr>
+                    <tr>
+                      <th>{% trans "Description:" %}</th>
+                      <td>{{ vehicle.description|default:"-" }}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-white text-center">
+              <a href="{% url 'edit_vehicle' vehicle.id %}" class="btn btn-warning">
+                <i class="fa fa-edit"></i> {% trans "Edit" %}
+              </a>
+              <a href="{% url 'delete_vehicle' vehicle.id %}" class="btn btn-danger">
+                <i class="fa fa-trash"></i> {% trans "Delete" %}
+              </a>
+              <a href="{% url 'vehicles_list' %}" class="btn btn-secondary">
+                <i class="fa fa-arrow-left"></i> {% trans "Back to List" %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

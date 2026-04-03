@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
@@ -209,18 +209,24 @@ def edit_vehicle(request, vehicle_id):
 
 @login_required(login_url='signin')
 def delete_vehicle(request, vehicle_id):
-    if request.method == "POST":
-        try:
-            vehicle = AllowedVehicles.objects.get(id=vehicle_id)
-            identification_nr = vehicle.identification_nr
-            vehicle.delete()
-            messages.success(request, _("Vehicle {} deleted successfully!").format(identification_nr))
-        except AllowedVehicles.DoesNotExist:
-            messages.error(request, _("Vehicle not found."))
-        
-        return redirect('registered_vehicles_list')
+    """Delete a vehicle record"""
     
-    return redirect('registered_vehicles_list')
+    # Get the vehicle (will return 404 if not found)
+    vehicle = get_object_or_404(AllowedVehicles, id=vehicle_id)
+    
+    if request.method == "POST":
+        # Actually delete the vehicle
+        identification_nr = vehicle.identification_nr
+        vehicle.delete()
+        messages.success(request, _("Vehicle {} deleted successfully!").format(identification_nr))
+        # Redirect to the list page after successful deletion
+        return redirect('vehicles_list')
+    
+    # GET request - show confirmation page
+    context = {
+        'vehicle': vehicle,
+    }
+    return render(request, 'access/confirm_delete.html', context)
 
 #=================bulk vehicle upload===============================
 @login_required(login_url='signin')

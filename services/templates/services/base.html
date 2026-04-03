@@ -366,20 +366,20 @@
 			<!-- TEMPORARY DEBUG - Remove after fixing -->
 			{% if messages %}
 				<div class="container-fluid p-0">
-					{% for message in messages %}
-					<div class="alert alert-dismissible fade show {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						{% if 'safe' in message.tags %}
-							{{ message|safe }}
-						{% else %}
-							{{ message }}
-						{% endif %}
+						{% for message in messages %}
+						<div class="alert alert-dismissible fade show {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							{% if 'safe' in message.tags or 'html' in message.tags %}
+								{{ message|safe }}
+							{% else %}
+								{{ message }}
+							{% endif %}
+						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
-				</div>
-				{% endif %}
+			{% endif %}
 			<!-- menu dropdown start-->
 			<div class="menu-dropdown ">
 				<div class="menu-dropdown__inner" data-value="start">

@@ -13,7 +13,7 @@
           <div class="align-container">
             <div class="align-container__item">
               <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Add</span> <span>Vehicle</span>{% endblocktranslate %}</h1>
+              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Vehicle</span> <span>Management</span>{% endblocktranslate %}</h1>
               <span class="welcome_icon">
                 <img src="{% static 'img/svg/warning.svg' %}" alt="{% trans 'Vehicle icon' %}">
               </span>
@@ -31,7 +31,7 @@
       <div class="row bottom-50">
         <div class="col-12">
           <div class="heading heading--primary heading--center">
-            <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Vehicle Details</span>{% endblocktranslate %}</h2>
+            <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Registered</span> <span>Vehicles</span>{% endblocktranslate %}</h2>
           </div>
         </div>
 
@@ -39,72 +39,81 @@
         <div id="error-section" class="pb-3 col-12 justify-content-center" style="justify-content:center">
           {% include 'includes/messages.html' %}
         </div>
-        {% else %}
-        <div id="error-section" class="pb-5 col-12 justify-content-center" style="justify-content:center"></div>
         {% endif %}
+
+        <!-- Add Vehicle Button -->
+        <div class="col-12 text-right mb-3">
+          <a href="{% url 'single_vehicle_upload' %}" class="btn btn-success">
+            <i class="fa fa-plus"></i> {% trans "Add New Vehicle" %}
+          </a>
+          <a href="{% url 'bulk_vehicle_entry' %}" class="btn btn-info">
+            <i class="fa fa-upload"></i> {% trans "Bulk Upload" %}
+          </a>
+        </div>
 
         <div class="container d-lg-block">
             <div class="row">
               <div class="col-lg-12 bottom-50">
-									<form class="search-form mb-4" method="GET" action="">
-                    <div class="row align-items-center">
-                      
-                      <!-- Search by owner or ID -->
-                      <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                        <input type="search" name="q" class="form-control w-100" placeholder="{% trans 'Search by owner/ID' %}" value="{{ request.GET.search }}">
-                      </div>
-
-                      <!-- Filter by category -->
-                      <div class="col-lg-4 col-md-6 mb-2">
-                        <select name="category" class="form-control w-100">
-                          <option value="">{% trans 'All Categories' %}</option>
-                          {% for category in categories %}
-                            <option value="{{ category.id }}" {% if request.GET.categ == category.id|stringformat:"s" %}selected{% endif %}>
-                              {{ category.title }}
-                            </option>
-                          {% endfor %}
-                        </select>
-                      </div>
-
-                      <!-- Filter by area -->
-                      <div class="col-lg-3 col-md-6 mb-2">
-                        <select name="area" class="form-control w-100">
-                          <option value="">{% trans 'All Areas' %}</option>
-                          {% for area in areas %}
-                            <option value="{{ area.id }}" {% if request.GET.area == area.id|stringformat:"s" %}selected{% endif %}>
-                              {{ area.name }}
-                            </option>
-                          {% endfor %}
-                        </select>
-                      </div>
-
-                      <!-- Submit button -->
-                      <div class="col-lg-2 col-md-6 mb-2">
-                        <button type="submit" class="btn btn-primary w-100">
-                          <i class="fa fa-search"></i> {% trans "Search" %}
-                        </button>
-                      </div>
-
+                <form class="search-form mb-4" method="GET" action="">
+                  <div class="row align-items-center">
+                    
+                    <!-- Search by owner or ID -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+                      <input type="search" name="q" class="form-control w-100" placeholder="{% trans 'Search by owner/ID' %}" value="{{ query }}">
                     </div>
-                  </form>
 
-								</div>
+                    <!-- Filter by category -->
+                    <div class="col-lg-3 col-md-6 mb-2">
+                      <select name="category" class="form-control w-100">
+                        <option value="">{% trans 'All Categories' %}</option>
+                        {% for category in categories %}
+                          <option value="{{ category.id }}" {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
+                            {{ category.title }}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+                    <!-- Filter by area -->
+                    <div class="col-lg-3 col-md-6 mb-2">
+                      <select name="area" class="form-control w-100">
+                        <option value="">{% trans 'All Areas' %}</option>
+                        {% for area in areas %}
+                          <option value="{{ area.id }}" {% if selected_area == area.id|stringformat:"s" %}selected{% endif %}>
+                            {{ area.name }}
+                          </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="col-lg-2 col-md-6 mb-2">
+                      <button type="submit" class="btn btn-primary w-100">
+                        <i class="fa fa-search"></i> {% trans "Search" %}
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
+
+            <!-- Desktop Table View -->
             <div class="row">
               <div class="col-lg-12 d-none d-lg-block">
                 <div class="pricing-item pricing-item--style-2" style="border:3px solid black;">
                   <div class="row align-items-center">
-                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Entity' %}</span></div>
-                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
-                    <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
-                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit Nr.' %}</span></div>
-                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date/<br>End date' %}</span></div>
-                    <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Expiry date' %}</span></div> -->
-                    <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Note' %}</span></div>
+                    <div class="col-lg-2 col-xl-2"><strong>{% trans 'Entity' %}</strong></div>
+                    <div class="col-lg-2 col-xl-2"><strong>{% trans 'License Plate' %}</strong></div>
+                    <div class="col-lg-2 col-xl-2"><strong>{% trans 'Authorized Area' %}</strong></div>
+                    <div class="col-lg-1 col-xl-1"><strong>{% trans 'Permit Nr.' %}</strong></div>
+                    <div class="col-lg-2 col-xl-2"><strong>{% trans 'Start/End Date' %}</strong></div>
+                    <div class="col-lg-1 col-xl-1"><strong>{% trans 'Status' %}</strong></div>
+                    <div class="col-lg-2 col-xl-2"><strong>{% trans 'Actions' %}</strong></div>
                   </div>
                 </div>
               </div>
             </div>
+
             {% for car in vehicles %}
             <div class="col-xs-6 col-lg-12 d-none d-lg-block">
               <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
@@ -112,75 +121,166 @@
                   <div class="col-lg-2 col-xl-2">
                     <h6 class="pricing-item__plan">{{ car.owner }}</h6>
                   </div>
-                  <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2"><span>{% for a in car.area.all %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|date:"d.m.Y" }}/<br>{{ car.end_date|date:"d.m.Y" }} </span></div>
-                  <!-- <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.end_date|lower|safe }}</span></div> -->
-                  <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.description|capfirst|safe }}</span></div>
-
-
+                  <div class="col-lg-2 col-xl-2"><strong>{{ car.identification_nr|safe }}</strong></div>
+                  <div class="col-lg-2 col-xl-2">
+                    {% for a in car.area.all %}
+                      <span class="badge badge-info">{{ a }}</span>
+                    {% endfor %}
+                  </div>
+                  <div class="col-lg-1 col-xl-1"><span>{{ car.permit_nr|safe }}</span></div>
+                  <div class="col-lg-2 col-xl-2">
+                    <small>{{ car.start_date|date:"d.m.Y" }}<br>{{ car.end_date|date:"d.m.Y" }}</small>
+                  </div>
+                  <div class="col-lg-1 col-xl-1">
+                    {% now "Y-m-d" as today %}
+                    {% if car.end_date|date:"Y-m-d" < today %}
+                      <span class="badge badge-danger">{% trans "Expired" %}</span>
+                    {% elif car.start_date|date:"Y-m-d" > today %}
+                      <span class="badge badge-warning">{% trans "Upcoming" %}</span>
+                    {% else %}
+                      <span class="badge badge-success">{% trans "Active" %}</span>
+                    {% endif %}
+                  </div>
+                  <div class="col-lg-2 col-xl-2">
+                    <!-- Action Buttons -->
+                    <div class="btn-group btn-group-sm" role="group">
+                      <a href="{% url 'vehicle_detail' car.id %}" class="btn btn-info" title="{% trans 'View Details' %}">
+                        <i class="fa fa-eye"></i>
+                      </a>
+                      <a href="{% url 'edit_vehicle' car.id %}" class="btn btn-warning" title="{% trans 'Edit' %}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a href="{% url 'delete_vehicle' car.id %}" class="btn btn-danger" title="{% trans 'Delete' %}">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            {% empty %}
+            <div class="col-12 text-center">
+              <div class="alert alert-info">
+                <i class="fa fa-info-circle"></i> {% trans "No vehicles found." %}
+              </div>
+            </div>
             {% endfor %}
-            <!-- Display on smaller screens -->
+
+            <!-- Mobile Card View -->
             <div class="container d-lg-none">
               <div class="row">
-                  {% for car in vehicles %}
-                  <div class="col-md-6">
-                      <div class="card mb-3">
-                          <div class="card-header">
-                              <h5 class="card-title"><strong>{% trans 'Entity' %}:</strong> {{ car.owner }}</h5>
-                          </div>
-                          <div class="card-body">
-                              <p class="card-text"><strong>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}:</strong> {{ car.identification_nr }}</p>
-                              <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {% for a in car.area.all %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-                              <p class="card-text"><strong>{% trans 'Permit Nr.' %}:</strong> {{ car.permit_nr }}</p>
-                              <p class="card-text"><strong>{% trans 'Start date' %}:</strong> {{ car.start_date|date:"d.m.Y" }}</p>
-                              <p class="card-text"><strong>{% trans 'Expiry date' %}:</strong> {{ car.end_date|date:"d.m.Y" }}</p>
-                              <p class="card-text"><strong>{% trans 'Note' %}:</strong> {{ car.description|capfirst|safe }}</p>
-
-                          </div>
+                {% for car in vehicles %}
+                <div class="col-md-6 col-sm-12 mb-3">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5 class="card-title mb-0">{{ car.owner }}</h5>
+                      <small class="text-muted">{{ car.identification_nr }}</small>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        <strong>{% trans 'Areas' %}:</strong><br>
+                        {% for a in car.area.all %}
+                          <span class="badge badge-info">{{ a }}</span>
+                        {% endfor %}
+                      </p>
+                      <p class="card-text"><strong>{% trans 'Permit' %}:</strong> {{ car.permit_nr }}</p>
+                      <p class="card-text"><strong>{% trans 'Period' %}:</strong><br>
+                        {{ car.start_date|date:"d.m.Y" }} - {{ car.end_date|date:"d.m.Y" }}
+                      </p>
+                      <p class="card-text"><strong>{% trans 'Status' %}:</strong><br>
+                        {% now "Y-m-d" as today %}
+                        {% if car.end_date|date:"Y-m-d" < today %}
+                          <span class="badge badge-danger">{% trans "Expired" %}</span>
+                        {% elif car.start_date|date:"Y-m-d" > today %}
+                          <span class="badge badge-warning">{% trans "Upcoming" %}</span>
+                        {% else %}
+                          <span class="badge badge-success">{% trans "Active" %}</span>
+                        {% endif %}
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <div class="btn-group btn-group-sm w-100" role="group">
+                        <a href="{% url 'vehicle_detail' car.id %}" class="btn btn-info">
+                          <i class="fa fa-eye"></i> {% trans "View" %}
+                        </a>
+                        <a href="{% url 'edit_vehicle' car.id %}" class="btn btn-warning">
+                          <i class="fa fa-edit"></i> {% trans "Edit" %}
+                        </a>
+                        <a href="{% url 'delete_vehicle' car.id %}" class="btn btn-danger">
+                          <i class="fa fa-trash"></i> {% trans "Delete" %}
+                        </a>
                       </div>
+                    </div>
                   </div>
-                  {% endfor %}
+                </div>
+
+                <!-- Mobile Delete Modal -->
+                <div class="modal fade" id="mobileDeleteModal{{ car.id }}" tabindex="-1" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">{% trans "Confirm Delete" %}</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                          <span>&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>{% blocktranslate with plate=car.identification_nr %}Delete vehicle <strong>{{ plate }}</strong>?{% endblocktranslate %}</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancel" %}</button>
+                        <form method="post" action="{% url 'delete_vehicle' car.id %}">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                  <div class="alert alert-info">{% trans "No vehicles found." %}</div>
+                </div>
+                {% endfor %}
               </div>
             </div>
+
+            <!-- Pagination -->
             <div class="col-12 text-center mb-5 mt-5">
-										<ul class="pagination blog__pagination">
-											{% if vehicles.has_previous %}
-                        <li class="pagination__item pagination__item--prev">
-                        <a href="?page={{ vehicles.previous_page_number }}">
-                          <i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span>
-                        </a>
-                      </li>
-                    {% endif %}
+              <ul class="pagination blog__pagination justify-content-center">
+                {% if vehicles.has_previous %}
+                  <li class="pagination__item pagination__item--prev">
+                    <a href="?page={{ vehicles.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}{% if selected_area %}&area={{ selected_area }}{% endif %}">
+                      <i class="fa fa-angle-left" aria-hidden="true"></i><span>{% trans "Back" %}</span>
+                    </a>
+                  </li>
+                {% endif %}
 
-                    {% for page_num in vehicles.paginator.page_range %}
-                      {% if page_num == vehicles.number %}
-                        <li class="pagination__item pagination__item--active"><span>{{ page_num }}</span></li>
-                      {% else %}
-                        <li class="pagination__item">
-                          <a href="?page={{ page_num }}"><span>{{ page_num }}</span></a>
-                        </li>
-                      {% endif %}
-                    {% endfor %}
-
-                    {% if vehicles.has_next %}
-                      <li class="pagination__item pagination__item--next">
-                        <a href="?page={{ vehicles.next_page_number }}">
-                          <span>Next</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </a>
-                      </li>
+                {% for page_num in vehicles.paginator.page_range %}
+                  {% if page_num == vehicles.number %}
+                    <li class="pagination__item pagination__item--active"><span>{{ page_num }}</span></li>
+                  {% else %}
+                    <li class="pagination__item">
+                      <a href="?page={{ page_num }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}{% if selected_area %}&area={{ selected_area }}{% endif %}">
+                        <span>{{ page_num }}</span>
+                      </a>
+                    </li>
                   {% endif %}
-								</ul>
-              </div>
+                {% endfor %}
+
+                {% if vehicles.has_next %}
+                  <li class="pagination__item pagination__item--next">
+                    <a href="?page={{ vehicles.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}{% if selected_area %}&area={{ selected_area }}{% endif %}">
+                      <span>{% trans "Next" %}</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
             </div>
+          </div>
       </div>
     </div>
   </section>
   <!-- section end-->
-
 </main>
 {% endblock %}
