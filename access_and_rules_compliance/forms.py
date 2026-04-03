@@ -1,3 +1,5 @@
+from datetime import date
+
 from django import forms
 # from captcha.fields import CaptchaField
 from django.utils.translation import gettext_lazy as _
@@ -39,16 +41,16 @@ class VehicleAccessAreaForm(forms.ModelForm):
 class VehicleForm(forms.ModelForm):
     """Form for creating or updating allowed vehicles."""
     
-    # Override date fields with custom widgets that accept multiple formats
+    # Define fields with defaults
     start_date = forms.DateField(
         label=_('Start Date'),
-        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-        input_formats=['%Y-%m-%d', '%d/%m/%Y', '%d-%m-%Y', '%d.%m.%Y']
+        initial=date.today,
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'})
     )
     end_date = forms.DateField(
         label=_('End Date'),
-        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-        input_formats=['%Y-%m-%d', '%d/%m/%Y', '%d-%m-%Y', '%d.%m.%Y']
+        initial=lambda: date(date.today().year, 12, 31),
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'})
     )
     
     class Meta:
@@ -72,11 +74,11 @@ class VehicleForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Add Bootstrap styling to all fields
-        for field_name, field in self.fields.items():
-            if hasattr(field, 'widget') and field_name not in ['start_date', 'end_date']:
+        for field in self.fields.values():
+            if hasattr(field, 'widget'):
                 field.widget.attrs.update({'class': 'form-control'})
         
-        # Make description and area optional
+        # Make fields optional
         self.fields['description'].required = False
         self.fields['area'].required = False
 

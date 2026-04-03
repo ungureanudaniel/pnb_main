@@ -6,16 +6,16 @@ from django.http import JsonResponse
 import json
 import traceback
 from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
-from datetime import date, datetime, timezone
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
 from django.views.decorators.cache import cache_page
 from django.contrib.auth.decorators import login_required
-from django.utils.text import slugify
 from django.views.decorators.csrf import csrf_exempt
-
+from datetime import date
+from django.utils import timezone
+from django.utils.text import slugify
 #=================add vehicle category===============================
 @login_required(login_url='signin')
 def add_vehicle_category(request):
@@ -134,12 +134,9 @@ def allowed_vehicles(request):
 @login_required(login_url='signin')
 def single_vehicle_upload(request):
     template = 'access/single_vehicle_upload.html'
-    context = {}
     
     if request.method == "POST":
-        print("POST data:", request.POST)
         vehicle_form = VehicleForm(request.POST)
-        
         if vehicle_form.is_valid():
             try:
                 vehicle = vehicle_form.save(commit=False)
@@ -152,25 +149,30 @@ def single_vehicle_upload(request):
                 messages.success(request, _("Vehicle information saved successfully!"))
                 return redirect('vehicles_list')
             except Exception as e:
-                print(f"Error: {e}")
                 messages.error(request, _("An error occurred: {}").format(str(e)))
         else:
-            print("Form errors:", vehicle_form.errors)
             for field, errors in vehicle_form.errors.items():
                 for error in errors:
                     messages.error(request, f"{field}: {error}")
     else:
-        # Set default dates for new form
-        current_date = timezone.now().date()
-        end_of_year = date(current_date.year, 12, 31)
+        # Set default dates
+        today = date.today()
+        end_of_year = date(today.year, 12, 31)
         
-        initial_data = {
-            'start_date': current_date,
+        # Create form with initial values
+        vehicle_form = VehicleForm(initial={
+            'start_date': today,
             'end_date': end_of_year,
-        }
-        vehicle_form = VehicleForm(initial=initial_data)
+        })
+        
+        # Debug: Print to verify
+        print(f"Today: {today}")
+        print(f"End of year: {end_of_year}")
+        print(f"Form initial: {vehicle_form.initial}")
     
-    context['vehicle_form'] = vehicle_form
+    context = {
+        'vehicle_form': vehicle_form,
+    }
     return render(request, template, context)
 
 #================= api for serving dropdown list data ===============================
