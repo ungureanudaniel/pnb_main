@@ -2988,6 +2988,11 @@ msgstr "Da, Șterge"
 #: access/confirm_delete.html
 msgid "Previous"
 msgstr "Anterioară"
+
+#: access/confirm_delete.html
+msgid "<span>Vehicle</span> <span>Management</span>"
+msgstr "<span>Managementul</span> <span>Vehiculelor</span>"
+
 #: access/confirm_delete.html
 msgid "Next"
 msgstr "Următoarea"
