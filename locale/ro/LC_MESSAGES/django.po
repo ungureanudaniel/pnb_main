@@ -2878,6 +2878,30 @@ msgstr "Consiliul Consultativ"
 #: services/base.html: 38
 msgid "Administration"
 msgstr "Administrație"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Active"
+msgstr "Activ"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Upcoming"
+msgstr "Aproape de expirare"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Expired"
+msgstr "Expirat"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Confirm Delete"
+msgstr "Confirmă Ștergere"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Delete vehicle"
+msgstr "Șterge vehicul"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Add New Vehicle"
+msgstr "Adaugă vehicul nou"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Bulk Upload"
+msgstr "Încărcare multiplă"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "<span>Registered</span> <span>Vehicles</span>"
+msgstr "<span>Vehicule</span> <span>Autorizate</span>"
 #: services/templates/public_docs/mng-plan.html: 16
 msgid "<span>Management</span><span> <br> Plan</span>"
 msgstr "<span>Plan de</span><span><br> Management</span>"
