@@ -8,7 +8,6 @@
 				<!-- promo start-->
 				<section class="promo promo--front-5">
 					<div class="promo-slider">
-
 						<div class="promo-slider__item promo-slider__item--style-2">
 							<picture>
 								<source srcset="{% static 'img/backgrounds/promo8.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/promo8.webp' %}" alt="img"/>
@@ -115,8 +114,49 @@
 					</div>
 					<!-- promo pannel end-->
 				</section>
-
+				
 				<!-- promo end-->
+				 <script>
+					(function() {
+						'use strict';
+						
+						// Wait for everything to load
+						window.addEventListener('load', function() {
+							console.log('Page loaded, initializing promo slider');
+							
+							// Check if jQuery and Slick are available
+							if (typeof jQuery !== 'undefined' && jQuery.fn.slick) {
+								jQuery(document).ready(function($) {
+									// Initialize the slider
+									if ($('.promo-slider').length) {
+										$('.promo-slider').slick({
+											fade: true,
+											adaptiveHeight: true,
+											infinite: true,
+											speed: 1200,
+											arrows: false,
+											dots: true,
+											appendDots: $('.promo-slider__nav'),
+											autoplay: true,
+											autoplaySpeed: 5000
+										});
+										console.log('Promo slider initialized successfully');
+									}
+								});
+							} else {
+								console.log('Slick slider not available, showing static content');
+								// Manually show all slides
+								document.querySelectorAll('.promo-slider__item').forEach(function(item) {
+									item.style.display = 'block';
+								});
+								document.querySelectorAll('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').forEach(function(el) {
+									el.style.opacity = '1';
+									el.style.transform = 'translateY(0)';
+								});
+							}
+						});
+					})();
+					</script>
 				<!-- section start-->
 				<section id="about-bucegi" class="section about-bucegi"><img class="img--aside t50 l0 w-33 ml-4" src="{% static 'img/logo/sfinx1.png' %}" alt="img"/>
 					<div class="container">
@@ -375,4 +415,39 @@
 				<!-- newsletter end-->
 
 			</main>
+<script>
+    $(document).ready(function() {
+        // Check if slick is available
+        if (typeof $.fn.slick === 'undefined') {
+            console.error('Slick slider is not loaded!');
+            // Manually show the promo content
+            $('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').css({
+                'opacity': 1,
+                'transform': 'translateY(0)'
+            });
+        } else {
+            console.log('Slick slider is available');
+            // Re-initialize promo slider
+            if ($('.promo-slider').length) {
+                $('.promo-slider').slick({
+                    fade: true,
+                    adaptiveHeight: true,
+                    infinite: true,
+                    speed: 1200,
+                    arrows: false,
+                    dots: true,
+                    appendDots: $('.promo-slider__nav'),
+                });
+            }
+        }
+        
+        // Force show content after a short delay
+        setTimeout(function() {
+            $('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').css({
+                'opacity': 1,
+                'transform': 'translateY(0)'
+            });
+        }, 100);
+    });
+</script>
 {% endblock %}

@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 # from django.http import JsonResponse
-from django.utils.timezone import now
 from django.conf import settings
 from utils.weather_scrape import scraped_data
 from datetime import datetime
@@ -13,15 +12,15 @@ import random
 from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_protect
-from django.views.decorators.csrf import csrf_exempt
 #----blog imports
 from django.views.generic.detail import DetailView
 from django.views.generic import MonthArchiveView, ListView
 from hitcount.views import HitCountDetailView
-
 #---------cache decorators----------
-from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
 #----------generate unique code for email subscription conf--------------------
 def random_digits():
     return "%0.12d" % random.randint(0, 999999999999)
@@ -72,35 +71,57 @@ def add_testimonial(request):
 #     weather = await scraped_data()
 #     return JsonResponse(weather)
 #========================home page=================================
+# @csrf_exempt
+# @cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
+# def home(request):
+#     template = 'services/home.html'
+#     context = {
+#     }
+#     #handle post requests
+#     # if request.method == 'POST':
+#     #     form_type = request.POST.get('form-type')
+
+#     #     if form_type == "signin-form":
+#     #         handle_signin(request, context)
+#     #     elif form_type == "subscribe":
+#     #         handle_subscription(request, context)
+
+#     # Fetch weather data 
+#     weather = scraped_data()
+#     context['weather'] = weather
+#     # logger.debug(context['weather'])
+#     # Fetching data from the database and adding to context
+#     context.update({
+#         'attr_categ': AttractionCategory.objects.all(),
+#         'attractions': Attraction.objects.filter(featured=True),
+#         'current_date': datetime.today().date(),
+#         'reviews': Testimonial.objects.filter(status=True),
+#         'partners': Partner.objects.all().order_by("rank"),
+#     })
+    
+#     return render(request, template, context)
 @csrf_exempt
-@cache_page(60 * 60)  # Cache for 60 minutes (in seconds)
 def home(request):
-    template = 'services/home.html'
     context = {
-    }
-    #handle post requests
-    # if request.method == 'POST':
-    #     form_type = request.POST.get('form-type')
-
-    #     if form_type == "signin-form":
-    #         handle_signin(request, context)
-    #     elif form_type == "subscribe":
-    #         handle_subscription(request, context)
-
-    # Fetch weather data 
-    weather = scraped_data()
-    context['weather'] = weather
-    # logger.debug(context['weather'])
-    # Fetching data from the database and adding to context
-    context.update({
         'attr_categ': AttractionCategory.objects.all(),
         'attractions': Attraction.objects.filter(featured=True),
         'current_date': datetime.today().date(),
         'reviews': Testimonial.objects.filter(status=True),
         'partners': Partner.objects.all().order_by("rank"),
-    })
+        'weather': scraped_data(),
+    }
     
-    return render(request, template, context)
+    # Fresh data for authenticated users, no caching
+    if request.user.is_authenticated:
+        return render(request, 'services/home.html', context)
+    
+    # For anonymous users, cached version
+    @cache_page(60 * 60, key_prefix='home_anon')
+    def cached_home(request):
+        return render(request, 'services/home.html', context)
+    
+    return cached_home(request)
+
 #------------------------SUBSCRIBE---------------------------------------SUBSCRIBE
 def subscription(request):
     template_name = 'services/subscribe.html'
@@ -382,11 +403,7 @@ class FloraDetailView(DetailView):
 def ticket_info(request):
     template = 'services/ticket-info.html'
     return render(request, template, {})
-#========================THEME TRAILS page================================
-def theme_trails(request):
-    template = 'services/theme-trails.html'
 
-    return render(request, template, {})
 #========================mass-media page================================
 def massmedia(request):
     template = 'services/mass-media.html'

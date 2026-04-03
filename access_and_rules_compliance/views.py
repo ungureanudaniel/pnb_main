@@ -74,42 +74,62 @@ def allowed_vehicles(request):
         
         if query:
             try:
-                # Fetch the most recent permit based on the end date
-                vehicles = AllowedVehicles.objects.filter(Q(identification_nr=query)).order_by("end_date").prefetch_related('area')
-                print(vehicles)
-            except Exception as e:
-                messages.error(request, _("An error occurred: {}").format(str(e)))
-            try:
-                if vehicles:
+                vehicles = AllowedVehicles.objects.filter(
+                    identification_nr=query
+                ).order_by("-end_date").prefetch_related('area')  # Use -end_date to get latest first
+                
+                if vehicles.exists():
                     today = datetime.today().date()
                     car_info = []
+                    valid_vehicle_found = False
+                    
                     for vehicle in vehicles:
                         start_date = vehicle.start_date
                         end_date = vehicle.end_date
-                        if end_date >= today:
+                        
+                        if start_date <= today <= end_date:
                             car_info.append({
                                 'owner': vehicle.owner,
                                 'identification_nr': vehicle.identification_nr,
-                                'area': [a.name for a in vehicle.area.all()],  # Convert related areas to a list of names
+                                'area': [a.name for a in vehicle.area.all()],
                                 'permit_nr': vehicle.permit_nr,
                                 'start_date': vehicle.start_date,
                                 'end_date': vehicle.end_date,
                                 'description': vehicle.description,
                             })
-                            continue
-                    if start_date > today:
-                        messages.warning(request, _('Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}.').format(vehicle.identification_nr, start_date))
-                    elif start_date <= today and end_date >= today:
-                        messages.success(request, _('Vehicle with plates number {} is allowed in the park!').format(vehicle.identification_nr))
+                            valid_vehicle_found = True
+                            
+                            messages.success(
+                                request, 
+                                _('Vehicle with plates number {} is allowed in the park!').format(vehicle.identification_nr)
+                            )
+                        elif start_date > today:
+                            messages.warning(
+                                request, 
+                                _('Vehicle with plates number {} is not yet allowed! Permit starts on {}.').format(
+                                    vehicle.identification_nr, 
+                                    start_date.strftime('%d-%m-%Y')
+                                )
+                            )
+                        else:
+                            messages.error(
+                                request, 
+                                _('Vehicle with plates number {} permit expired on {}.').format(
+                                    vehicle.identification_nr,
+                                    end_date.strftime('%d-%m-%Y')
+                                )
+                            )
+                    
+                    if valid_vehicle_found:
                         context.update({"car_info": car_info})
                     else:
-                        messages.error(request, _('Vehicle with plates number {} is not authorized!').format(query))
+                        messages.error(request, _('No active permit found for vehicle {}.').format(query))
                 else:
-                    messages.error(request, _('Vehicle with plates number {} is not authorized!').format(query))
+                    messages.error(request, _('Vehicle with plates number {} is not registered!').format(query))
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
         else:
-            messages.error(request, _("Invalid search query!"))
+            messages.error(request, _("Please enter a valid license plate number."))
 
     return render(request, template, context)
 
@@ -144,6 +164,64 @@ def get_dropdown_data(request):
         'areas': areas
     })
 
+@login_required(login_url='signin')
+def vehicle_detail(request, vehicle_id):
+    template = 'access/vehicle_detail.html'
+    
+    try:
+        vehicle = AllowedVehicles.objects.get(id=vehicle_id)
+        context = {
+            'vehicle': vehicle,
+            'is_active': vehicle.start_date <= datetime.today().date() <= vehicle.end_date if vehicle.end_date else False,
+            'days_remaining': (vehicle.end_date - datetime.today().date()).days if vehicle.end_date and vehicle.end_date >= datetime.today().date() else 0,
+        }
+        return render(request, template, context)
+    except AllowedVehicles.DoesNotExist:
+        messages.error(request, _("Vehicle not found."))
+        return redirect('registered_vehicles_list')
+
+@login_required(login_url='signin')
+def edit_vehicle(request, vehicle_id):
+    template = 'access/edit_vehicle.html'
+    
+    try:
+        vehicle = AllowedVehicles.objects.get(id=vehicle_id)
+    except AllowedVehicles.DoesNotExist:
+        messages.error(request, _("Vehicle not found."))
+        return redirect('registered_vehicles_list')
+    
+    if request.method == "POST":
+        form = VehicleForm(request.POST, instance=vehicle)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _("Vehicle information updated successfully!"))
+            return redirect('vehicle_detail', vehicle_id=vehicle.id)
+        else:
+            messages.error(request, _("Form is not valid! Please check your input. {}".format(form.errors)))
+    else:
+        form = VehicleForm(instance=vehicle)
+    
+    context = {
+        'form': form,
+        'vehicle': vehicle,
+    }
+    return render(request, template, context)
+
+@login_required(login_url='signin')
+def delete_vehicle(request, vehicle_id):
+    if request.method == "POST":
+        try:
+            vehicle = AllowedVehicles.objects.get(id=vehicle_id)
+            identification_nr = vehicle.identification_nr
+            vehicle.delete()
+            messages.success(request, _("Vehicle {} deleted successfully!").format(identification_nr))
+        except AllowedVehicles.DoesNotExist:
+            messages.error(request, _("Vehicle not found."))
+        
+        return redirect('registered_vehicles_list')
+    
+    return redirect('registered_vehicles_list')
+
 #=================bulk vehicle upload===============================
 @login_required(login_url='signin')
 def bulk_vehicle_entry(request):
@@ -164,37 +242,61 @@ def bulk_vehicle_save(request):
         try:
             data = json.loads(request.body)
             created = 0
-            for row in data:
+            errors = []
+            
+            for idx, row in enumerate(data):
                 if not row or not any(row):
-                    continue  # skip empty row
-                # Validate required fields
+                    continue
+                
                 try:
-                    owner = row[0] if len(row) > 0 else ""
-                    categ = row[1] if len(row) > 1 else ""
-                    identification_nr = row[2] if len(row) > 2 else ""
-                    zona = row[3] if len(row) > 3 else ""
-                    nr_aviz = row[4] if len(row) > 4 else ""
-                    data_inceput_raw = row[5] if len(row) > 5 else None
-                    data_sfarsit_raw = row[6] if len(row) > 6 else None
-                    descriere = row[7] if len(row) > 7 else ""
-
-                    try:
-                        categ_obj = VehicleCategory.objects.get(title=categ)
-                    except VehicleCategory.DoesNotExist:
-                        print(f"Category '{categ}' not found.")
+                    # Validate required fields
+                    if len(row) < 7:
+                        errors.append(f"Row {idx + 1}: Missing required fields")
                         continue
-
-                    try:
-                        zona_obj = AccessArea.objects.get(name=zona)
-                    except AccessArea.DoesNotExist:
-                        print(f"Area '{zona}' not found.")
-                        continue
-
-                    # Convert date strings to date objects
-                    data_inceput = datetime.strptime(row[5], '%d-%m-%Y').date() if row[5] else None
-                    data_sfarsit = datetime.strptime(row[6], '%d-%m-%Y').date() if row[6] else None
                     
-                    # save the vehicle
+                    owner = str(row[0]).strip() if row[0] else ""
+                    categ = str(row[1]).strip() if row[1] else ""
+                    identification_nr = str(row[2]).strip().upper().replace(" ", "") if row[2] else ""
+                    zona = str(row[3]).strip() if row[3] else ""
+                    nr_aviz = str(row[4]).strip() if row[4] else ""
+                    
+                    if not all([owner, categ, identification_nr, zona, nr_aviz]):
+                        errors.append(f"Row {idx + 1}: Missing required fields (owner, category, license plate, area, permit number)")
+                        continue
+                    
+                    # Get or create category
+                    categ_obj, _ = VehicleCategory.objects.get_or_create(title=categ)
+                    
+                    # Get or create area
+                    zona_obj, _ = AccessArea.objects.get_or_create(name=zona)
+                    
+                    # Parse dates
+                    data_inceput = None
+                    data_sfarsit = None
+                    
+                    if row[5]:
+                        try:
+                            data_inceput = datetime.strptime(str(row[5]), '%d-%m-%Y').date()
+                        except ValueError:
+                            errors.append(f"Row {idx + 1}: Invalid start date format. Use DD-MM-YYYY")
+                            continue
+                    
+                    if row[6]:
+                        try:
+                            data_sfarsit = datetime.strptime(str(row[6]), '%d-%m-%Y').date()
+                        except ValueError:
+                            errors.append(f"Row {idx + 1}: Invalid end date format. Use DD-MM-YYYY")
+                            continue
+                    
+                    descriere = str(row[7]).strip() if len(row) > 7 and row[7] else ""
+                    
+                    # Check for duplicate
+                    existing = AllowedVehicles.objects.filter(identification_nr=identification_nr).first()
+                    if existing:
+                        errors.append(f"Row {idx + 1}: Vehicle {identification_nr} already exists (Permit: {existing.permit_nr})")
+                        continue
+                    
+                    # Create vehicle
                     vehicle = AllowedVehicles.objects.create(
                         owner=owner,
                         categ=categ_obj,
@@ -204,18 +306,26 @@ def bulk_vehicle_save(request):
                         end_date=data_sfarsit,
                         description=descriere,
                     )
-
                     vehicle.area.set([zona_obj])
+                    created += 1
+                    
                 except Exception as inner_e:
-                    print(f"[Vehicle Save Error] Row: {row}")
+                    errors.append(f"Row {idx + 1}: {str(inner_e)}")
                     traceback.print_exc()
-
-            return JsonResponse({'message': f"{created} vehicles saved successfully."})
+            
+            if errors:
+                return JsonResponse({
+                    'message': f"{created} vehicles saved with {len(errors)} errors.",
+                    'errors': errors
+                }, status=207)  # Multi-Status
+            else:
+                return JsonResponse({'message': f"{created} vehicles saved successfully."})
+                
         except Exception as e:
-            print("[Vehicle Save Outer Exception]")
             print("Data received:", request.body.decode())
             traceback.print_exc()
             return JsonResponse({'message': f"Error: {str(e)}"}, status=400)
+    
     return JsonResponse({'message': 'Invalid request'}, status=405)
 
 #=================registered vehicles list===============================
@@ -259,7 +369,16 @@ def registered_vehicles_list(request):
 #=================laws===============================
 def laws(request):
     template = "laws/laws.html"
-    context = {"laws":Law.objects.all()}
+    laws_list = Law.objects.all().order_by('-publish_date')
+    
+    paginator = Paginator(laws_list, 10)  # Show 10 laws per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    context = {
+        "laws": page_obj,
+        "page_obj": page_obj,
+    }
     return render(request, template, context)
 #=================search laws===============================
 def search_laws(request):
@@ -269,23 +388,31 @@ def search_laws(request):
     publish_year = request.GET.get('publish_year', '')
     doc_type = request.GET.get('doc_type', '')
 
-    # Start with the full queryset
-    query= Q()
-
-    # Apply filters based on the presence of query parameters
+    # Build query
+    query = Q()
+    
     if title:
         query &= Q(title__icontains=title)
     if doc_nr:
         query &= Q(doc_nr__icontains=doc_nr)
     if publish_year:
         try:
-            # Try to parse the date string
             year = int(publish_year)
             query &= Q(publish_date__year=year)
         except ValueError:
-            # Handle invalid date format
-            query = Q()
+            pass
     if doc_type:
-        query = Q(doc_nr__icontains=doc_nr)
-
-    return render(request, template, {'laws': Law.objects.filter(query)})
+        query &= Q(doc_type__icontains=doc_type)  # Fixed this line
+    
+    laws = Law.objects.filter(query) if query else Law.objects.none()
+    
+    context = {
+        'laws': laws,
+        'search_params': {
+            'title': title,
+            'doc_nr': doc_nr,
+            'publish_year': publish_year,
+            'doc_type': doc_type,
+        }
+    }
+    return render(request, template, context)

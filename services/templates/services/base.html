@@ -50,8 +50,9 @@
 		<!-- Handsontable imports -->
 		<!-- Handsontable CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css" />
-		<!-- Handsontable CDN -->
-
+		<!-- slick slider -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 		<!-- Handsontable JS -->
 		<script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
 		<!-- <script src="{% static 'js/special.js' %}"></script>  -->
@@ -362,6 +363,23 @@
     End Preloader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 		<div class="page-wrapper">
+			<!-- TEMPORARY DEBUG - Remove after fixing -->
+			{% if messages %}
+				<div class="container-fluid p-0">
+					{% for message in messages %}
+					<div class="alert alert-dismissible fade show {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{% if 'safe' in message.tags %}
+							{{ message|safe }}
+						{% else %}
+							{{ message }}
+						{% endif %}
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
 			<!-- menu dropdown start-->
 			<div class="menu-dropdown ">
 				<div class="menu-dropdown__inner" data-value="start">
@@ -748,17 +766,75 @@
 			// document.addEventListener('touchstart', onTouchStart, {passive: true});
 		</script>
 		<!-- libs-->
+		<!-- jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<!--  popper and bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
+		<!--  slick slider -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<!--  custom js -->
 		<script src="{% static 'js/special.js' %}"></script>
 		<script src="{% static 'js/libs.min.js' %}"></script>
-		<script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
-		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-		<!-- scripts-->
 		<script src="{% static 'js/common.min.js' %}"></script>
 
-
-
+		<!-- initialization script -->
+		<script>
+			// Wait for everything to load
+			window.addEventListener('load', function() {
+				console.log('Page fully loaded');
+				
+				// Check if jQuery and Slick are available
+				if (typeof jQuery !== 'undefined') {
+					console.log('jQuery version:', jQuery.fn.jquery);
+					
+					if (jQuery.fn.slick) {
+						console.log('Slick slider is available');
+						
+						// Initialize promo slider
+						jQuery(document).ready(function($) {
+							if ($('.promo-slider').length) {
+								$('.promo-slider').slick({
+									fade: true,
+									adaptiveHeight: true,
+									infinite: true,
+									speed: 1200,
+									arrows: false,
+									dots: true,
+									appendDots: $('.promo-slider__nav'),
+									autoplay: true,
+									autoplaySpeed: 5000
+								});
+								console.log('Promo slider initialized');
+							}
+							
+							// Force show all promo content
+							$('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').css({
+								'opacity': 1,
+								'transform': 'translateY(0)'
+							});
+						});
+					} else {
+						console.error('Slick slider is NOT available');
+						// Force show content even without slider
+						jQuery(document).ready(function($) {
+							$('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').css({
+								'opacity': 1,
+								'transform': 'translateY(0)'
+							});
+						});
+					}
+				} else {
+					console.error('jQuery is not available');
+					// Vanilla JS fallback
+					document.querySelectorAll('.promo-slider__wrapper-1, .promo-slider__wrapper-2, .promo-slider__wrapper-3').forEach(function(el) {
+						el.style.opacity = '1';
+						el.style.transform = 'translateY(0)';
+					});
+				}
+			});
+		</script>
 	</body>
 
 </html>
