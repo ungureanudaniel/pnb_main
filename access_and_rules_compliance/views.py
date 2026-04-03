@@ -6,7 +6,7 @@ from django.http import JsonResponse
 import json
 import traceback
 from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
-from datetime import datetime
+from datetime import date, datetime, timezone
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.utils.translation import gettext_lazy as _
@@ -131,25 +131,45 @@ def allowed_vehicles(request):
     
     return render(request, template, context)
 
-#=================allowed vehicles input===============================
 @login_required(login_url='signin')
 def single_vehicle_upload(request):
     template = 'access/single_vehicle_upload.html'
     context = {}
     
     if request.method == "POST":
+        print("POST data:", request.POST)
         vehicle_form = VehicleForm(request.POST)
+        
         if vehicle_form.is_valid():
             try:
-                vehicle_form.owner = vehicle_form.cleaned_data['owner'].capitalize()
-                vehicle_form.save()
+                vehicle = vehicle_form.save(commit=False)
+                vehicle.owner = vehicle.owner.capitalize()
+                vehicle.identification_nr = vehicle.identification_nr.replace(" ", "").upper()
+                vehicle.slug = slugify(vehicle.identification_nr)
+                vehicle.save()
+                vehicle_form.save_m2m()
+                
                 messages.success(request, _("Vehicle information saved successfully!"))
+                return redirect('vehicles_list')
             except Exception as e:
+                print(f"Error: {e}")
                 messages.error(request, _("An error occurred: {}").format(str(e)))
         else:
-            messages.error(request, _("Form is not valid! Please check your input. ({}").format(vehicle_form.errors))
+            print("Form errors:", vehicle_form.errors)
+            for field, errors in vehicle_form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
     else:
-        vehicle_form = VehicleForm()
+        # Set default dates for new form
+        current_date = timezone.now().date()
+        end_of_year = date(current_date.year, 12, 31)
+        
+        initial_data = {
+            'start_date': current_date,
+            'end_date': end_of_year,
+        }
+        vehicle_form = VehicleForm(initial=initial_data)
+    
     context['vehicle_form'] = vehicle_form
     return render(request, template, context)
 

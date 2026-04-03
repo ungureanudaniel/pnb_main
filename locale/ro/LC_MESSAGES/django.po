@@ -2900,6 +2900,12 @@ msgstr "Adaugă vehicul nou"
 msgid "Bulk Upload"
 msgstr "Încărcare multiplă"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "No vehicle found with license plate:"
+msgstr "Nu s-a găsit vehiculul cu numărul de înmatriculare:"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Vehicle with license plate {} is not registered!"
+msgstr "Vehiculul cu numărul de înmatriculare {} nu este autorizat!"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "<span>Registered</span> <span>Vehicles</span>"
 msgstr "<span>Vehicule</span> <span>Autorizate</span>"
 #: services/templates/public_docs/mng-plan.html: 16
