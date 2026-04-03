@@ -33,10 +33,7 @@
               </div>
               <h3>{% trans "Confirm Deletion" %}</h3>
               <p class="mt-3">
-                {% blocktranslate with plate=vehicle.identification_nr owner=vehicle.owner %}
-                  Are you sure you want to delete the vehicle with license plate <strong>{{ plate }}</strong> 
-                  registered to <strong>{{ owner }}</strong>?
-                {% endblocktranslate %}
+                {% blocktranslate with plate=vehicle.identification_nr owner=vehicle.owner %}Sigur dorești să ștergi vehiculul cu numărul de înmatriculare <strong>{{ plate }}</strong> înregistrat pe numele <strong>{{ owner }}?{% endblocktranslate %}
               </p>
               <p class="text-danger">
                 <small>{% trans "This action cannot be undone!" %}</small>

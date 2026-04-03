@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 import json
 import traceback
-from .forms import VehicleAccessAreaForm, VehicleForm, ExcelUploadForm, VehicleCategoryForm
+from .forms import VehicleAccessAreaForm, VehicleForm, VehicleCategoryForm
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.utils.translation import gettext_lazy as _
@@ -13,7 +13,7 @@ from django.db.models import Q
 from django.views.decorators.cache import cache_page
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
-from datetime import date
+from datetime import date, datetime
 from django.utils import timezone
 from django.utils.text import slugify
 #=================add vehicle category===============================
@@ -194,6 +194,8 @@ def vehicle_detail(request, vehicle_id):
             'vehicle': vehicle,
             'is_active': vehicle.start_date <= datetime.today().date() <= vehicle.end_date if vehicle.end_date else False,
             'days_remaining': (vehicle.end_date - datetime.today().date()).days if vehicle.end_date and vehicle.end_date >= datetime.today().date() else 0,
+            'status': 'Active' if vehicle.start_date <= datetime.today().date() <= vehicle.end_date else 'Expired' if vehicle.end_date and vehicle.end_date < datetime.today().date() else 'Not Started',
+            'areas': vehicle.area.all(),
         }
         return render(request, template, context)
     except AllowedVehicles.DoesNotExist:

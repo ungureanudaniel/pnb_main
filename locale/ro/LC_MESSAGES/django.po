@@ -2905,6 +2905,112 @@ msgstr "Nu s-a găsit vehiculul cu numărul de înmatriculare:"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "Vehicle with license plate {} is not registered!"
 msgstr "Vehiculul cu numărul de înmatriculare {} nu este autorizat!"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "EXPIRED PERMIT"
+msgstr "AVIZ EXPIRAT"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "ACTIVE PERMIT"
+msgstr "AVIZ VALABIL"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "UPCOMING PERMIT"
+msgstr "AVIZ CE VA FI VALABIL CURÂND"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "Permit expires in {{ days }} days"
+msgstr "Avizul expiră în {{ days }} zile"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "Permit starts in {{ days }} days"
+msgstr "Aviz cu intrare în vigoare în {{ days }} zile"
+#: access_and_rules_compliance/vehicle_detail.html: ?
+msgid "This permit has expired"
+msgstr "Acest aviz a expirat"
+#: access/vehicle_detail.html
+msgid "Owner:"
+msgstr "Proprietar:"
+
+#: access/vehicle_detail.html
+msgid "Category:"
+msgstr "Categorie:"
+
+#: access/vehicle_detail.html
+msgid "Permit Number:"
+msgstr "Număr Aviz:"
+
+#: access/vehicle_detail.html
+msgid "Start Date:"
+msgstr "Data Început:"
+
+#: access/vehicle_detail.html
+msgid "End Date:"
+msgstr "Data Sfârșit:"
+
+#: access/vehicle_detail.html
+msgid "Access Areas:"
+msgstr "Zone de Acces:"
+
+#: access/vehicle_detail.html
+msgid "No areas specified"
+msgstr "Nicio zonă specificată"
+
+#: access/vehicle_detail.html
+msgid "Registration Date:"
+msgstr "Data Înregistrării:"
+
+#: access/vehicle_detail.html
+msgid "Description:"
+msgstr "Descriere:"
+
+#: access/vehicle_detail.html
+msgid "Edit"
+msgstr "Editează"
+#: access/vehicle_detail.html
+msgid "Access Areas"
+msgstr "Zone de acces"
+#: access/confirm_delete.html
+msgid "Delete icon"
+msgstr "Iconiță ștergere"
+
+#: access/confirm_delete.html
+msgid "Confirm Deletion"
+msgstr "Confirmă Ștergerea"
+
+#: access/confirm_delete.html
+msgid "Are you sure you want to delete the vehicle with license plate <strong>{{ plate }}</strong> registered to <strong>{{ owner }}</strong>?"
+msgstr "Sigur doriți să ștergeți vehiculul cu numărul de înmatriculare <strong>{{ plate }}</strong> înregistrat pe numele <strong>{{ owner }}</strong>?"
+
+#: access/confirm_delete.html
+msgid "This action cannot be undone!"
+msgstr "Această acțiune nu poate fi anulată!"
+
+#: access/confirm_delete.html
+msgid "Yes, Delete"
+msgstr "Da, Șterge"
+
+#: access/confirm_delete.html
+msgid "Previous"
+msgstr "Anterioară"
+#: access/confirm_delete.html
+msgid "Next"
+msgstr "Următoarea"
+#: access/confirm_delete.html
+msgid "License Plate"
+msgstr "Număr înmatriculare"
+
+#: access/vehicle_detail.html
+msgid "Cancel"
+msgstr "Anulează"
+#: access/vehicle_detail.html
+msgid "Update Vehicle"
+msgstr "Actualizează vehicul"
+#: access/vehicle_detail.html
+msgid "Back to List"
+msgstr "Înapoi la Listă"
+#: access/vehicle_detail.html
+msgid "<span>Vehicle</span> <span>Details</span>"
+msgstr "<span>Detalii</span> <span>Vehicul</span>"
+#: access/vehicle_add.html
+msgid "Add Vehicle"
+msgstr "Adaugă Vehicul"
+
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "<span>Registered</span> <span>Vehicles</span>"
 msgstr "<span>Vehicule</span> <span>Autorizate</span>"

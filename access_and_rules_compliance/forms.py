@@ -66,6 +66,8 @@ class VehicleForm(forms.ModelForm):
             'area': _('Area'),
         }
         widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'end_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
             'description': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
             'categ': forms.Select(attrs={'class': 'form-control'}),
             'area': forms.SelectMultiple(attrs={'class': 'form-control'}),
@@ -81,6 +83,9 @@ class VehicleForm(forms.ModelForm):
         # Make fields optional
         self.fields['description'].required = False
         self.fields['area'].required = False
+
+        self.fields['start_date'].required = True
+        self.fields['end_date'].required = True
 
 class ExcelUploadForm(forms.Form):
     """Form for uploading an Excel file to import allowed vehicles."""
