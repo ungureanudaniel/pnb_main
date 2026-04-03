@@ -1,109 +1,84 @@
-{% extends "services/base.html" %}
-{% load static %}
-{% load i18n %}
-
-{% block content %}
-<main class="main">
-  <section class="welcome-primary green_background">
-    <div class="container">
-      <div class="row">
-        <div class="col-auto">
-          <div class="align-container">
-            <div class="align-container__item">
-              <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-              <h1 class="welcome-primary__title">{% blocktranslate %}<span>Vehicle</span> <span>Access</span>{% endblocktranslate %}</h1>
-              <span class="welcome_icon">
-                <img src="{% static 'img/svg/car.svg' %}" alt="{% trans 'Vehicle icon' %}">
-              </span>
-            </div>
-          </div>
-        </div>
+<!-- vehicles style-2 start-->
+<div class="container d-lg-block pb-3">
+  <div class="row">
+      <div class="col-lg-12">
+        {% if request.user.is_authenticated %}
+        <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'single_vehicle_upload' %}">Introdu un vehicul nou</a>
+        <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'bulk_vehicle_entry' %}">Încarcă o listă cu vehicule</a>
+        <a class="pricing-item__button button button--primary" target="_blank" href="{% url 'vehicles_list' %}">Consultă lista cu vehicule autorizate</a>
+        {% endif %}
       </div>
-    </div>
-  </section>
+  </div>
+</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <!-- Search Form -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-center">{% trans "Check Vehicle Access" %}</h5>
-              <form method="GET" action="">
-                <input type="hidden" name="form-type" value="search">
-                <div class="form-group">
-                  <label for="q">{% trans "License Plate Number" %}</label>
-                  <input type="text" name="q" id="q" class="form-control" 
-                         placeholder="{% trans 'Enter license plate (e.g., DB74TOR)' %}" 
-                         value="{{ request.GET.q|default:'' }}"
-                         required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                  <i class="fa fa-search"></i> {% trans "Check Access" %}
-                </button>
-              </form>
-            </div>
+<!-- Add this check -->
+{% if car_info %}
+<!-- Display on larger screens -->
+<div class="container d-none d-lg-block">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+              <div class="row align-items-center">
+                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Entity' %}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Identification Number (Car plates or given number for snowmobiles)' %}</span></div>
+                  <div class="col-lg-2 col-xl-2"><span>{% trans 'Authorized Area' %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Permit Nr.' %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Start date/<br>End date' %}</span></div>
+                  <div class="col-lg-2 col-xl-2 my-3"><span>{% trans 'Note' %}</span></div>
+              </div>
           </div>
+      </div>
+  </div>
+</div>
 
-          <!-- Results Section -->
-          {% if car_info %}
-          <div class="mt-4">
-            <div class="card">
-              <div class="card-header bg-success text-white">
-                <h5 class="mb-0">{% trans "Vehicle Access Information" %}</h5>
+{% for car in car_info %}
+<div class="col-xs-6 col-lg-12 d-none d-lg-block">
+  <div class="pricing-item pricing-item--style-2" style="border:1px solid black;">
+    <div class="row align-items-center">
+      <div class="col-lg-2 col-xl-2">
+        <h6 class="pricing-item__plan">{{ car.owner }}</h6>
+      </div>
+      <div class="col-lg-2 col-xl-2"><span>{{ car.identification_nr|safe }}</span></div>
+      <div class="col-lg-2 col-xl-2"><span>{% for a in car.area %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></div>
+      <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.permit_nr|lower|safe }}</span></div>
+      <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.start_date|date:"d.m.Y" }}/<br>{{ car.end_date|date:"d.m.Y" }} </span></div>
+      <div class="col-lg-2 col-xl-2 my-3"><span>{{ car.description|capfirst|safe }}</span></div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!-- Display on smaller screens -->
+<div class="container d-lg-none">
+  <div class="row">
+      {% for car in car_info %}
+      <div class="col-md-6">
+          <div class="card mb-3">
+              <div class="card-header">
+                  <h5 class="card-title"><strong>{% trans 'Entity' %}:</strong> {{ car.owner }}</h5>
               </div>
               <div class="card-body">
-                {% for car in car_info %}
-                <div class="vehicle-info">
-                  <table class="table table-bordered">
-                    <tr>
-                      <th width="30%">{% trans "Owner" %}</th>
-                      <td>{{ car.owner }}</td>
-                    </tr>
-                    <tr>
-                      <th>{% trans "License Plate" %}</th>
-                      <td><strong>{{ car.identification_nr }}</strong></td>
-                    </tr>
-                    <tr>
-                      <th>{% trans "Authorized Areas" %}</th>
-                      <td>
-                        {% for area in car.area %}
-                          <span class="badge badge-success">{{ area }}</span>
-                        {% endfor %}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>{% trans "Permit Number" %}</th>
-                      <td>{{ car.permit_nr }}</td>
-                    </tr>
-                    <tr>
-                      <th>{% trans "Valid Period" %}</th>
-                      <td>{{ car.start_date|date:"d.m.Y" }} - {{ car.end_date|date:"d.m.Y" }}</td>
-                    </tr>
-                    {% if car.description %}
-                    <tr>
-                      <th>{% trans "Description" %}</th>
-                      <td>{{ car.description }}</td>
-                    </tr>
-                    {% endif %}
-                  </table>
-                </div>
-                {% endfor %}
+                  <p class="card-text"><strong>{% trans 'Identification Number' %}:</strong> {{ car.identification_nr }}</p>
+                  <p class="card-text"><strong>{% trans 'Authorized Area' %}:</strong> {% for a in car.area %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                  <p class="card-text"><strong>{% trans 'Permit Nr.' %}:</strong> {{ car.permit_nr }}</p>
+                  <p class="card-text"><strong>{% trans 'Start date' %}:</strong> {{ car.start_date|date:"d.m.Y" }}</p>
+                  <p class="card-text"><strong>{% trans 'Expiry date' %}:</strong> {{ car.end_date|date:"d.m.Y" }}</p>
+                  <p class="card-text"><strong>{% trans 'Note' %}:</strong> {{ car.description|capfirst|safe }}</p>
               </div>
-            </div>
           </div>
-          {% elif request.GET.q %}
-          <div class="mt-4">
-            <div class="alert alert-warning text-center">
-              <i class="fa fa-exclamation-triangle"></i> 
-              {% trans "No vehicle found with license plate:" %} <strong>{{ request.GET.q }}</strong>
-            </div>
-          </div>
-          {% endif %}
-        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+{% elif request.GET.q %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-warning text-center">
+        <i class="fa fa-exclamation-triangle"></i> 
+        {% trans "No vehicle found with license plate:" %} <strong>{{ request.GET.q }}</strong>
       </div>
     </div>
-  </section>
-</main>
-{% endblock %}
+  </div>
+</div>
+{% endif %}
