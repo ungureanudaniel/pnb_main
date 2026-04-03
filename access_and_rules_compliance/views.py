@@ -67,7 +67,7 @@ def add_vehicle_access_area(request):
 @cache_page(60 * 15)
 def allowed_vehicles(request):
     template = 'access/allowed_vehicles.html'
-    context = {}
+    context = {'car_info': []}  # Always pass an empty list as default
 
     if request.method == "GET" and request.GET.get('form-type') == "search":
         query = request.GET.get("q", "").replace(" ", "").upper()
@@ -76,61 +76,59 @@ def allowed_vehicles(request):
             try:
                 vehicles = AllowedVehicles.objects.filter(
                     identification_nr=query
-                ).order_by("-end_date").prefetch_related('area')  # Use -end_date to get latest first
+                ).order_by("-end_date").prefetch_related('area')
                 
                 if vehicles.exists():
                     today = datetime.today().date()
                     car_info = []
-                    valid_vehicle_found = False
                     
                     for vehicle in vehicles:
                         start_date = vehicle.start_date
                         end_date = vehicle.end_date
                         
-                        if start_date <= today <= end_date:
-                            car_info.append({
-                                'owner': vehicle.owner,
-                                'identification_nr': vehicle.identification_nr,
-                                'area': [a.name for a in vehicle.area.all()],
-                                'permit_nr': vehicle.permit_nr,
-                                'start_date': vehicle.start_date,
-                                'end_date': vehicle.end_date,
-                                'description': vehicle.description,
-                            })
-                            valid_vehicle_found = True
-                            
-                            messages.success(
-                                request, 
-                                _('Vehicle with plates number {} is allowed in the park!').format(vehicle.identification_nr)
-                            )
-                        elif start_date > today:
-                            messages.warning(
-                                request, 
-                                _('Vehicle with plates number {} is not yet allowed! Permit starts on {}.').format(
-                                    vehicle.identification_nr, 
-                                    start_date.strftime('%d-%m-%Y')
+                        if start_date and end_date:
+                            if start_date <= today <= end_date:
+                                car_info.append({
+                                    'owner': vehicle.owner,
+                                    'identification_nr': vehicle.identification_nr,
+                                    'area': [a.name for a in vehicle.area.all()],
+                                    'permit_nr': vehicle.permit_nr,
+                                    'start_date': vehicle.start_date,
+                                    'end_date': vehicle.end_date,
+                                    'description': vehicle.description,
+                                })
+                                messages.success(
+                                    request, 
+                                    _('Vehicle {} IS allowed in the park!').format(vehicle.identification_nr)
                                 )
-                            )
-                        else:
-                            messages.error(
-                                request, 
-                                _('Vehicle with plates number {} permit expired on {}.').format(
-                                    vehicle.identification_nr,
-                                    end_date.strftime('%d-%m-%Y')
+                            elif start_date > today:
+                                messages.warning(
+                                    request, 
+                                    _('Vehicle {} is not yet allowed. Permit starts on {}.').format(
+                                        vehicle.identification_nr, 
+                                        start_date.strftime('%d-%m-%Y')
+                                    )
                                 )
-                            )
+                            else:
+                                messages.error(
+                                    request, 
+                                    _('Vehicle {} permit expired on {}.').format(
+                                        vehicle.identification_nr,
+                                        end_date.strftime('%d-%m-%Y')
+                                    )
+                                )
                     
-                    if valid_vehicle_found:
-                        context.update({"car_info": car_info})
-                    else:
-                        messages.error(request, _('No active permit found for vehicle {}.').format(query))
+                    context['car_info'] = car_info
                 else:
-                    messages.error(request, _('Vehicle with plates number {} is not registered!').format(query))
+                    messages.error(request, _('Vehicle with license plate {} is not registered!').format(query))
+                    context['car_info'] = []
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
+                context['car_info'] = []
         else:
             messages.error(request, _("Please enter a valid license plate number."))
-
+            context['car_info'] = []
+    
     return render(request, template, context)
 
 #=================allowed vehicles input===============================
