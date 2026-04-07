@@ -2885,6 +2885,12 @@ msgstr "Activ"
 msgid "Upcoming"
 msgstr "Valabil curând"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Start/End Date"
+msgstr "Dată start/sfârșit"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "Actions"
+msgstr "Acțiuni"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "Expired"
 msgstr "Expirat"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
