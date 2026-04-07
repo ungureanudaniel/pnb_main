@@ -222,7 +222,7 @@ def vehicle_detail(request, vehicle_id):
         return render(request, template, context)
     except AllowedVehicles.DoesNotExist:
         messages.error(request, _("Vehicle not found."))
-        return redirect('registered_vehicles_list')
+        return redirect('vehicles_list')
 
 @login_required(login_url='signin')
 def edit_vehicle(request, vehicle_id):
@@ -232,14 +232,14 @@ def edit_vehicle(request, vehicle_id):
         vehicle = AllowedVehicles.objects.get(id=vehicle_id)
     except AllowedVehicles.DoesNotExist:
         messages.error(request, _("Vehicle not found."))
-        return redirect('registered_vehicles_list')
+        return redirect('vehicles_list')
     
     if request.method == "POST":
         form = VehicleForm(request.POST, instance=vehicle)
         if form.is_valid():
             form.save()
             messages.success(request, _("Vehicle information updated successfully!"))
-            return redirect('vehicle_detail', vehicle_id=vehicle.id)
+            return redirect('vehicle_detail', vehicle_id=vehicle.pk)
         else:
             messages.error(request, _("Form is not valid! Please check your input. {}".format(form.errors)))
     else:
