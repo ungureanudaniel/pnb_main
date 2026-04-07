@@ -420,6 +420,7 @@
 							</span>
 						</div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'announcement' %}">{% trans 'Announcements' %}</a></div>
+						<div class="screen__item"><a class="screen__link" href="{% url 'auto-access' %}">{% trans 'Motorized Access' %}</a></div>
 						<!-- <div class="screen__item"><a class="screen__link" href="{% url 'public-docs' %}">{% trans 'Public Documents' %}</a></div> -->
 						<div class="screen__item screen--trigger" data-category="public-docs">
 							<span>{% trans 'Public Documents' %}</span>
@@ -429,7 +430,6 @@
 								</svg>
 							</span>
 						</div>
-						<div class="screen__item"><a class="screen__link" href="{% url 'auto-access' %}">{% trans 'Motorized Access' %}</a></div>
 						<div class="screen__item"><a class="screen__link" href="{% url 'contact' %}">{% trans 'Contact' %}</a></div>
 						<div class="screen__item screen--trigger" data-category="language">
 							<span>{% trans 'Language' %}</span>
@@ -645,6 +645,7 @@
 								<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'faq_list' %}" title="FAQs of Bucegi Natural Park">FAQ</a></li>
 								
 							</ul>
+							<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'auto-access' %}" title="Motorized access">{% trans 'Motorized Access' %}</a></li>
 							<!-- lang select start-->
 
 							<ul class="lang-select">
@@ -663,7 +664,6 @@
 									</ul>
 								</li>
 							</ul>
-							<li class="lower-menu__item"><a class="lower-menu__link" href="{% url 'auto-access' %}" title="Motorized access">{% trans 'Motorized Access' %}</a></li>
 							<ul class="lang-select">
 
 								<li class="lang-select__item lang-select__item--active"><span>{{ lang.name_local }}</span>

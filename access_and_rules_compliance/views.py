@@ -80,54 +80,76 @@ def allowed_vehicles(request):
                 
                 if vehicles.exists():
                     today = datetime.today().date()
-                    car_info = []
+                    # Classify permits
+                    active_permits = []
+                    upcoming_permits = []
+                    expired_permits = []
                     
-                    for vehicle in vehicles:
-                        start_date = vehicle.start_date
-                        end_date = vehicle.end_date
-                        
-                        if start_date and end_date:
-                            if start_date <= today <= end_date:
-                                car_info.append({
-                                    'owner': vehicle.owner,
-                                    'identification_nr': vehicle.identification_nr,
-                                    'area': [a.name for a in vehicle.area.all()],
-                                    'permit_nr': vehicle.permit_nr,
-                                    'start_date': vehicle.start_date,
-                                    'end_date': vehicle.end_date,
-                                    'description': vehicle.description,
-                                })
-                                messages.success(
-                                    request, 
-                                    _('Vehicle {} IS allowed in the park!').format(vehicle.identification_nr)
-                                )
-                            elif start_date > today:
-                                messages.warning(
-                                    request, 
-                                    _('Vehicle {} is not yet allowed. Permit starts on {}.').format(
-                                        vehicle.identification_nr, 
-                                        start_date.strftime('%d-%m-%Y')
-                                    )
-                                )
+                    for v in vehicles:
+                        start = v.start_date
+                        end = v.end_date
+                        if start and end:
+                            if start <= today <= end:
+                                active_permits.append(v)
+                            elif start > today:
+                                upcoming_permits.append(v)
                             else:
-                                messages.error(
-                                    request, 
-                                    _('Vehicle {} permit expired on {}.').format(
-                                        vehicle.identification_nr,
-                                        end_date.strftime('%d-%m-%Y')
-                                    )
-                                )
+                                expired_permits.append(v)
                     
-                    context['car_info'] = car_info
+                    # Choose the best permit (active > upcoming > most recent expired)
+                    best_vehicle = None
+                    if active_permits:
+                        best_vehicle = active_permits[0]  # first (ordered by -end_date, so latest active)
+                    elif upcoming_permits:
+                        best_vehicle = upcoming_permits[0]  # earliest start? Keep as is.
+                    elif expired_permits:
+                        best_vehicle = expired_permits[0]  # most recent expired
+                    
+                    if best_vehicle:
+                        start_date = best_vehicle.start_date
+                        end_date = best_vehicle.end_date
+                        
+                        if start_date <= today <= end_date:
+                            # Active
+                            context['car_info'] = [{
+                                'owner': best_vehicle.owner,
+                                'identification_nr': best_vehicle.identification_nr,
+                                'area': [a.name for a in best_vehicle.area.all()],
+                                'permit_nr': best_vehicle.permit_nr,
+                                'start_date': best_vehicle.start_date,
+                                'end_date': best_vehicle.end_date,
+                                'description': best_vehicle.description,
+                            }]
+                            messages.success(
+                                request,
+                                _('Vehicle {} IS allowed in the park!').format(best_vehicle.identification_nr)
+                            )
+                        elif start_date > today:
+                            # Upcoming
+                            messages.warning(
+                                request,
+                                _('Vehicle {} is not yet allowed. Permit starts on {}.').format(
+                                    best_vehicle.identification_nr,
+                                    start_date.strftime('%d-%m-%Y')
+                                )
+                            )
+                        else:
+                            # Expired
+                            messages.error(
+                                request,
+                                _('Vehicle {} permit expired on {}.').format(
+                                    best_vehicle.identification_nr,
+                                    end_date.strftime('%d-%m-%Y')
+                                )
+                            )
+                    else:
+                        messages.error(request, _('No valid permit found for vehicle {}.'.format(query)))
                 else:
                     messages.error(request, _('Vehicle with license plate {} is not registered!').format(query))
-                    context['car_info'] = []
             except Exception as e:
                 messages.error(request, _("An error occurred: {}").format(str(e)))
-                context['car_info'] = []
         else:
             messages.error(request, _("Please enter a valid license plate number."))
-            context['car_info'] = []
     
     return render(request, template, context)
 
