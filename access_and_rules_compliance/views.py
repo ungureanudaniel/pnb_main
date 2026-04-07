@@ -239,7 +239,7 @@ def edit_vehicle(request, vehicle_id):
         if form.is_valid():
             form.save()
             messages.success(request, _("Vehicle information updated successfully!"))
-            return redirect('vehicle_detail', vehicle_id=vehicle.pk)
+            return redirect('vehicle_detail', vehicle_id=vehicle.id)
         else:
             messages.error(request, _("Form is not valid! Please check your input. {}".format(form.errors)))
     else:
@@ -266,7 +266,6 @@ def delete_vehicle(request, vehicle_id):
         # Redirect to the list page after successful deletion
         return redirect('vehicles_list')
     
-    # GET request - show confirmation page
     context = {
         'vehicle': vehicle,
     }

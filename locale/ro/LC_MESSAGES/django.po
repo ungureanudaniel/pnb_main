@@ -2883,7 +2883,7 @@ msgid "Active"
 msgstr "Activ"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "Upcoming"
-msgstr "Aproape de expirare"
+msgstr "Valabil curând"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "Expired"
 msgstr "Expirat"
