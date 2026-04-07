@@ -2894,6 +2894,13 @@ msgstr "Acțiuni"
 msgid "<span>Edit</span> <span>Vehicle</span>"
 msgstr "<span>Editează</span> <span>Vehicul</span>"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "<span>Delete</span> <span>Vehicle</span>"
+msgstr "<span>Șterge</span> <span>Vehicul</span>"
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
+msgid "<span>Add</span> <span>Vehicle</span>"
+msgstr "<span>Adaugă</span> <span>Vehicul</span>"
+
+#: access_and_rules_compliance/registered_vehicles_list.html: ?
 msgid "Expired"
 msgstr "Expirat"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
@@ -3379,9 +3386,6 @@ msgstr "Număr aviz"
 #: forms.py
 msgid "End Date"
 msgstr "Data de sfârșit"
-
-msgid "<span>Add</span> <span>Vehicle</span>"
-msgstr "<span>Adaugă</span> <span>Vehicul</span>"
 
 msgid "Vehicle information saved successfully!"
 msgstr "Informațiile vehiculului au fost salvate cu succes!"
