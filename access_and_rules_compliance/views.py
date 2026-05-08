@@ -443,7 +443,7 @@ def export_filtered_data(request):
     selected_status = request.GET.get('status', '')
     today = timezone.now().date()
     # Query the filtered data
-    vehicles = AllowedVehicles.objects.all().order_by('-timestamp').prefetch_related('area')
+    vehicles = AllowedVehicles.objects.all().order_by('-timestamp').prefetch_related('area', 'categ')
     if query:
         vehicles = vehicles.filter(
             Q(identification_nr__icontains=query) |
