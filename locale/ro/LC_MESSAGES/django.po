@@ -2919,8 +2919,8 @@ msgstr "Încărcare multiplă"
 msgid "No vehicle found with license plate:"
 msgstr "Nu s-a găsit vehiculul cu numărul de înmatriculare:"
 #: access_and_rules_compliance/registered_vehicles_list.html: ?
-msgid "Vehicle with license plate {} is not registered!"
-msgstr "Vehiculul cu numărul de înmatriculare {} nu este autorizat!"
+msgid "Vehicle with license plate {query} is not registered!"
+msgstr "Vehiculul cu numărul de înmatriculare {query} nu este autorizat!"
 #: access_and_rules_compliance/vehicle_detail.html: ?
 msgid "EXPIRED PERMIT"
 msgstr "AVIZ EXPIRAT"
@@ -3097,7 +3097,7 @@ msgid "Entity"
 msgstr "Entitate"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Authorized Area"
-msgstr "Zonă de Acces Autorizată"
+msgstr "Zonă autorizată"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Start date"
 msgstr "Dată început"
@@ -3150,16 +3150,16 @@ msgstr "Adaugă o Întrebare Frecventă"
 msgid "<span>Frequently</span> Asked<span> Questions</span>"
 msgstr "<span>Întrebări</span><span> Frecvente</span>"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Vehicle with plates number {} is allowed in the park!"
+msgid "Vehicle {} is allowed in the park!"
 msgstr "Autovehiculul cu numărul {} are accesul permis în parc!"
 #: services/templates/services/allowed_vehicles.html: 134
-msgid "Vehicle with plates number {} was previously authorized but the permit is expired!"
-msgstr "Autovehiculul cu numărul {} a fost autorizat anterior pentru acces în parc, dar acum are avizul expirat!"
+msgid "Vehicle {} permit expired on {}."
+msgstr "Autovehiculul cu numărul {} are autorizația expirată!"
 #: services/templates/services/allowed_vehicles.html: 134
 msgid "Vehicle with plates number {} is not authorized!"
 msgstr "Autovehiculul cu numărul {} nu este autorizat!"
 #: services/templates/services/allowed_vehicles.html: 135
-msgid "Vehicle with plates number {} is not yet allowed in the park! Permit starts on {}."
+msgid "Vehicle {} is not yet allowed. Permit starts on {}."
 msgstr "Autovehiculul cu numărul {} încă nu are accesul permis în parc! Valabilitatea autorizației de acces începe cu data {}."
 #: services/templates/services/views.py: 135
 msgid "Invalid search query!"

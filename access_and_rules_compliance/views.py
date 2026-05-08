@@ -2,7 +2,9 @@ from django.shortcuts import get_object_or_404, render, redirect
 from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
+import pandas as pd
+import csv
 import json
 import traceback
 from .forms import VehicleAccessAreaForm, VehicleForm, VehicleCategoryForm
@@ -122,13 +124,13 @@ def allowed_vehicles(request):
                             }]
                             messages.success(
                                 request,
-                                _('Vehicle {} IS allowed in the park!').format(best_vehicle.identification_nr)
+                                _('Vehiculul cu numărul de înmatriculare {} este autorizat în Parcul Natural Bucegi!').format(best_vehicle.identification_nr)
                             )
                         elif start_date > today:
                             # Upcoming
                             messages.warning(
                                 request,
-                                _('Vehicle {} is not yet allowed. Permit starts on {}.').format(
+                                _('Vehiculul cu numărul de înmatriculare {} nu este încă autorizat. Autorizația începe pe {}.').format(
                                     best_vehicle.identification_nr,
                                     start_date.strftime('%d-%m-%Y')
                                 )
@@ -137,17 +139,17 @@ def allowed_vehicles(request):
                             # Expired
                             messages.error(
                                 request,
-                                _('Vehicle {} permit expired on {}.').format(
+                                _('Vehiculul cu numărul de înmatriculare {} are autorizația expirată pe {}.').format(
                                     best_vehicle.identification_nr,
                                     end_date.strftime('%d-%m-%Y')
                                 )
                             )
                     else:
-                        messages.error(request, _('No valid permit found for vehicle {}.'.format(query)))
+                        messages.error(request, _(f'Nu s-a găsit o autorizație valabilă pentru autovehiculul cu numărul de înmatriculare {query}.'))
                 else:
-                    messages.error(request, _('Vehicle with license plate {} is not registered!').format(query))
+                    messages.error(request, _(f'Vehiculul cu numărul de înmatriculare {query} nu este autorizat!'))
             except Exception as e:
-                messages.error(request, _("An error occurred: {}").format(str(e)))
+                messages.error(request, _("A apărut o eroare: {}").format(str(e)))
         else:
             messages.error(request, _("Please enter a valid license plate number."))
     
@@ -168,10 +170,10 @@ def single_vehicle_upload(request):
                 vehicle.save()
                 vehicle_form.save_m2m()
                 
-                messages.success(request, _("Vehicle information saved successfully!"))
+                messages.success(request, _("Informațiile despre vehicul salvate cu succes!"))
                 return redirect('vehicles_list')
             except Exception as e:
-                messages.error(request, _("An error occurred: {}").format(str(e)))
+                messages.error(request, _("A apărut o eroare: {}").format(str(e)))
         else:
             for field, errors in vehicle_form.errors.items():
                 for error in errors:
@@ -221,7 +223,7 @@ def vehicle_detail(request, vehicle_id):
         }
         return render(request, template, context)
     except AllowedVehicles.DoesNotExist:
-        messages.error(request, _("Vehicle not found."))
+        messages.error(request, _("Vehiculul nu a fost găsit."))
         return redirect('vehicles_list')
 
 @login_required(login_url='signin')
@@ -231,17 +233,17 @@ def edit_vehicle(request, vehicle_id):
     try:
         vehicle = AllowedVehicles.objects.get(id=vehicle_id)
     except AllowedVehicles.DoesNotExist:
-        messages.error(request, _("Vehicle not found."))
+        messages.error(request, _("Vehiculul nu a fost găsit."))
         return redirect('vehicles_list')
     
     if request.method == "POST":
         form = VehicleForm(request.POST, instance=vehicle)
         if form.is_valid():
             form.save()
-            messages.success(request, _("Vehicle information updated successfully!"))
-            return redirect('vehicle_detail', vehicle_id=vehicle.id)
+            messages.success(request, _("Informațiile despre vehicul actualizate cu succes!"))
+            return redirect('vehicle_detail', vehicle_id=vehicle.pk)
         else:
-            messages.error(request, _("Form is not valid! Please check your input. {}".format(form.errors)))
+            messages.error(request, _("Formularul nu este valid! Vă rugăm să verificați datele introduse. {}".format(form.errors)))
     else:
         form = VehicleForm(instance=vehicle)
     
@@ -385,7 +387,10 @@ def registered_vehicles_list(request):
     query = request.GET.get('q', '').strip()
     category_id = request.GET.get('category', '').strip()
     area_id = request.GET.get('area', '').strip()
+    selected_year   = request.GET.get('year', '').strip()
+    selected_status = request.GET.get('status', '').strip()
 
+    today = timezone.now().date()
     vehicles = AllowedVehicles.objects.all().order_by('-timestamp').prefetch_related('area')
     
     if query:
@@ -400,20 +405,101 @@ def registered_vehicles_list(request):
     if area_id:
         vehicles = vehicles.filter(area__id=area_id)
 
-    paginator = Paginator(vehicles, 5)  # Show 20 vehicles per page
+    if selected_year:
+        vehicles = vehicles.filter(start_date__year=selected_year)
+
+    if selected_status == 'active':
+        vehicles = vehicles.filter(end_date__gte=today)
+    elif selected_status == 'expired':
+        vehicles = vehicles.filter(end_date__lt=today)
+
+    authorization_years = [
+        d.year for d in AllowedVehicles.objects.dates('start_date', 'year', order='DESC')
+    ]
+
+    paginator = Paginator(vehicles, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
     context = {
-        'vehicles': page_obj,
-        'categories': VehicleCategory.objects.all(),
-        'areas': AccessArea.objects.all(),
-        'query': query,
-        'selected_category': category_id,
-        'selected_area': area_id,
+        'vehicles':            page_obj,
+        'categories':          VehicleCategory.objects.all(),
+        'areas':               AccessArea.objects.all(),
+        'authorization_years': authorization_years,   # ← year dropdown
+        'query':               query,
+        'selected_category':   category_id,
+        'selected_area':       area_id,
+        'selected_year':       selected_year,         # ← keeps year selected
+        'selected_status':     selected_status,       # ← keeps status selected
     }
     return render(request, template, context)
 
-#=================allowed vehicles input===============================
+#=================allowed vehicles excel download===============================
+def export_filtered_data(request):
+    # Get the query parameters from the request
+    query = request.GET.get('q', '')
+    category_id = request.GET.get('category', '')
+    area_id = request.GET.get('area', '')
+    selected_year = request.GET.get('year', '')
+    selected_status = request.GET.get('status', '')
+    today = timezone.now().date()
+    # Query the filtered data
+    vehicles = AllowedVehicles.objects.all().order_by('-timestamp').prefetch_related('area')
+    if query:
+        vehicles = vehicles.filter(
+            Q(identification_nr__icontains=query) |
+            Q(owner__icontains=query)
+        )
+    if category_id:
+        vehicles = vehicles.filter(categ_id=category_id)
+    if area_id:
+        vehicles = vehicles.filter(area__id=area_id)
+    # --- Authorization year filter (year permit was issued) ---
+    if selected_year:
+        vehicles = vehicles.filter(start_date__year=selected_year)
+    # --- Status filter ---
+    if selected_status == 'active':
+        vehicles = vehicles.filter(end_date__gte=today)
+    elif selected_status == 'expired':
+        vehicles = vehicles.filter(end_date__lt=today)
+
+    # Create an HTTP response with the CSV content
+    response = HttpResponse(content_type='text/csv; charset=utf-8-sig')  # utf-8-sig for Excel compatibility
+    filename = f"filtered_vehicles_{timezone.now().strftime('%Y%m%d_%H%M%S')}.csv"
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+    writer = csv.writer(response)
+    
+    # Write the header row
+    headers = [
+        'Proprietar', 
+        'Număr de înmatriculare',
+        'Tip vehicul',
+        'Zone autorizate', 
+        'Permit Nr.', 
+        'Dată Start', 
+        'Dată Sfârșit',
+        'Descriere'
+
+    ]
+    writer.writerow(headers)
+
+    # Write the data rows
+    for vehicle in vehicles:
+        authorized_areas = ', '.join([area.name for area in vehicle.area.all()])
+        writer.writerow([
+            vehicle.owner,
+            vehicle.identification_nr,
+            vehicle.categ,
+            authorized_areas,
+            vehicle.permit_nr,
+            vehicle.start_date.strftime('%Y-%m-%d'),
+            vehicle.end_date.strftime('%Y-%m-%d'),
+            vehicle.description
+        ])
+
+    return response
+
 
 #=================laws===============================
 def laws(request):
