@@ -3,7 +3,6 @@ from services.models import AllowedVehicles, VehicleCategory, AccessArea
 from .models import Law
 from django.db.models import Q
 from django.http import HttpResponse, JsonResponse
-import pandas as pd
 import csv
 import json
 import traceback
