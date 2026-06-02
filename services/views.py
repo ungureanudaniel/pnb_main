@@ -416,9 +416,8 @@ def public_docs(request):
     template = 'public_docs/public_docs.html'
     
     categories = PublicCategory.objects.all()
-    links = PublicCatLink.objects.order_by('-id')
+    links = PublicCatLink.objects.order_by('-id').filter(category__in=categories).select_related('category')
     # links = PublicCatLink.objects.prefetch_related('links')
-    print(links)
     context = {
         'public_docs': categories,
         'links': links,
