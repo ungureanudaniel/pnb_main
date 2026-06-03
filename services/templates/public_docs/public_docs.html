@@ -3,71 +3,61 @@
 {% load i18n %}
 {% load filter_links %}
 {% get_current_language as LANGUAGE_CODE %}
-{% block content %}
-			<!-- header end-->
-			<main class="main">
-				<!-- welcome start-->
-				<section class="welcome-primary">
-					<picture>
-						<source srcset="{% static 'img/backgrounds/administratie.webp' %}" media="(min-width: 992px)"/><img class="img--bg" src="{% static 'img/backgrounds/administratie.webp' %}" alt="img"/>
-					</picture>
-					<div class="container">
-						<div class="row d-flex">
-							<div class="col-auto ">
-								<div class="align-container">
-									<div class="align-container__item w-100"><span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
-										<h1 class="welcome-primary__title">{% blocktranslate %}<span>Public</span><span> Documents</span>{% endblocktranslate %}</h1>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- welcome end-->
-				<!-- section start-->
-				<section class="section elements mt-2 pt-1 mb-5">
-					<div class="container">
-						<div class="row">
-							<div class="col-xl-8">
-								<h4 class="elements__title"></h4>
-								{% for item in public_docs %}
 
-								<div class="accordion accordion--primary">
-									<div class="accordion__title-block">
-										<h6 class="accordion__title">{{ item.title|capfirst }}</h6><span class="accordion__close"></span>
-									</div>
-									<div class="accordion__text-block">
-										<p>{{ item.text|safe }}</p>
-										<p>{% trans "The official document can be downloaded below" %}</p>
-											{% for link in links|slice:":5" %}
-												{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}
-													<a href="{{ link.link_en.url }}" download class="button button--primary button--rounded">
-														<table style="text-decoration:none">
-														  <tr>
-																<!-- {{ link.category }} {{ item.slug }} -->
-																<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
-																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-														  </tr>
-														</table>
-													</a>
-													{% else %}
-													<a href="{{ link.link_ro.url }}" download class="button button--primary button--rounded">
-														<table style="text-decoration:none">
-														  <tr>
-																<th><p>{% trans 'Year' %} {{ link.year }} </p></th>
-																<th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
-														  </tr>
-														</table>
-													</a>
-													{% endif %}
-										{% endfor %}
-									</div>
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- section end-->
-			</main>
+{% block content %}
+<main class="main">
+    <section class="welcome-primary">
+        <picture>
+            <source srcset="{% static 'img/backgrounds/administratie.webp' %}" media="(min-width: 992px)"/>
+            <img class="img--bg" src="{% static 'img/backgrounds/administratie.webp' %}" alt="img"/>
+        </picture>
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-auto ">
+                    <div class="align-container">
+                        <div class="align-container__item w-100">
+                            <span class="welcome-primary__pre-title">{% trans 'Bucegi Natural Park' %}</span>
+                            <h1 class="welcome-primary__title">{% blocktranslate %}<span>Public</span><span> Documents</span>{% endblocktranslate %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section elements mt-2 pt-1 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    
+                    {% for item in public_docs %}
+                    <div class="accordion accordion--primary">
+                        <div class="accordion__title-block">
+                            <h6 class="accordion__title">{{ item.title|capfirst }}</h6>
+                            <span class="accordion__close"></span>
+                        </div>
+                        
+                        <div class="accordion__text-block">
+                            <p>{{ item.text|safe }}</p>
+                            <p>{% trans "The official document can be downloaded below" %}</p>
+                            
+                            {# Loop through only the links connected to THIS category #}
+                            {% for link in item.publiccatlink_set.all|slice:":5" %}
+                                <a href="{% if LANGUAGE_CODE == 'en' or LANGUAGE_CODE == 'de' %}{{ link.link_en.url }}{% else %}{{ link.link_ro.url }}{% endif %}" download class="button button--primary button--rounded">
+                                    <table style="text-decoration:none">
+                                        <tr>
+                                            <th><p>{% trans 'Year' %} {{ link.year }} </p></th>
+                                            <th><h5><img width="100" height="100" src="{% static 'img/svg/download3.svg' %}">&nbsp;</h5></th>
+                                        </tr>
+                                    </table>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
 {% endblock %}

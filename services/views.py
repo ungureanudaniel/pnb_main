@@ -410,18 +410,14 @@ def massmedia(request):
     return render(request, template, {})
 
 #======================== public documents page================================
-@cache_page(60 * 15)  # Cache for 15 minutes (in seconds)
 def public_docs(request):
-    from collections import defaultdict
     template = 'public_docs/public_docs.html'
     
-    categories = PublicCategory.objects.all()
-    links = PublicCatLink.objects.order_by('-id').filter(category__in=categories).select_related('category')
-    # links = PublicCatLink.objects.prefetch_related('links')
+    # Prefetch the links using Django's automatic reverse relation name: publiccatlink_set
+    categories = PublicCategory.objects.all().prefetch_related('publiccatlink_set')
+    
     context = {
         'public_docs': categories,
-        'links': links,
-        # 'pbl': pbl,
     }
     return render(request, template, context)
 #======================== natural reserves documents pages================================
