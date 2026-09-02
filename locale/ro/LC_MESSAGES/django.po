@@ -3452,3 +3452,6 @@ msgstr "Denumire"
 
 msgid "Access Area"
 msgstr "Zonă de acces"
+
+msgid "You cannot purchase more than 20 tickets at once. Please reduce your quantity or contact us for bulk orders."
+msgstr "Nu puteți achiziționa mai mult de 20 de bilete o dată. Vă rugăm să reduceți cantitatea sau contactați-ne pentru cantități mari."

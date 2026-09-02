@@ -106,9 +106,9 @@ def checkout_view(request):
                     new_payment.save()
                     #----euplatesc parameters
                     params={
-                        'amount':str(new_payment.price),
                         #=============switch the amount param to take new_payment.price======================================!!!!!!!!!!!
-                        # 'amount': '1',
+                        # 'amount':str(new_payment.price),
+                        'amount': '1',
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
                         #==========need to change this in production=========================================================!!!!!!!!!!!
@@ -220,7 +220,7 @@ def check_status(request):
                                         "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
                         }
 
-                        # Note: We're not storing PDFs on disk to save space. PDFs are sent via email only. Left this code below for future reference.
+                        # We're not storing PDFs on disk to save space. PDFs are sent via email only. Left this code below for future reference.
                         # save_pdf_to_location(pdf, "tickets/{}".format(data['file']))
                         #----------save new subsequent ticket in the database
                         try:

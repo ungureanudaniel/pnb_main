@@ -159,34 +159,32 @@ def generate_pdf_ticket(data):
     return pdf
 
 if __name__ == "__main__":
-    y = 3
-    x = 6
-    TICKET_CUR_NR = '024418'
-    PAYMENT_ID = '78516c95-ee8a-45a7-8d77-429a2366ab66'
-    series = 'DBPNO78516c'
-    # series='DBPNO-{}{}'.format(PAYMENT_ID, TICKET_CUR_NR)
-    file_nr = f"{series}{TICKET_CUR_NR}"
-    # file_nr = f"{series}"
+  
+    # Bulk generate tickets with unique QR codes and save them as PDFs
+    series = "DBPNO62c815"
+    for i in range(34103, 34148):  # specify the range of ticket numbers to generate
+        ticket_num = f"{i:06d}"
+        data = {
+            "qr": f"{series}{ticket_num}",
+            "first_name": "Rosin",
+            "last_name": "Turism",
+            "file": f'ticket-{series}{ticket_num}.pdf',
+            "series": series,
+            "amount": 1,
+            "validity": datetime.today().date() + timedelta(days=90),
+            'title': "TICHET DE VIZITATOR",
+            'background_image_path': str(SCRIPT_DIR / 'ticket_logos' / 'ticket_bg.png'),
+            "bucegi_logo": str(SCRIPT_DIR / 'ticket_logos' / 'bucegi2.png'),
+            "rnp_logo": str(SCRIPT_DIR / 'ticket_logos' / 'rnp-romsilva3.png'),
+            "company_name": 'RNP ROMSILVA',
+            "unit_name": 'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
+        }
+        # Generate the PDF ticket
+        pdf = generate_pdf_ticket(data)
+        # Ensure the 'tickets' directory exists
+        os.makedirs(SCRIPT_DIR / 'tickets', exist_ok=True)
+        # Save the PDF to the specified location    
+        save_pdf_to_location(pdf, f'tickets/ticket-{series}{ticket_num}.pdf')
 
-    data = {            
-                        "qr":file_nr,
-                        "first_name":'Victor',
-                        "last_name":'Hurgoi',
-                        "file":'ticket-{}.pdf'.format(file_nr),
-                        "series":series,
-                        "amount": 1, # in production need to divide by 10
-                        # "validity": datetime.today().date() + timedelta(days=90),
-                        "validity": datetime.strptime("2026-02-23", "%Y-%m-%d").date() + timedelta(days=90),
-                        'title':"TICHET DE VIZITATOR",
-                        'background_image_path': str(SCRIPT_DIR / 'ticket_logos' / 'ticket_bg.png'),
-                        # 'background_image_path':r"ticket_logos/ticket_bg.png",
-                        "bucegi_logo": str(SCRIPT_DIR / 'ticket_logos' / 'bucegi2.png'),
-                        "rnp_logo": str(SCRIPT_DIR / 'ticket_logos' / 'rnp-romsilva3.png'),
-                        "company_name":r'RNP ROMSILVA',
-                        "unit_name":r'ADMINISTRATIA PARCULUI NATURAL BUCEGI R.A.',
-                    }
-    # Ensure tickets directory exists
-    os.makedirs(SCRIPT_DIR / 'tickets', exist_ok=True)
+        print(f"Generated: {ticket_num}")
 
-    pdf= generate_pdf_ticket(data)
-    save_pdf_to_location(pdf, str(SCRIPT_DIR / 'tickets' / data['file']))

@@ -17,20 +17,6 @@ class CaptchaForm(forms.Form):
 class PaymentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PaymentForm, self).__init__(*args, **kwargs)
-        # self.fields['price'].label = _("Total amount in selected currency")
-        # self.fields['quantity'].label = _("Total number of tickets")
-        # self.fields['currency'].label = _("Select desired currency")
-        # self.fields['buyer_fname'].label = _("Your first name")
-        # self.fields['buyer_lname'].label = _("Your last name")
-        # self.fields['address'].label = _("Your address")
-        # self.fields['county'].label = _("Your county of residence")
-        # self.fields['country'].label = _("Your country of residence")
-        # self.fields['city'].label = _("Your city of residence")
-        # self.fields['zip'].label = _("Your address zip code")
-        # self.fields['phone'].label = _("Your phone number")
-        # self.fields['email'].label = _("Your email address")
-        # self.fields['notes'].label = _("You can write some notes here")
-
         self.fields['price'].widget.attrs['style'] = "width:79px;font-weight:700;margin:15px 10px 20px 0px;border:none"
         self.fields['quantity'].widget.attrs['style'] = "width:40px;margin:0 10px 0px 10px;background-color:#e9ecef"
         # self.fields['quantity_kids'].widget.attrs['style'] = "width:40px;margin:0 10px 0px 10px;background-color:#e9ecef"
@@ -45,6 +31,18 @@ class PaymentForm(forms.ModelForm):
         # self.fields['zip'].widget.attrs['style'] = "width:320px;margin:0px 20px 20px 0px;"
         self.fields['notes'].widget.attrs['style'] = "margin-left: 0;width:450px;height:300px"
         self.fields['email'].widget.attrs['style'] = "width:320px;margin-bottom:20px;"
+
+        # Set min and max values for quantity field
+        self.fields['quantity'].widget.attrs['max'] = '20' 
+        self.fields['quantity'].widget.attrs['min'] = '1'
+
+    def clean_quantity(self):
+        """Validate that quantity does not exceed 20 tickets"""
+        quantity = self.cleaned_data.get('quantity')
+
+        if quantity and quantity > 20:
+            raise forms.ValidationError(_("You cannot purchase more than 20 tickets at once. Please reduce your quantity or contact us for bulk orders."))
+        return quantity
     class Meta:
         model = Payment
         fields = ['quantity', 'price', 'currency', 'buyer_fname', 'buyer_lname', 'address', 'county', 'country', 'city', 'zip', 'phone', 'email', 'terms', 'notes']
