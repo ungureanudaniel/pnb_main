@@ -65,7 +65,6 @@ def add_vehicle_access_area(request):
     return render(request, template, context)
 
 #=================allowed vehicles version 2===============================
-@cache_page(60 * 15)
 def allowed_vehicles(request):
     template = 'access/allowed_vehicles.html'
     context = {'car_info': []}  # Always pass an empty list as default
@@ -326,16 +325,16 @@ def bulk_vehicle_save(request):
                     
                     if row[5]:
                         try:
-                            data_inceput = datetime.strptime(str(row[5]), '%d-%m-%Y').date()
+                            data_inceput = datetime.strptime(str(row[5]), '%Y-%m-%d').date()
                         except ValueError:
-                            errors.append(f"Row {idx + 1}: Invalid start date format. Use DD-MM-YYYY")
+                            errors.append(f"Row {idx + 1}: Invalid start date format. Use YYYY-MM-DD")
                             continue
                     
                     if row[6]:
                         try:
-                            data_sfarsit = datetime.strptime(str(row[6]), '%d-%m-%Y').date()
+                            data_sfarsit = datetime.strptime(str(row[6]), '%Y-%m-%d').date()
                         except ValueError:
-                            errors.append(f"Row {idx + 1}: Invalid end date format. Use DD-MM-YYYY")
+                            errors.append(f"Row {idx + 1}: Invalid end date format. Use YYYY-MM-DD")
                             continue
                     
                     descriere = str(row[7]).strip() if len(row) > 7 and row[7] else ""

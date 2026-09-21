@@ -108,7 +108,6 @@ def checkout_view(request):
                     params={
                         #=============switch the amount param to take new_payment.price======================================!!!!!!!!!!!
                         'amount':str(new_payment.price),
-                        # 'amount': '1',
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
                         #==========need to change this in production=========================================================!!!!!!!!!!!

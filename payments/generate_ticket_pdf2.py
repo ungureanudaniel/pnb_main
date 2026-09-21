@@ -161,13 +161,13 @@ def generate_pdf_ticket(data):
 if __name__ == "__main__":
   
     # Bulk generate tickets with unique QR codes and save them as PDFs
-    series = "DBPNO62c815"
-    for i in range(34103, 34148):  # specify the range of ticket numbers to generate
+    series = "DBPNO61487d"
+    for i in range(36345, 36355):  # specify the range of ticket numbers to generate
         ticket_num = f"{i:06d}"
         data = {
             "qr": f"{series}{ticket_num}",
-            "first_name": "Rosin",
-            "last_name": "Turism",
+            "first_name": "AS-TUR Centrum Turystyki",
+            "last_name": "Travel Office",
             "file": f'ticket-{series}{ticket_num}.pdf',
             "series": series,
             "amount": 1,
