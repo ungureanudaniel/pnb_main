@@ -33,10 +33,6 @@
         <div class="col-12">
           <div class="heading heading--primary heading--center">
             <h2 class="heading__title no-margin-bottom">{% blocktranslate %}<span>Enter</span> <span>Vehicle List</span>{% endblocktranslate %}</h2>
-            <p>{% trans "The list of vehicles to be uploaded has to be an excel file and the table header must match the following format:" %}</p>
-            <img src="{% static 'img/administrative/vehicle_excel_table.png' %}" alt="{% trans 'Excel Vehicle Upload Example' %}">
-            <a href="{% static 'files/lista_vehicule_20250602.xlsx' %}" download class="form__submit">
-              {% trans 'Download Vehicle Template (Excel)' %}
             </a>
           </div>
         </div>
@@ -60,7 +56,8 @@
             </div>
           </form> -->
           <div id="vehicleTable" style="height:400px; width:100%; overflow:auto;"></div>
-          <button id="saveButton">Save</button>
+          <button class="pricing-item__button button button--primary" id="saveButton">Save</button>
+          <button class="pricing-item__button button button--secondary" url="{% url 'vehicles_list' %}"><i class="fas fa-arrow-left"></i> Return to Vehicle List</button>
       </div>
     </div>
   </section>
