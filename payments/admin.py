@@ -1,3 +1,15 @@
+import hashlib
+
+# --- MONKEY-PATCH FOR cPanel OPENSSL/PYTHON BUILD ---
+_original_md5 = hashlib.md5
+def _safe_md5(string=b'', *, usedforsecurity=True):
+    try:
+        return _original_md5(string, usedforsecurity=usedforsecurity)
+    except TypeError:
+        return _original_md5(string)
+hashlib.md5 = _safe_md5
+
+# ---------------------------------------------------
 from urllib import request
 from django.core.mail import EmailMessage
 from django.conf import settings
