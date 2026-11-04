@@ -66,9 +66,17 @@ msgstr "Rezervații Naturale"
 #: .\payments\pay_maintenance.html.py:20
 msgid "Payment System Maintenance"
 msgstr "Sistem de Plăți în Mentenanță"
+
+#: .\maintenance.html.py:20
+msgid "System Maintenance"
+msgstr "Sistem în Mentenanță"
+
 #: .\payments\pay_maintenance.html:6
 msgid "We apologize for the inconvenience. Our payment system is currently undergoing scheduled maintenance to serve you better."
 msgstr "Ne cerem scuze pentru inconveniență. Sistemul nostru de plăți este în mentenanță programată pentru a vă servi mai bine."
+
+msgid "We apologize for the inconvenience. Our system is currently undergoing scheduled maintenance to serve you better."
+msgstr "Ne cerem scuze pentru inconveniență. Sistemul nostru este în mentenanță programată pentru a vă servi mai bine."
 
 #: .\payments\pay_maintenance.html:10
 msgid "Expected Availability"
@@ -88,7 +96,7 @@ msgstr "Aveți nevoie de ajutor?"
 
 #: .\payments\pay_maintenance.html:28
 msgid "Email us at:"
-msgstr "Scrie-ne la:"
+msgstr "Scrieți-ne la:"
 
 #: .\services\base.html.py:212
 msgid "Park Regulations"
@@ -1230,6 +1238,15 @@ msgstr ""
 #: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1638
 msgid "Email address"
 msgstr "Adresa de email"
+
+msgid "We are currently performing scheduled maintenance."
+msgstr "Website-ul Parcului Natural Bucegi este în mentenanță pentru a vă oferi o experiență mai bună"
+
+msgid "Ticket processing is temporarily paused. Please check back shortly."
+msgstr "Procesarea tichetelor de vizitator online este de asemenea sistată până la repunerea în funcțiune a website-ului."
+
+msgid "During this time, you can still visit our <a href='https://www.facebook.com/profile.php?id=100057429310837' target='_blank'>Facebook page</a> for more information."
+msgstr "Între timp, puteți vizita pagina noastră de <a href='https://www.facebook.com/profile.php?id=100057429310837' target='_blank'>Facebook</a> pentru mai multe informații."
 
 #: myvenv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:1661
 msgid "File path"

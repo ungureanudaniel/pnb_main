@@ -74,8 +74,12 @@ MIDDLEWARE = [
     #--------caching middleware-------------------
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # custom middleware for maintenance mode
+    'services.middleware.MaintenanceModeMiddleware',
+    # messages middleware for flash messages
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'pnb_main.urls'
@@ -83,7 +87,7 @@ ROOT_URLCONF = 'pnb_main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -238,6 +242,8 @@ PAYMENT_PROVIDER_SUCCESS_CODE = '0'
 
 PAYMENT_PAGE_MAINTENANCE = bool(strtobool(os.getenv("PAYMENT_PAGE_MAINTENANCE", "False")))
 
+# puts entire website into maintenance mode if True, except for superusers and staff
+MAINTENANCE_MODE = os.getenv('MAINTENANCE_MODE', 'False').lower() == 'true'
 BASE_URL = os.getenv('BASE_URL')
 #=====================LOGGING  ERORRS=========================
 LOGGING = {

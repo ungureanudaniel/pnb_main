@@ -58,6 +58,7 @@ class Ticket(models.Model):
     expiry_date = models.DateTimeField(default=timezone.now() + timedelta(days=90), blank=True)
     # ticket_pdf = models.BinaryField()
     ticket_type = models.CharField(max_length=50)
+    email_sent = models.BooleanField(default=False)
     slug = models.SlugField(max_length=100, allow_unicode=True, blank=True, editable=True)
     def save(self, *args, **kwargs):
         self.slug = slugify(f"{self.ticket_series} + {self.ticket_nr}")

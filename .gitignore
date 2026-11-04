@@ -72,3 +72,4 @@ db.sqlite3-journal
 # certs
 payments\netopia_certif\public.cer
 payments\netopia_certif\signature.cer
+static/csspurged

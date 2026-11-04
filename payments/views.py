@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 from .models import Payment, Ticket
 from django.shortcuts import redirect, render
 from .forms import PaymentForm
-from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 from email.mime.base import MIMEBase
 from email import encoders
@@ -18,6 +17,7 @@ from urllib.parse import urlencode
 from reportlab.lib.pagesizes import letter, A4
 from reportlab.lib.units import mm
 from .generate_ticket_pdf2 import generate_pdf_ticket
+from django.http import HttpResponse
 import logging
 logger = logging.getLogger(__name__)
 #--------------------------------------------------
@@ -54,23 +54,23 @@ def pay_maintenance(request):
 #================= checkout view =========================
 def checkout_view(request):
     """
-    
-    This function handles the checkout process for purchasing tickets in a Django web application. It includes the following steps:
-    1. **Maintenance Check**:                                       
-        - Checks if the payment page is under maintenance. If so, it redirects to a maintenance page.
-    2. **Template Selection**:
+    This function handles the checkout process for purchasing tickets. It includes the following steps:
+    1. Maintenance check:                                       
+        - Checks if the payment page is under maintenance. If so, it redirects to a maintenance page called 'pay_maintenance'.
+    2. Template selection:
         - Sets the template for the checkout page.
-    3. **Form Handling**:
-            
+    3. Payment gateway check:
+        - Checks if the payment page is in test mode (sandbox) or production mode and sets the appropriate credentials for the payment gateway (Euplatesc).
+    4. Form handling:
         - Initializes a payment form instance.
         - If the request method is POST, it validates the form data.
         - If the form is valid, it creates a new payment object and saves it to the database.
         - Generates parameters for the payment gateway (Euplatesc) and calculates the hash for security.
         - Redirects the user to the payment gateway with the generated parameters.
-    4. **Error Handling**:
+    5. Error handling:
         - If the form is invalid, it displays error messages and redirects to the checkout page.
         - If an exception occurs during the process, it logs the error and redirects to the checkout page.
-    5. **Rendering the Template**:
+    6. Rendering the template:
         - If the request method is not POST, it renders the checkout template with the payment form.
     """
     # Check if the payment page is under maintenance
@@ -103,11 +103,20 @@ def checkout_view(request):
                 if new_payment.quantity > 0:
 
                     new_payment.timestamp = timezone.now()
+                    # print(f"New payment created: {new_payment.quantity} tickets, price: {new_payment.price}")
                     new_payment.save()
+                    if settings.PAYMENT_TEST_MODE == True:
+                        messages.warning(request, _("You are in test mode! Price will be set to 1 RON."))
+                        price = 1
+                        # print(f"Pay price is {price}")
+                    else:
+                        price = new_payment.price
+                        # print(f"Pay price is {price}")
+                        
                     #----euplatesc parameters
                     params={
                         #=============switch the amount param to take new_payment.price======================================!!!!!!!!!!!
-                        'amount':str(new_payment.price),
+                        'amount':str(price),
                         'curr':'RON',
                         'invoice_id':str(new_payment.payment_id),
                         #==========need to change this in production=========================================================!!!!!!!!!!!
@@ -136,11 +145,11 @@ def checkout_view(request):
                     messages.warning(request, _("You must choose at least one ticket to finalize the purchase."))
                     return redirect("checkout")
             except Exception as e:
-                print(e)
+                # print(e)
                 messages.warning(request, _(f"Failed! {e}"))
                 raise Exception(e)    
         else:
-            print(form.errors.as_data())
+            # print(form.errors.as_data())
             messages.warning(request, f"Something went wrong. Please try again! ({form.errors.as_data()})")
             return redirect("checkout")
     else:
@@ -151,24 +160,25 @@ def checkout_view(request):
             # "tickets":quantity,
             }
     return render(request, template, context)
+
 #=============payment callback data=========================
 def check_status(request):
     """
     This function, check_status, is responsible for handling payment status updates received from a payment provider server in a Django web application.
 
     Process Overview:
-    1. Request Validation:
-    - Validates that the HTTP request method is POST, ensuring it only processes POST requests, typically used for form submissions.
+    1. Request validation:
+    - Validates that the HTTP request method is POST, ensuring it only processes POST requests for form submissions.
 
-    2. Payment Status Handling:
+    2. Payment status handling:
     - Retrieves a payment object from the database based on the invoice ID provided in the POST data.
     - If the payment object is found and the payment status is 'pending', and the action indicates a successful payment ('0' in this case), it updates the payment status to 'successful' in the database. Additional information like the bank message associated with the payment is also saved.
 
-    3. Ticket Generation:
+    3. Ticket generation:
     - Generates tickets for successful payments based on the payment details. Each ticket has a unique series and number, along with other relevant information such as validity and buyer details.
     - Iterates over the number of tickets to be generated, creating a new ticket object for each and saving it to the database.
 
-    4. Email Notification:
+    4. Email notification:
     - Constructs an email message to notify the buyer about the successful payment and attaches the generated PDF tickets to the email.
     - Sends the email using Django's email functionality.
 
@@ -177,7 +187,6 @@ def check_status(request):
     - If an error occurs, it redirects the user to a failure page and logs the error details for further investigation.
     """
     if request.method == "POST":
-
         try:
             payment = Payment.objects.get(payment_id=request.POST['invoice_id'])
             # print("Step 2: Successful payment instance fetched for changing status variable! Payment details below")
@@ -189,9 +198,8 @@ def check_status(request):
                 payment.save()
                 
                 try:
-                    # this must be CHANGED in production...it only to simulates several tickets at once
                     amount = payment.price
-                    print(f"Number of tickets to purchase: {amount}")
+                    # print(f"Number of tickets to purchase: {amount}")
                     tickets =[]
                     for i in range(int(amount/settings.TICKET_PRICE)):
                         #----------generate new subsequent ticket series and nr
@@ -231,9 +239,16 @@ def check_status(request):
                                             buyer_lname=payment.buyer_lname,
                                             ticket_type = "3 luni",
                                             ticket_series=f"{ticket_series}{uuid_prefix}",
-                                            ticket_nr=f"{ticket_nr}",
+                                            ticket_nr="000000", # temporary value, will be updated after saving to database
                                         )
                             new_ticket.save()
+
+                            # update the ticket nr field using the db auto primary key
+                            new_ticket.ticket_nr = "%06d" % new_ticket.id
+                            new_ticket.save()
+                            data["qr"] = f"{ticket_series}{uuid_prefix}{new_ticket.ticket_nr}"
+                            print(f"Ticket {i+1} generated successfully with series: {new_ticket.ticket_series}")
+                            data["file"] = f"pnb-ticket-{new_ticket.ticket_series}{new_ticket.ticket_nr}.pdf"
                         except Exception as e:
                             messages.warning(request, f"Ticket creation error! Details:{e}")
                             # attaching the generated pdf ticket
@@ -264,12 +279,19 @@ def check_status(request):
                             email.attach(part)
 
                         # Send the email
-                        email.send()    
-                        # email.content_subtype = "html"
-                        # email.attach(f"{ticket_id}", pdf, 'application/pdf')
-                        # email.send()
-                        print(f"successful email delivery")
-                        return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
+                        try:
+                            email.send()
+                            # Mark tickets as sent in the database
+                            Ticket.objects.filter(payment_id=payment.payment_id).update(email_sent=True)
+                            print(f"Email sent successfully to {payment.email} with {len(tickets)} tickets attached.")
+                        except Exception as e:
+                            messages.warning(request, f"Email sending error! Details:{e}")
+                            payment.bank_message = (payment.bank_message or "") + f" | CRITICAL! Email error: {str(e)}"
+                            payment.save()
+                        
+                        # return redirect(f'{settings.BASE_URL}/tickets/payment-success/')
+                        return HttpResponse("OK", status=200)
+
                     except Exception as e:
                         messages.warning(request, f"Application error:{e}")
                     
